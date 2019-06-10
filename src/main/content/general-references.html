@@ -1,0 +1,58 @@
+---
+layout: doc
+title: General Reference
+type: general
+css:
+- doc-header
+- commonConfigFeature
+- general-reference
+js: general-references
+permalink: /docs/ref/general/
+---
+<!-----------------------------------------------------------------------------
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ ------------------------------------------------------------------------------>
+
+<!-- Build list of general reference pages -->
+
+{% assign generalDocs = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | sort: 'title' %}
+
+<div id="background_container">
+    <!-- table of contents section -->
+    <div id="toc_column" class="col-sm-3 collapsed in">
+        <div id="toc_inner">
+            {% if generalDocs %}
+            <div id="toc_container">
+                <ul id="general_toc">
+                    {% for doc in generalDocs %}
+                    <li>
+                        <div role="button" href="{{ doc.url }}" tabindex="0">{{ doc.title }}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <div>No doc found</div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- content -->
+    <div id="general_content" tabindex="0" class="col-sm-9 position_relative">
+    </div>
+</div>
+
+

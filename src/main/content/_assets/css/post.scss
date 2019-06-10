@@ -1,0 +1,270 @@
+/*******************************************************************************
+ * Copyright (c) 2017 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+
+
+ #background_container {
+    padding-top: 20px;
+    background-size: 100% calc(100% - 280px);
+    background-repeat: no-repeat;
+    margin-bottom: 67px;
+
+    @media (max-width: 767.98px) {
+        padding-top: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+#intro_logo {
+    margin-bottom: 70px;
+
+    @media (max-width: 767.98px) {
+        margin-left: 5px;
+        margin-bottom: 30px;
+    }
+}
+
+#post_column {
+    padding: 0;
+
+    & pre {
+        /* Bootstrap 4 override */
+        padding: 9.5px;
+    }
+
+    & code,
+    & pre {
+        /* Bootstrap override */
+        background-color: #F3F4F7;
+        color: #5e6b8d;
+    }
+}
+
+#article_container {
+    background-color: #f3f5f7;
+    color: #24253a;
+    padding-top: 55px;
+    padding-bottom: 30px;
+    overflow: hidden;
+
+    @media (max-width: 991.98px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @media (max-width: 767.98px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+/* Keep images from overflowing */
+#article_body img {
+    max-width: 100%;
+}
+
+#article_body p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 26px;
+}
+
+#article_body h2 {
+    font-size: 20px;
+    color: #24253a;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+#article_body h3 {
+    font-size: 16px;
+    color: #24253a;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+#article_body h4 {
+    font-size: 16px;
+    color: #6f7878;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+#article_body a {
+    font-weight: 500;
+    color: #E3700D;
+    transition: color .2s;
+
+    &:hover {
+        color: #F4914D;
+    }
+}
+
+#author_image {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+}
+
+.post_information_container {
+    white-space: nowrap;
+}
+
+#post_information {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+#author_name {
+    font-size: 16px;
+    color: #3f4659;
+}
+
+#post_date {
+    font-size: 16px;
+    color: #24253a;
+}
+
+#share_post_container {
+    color: #3F4659;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left:40px;
+    @media (max-width: 767.98px) {
+        padding-top: 20px;
+    }
+
+    border-top: 6px solid #C43804
+}
+
+#twitter_link {
+    display: inline-block;
+    width: 27px;
+    height: 23px;
+    background-image: url('/img/twitter_link.svg');
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    vertical-align: middle;
+    transition: all .2s;
+
+    &:hover {
+        background-image: url('/img/twitter_link_hover.svg');
+    }
+}
+
+#reddit_link {
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    background-image: url('/img/reddit_link.svg');
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    vertical-align: middle;
+    transition: background-image .2s;
+
+    &:hover {
+        background-image: url('/img/reddit_link_hover.svg');
+    }
+}
+
+.download-ol-button {
+    margin-bottom: 10px;
+}
+
+
+// custom styling for asciidoc admonition paragraphs
+.admonitionblock td {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+    i {
+        color: #24253a;
+        font-family: Asap;
+        font-style: normal;
+    }
+    &.icon .icon-note::before {
+        content: "Note";
+    }
+    &.icon .icon-tip::before {
+        content: "Tip";
+    }
+    &.icon .icon-important::before {
+        content: "Important";
+    }
+    &.icon .icon-warning::before {
+        content: "Warning";
+    }
+    &.icon .icon-caution::before {
+        content: "Caution";
+    }
+    &.content {
+        width: 100%;
+    }
+}
+
+.leftArrow{
+    border: solid #c43804;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    vertical-align: middle;
+    -webkit-transform: rotate(135deg);
+    position:relative;
+    top:32px;
+}
+
+.kabanero_colored_link {
+    color: #c43804;
+
+    &:hover {
+        color: #cf3b06;
+    }
+
+    @media (max-width: 767.98px) {
+        color: #F69144;
+
+        &:hover {
+            transition: all .2s;
+            color: #E3700D;
+        }
+    }
+    
+}
+
+.blogTitle{
+    font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
+    font-size:35px;
+    padding-left:15px;
+    color: black;
+
+    &:hover{
+        color:black
+    }
+}
+
+.linksContainer{
+    position:relative;
+    left:160px;
+    bottom:35px;
+}
+
+.postPadding{
+    padding-left:40px;
+    padding-right:40px;
+}

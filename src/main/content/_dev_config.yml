@@ -1,0 +1,35 @@
+title: Kabanero
+email: ajlohr@us.ibm.com
+description: >
+  Kabanero delivers new and existing middleware tools to modernize your cloud journey.
+baseurl: ""
+url: "https://kabanero.io"
+twitter_url: https://twitter.com/Kabaneroio
+github_url:  https://github.com/kabanero-io
+stackoverflow_url: https://stackoverflow.com/questions/tagged/kabanero
+slack_url: https://ibm-cloud-tech.slack.com/messages/kabanero
+slack_invite_url: https://slack-invite-ibm-cloud-tech.mybluemix.net/
+twitter_username: KabaneroIO
+github_username: kabanero-io
+
+assets:
+  compression: true
+  sources:
+    - guides/iguides-common/js
+    - guides/iguides-common/css
+    - guides/iguide-circuit-breaker/js
+    - guides/iguide-circuit-breaker/css
+    - guides/iguide-microprofile-config-intro/js
+    - guides/iguide-microprofile-config-intro/css
+    - guides/iguide-bulkhead/js
+    - guides/iguide-bulkhead/css
+    - guides/iguide-retry-timeout/js
+    - guides/iguide-retry-timeout/css
+
+jekyll-minifier:
+  compress_javascript: false
+  compress_css: false
+
+exclude:
+  - feature
+  - docs/templates

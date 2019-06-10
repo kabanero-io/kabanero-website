@@ -1,0 +1,80 @@
+---
+layout: default
+css: 
+- post
+- header
+js: 
+- header
+---
+<!-----------------------------------------------------------------------------
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ ------------------------------------------------------------------------------>
+
+<div id="background_container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="/blog"><span class="leftArrow kabanero_colored_link"></span>
+                <h1 class="col-md-1 blogTitle">Blog</h1></a>
+                <p>Follow <a class="kabanero_colored_link" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> on Twitter or subscribe to our <a class="kabanero_colored_link" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.</p>
+            </div>
+            <div id="post_column" class="col-sm-12">
+                <div id="article_container">
+                    <article class="post" itemscope itemtype="http://schema.org/BlogPosting" aria-label="article">
+                        <div class="postPadding">
+                            <header>                        
+                                <div class="post_information_container">
+                                    <img src="{{ page.author_picture }}" id="author_image" alt="image of author">
+                                    <div id="post_information">
+                                        <a id="author_name" href="{{ page.author_github }}">{{ page.author }}</a>
+                                        <div id="post_date">
+                                            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                                                {% assign date_format = site.minima.date_format | default: "%B %d, %Y" %} {{ page.date | date: date_format }}
+                                            </time>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+                            </header>
+                            <div itemprop="articleBody" id="article_body">
+                                {{ content }}
+                            </div>
+                        </div>
+                        <div id="share_post_container">
+                            Share this post:
+                            <div class="linksContainer">
+                                {% assign page_title = page.title | replace: "'" , "\\'" %}
+                                <a target="_blank" href="//twitter.com/intent" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('{{ page_title }}') + '&url=' + encodeURIComponent(window.location)); return false">
+                                    <img id="share_blog_twitter_img" src="/img/header_twitter_icon_orange.svg" class="img-fluid" alt="twitter logo">
+                                </a>
+                                <a target="_blank" href="//www.reddit.com/submit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent(window.location)); return false">
+                                    <img id="reddit_img" src="/img/Reddit_Icon.svg" class="img-fluid" alt="reddit logo">
+                                </a>
+                            </div>
+                        </div>
+                        {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-none">
+    <img src="/img/twitter_link_hover.svg">
+    <img src="/img/reddit_link_hover.svg">
+</div>

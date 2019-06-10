@@ -1,0 +1,202 @@
+/******************************************************************************
+ *
+ * Copyright 2019 IBM Corporation and others.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ ******************************************************************************/
+
+#background_container {
+    height: 1500px; /* initial height */
+}
+
+/* table of column styling */
+#toc_title {
+    font-family:'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-size: 14px;
+    color: #313653;
+    letter-spacing: 0.2px;
+    line-height: 26px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.toc_title_selected {
+    margin-left: -15px;
+}
+
+#toc_column {
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+.toc_selected {
+    padding-left: 22px !important;
+    margin-left: -30px;
+}
+
+#toc_column ul li div[href]:hover {
+    cursor: pointer;
+}
+
+.addFocus {
+    box-shadow: 0 0 2px 2px #51a7e8; /* keyboard-only focus styles */
+}
+
+#toc_column ul li div[href]:focus {
+    outline: none;
+}
+
+/* content styling */
+#command_content {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#command_content:focus {
+    outline: none;
+}
+
+
+#content {
+    padding: 20px 20px 50px 20px;
+    width: 100%;
+}
+
+#command_title {
+    color: #24243B;
+}
+
+div.sectionbody > div.paragraph > p, div.sectionbody > div.dlist > dl > dd > p {
+    font-size: 16px;
+    color: #24243B;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-top: 11px;
+}
+
+#preamble {
+    padding-top: 6.5px;
+}
+
+.sect1 > h2 {
+    font-size: 20px;
+    color: #24243B;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-top: 11px;
+}
+
+.hdlist1 {
+    font-size: 16px;
+    color: #24243B;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-top: 11px;
+}
+
+pre, pre > code, code {
+    background-color: #f1f4fe;
+    font-family: Courier;
+    font-size: 16px;
+    color: #5E6B8D;
+    letter-spacing: 0;
+    line-height: 24px;
+    border: none;
+}
+
+#content > pre {
+    padding-left: 25px;
+}
+
+div.sectionbody > div.ulist > ul {
+    padding-left: 20px;
+}
+
+div.sectionbody > div.ulist > ul > li > p {
+    font-size: 16px;
+    color: #24243B;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+
+.breadcrumb_hamburger {
+    display: none; 
+}
+
+/* TABLE STYLING */
+table {
+    margin-top: 30px;
+    margin-bottom: 54px;
+    margin-right: -20px;
+    box-shadow: 0 4px #D6D9E4;
+}
+
+table.subsection {
+    margin-left: 59px;
+}
+
+th {
+    background: #D6D9E4;
+    line-height: 26px;
+    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-size: 11px;
+    color: #24243B;
+    padding-left: 14px;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(93, 106, 142, 0.3);
+}
+
+th:first-child, td:first-child {
+    padding-left: 18px;
+}
+
+td:first-child {
+    color: #5D6A8E;
+    font-weight: 500;
+}
+
+td {
+    font-size: 14px;
+    color: #24243B;
+    letter-spacing: 0;
+    line-height: 26px;
+    padding: 10px 31px 10px 14px;
+    border-right: 1px solid rgba(93, 106, 142, 0.3);
+}
+
+td p {
+    margin: 0;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background: #EEEFF3;
+}
+
+tr:nth-child(odd) {
+    background: #FFFFFF;
+}
+
+tableblock {
+    min-width: 100px;
+}
+
+@media (max-width: 767.98px) {
+    #background_container {
+        height: auto;
+    }
+}

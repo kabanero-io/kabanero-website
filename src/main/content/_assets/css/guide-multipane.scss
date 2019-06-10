@@ -1,0 +1,419 @@
+/*******************************************************************************
+ * Copyright (c) 2019 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+
+.unscrollable {
+    overflow: hidden;
+}
+
+#background_container {
+    background-color: inherit;
+}
+
+/* Table of Contents */
+#toc_column {
+    left: 0;    
+}
+
+#toc_line {
+    &.open {
+        left: 274px; // 280px minus the width of 6 px
+    }
+}
+
+/* Guide Content related to the 3 column code */
+#guide_column {
+    max-width: initial; /* Take off the width restriction of single pane guides */
+}
+
+.hotspot:not(.code_command) {
+    display: inline-block;
+    max-width: 100%;
+}
+
+#guide_content img {
+    max-width: 100%;
+}
+
+#guide_content code.hotspot {
+    background-color: #F1F4FE;
+    color:#5e6b8d;
+}
+
+#guide_content .hotspot:not(.code_command) pre {
+    font-family:Courier;
+    font-size:14px;
+    padding: 5px;
+    background-color: #F1F4FE;
+    color:#5e6b8d;
+    letter-spacing:0;
+    line-height:24px;
+    text-align:left;
+    white-space: pre-wrap;
+}
+
+#guide_content .code_command pre,  #guide_content .code_command code {
+    background-color: #F1F4FE;
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;      
+}
+
+/* Code Column */
+#code_column {
+    padding: 0;
+    background-color: #f1f4fe;
+    position: fixed;
+    width: 780px;
+    left: calc(100% - 780px); /* Adjust for the width and padding */
+    top: 100px;
+    bottom: 0; /* Initially extend the code column the full height */
+    overflow: hidden;
+
+    #dismiss_button {
+        display: none;
+    }
+
+    @media screen and (max-width: 1169.98px) {
+        position: absolute;
+        display: none;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &.modal {
+            display: block;
+            overflow: auto;
+
+            #github_clone_popup {
+                display: none;
+            }
+
+            // Remove blur
+            #code_column_tabs_container, .code_column {
+                opacity: 1;
+                filter: none;
+            }
+
+            #code_column_tabs_container {
+                width: 100%;
+            }
+
+            #code_column_tabs {
+                // Give more room for the 'Back to text' button so the tabs don't overlap.
+                max-width: calc(100% - 135px);
+            }
+
+            #dismiss_button {
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                right: 50px;
+                background:#ffffff;
+                border:1px solid #96bc32;
+                border-radius:3px;
+                width:92px;
+                height:38px;
+            }
+        }
+    }
+}
+
+#code_column:focus {
+    outline-offset: -1px;
+}
+
+#code_column_content {
+    height: calc(100% - 34px); /* Take up the remaining height from the tabs container */
+    overflow-y: scroll;
+}
+
+.dimmed {
+    opacity: .19;
+    filter: blur(1px);
+}
+
+.code_column_title_container {
+    height: 43px;
+    padding-left: 23px; 
+    border-bottom: solid 1px #d4d7e3;
+    display: table;
+    width: 100%;
+}
+
+.code_column_title {
+    font-family: Asap;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.86;
+    color: #3f465a;       
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#github_clone_popup_container {
+    position: absolute;
+    display: none;
+    top: 31%;
+    width: 100%;
+    z-index: 2;
+}
+
+#github_clone_popup {
+    height: 111px;
+    margin: 0 20px;
+    padding: 19px 0 0 20px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+#github_clone_popup_title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.63;
+    color: #1b1c34;
+    margin-bottom: 14px;
+}
+
+#github_clone_popup_repo {
+    font-size: 14px;
+    line-height: 1.57;
+    color: #737373;
+    width: 95%;
+    border-bottom: solid 1px #96bc32;
+}
+
+#github_clone_popup_copy {
+    width: 48px;
+    height: 38px;
+    background-color: #96bc32;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+#github_clone_popup_copy:hover {
+    border: solid 1px #b2bbd1;
+    cursor: pointer;
+}
+
+#github_clone_popup_copy:active {
+    border: solid 1px #5e6b8d;
+}
+
+#github_clone_popup_copy > img {
+    width: 14px;
+    height: 16px;
+}
+
+#code_column_tabs_container {
+    display: inline-block;
+
+    #code_column_tabs {
+        max-width: calc(100% - 50px);
+        & > li {
+            float: left;
+    
+            & > a {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                text-align: center;  
+                letter-spacing: 0;
+                height: 44px;
+                padding: 8px 5px;
+                border: 1px solid #acb3c6;
+                border-bottom: transparent;
+                margin-right: 0;           /* Overlay bootstrap's margin so tabs are condensed   */
+                color: #5D6A8E !important;
+                line-height: 26px;
+    
+                &.active {
+                    background-color: #c7ccd9;
+                    color: #3f465a !important;
+                }
+    
+                &:hover {
+                    background-color: #D6DAE6;
+                    cursor: pointer;
+                }
+            }
+            
+            /* Keep below to override the normal styling */
+            &[disabled] {
+                pointer-events: none;
+                outline: none;
+    
+                & > a {
+                    background-color: inherit;
+                }
+            }
+        }        
+    }
+
+    @media (min-width: 1170px) {
+        width: 100%;
+        border-radius: 4px 4px 4px 4px;
+        border: 1px solid #c8d6fb;
+    }
+    
+}
+
+.copyFileButton {
+    position: absolute;
+    display: none;
+    right: 15px;
+    top: 8px;
+    line-height: 5px;
+    padding: 5px 6px;
+
+    &:hover {
+        border: solid 1px #b2bbd1;
+        cursor: pointer;
+        top: 7px;
+        right: 14px;
+    }
+    
+    &:active {
+        border: solid 1px #5e6b8d;
+    }
+    
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 2px 2px #51a7e8; /* keyboard-only focus styles */
+    }
+    
+    & > img {
+        width: 17.5px;
+        height: 20px;
+        outline: none;
+    }
+}
+
+.CodeRay .line-numbers {
+    display: inline-block;
+    visibility: hidden;
+    display: none;
+}
+
+.code_column .CodeRay {
+    border: none;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.code_column .CodeRay code {
+    display: block;
+    padding-bottom: 34px;
+}
+
+.code_column .CodeRay code, .code_column .CodeRay .highlightSection {
+    padding-left: 23px;
+    padding-right: 31px;   
+}
+
+/* Highlight code for when hovering over a hotspot */
+.highlightSection {
+    color: #24253a;
+    background-color: #C7CCD9;
+    margin-left: -23px;
+    margin-right: -31px;
+}
+
+.codeTitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.86;
+    color: #3f465a;
+    border-bottom: solid 1px #d4d7e3;
+    margin: 0;
+    padding-top: 11px;
+    padding-bottom: 5px;
+    padding-left: 22px;
+    height: 42px;
+    background-color: #f1f4fe;
+}
+
+@media (min-width: 1170px) {
+    #guide_column {
+        width: calc(100% - 780px);
+    }
+    
+    #background_container {
+        background-image: inherit;
+        margin-bottom: 0;
+    }
+
+    /* Styling for the paragraphs following the edit commands */
+    #guide_content .edit_command_text {
+        position: relative;
+        margin-top: -2px; // Overlap the blue border of the command action.
+        border-left: 8px solid #96bc32;
+        & > p {
+            padding-left: 30px;
+        }
+    }
+
+    #guide_content code.hotspot:not(.code_command):hover {
+        color: #24253A;
+        background-color: #C7CCD9;
+    }
+}
+
+@media (max-width: 1169.98px) {
+    #guide_content code.hotspot:hover,
+    #guide_content .code_command:hover {
+        cursor: pointer;
+    }
+
+    .listingblock.code_column {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .guide_item {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+    #toc_column{
+        &.open {
+            width: 280px; /* Override the 400px width from single pane guide */
+        }
+    }
+
+    #guide_column {
+        width: calc(100% - 780px);
+        display: inline-block;
+    }
+
+    #guide_column.open {
+        width: calc(100% - 280px - 780px); /* Adjust for the size of the table of contents and the code column */
+    }
+
+    #guide_column.expanded {
+        width: calc(100% - 780px);
+    }
+
+    #code_column {
+        left: calc(100% - 780px); /* Adjust for the width and padding */
+        display: inline-block;
+    }
+}

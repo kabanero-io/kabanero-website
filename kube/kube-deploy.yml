@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kabanero-site-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: kabanero
+    spec:
+      containers:
+      - name: kabanero
+        image: @DOCKER_REGISTRY@/@NAMESPACE@/@IMAGE_NAME@:@IMAGE_TAG@
+        ports:
+          - containerPort: 9443
+      imagePullSecrets:
+      - name: regcred
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kabanero-service
+spec:
+  ports:
+    - port: 9443
+      targetPort: 9443
+      nodePort: 32000
+      name: https
+  type: NodePort
+  selector:
+    app: kabanero

@@ -1,0 +1,104 @@
+/******************************************************************************
+ *
+ * Copyright 2019 IBM Corporation and others.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ ******************************************************************************/
+
+#page_container {
+    position: relative;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.bottomBorder{
+    border-bottom:1px solid gainsboro;
+    text-align: center;
+}
+
+.tileImg{
+    display:block;
+    margin:auto;
+    margin-top:30px;
+}
+
+.stackTile{
+    text-align: center;
+}
+
+.tileLabel{
+    display: inline-block;
+}
+
+.emptyRow{
+    height:25px;
+}
+
+.filterOption{
+    margin-bottom: 3px;
+}
+
+.filterHeader{
+    margin-bottom: 2px;
+}
+
+.textAlignCenter{
+    text-align: center;
+}
+
+#stackCollapse{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.arrowUpOuter{
+    width: 0; 
+    height: 0; 
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    
+    border-bottom: 30px solid rgba(0, 0, 0, 0.125);
+    position: relative;
+    z-index:1;
+    bottom:80px;
+}
+
+.arrowUpInner{
+    width: 0; 
+    height: 0; 
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    
+    border-bottom: 30px solid white;
+    position: relative;
+    z-index:2;
+    bottom:48px;
+}
+
+.leftTileArrow{
+    left:70px;
+}
+
+.leftCenterTileArrow{
+    left:306px;
+}
+
+.rightCenterTileArrow{
+    left: 541px;
+}
+
+.rightTileArrow{
+    left: 781px;
+}
+

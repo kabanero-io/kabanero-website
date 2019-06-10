@@ -1,0 +1,115 @@
+---
+layout: doc
+css:
+- doc-header
+- toc
+- end-of-guide
+- guide-card
+- guide
+js:
+- guide-utils
+- toc
+- guide
+---
+<!-----------------------------------------------------------------------------
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ ------------------------------------------------------------------------------>
+
+{% include visible-tags.liquid %}
+
+<div id="background_container">
+    <div class="centered_content">
+        <!-- Guide's table of contents section -->            
+        <div id="toc_column" class="collapse inline open">
+            <div id="toc_inner">
+                {% assign toc = page.document | tocify_asciidoc %}
+                {% if toc %}
+                <div id="mobile_close_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+                    <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
+                </div>
+                <h3 id="toc_title">Contents</h3>
+                <div id="toc_container">
+                    {{ toc }}
+                </div>
+                <div id="toc_separator"></div>
+                {% endif %}
+                {% if page.tags %}
+                    <h3 id="tag_title">Tags</h3>
+                    <div id="tags_container">
+                        {% for tag in page.tags %}
+                            {% if visibleTags contains tag %}
+                                <a href="/guides?search={{ tag }}&key=tag">{{ tag }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}                    
+            </div>                                
+        </div> 
+        <!-- Entire guide section -->
+        <div id="guide_column" class="position_relative open">
+            <div id="guide_content">
+                <!-- Guide header section -->
+                <div id="guide_meta" class="sect1" tabindex="0">
+                    <h1 id="guide_title">{{ page.title }}</h1>
+                    <div id="duration_container">
+                        <img src="/img/guide_duration_clock_icon_large.svg" alt="duration">
+                        <span id="guide_duration">{{ page.duration }}</span>
+                    </div>
+                    <div id="mobile_github_section">
+                            <div id="mobile_github_clone_popup_title"><span class="dark_green_link_light_background">Git clone</span><span> to get going right away:</span></div>
+                        <div id="mobile_github_clone_popup_repo">
+                            <span>git clone https://github.com/OpenLiberty/guide-{{page.url | replace: '/guides/', ''}}.git</span>
+                            <div id="mobile_github_clone_popup_copy" tabindex="0" aria-label="Copy the Github repository clone command">
+                                <img src="/img/guide_copy_button_black.svg" alt="Copy Github clone command">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroller_anchor"></div>
+                <div id="mobile_toc_accordion_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+                    <div id="mobile_toc_accordion">
+                        <button class="breadcrumb_hamburger toc-toggle collapsed" type="button" tabindex="0">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <img src="{{ " /img/toc_close_green.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
+                        </button>
+                        <span>Table of contents</span>
+                    </div>
+                </div>
+
+                <!-- Guide content section -->
+                {{ content }}
+            
+            </div>
+            <div id="guide_section_copied_confirmation">Copied to clipboard</div>
+            <a id="copy_to_clipboard" href=""></a>
+        </div> 
+        
+    </div>    
+</div>
+
+<div id="end_of_guide_background">
+    <div class="centered_content">
+        {% include end-of-guide.html %} 
+    </div>         
+</div>    
+
+
+

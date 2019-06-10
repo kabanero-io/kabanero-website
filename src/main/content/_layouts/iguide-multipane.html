@@ -1,0 +1,113 @@
+---
+layout: doc
+css:
+- doc-header
+- toc
+- end-of-guide
+- guide-card
+- guide
+- guide-multipane
+- iguide
+js:
+- guide-utils
+- toc
+---
+<!-----------------------------------------------------------------------------
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ ------------------------------------------------------------------------------>
+
+{% include visible-tags.liquid %}
+
+<div id="background_container">
+    <div id="toc_hotspot"></div>
+    <!-- Guide's table of contents section -->
+    <div id="toc_column" class="collapse inline open">
+        <div id="toc_inner">
+            <div id="close_container">
+                <img id="toc_close_white" src="{{ " /img/toc_close_white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
+            </div>
+            <div id="mobile_close_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+                <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
+            </div>
+            <h3 id="toc_title">Contents</h3>
+            <div id="toc_container">
+                <ul class="sectlevel1"></ul>
+            </div>
+            <div id="toc_separator"></div>
+            {% if page.tags %}
+                <h3 id="tag_title">Tags</h3>
+                <div id="tags_container">
+                    {% for tag in page.tags %}
+                        {% assign lowercase_tag = tag | downcase %}    
+                        {% if visibleTags contains lowercase_tag %}
+                            <a href="/guides?search={{ tag }}&key=tag">{{ tag }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div id="toc_indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
+        <img src="/img/arrow_white.svg" alt="arrow">
+    </div>
+    <div id="toc_line" class="open"></div>
+    <!-- Entire guide section -->
+    <div id="guide_column" class="position_relative open">
+        <div id="guide_content">
+            <!-- Guide header section -->
+            <div id="guide_meta" class="sect1" tabindex="0">
+                <h1 id="guide_title">{{ page.title }}</h1>
+                <div id="duration_container">
+                    <img src="/img/guide_duration_clock_icon_large.svg" alt="duration">
+                    <span id="guide_duration">{{ page.duration }}</span>
+                    <div class="guide_interactive_container">
+                        <img class="interactive_bolt_icon" src="/img/guide_lightning_bolt.svg" alt="Interactive">
+                        <span class="guide_interactive">Interactive</span>
+                    </div>
+                </div>
+                <p>{{ page.description }}</p>
+            </div>
+
+            <!-- This div is used to indicate the original position of the scrollable fixed div. -->
+            <div class="scroller_anchor"></div>
+            <div id="mobile_toc_accordion_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+                <div id="mobile_toc_accordion">
+                    <button class="breadcrumb_hamburger toc-toggle collapsed" type="button" tabindex="0">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <img src="{{ " /img/toc_close_green.svg " | relative }}" class="TOC_Close_SVG hidden img-responsive" alt="Table of contents close button"/>
+                    </button>
+                    <span>Table of contents</span>
+                </div>
+            </div>
+
+            <!-- Guide content section -->
+            {{ content }}
+
+        </div>
+        <div id="guide_section_copied_confirmation">Copied to clipboard</div>
+        <img id="copy_to_clipboard" src='/img/guides_copy_button.svg' alt='Copy code block' title='Copy code block'>
+    </div>
+
+    <!-- Code section -->
+    <div id="code_column" class="position_relative" tabindex="0">
+    </div>
+</div>
+
+{% include end-of-guide.html %}

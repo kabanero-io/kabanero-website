@@ -1,0 +1,398 @@
+/*******************************************************************************
+ * Copyright (c) 2017 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+
+
+/* BLOG */
+
+#background_container {
+    margin-top: 62px;
+
+    @media (max-width: 991.98px) {
+        margin-top: 46px;
+    }
+
+    @media (max-width: 767.98px) {
+        background: none;
+    }
+}
+
+#right_cloud_back {
+    position: fixed;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+}
+
+#right_cloud_front {
+    position: fixed;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+}
+
+#blog_container {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @media (max-width: 991.98px) {
+        width: 100%;
+        padding-top: 46px;
+    }
+
+    @media (max-width: 767.98px) {
+        padding-top: 24px;
+    }
+}
+
+
+/* LEFT COLUMN */
+
+#left_column {
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    @media (min-width: 992px) {
+        position: fixed;
+    }
+
+    @media (max-width: 991.98px) {
+        overflow: hidden;
+        padding-left: 33px;
+        & p {
+            width: 50%;
+            margin-bottom: 35px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        padding-left: 30px;
+        & p {
+            width: 100%;
+        }
+    }
+}
+
+#blog_title {
+    height: 60px;
+    margin-top: 89px;
+
+    @media (max-width: 991.98px) {
+        margin-top: 37px;
+    }
+}
+
+.blog_subtitle {
+    font-size: 24px;
+    margin-top: 33px;
+
+    @media (max-width: 991.98px) {
+        margin-top: 22px;
+    }
+
+    @media (max-width: 767.98px) {
+        color: #212529;
+    }
+}
+
+.blog_subtext {
+    @media (max-width: 767.98px) {
+        color: #212529;
+    }
+}
+
+.kabanero_colored_link {
+    color: #c43804;
+
+    &:hover {
+        color: #cf3b06;
+    }
+
+    @media (max-width: 767.98px) {
+        color: #F69144;
+
+        &:hover {
+            transition: all .2s;
+            color: #E3700D;
+        }
+    }
+    
+}
+
+#ufo_images_desktop {
+    position: relative;
+    margin-top: 30px;
+    float: right;
+    width: 255%;
+}
+
+#ufo_images_tablet {
+    position: absolute;
+    width: 800px;
+    top: -5px;
+    right: 0px;
+}
+
+
+/* RIGHT COLUMN */
+
+#right_column {
+    background: #ffffff;
+
+    @media (max-width: 991.98px) {
+        overflow: hidden;
+    }
+}
+
+.blog_post_column {
+    width: 100%;
+    color: #292828;
+}
+
+.kabanero_colored_bar {
+    font-family: 'IBM Plex Sans';
+    font-size: 35px;
+    color: #FFFFFF;
+    background-color: #c43804;
+    padding-left: 63px;
+    padding-top: 17px;
+    padding-bottom: 11px;
+    margin-bottom: 0px;
+    border-top: 3px solid #292828;
+    
+    @media (max-width: 991.98px) {
+        padding-left: 33px;
+        width: 100vw;
+    }
+
+    @media (max-width: 767.98px) {
+        padding-left: 30px;
+    }
+}
+
+.blog_post_content {
+    width: 100%;
+    padding-top: 40px;
+    padding-left: 63px;
+    padding-right: 63px;
+
+    @media (max-width: 991.98px) {
+        padding-top: 30px;
+        padding-left: 33px;
+        padding-right: 33px;
+    }
+
+    @media (max-width: 767.98px) {
+        padding-top: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.blog_post_title_link {
+    font-family: 'IBM Plex Sans';
+    font-size: 35px;
+    color: #292828;
+    transition: color .2s;
+
+    &:hover {
+        color: #cf3b06;
+    }
+}
+
+.white_text{
+    color:#FFFFFF;
+}
+
+.continued_text {
+    font-size: 16px;
+    color: #F69144;
+}
+
+.blog_post_date_mobile {
+    font-size: 16px;
+    color: #c43804;
+    margin-bottom: 22px;
+}
+
+.blog_post_paragraph {
+    text-align: justify;
+    overflow: hidden;
+    margin-top: 23px;
+    margin-bottom: 35px;
+}
+
+.blog_post_author_data_container {
+    display: inline-block;
+    margin-bottom: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+
+    @media (max-width: 767.98px) {
+        display: none;
+    }
+}
+
+.author_images_container {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.blog_post_author_image {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.blog_post_author_name {
+    font-size: 16px;
+    color: #24253A;
+}
+
+.blog_post_date {
+    font-size: 16px;
+    margin-left: 2px;
+    color: #6f7878;
+}
+
+.read_more_link_container {
+    text-align: right;
+    padding-left: 0px;
+
+    @media (max-width: 767.98px) {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.read_more_link {
+    color: #c43804;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: all .2s;
+
+    &:hover {
+        color: #ce8f78;
+    }
+}
+
+.read_more_link_external {
+    color: #c43804;
+    border: 2px solid #c43804;
+
+    &:hover {
+        color: #ce8f78;
+        border-color: #ce8f78;
+    }
+}
+
+.bottom_border {
+    border-bottom: 1px solid rgba(151, 151, 151, 0.49);
+    
+    @media (max-width: 767.98px) {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+    }
+}
+
+.blog_post_title_condensed {
+    margin-bottom: 30px;
+
+    @media (max-width: 767.98px) {
+        margin-bottom: 8px;
+    }
+}
+
+.blog_post_title_link_condensed {
+    font-family: 'IBM Plex Sans';
+    font-size: 25px;
+    color: #292828;
+    transition: color .2s;
+
+    &:hover {
+        color: #cf3b06;
+    }
+}
+
+#final_post {
+    background-color: #343332;
+    padding: 25px 10px 25px 20px;
+    margin: 0 0 40px 0;
+    border-top:6px solid #C43804;
+    @media (max-width: 991.98px) {
+        text-align: center;
+    }
+    @media (max-width: 767.98px) {
+        display: none;
+    }
+    position: relative;
+    bottom:20px;
+}
+
+@media (min-width: 992px) {
+    #blog_title{
+        font-size:50px;
+    }
+
+    #blog_title, .blog_subtitle, .blog_subtext {
+        padding-left: 63px;
+        padding-right: 63px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #left_column {
+        width: 480px;
+    }
+}
+
+footer {
+    padding-top: 0px;
+    position: relative;
+}
+
+#footer_bottom_container {
+    margin-bottom: 0px;
+    width: 100%;
+    background-color: #C43804;
+}
+
+@media (min-width: 767px) {
+    #footer_bottom_left_section {
+        padding-left: 10%;
+    }
+
+    #footer_bottom_right_section {
+        padding-right: 10%;
+    }
+}
+
+.blogContent{
+    background-color:#f3f5f7 !important;
+    margin: 20px 0 20px 0;
+}
+
+.final_post_title{
+    font-family: 'IBM Plex Sans';
+    font-size: 35px;
+    color: #FFFFFF;
+}
+
+.blogPageTitle{
+    font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
+    font-size: 35px;
+}

@@ -1,0 +1,194 @@
+---
+layout: default
+title: Downloads
+css: downloads
+permalink: /downloads/
+---
+<!-----------------------------------------------------------------------------
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ ------------------------------------------------------------------------------>
+
+<!-- INTRO -->
+<div >
+    <div class="container" id="downloads_intro_text">
+        <div class="row">
+            <div class="col-lg-6">
+                <img id="intro_logo" class="d-none d-lg-block" src="{{ "/img/downloads_title.svg" | relative }}" class="img-fluid" alt="Downloads">
+                <p id="intro_text_1">
+                    Stay up to date with all Kabanero downloads!
+                </p>
+                <p id="intro_text_2">
+                    We recommend using the latest release,
+                    but development builds are also available for use. Once downloaded, you’re ready for lift-off.
+                </p>
+            </div>
+            <div class="col-lg-6 center_content_vertically">
+                <div id="main_download_link_container">
+                    <div id="runtime_download_link_container" class="row">
+                        <a id="runtime_download_link" class="download_link skip_outbound_link_analytics" href="">
+                            <div class="runtime_download_button_label_container">
+                                <div class="runtime_download_button_label">Kabanero</div>
+                                <div class="runtime_button_sub_label" id="runtime_download_button_version">&nbsp</div>
+                            </div>
+                            <div class="arrow"></div>
+                            <div class="line"></div>
+                        </a>
+                    </div>
+                    <div id="eclipse_download_link_container" class="row"> 
+                        <a id="eclipse_developer_tools_download_link" class="download_link skip_outbound_link_analytics" href="">
+                            <div class="eclipse_download_button_label_container">
+                                <div class="eclipse_download_button_label">Eclipse developer tools</div>
+                                <div class="eclipse_button_sub_label" id="eclipse_developer_tools_download_link_version_text">&nbsp</div>
+                            </div>
+                            <div class="arrow"></div>
+                            <div class="line"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- TABS -->
+<div class="container" id="tabs_container">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#runtime_releases" role="tab">Releases</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#development_builds">Development Builds</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#eclipse_developer_tools">Eclipse Developer Tools</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="tab-content">
+
+    <!-- RELEASES -->
+    <div id="runtime_releases" class="container builds_container tab-pane fade show active" role="tabpanel">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="runtime_releases_paragraph" class="section_paragraph">
+                    New releases will be announced on the Kabanero <a href="/blog" class="orange_link_light_background">blog</a>
+                    and <a href="{{site.twitter_url}}" target="_blank" rel="noopener" class="orange_link_light_background">Twitter</a>. 
+                </p>
+                <div id="runtime_releases_table_container" class="narrow_table_container">
+                    <table class="build_table releases_table white_table" data-builds-id="runtime_releases">
+                        <thead>
+                            <tr>
+                                <th class="version_column"><a href="" data-key="version" data-descending="true" class="functional_link sort_link">Newest to Oldest</a></th>
+                                <th class="javaee_download_column">Java EE profile download</th>
+                                <th class="webprofile_download_column">Web profile download</th>
+                                <th class="download_button_column">Full package</th>
+                            </tr>
+                        </thead>
+                        <tbody class="release_table_body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- DEVELOPMENT BUILDS -->
+    <div id="development_builds" class="container builds_container tab-pane fade" role="tabpanel">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="runtime_development_builds_paragraph">
+                    Early adopters may be interested in our daily downloads containing the latest features and bug fixes.
+                </p>
+                <div id="runtime_development_builds_table_container" class="table_container">
+                    <table class="build_table development_builds_table white_table" data-builds-id="runtime_development_builds">
+                        <thead>
+                            <tr>
+                                <th class="date_column"><a href="" data-key="date" data-descending="true" class="functional_link sort_link">Newest to Oldest</a></th>
+                                <th class="tests_passed_column"><a href="" data-key="test_passed" data-descending="false" class="functional_link sort_link">Tests passed<span class="table_header_arrow" aria-hidden="true"></span></a></th>
+                                <th class="view_logs_column">Log details</th>
+                                <th class="download_button_column">Full package</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ECLIPSE DEVELOPER TOOLS -->
+    <div id="eclipse_developer_tools" class="container builds_container tab-pane fade" role="tabpanel">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="eclipse_development_tools_text">
+                    We recommend IDE tools based on Eclipse since it gives you an integrated environment right out of the box. <br>
+                    <a href="https://github.com/OpenLiberty/open-liberty-tools" target="_blank" rel="noopener" class="orange_link_light_background">Learn how to install the tools here</a>. 
+                </p>
+                <div class="clearfix">
+                    <h3 id="eclipse_development_tools_releases_title" class="pull-left">Releases</h3>
+                </div>
+                <div id="eclipse_development_tools_releases_table_container" class="narrow_table_container">
+                    <table class="build_table releases_table white_table" data-builds-id="developer_tools_releases">
+                        <thead>
+                            <tr>
+                                <th class="date_column"><a href="" data-key="version" data-descending="true" class="functional_link sort_link">Newest to Oldest</a></th>
+                                <th class="download_button_column">Full package</th>
+                            </tr>
+                        </thead>
+                        <tbody class="release_table_body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="clearfix">
+                    <h3 id="eclipse_development_tools_development_builds_title" class="pull-left">Development builds</h3>
+                </div>
+                <div id="eclipse_development_tools_development_builds_table_container" class="table_container">
+                    <table class="build_table development_builds_table white_table" data-builds-id="developer_tools_development_builds">
+                        <thead>
+                            <tr>
+                                <th class="date_column"><a href="" data-key="date" data-descending="true" class="functional_link sort_link">Newest to Oldest</a></th>
+                                <th class="tests_passed_column"><a href="" data-key="test_passed" data-descending="false" class="functional_link sort_link">Tests passed<span class="table_header_arrow" aria-hidden="true"></span></a></th>
+                                <th class="view_logs_column">Log details</th>
+                                <th class="download_button_column">Full package</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="bottom_images_container" class="container">
+    <p id="more_downloads_text">
+        More downloads are on the way.<br>
+        Check back soon!
+    </p>
+</div>

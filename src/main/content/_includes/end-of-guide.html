@@ -1,0 +1,86 @@
+<!-----------------------------------------------------------------------------
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ ------------------------------------------------------------------------------>
+
+<div id="end_of_guide">
+        <h2 tabindex="0">Nice work! Where to next?</h2>
+        <div id="end_of_guide_left_section">
+            <p id="guide_attribution"></p>
+            <h3 id="improve_guide_feedback">What could make this guide better?</h3>
+            {% if page.layout == 'guide' or page.layout == 'guide-multipane' %}
+                <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/guide-{{page.url | replace: '/guides/', ''}}/issues">Raise an issue</a> to share feedback</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/guide-{{page.url | replace: '/guides/', ''}}/pulls">Create a pull request</a> to contribute to this guide</p>
+            {% elsif page.layout == 'iguide-multipane' %}
+                <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/iguide-{{page.url | replace: '/guides/', ''}}/issues">Raise an issue</a> to share feedback</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/iguide-{{page.url | replace: '/guides/', ''}}/pulls">Create a pull request</a> to contribute to this guide</p>
+            {% endif %}
+
+            <h3 id="need_help">Need help?</h3>
+            <p><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/open-liberty">Ask a question on Stack Overflow</a></p>
+
+            <h3 id="feedback_rating_question">What did you think of this guide?</h3>
+            <div id="feedback_ratings">
+                <img class="guide_rating" id="extreme_dislike" src="/img/1_Extreme_Dislike.png" alt="Extreme Dislike" data-guide-rating="1" tabindex="0" aria-label="Rate this guide as extreme dislike">
+                <img class="guide_rating" id="dislike" src="/img/2_Dislike.png" alt="Dislike" data-guide-rating="2" tabindex="0" aria-label="Rate this guide as dislike">
+                <img class="guide_rating" id="like" src="/img/3_Like.png" alt="Like" data-guide-rating="3" tabindex="0" aria-label="Rate this guide as like">
+                <img class="guide_rating" id="extreme_like" src="/img/4_Extreme_Like.png" alt="Extreme Like" data-guide-rating="4" tabindex="0" aria-label="Rate this guide as extreme like">
+            </div>
+
+        </div>
+        <div id="end_of_guide_right_section">
+            <h3 id="where_to_next">Where to next?</h3>
+
+            {% if page.layout == 'iguide-multipane' %}
+                <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/iguide-{{page.url | replace: '/guides/', ''}}/tree/master/finish">Download the sample application for this guide bundled with Kabanero on github</a></p>
+                <br>
+            {% endif %}
+            {% if page.categories %}
+            <p>Keep exploring <b>{{ page.categories }}</b> with these guides.</p>
+            {% endif %}
+
+            <!-- Related guides section -->
+            {% if page.related-guides %}
+            <div id="related-guides">
+                <div id="related-guides-cards" class="row">
+                {% for related-guide in page.related-guides %}
+                    {% assign url = '/guides/' | append: related-guide %}
+                    {% assign list = site.pages | where: 'permalink', url %}
+                    {% unless list == empty %}
+                        <!-- Only create a card if we find the permalink -->
+                        {% assign related-guide-metadata = list[0] %}
+                        <div class="col-sm-12 col-lg-6">
+                            <a href="/guides/{{related-guide}}.html" class="small_guide_item">
+                                <div class="guide_title_container">
+                                    <h3 class="guide_title">{{related-guide-metadata.title}}</h3>
+                                </div>
+                                <img class="duration_clock_icon" src="/img/guide_duration_clock_icon_small.svg" alt="Duration">
+                                <span class="guide_duration">{{related-guide-metadata.duration}}</span>
+                                {% if related-guide-metadata.layout == 'interactive-guide' or related-guide-metadata.layout == 'iguide-multipane' %}
+                                <div class="guide_interactive_container">
+                                  <img class="interactive_bolt_icon" src="/img/guide_lightning_bolt.svg" alt="Interactive">
+                                  <span class="guide_interactive">Interactive</span>
+                                </div>
+                                {% endif %}
+                            </a>
+                        </div>
+                    {% endunless %}
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>

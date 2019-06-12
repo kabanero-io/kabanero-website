@@ -33,11 +33,11 @@ import javax.ws.rs.core.Application;
 public class KabaneroEndpoints extends Application {
     
     @GET
-    @Path("builds")
+    @Path("health")
     @Produces({ "application/json" })
-    public JsonObject status() {
-        // leaving this as a template for when we need backend logic
-        return Json.createObjectBuilder().build();
+    public JsonObject health() {
+        // healthcheck endpoint
+        return Json.createObjectBuilder().add("status", "ok").build();
     }
 
 }

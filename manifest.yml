@@ -5,7 +5,6 @@ applications:
   instances: 1
   disk_quota: 1024M
   path: target/kabanero.war
-  buildpacks:
-    - liberty-for-java
+  buildpack: liberty-for-java
   env:
     JBP_CONFIG_LIBERTY: 'app_archive: {features: ["microProfile-1.0","webCache-1.0"]}'

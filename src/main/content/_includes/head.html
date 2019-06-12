@@ -43,7 +43,7 @@
     {% asset {{css_name}}.css %}
   {% endfor %}
 
-  {% if jekyll.environment == 'production' %}
+  {% if jekyll.environment == 'production' and site.google_tag_manager %}
     {% include google_tag_manager_head.html %}
   {% endif %}
 

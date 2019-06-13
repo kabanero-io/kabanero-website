@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Requires >= Python 3.6
 
 # Smoke test for ibmcloud-cf-push.sh blue green deploy.
 # The CF blue-green-deploy plugin passes in the FQDN of the new idle app to this script before it attaches the live route to it.

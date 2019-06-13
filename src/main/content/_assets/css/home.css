@@ -66,6 +66,11 @@
     background-color: #5d5d5d;
     color: #bfbfbf;
     border:1px solid #C43804;
+    cursor: pointer;
+}
+
+.open_source_platform_box:hover{
+    border-color: #fbae61;
 }
 
 .open_source_platform_box_selected{

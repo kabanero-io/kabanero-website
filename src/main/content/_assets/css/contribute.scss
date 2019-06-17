@@ -18,6 +18,9 @@
  
 /* INTRO */
 
+//declare variables
+$color-kabanero:#C43804;
+
 #contribute_intro_background {
     padding-top: 190px;
     padding-bottom: 115px;
@@ -59,7 +62,7 @@
 #getting_started_bar {
     width: 64px;
     height: 7px;
-    background-color: #C43804;
+    background-color: $color-kabanero;
     margin-bottom: 26px;
 }
 
@@ -184,7 +187,7 @@
 #the_future_of_kabanero_bar {
     width: 64px;
     height: 7px;
-    background-color: #C43804;
+    background-color: $color-kabanero;
     margin-bottom: 24px
 }
 
@@ -218,7 +221,7 @@
 #more_ways_to_connect_bar {
     width: 64px;
     height: 7px;
-    background-color: #C43804;
+    background-color: $color-kabanero;
     margin-bottom: 26px;
 }
 
@@ -250,8 +253,8 @@
 
 .btn-kabanero{
     color:#FFFFFF;
-    background-color:#C43804;
-    border-color:#C43804
+    background-color:$color-kabanero;
+    border-color:$color-kabanero
 }
 
 .guidelinesText{

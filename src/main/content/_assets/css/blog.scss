@@ -12,6 +12,9 @@
 
 /* BLOG */
 
+//declare variables
+$color-kabanero:#C43804;
+
 #background_container {
     margin-top: 62px;
 
@@ -109,7 +112,7 @@
 }
 
 .kabanero_colored_link {
-    color: #c43804;
+    color: $color-kabanero;
 
     &:hover {
         color: #cf3b06;
@@ -160,7 +163,7 @@
     font-family: 'IBM Plex Sans';
     font-size: 35px;
     color: #FFFFFF;
-    background-color: #c43804;
+    background-color: $color-kabanero;
     padding-left: 63px;
     padding-top: 17px;
     padding-bottom: 11px;
@@ -218,7 +221,7 @@
 
 .blog_post_date_mobile {
     font-size: 16px;
-    color: #c43804;
+    color: $color-kabanero;
     margin-bottom: 22px;
 }
 
@@ -276,7 +279,7 @@
 }
 
 .read_more_link {
-    color: #c43804;
+    color: $color-kabanero;
     font-size: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -290,8 +293,8 @@
 }
 
 .read_more_link_external {
-    color: #c43804;
-    border: 2px solid #c43804;
+    color: $color-kabanero;
+    border: 2px solid $color-kabanero;
 
     &:hover {
         color: #ce8f78;
@@ -332,7 +335,7 @@
     background-color: #343332;
     padding: 25px 10px 25px 20px;
     margin: 0 0 40px 0;
-    border-top:6px solid #C43804;
+    border-top:6px solid $color-kabanero;
     @media (max-width: 991.98px) {
         text-align: center;
     }
@@ -368,7 +371,7 @@ footer {
 #footer_bottom_container {
     margin-bottom: 0px;
     width: 100%;
-    background-color: #C43804;
+    background-color: $color-kabanero;
 }
 
 @media (min-width: 767px) {

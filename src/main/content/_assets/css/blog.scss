@@ -27,20 +27,6 @@ $color-kabanero:#C43804;
     }
 }
 
-#right_cloud_back {
-    position: fixed;
-    width: 50%;
-    bottom: 0;
-    right: 0;
-}
-
-#right_cloud_front {
-    position: fixed;
-    width: 50%;
-    bottom: 0;
-    right: 0;
-}
-
 #blog_container {
     max-width: 1440px;
     margin: 0 auto;
@@ -128,21 +114,6 @@ $color-kabanero:#C43804;
     }
     
 }
-
-#ufo_images_desktop {
-    position: relative;
-    margin-top: 30px;
-    float: right;
-    width: 255%;
-}
-
-#ufo_images_tablet {
-    position: absolute;
-    width: 800px;
-    top: -5px;
-    right: 0px;
-}
-
 
 /* RIGHT COLUMN */
 

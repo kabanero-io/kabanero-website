@@ -614,8 +614,7 @@ $color-kabanero:#C43804;
 }
 
 .getInvolved{
-    position:relative;
-    top:16px;
+    margin: 10px 0 10px 0;
 }
 
 .getInvolvedCol{
@@ -646,8 +645,4 @@ $color-kabanero:#C43804;
     border: 1px solid #D8DCDE;
     padding: 25px;
     margin: 0 15px 0 15px;
-}
-
-.term_box:nth-of-type(2){
-    margin-left: 50px;
 }

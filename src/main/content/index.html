@@ -661,36 +661,40 @@ seo-title: Kabanero
         <div class="row">
             <div class="col-xl-6">
                 <div class="row visitBlogRow">
-                    <h3 class="col-md-5 visitText">Visit our Blog!</h3>
-                    <div class="col-md-3"></div>
-                    <a role="button" class="btn col-md-3 visitBlogButton kabaneroColoredButton" href="/blog">Visit</a>
+                    <div class="col-xl">
+                        <div class="row container">
+                            <h3 class="col-md-5 visitText">Visit our Blog!</h3>
+                            <div class="col-md-3"></div>
+                            <a role="button" class="btn col-md-3 visitBlogButton kabaneroColoredButton" href="/blog">Visit</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="row emptyRow"></div>
                 {% for post in site.posts limit:2 %}
                     <div class="row blog_post_row">
                         <div class="col-xl blog_post_column">
-                            <div class="row">
+                            <div class="row container">
                                 <div class="blogHeader">
                                     <img src="{{ post.author_picture }}" class="blog_post_author_image" alt="Blog author picture">
                                     <a class="blog_post_author_name" href="{{ post.author_github }}">{{ post.author }}</a>
                                     <span class="blog_post_date">on {{ post.date | date: "%B %d, %Y" }}</span>
                                 </div>
                             </div>
-                            <div class="row titleRow">
+                            <div class="row titleRow container">
                                 {% if post.redirect_link %}
                                     <h2><a href="{{ post.redirect_link }}" class="blogTitle">{{ post.title | escape }}</a></h2>
                                 {% else %}
                                     <h2><a href="{{ post.url | relative_url }}" class="blogTitle">{{ post.title | escape }}</a></h2>
                                 {% endif %}
                             </div>
-                            <div class="row">
+                            <div class="row container">
                                 {% if post.redirct_link %}
                                     <p>{{ post.seo-description | escape }}</p>
                                 {% else %}
                                     <p>{{ post.seo-description | escape }}</p>
                                 {% endif %}
                             </div>
-                            <div class="row">
+                            <div class="row container">
                                 <div class="text-right">
                                 {% if post.redirect_link %}
                                     <a href="{{ post.redirect_link }}" class="blogReadMore">Read more</a>
@@ -705,15 +709,22 @@ seo-title: Kabanero
                 {% endfor %}
                 <div class="row">
                     <div class="col-xl stackOverFlowCol">
-                        <h3 class="floatLeft">Find us on Stack Overflow</h3>
-                        <a target="_blank" href="{{site.stackoverflow_url}}">
-                            <img src="/img/stack_overflow_orange.svg" class="img-fluid stackOverflowImg">
-                        </a>
+                        <div class="row container">
+                            <div class="col-xl-6">
+                                <h3 class="floatLeft">Find us on Stack Overflow</h3>
+                            </div>
+                            <div class="col-xl-6">
+                                <a target="_blank" href="{{site.stackoverflow_url}}">
+                                    <img src="/img/stack_overflow_orange.svg" class="img-fluid stackOverflowImg">
+                                </a>
+                            </div>
+                        </div>
+                            
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-12 getInvolvedCol">
-                        <div class="row">
+                        <div class="row container">
                             <h3 class="col-md-6 getInvolved">Get Involved!</h3>
                             <a role="button" class="btn kabaneroColoredButton contributeButton col-md-5" href="/contribute">Contribute to Kabanero</a>
                         </div>
@@ -727,7 +738,7 @@ seo-title: Kabanero
                 </div>
                 <div class="row">
                     <div class="col-xl stackOverFlowCol">
-                        <div class="row">
+                        <div class="row container">
                             <div class="col-md-10">
                                 <div class="row">
                                     <h3 class="slackText">Chat with us on Slack</h3>
@@ -748,7 +759,7 @@ seo-title: Kabanero
                 </div>
                 <div class="row">
                     <div class="col-xl getInvolvedCol">
-                        <div class="row">
+                        <div class="row container">
                             <h3 class="col-md-6 getInvolved">See what's cooking!</h3>
                             <a role="button" class="btn kabaneroColoredButton communityButton col-md-5" href="/community">Join the Community</a>
                         </div>

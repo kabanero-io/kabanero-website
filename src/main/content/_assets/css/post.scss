@@ -9,6 +9,8 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
+//decalre variables
+$color-kabanero:#C43804;
 
  #background_container {
     padding-top: 20px;
@@ -151,7 +153,7 @@
         padding-top: 20px;
     }
 
-    border-top: 6px solid #C43804
+    border-top: 6px solid $color-kabanero
 }
 
 #twitter_link {
@@ -219,7 +221,7 @@
 }
 
 .leftArrow{
-    border: solid #c43804;
+    border: solid $color-kabanero;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 4px;
@@ -230,7 +232,7 @@
 }
 
 .kabanero_colored_link {
-    color: #c43804;
+    color: $color-kabanero;
 
     &:hover {
         color: #cf3b06;

@@ -9,6 +9,10 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
+//Declare variable
+$color-kabanero:#C43804;
+
+
 /* BODY */
 body {
     font-family:  'IBM Plex Sans', Trebuchet MS, Helvetica, Arial;
@@ -124,7 +128,7 @@ a {
 }
 
 .light_green_link_dark_background, .light_green_link_dark_background:focus {
-    color: #C43804;
+    color: $color-kabanero;
 }
 
 .light_green_link_dark_background:hover {
@@ -208,7 +212,7 @@ a {
 }
 
 .link_blue_border:hover {
-    border-color: #C43804;
+    border-color: $color-kabanero;
 }
 
 .link_blue_border div {
@@ -224,7 +228,7 @@ a {
 }
 
 .link_blue_border:hover div:last-child {
-    color: #C43804;
+    color: $color-kabanero;
 }
 
 .link_green_download_arrow {
@@ -277,19 +281,19 @@ a {
 }
 
 .link_green_border {
-    border-color: #C43804;
+    border-color: $color-kabanero;
 }
 
 .link_green_border:hover {
-    border-color: #C43804;
+    border-color: $color-kabanero;
 }
 
 .link_green_border div {
-    color: #C43804;
+    color: $color-kabanero;
 }
 
 .link_green_border div:last-child {
-    color: #C43804;
+    color: $color-kabanero;
 }
 
 
@@ -309,18 +313,18 @@ a {
 }
 
 .white_red_gradient_background {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#c43804));
-    background-image: -webkit-linear-gradient(top, #FFFFFF, #c43804);
-    background-image: -moz-linear-gradient(top, #FFFFFF, #c43804);
-    background-image: linear-gradient(to bottom, #FFFFFF, #c43804);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to($color-kabanero));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, $color-kabanero);
+    background-image: -moz-linear-gradient(top, #FFFFFF, $color-kabanero);
+    background-image: linear-gradient(to bottom, #FFFFFF, $color-kabanero);
     color: #292828;
 }
 
  .red_white_gradient_background {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#c43804), to(#FFFFFF));
-    background-image: -webkit-linear-gradient(top, #c43804, #FFFFFF);
-    background-image: -moz-linear-gradient(top, #c43804, #FFFFFF);
-    background-image: linear-gradient(to bottom, #c43804, #FFFFFF);
+    background-image: -webkit-gradient(linear, left top, left bottom, from($color-kabanero), to(#FFFFFF));
+    background-image: -webkit-linear-gradient(top, $color-kabanero, #FFFFFF);
+    background-image: -moz-linear-gradient(top, $color-kabanero, #FFFFFF);
+    background-image: linear-gradient(to bottom, $color-kabanero, #FFFFFF);
     color: #292828;
 }
 
@@ -353,7 +357,7 @@ footer {
 #footer_kabanero_background {
     color: #FFFFFF;
     background-color: #292828;
-    border-top: 6px solid #C43804;
+    border-top: 6px solid $color-kabanero;
 }
 
 #footer_top_container {
@@ -442,7 +446,7 @@ footer {
 
 #footer_bottom_container {
     color: #FFFFFF;
-    background-color: #C43804;
+    background-color: $color-kabanero;
 
     @media (min-width: 767px) {
         #footer_bottom_left_section {

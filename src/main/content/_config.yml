@@ -23,6 +23,8 @@ asciidoctor:
     - coderay-css=class
     - allow-uri-read
 
+google_tag_manager: UA-140304192-1
+
 markdown: kramdown
 
 assets:

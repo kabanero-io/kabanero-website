@@ -19,41 +19,39 @@
 <header>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button id="navbar_responsive_button" class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" aria-label="Kabanero Home Page" class="navbar-brand" style="color: #FFFFFF">
-                    A
-                </a>
-                <div id="doc_title">
-                    <img src="{{ "/img/doc_header_title.svg" | relative }}" alt="Docs">
+            <div class="row nav-row">
+                <div class="navbar-header">
+                    <button id="navbar_responsive_button" class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="/guides">Guides</a>
-                    </li>
-                    <!-- Single button -->
-                    <li id="reference_dropdown_container" class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle reference_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Reference <span id="reference_caret" class="hidden-md hidden-lg"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="/docs/ref/javaee/">Java EE API</a></li>
-                                <li><a href="/docs/ref/microprofile/">MicroProfile API</a></li>
-                                <li><a href="/docs/ref/general/">General</a></li>
-                            </ul>
-                    </li>
-                </ul>
-                <div id="header_round_links_container" class="visible-xs">
-                    <a id="header_twitter_link" class="header_round_btn" href="{{site.twitter_url}}" target="_blank" rel="noopener" aria-label="Twitter"></a>
-                    <a id="header_stackoverflow_link" class="header_round_btn" href="{{site.stackoverflow_url}}" target="_blank" rel="noopener" aria-label="Kabanero questions on Stack Overflow"></a>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <img id="kabanero_nav_img" src="/img/Kabanero_logo_white.png" class="img-fluid" alt="Kabanero Nav image">
+                    <a id="header-title" class="navbar-brand" href="/">{{site.title}}</a>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="/guides">Guides</a>
+                        </li>
+                        <!-- Single button -->
+                        <li id="reference_dropdown_container" class="btn-group">
+                                <button type="button" class="btn-default dropdown-toggle reference_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Reference <span id="reference_caret" class="hidden-md hidden-lg"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/docs/ref/javaee/">Java EE API</a></li>
+                                    <li><a href="/docs/ref/microprofile/">MicroProfile API</a></li>
+                                    <li><a href="/docs/ref/general/">General</a></li>
+                                </ul>
+                        </li>
+                    </ul>
+                    <div id="header_round_links_container" class="visible-xs">
+                        <a id="header_twitter_link" class="header_round_btn" href="{{site.twitter_url}}" target="_blank" rel="noopener" aria-label="Twitter"></a>
+                        <a id="header_stackoverflow_link" class="header_round_btn" href="{{site.stackoverflow_url}}" target="_blank" rel="noopener" aria-label="Kabanero questions on Stack Overflow"></a>
+                    </div>
                 </div>
             </div>
             <!-- Add breadcrumb for all pages except /docs -->

@@ -30,8 +30,8 @@
     z-index: 9999;
 }
 
-.nav-row{
-    width: 100%
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF;
 }
 
 nav .container-fluid {
@@ -59,7 +59,7 @@ nav .container-fluid {
     padding: 10px 15px;
 }
 
-.container-fluid > .navbar-header {
+.navbar-header {
     padding-left: 30px;
     padding-top: 10px;
     background-color: #c43804;
@@ -80,12 +80,12 @@ nav .container-fluid {
 
 #kabanero_nav_img{
     height: 30px;
-    margin: 3px 0 5px 50px;
+    margin: 15px 0 5px 80px;
     float: left;
 }
 
 #header-title{
-    margin-left: 5px;
+    margin: 12px 0 0 5px;
     color: #FFFFFF;
     font-size: 1.8em;
     font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
@@ -117,7 +117,7 @@ nav .container-fluid {
 
 #header_background {
     padding-top: 101px;
-    background-color: #313653;
+    background-color: #c43804;
     background-image: none;
 }
 
@@ -272,7 +272,7 @@ nav .container-fluid {
 
 #breadcrumb_row .selected_javadoc__version {
     color: #f4914d;
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
 }
 
 #breadcrumb_row a.selected_javadoc__version:hover {
@@ -290,8 +290,8 @@ nav .container-fluid {
     }
 
     .navbar-default .navbar-collapse {
-        background-image: radial-gradient(circle at top right, #5E6B8D 0%, #2C2E50 91%);
-        border-bottom: 2px solid #FAFFC7;
+        background-image: radial-gradient(circle at top right, #c43804 0%, #e3690a 91%);
+        border-bottom: 2px solid #292828;
     }
 
     .qa-descriptor {
@@ -319,7 +319,7 @@ nav .container-fluid {
     }
 
     #navbar_responsive_button {
-        background-color: #313653;
+        background-color: #c43804;
     }
 
     #header_background {
@@ -335,7 +335,7 @@ nav .container-fluid {
     }
 
     .navbar {
-        background-color: #313653;
+        background-color: #c43804;
         position: static;
     }
 
@@ -344,11 +344,12 @@ nav .container-fluid {
         color: #FAFFC7;
     }
 
-    .navbar-default .navbar-nav > li > a, #reference_dropdown_container > .btn {
-        font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    .navbar-default .navbar-nav > li > a, #reference_dropdown_container > button {
+        font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
         font-size: 35px;
         color: #FFFFFF;
         margin-left: 0px;
+        padding-left: 0px;
     }
 
     .navbar-nav {

@@ -275,28 +275,6 @@
     }
 }
 
-@media (min-width: 1441px) {
-    #star1 {
-        left: 443px;
-    }
-    
-    #star2 {
-        left: 539px;
-    }
-    
-    #star3 {
-        left: 66px;
-    }
-    
-    #ufo {
-        left: 224px;
-    }
-    
-    #leftcloud {
-        left: 0px;
-    }
-}
-
 @media (max-width: 991.98px) {
     #docs_intro_container {
         margin-right: auto;
@@ -310,6 +288,10 @@
 
 @media (max-width: 767.98px) {
     #header_background {
+        padding-top: 0;
+    }
+
+    #docs_title {
         padding-top: 0;
     }
 }

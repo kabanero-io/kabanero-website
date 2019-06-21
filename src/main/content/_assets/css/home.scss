@@ -28,6 +28,20 @@ $color-kabanero:#C43804;
     margin-top: 50px;
 }
 
+.videoWrapper {
+	position: relative;
+	padding-bottom: 35%;
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 10%;
+	width: 77%;
+	height: 100%;
+}
+
 .video{
     background-color: #292828;
     color: white;
@@ -162,7 +176,7 @@ $color-kabanero:#C43804;
     border: none;
     padding: 0px;
     text-align: center;
-    margin: 0 15px -5px 15px;
+    margin: 0 15px 5px 15px;
 }
 
 .usage_video > iframe {

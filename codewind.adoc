@@ -6,5 +6,12 @@ You can use Codewind to develop Node.js, Spring, and Liberty projects.  In this 
 
 == Getting Started
 
-This guide assumes that you've already https://microclimate.dev/codewindtechpreview#installing-codewind[installed Codewind].
+This guide assumes that you've already completed the steps of https://microclimate.dev/codewindtechpreview#installing-codewind[this guide to install Codewind].
 
+== Create a new Codewind Project in Eclipse
+
+1. Open the Project Exploerer view (Window -> Show View -> Project Explorer) and select "Create a Project".  
+1. In the New Project window, drop down the Codewind folder and select "New Project" then click "Next".
+1. Select a name for your new project, select the project template, and click "Finish"
+1. Open the Codewind Explorer view (Window -> Show View -> Other -> Codewind -> Codewind Explorer). Your new project will take some time to build.
+1. Once the build completes and the project is running, right click on the project and select "Open Application" to see your selected template running.

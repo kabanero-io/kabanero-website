@@ -1,0 +1,10 @@
+= Starting a Project with Codewind
+
+== What you'll Learn
+
+You can use Codewind to develop Node.js, Spring, and Liberty projects.  In this guide, we'll provide examples of each.
+
+== Getting Started
+
+This guide assumes that you've already https://microclimate.dev/codewindtechpreview#installing-codewind[installed Codewind].
+

@@ -16,7 +16,7 @@ echo `ruby -v`
 
 # Development environment only actions
 if [ "$JEKYLL_ENV" != "production" ]; then 
-    echo "Not in production environment..."
+    echo "Not in production environment...blahblahblah"
     # Guides that are ready to be published to the Code Conjuring site
     echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb

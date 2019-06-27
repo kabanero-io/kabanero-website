@@ -95,7 +95,7 @@ permalink: /guides/
         <p><b class="essential">{{basic-essential-guides.size}} essentials</b></p>
     </div>
     <div class="essential row">
-        {% for guide in basic-essential-guides %}
+        {% for guide in all-guides %}
         <div class="guide_column col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <a href="{{ guide.url }}.html" class="guide_item" data-title="{{ guide.title | downcase }}" data-description="{{ guide.description | downcase }}" data-tags="{{ guide.tags | join: ' ' | downcase }}" data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
                 <div class="guide_title_and_description_container">

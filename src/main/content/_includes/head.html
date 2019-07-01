@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   {% endif %}
 
+
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
@@ -32,7 +33,51 @@
   <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  {% asset kabanero.css %}
+  <link rel="stylesheet" type="text/css" href="{{ assets['kabanero.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['coderay-custom.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['header.scss'].digest_path | remove: site.baseurl}}">
+
+  {% if page.title == "Blog" %}
+  <link rel="stylesheet" type="text/css" href="{{ assets['blog.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['guide-card.css'].digest_path | remove: site.baseurl}}">
+  {% else %}
+  <link rel="stylesheet" type="text/css" href="{{ assets['home.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['blog.scss'].digest_path | remove: site.baseurl}}">
+  {% endif %}
+
+  <!-- <link rel="stylesheet" type="text/css" href="{{ assets['404page.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['about.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['sciidoctor-default.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['commonConfigFeature.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['community.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['footer.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['doc-header.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['header-light.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['issues.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['stacks.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['support.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['issues.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['contribute.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['docs.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['downloads.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['general-reference.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['guides.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['grid.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['toc.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['overview.scss'].digest_path | remove: site.baseurl}}"> 
+  <link rel="stylesheet" type="text/css" href="{{ assets['guide-multipane.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['guide.scss'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['server-command.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['server-command.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['iguide.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['intro.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['end-of-guide.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['feature.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['config.css'].digest_path | remove: site.baseurl}}">
+  <link rel="stylesheet" type="text/css" href="{{ assets['coderay-asciidoctor.css'].digest_path | remove: site.baseurl}}"> -->
+
+
+  <!-- {% asset kabanero.css %}
   {% asset coderay-custom.css %}
 
   {% for css_name in layout.css %}
@@ -41,7 +86,8 @@
 
   {% for css_name in page.css %}
     {% asset {{css_name}}.css %}
-  {% endfor %}
+  {% endfor %} -->
+
 
   {% if jekyll.environment == 'production' and site.google_tag_manager %}
     {% include google_tag_manager_head.html %}
@@ -50,7 +96,7 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   <link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet">
-  
+
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
 

@@ -24,11 +24,33 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {% endif %}
+<script src="{{ assets['home.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['stacks.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['twitterWidgets.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['header.js'].digest_path | remove: site.baseurl}}"></script>
 
-{% for js_name in page.js %}
-  {% asset {{js_name}}.js %}
-{% endfor %}
+<!-- <script src="{{ assets['features.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['guide-multipane.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['configs.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['devEnvironment.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['guide-utils.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['guide.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['intro.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['javadoc-search.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['toc.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['javadocs.js'].digest_path | remove: site.baseurl}}">
+<script src="{{ assets['commands.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['stacks.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['support.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['guides.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['general-references.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['commands.js'].digest_path | remove: site.baseurl}}"></script>
+<script src="{{ assets['support.js'].digest_path | remove: site.baseurl}}"></script> -->
 
-{% for js_name in layout.js %}
+<!-- {% for js_name in page.js %}
   {% asset {{js_name}}.js %}
-{% endfor %}
+{% endfor %} -->
+
+<!-- {% for js_name in layout.js %}
+  {% asset {{js_name}}.js %}
+{% endfor %} -->

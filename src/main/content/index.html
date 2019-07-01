@@ -8,8 +8,12 @@ js:
 css:
 - home
 - blog
+languages:
+- en
+- de
 seo-title: Kabanero
 ---
+
 <!-- INTRO -->
 <div class="neutral_background">
     <div class="container">
@@ -667,7 +671,7 @@ seo-title: Kabanero
                         <div class="row container">
                             <h3 class="col-md-5 visitText">Visit our Blog!</h3>
                             <div class="col-md-3"></div>
-                            <a role="button" class="btn col-md-3 visitBlogButton kabaneroColoredButton" href="/blog">Visit</a>
+                            <a role="button" class="btn col-md-3 visitBlogButton kabaneroColoredButton" href="{{ '/blog' | prepend: site.baseurl }}"/>Visit</a>
                         </div>
                     </div>
                 </div>

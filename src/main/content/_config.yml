@@ -43,6 +43,12 @@ plugins:
   - jekyll-assets
   - ol-asciidoc
   - jekyll-minifier
+  - jekyll-multiple-languages-plugin
+
+# jekyll-multiple-languages-plugin settings:
+languages: ["en", "it", "es"]
+exclude_from_localizations: ["javascript", "images", "css", "scripts", "favicon.ico"]
+
 exclude:
   - vendor # TravisCI bundles all gems in the vendor directory on its build servers, which Jekyll will mistakenly read and explode on.
   - docs/templates

@@ -1,9 +1,9 @@
 ---
 layout: default
-css: 
+css:
 - post
 - header
-js: 
+js:
 - header
 ---
 <!-----------------------------------------------------------------------------
@@ -23,6 +23,7 @@ js:
  - limitations under the License.
  -
  ------------------------------------------------------------------------------>
+<link rel="stylesheet" type="text/css" href="{{ assets['post.scss'].digest_path | remove: site.baseurl}}">
 
 <div id="background_container">
     <div class="container">
@@ -36,7 +37,7 @@ js:
                 <div id="article_container">
                     <article class="post" itemscope itemtype="http://schema.org/BlogPosting" aria-label="article">
                         <div class="postPadding">
-                            <header>                        
+                            <header>
                                 <div class="post_information_container">
                                     <img src="{{ page.author_picture }}" id="author_image" alt="image of author">
                                     <div id="post_information">

@@ -6,13 +6,13 @@
       var currentLanguage = `{{site.lang}}`
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       `{% for lang in site.translations  %}`
-      if((currentLanguage !== selectedLanguage) && (`{{lang[0]}}` === selectedLanguage)){
+      if(currentLanguage !== selectedLanguage && `{{lang[0]}}` === selectedLanguage){
         switch(selectedLanguage){
           case 'en':
               window.location.replace("/");
               break;
           case 'es':
-              window.location.href = '/es/'
+              window.location.replace("/es/");
               break;
               case 'it':
               window.location.replace('/it/');

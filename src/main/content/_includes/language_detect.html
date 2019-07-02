@@ -5,6 +5,7 @@
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       `{% for lang in site.translations  %}`
       if(currentLanguage !== selectedLanguage && `{{lang[0]}}` === selectedLanguage){
+        console.log("working")
         switch(selectedLanguage){
           case 'en':
               window.location.pathname = "/"

@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
- 
+
 /* Nav bar color corrections for light page */
 .navbar-dark .navbar-nav .nav-link {
     color: #5E6B8D;
@@ -16,6 +16,18 @@
 
 .navbar-dark .navbar-nav .nav-link:hover {
     color: #24253A;
+}
+
+.header{
+  font-size: 2.2em;
+}
+
+.get-started-header{
+  text-align: center;
+}
+
+.horizontal-separator{
+  border: 1px solid #D8DCDE;
 }
 
 #ol_nav_title {
@@ -30,7 +42,7 @@
         margin-right: 26px;
         margin-left: 26px;
     }
-    
+
     #fork_button {
         border: none;
         padding-left: 0;
@@ -39,13 +51,13 @@
         border-bottom: 1px solid rgba(201, 214, 254, 0.35);
         border-radius: 0px;
     }
-    
+
     #fork_button:hover {
         color: #FFFFFF;
         border: none;
         border-bottom: 1px solid rgba(201, 214, 254, 0.35);
     }
-    
+
     #fork_button {
         display: block;
     }
@@ -75,7 +87,7 @@ html, body{
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 #downloads_intro_background {
@@ -148,7 +160,7 @@ html, body{
 
 .eclipse_download_button_label_container {
     display: inline-block;
-    width: 353px;    
+    width: 353px;
 }
 
 .runtime_button_sub_label {
@@ -625,7 +637,7 @@ html, body{
 }
 
 .white_table tbody tr td a:hover img{
-    display: inline-block;    
+    display: inline-block;
 }
 
 .white_table tbody a{
@@ -705,7 +717,7 @@ html, body{
     .runtime_download_button_label_container {
         width: 262px;
     }
-    
+
     .eclipse_download_button_label_container {
         width: 258px;
     }
@@ -749,7 +761,7 @@ html, body{
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+
     #cow_text {
         position: relative;
         top: -220px;
@@ -783,4 +795,8 @@ html, body{
         white-space: nowrap;
     }
 
+}
+
+#tutorials-container{
+  margin-top: 3em;
 }

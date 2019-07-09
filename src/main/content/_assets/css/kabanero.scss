@@ -15,9 +15,14 @@ $color-kabanero:#C43804;
 
 /* BODY */
 body {
-    font-family:  'IBM Plex Sans', Trebuchet MS, Helvetica, Arial;
+    font-family: 'IBM Plex Sans', Trebuchet MS, Helvetica, Arial;
 }
 
+code {
+    color: $color-kabanero;
+    background-color: #F5F5F5;
+    padding: 3px;
+}
 
 /* HEADERS */
 
@@ -586,4 +591,14 @@ footer {
 
 .position_relative {
     position: relative;
+}
+
+#codewind_content{
+    margin-top: 30px;
+}
+
+@media (max-width: 767.98px){
+    #codewind_content {
+        margin-top: 76px;
+    }
 }

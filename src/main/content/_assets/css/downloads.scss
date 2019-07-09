@@ -112,7 +112,13 @@ html, body{
 }
 
 #downloads_intro_text {
-    margin-top: 190px;
+    margin-top: 30px;
+}
+
+@media (max-width: 767.98px){
+    #downloads_intro_text {
+        margin-top: 190px;
+    }
 }
 
 #intro_text_1 {
@@ -408,7 +414,7 @@ html, body{
         border-bottom: 1px solid #FFFFFF;
         & > .nav-item > .nav-link {
             border: none;
-            color: #5E6B8D;
+            color: #C43804 !important;
             padding-left: 31px;
             padding-right: 31px;
             padding-top: 15px;
@@ -417,13 +423,14 @@ html, body{
             margin-left: 0px;
             margin-top: 20px;
             font-weight: 500;
+            cursor: pointer;
         }
         & .nav-link.active, .nav-link.active:hover {
             border-top: none;
             border-left: none;
             border-right: none;
-            border-bottom: 4px solid #F69144;
-            color: #F69144;
+            border-bottom: 4px solid #292828;
+            color: #292828;
             background: transparent;
             margin-bottom: -4px;
         }
@@ -434,6 +441,9 @@ html, body{
     }
 }
 
+.download_detail{
+    padding: 50px;
+}
 
 /* RELEASES, DEVELOPMENT BUILDS, ECLIPSE DEVELOPER TOOLS */
 

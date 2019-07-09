@@ -20,12 +20,18 @@
     position: absolute;
     margin: auto;
     top: 0; left: 0; right: 0;
-    border: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid #292828;
     border-radius: 0;
     margin-bottom: 0;
     background: none;
     z-index: 9999;
-    background-color: #d8d8d8;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF;
 }
 
 nav .container-fluid {
@@ -36,6 +42,7 @@ nav .container-fluid {
 #navbar {
     padding-right: 30px;
     padding-top: 10px;
+    background-color: #c43804;
 }
 
 .navbar-default .navbar-collapse {
@@ -52,14 +59,15 @@ nav .container-fluid {
     padding: 10px 15px;
 }
 
-.container-fluid > .navbar-header {
+.navbar-header {
     padding-left: 30px;
     padding-top: 10px;
+    background-color: #c43804;
 }
 
 #navbar_responsive_button {
     border: none;
-    background-color: #131427;
+    background-color: #292828;
 }
 
 #navbar_responsive_button:hover .icon-bar {
@@ -70,14 +78,32 @@ nav .container-fluid {
     color: white;
 }
 
+#kabanero_nav_img{
+    height: 30px;
+    margin: 15px 0 5px 80px;
+    float: left;
+}
+
+#header-title{
+    margin: 12px 0 0 5px;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
+    padding: 1rem 0 0 0;
+}
+
 .navbar-default .navbar-nav > li > a {
-    color: #292828;
+    color: #FFFFFF;
     transition: color .2s;
     margin-left: 10px;
 }
 
+.navbar-nav>li>a {
+    padding-top: 10px;
+}
+
 .navbar-default .navbar-nav > li > a:focus {
-    color: #292828;
+    color: #FFFFFF;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -91,7 +117,7 @@ nav .container-fluid {
 
 #header_background {
     padding-top: 101px;
-    background-color: #313653;
+    background-color: #c43804;
     background-image: none;
 }
 
@@ -102,12 +128,6 @@ nav .container-fluid {
     height: 27px;
 }
 
-#doc_title {
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
 #doc_title > img {
     height: 27px;
     padding-left: 10px;
@@ -116,7 +136,7 @@ nav .container-fluid {
 
 .reference_dropdown {
     font-size:16px;
-    color: #292828;
+    color: #FFFFFF;
     letter-spacing:0;
     text-align:center;
     border: none;
@@ -166,7 +186,7 @@ nav .container-fluid {
 .reference_dropdown:hover, .reference_dropdown:focus, .reference_dropdown:active {
     background-color: inherit;
     border: none;
-    color: white;
+    color: #292828;
 }
 
 .dropdown-menu {
@@ -196,7 +216,7 @@ nav .container-fluid {
 
 #breadcrumb_row .breadcrumb {
     background-color: #a09e9e;
-    padding-left: 30px;
+    padding-left: 62px;
     height: 100%;
     margin-bottom: 0;
     border-radius: 0;
@@ -252,7 +272,7 @@ nav .container-fluid {
 
 #breadcrumb_row .selected_javadoc__version {
     color: #f4914d;
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
 }
 
 #breadcrumb_row a.selected_javadoc__version:hover {
@@ -270,8 +290,8 @@ nav .container-fluid {
     }
 
     .navbar-default .navbar-collapse {
-        background-image: radial-gradient(circle at top right, #5E6B8D 0%, #2C2E50 91%);
-        border-bottom: 2px solid #FAFFC7;
+        background-image: radial-gradient(circle at top right, #c43804 0%, #e3690a 91%);
+        border-bottom: 2px solid #292828;
     }
 
     .qa-descriptor {
@@ -299,7 +319,7 @@ nav .container-fluid {
     }
 
     #navbar_responsive_button {
-        background-color: #313653;
+        background-color: #c43804;
     }
 
     #header_background {
@@ -315,7 +335,7 @@ nav .container-fluid {
     }
 
     .navbar {
-        background-color: #313653;
+        background-color: #c43804;
         position: static;
     }
 
@@ -324,11 +344,12 @@ nav .container-fluid {
         color: #FAFFC7;
     }
 
-    .navbar-default .navbar-nav > li > a, #reference_dropdown_container > .btn {
-        font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    .navbar-default .navbar-nav > li > a, #reference_dropdown_container > button {
+        font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
         font-size: 35px;
         color: #FFFFFF;
         margin-left: 0px;
+        padding-left: 0px;
     }
 
     .navbar-nav {

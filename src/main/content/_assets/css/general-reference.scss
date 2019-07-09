@@ -91,7 +91,7 @@ pre, pre > code, code {
     background-color: #f1f4fe;
     font-family: Courier;
     font-size: 16px;
-    color: #5E6B8D;
+    color: #C43804;
     letter-spacing: 0;
     line-height: 24px;
     border: none;
@@ -176,6 +176,7 @@ tableblock {
 @media (max-width: 767.98px) {
     #background_container {
         height: auto;
+        margin-top: 0px;
     }
 }
 

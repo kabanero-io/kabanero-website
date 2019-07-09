@@ -3,7 +3,7 @@
 # git clone does not like to clone into folders that are populated.  We are doing
 # this sequence of commands to workaround that limitation. 
 # Could _not_ use:
-#   git clone git@github.ibm.com:ICP4APPs/docs.git --branch develop src/main/content
+#   git clone git@github.com:kabanero-io/docs.git --branch develop src/main/content
 
 branch_name="$1"
 
@@ -18,6 +18,6 @@ cd docs
 
 # This is how you clone a repo without autocreating a parent folder with the name of the repo
 # The clone is picky about cloning into a folder that is not empty (src/main/content)
-git clone git@github.ibm.com:ICP4APPs/docs.git --branch $branch_name .
+git clone git@github.com:kabanero-io/docs.git --branch $branch_name .
 popd
 echo "Done cloning docs repository!"

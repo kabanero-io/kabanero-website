@@ -8,23 +8,6 @@ css:
 js: guides
 permalink: /guides/
 ---
-<!-----------------------------------------------------------------------------
- -
- - Copyright 2019 IBM Corporation and others.
- -
- - Licensed under the Apache License, Version 2.0 (the "License");
- - you may not use this file except in compliance with the License.
- - You may obtain a copy of the License at
- -
- -     http://www.apache.org/licenses/LICENSE-2.0
- -
- - Unless required by applicable law or agreed to in writing, software
- - distributed under the License is distributed on an "AS IS" BASIS,
- - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- - See the License for the specific language governing permissions and
- - limitations under the License.
- -
- ------------------------------------------------------------------------------>
 
 <!-- Build a list of all the documents in the guides code base -->
 {% assign static-guides = site.pages | where: 'layout', 'guide' %}
@@ -92,7 +75,8 @@ permalink: /guides/
 </div>
 <div id="guides_basic_container" class="basic_section container">
     <div class="subtitle">
-        <p><b class="essential">{{basic-essential-guides.size}} essentials</b></p>
+        <p><b class="essential">{{basic-essential-guides.size}} essentials </b></p>
+        {% if basic-essential-guides.size == 0 %} <p>We are still cooking up some guides. Please check back later.</p> {% endif %}
     </div>
     <div class="essential row">
         {% for guide in basic-essential-guides %}
@@ -111,7 +95,7 @@ permalink: /guides/
 </div>
 
 
-<!-- MICROPROFILE GUIDES -->
+<!-- MICROPROFILE GUIDES
 <div id="guides_microprofile_banner" class="microprofile_section container">
     <div class="row">
         <div class="col-sm-9">
@@ -151,11 +135,11 @@ permalink: /guides/
         <div class="col-xs-12">
 
             <p id="additional_microprofile_guides">{{microprofile-guides.size}} additional MicroProfile Guides</p>
-            <!----
+            
             <button id="microprofile_more_guides_button" type="button" class="btn">
                 <p><span id="microprofile_more_guides_icon">+</span><b>{{microprofile-guides.size}} additional MicroProfile Guides</b></p>
             </button>
-            -->
+            
         </div>
     </div>
     <div id="microprofile_more_guides" class="row">
@@ -179,9 +163,9 @@ permalink: /guides/
         {% endfor %}
     </div>
 </div>
+-->
 
-
-<!-- MORE GUIDES -->
+<!-- MORE GUIDES
 <div id="guides_additional_banner" class="more_section container">
     <div class="row">
         <div class="col-sm-9">
@@ -217,7 +201,7 @@ permalink: /guides/
         {% endfor %}
     </div>
 </div>
-
+-->
 
 <!-- Zero Search Results -->
 <div id="no_search_results_banner" class="no_results_section container">
@@ -233,9 +217,19 @@ permalink: /guides/
 <div id="no_search_results_container" class="no_results_section container">
     <div class="subtitle">
         <p><b>Sorry, we couldn't find any guides matching <span class="search_term"></span></b></p>
-        <p>Want to see a guide on this topic? <b><a href="https://github.com/OpenLiberty/guides-common/projects/1" class="orange_link_light_background">Check out our project board and raise an issue.</a></b></p>
+        <p>
+            Want to see a guide on this topic? Feel free to 
+            <b>
+                <a href="https://github.com/kabanero-io/kabanero-website" class="orange_link_light_background">
+                    raise an issue.
+                </a>
+            </b>
+        </p>
     </div>
 
-    <button id="back_to_guides_button" class="btn"><img class="arrow" src="/img/guides_arrow_left.svg" alt=""><b>Back to all Kabanero guides</b></button>
+    <button id="back_to_guides_button" class="btn">
+        <img class="arrow" src="/img/guides_arrow_left.svg" alt="">
+        <b>Back to all Kabanero guides</b>
+    </button>
 </div>
     

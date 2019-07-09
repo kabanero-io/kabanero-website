@@ -1,9 +1,8 @@
 ---
 layout: doc
 css:
-- doc-header
+- header
 - toc
-- end-of-guide
 - guide-card
 - guide
 js:
@@ -66,17 +65,7 @@ js:
                 <div id="guide_meta" class="sect1" tabindex="0">
                     <h1 id="guide_title">{{ page.title }}</h1>
                     <div id="duration_container">
-                        <img src="/img/guide_duration_clock_icon_large.svg" alt="duration">
                         <span id="guide_duration">{{ page.duration }}</span>
-                    </div>
-                    <div id="mobile_github_section">
-                            <div id="mobile_github_clone_popup_title"><span class="dark_green_link_light_background">Git clone</span><span> to get going right away:</span></div>
-                        <div id="mobile_github_clone_popup_repo">
-                            <span>git clone https://github.com/OpenLiberty/guide-{{page.url | replace: '/guides/', ''}}.git</span>
-                            <div id="mobile_github_clone_popup_copy" tabindex="0" aria-label="Copy the Github repository clone command">
-                                <img src="/img/guide_copy_button_black.svg" alt="Copy Github clone command">
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -104,12 +93,5 @@ js:
         
     </div>    
 </div>
-
-<div id="end_of_guide_background">
-    <div class="centered_content">
-        {% include end-of-guide.html %} 
-    </div>         
-</div>    
-
 
 

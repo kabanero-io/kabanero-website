@@ -12,13 +12,13 @@ JEKYLL_BUILD_FLAGS=""
 echo "Ruby version:"
 echo `ruby -v`
 
-# Guides that are ready to be published to the Code Conjuring site
-#echo "Cloning repositories with name starting with guide or iguide..."
-#ruby ./scripts/build_clone_guides.rb
+echo "Cloning repositories with name starting with guide or iguide..."
+ruby ./scripts/build_clone_guides.rb
 
 # Development environment only actions
 if [ "$JEKYLL_ENV" != "production" ]; then 
-    echo "Not in production environment..."
+    echo "Not in production environment"
+    # Guides that are ready to be published to the Code Conjuring site
     echo "Adding robots.txt"
     cp robots.txt src/main/content/robots.txt
 

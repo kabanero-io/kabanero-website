@@ -243,13 +243,13 @@
 }
 
 #toc_container > .sectlevel1 > li:not(.liSelected):hover, #toc_container .sectlevel2 > li:not(.liSelected):hover {
-    border-left: 8px solid #fdf2ea;
+    border-left: 8px solid #C4380444;
     font-weight: 500;
     cursor: pointer;
 }
 
 #toc_container > .sectlevel1 > .liSelected, #toc_container .sectlevel2 > .liSelected {
-    background: #fdf2ea;
+    background: #C4380411;
     border-left: 8px solid #f4914d;
     font-weight: 500;
 }
@@ -326,13 +326,13 @@
 
 #toc_container a {
     display: inline-block;
-    color:#5d6a8e;
+    color:#C43804;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 #toc_container a:hover {
-    color:#313653;
+    color:#FF3F0F;
 }
 
 #toc_separator {

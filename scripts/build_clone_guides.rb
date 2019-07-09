@@ -19,7 +19,7 @@ cloneDraftGuides = ARGV[0]
 # --------------------------------------------
 client = Octokit::Client.new :access_token => ENV['PAT']
 client.auto_paginate = true
-repos = client.org_repos('OpenLiberty')
+repos = client.org_repos('kabanero-io')
 
 # --------------------------------------------
 # Travis CI related steps
@@ -49,11 +49,11 @@ repos.each do |element|
         # Clone guides that are still being drafted and are only for the staging website
         if repo_name.start_with?('draft-iguide') || repo_name.start_with?('draft-guide')
             # Clone the draft guides, using the dev branch for travis and master for all other environments.
-            `git clone https://github.com/OpenLiberty/#{repo_name}.git -b #{guide_branch} src/main/content/guides/#{repo_name}`
+            `git clone https://github.com/kabanero-io/#{repo_name}.git -b #{guide_branch} src/main/content/guides/#{repo_name}`
 
             # Clone the default branch if the guide_branch does not exist for this guide repo.
             if !(directory_exists?(repo_name))
-                `git clone https://github.com/OpenLiberty/#{repo_name}.git src/main/content/guides/#{repo_name}`
+                `git clone https://github.com/kabanero-io/#{repo_name}.git src/main/content/guides/#{repo_name}`
             end
         end
     else
@@ -62,11 +62,11 @@ repos.each do |element|
         # Clone interactive guides that are ready to be published to openliberty.io
         if repo_name.start_with?('iguide') || repo_name.start_with?('guide')
             # Clone the  guides, using the dev branch for travis and master for all other environments.
-            `git clone https://github.com/OpenLiberty/#{repo_name}.git -b #{guide_branch} src/main/content/guides/#{repo_name}`
+            `git clone https://github.com/kabanero-io/#{repo_name}.git -b #{guide_branch} src/main/content/guides/#{repo_name}`
 
             # Clone the default branch if the guide_branch does not exist for this guide repo.
             if !(directory_exists?(repo_name))
-                `git clone https://github.com/OpenLiberty/#{repo_name}.git src/main/content/guides/#{repo_name}`
+                `git clone https://github.com/kabanero-io/#{repo_name}.git src/main/content/guides/#{repo_name}`
             end
         end
     end

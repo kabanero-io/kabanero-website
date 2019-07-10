@@ -38,13 +38,13 @@ h1 {
 }
 
 h2 {
-    font-size: 25px;
-    font-weight: 1000;
+    font-weight: 600;
+    font-size: 26px;
 }
 
 h3 {
-    font-size: 18px;
-    font-weight: 800;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 h4 {
@@ -52,11 +52,17 @@ h4 {
     font-weight: 500;
 }
 
+/* BUTTONS */
 
+.btn {
+    font-weight: 600;
+    font-size: 18px;
+}
 
 /* PARAGRAPHS */
 
 p {
+    font-weight: normal;
     font-size: 16px;
 }
 
@@ -390,6 +396,11 @@ footer {
         letter-spacing: 0;
         float: left;
         clear: left;
+        margin-top: 10px;
+    }
+
+    #kabanero_footer_logo {
+        width: 125px;
     }
 
     #footer_round_links_container {
@@ -452,6 +463,8 @@ footer {
 #footer_bottom_container {
     color: #FFFFFF;
     background-color: $color-kabanero;
+    font-weight: 600;
+    font-size: 11px;
 
     @media (min-width: 767px) {
         #footer_bottom_left_section {

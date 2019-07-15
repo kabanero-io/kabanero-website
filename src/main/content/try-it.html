@@ -2,23 +2,30 @@
 layout: default
 title: Downloads
 css: get-started
-permalink: /get-started/
+permalink: /try-it/
 ---
 <!-- INTRO -->
-<div >
-    <div class="container" id="downloads_intro_text">
+<div class="helper"></div>
+<div class="container">
         <div class="row">
-            <div class="col">
-                <p class="header get-started-header"> Get Started </p>
-                <div class="row horizontal-separator "></div>
-                <p id="intro_text_1">
-                    Early components of Kabanero
+                <div class="col">
+                    <p class="header get-started-header"> Try It </p>
+                    <div class="row horizontal-separator "></div>
+                    
+                </div>
+            </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+                <p id="componentsText">
+                    <strong>Early components of Kabanero</strong>
                 </p>
-                <p id="intro_text_2">
+                <p>
                     As we build out the early pieces of Kabanero in this and other open source projects, we are serving up early access to some of the code.
                     The purpose of Kabanero is to deliver an end to end flow for bringing microservices online. Kabanero provides the thread that knits this all together.
                 </p>
-            </div>
         </div>
     </div>
 </div>
@@ -27,19 +34,19 @@ permalink: /get-started/
 <!-- TABS -->
 <div class="container" id="tabs_container">
     <div class="row">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs justify-content-center">
+            <!-- <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#download_kabanero" role="tab">Kabanero (coming soon)</a>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#download_kabanero" role="tab">Kabanero (coming soon)</a>
+                <a class="nav-link active" data-toggle="tab" href="#download_codewind" role="tab">Codewind</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#download_codewind" role="tab">Codewind</a>
+                <a class="nav-link" data-toggle="tab" href="#download_appsody" role="tab">Appsody</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#download_appsody" role="tab">Appsody (coming soon)</a>
-            </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#download_tekton" role="tab">Tekton (coming soon)</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
@@ -48,19 +55,22 @@ permalink: /get-started/
     <div class="row">
         <div class="col tab-content">
             <!-- Kabanero -->
-            <div class="tab-pane fade show active" id="download_kabanero" role="tabpanel" aria-labelledby="download_kabanero">
+            <!-- <div class="tab-pane fade show" id="download_kabanero" role="tabpanel" aria-labelledby="download_kabanero">
                 <div class="row">
                     <div class="col download_detail">
                         Coming soon!
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Codewind -->
-            <div class="tab-pane fade show" id="download_codewind" role="tabpanel" aria-labelledby="download_codewind">
+            <div class="tab-pane fade show active" id="download_codewind" role="tabpanel" aria-labelledby="download_codewind">
                 <div class="row">
                     <div class="col download_detail">
-                        <a href="/codewind">View the Codewind download and install instructions</a>
+                        <p>
+                            Codewind provides technology that plugs into an IDE; this allows container based applications to be built.
+                        </p>
+                        <a href="https://codewind.dev" target="_blank">View the Codewind download and install instructions</a>
                     </div>
                 </div>
             </div>
@@ -69,19 +79,22 @@ permalink: /get-started/
             <div class="tab-pane fade show" id="download_appsody" role="tabpanel" aria-labelledby="download_appsody">
                 <div class="row">
                     <div class="col download_detail">
-                        Coming soon!
+                        <p>
+                            Infused with cloud native capabilities from the moment you start, Appsody provides everything you need to iteratively develop applications.
+                        </p>
+                        <a href="https://appsody.dev" target="_blank">View the Appsody and Appsody for Codewind download and install instructions</a>
                     </div>
                 </div>
             </div>
 
             <!-- Tekton -->
-            <div class="tab-pane fade show" id="download_tekton" role="tabpanel" aria-labelledby="download_tekton">
+            <!-- <div class="tab-pane fade show" id="download_tekton" role="tabpanel" aria-labelledby="download_tekton">
                 <div class="row">
                     <div class="col download_detail">
                         Coming soon!
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

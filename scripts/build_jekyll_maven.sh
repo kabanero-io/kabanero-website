@@ -36,7 +36,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
         fi
         ./scripts/build_clone_docs.sh "draft" # Argument is branch name of ICP4APPs/docs
     else
-        ./scripts/build_clone_docs.sh "develop" # Argument is branch name of ICP4APPs/docs
+        ./scripts/build_clone_docs.sh "master" # Argument is branch name of ICP4APPs/docs
     fi
 else
     # Production!

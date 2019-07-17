@@ -106,7 +106,7 @@ html, body, main {
 }
 
 #content {
-    max-height:830px;
+    max-height:1000px;
     height: 100%;
     overflow-y: scroll;
     margin-right: -15px;  /* hide the scroll bar */

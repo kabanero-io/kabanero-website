@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Downloads
+title: Try it
 css: try-it
 permalink: /try-it/
 ---
@@ -20,15 +20,13 @@ permalink: /try-it/
         <div class="col">
                 <div id="componentsText">
                 <p>
-                 By using Kabanero, developers can build applications that are ready to be deployed onto
-                 Kubernetes or Knative without first becoming experts in containers and Kubernetes.
-                 This lowers the barrier of entry for developers as their organizations move from legacy 
-                 infrastructure to more modern infrastructure on their journey to cloud.
+                Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images, build infrastructure, or Kube yaml. 
+                Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.  
+                Go ahead and try it for yourself, using extensions to your favorite IDE, or our command-line tools.
                 </p>
                 <p>
-                    Our first ‘Try it’ experience is the Kabanero Development Experience, which includes 
-                    Eclipse Codewind and Appsody.  You can learn more about these open source projects below 
-                    as well as in our <a href="/blog" class="blogs_link">blog</a>. Additional ‘Try it’ experiences will be coming very shortly.
+                Our first ‘Try it’ experience is the Kabanero Development Experience, which includes Eclipse Codewind and Appsody. 
+                You can learn more about these open source projects below.  Additional ‘Try it’ experiences will be coming very shortly.
                 </p>
             </div>
         </div>
@@ -40,9 +38,6 @@ permalink: /try-it/
 <div class="container" id="tabs_container">
     <div class="row">
         <ul class="nav nav-tabs justify-content-center">
-            <!-- <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#download_kabanero" role="tab">Kabanero (coming soon)</a>
-            </li> -->
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#download_codewind" role="tab">Codewind</a>
             </li>
@@ -50,8 +45,16 @@ permalink: /try-it/
                 <a class="nav-link" data-toggle="tab" href="#download_appsody" role="tab">Appsody</a>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" data-toggle="tab" href="#download_tekton" role="tab">Tekton</a>
             </li>
+=======
+                <a class="nav-link" data-toggle="tab" href="#kabanero_foundation" role="tab">Kabanero Foundation</a>
+            </li> 
+            <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tekton" role="tab">Tekton</a>
+                </li> 
+>>>>>>> upstream/master
         </ul>
     </div>
 </div>
@@ -59,14 +62,6 @@ permalink: /try-it/
 <div class="container" id="tabs_container">
     <div class="row">
         <div class="col tab-content">
-            <!-- Kabanero -->
-            <!-- <div class="tab-pane fade show" id="download_kabanero" role="tabpanel" aria-labelledby="download_kabanero">
-                <div class="row">
-                    <div class="col download_detail">
-                        Coming soon!
-                    </div>
-                </div>
-            </div> -->
 
             <!-- Codewind -->
             <div class="tab-pane fade show active" id="download_codewind" role="tabpanel" aria-labelledby="download_codewind">
@@ -78,7 +73,8 @@ permalink: /try-it/
                             and Eclipse Che (with more planned).  This enables developers to use a workflow and IDE they already know.  
                             You can rapidly iterate, debug, and performance test apps inside containers, just like when they run in production. 
                         </p>
-                        <a href="https://codewind.dev" target="_blank">View the Codewind download and install instructions</a>
+                        <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
+                        <img class="workflow_image" src="/img/jane_codewind_pic.png">
                     </div>
                 </div>
             </div>
@@ -86,7 +82,7 @@ permalink: /try-it/
             <!-- Appsody -->
             <div class="tab-pane fade show" id="download_appsody" role="tabpanel" aria-labelledby="download_appsody">
                 <div class="row">
-                    <img class="logo" src="/img/logos/apsody_logo.png">
+                    <img class="logo" src="/img/logos/appsody_logo.png">
                     <div class="col download_detail">
                         <p>
                             Appsody provides Kabanero with simplicity in the creation of cloud-native applications in containers.
@@ -94,22 +90,48 @@ permalink: /try-it/
                             providing a foundation on which to build applications for Kubernetes and Knative deployments. 
                         </p>
                         <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
+                        <img class="workflow_image" src="/img/jane_appsody_pic.png">
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
             <!-- Tekton -->
             <div class="tab-pane fade show" id="download_tekton" role="tabpanel" aria-labelledby="download_tekton">
+=======
+            
+            <!-- Kabanero Foundation  -->
+            <div class="tab-pane fade show" id="kabanero_foundation" role="tabpanel" aria-labelledby="kabanero_foundation">
+                <div class="row">
+                    <div class="col download_detail">
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <img class="workflow_image" src="/img/champs_kabanero_foundation.png">
+                </div>
+            </div>
+
+            <!-- Tekton  -->
+            <div class="tab-pane fade show" id="tekton" role="tabpanel" aria-labelledby="tekton">
+>>>>>>> upstream/master
                 <div class="row">
                     <img class="logo" src="/img/logos/85x85/tekton.png">
                     <div class="col download_detail">
+<<<<<<< HEAD
                         <p>Tekton is cool. Tekton is neat. We'll put some real text in here at some point.</p>
                         <a href="https://cloud.google.com/tekton/" target="_blank">Learn more about Tekton</a>
+=======
+                        <p>
+                            Coming soon!
+                        </p>
+>>>>>>> upstream/master
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <!-- Tutorials -->
@@ -130,16 +152,46 @@ permalink: /try-it/
                 <div class="row">
                     <div class="col">
                             <div id="componentsText">
+                            <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">Check out the video (Create a Node app)</a>
+                            <p>You can go from zero to application running in Knative/Kubernetes in under 5 minutes, working only with the app code - no tinkering with Dockerfiles, no learning Kube and Kube Yaml, no non-sense.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Try it with VS Code -->
+        <div class="container">
+                <div class="row">
+                    <div class="col">
+                            <div id="componentsText">
                                 <strong>Try it with VS Code</strong>
-                                <div class="try_it_vs_code">
+                                <div>
                                     <ol type="1">
                                         <li>Install Codewind from the VS Code Marketplace</li>
+                                        <li><a href="https://appsody.dev/docs/getting-started/quick-start" target="_blank">Install Appsody CLI </a></li>
                                         <li><a href="https://github.com/kabanero-io/appsodyExtension" target="_blank">Install Appsody Extension for Codewind </a></li>
-                                        <li><a href="https://youtu.be/gIrwcneJyBA" target="_blank">Check out the video (Create a Node app)</a></li>
                                         <li>Try it for yourself.</li>
                                     </ol>
                             </div>
-                            <p>You can go from zero to application running in Knative/Kubernetes in under 5 minutes, working only with the app code - no tinkering with Dockerfiles, no learning Kube and Kube Yaml, no non-sense.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Try it with Eclipse -->
+        <div class="container">
+                <div class="row">
+                    <div class="col">
+                            <div id="componentsText">
+                                <strong>Try it with Eclipse</strong>
+                                <div>
+                                    <ol type="1">
+                                        <li>Install Codewind from the Eclipse Marketplace</li>
+                                        <li><a href="https://appsody.dev/docs/getting-started/quick-start" target="_blank">Install Appsody CLI </a></li>
+                                        <li><a href="https://github.com/kabanero-io/appsodyExtension" target="_blank">Install Appsody Extension for Codewind </a></li>
+                                        <li>Try it for yourself.</li>
+                                    </ol>
+                            </div>
                         </div>
                     </div>
                 </div>

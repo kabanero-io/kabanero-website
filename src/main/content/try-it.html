@@ -58,7 +58,67 @@ permalink: /try-it/
 <div class="container" id="tabs_container">
     <div class="row">
         <div class="col tab-content">
-
+            <!-- Appsody -->
+            <div class="tab-pane fade show" id="download_appsody" role="tabpanel" aria-labelledby="download_appsody">
+                <div class="row">
+                    <img class="logo" src="/img/logos/appsody_logo.png">
+                    <div class="col download_detail">
+                        <p>
+                            Appsody provides Kabanero with simplicity in the creation of cloud-native applications in containers.
+                            Appsody provides pre-configured container images (stacks) and project templates for a growing set of popular open source runtimes and frameworks, 
+                            providing a foundation on which to build applications for Kubernetes and Knative deployments. 
+                        </p>
+                        <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
+                        <img class="workflow_image" src="/img/jane_appsody_pic.png">
+                    </div>
+                </div>
+                <div id="codewind_content" class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Appsody <code>Hello World</code> on Codewind</h1><br>
+                
+                            <h2>Prerequisites</h2>
+                
+                            <ul>
+                            <li><a href="/codewind">Codewind</a> on Visual Studio Code or Eclipse</li>
+                            <li><a href="https://appsody.dev/docs/getting-started/installation">Appsody</a></li>
+                            <li><a href="https://github.com/kabanero-io/appsodyExtension">Appsody Extension for Codewind</a></li>
+                            </ul>
+                
+                            <h2>Getting started with VS Code</h2>
+                
+                            <h4>Creating a Java MicroProfile appsody Project</h4>
+                            <ol>
+                            <li>In VS Code open the command palette and navigate to the option <code>Codewind: Create New Project</code>. 
+                                Select the Appsody Java MicroProfile template, give it a name and press enter. Navigate to the <code>Explorer</code> view. 
+                                In the <code>Explorer</code> view keep expanding the Codewind section until the project you created is visible. 
+                                At this point you can click the box with arrow icon next to the project to open it up in a browser, or the information icon to view the project overview.</li>
+                            <li>The base url that you will be directed to doesn't have any information yet. However appending <code>/health</code> will display the health of the container.
+                                Other built in endpoints are described on the bottom of the <a href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application stack's README</a></li>
+                            <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll need to wait for it to be running.</li>
+                            </ol>
+                
+                            <h2>Getting started with Eclispe</h2>
+                
+                            <h4>Creating a Java MicroProfile appsody Project</h4>
+                            <ol>
+                            <li>Open up the Codwind Explorer in your Eclipse workspace by clicking Window → Show View → Other…​ → Codewind → Codewind Explorer. Right click on the Local Projects under Codewind and select New Project. Select the Appsody Java MicroProfile template, give it a name and create it. Now underneath your Codewind → Local Projects, there should be your project. You can right click on the project and "Open Application" to view your app in your browser.</li>
+                            <li>The base url that you will be directed to doesn't have any information yet. However appending <code>/health</code> will display the health of the container.
+                                Other built in endpoints are described on the bottom of the <a href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application stack's README</a></li>
+                            <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll need to wait for it to be running. Also you might need to refresh the project explorer to see the contents of your project directory.</li>
+                            </ol>
+                
+                            <h2>Hello World</h2>
+                
+                            <h4>Create the index.html</h4>
+                            <ol>
+                            <li>Right-click on the appsody project and chose the option to Open Folder as Workspace. In the project workspace, navigate to src/main/webapp/ and create a new file there called index.html. Open the file and add Hello World. Save the file and click the icon to open the app in your web browser again. You should see a webpage with Hello World. Now you can go back to the file and change it, save it, and then refresh the webpage. The webpage will now be displaying your change</li>
+                            <li>While this is only a basic Hello World html file, this same process goes for any changes in the project you want to make.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                </div>
             <!-- Codewind -->
             <div class="tab-pane fade show active" id="download_codewind" role="tabpanel" aria-labelledby="download_codewind">
                 <div class="row">
@@ -123,68 +183,6 @@ permalink: /try-it/
                     </div>
                 </div>
             </div>
-
-            <!-- Appsody -->
-            <div class="tab-pane fade show" id="download_appsody" role="tabpanel" aria-labelledby="download_appsody">
-                <div class="row">
-                    <img class="logo" src="/img/logos/appsody_logo.png">
-                    <div class="col download_detail">
-                        <p>
-                            Appsody provides Kabanero with simplicity in the creation of cloud-native applications in containers.
-                            Appsody provides pre-configured container images (stacks) and project templates for a growing set of popular open source runtimes and frameworks, 
-                            providing a foundation on which to build applications for Kubernetes and Knative deployments. 
-                        </p>
-                        <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
-                        <img class="workflow_image" src="/img/jane_appsody_pic.png">
-                    </div>
-                </div>
-                <div id="codewind_content" class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h1>Appsody <code>Hello World</code> on Codewind</h1><br>
-                
-                            <h2>Prerequisites</h2>
-                
-                            <ul>
-                            <li><a href="/codewind">Codewind</a> on Visual Studio Code or Eclipse</li>
-                            <li><a href="https://appsody.dev/docs/getting-started/installation">Appsody</a></li>
-                            <li><a href="https://github.com/kabanero-io/appsodyExtension">Appsody Extension for Codewind</a></li>
-                            </ul>
-                
-                            <h2>Getting started with VS Code</h2>
-                
-                            <h4>Creating a Java MicroProfile appsody Project</h4>
-                            <ol>
-                            <li>In VS Code open the command palette and navigate to the option <code>Codewind: Create New Project</code>. 
-                                Select the Appsody Java MicroProfile template, give it a name and press enter. Navigate to the <code>Explorer</code> view. 
-                                In the <code>Explorer</code> view keep expanding the Codewind section until the project you created is visible. 
-                                At this point you can click the box with arrow icon next to the project to open it up in a browser, or the information icon to view the project overview.</li>
-                            <li>The base url that you will be directed to doesn't have any information yet. However appending <code>/health</code> will display the health of the container.
-                                Other built in endpoints are described on the bottom of the <a href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application stack's README</a></li>
-                            <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll need to wait for it to be running.</li>
-                            </ol>
-                
-                            <h2>Getting started with Eclispe</h2>
-                
-                            <h4>Creating a Java MicroProfile appsody Project</h4>
-                            <ol>
-                            <li>Open up the Codwind Explorer in your Eclipse workspace by clicking Window → Show View → Other…​ → Codewind → Codewind Explorer. Right click on the Local Projects under Codewind and select New Project. Select the Appsody Java MicroProfile template, give it a name and create it. Now underneath your Codewind → Local Projects, there should be your project. You can right click on the project and "Open Application" to view your app in your browser.</li>
-                            <li>The base url that you will be directed to doesn't have any information yet. However appending <code>/health</code> will display the health of the container.
-                                Other built in endpoints are described on the bottom of the <a href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application stack's README</a></li>
-                            <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll need to wait for it to be running. Also you might need to refresh the project explorer to see the contents of your project directory.</li>
-                            </ol>
-                
-                            <h2>Hello World</h2>
-                
-                            <h4>Create the index.html</h4>
-                            <ol>
-                            <li>Right-click on the appsody project and chose the option to Open Folder as Workspace. In the project workspace, navigate to src/main/webapp/ and create a new file there called index.html. Open the file and add Hello World. Save the file and click the icon to open the app in your web browser again. You should see a webpage with Hello World. Now you can go back to the file and change it, save it, and then refresh the webpage. The webpage will now be displaying your change</li>
-                            <li>While this is only a basic Hello World html file, this same process goes for any changes in the project you want to make.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <!-- Kabanero Foundation  -->
             <div class="tab-pane fade show" id="kabanero_foundation" role="tabpanel" aria-labelledby="kabanero_foundation">
@@ -214,11 +212,13 @@ permalink: /try-it/
                                         <p>Ensure you have <code>cluster-admin</code> access to an OpenShift or OKD cluster and have installed the <a href="https://github.com/kabanero-io/kabanero-operator">Kabanero operator</a>.  (This documentation assumes that we will deploy the Kabanero Foundation in the <code>kabanero</code> Kubernetes namespace.)</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>oc new-project kabanero
-                                        oc project kabanero
-                                        oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/deploy/dependencies.yaml
-                                        oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/deploy/releases/0.0.1/kabanero-operator.yaml
-                                        oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/config/samples/full.yaml</pre>
+                                        <pre>
+oc new-project kabanero
+oc project kabanero
+oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/deploy/dependencies.yaml
+oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/deploy/releases/0.0.1/kabanero-operator.yaml
+oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/config/samples/full.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -233,23 +233,25 @@ permalink: /try-it/
                                         <p>The Kabanero Foundation requires Istio.  Istio is not yet installed by the Kabanero operator.  Install it:</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z default -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z prometheus -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-egressgateway-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-citadel-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-ingressgateway-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-cleanup-old-ca-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-mixer-post-install-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-mixer-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-pilot-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z istio-sidecar-injector-service-account -n istio-system
-                                        oc adm policy add-cluster-role-to-user cluster-admin -z istio-galley-service-account -n istio-system
-                                        oc adm policy add-scc-to-user anyuid -z cluster-local-gateway-service-account -n istio-system
-                                        kubectl apply --filename https://github.com/knative/serving/releases/download/v0.4.0/istio-crds.yaml &amp;&amp;
-                                        curl -L https://github.com/knative/serving/releases/download/v0.4.0/istio.yaml \
-                                          | sed 's/LoadBalancer/NodePort/' \
-                                          | kubectl apply --filename -</pre>
+                                        <pre>
+oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z default -n istio-system
+oc adm policy add-scc-to-user anyuid -z prometheus -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-egressgateway-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-citadel-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-ingressgateway-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-cleanup-old-ca-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-mixer-post-install-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-mixer-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-pilot-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z istio-sidecar-injector-service-account -n istio-system
+oc adm policy add-cluster-role-to-user cluster-admin -z istio-galley-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z cluster-local-gateway-service-account -n istio-system
+kubectl apply --filename https://github.com/knative/serving/releases/download/v0.4.0/istio-crds.yaml &amp;&amp;
+curl -L https://github.com/knative/serving/releases/download/v0.4.0/istio.yaml \
+    | sed 's/LoadBalancer/NodePort/' \
+    | kubectl apply --filename -
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -286,7 +288,9 @@ permalink: /try-it/
                                         <p>Clone the appsody <a href="https://github.com/appsody/tekton-example">tekton-example</a> repository. This repository contains the pipeline manifests.</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>git clone https://github.com/appsody/tekton-example.git</pre>
+                                        <pre>
+git clone https://github.com/appsody/tekton-example.git
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -300,9 +304,11 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl apply -f appsody-service-account.yaml
-                                        oc adm policy add-cluster-role-to-user cluster-admin -z appsody-sa -n kabanero
-                                        oc adm policy add-scc-to-user hostmount-anyuid -z appsody-sa -n kabanero</pre>
+                                        <pre>
+kubectl apply -f appsody-service-account.yaml
+oc adm policy add-cluster-role-to-user cluster-admin -z appsody-sa -n kabanero
+oc adm policy add-scc-to-user hostmount-anyuid -z appsody-sa -n kabanero
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -316,7 +322,9 @@ permalink: /try-it/
                                         <p>If using the <a href="https://docs.openshift.com/container-platform/3.11/install_config/registry/">Internal Openshift Registry</a>, add the <a href="https://docs.openshift.com/container-platform/3.11/dev_guide/service_accounts.html#default-service-accounts-and-roles">image-builder</a> role to the <code>appsody-sa</code> service account so it has push access. The internal registry secret is automatically associated with the <code>appsody-sa</code> service account by Openshift, and now as access to push images into project.</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>oc policy add-role-to-user system:image-builder system:serviceaccount:kabanero:appsody-sa</pre>
+                                        <pre>
+oc policy add-role-to-user system:image-builder system:serviceaccount:kabanero:appsody-sa
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -326,24 +334,28 @@ permalink: /try-it/
                                         You may use any name you wish.</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>apiVersion: v1
-                                        kind: Secret
-                                        metadata:
-                                          name: my-docker-secret
-                                          annotations:
-                                            tekton.dev/docker-0: https://index.docker.io/v1/
-                                        type: kubernetes.io/basic-auth
-                                        stringData:
-                                          username: &lt;your docker userid&gt;
-                                          password: &lt;your docker password&gt;</pre>
+                                        <pre>
+apiVersion: v1
+kind: Secret
+metadata:
+    name: my-docker-secret
+    annotations:
+    tekton.dev/docker-0: https://index.docker.io/v1/
+type: kubernetes.io/basic-auth
+stringData:
+    username: &lt;your docker userid&gt;
+    password: &lt;your docker password&gt;
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>Edit the yaml file <code>my-docker-secret.yaml</code>, making sure to replace the username and password values with your own values.  Then run:</p>
+                                        <p>Create a yaml file named <code>my-docker-secret.yaml</code>, making sure to replace the username and password values with your own values.  Then run:</p>
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl apply -f my-docker-secret.yaml</pre>
+                                        <pre>
+oc apply -f my-docker-secret.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -351,7 +363,9 @@ permalink: /try-it/
                                         <p>Make the Docker registry credentials available to the pipeline by adding your docker secret to the <code>appsody-sa</code> service account. This can be accomplished by editing the service account, using the following command:</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl edit serviceaccount appsody-sa</pre>
+                                        <pre>
+oc edit serviceaccount appsody-sa
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -359,10 +373,12 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>...
-                                        secrets:
-                                        - name: appsody-sa-token-ldzbq
-                                        - name: my-docker-secret</pre>
+                                        <pre>
+...
+secrets:
+- name: appsody-sa-token-ldzbq
+- name: my-docker-secret
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -376,10 +392,12 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>...
-                                              env:
-                                              - name: DOCKER_CONFIG
-                                                value: /builder/home/.docker</pre>
+                                        <pre>
+...
+        env:
+        - name: DOCKER_CONFIG
+        value: /builder/home/.docker
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -387,11 +405,13 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>...
-                                              command:
-                                                - /kaniko/executor
-                                              args:
-                                                - --skip-tls-verify</pre>
+                                        <pre>
+...
+    command:
+    - /kaniko/executor
+    args:
+    - --skip-tls-verify
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -399,8 +419,10 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl apply -f appsody-build-task.yaml
-                                        kubectl apply -f appsody-build-pipeline.yaml</pre>
+                                        <pre>
+oc apply -f appsody-build-task.yaml
+oc apply -f appsody-build-pipeline.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -418,11 +440,13 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>...
-                                        spec:
-                                          params:
-                                          - name: url
-                                            value: index.docker.io/your-userid/my-appsody-image</pre>
+                                        <pre>
+...
+spec:
+    params:
+    - name: url
+    value: index.docker.io/your-userid/my-appsody-image
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -430,13 +454,15 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>...
-                                        spec:
-                                          params:
-                                          - name: revision
-                                            value: master
-                                          - name: url
-                                            value: https://github.com/your-userid/appsody-test-build</pre>
+                                        <pre>
+...
+spec:
+    params:
+    - name: revision
+    value: master
+    - name: url
+    value: https://github.com/your-userid/appsody-test-build
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -447,7 +473,9 @@ permalink: /try-it/
                                         <p>Once you have edited the resources, apply them to your cluster:</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl apply -f appsody-pipeline-resources.yaml</pre>
+                                        <pre>
+oc apply -f appsody-pipeline-resources.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -455,17 +483,19 @@ permalink: /try-it/
                                         <p>The Tekton buld pipeline requires a Persistent Volume. If you do not have a default dynamic storage provider, create a hostPath volume:</p>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>apiVersion: v1
-                                        kind: PersistentVolume
-                                        metadata:
-                                          name: appsody-manual-pipeline-run-pvc
-                                        spec:
-                                          capacity:
-                                            storage: 5Gi
-                                          accessModes:
-                                            - ReadWriteOnce
-                                          hostPath:
-                                            path: /var/lib/appsody-manual-pipeline-run-pvc</pre>
+                                        <pre>
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: appsody-manual-pipeline-run-pvc
+spec:
+    capacity:
+    storage: 5Gi
+    accessModes:
+    - ReadWriteOnce
+    hostPath:
+    path: /var/lib/appsody-manual-pipeline-run-pvc
+                                        </pre>
                                         </div>
                                         </div>
                                         </li>
@@ -485,20 +515,22 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>apiVersion: serving.knative.dev/v1alpha1
-                                        kind: Service
-                                        metadata:
-                                          name: appsody-project
-                                        spec:
-                                          runLatest:
-                                            configuration:
-                                              revisionTemplate:
-                                                spec:
-                                                  container:
-                                                    image: mydockeraccount/appsody-project
-                                                    imagePullPolicy: Always
-                                                    ports:
-                                                    - containerPort: 3000</pre>
+                                        <pre>
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+    name: appsody-project
+spec:
+    runLatest:
+    configuration:
+        revisionTemplate:
+        spec:
+            container:
+            image: mydockeraccount/appsody-project
+            imagePullPolicy: Always
+            ports:
+            - containerPort: 3000
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -518,9 +550,11 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>      params:
-                                              - name: appsody-deploy-file-name
-                                                value: appsody-service.yaml</pre>
+                                        <pre>      
+params:
+- name: appsody-deploy-file-name
+    value: appsody-service.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -528,13 +562,15 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>    - name: install-knative
-                                              image: lachlanevenson/k8s-kubectl
-                                              command: ['/bin/sh']
-                                              args: ['-c', 'find /workspace/extracted -name ${YAMLFILE} -type f|xargs kubectl apply -f']
-                                              env:
-                                                - name: YAMLFILE
-                                                  value: ${inputs.params.appsody-deploy-file-name}</pre>
+                                        <pre>    
+- name: install-knative
+    image: lachlanevenson/k8s-kubectl
+    command: ['/bin/sh']
+    args: ['-c', 'find /workspace/extracted -name ${YAMLFILE} -type f|xargs kubectl apply -f']
+    env:
+    - name: YAMLFILE
+        value: ${inputs.params.appsody-deploy-file-name}
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -551,7 +587,9 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl apply -f appsody-pipeline-run.yaml</pre>
+                                        <pre>
+oc apply -f appsody-pipeline-run.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -559,7 +597,9 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>appsody-manual-pipeline-run-appsody-build-t9g87-pod-6c00e4</pre>
+                                        <pre>
+appsody-manual-pipeline-run-appsody-build-t9g87-pod-6c00e4
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -567,7 +607,9 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl logs appsody-manual-pipeline-run-appsody-build-t9g87-pod-6c00e4 -n kabanero --all-containers</pre>
+                                        <pre>
+kubectl logs appsody-manual-pipeline-run-appsody-build-t9g87-pod-6c00e4 -n kabanero --all-containers
+                                        </pre>
                                         </div>
                                         </div>
                                         <div class="paragraph">
@@ -578,7 +620,9 @@ permalink: /try-it/
                                         </div>
                                         <div class="literalblock">
                                         <div class="content">
-                                        <pre>kubectl delete -f appsody-pipeline-run.yaml</pre>
+                                        <pre>
+oc delete -f appsody-pipeline-run.yaml
+                                        </pre>
                                         </div>
                                         </div>
                                         </div>
@@ -592,10 +636,10 @@ permalink: /try-it/
             <!-- Tekton  -->
             <div class="tab-pane fade show" id="tekton" role="tabpanel" aria-labelledby="tekton">
                 <div class="row">
-                    <img class="logo" src="/img/logos/85x85/tekton.png">
+                    <!-- <img class="logo" src="/img/logos/85x85/tekton.png">
                     <div class="col download_detail">
                         <a href="https://cloud.google.com/tekton/" target="_blank">Learn more about Tekton</a>
-                    </div>
+                    </div> -->
                     <img class="workflow_image" src="/img/jane_tekton_webhook_pic.png">
                 </div><br>
                 <div class="container">
@@ -606,27 +650,7 @@ permalink: /try-it/
                                         </div>
                                     
                                         <!-- General reference content section -->
-                                        <div class="sect1">
-                                    <h2 id="prerequisites">Prerequisites</h2>
-                                    <div class="sectionbody">
-                                    <div class="ulist">
-                                    <ul>
-                                    <li>
-                                    <p>Working Tekton Pipeline with Dashboard - <a href="https://github.com/tektoncd/pipeline" class="bare">https://github.com/tektoncd/pipeline</a></p>
-                                    </li>
-                                    <li>
-                                    <p>Tekton Experimental Webhook Extension - <a href="https://github.com/tektoncd/experimental/tree/master/webhooks-extension" class="bare">https://github.com/tektoncd/experimental/tree/master/webhooks-extension</a></p>
-                                    </li>
-                                    <li>
-                                    <p>GitHub account - to connect the webhook to - <a href="https://github.com/" class="bare">https://github.com/</a></p>
-                                    </li>
-                                    <li>
-                                    <p>Docker account - to push the built docker file to - <a href="https://www.docker.com/" class="bare">https://www.docker.com/</a></p>
-                                    </li>
-                                    </ul>
-                                    </div>
-                                    </div>
-                                    </div>
+                                        
                                     <div class="sect1">
                                     <h2 id="set-up-github">Set up GitHub</h2>
                                     <div class="sectionbody">

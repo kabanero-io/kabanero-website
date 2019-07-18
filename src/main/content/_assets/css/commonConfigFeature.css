@@ -16,11 +16,7 @@
  *
  ******************************************************************************/
 
-/* make the navbar sticky */
-.navbar {
-    position: fixed;
-    background-color: #d8d8d8;
-}
+
 
 #page_title {
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
@@ -56,17 +52,17 @@ html, body, main {
     line-height: 18px;
     list-style: none;
     font-weight: 300;
-    color: #5D6A8E;
-    font-size: 14px;
+    color: #000000;
+    font-size: 18px;
     word-wrap: break-word;
-    padding: 7px 30px 7px 0px;
+    padding: 7px 30px 7px 10px;
 }
 
 .toc_selected {
     background:#fdf2ea;
-    border-left: 8px solid #f4914d; 
+    border-left: 8px solid #C438042B; 
     font-weight: 500 !important; 
-    color: #313653 !important;
+    color: #666666 !important;
     margin-right: -30px;
     padding-right: 60px !important;
 }
@@ -110,6 +106,7 @@ html, body, main {
 }
 
 #content {
+    max-height:750px;
     height: 100%;
     overflow-y: scroll;
     margin-right: -15px;  /* hide the scroll bar */
@@ -124,10 +121,6 @@ html, body, main {
 
     #toc_container {
         padding-top: 0px;
-    }
-
-    .navbar {
-        position: static;
     }
 
     #config_content, #feature_content, #command_content, #general_content {

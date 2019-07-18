@@ -10,7 +10,8 @@
  *******************************************************************************/
 
  #background_container {
-    margin-top: 100px;
+    margin-left: 30px;
+    margin-top: 30px;
     height: 1500px; /* initial height */
 }
 
@@ -208,4 +209,8 @@ tableblock {
     &.content {
         width: 100%;
     }
+}
+
+#docsTitle {
+    margin-left:40px;
 }

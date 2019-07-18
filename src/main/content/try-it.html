@@ -7,26 +7,30 @@ permalink: /try-it/
 <!-- INTRO -->
 <div class="helper"></div>
 <div class="container">
-        <div class="row">
-                <div class="col">
-                    <p class="header get-started-header"> Try It </p>
-                    <div class="row horizontal-separator "></div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col">
+            <p class="header get-started-header"> Try It </p>
+            <div class="row horizontal-separator "></div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col">
-                <div id="componentsText">
+            <div id="componentsText">
                 <p>
-                Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images, build infrastructure, or Kube yaml. 
-                Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.  
-                Go ahead and try it for yourself, using extensions to your favorite IDE, or our command-line tools.
+                    Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative,
+                    without having to spend time defining container images, build infrastructure, or Kube yaml.
+                    Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and
+                    packaging deployment-ready containers.
+                    Go ahead and try it for yourself, using extensions to your favorite IDE, or our command-line tools.
                 </p>
                 <p>
-                Our first ‘Try it’ experience is the Kabanero Development Experience, which includes Eclipse Codewind and Appsody. 
-                You can learn more about these open source projects below.  Additional ‘Try it’ experiences will be coming very shortly.
+                    Our first ‘Try it’ experience is the Kabanero Development Experience, which includes Eclipse
+                    Codewind and Appsody.
+                    You can learn more about these open source projects below. Additional ‘Try it’ experiences will be
+                    coming very shortly.
                 </p>
             </div>
         </div>
@@ -44,13 +48,13 @@ permalink: /try-it/
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#download_codewind" role="tab">Codewind</a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#kabanero_foundation" role="tab">Kabanero Foundation</a>
-            </li> 
+            </li>
             <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tekton" role="tab">Tekton</a>
-                </li> 
+                <a class="nav-link" data-toggle="tab" href="#tekton" role="tab">Tekton</a>
+            </li>
         </ul>
     </div>
 </div>
@@ -59,14 +63,18 @@ permalink: /try-it/
     <div class="row">
         <div class="col tab-content">
             <!-- Appsody -->
-            <div class="tab-pane fade show active" id="download_appsody" role="tabpanel" aria-labelledby="download_appsody">
+            <div class="tab-pane fade show active" id="download_appsody" role="tabpanel"
+                aria-labelledby="download_appsody">
                 <div class="row">
                     <img class="logo" src="/img/logos/appsody_logo.png">
                     <div class="col download_detail">
                         <p>
-                            Appsody provides Kabanero with simplicity in the creation of cloud-native applications in containers.
-                            Appsody provides pre-configured container images (stacks) and project templates for a growing set of popular open source runtimes and frameworks, 
-                            providing a foundation on which to build applications for Kubernetes and Knative deployments. 
+                            Appsody provides Kabanero with simplicity in the creation of cloud-native applications in
+                            containers.
+                            Appsody provides pre-configured container images (stacks) and project templates for a
+                            growing set of popular open source runtimes and frameworks,
+                            providing a foundation on which to build applications for Kubernetes and Knative
+                            deployments.
                         </p>
                         <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
                         <img class="workflow_image" src="/img/jane_appsody_pic.png">
@@ -76,58 +84,86 @@ permalink: /try-it/
                     <div class="row">
                         <div class="col">
                             <h1>Appsody <code>Hello World</code> on Codewind</h1><br>
-                
+
                             <h2>Prerequisites</h2>
-                
+
                             <ul>
-                            <li><a href="/codewind">Codewind</a> on Visual Studio Code or Eclipse</li>
-                            <li><a href="https://appsody.dev/docs/getting-started/installation">Appsody</a></li>
-                            <li><a href="https://github.com/kabanero-io/appsodyExtension">Appsody Extension for Codewind</a></li>
+                                <li><a href="/codewind">Codewind</a> on Visual Studio Code or Eclipse</li>
+                                <li><a href="https://appsody.dev/docs/getting-started/installation">Appsody</a></li>
+                                <li><a href="https://github.com/kabanero-io/appsodyExtension">Appsody Extension for
+                                        Codewind</a></li>
                             </ul>
-                
+
                             <h2>Getting started with VS Code</h2>
-                
+
                             <h4>Creating a Java MicroProfile appsody Project</h4>
                             <ol>
-                            <li>In VS Code open the command palette and navigate to the option <code>Codewind: Create New Project</code>. 
-                                Select the Appsody Java MicroProfile template, give it a name and press enter. Navigate to the <code>Explorer</code> view. 
-                                In the <code>Explorer</code> view keep expanding the Codewind section until the project you created is visible. 
-                                At this point you can click the box with arrow icon next to the project to open it up in a browser, or the information icon to view the project overview.</li>
-                            <li>The base url that you will be directed to doesn't have any information yet. However appending <code>/health</code> will display the health of the container.
-                                Other built in endpoints are described on the bottom of the <a href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application stack's README</a></li>
-                            <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll need to wait for it to be running.</li>
+                                <li>In VS Code open the command palette and navigate to the option <code>Codewind:
+                                        Create New Project</code>.
+                                    Select the Appsody Java MicroProfile template, give it a name and press enter.
+                                    Navigate to the <code>Explorer</code> view.
+                                    In the <code>Explorer</code> view keep expanding the Codewind section until the
+                                    project you created is visible.
+                                    At this point you can click the box with arrow icon next to the project to open it
+                                    up in a browser, or the information icon to view the project overview.</li>
+                                <li>The base url that you will be directed to doesn't have any information yet. However
+                                    appending <code>/health</code> will display the health of the container.
+                                    Other built in endpoints are described on the bottom of the <a
+                                        href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application
+                                        stack's README</a></li>
+                                <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll
+                                    need to wait for it to be running.</li>
                             </ol>
-                
+
                             <h2>Getting started with Eclispe</h2>
-                
+
                             <h4>Creating a Java MicroProfile appsody Project</h4>
                             <ol>
-                            <li>Open up the Codwind Explorer in your Eclipse workspace by clicking Window → Show View → Other…​ → Codewind → Codewind Explorer. Right click on the Local Projects under Codewind and select New Project. Select the Appsody Java MicroProfile template, give it a name and create it. Now underneath your Codewind → Local Projects, there should be your project. You can right click on the project and "Open Application" to view your app in your browser.</li>
-                            <li>The base url that you will be directed to doesn't have any information yet. However appending <code>/health</code> will display the health of the container.
-                                Other built in endpoints are described on the bottom of the <a href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application stack's README</a></li>
-                            <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll need to wait for it to be running. Also you might need to refresh the project explorer to see the contents of your project directory.</li>
+                                <li>Open up the Codwind Explorer in your Eclipse workspace by clicking Window → Show
+                                    View → Other…​ → Codewind → Codewind Explorer. Right click on the Local Projects
+                                    under Codewind and select New Project. Select the Appsody Java MicroProfile
+                                    template, give it a name and create it. Now underneath your Codewind → Local
+                                    Projects, there should be your project. You can right click on the project and "Open
+                                    Application" to view your app in your browser.</li>
+                                <li>The base url that you will be directed to doesn't have any information yet. However
+                                    appending <code>/health</code> will display the health of the container.
+                                    Other built in endpoints are described on the bottom of the <a
+                                        href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application
+                                        stack's README</a></li>
+                                <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll
+                                    need to wait for it to be running. Also you might need to refresh the project
+                                    explorer to see the contents of your project directory.</li>
                             </ol>
-                
+
                             <h2>Hello World</h2>
-                
+
                             <h4>Create the index.html</h4>
                             <ol>
-                            <li>Right-click on the appsody project and chose the option to Open Folder as Workspace. In the project workspace, navigate to src/main/webapp/ and create a new file there called index.html. Open the file and add Hello World. Save the file and click the icon to open the app in your web browser again. You should see a webpage with Hello World. Now you can go back to the file and change it, save it, and then refresh the webpage. The webpage will now be displaying your change</li>
-                            <li>While this is only a basic Hello World html file, this same process goes for any changes in the project you want to make.</li>
+                                <li>Right-click on the appsody project and chose the option to Open Folder as Workspace.
+                                    In the project workspace, navigate to src/main/webapp/ and create a new file there
+                                    called index.html. Open the file and add Hello World. Save the file and click the
+                                    icon to open the app in your web browser again. You should see a webpage with Hello
+                                    World. Now you can go back to the file and change it, save it, and then refresh the
+                                    webpage. The webpage will now be displaying your change</li>
+                                <li>While this is only a basic Hello World html file, this same process goes for any
+                                    changes in the project you want to make.</li>
                             </ol>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             <!-- Codewind -->
             <div class="tab-pane fade show" id="download_codewind" role="tabpanel" aria-labelledby="download_codewind">
                 <div class="row">
                     <img class="logo" src="/img/logos/codewind_logo.png">
                     <div class="col download_detail">
                         <p>
-                            Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse,
-                            and Eclipse Che (with more planned).  This enables developers to use a workflow and IDE they already know.  
-                            You can rapidly iterate, debug, and performance test apps inside containers, just like when they run in production. 
+                            Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code,
+                            Eclipse,
+                            and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they
+                            already know.
+                            You can rapidly iterate, debug, and performance test apps inside containers, just like when
+                            they run in production.
                         </p>
                         <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
                         <img class="workflow_image" src="/img/jane_codewind_pic.png">
@@ -138,8 +174,11 @@ permalink: /try-it/
                     <div class="row">
                         <div class="col">
                             <div id="componentsText">
-                                <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">Check out the video (Create a Node app)</a>
-                                <p>You can go from zero to application running in Knative/Kubernetes in under 5 minutes, working only with the app code - no tinkering with Dockerfiles, no learning Kube and Kube Yaml, no non-sense.</p>
+                                <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">Check out the video (Create a
+                                    Node app)</a>
+                                <p>You can go from zero to application running in Knative/Kubernetes in under 5 minutes,
+                                    working only with the app code - no tinkering with Dockerfiles, no learning Kube and
+                                    Kube Yaml, no non-sense.</p>
                             </div>
                         </div>
                     </div>
@@ -149,91 +188,110 @@ permalink: /try-it/
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                                <div id="componentsText">
-                                    <strong>Try it with VS Code</strong>
-                                    <div>
-                                        <ol type="1">
-                                            <li>Install Codewind from the VS Code Marketplace</li>
-                                            <li><a href="https://appsody.dev/docs/getting-started/quick-start" target="_blank">Install Appsody CLI </a></li>
-                                            <li><a href="https://github.com/kabanero-io/appsodyExtension" target="_blank">Install Appsody Extension for Codewind </a></li>
-                                            <li>Try it for yourself.</li>
-                                        </ol>
+                            <div id="componentsText">
+                                <strong>Try it with VS Code</strong>
+                                <div>
+                                    <ol type="1">
+                                        <li>Install Codewind from the VS Code Marketplace</li>
+                                        <li><a href="https://appsody.dev/docs/getting-started/quick-start"
+                                                target="_blank">Install Appsody CLI </a></li>
+                                        <li><a href="https://github.com/kabanero-io/appsodyExtension"
+                                                target="_blank">Install Appsody Extension for Codewind </a></li>
+                                        <li>Try it for yourself.</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-        <!-- Try it with Eclipse -->
+                <!-- Try it with Eclipse -->
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                                <div id="componentsText">
-                                    <strong>Try it with Eclipse</strong>
-                                    <div>
-                                        <ol type="1">
-                                            <li>Install Codewind from the Eclipse Marketplace</li>
-                                            <li><a href="https://appsody.dev/docs/getting-started/quick-start" target="_blank">Install Appsody CLI </a></li>
-                                            <li><a href="https://github.com/kabanero-io/appsodyExtension" target="_blank">Install Appsody Extension for Codewind </a></li>
-                                            <li>Try it for yourself.</li>
-                                        </ol>
+                            <div id="componentsText">
+                                <strong>Try it with Eclipse</strong>
+                                <div>
+                                    <ol type="1">
+                                        <li>Install Codewind from the Eclipse Marketplace</li>
+                                        <li><a href="https://appsody.dev/docs/getting-started/quick-start"
+                                                target="_blank">Install Appsody CLI </a></li>
+                                        <li><a href="https://github.com/kabanero-io/appsodyExtension"
+                                                target="_blank">Install Appsody Extension for Codewind </a></li>
+                                        <li>Try it for yourself.</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Kabanero Foundation  -->
-            <div class="tab-pane fade show" id="kabanero_foundation" role="tabpanel" aria-labelledby="kabanero_foundation">
+            <div class="tab-pane fade show" id="kabanero_foundation" role="tabpanel"
+                aria-labelledby="kabanero_foundation">
                 <div class="container">
                     <div class="row">
                         <img class="workflow_image" src="/img/champs_kabanero_foundation.png">
                     </div><br>
                     <div class="row">
                         <div class="col">
-                                <div class="sect1">
-                                        <br><h1 id="kabanero-foundation-setup">Kabanero Foundation Setup</h1>
-                                        <div class="sectionbody">
-                                        <div class="paragraph">
-                                        <p>The Kabanero Foundation is installed in a Kubernetes cluster.  For specific Kubernetes providers and resource pre-requisites, refer to documentation at <a href="https://github.com/kabanero-io/roadmap#kabanero-foundation" class="bare">https://github.com/kabanero-io/roadmap#kabanero-foundation</a>.</p>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>Having an appropriate Kubernetes cluster built and defined, we are ready to build our Kabanero Foundation instance.</p>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>The Kabanero Foundation is installed and managed using a Kubernetes Operator.  Kabanero is built on Knative, Istio and leverages Tekton for pipeline management.</p>
-                                        </div>
-                                        <div class="sect2">
+                            <div class="sect1">
+                                <br>
+                                <h1 id="kabanero-foundation-setup">Kabanero Foundation Setup</h1>
+                                <div class="sectionbody">
+                                    <div class="paragraph">
+                                        <p>The Kabanero Foundation is installed in a Kubernetes cluster. For specific
+                                            Kubernetes providers and resource pre-requisites, refer to documentation at
+                                            <a href="https://github.com/kabanero-io/roadmap#kabanero-foundation"
+                                                class="bare">https://github.com/kabanero-io/roadmap#kabanero-foundation</a>.
+                                        </p>
+                                    </div>
+                                    <div class="paragraph">
+                                        <p>Having an appropriate Kubernetes cluster built and defined, we are ready to
+                                            build our Kabanero Foundation instance.</p>
+                                    </div>
+                                    <div class="paragraph">
+                                        <p>The Kabanero Foundation is installed and managed using a Kubernetes Operator.
+                                            Kabanero is built on Knative, Istio and leverages Tekton for pipeline
+                                            management.</p>
+                                    </div>
+                                    <div class="sect2">
                                         <h3 id="kabanero-operator">Kabanero Operator</h3>
                                         <div class="olist arabic">
-                                        <ol class="arabic">
-                                        <li>
-                                        <p>Ensure you have <code>cluster-admin</code> access to an OpenShift or OKD cluster and have installed the <a href="https://github.com/kabanero-io/kabanero-operator">Kabanero operator</a>.  (This documentation assumes that we will deploy the Kabanero Foundation in the <code>kabanero</code> Kubernetes namespace.)</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <ol class="arabic">
+                                                <li>
+                                                    <p>Ensure you have <code>cluster-admin</code> access to an OpenShift
+                                                        or OKD cluster and have installed the <a
+                                                            href="https://github.com/kabanero-io/kabanero-operator">Kabanero
+                                                            operator</a>. (This documentation assumes that we will
+                                                        deploy the Kabanero Foundation in the <code>kabanero</code>
+                                                        Kubernetes namespace.)</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc new-project kabanero
 oc project kabanero
 oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/deploy/dependencies.yaml
 oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/deploy/releases/0.0.1/kabanero-operator.yaml
 oc apply -f https://raw.githubusercontent.com/kabanero-io/kabanero-operator/master/config/samples/full.yaml
                                         </pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
                                         </div>
-                                        </div>
-                                        </li>
-                                        </ol>
-                                        </div>
-                                        </div>
-                                        <div class="sect2">
+                                    </div>
+                                    <div class="sect2">
                                         <h3 id="istio">Istio</h3>
                                         <div class="olist arabic">
-                                        <ol class="arabic">
-                                        <li>
-                                        <p>The Kabanero Foundation requires Istio.  Istio is not yet installed by the Kabanero operator.  Install it:</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <ol class="arabic">
+                                                <li>
+                                                    <p>The Kabanero Foundation requires Istio. Istio is not yet
+                                                        installed by the Kabanero operator. Install it:</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system
 oc adm policy add-scc-to-user anyuid -z default -n istio-system
 oc adm policy add-scc-to-user anyuid -z prometheus -n istio-system
@@ -252,89 +310,135 @@ curl -L https://github.com/knative/serving/releases/download/v0.4.0/istio.yaml \
     | sed 's/LoadBalancer/NodePort/' \
     | kubectl apply --filename -
                                         </pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
                                         </div>
-                                        </div>
-                                        </li>
-                                        </ol>
-                                        </div>
-                                        </div>
-                                        <div class="sect2">
+                                    </div>
+                                    <div class="sect2">
                                         <h3 id="tekton-pipeline">Tekton Pipeline</h3>
                                         <div class="paragraph">
-                                        <p>The Kabanero Foundation uses Tekton Pipelines to build and deploy micro-services built with Appsody, and the Appsody application is stored in a public GitHub Repository.</p>
+                                            <p>The Kabanero Foundation uses Tekton Pipelines to build and deploy
+                                                micro-services built with Appsody, and the Appsody application is stored
+                                                in a public GitHub Repository.</p>
                                         </div>
                                         <div class="olist arabic">
-                                        <ol class="arabic">
-                                        <li>
-                                        <p>If the GitHub repository is private, refer to the <a href="https://github.com/tektoncd/pipeline/blob/master/docs/auth.md">Tekton Authentication Documentation</a> on how to add github credentials to your pipeline task or run.</p>
-                                        </li>
-                                        <li>
-                                        <p>For the example pipeline, your Kubernetes cluster needs access to a Docker registry, such as <a href="https://hub.docker.com/">Docker Hub</a> (<em>I.e.</em>, permission to pull and push images). Alternatively, you can use the <a href="https://docs.openshift.com/container-platform/3.11/install_config/registry/">Internal Openshift Registry</a>.</p>
-                                        </li>
-                                        </ol>
+                                            <ol class="arabic">
+                                                <li>
+                                                    <p>If the GitHub repository is private, refer to the <a
+                                                            href="https://github.com/tektoncd/pipeline/blob/master/docs/auth.md">Tekton
+                                                            Authentication Documentation</a> on how to add github
+                                                        credentials to your pipeline task or run.</p>
+                                                </li>
+                                                <li>
+                                                    <p>For the example pipeline, your Kubernetes cluster needs access to
+                                                        a Docker registry, such as <a
+                                                            href="https://hub.docker.com/">Docker Hub</a>
+                                                        (<em>I.e.</em>, permission to pull and push images).
+                                                        Alternatively, you can use the <a
+                                                            href="https://docs.openshift.com/container-platform/3.11/install_config/registry/">Internal
+                                                            Openshift Registry</a>.</p>
+                                                </li>
+                                            </ol>
                                         </div>
-                                        </div>
-                                        <div class="sect2">
-                                        <h3 id="setting-up-the-example-appsody-pipeline">Setting up the example Appsody pipeline</h3>
+                                    </div>
+                                    <div class="sect2">
+                                        <h3 id="setting-up-the-example-appsody-pipeline">Setting up the example Appsody
+                                            pipeline</h3>
                                         <div class="paragraph">
-                                        <p>This repo contains an example of a <a href="https://github.com/tektoncd/pipeline">Tekton pipeline</a> that builds and deploys an application created with <a href="https://appsody.dev">Appsody</a> to a <a href="https://github.com/kabanero-io">Kabanero</a> managed cluster.</p>
+                                            <p>This repo contains an example of a <a
+                                                    href="https://github.com/tektoncd/pipeline">Tekton pipeline</a> that
+                                                builds and deploys an application created with <a
+                                                    href="https://appsody.dev">Appsody</a> to a <a
+                                                    href="https://github.com/kabanero-io">Kabanero</a> managed cluster.
+                                            </p>
                                         </div>
                                         <div class="paragraph">
-                                        <p>The Appsody application repository includes a Knative Serving manifest file called <code>appsody-service.yaml</code>. We’ll discuss this aspect in more detail later on.</p>
+                                            <p>The Appsody application repository includes a Knative Serving manifest
+                                                file called <code>appsody-service.yaml</code>. We’ll discuss this aspect
+                                                in more detail later on.</p>
                                         </div>
                                         <div class="olist arabic">
-                                        <ol class="arabic">
-                                        <li>
-                                        <p>Clone the appsody <a href="https://github.com/appsody/tekton-example">tekton-example</a> repository. This repository contains the pipeline manifests.</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <ol class="arabic">
+                                                <li>
+                                                    <p>Clone the appsody <a
+                                                            href="https://github.com/appsody/tekton-example">tekton-example</a>
+                                                        repository. This repository contains the pipeline manifests.</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 git clone https://github.com/appsody/tekton-example.git
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>Ensure that you are creating all resources in the previously created <code>kabanero</code> namespace.<p>Clone the appsody <a href="https://github.com/appsody/tekton-example">tekton-example</a> repository. This repository contains the pipeline manifests.</p></p>
-                                        </li>
-                                        <li>
-                                        <p>Since the Tekton pipeline needs to deploy to the cluster itself, you want to ensure that it runs under an identity that has cluster administrator privileges.</p>
-                                        <div class="paragraph">
-                                        <p>For this reason, create a service account, the appropriate cluster role binding, and hostmount-anyuid access by issuing:</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>Ensure that you are creating all resources in the previously
+                                                        created <code>kabanero</code> namespace.<p>Clone the appsody <a
+                                                                href="https://github.com/appsody/tekton-example">tekton-example</a>
+                                                            repository. This repository contains the pipeline manifests.
+                                                        </p>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Since the Tekton pipeline needs to deploy to the cluster itself,
+                                                        you want to ensure that it runs under an identity that has
+                                                        cluster administrator privileges.</p>
+                                                    <div class="paragraph">
+                                                        <p>For this reason, create a service account, the appropriate
+                                                            cluster role binding, and hostmount-anyuid access by
+                                                            issuing:</p>
+                                                    </div>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 kubectl apply -f appsody-service-account.yaml
 oc adm policy add-cluster-role-to-user cluster-admin -z appsody-sa -n kabanero
 oc adm policy add-scc-to-user hostmount-anyuid -z appsody-sa -n kabanero
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>The previous commands set up a service account called <code>appsody-sa</code> and grant the <code>cluster-admin</code> role to it. The pipeline you are going to create uses this service account.</p>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>Next, create and associate a secret holding the credentials for the Docker registry where you want to push the resultant image of your sample pipeline build.</p>
-                                        </li>
-                                        <li>
-                                        <p>If using the <a href="https://docs.openshift.com/container-platform/3.11/install_config/registry/">Internal Openshift Registry</a>, add the <a href="https://docs.openshift.com/container-platform/3.11/dev_guide/service_accounts.html#default-service-accounts-and-roles">image-builder</a> role to the <code>appsody-sa</code> service account so it has push access. The internal registry secret is automatically associated with the <code>appsody-sa</code> service account by Openshift, and now as access to push images into project.</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>The previous commands set up a service account called
+                                                            <code>appsody-sa</code> and grant the
+                                                            <code>cluster-admin</code> role to it. The pipeline you are
+                                                            going to create uses this service account.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>Next, create and associate a secret holding the credentials for
+                                                        the Docker registry where you want to push the resultant image
+                                                        of your sample pipeline build.</p>
+                                                </li>
+                                                <li>
+                                                    <p>If using the <a
+                                                            href="https://docs.openshift.com/container-platform/3.11/install_config/registry/">Internal
+                                                            Openshift Registry</a>, add the <a
+                                                            href="https://docs.openshift.com/container-platform/3.11/dev_guide/service_accounts.html#default-service-accounts-and-roles">image-builder</a>
+                                                        role to the <code>appsody-sa</code> service account so it has
+                                                        push access. The internal registry secret is automatically
+                                                        associated with the <code>appsody-sa</code> service account by
+                                                        Openshift, and now as access to push images into project.</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc policy add-role-to-user system:image-builder system:serviceaccount:kabanero:appsody-sa
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>If using an external registry, create a secret.
-                                        In the example below, this secret will be used when the pipeline build is attempting to authenticate with <code>https://index.docker.io/v1/</code>. <code>my-docker-secret</code> is the name of secret that we will reference later.
-                                        You may use any name you wish.</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>If using an external registry, create a secret.
+                                                        In the example below, this secret will be used when the pipeline
+                                                        build is attempting to authenticate with
+                                                        <code>https://index.docker.io/v1/</code>.
+                                                        <code>my-docker-secret</code> is the name of secret that we will
+                                                        reference later.
+                                                        You may use any name you wish.</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 apiVersion: v1
 kind: Secret
 metadata:
@@ -346,115 +450,132 @@ stringData:
     username: &lt;your docker userid&gt;
     password: &lt;your docker password&gt;
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>Create a yaml file named <code>my-docker-secret.yaml</code>, making sure to replace the username and password values with your own values.  Then run:</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>Create a yaml file named <code>my-docker-secret.yaml</code>,
+                                                            making sure to replace the username and password values with
+                                                            your own values. Then run:</p>
+                                                    </div>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc apply -f my-docker-secret.yaml
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>Make the Docker registry credentials available to the pipeline by adding your docker secret to the <code>appsody-sa</code> service account. This can be accomplished by editing the service account, using the following command:</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>Make the Docker registry credentials available to the pipeline by
+                                                        adding your docker secret to the <code>appsody-sa</code> service
+                                                        account. This can be accomplished by editing the service
+                                                        account, using the following command:</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc edit serviceaccount appsody-sa
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>An editor opens up. Add your secret to the list of secrets, as shown in the example below:</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>An editor opens up. Add your secret to the list of secrets,
+                                                            as shown in the example below:</p>
+                                                    </div>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 ...
 secrets:
 - name: appsody-sa-token-ldzbq
 - name: my-docker-secret
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>Save the changes.</p>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>Now, create the pipeline task and the pipeline definition. We have a simple pipeline, with a single task that performs the various steps of building and deploying the project:</p>
-                                        <div class="paragraph">
-                                        <p>Modify <code>appsody-build-task.yaml</code> and add this environment variable to the build-push-step step:</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>Save the changes.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>Now, create the pipeline task and the pipeline definition. We
+                                                        have a simple pipeline, with a single task that performs the
+                                                        various steps of building and deploying the project:</p>
+                                                    <div class="paragraph">
+                                                        <p>Modify <code>appsody-build-task.yaml</code> and add this
+                                                            environment variable to the build-push-step step:</p>
+                                                    </div>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 ...
         env:
         - name: DOCKER_CONFIG
         value: /builder/home/.docker
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>If you are using the Internal Openshift Registry, add the arg <code>--skip-tls-verify</code> to the executor command</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>If you are using the Internal Openshift Registry, add the arg
+                                                            <code>--skip-tls-verify</code> to the executor command</p>
+                                                    </div>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 ...
     command:
     - /kaniko/executor
     args:
     - --skip-tls-verify
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>Apply the manifests</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="paragraph">
+                                                        <p>Apply the manifests</p>
+                                                    </div>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc apply -f appsody-build-task.yaml
 oc apply -f appsody-build-pipeline.yaml
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>The pipeline requires the definition of two resources in order to operate:</p>
-                                        <div class="ulist">
-                                        <ul>
-                                        <li>
-                                        <p>The definition of the Docker image that is built and deployed by the pipeline itself</p>
-                                        </li>
-                                        <li>
-                                        <p>The location of the GitHub project that contains your Appsody code</p>
-                                        <div class="paragraph">
-                                        <p>For this reason, you need to edit the <code>appsody-pipeline-resources.yaml</code>. Change the value of the Docker image url to match your settings:</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>The pipeline requires the definition of two resources in order to
+                                                        operate:</p>
+                                                    <div class="ulist">
+                                                        <ul>
+                                                            <li>
+                                                                <p>The definition of the Docker image that is built and
+                                                                    deployed by the pipeline itself</p>
+                                                            </li>
+                                                            <li>
+                                                                <p>The location of the GitHub project that contains your
+                                                                    Appsody code</p>
+                                                                <div class="paragraph">
+                                                                    <p>For this reason, you need to edit the
+                                                                        <code>appsody-pipeline-resources.yaml</code>.
+                                                                        Change the value of the Docker image url to
+                                                                        match your settings:</p>
+                                                                </div>
+                                                                <div class="literalblock">
+                                                                    <div class="content">
+                                                                        <pre>
 ...
 spec:
     params:
     - name: url
     value: index.docker.io/your-userid/my-appsody-image
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>And change the definition of your GitHub project:</p>
-                                        </div>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="paragraph">
+                                                                    <p>And change the definition of your GitHub project:
+                                                                    </p>
+                                                                </div>
+                                                                <div class="literalblock">
+                                                                    <div class="content">
+                                                                        <pre>
 ...
 spec:
     params:
@@ -463,27 +584,30 @@ spec:
     - name: url
     value: https://github.com/your-userid/appsody-test-build
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        </ul>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>Once you have edited the resources, apply them to your cluster:</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>Once you have edited the resources, apply them to your cluster:
+                                                    </p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 oc apply -f appsody-pipeline-resources.yaml
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <p>The Tekton buld pipeline requires a Persistent Volume. If you do not have a default dynamic storage provider, create a hostPath volume:</p>
-                                        <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>The Tekton buld pipeline requires a Persistent Volume. If you do
+                                                        not have a default dynamic storage provider, create a hostPath
+                                                        volume:</p>
+                                                    <div class="literalblock">
+                                                        <div class="content">
+                                                            <pre>
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -496,26 +620,31 @@ spec:
     hostPath:
     path: /var/lib/appsody-manual-pipeline-run-pvc
                                         </pre>
-                                        </div>
-                                        </div>
-                                        </li>
-                                        </ol>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>The Tekton pipeline is now fully set up.</p>
-                                        </div>
-                                        </div>
-                                        <div class="sect2">
-                                        <h3 id="a-few-words-on-the-required-deployment-manifest">A few words on the required deployment manifest</h3>
-                                        <div class="paragraph">
-                                        <p>As we mentioned earlier, the pipeline is designed to deploy your application to the Kubernetes cluster as a Knative Serving service. The pipeline expects a deployment manifest located within your project - specifically, it expects to run <code>kubectl apply</code> against a file named <code>appsody-service.yaml</code>.</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
                                         </div>
                                         <div class="paragraph">
-                                        <p>Here we provide an example of such a deployment manifest:</p>
+                                            <p>The Tekton pipeline is now fully set up.</p>
+                                        </div>
+                                    </div>
+                                    <div class="sect2">
+                                        <h3 id="a-few-words-on-the-required-deployment-manifest">A few words on the
+                                            required deployment manifest</h3>
+                                        <div class="paragraph">
+                                            <p>As we mentioned earlier, the pipeline is designed to deploy your
+                                                application to the Kubernetes cluster as a Knative Serving service. The
+                                                pipeline expects a deployment manifest located within your project -
+                                                specifically, it expects to run <code>kubectl apply</code> against a
+                                                file named <code>appsody-service.yaml</code>.</p>
+                                        </div>
+                                        <div class="paragraph">
+                                            <p>Here we provide an example of such a deployment manifest:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <div class="content">
+                                                <pre>
 apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
@@ -531,38 +660,51 @@ spec:
             ports:
             - containerPort: 3000
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>The file can be located anywhere within your project, since the pipeline will discover it.</p>
+                                            </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>Notice that the image url must match the definition of the Docker image resource that you created for the pipeline. The <code>containerPort</code> must be set to the port number on which the server inside the Appsody stack is configured to listen.</p>
+                                            <p>The file can be located anywhere within your project, since the pipeline
+                                                will discover it.</p>
                                         </div>
                                         <div class="paragraph">
-                                        <p>One way to obtain a manifest file that has all the matching settings is to run the <code>appsody deploy</code> command, as described in <a href="https://appsody.dev/docs">the Appsody documentation</a>.</p>
+                                            <p>Notice that the image url must match the definition of the Docker image
+                                                resource that you created for the pipeline. The
+                                                <code>containerPort</code> must be set to the port number on which the
+                                                server inside the Appsody stack is configured to listen.</p>
                                         </div>
                                         <div class="paragraph">
-                                        <p>It must be noted, however, that the pipeline can work with any deployment manifest - not limited to Knative Serving services. Its current implementation applies whatever deployment manifest is contained in <code>appsody-service.yaml</code>.</p>
+                                            <p>One way to obtain a manifest file that has all the matching settings is
+                                                to run the <code>appsody deploy</code> command, as described in <a
+                                                    href="https://appsody.dev/docs">the Appsody documentation</a>.</p>
                                         </div>
                                         <div class="paragraph">
-                                        <p>The file name can be modified by simply changing the relevant line in <code>appsody-build-pipeline.yaml</code>, as pointed out here:</p>
+                                            <p>It must be noted, however, that the pipeline can work with any deployment
+                                                manifest - not limited to Knative Serving services. Its current
+                                                implementation applies whatever deployment manifest is contained in
+                                                <code>appsody-service.yaml</code>.</p>
+                                        </div>
+                                        <div class="paragraph">
+                                            <p>The file name can be modified by simply changing the relevant line in
+                                                <code>appsody-build-pipeline.yaml</code>, as pointed out here:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>      
+                                            <div class="content">
+                                                <pre>
 params:
 - name: appsody-deploy-file-name
     value: appsody-service.yaml
                                         </pre>
-                                        </div>
+                                            </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>Also, if you wanted to retrieve a deployment manifest from a different repository, rather than assuming its presence in the application code repository, you could modify this section of <code>appsody-build-task.yaml</code>:</p>
+                                            <p>Also, if you wanted to retrieve a deployment manifest from a different
+                                                repository, rather than assuming its presence in the application code
+                                                repository, you could modify this section of
+                                                <code>appsody-build-task.yaml</code>:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>    
+                                            <div class="content">
+                                                <pre>
 - name: install-knative
     image: lachlanevenson/k8s-kubectl
     command: ['/bin/sh']
@@ -571,63 +713,70 @@ params:
     - name: YAMLFILE
         value: ${inputs.params.appsody-deploy-file-name}
                                         </pre>
-                                        </div>
+                                            </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>The implementation we have provided assumes the deployment manifest is in the <code>workspace\extracted</code> directory, which contains a clone of the source repository - but it could be adjusted to obtain that file from a different source.</p>
+                                            <p>The implementation we have provided assumes the deployment manifest is in
+                                                the <code>workspace\extracted</code> directory, which contains a clone
+                                                of the source repository - but it could be adjusted to obtain that file
+                                                from a different source.</p>
                                         </div>
-                                        </div>
-                                        <div class="sect2">
+                                    </div>
+                                    <div class="sect2">
                                         <h3 id="running-the-pipeline-manually">Running the pipeline manually</h3>
                                         <div class="paragraph">
-                                        <p>This repo provides a manual trigger (via a PipelineRun resource) that you can use to kick off the pipeline on your cluster.</p>
+                                            <p>This repo provides a manual trigger (via a PipelineRun resource) that you
+                                                can use to kick off the pipeline on your cluster.</p>
                                         </div>
                                         <div class="paragraph">
-                                        <p>Run the following command:</p>
+                                            <p>Run the following command:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <div class="content">
+                                                <pre>
 oc apply -f appsody-pipeline-run.yaml
                                         </pre>
-                                        </div>
+                                            </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>A new pod will be launched in the "kabanero" namespace with the name similar to:</p>
+                                            <p>A new pod will be launched in the "kabanero" namespace with the name
+                                                similar to:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <div class="content">
+                                                <pre>
 appsody-manual-pipeline-run-appsody-build-t9g87-pod-6c00e4
                                         </pre>
-                                        </div>
+                                            </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>To view the logs from the running pipeline, use this command, tailored for the specific id of your pod:</p>
+                                            <p>To view the logs from the running pipeline, use this command, tailored
+                                                for the specific id of your pod:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <div class="content">
+                                                <pre>
 kubectl logs appsody-manual-pipeline-run-appsody-build-t9g87-pod-6c00e4 -n kabanero --all-containers
                                         </pre>
-                                        </div>
-                                        </div>
-                                        <div class="paragraph">
-                                        <p>In that output, you will see the output from the pipeline build.</p>
+                                            </div>
                                         </div>
                                         <div class="paragraph">
-                                        <p>To re-run another build, first delete the existing pipeline-run before re-running the apply command:</p>
+                                            <p>In that output, you will see the output from the pipeline build.</p>
+                                        </div>
+                                        <div class="paragraph">
+                                            <p>To re-run another build, first delete the existing pipeline-run before
+                                                re-running the apply command:</p>
                                         </div>
                                         <div class="literalblock">
-                                        <div class="content">
-                                        <pre>
+                                            <div class="content">
+                                                <pre>
 oc delete -f appsody-pipeline-run.yaml
                                         </pre>
+                                            </div>
                                         </div>
-                                        </div>
-                                        </div>
-                                        </div>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -645,39 +794,55 @@ oc delete -f appsody-pipeline-run.yaml
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                                <div id="content">
-                                        <div id="general_title"> <h1>Connecting Tekton to GitHub</h1>
-                                        </div>
-                                    
-                                        <!-- General reference content section -->
-                                        
-                                    <div class="sect1">
+                            <div id="content">
+                                <div id="general_title">
+                                    <h1>Connecting Tekton to GitHub</h1>
+                                </div>
+
+                                <!-- General reference content section -->
+
+                                <div class="sect1">
                                     <h2 id="set-up-github">Set up GitHub</h2>
                                     <div class="sectionbody">
-                                    <div class="paragraph">
-                                    <p>If you haven’t already, create a new GitHub repo for the desired project and have the code pushed to the GitHub repo. Copy the url of the GitHub repo as you will need that later. You will also need to create an Auth Token with webhook permissions: <a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line" class="bare">https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line</a></p>
+                                        <div class="paragraph">
+                                            <p>If you haven’t already, create a new GitHub repo for the desired project
+                                                and have the code pushed to the GitHub repo. Copy the url of the GitHub
+                                                repo as you will need that later. You will also need to create an Auth
+                                                Token with webhook permissions: <a
+                                                    href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line"
+                                                    class="bare">https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line</a>
+                                            </p>
+                                        </div>
                                     </div>
-                                    </div>
-                                    </div>
-                                    <div class="sect1">
+                                </div>
+                                <div class="sect1">
                                     <h2 id="connect-tekton-to-github">Connect Tekton to GitHub</h2>
                                     <div class="sectionbody">
-                                    <div class="paragraph">
-                                    <p>Now we can create a webhook. From the Tekton Dashboard, under "Extensions" in the left column, select webhooks-extension. Fill out the relevant information. In the access token section, you will need to use the <code>+</code> button and create a secret with the GitHub Auth token.
-                                    <strong>NOTE:</strong> The <code>Name</code> field is used as part of the webhook callback URI. Therefore, the name must consist of valid URI characters.</p>
+                                        <div class="paragraph">
+                                            <p>Now we can create a webhook. From the Tekton Dashboard, under
+                                                "Extensions" in the left column, select webhooks-extension. Fill out the
+                                                relevant information. In the access token section, you will need to use
+                                                the <code>+</code> button and create a secret with the GitHub Auth
+                                                token.
+                                                <strong>NOTE:</strong> The <code>Name</code> field is used as part of
+                                                the webhook callback URI. Therefore, the name must consist of valid URI
+                                                characters.</p>
+                                        </div>
+                                        <div class="paragraph">
+                                            <p>You can check to see if it was created correctly by going into your
+                                                GitHub repo and, in the settings→webhooks tab, you should see a webhook
+                                                with a green checkmark.</p>
+                                        </div>
+                                        <div class="paragraph">
+                                            <p>You can now change some code in your local repo, commit and push to
+                                                GitHub to see Tekton kick off a pipeline run.</p>
+                                        </div>
                                     </div>
-                                    <div class="paragraph">
-                                    <p>You can check to see if it was created correctly by going into your GitHub repo and, in the settings→webhooks tab, you should see a webhook with a green checkmark.</p>
-                                    </div>
-                                    <div class="paragraph">
-                                    <p>You can now change some code in your local repo, commit and push to GitHub to see Tekton kick off a pipeline run.</p>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -697,5 +862,3 @@ oc delete -f appsody-pipeline-run.yaml
         </div>
     </div>
 </div> -->
-
-        

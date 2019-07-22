@@ -83,71 +83,11 @@ permalink: /try-it/
                 <div id="codewind_content" class="container">
                     <div class="row">
                         <div class="col">
-                            <h1>Appsody <code>Hello World</code> on Codewind</h1><br>
+                            {% assign appsodyHelloWorld = site.pages | where: 'title', 'appsody Hello World on Codewind' | sort: 'title' %}
 
-                            <h2>Prerequisites</h2>
-
-                            <ul>
-                                <li><a href="/codewind">Codewind</a> on Visual Studio Code or Eclipse</li>
-                                <li><a href="https://appsody.dev/docs/getting-started/installation">Appsody</a></li>
-                                <li><a href="https://github.com/kabanero-io/appsodyExtension">Appsody Extension for
-                                        Codewind</a></li>
-                            </ul>
-
-                            <h2>Getting started with VS Code</h2>
-
-                            <h4>Creating a Java MicroProfile appsody Project</h4>
-                            <ol>
-                                <li>In VS Code open the command palette and navigate to the option <code>Codewind:
-                                        Create New Project</code>.
-                                    Select the Appsody Java MicroProfile template, give it a name and press enter.
-                                    Navigate to the <code>Explorer</code> view.
-                                    In the <code>Explorer</code> view keep expanding the Codewind section until the
-                                    project you created is visible.
-                                    At this point you can click the box with arrow icon next to the project to open it
-                                    up in a browser, or the information icon to view the project overview.</li>
-                                <li>The base url that you will be directed to doesn't have any information yet. However
-                                    appending <code>/health</code> will display the health of the container.
-                                    Other built in endpoints are described on the bottom of the <a
-                                        href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application
-                                        stack's README</a></li>
-                                <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll
-                                    need to wait for it to be running.</li>
-                            </ol>
-
-                            <h2>Getting started with Eclispe</h2>
-
-                            <h4>Creating a Java MicroProfile appsody Project</h4>
-                            <ol>
-                                <li>Open up the Codwind Explorer in your Eclipse workspace by clicking Window → Show
-                                    View → Other…​ → Codewind → Codewind Explorer. Right click on the Local Projects
-                                    under Codewind and select New Project. Select the Appsody Java MicroProfile
-                                    template, give it a name and create it. Now underneath your Codewind → Local
-                                    Projects, there should be your project. You can right click on the project and "Open
-                                    Application" to view your app in your browser.</li>
-                                <li>The base url that you will be directed to doesn't have any information yet. However
-                                    appending <code>/health</code> will display the health of the container.
-                                    Other built in endpoints are described on the bottom of the <a
-                                        href="https://github.com/appsody/stacks/blob/master/incubator/java-microprofile/README.md">application
-                                        stack's README</a></li>
-                                <li><strong>NOTE:</strong> The project might still be <code>starting</code> and you'll
-                                    need to wait for it to be running. Also you might need to refresh the project
-                                    explorer to see the contents of your project directory.</li>
-                            </ol>
-
-                            <h2>Hello World</h2>
-
-                            <h4>Create the index.html</h4>
-                            <ol>
-                                <li>Right-click on the appsody project and chose the option to Open Folder as Workspace.
-                                    In the project workspace, navigate to src/main/webapp/ and create a new file there
-                                    called index.html. Open the file and add Hello World. Save the file and click the
-                                    icon to open the app in your web browser again. You should see a webpage with Hello
-                                    World. Now you can go back to the file and change it, save it, and then refresh the
-                                    webpage. The webpage will now be displaying your change</li>
-                                <li>While this is only a basic Hello World html file, this same process goes for any
-                                    changes in the project you want to make.</li>
-                            </ol>
+                            {% for doc in appsodyHelloWorld limit:1 %}
+                                <p>{{ doc.content }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -236,8 +176,11 @@ permalink: /try-it/
                     </div><br>
                     <div class="row">
                         <div class="col">
-                            {% assign kabFoundationDoc = site.pages | where: 'title', 'Kabanero Foundation Setup' %}
-                            <p>{{ kabFoundationDoc.title }}</p>
+                            {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
+
+                            {% for doc in kabFoundationSetup limit:1 %}
+                                <p>{{ doc.content }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -255,55 +198,13 @@ permalink: /try-it/
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div id="content">
-                                <div id="general_title">
-                                    <h1>Connecting Tekton to GitHub</h1>
-                                </div>
+                            {% assign tektonWebhook = site.pages | where: 'title', 'Connecting Tekton to Github' | sort: 'title' %}
 
-                                <!-- General reference content section -->
-
-                                <div class="sect1">
-                                    <h2 id="set-up-github">Set up GitHub</h2>
-                                    <div class="sectionbody">
-                                        <div class="paragraph">
-                                            <p>If you haven’t already, create a new GitHub repo for the desired project
-                                                and have the code pushed to the GitHub repo. Copy the url of the GitHub
-                                                repo as you will need that later. You will also need to create an Auth
-                                                Token with webhook permissions: <a
-                                                    href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line"
-                                                    class="bare">https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sect1">
-                                    <h2 id="connect-tekton-to-github">Connect Tekton to GitHub</h2>
-                                    <div class="sectionbody">
-                                        <div class="paragraph">
-                                            <p>Now we can create a webhook. From the Tekton Dashboard, under
-                                                "Extensions" in the left column, select webhooks-extension. Fill out the
-                                                relevant information. In the access token section, you will need to use
-                                                the <code>+</code> button and create a secret with the GitHub Auth
-                                                token.
-                                                <strong>NOTE:</strong> The <code>Name</code> field is used as part of
-                                                the webhook callback URI. Therefore, the name must consist of valid URI
-                                                characters.</p>
-                                        </div>
-                                        <div class="paragraph">
-                                            <p>You can check to see if it was created correctly by going into your
-                                                GitHub repo and, in the settings→webhooks tab, you should see a webhook
-                                                with a green checkmark.</p>
-                                        </div>
-                                        <div class="paragraph">
-                                            <p>You can now change some code in your local repo, commit and push to
-                                                GitHub to see Tekton kick off a pipeline run.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% for doc in tektonWebhook limit:1 %}
+                                <p>{{ doc.content }}</p>
+                            {% endfor %}
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

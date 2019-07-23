@@ -9,6 +9,8 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
+$color-kabanero:#C43804;
+
 /* Nav bar color corrections for light page */
 .navbar-dark .navbar-nav .nav-link {
     color: #5E6B8D;
@@ -441,7 +443,7 @@ html, body{
         border-bottom: 1px solid #FFFFFF;
         & > .nav-item > .nav-link {
             border: none;
-            color: #C43804 !important;
+            color: $color-kabanero !important;
             padding-left: 31px;
             padding-right: 31px;
             padding-top: 15px;
@@ -456,7 +458,7 @@ html, body{
             border-top: none;
             border-left: none;
             border-right: none;
-            border-bottom: 4px solid #292828;
+            border-bottom: 4px solid $color-kabanero;
             color: #292828;
             background: transparent;
             margin-bottom: -4px;

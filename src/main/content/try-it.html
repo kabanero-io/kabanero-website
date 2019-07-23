@@ -83,9 +83,10 @@ permalink: /try-it/
                 <div id="codewind_content" class="container">
                     <div class="row">
                         <div class="col">
-                            {% assign appsodyHelloWorld = site.pages | where: 'title', 'appsody Hello World on Codewind' | sort: 'title' %}
+                            {% assign appsodyHelloWorld = site.pages | where: 'title', 'Appsody Hello World on Codewind' | sort: 'title' %}
 
                             {% for doc in appsodyHelloWorld limit:1 %}
+                                <h1>{{ doc.title }}</h1>
                                 <p>{{ doc.content }}</p>
                             {% endfor %}
                         </div>
@@ -179,6 +180,7 @@ permalink: /try-it/
                             {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
 
                             {% for doc in kabFoundationSetup limit:1 %}
+                                <h1>{{ doc.title }}</h1>
                                 <p>{{ doc.content }}</p>
                             {% endfor %}
                         </div>
@@ -198,9 +200,10 @@ permalink: /try-it/
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            {% assign tektonWebhook = site.pages | where: 'title', 'Connecting Tekton to Github' | sort: 'title' %}
+                            {% assign tektonWebhook = site.pages | where: 'title', 'Connecting Tekton to GitHub' | sort: 'title' %}
 
                             {% for doc in tektonWebhook limit:1 %}
+                                <h1>{{ doc.title }}</h1>
                                 <p>{{ doc.content }}</p>
                             {% endfor %}
                         </div>

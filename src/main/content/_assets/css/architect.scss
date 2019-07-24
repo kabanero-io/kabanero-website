@@ -37,3 +37,19 @@
 .section {
     padding: 3rem 1.5rem;
 }
+
+.notification.is-danger {
+    background-color: #d1510d;
+    color: #fff;
+}
+
+.notification {
+    border-radius: 4px;
+    padding: 3.25rem 2.5rem 3.25rem 1.5rem;
+    position: relative;
+}
+
+.message{
+    font-size: 1.5rem !important;
+    text-align: center;
+}

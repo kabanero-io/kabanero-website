@@ -86,16 +86,13 @@
 }
 
 .logo{
-    height: 50px;
-    margin-left: 35%;
+    height: 100px;
 }
 
-.jane_video{
-
-}
 
 #componentsText{
     margin-top: 30px;
+    text-align:center;
 }
 
 .usage_video{
@@ -116,6 +113,12 @@
 
 .header{
     font-size: 2.2em;
+  }
+
+.install_header_and_logo{
+      display: inline-flex;
+      margin-bottom: 20px;
+      margin-top:30px;
   }
 
   .installation_link{
@@ -151,4 +154,12 @@
 
 .appsody_link{
   margin-bottom: 15px;
+}
+
+#frameworksTopRow{
+  margin-top:30px;
+}
+
+.topBorder{
+  border-top:1px solid gray;
 }

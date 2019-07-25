@@ -38,195 +38,31 @@ permalink: /try-it/
 </div>
 
 
-<!-- TABS -->
-<div class="container" id="tabs_container">
+<div class="container">
     <div class="row">
-        <ul class="nav nav-tabs justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#download_appsody" role="tab">
-                    <img src="/img/userStoryLogos/jane.png">
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#download_codewind" role="tab">
-                    <img src="/img/userStoryLogos/champ.png">
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#kabanero_foundation" role="tab">
-                    <img src="/img/userStoryLogos/todd.png">
-                </a>
-            </li>
-        </ul>
+        <div class="col justify-content-center">
+            <a class="col-md-4" href="/try-it-ide">
+                <img src="/img/userStoryLogos/jane.png">
+            </a>
+            <a class="col-md-4" href="/architect">
+                <img src="/img/userStoryLogos/champ.png">
+            </a>
+            <a class="col-md-4" href="/operations">
+                <img src="/img/userStoryLogos/todd.png">
+            </a>
+        </div>
     </div>
-</div>
-
-<div class="container" id="tabs_container">
     <div class="row">
-        <div class="col tab-content">
-            <!-- Appsody -->
-            <div class="tab-pane fade show active" id="download_appsody" role="tabpanel"
-                aria-labelledby="download_appsody">
-                <div class="row">
-                    <img class="logo" src="/img/logos/appsody_logo.png">
-                    <div class="col download_detail">
-                        <p>
-                            Appsody provides Kabanero with simplicity in the creation of cloud-native applications in
-                            containers.
-                            Appsody provides pre-configured container images (stacks) and project templates for a
-                            growing set of popular open source runtimes and frameworks,
-                            providing a foundation on which to build applications for Kubernetes and Knative
-                            deployments.
-                        </p>
-                        <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
-                        <img class="workflow_image" src="/img/jane_appsody_pic.png">
-                    </div>
-                </div>
-                <div id="codewind_content" class="container">
-                    <div class="row">
-                        <div class="col">
-                            {% assign appsodyHelloWorld = site.pages | where: 'title', 'Appsody Hello World on Codewind' | sort: 'title' %}
-
-                            {% for doc in appsodyHelloWorld limit:1 %}
-                                <h1 class="tryitDocTitle">{{ doc.title }}</h1>
-                                {{ doc.content }}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+        <div class="col justify-content-center">
+            <div class="col-md-4 inline-block">
+                The developer (or team of developers), can install the Kabanero developer experience. This can be either command line or plugins into the most popular IDEs to allow you to do container developement.
             </div>
-            <!-- Codewind -->
-            <div class="tab-pane fade show" id="download_codewind" role="tabpanel" aria-labelledby="download_codewind">
-                <div class="row">
-                    <img class="logo" src="/img/logos/codewind_logo.png">
-                    <div class="col download_detail">
-                        <p>
-                            Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code,
-                            Eclipse,
-                            and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they
-                            already know.
-                            You can rapidly iterate, debug, and performance test apps inside containers, just like when
-                            they run in production.
-                        </p>
-                        <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
-                        <img class="workflow_image" src="/img/jane_codewind_pic.png">
-                    </div>
-                </div>
-                <!-- Try it with VS Code -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div id="componentsText">
-                                <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">Check out the video (Create a
-                                    Node app)</a>
-                                <p>You can go from zero to application running in Knative/Kubernetes in under 5 minutes,
-                                    working only with the app code - no tinkering with Dockerfiles, no learning Kube and
-                                    Kube Yaml, no non-sense.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Try it with VS Code -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div id="componentsText">
-                                <strong>Try it with VS Code</strong>
-                                <div>
-                                    <ol type="1">
-                                        <li>Install Codewind from the VS Code Marketplace</li>
-                                        <li><a href="https://appsody.dev/docs/getting-started/quick-start"
-                                                target="_blank">Install Appsody CLI </a></li>
-                                        <li><a href="https://github.com/kabanero-io/appsodyExtension"
-                                                target="_blank">Install Appsody Extension for Codewind </a></li>
-                                        <li>Try it for yourself.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Try it with Eclipse -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div id="componentsText">
-                                <strong>Try it with Eclipse</strong>
-                                <div>
-                                    <ol type="1">
-                                        <li>Install Codewind from the Eclipse Marketplace</li>
-                                        <li><a href="https://appsody.dev/docs/getting-started/quick-start"
-                                                target="_blank">Install Appsody CLI </a></li>
-                                        <li><a href="https://github.com/kabanero-io/appsodyExtension"
-                                                target="_blank">Install Appsody Extension for Codewind </a></li>
-                                        <li>Try it for yourself.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4 inline-block">
+                The solution architect can work with business leaders to define the technology that his business wishes to make standard. This can then be defined in a way that the development team can use in the most efficient manner.
             </div>
-
-            <!-- Kabanero Foundation  -->
-            <div class="tab-pane fade show" id="kabanero_foundation" role="tabpanel"
-                aria-labelledby="kabanero_foundation">
-                <div class="container">
-                    <div class="row">
-                        <img class="workflow_image" src="/img/champs_kabanero_foundation.png">
-                    </div><br>
-                    <div class="row">
-                        <div class="col">
-                            {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
-
-                            {% for doc in kabFoundationSetup limit:1 %}
-                                <h1 class="tryitDocTitle">{{ doc.title }}</h1>
-                                <p class="tryitDocText">{{ doc.content }}</p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tekton  -->
-            <div class="tab-pane fade show" id="tekton" role="tabpanel" aria-labelledby="tekton">
-                <div class="row">
-                    <!-- <img class="logo" src="/img/logos/85x85/tekton.png">
-                    <div class="col download_detail">
-                        <a href="https://cloud.google.com/tekton/" target="_blank">Learn more about Tekton</a>
-                    </div> -->
-                    <img class="workflow_image" src="/img/jane_tekton_webhook_pic.png">
-                </div><br>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            {% assign tektonWebhook = site.pages | where: 'title', 'Connecting Tekton to GitHub' | sort: 'title' %}
-
-                            {% for doc in tektonWebhook limit:1 %}
-                                <h1 class="tryitDocTitle">{{ doc.title }}</h1>
-                                <p class="tryitDocText">{{ doc.content }}</p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-3 inline-block">
+                The operations team can install the cloud based infrastructure which will enable development teams to produce and deploy applications in a highly manageable way.
             </div>
         </div>
     </div>
 </div>
-</div>
-
-<!-- Tutorials -->
-<!-- <div >
-    <div class="container" id="tutorials-container">
-        <div class="row">
-            <div class="col">
-                <p class="header tutorials-header"> Tutorials </p>
-                <div class="row horizontal-separator "></div>
-
-            </div>
-        </div>
-    </div>
-</div> -->

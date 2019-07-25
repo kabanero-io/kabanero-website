@@ -1,0 +1,18 @@
+---
+layout: default
+title: Kabanero Foundation Setup
+css: operations
+permalink: /kabanero-foundation-setup/
+---
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
+
+            {% for doc in kabFoundationSetup limit:1 %}
+                <h1 class="setupTitle">{{ doc.title }}</h1>
+                {{ doc.content }}
+            {% endfor %}
+        </div>
+    </div>
+</div>

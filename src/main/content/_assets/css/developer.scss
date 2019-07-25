@@ -92,6 +92,7 @@
 
 #componentsText{
     margin-top: 30px;
+    text-align:center;
 }
 
 .usage_video{
@@ -117,6 +118,7 @@
 .install_header_and_logo{
       display: inline-flex;
       margin-bottom: 20px;
+      margin-top:30px;
   }
 
   .installation_link{
@@ -152,4 +154,12 @@
 
 .appsody_link{
   margin-bottom: 15px;
+}
+
+#frameworksTopRow{
+  margin-top:30px;
+}
+
+.topBorder{
+  border-top:1px solid gray;
 }

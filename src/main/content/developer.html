@@ -20,13 +20,7 @@ permalink: /developer/
         <div class="col">
             <div id="componentsText">
                 <p>
-                    Kabanero build, test, and deployment is done inside a container.
-                    Kabanero provides a component, appsody, that enables a developer to build a project, write code,
-                    build, test, and deploy it in a container on the developers machine.
-                    Appsody provides a command line for doing this. Codewind, extends leading IDEs that are available in
-                    the industry to provide container based development, including making Appsody available in these
-                    IDEs.
-
+                    Use Kabanero to build  applications  that are ready for deployment onto Kubernetes and Knative, without having to spend time defining  container images, build  infrastructure, or Kubeyaml. Focus on developing  new applications  and let the Kabanero tools do the heavy lifting of building  and packaging  deployment-ready containers. Go ahead and try it for yourself, using extensions to your favorite IDE, or our command-line tools.
                 </p>
             </div>
         </div>
@@ -35,91 +29,24 @@ permalink: /developer/
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-md-6">
             <div id="componentsText">
                 <div class="install_header_and_logo">
                     <h2 class="installation_header">Install instructions for IDE</h2>
                     <img class="logo" src="/img/logos/visual_studio_code.png">
+                </div><br>
+                <div class="install_header_and_logo">
+                    <h2 class="installation_header">Install instructions for CLI</h2>
+                    <img class="logo" src="/img/logos/appsody_cli.png">
+                </div>  
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md usage_video">
+                <div class="videoWrapper"> 
+                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <!-- Codewind -->
-                <div class="tab-pane fade show" id="download_codewind" role="tabpanel"
-                    aria-labelledby="download_codewind">
-                    <div class="row">
-                        <div class="col download_detail">
-                            <p>
-                                Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS
-                                Code,
-                                Eclipse,
-                                and Eclipse Che (with more planned). This enables developers to use a workflow and IDE
-                                they
-                                already know.
-                                You can rapidly iterate, debug, and performance test apps inside containers, just like
-                                when
-                                they run in production.
-                            </p>
-                            <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
-                            <img class="workflow_image" src="/img/jane_codewind_pic.png">
-                        </div>
-                    </div>
-                    <!-- Try it with VS Code -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div id="componentsText">
-                                    <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">Check out the video (Create a
-                                        Node app)</a>
-                                    <p>You can go from zero to application running in Knative/Kubernetes in under 5
-                                        minutes,
-                                        working only with the app code - no tinkering with Dockerfiles, no learning Kube
-                                        and
-                                        Kube Yaml, no non-sense.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Try it with VS Code -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div id="componentsText">
-                                    <strong>Try it with VS Code</strong>
-                                    <div>
-                                        <ol type="1">
-                                            <li>Install Codewind from the VS Code Marketplace</li>
-                                            <li><a href="https://appsody.dev/docs/getting-started/quick-start"
-                                                    target="_blank">Install Appsody CLI </a></li>
-                                            <li><a href="https://github.com/kabanero-io/appsodyExtension"
-                                                    target="_blank">Install Appsody Extension for Codewind </a></li>
-                                            <li>Try it for yourself.</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Try it with Eclipse -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div id="componentsText">
-                                    <strong>Try it with Eclipse</strong>
-                                    <div>
-                                        <ol type="1">
-                                            <li>Install Codewind from the Eclipse Marketplace</li>
-                                            <li><a href="https://appsody.dev/docs/getting-started/quick-start"
-                                                    target="_blank">Install Appsody CLI </a></li>
-                                            <li><a href="https://github.com/kabanero-io/appsodyExtension"
-                                                    target="_blank">Install Appsody Extension for Codewind </a></li>
-                                            <li>Try it for yourself.</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p>Go from  zero to application running in Knative/Kubernetes  in under 5 minutes, working only with the app code -no tinkering with Dockerfiles, no learning Kubeand KubeYaml, no non-sense.</p>
             </div>
         </div>
     </div>
@@ -127,31 +54,31 @@ permalink: /developer/
 
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div id="componentsText">
-                <div class="install_header_and_logo">
-                    <h2 class="installation_header">Install instructions for CLI</h2>
-                    <img class="logo" src="/img/logos/appsody_cli.png">
-                </div>
-                <div class="row">
-                    <!-- <img class="logo" src="/img/logos/appsody_logo.png"> -->
-                    <div class="col download_detail">
-                        <p>
-                            Appsody provides Kabanero with simplicity in the creation of cloud-native applications in
-                            containers.
-                            Appsody provides pre-configured container images (stacks) and project templates for a
-                            growing set of popular open source runtimes and frameworks,
-                            providing a foundation on which to build applications for Kubernetes and Knative
-                            deployments.
-                        </p>
-                        <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
-                        <br />
-                        <a href="https://appsody.dev/docs/getting-started/installation" target="_blank">Install
-                            Appsody</a>
-                        <img class="workflow_image" src="/img/jane_appsody_pic.png">
-                    </div>
-                </div>
-            </div>
+        <img class="logo" src="/img/codewind.png">
+        <div class="col download_detail">
+            <p>
+                Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code,
+                Eclipse,
+                and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they
+                already know.
+                You can rapidly iterate, debug, and performance test apps inside containers, just like when
+                they run in production.
+            </p>
+            <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
+        </div>
+    </div>
+    <div class="row">
+        <img class="logo" src="/img/appsody.png">
+        <div class="col download_detail">
+            <p>
+                Appsody provides Kabanero with simplicity in the creation of cloud-native applications in
+                containers.
+                Appsody provides pre-configured container images (stacks) and project templates for a
+                growing set of popular open source runtimes and frameworks,
+                providing a foundation on which to build applications for Kubernetes and Knative
+                deployments.
+            </p>
+            <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
         </div>
     </div>
 </div>

@@ -4,13 +4,25 @@ title: Kabanero Foundation Setup
 css: operations
 permalink: /operations/kabanero-foundation-setup/
 ---
+
+<div class="helper"></div>
 <div class="container">
     <div class="row">
         <div class="col">
+            <h1>Kabanero Foundation Installation</h1>
+            <p>Kabanero is built on foundational open technologies that install onto a Kubernetes cluster.  Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a set of curated collections, which this install will activate a default set of featured collections.</p>
+            <p>Typically this experience is performed by a cloud operations team, although anyone skilled in setting up Kubernetes can also install Kabanero.</p>
+            <img src="/img/champs_kabanero_foundation.png" style="height:200px;">
+            <p>Learn more by checking out our <a href="https://github.com/kabanero-io/kabanero-command-line/tree/master/kab-cli/kabanero-mgmt">Kabanero github pages</a>.</p>
+            <div class="row horizontal-separator seperatorMargin"></div>
+            <h3>Prerequisites</h3>
+            <p>The Kabanero Foundation is installed in a Kubernetes cluster.Kubernetes must first be installed.  Today Kabanero has been tested on the Origin Community Distributionof Kubernetes(OKD) version 3.11. There is intent to also expand testing on upstream Kubernetes in the future.</p>
+            <p><a href="https://docs.okd.io/latest/getting_started/administrators.html">OKD Install Instructions</a></p>
+            <div class="row horizontal-separator seperatorMargin"></div>
             {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
 
             {% for doc in kabFoundationSetup limit:1 %}
-                <h1 class="setupTitle">{{ doc.title }}</h1>
+                <h3>{{doc.title}}</h3>
                 {{ doc.content }}
             {% endfor %}
         </div>

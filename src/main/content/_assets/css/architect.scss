@@ -61,6 +61,7 @@
 .kabaneroLogo{
   height:200px;
   margin-top:40px;
+  margin-bottom:40px;
 }
 
 .centeredCol{
@@ -73,4 +74,18 @@
 
 .archVid{
   height:330px;
+}
+
+#collection-management-link{
+  width: 227px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #FFFFFF;
+  background-color: #C43804;
+  border-radius: 7px;
+  padding: 10px 25px;
+  margin-top: 40px;
+  margin-bottom: 8px;
+  text-align: center;
+  transition: background-color .2s;
 }

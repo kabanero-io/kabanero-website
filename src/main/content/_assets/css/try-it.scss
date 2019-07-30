@@ -28,15 +28,7 @@ $color-kabanero:#C43804;
 }
 
 .header{
-  font-size: 2.2em;
-}
-
-.get-started-header{
-  text-align: center;
-}
-
-.horizontal-separator{
-  border: 1px solid #D8DCDE;
+    font-size: 2.2em;
 }
 
 #ol_nav_title {
@@ -142,16 +134,6 @@ html, body{
 
 #downloads_intro_text {
     margin-top: 30px;
-}
-
-.helper{
-    margin-top:30px;
-}
-
-@media (max-width: 991.98px){
-    .helper{
-        margin-top:80px;
-    }
 }
 
 #intro_text_1 {
@@ -866,10 +848,6 @@ html, body{
 
 .inline-block{
     display:inline-block;
-}
-
-.centered{
-    text-align:center;
 }
 
 .tryItText{

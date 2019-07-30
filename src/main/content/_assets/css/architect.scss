@@ -2,22 +2,9 @@
   font-size: 2.2em;
 }
 
-.center-align{
-  text-align: center
-}
-
-.get-started-header{
-  text-align: center;
-}
-
-.horizontal-separator{
-  border: 1px solid #D8DCDE;
-}
-
 #kabaneroImg{
   margin: 5%;
 }
-
 
 #componentsText{
   margin-top: 30px;
@@ -49,10 +36,6 @@
   margin-bottom:40px;
 }
 
-.centeredCol{
-  text-align:center;
-}
-
 .bottomMargin{
   margin-bottom:20px;
 }
@@ -69,18 +52,4 @@
   margin-bottom: 8px;
   text-align: center;
   transition: background-color .2s;
-}
-
-#intro_content{
-  margin-top: 15px;
-}
-
-@media (max-width: 1199.98px) {
-  #intro_content {
-       margin-top: 75px;
-  }
-
-  .archVid{
-    margin-top: 25px;
-  }
 }

@@ -22,24 +22,29 @@ permalink: /operations/kabanero-foundation-setup/
                 setting up Kubernetes can also install Kabanero.
             </p>
 
-            <p>Learn more by checking out our 
-                <a href="https://github.com/kabanero-io/kabanero-command-line/tree/master/kab-cli/kabanero-mgmt" target="_blank">Kabanero GitHub pages</a>.</p>
+            <p>
+                Learn more by checking out our 
+                <a href="https://github.com/kabanero-io/kabanero-command-line/tree/master/kab-cli/kabanero-mgmt" target="_blank">Kabanero GitHub pages</a>.
+            </p>
             <hr/>
 
-            <h3>Prerequisites</h3>
-            <p>The Kabanero Foundation is installed in a Kubernetes cluster. Kubernetes must first be installed. 
+            <h3>Before Install Requirements</h3>
+            <p>
+                The Kabanero Foundation is installed in a Kubernetes cluster. Kubernetes must first be installed. 
                 Today Kabanero has been tested on the Origin Community Distribution of Kubernetes(OKD) version 3.11. 
                 There is intent to also expand testing on upstream Kubernetes in the future.</p>
             <p>
                 <a href="https://docs.okd.io/latest/getting_started/administrators.html" target="_blank">OKD Install Instructions</a>
             </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            {% assign kabaneroSetupDoc = site.pages | where: 'title', 'Scripted Kabanero Foundation Setup' %}
 
-            <hr/>
-            {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
-
-            {% for doc in kabFoundationSetup limit:1 %}
+            {% for doc in kabaneroSetupDoc limit:1 %}
                 <h3>{{doc.title}}</h3>
-                {{ doc.content }}
+                {{ doc.content | asciidocify }}
             {% endfor %}
         </div>
     </div>

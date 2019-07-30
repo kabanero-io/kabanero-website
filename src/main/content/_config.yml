@@ -45,10 +45,9 @@ plugins:
   - jekyll-minifier
   - jekyll-language-plugin
 
-languages: ['en', 'de']
-
+languages: ['en', 'es']
 language_data: data.lang.%%
-language_includes_dir: _i18n
+language_includes_dir: _posts
 
 exclude:
   - vendor # TravisCI bundles all gems in the vendor directory on its build servers, which Jekyll will mistakenly read and explode on.

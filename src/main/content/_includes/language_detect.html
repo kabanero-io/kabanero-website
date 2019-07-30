@@ -1,0 +1,23 @@
+{% if page.languages %}
+<script type="text/javascript">
+  $(document).ready(function () {
+      var currentLanguage = `{{page.language}}`
+      var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+      if(currentLanguage !== selectedLanguage){
+        if( selectedLanguage === 'en' || selectedLanguage === 'es'){
+        switch(selectedLanguage){
+          case 'en':
+              window.location = "/en/"
+              break; 
+          case 'es':
+              window.location = "/es/"
+              break; 
+          default:
+              window.location.pathname = '/en/'
+              break;
+            }
+          }
+      }
+    });
+</script>
+{% endif %}

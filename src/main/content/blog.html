@@ -4,7 +4,10 @@ title: Blog
 css:
 - blog
 - header-light
-permalink: /blog/
+languages:
+- en
+- es
+permalink: /:language/blog/
 ---
 <!-- BLOG -->
 <div id="background_container">
@@ -25,6 +28,7 @@ permalink: /blog/
                      2592000 is 30 days in seconds (30 days * 24 hours * 60 minutes * 60 seconds) -->
                 {% assign past_month_count = 0 %}
                 {% for post in site.posts %}
+                {% if post.language == page.language %}
 
                     {% assign date_published = post.date | date:'%s' %}
                     {% assign date_now = 'now' | date:'%s' %}
@@ -38,7 +42,8 @@ permalink: /blog/
                     {% if past_month_count > 3 %}
                         {% assign latest_posts_count = past_month_count %}
                     {% endif %}
-
+                    
+                    {% endif %}
                 {% endfor %}
 
                 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}

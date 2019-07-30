@@ -35,16 +35,15 @@ permalink: /architect/collection-management/
     <div class="row">
         <div class="col text-center">
             <h2>Try Kabanero using the CLI</h2><br>
-            <p>You will need a Kabanero instance installed to connect our CLI to. 
-                <a href="/operations/kabanero-foundation-setup/"> Check out the Kabanero Foundation Try it experience for more details.</a>
+            <p>You will need a Kabanero instance installed to connect our CLI to. Check out the 
+                <a href="/operations/kabanero-foundation-setup/">Kabanero Foundation try it experience</a> for more details.
             </p>
         </div>
     </div>
 
     <!-- Try Kabanero using the CLI Steps -->
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-4 offset-md-4">
             <ol>
                 <li>
                     <a href="https://github.com/kabanero-io/kabanero-command-line/tree/master/kab-cli/kabanero">Install the CLI</a>
@@ -54,6 +53,15 @@ permalink: /architect/collection-management/
                 </li>
             </ol>
         </div>
-        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            {% assign collectionsDoc = site.pages | where: 'title', 'Kabanero Collections' %}
+
+            {% for doc in collectionsDoc limit:1 %}
+                <h3>{{doc.title}}</h3>
+                {{ doc.content }}
+            {% endfor %}
+        </div>
     </div>
 </div>

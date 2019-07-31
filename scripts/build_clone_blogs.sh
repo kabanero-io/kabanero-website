@@ -16,7 +16,7 @@ fi
 mv blogs_temp/drafts/ .
 mv drafts/ _drafts
 mv blogs_temp/publish/ .
-mv publish/ _posts
+mv publish/* _posts
 
 mv blogs_temp/img/blog img
 

@@ -29,19 +29,22 @@ permalink: /:language/try-it/
         </div>
     </div>
 </div>
+<script>
+        console.log(`{{site.baseurl}}`)
 
+console.log(`{{page.language}}`)</script>
 
 <div class="container">
     <div class="row">
         <div class="col centered">
 
-            <a class="col-md-4" href="/developer">
+            <a class="col-md-4" href="/{{page.language}}/developer/">
                 <img src="/img/userStoryLogos/jane.png">
             </a>
-            <a class="col-md-4" href="/architect">
+            <a class="col-md-4" href="/{{page.language}}/architect">
                 <img src="/img/userStoryLogos/champ.png">
             </a>
-            <a class="col-md-4" href="/operations">
+            <a class="col-md-4" href="/{{page.language}}/operations">
                 <img src="/img/userStoryLogos/todd.png">
             </a>
         </div>

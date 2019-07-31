@@ -2,7 +2,10 @@
 layout: default
 title: Architect
 css: architect
-permalink: /architect/
+languages:
+- en
+- es
+permalink: /:language/architect/
 ---
 <div class="helper"></div>
 <div class="container">
@@ -30,9 +33,9 @@ permalink: /architect/
         <div class="col-md-6 justify-content-center center-align">
             <div class="row">
               <div class="col centeredCol">
-                  <a href="/architect/collection-management/">
+                  <a href="/{{page.language}}/architect/collection-management/">
                       <img class="kabaneroLogo" src="/img/collectionsCLI.png"><br>
-                      <a class="col-md-5" id="collection-management-link" href="/architect/collection-management/">Try It - Kabanero Collection Management CLI</a>
+                      <a class="col-md-5" id="collection-management-link" href="/{{page.language}}/architect/collection-management">Try It - Kabanero Collection Management CLI</a>
                   </a>
               </div>
             </div>

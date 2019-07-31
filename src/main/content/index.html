@@ -677,8 +677,6 @@ permalink: /:language/
                     </div>
                 </div>
                 <div class="row emptyRow"></div>
-                <script>console.log(`{{page.language}}`)</script>
-
                 {% assign posts = site.posts | where:"language", page.language %}
                 {% for post in posts limit:2%}
                 <script>console.log(`{{post.language}}`)</script>

@@ -4,53 +4,81 @@ title: Try it
 css: try-it
 permalink: /try-it/
 ---
-<!-- INTRO -->
-<div class="helper"></div>
-<div class="container">
+<div id="intro_content" class="container">
+    <!-- Intro title -->
     <div class="row">
-        <div class="col">
-            <p class="header get-started-header">Kabanero Try It Experiences</p>
-            <div class="row horizontal-separator "></div>
+        <div class="col text-center">
+            <p class="header">Kabanero Try It Experiences</p>
+            <hr/>
         </div>
     </div>
-</div>
 
-<div class="container">
+    <!-- Intro text -->
     <div class="row">
-        <div class="col centered">
+        <div class="col text-center">
             <div id="componentsText">
                 <p>
-                    Kabanero is a modern microservices-based  framework  that enables developers,  architects and operation  teams to work together, faster.  Kabanero  includes installable experiences  based on your role. Operators install the Kabanero Foundation that runs on Kubernetes  creating a Kabanero instance.  Developers  and architects install tools built for and integrated with Kabanero.  Based on your role in your organization, select one or more of the icons below for instructions and “Try It Experiences” for Kabanero.
+                    Kabanero is a modern microservices-based framework that enables developers, architects and operation teams to work together, faster. 
+                    Kabanero includes installable experiences based on your role. Operators install the Kabanero Foundation that runs on Kubernetes 
+                    creating a Kabanero instance. Developers and architects install tools built for and integrated with Kabanero.
+                </p>
+                <p>
+                    Based on your role in your organization, select one of the icons below for instructions and “Try It Experiences” for Kabanero.
                 </p>
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="container">
+    <!-- Role Pictures and text -->
     <div class="row">
-        <div class="col centered">
-
-            <a class="col-md-4" href="/developer">
-                <img src="/img/userStoryLogos/jane.png">
-            </a>
-            <a class="col-md-4" href="/architect">
-                <img src="/img/userStoryLogos/champ.png">
-            </a>
-            <a class="col-md-4" href="/operations">
-                <img src="/img/userStoryLogos/todd.png">
-            </a>
+        <!-- Janes section -->
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="/developer">
+                        <img class="img-fluid role_image" src="/img/userStoryLogos/jane.png">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 role_text text-center">
+                    The developer (or team of developers) can install the Kabanero Developer Experience for IDE or CLI. 
+                    The integrated experience makes it easy to develop locally and deploy to a Kabanero instance.
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col centered">
-            <div class="col-md-4 inline-block centered tryItText">
-                The developer (or team of developers) can install the Kabanero Developer Experience for IDE or CLI.  The integrated experience makes it easy to develop locally and deploy to a Kabanero instance.</div>
-            <div class="col-md-4 inline-block centered tryItText">
-                The solution architect can codify technology standards and company policies using the Kabanero Management Experience. Collections provide an efficient way for developers to use them.</div>
-            <div class="col-md-3 inline-block centered tryItText">
-                The operations team manages the cloud based infrastructure including Kubernetes and can easily install Kabanero Foundation on Kubernetes.
+
+        <!-- Champs section -->
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="/architect">
+                        <img class="img-fluid role_image" src="/img/userStoryLogos/champ.png">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 role_text text-center">
+                    The solution architect can codify technology standards and company policies using the Kabanero Management Experience. 
+                    Collections provide an efficient way for developers to use them.
+                </div>
+            </div>
+        </div>
+
+        <!-- Todds section -->
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="/operations">
+                        <img class="img-fluid role_image" src="/img/userStoryLogos/todd.png">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 role_text text-center">
+                    The operations team manages the cloud based infrastructure including Kubernetes and can easily install Kabanero 
+                    Foundation on Kubernetes.
+                </div>
             </div>
         </div>
     </div>

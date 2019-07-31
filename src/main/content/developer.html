@@ -5,12 +5,11 @@ css: developer
 permalink: /developer/
 ---
 <!-- INTRO -->
-<div class="helper"></div>
-<div class="container">
+<div id="intro_content" class="container">
     <div class="row">
         <div class="col">
             <p class="header developer-experience-header">Kabanero Developer Experience</p>
-            <div class="row horizontal-separator "></div>
+            <hr/>
         </div>
     </div>
 </div>
@@ -20,7 +19,11 @@ permalink: /developer/
         <div class="col">
             <div id="componentsText" class="page_description">
                 <p>
-                    Use Kabanero to build  applications  that are ready for deployment onto Kubernetes and Knative, without having to spend time defining  container images, build  infrastructure, or Kube yaml. Focus on developing  new applications  and let the Kabanero tools do the heavy lifting of building  and packaging  deployment-ready containers. Go ahead and try it for yourself, using extensions to your favorite IDE, or our command-line tools.
+                    Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, 
+                    without having to spend time defining container images, build infrastructure, or Kube yaml. 
+                    Focus on developing new applications  and let the Kabanero tools do the heavy lifting of 
+                    building and packaging  deployment-ready containers. Go ahead and try it for yourself, either 
+                    by using extensions for popular IDEs, or our command-line tools.
                 </p>
             </div>
         </div>
@@ -29,62 +32,55 @@ permalink: /developer/
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div id="componentsText" class="page_description">
-                <div class="install_header_and_logo">
-                    <a href="/developer/ide/">
-                        <img class="logo" src="/img/logos/ide_logo.png">
-                        <h2 class="installation_header">Install instructions for IDE</h2>
-                    </a>
-                </div><br>
-                <div class="install_header_and_logo">
-                    <a href="/developer/cli/">
-                        <img class="logo" src="/img/logos/cli_logo.png">
-                        <h2 class="installation_header">Install instructions for CLI</h2>
-                    </a>
-                </div>  
+        <div class="col-md-3"></div>
+        <div class="col-md-3 text-center">
+            <div class="install_header_and_logo">
+                <a href="/developer/ide/">
+                    <img class="img-fluid logo" src="/img/logos/ide_logo.png">
+                    <h2 class="installation_header">Install instructions for IDE</h2>
+                </a>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="col-md">
-                <div class="videoWrapper"> 
-                    <img class="devVid" src="/img/vid_developer.png">
-                </div>
-                <p class="videoDescription">Go from  zero to application running in Knative/Kubernetes  in under 5 minutes, working only with the app code -no tinkering with Dockerfiles, no learning Kubeand KubeYaml, no non-sense.</p>
-            </div>
+        <div class="col-md-3 text-center">
+            <div class="install_header_and_logo">
+                <a href="/developer/cli/">
+                    <img class="img-fluid logo" src="/img/logos/cli_logo.png">
+                    <h2 class="installation_header">Install instructions for CLI</h2>
+                </a>
+            </div>  
         </div>
+        <div class="col-md-3"></div>
     </div>
-    <div class="row horizontal-separator "></div>
+    <hr/>
 </div>
 
 <div class="container">
     <div class="row" id="frameworksTopRow">
-        <p>The Kabanero Developer Experience includes two open source projects, Eclipse Codewind and Appsody.  Learn more about them below.</p>
+        <p>
+            The Kabanero Developer Experience includes two open source projects, Eclipse Codewind and Appsody.
+            Learn more about them below.
+        </p>
     </div>
     <div class="row">
-        <img class="logo" src="/img/codewind.png">
+        <img class="img-fluid logo" src="/img/codewind.png">
         <div class="col download_detail">
             <p>
                 Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code,
-                Eclipse,
-                and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they
-                already know.
-                You can rapidly iterate, debug, and performance test apps inside containers, just like when
-                they run in production.
+                Eclipse, and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they
+                already know. You can rapidly iterate, debug, and performance test apps inside containers with the same environment
+                as production.
             </p>
             <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
         </div>
     </div>
     <div class="row">
-        <img class="logo" src="/img/appsody.png">
+        <img class="img-fluid logo" src="/img/appsody.png">
         <div class="col download_detail">
             <p>
                 Appsody provides Kabanero with simplicity in the creation of cloud-native applications in
-                containers.
-                Appsody provides pre-configured container images (stacks) and project templates for a
-                growing set of popular open source runtimes and frameworks,
-                providing a foundation on which to build applications for Kubernetes and Knative
-                deployments.
+                containers. Appsody provides pre-configured container images (stacks) and project templates for a
+                growing set of popular open source runtimes and frameworks, providing a foundation on which to 
+                build applications for Kubernetes and Knative deployments.
             </p>
             <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
         </div>

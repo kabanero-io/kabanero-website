@@ -1,177 +1,155 @@
-/*******************************************************************************
- * Copyright (c) 2017 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
-
-
- /* TABS */
-
+/* TABS */
 #tabs_container {
-  border-bottom: 4px solid rgba(200, 210, 210, 0.41);
-  & .nav-tabs {
-      border-bottom: 1px solid #FFFFFF;
-      & > .nav-item > .nav-link {
-          border: none;
-          color: #C43804 !important;
-          padding-left: 31px;
-          padding-right: 31px;
-          padding-top: 15px;
-          padding-bottom: 15px;
-          margin-right: 0px;
-          margin-left: 0px;
-          margin-top: 20px;
-          font-weight: 500;
-          font-size: 12px;
-          cursor: pointer;
-      }
-      & .nav-link.active, .nav-link.active:hover {
-          border-top: none;
-          border-left: none;
-          border-right: none;
-          border-bottom: 4px solid #292828;
-          color: #292828;
-          background: transparent;
-          margin-bottom: -4px;
-      }
-      & .nav-link:hover {
-          background: rgba(232, 236, 236, 0.39);
-          border-color: rgba(232, 236, 236, 0.39);
-      }
-  }
+	border-bottom: 4px solid rgba(200, 210, 210, 0.41);
+	& .nav-tabs {
+		border-bottom: 1px solid #ffffff;
+		& > .nav-item > .nav-link {
+			border: none;
+			color: #c43804 !important;
+			padding-left: 31px;
+			padding-right: 31px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			margin-right: 0px;
+			margin-left: 0px;
+			margin-top: 20px;
+			font-weight: 500;
+			font-size: 12px;
+			cursor: pointer;
+		}
+		& .nav-link.active,
+		.nav-link.active:hover {
+			border-top: none;
+			border-left: none;
+			border-right: none;
+			border-bottom: 4px solid #292828;
+			color: #292828;
+			background: transparent;
+			margin-bottom: -4px;
+		}
+		& .nav-link:hover {
+			background: rgba(232, 236, 236, 0.39);
+			border-color: rgba(232, 236, 236, 0.39);
+		}
+	}
 }
 
-.nav-tabs > li, .nav-pills > li {
-  float: none;
-  display: inline-block;
+.nav-tabs > li,
+.nav-pills > li {
+	float: none;
+	display: inline-block;
 }
 
 .nav-tabs > .nav-item > .nav-link {
-  margin-top: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font-size: 12px;
+	margin-top: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 12px;
 }
 
 @media (max-width: 991.98px) {
-  .navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:active, #fork_button {
-      font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
-      font-size: 35px;
-      color: #FFFFFF;
-      margin-right: 26px;
-      margin-left: 26px;
-  }
+	.navbar-dark .navbar-nav .nav-link,
+	.navbar-dark .navbar-nav .nav-link:hover,
+	.navbar-dark .navbar-nav .nav-link:active,
+	#fork_button {
+		font-family: "IBM Plex Sans", Arial Narrow, Helvetica, Arial;
+		font-size: 35px;
+		color: #ffffff;
+		margin-right: 26px;
+		margin-left: 26px;
+	}
 }
 
-
-.developer-experience-header{
-    text-align: center;
-  }
-
-  .workflow_image{
-    width: 100%;
-    margin-top: 25px;
-    margin-bottom: 15px;
+.developer-experience-header {
+	text-align: center;
 }
 
-.download_detail{
-    padding: 25px;
+.workflow_image {
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 15px;
 }
 
-.logo{
-    height: 100px;
+.download_detail {
+	padding: 25px;
 }
 
-
-#componentsText{
-    margin-top: 30px;
+.logo {
+	height: 100px;
 }
 
-.usage_video{
-  margin-left: 20em;
+#componentsText {
+	margin-top: 30px;
 }
 
-.header_img_container{
-  display: inline-flex;
+.usage_video {
+	margin-left: 20em;
 }
 
-.helper{
-    margin-top:30px;
+.header_img_container {
+	display: inline-flex;
 }
 
-.horizontal-separator{
-    border: 1px solid #D8DCDE;
-  }
-
-.header{
-    font-size: 2.2em;
-  }
-
-.install_header_and_logo{
-      display: inline-flex;
-      margin-bottom: 20px;
-      margin-top:30px;
-  }
-
-  .installation_link{
-    margin-top: 22px;
-    margin-right: 15px;
-  }
-
-  h2{
-      font-size: 15px;
-  }
-
-  .devloper_video_container{
-    display: inline-flex;
-    margin-top: 45px;
-  }
-
-  .tab_logo{
-    height: 75px;
-    margin-top: 50px;
+.header {
+	font-size: 2.2em;
 }
 
-#try_it_cli_link{
-  margin-top: 25px;
+.install_header_and_logo {
+	display: inline-flex;
+	margin-bottom: 20px;
+	margin-top: 30px;
 }
 
-.jane_video{
-  width: 25em;
+.installation_link {
+	margin-top: 22px;
+	margin-right: 15px;
 }
 
-.jane_img{
-  margin-top: -40px;
+.devloper_video_container {
+	display: inline-flex;
+	margin-top: 45px;
 }
 
-.appsody_link{
-  margin-bottom: 15px;
+.tab_logo {
+	height: 75px;
+	margin-top: 50px;
 }
 
-#frameworksTopRow{
-  margin-top:30px;
+#try_it_cli_link {
+	margin-top: 25px;
 }
 
-.topBorder{
-  border-top:1px solid gray;
+.jane_video {
+	width: 25em;
 }
 
-.page_description{
-  text-align: center !important;
+.jane_img {
+	margin-top: -40px;
 }
 
-.devVid{
-  height:330px;
+.appsody_link {
+	margin-bottom: 15px;
 }
 
-.videoDescription{
-  font-size:14px;
-  text-align:center;
+#frameworksTopRow {
+	margin-top: 30px;
+}
+
+.topBorder {
+	border-top: 1px solid gray;
+}
+
+.page_description {
+	text-align: center !important;
+}
+
+.videoDescription {
+	font-size: 14px;
+	text-align: center;
+}
+
+.installation_header {
+	margin-top: 15px;
 }

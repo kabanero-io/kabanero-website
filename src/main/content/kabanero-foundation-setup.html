@@ -7,33 +7,46 @@ languages:
 - es
 permalink: /:language/operations/kabanero-foundation-setup/
 ---
-
-<div class="helper"></div>
-<div class="container">
+<div id="intro_content" class="container">
     <div class="row">
         <div class="col">
             <h1>Kabanero Foundation Installation</h1>
-            <p>
-                Kabanero is built on foundational open technologies that install onto a Kubernetes cluster.  Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. 
-                The applications being deployed will be based upon a set of curated collections, which this install will activate a default set of featured collections.
-            </p>
-            <p>
-                Typically this experience is performed by a cloud operations team, although anyone skilled in setting up Kubernetes can also install Kabanero.
-            </p>
-            <p>Learn more by checking out our <a href="https://github.com/kabanero-io/kabanero-command-line/tree/master/kab-cli/kabanero-mgmt">Kabanero github pages</a>.</p>
-            <div class="row horizontal-separator seperatorMargin"></div>
-            <h3>Prerequisites</h3>
-            <p>The Kabanero Foundation is installed in a Kubernetes cluster.Kubernetes must first be installed.  Today Kabanero has been tested on the Origin Community Distributionof Kubernetes(OKD) version 3.11. There is intent to also expand testing on upstream Kubernetes in the future.</p>
-            <p>
-                <a href="https://docs.okd.io/latest/getting_started/administrators.html">OKD Install Instructions</a>
-            </p>
-            <div class="row horizontal-separator seperatorMargin"></div>
-            {% assign kabFoundationSetup = site.pages | where: 'title', 'Kabanero Foundation Setup' | sort: 'title' %}
+            <hr/>
 
-            {% for doc in kabFoundationSetup limit:1 %}
-                <h3>{{doc.title}}</h3>
-                {{ doc.content }}
-            {% endfor %}
+            <p>
+                Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. 
+                Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise.
+                The applications being deployed will be based upon a collection.  
+                Kabanero Foundation installs the foundational open technologies (Knative, Istio, Tekton), then activates a default set of featured collections.
+            </p>
+
+            <p>
+                This experience is typically performed by a cloud operations team, although anyone skilled in setting up Kubernetes can also install Kabanero.
+            </p>
+            <hr/>
+            <h3>Prerequisites</h3>
+            <p>
+                Kabanero Foundation is installed in a Kubernetes cluster. Kubernetes must first be installed.  Today Kabanero has been tested on the Origin Community Distribution of Kubernetes (OKD) version 3.11. 
+                There is intent to also expand testing to additional distributions including upstream Kubernetes and Red Hat OpenShift in the future.
+            <p>
+                <a href="https://docs.okd.io/latest/getting_started/administrators.html" target="_blank">OKD install instructions</a>
+            </p>
+            <p>
+                <a href="https://github.com/kabanero-io/roadmap#kabanero-foundation-in-a-kubernetes-cluster-prerequisites" target="_blank">Kabanero minimum resource requirements</a>
+            </p>
+            <hr>
+            <h3>Try the operator-based Kabanero Foundation Install</h3>
+            <p>
+                Follow the instructions for the <a href="/docs/ref/general/#scripted-kabanero-foundation-setup.html">scripted Kabanero Foundation setup.</a>
+            </p>
+            <p>
+                This will guide you through:
+            </p>
+            <ol>
+                <li>Setup of Kubernetes access needed for the install.</li>
+                <li>Installation of the Kabanero operator.</li>
+                <li>Setup of your first pipeline</li>
+            </ol>
         </div>
     </div>
 </div>

@@ -678,11 +678,10 @@ permalink: /:language/
                 </div>
                 <div class="row emptyRow"></div>
                 <script>console.log(`{{page.language}}`)</script>
-                <!-- {% assign posts = site.posts | where:"language", page.language %} -->
-                <script>console.log(`{{page.language}}`)</script>
-                {% for post in site.posts limit:2 %}
+                {% assign posts = site.posts | where:"language", page.language %}
+                {% for post in site.posts limit:5 %}
                 <script>console.log(`{{post.language}}`)</script>
-                <!-- {% if post.language == page.language %} -->
+                 {% if post.language == page.language %}
                 
                     <div class="row blog_post_row">
                         <div class="col-xl blog_post_column">
@@ -719,7 +718,7 @@ permalink: /:language/
                         </div>
                     </div>
                     <div class="row emptyRow"></div>
-                    <!-- {% endif %} -->
+                     {% endif %} 
                 {% endfor %}
                 <div class="row">
                     <div class="col-xl stackOverFlowCol">

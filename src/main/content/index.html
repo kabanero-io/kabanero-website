@@ -677,11 +677,11 @@ permalink: /:language/
                     </div>
                 </div>
                 <div class="row emptyRow"></div>
-                <script>console.log(`{{post.language}}`)</script>
-                {% assign posts = site.posts | where:"language", page.language %}
-                <script>console.log(`{{post.language}}`)</script>
+                <script>console.log(`{{page.language}}`)</script>
+                <!-- {% assign posts = site.posts | where:"language", page.language %} -->
+                <script>console.log(`{{page.language}}`)</script>
                 {% for post in posts limit:2 %}
-                <script>console.log(`{{post.language}}`)</script>
+                <script>console.log(`{{page.language}}`)</script>
                 <!-- {% if post.language == page.language %} -->
                 
                     <div class="row blog_post_row">

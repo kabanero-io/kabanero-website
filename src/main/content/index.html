@@ -34,7 +34,7 @@ permalink: /:language/
                     <p>
                             {% t 'site.title' %}
                     </p>
-                    <a class="col-md-5" id="get_started_link" href="/try-it">Try It</a>
+                    <a class="col-md-5" id="get_started_link" href="/{{page.language}}/try-it/">Try It</a>
                 </div>
             </div>
             <div class="col-md-4 d-none d-md-block">
@@ -680,8 +680,11 @@ permalink: /:language/
                     </div>
                 </div>
                 <div class="row emptyRow"></div>
-                {% for post in site.posts limit:2 %}
+                {% assign posts = site.posts | where:"language", page.language %}
+                {% for post in posts limit:2 %}
+                <script>console.log(`{{post.language}}`)</script>
                 {% if post.language == page.language %}
+                
                     <div class="row blog_post_row">
                         <div class="col-xl blog_post_column">
                             <div class="row container">
@@ -716,8 +719,8 @@ permalink: /:language/
                             </div>
                         </div>
                     </div>
-                    {% endif %}
                     <div class="row emptyRow"></div>
+                    {% endif %}
                 {% endfor %}
                 <div class="row">
                     <div class="col-xl stackOverFlowCol">

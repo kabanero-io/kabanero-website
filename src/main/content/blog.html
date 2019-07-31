@@ -29,7 +29,6 @@ permalink: /:language/blog/
                 {% assign past_month_count = 0 %}
                 {% for post in site.posts %}
                 {% if post.language == page.language %}
-
                     {% assign date_published = post.date | date:'%s' %}
                     {% assign date_now = 'now' | date:'%s' %}
                     {% assign date_difference = date_now | minus: date_published %}
@@ -42,13 +41,13 @@ permalink: /:language/blog/
                     {% if past_month_count > 3 %}
                         {% assign latest_posts_count = past_month_count %}
                     {% endif %}
-                    
                     {% endif %}
                 {% endfor %}
 
                 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
                 {% assign count = 1 %}
                 {% for post in site.posts %}
+                {% if post.language == page.language %}
 
                     {% assign additional_author_count = 0 %}
                     {% for author in post.additional_authors %}
@@ -164,6 +163,7 @@ permalink: /:language/blog/
                         </div>
                     </div>
                     {% assign count = count | plus: 1 %}
+                    {% endif %}
                 {% endfor %}
                 <div class="row blog_post_row">
                     <div class="blog_post_column col">

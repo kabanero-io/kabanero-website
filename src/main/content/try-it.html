@@ -3,8 +3,14 @@ layout: default
 title: Try it
 css: try-it
 languages:
-- en
-- es
+- en 
+- es 
+- de 
+- fr 
+- it
+- ja
+- ko
+- pt-BR
 permalink: /:language/try-it/
 ---
 <div id="intro_content" class="container">
@@ -38,7 +44,7 @@ permalink: /:language/try-it/
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="/developer">
+                    <a href="/{{page.language}}/developer/">
                         <img class="img-fluid role_image" src="/img/userStoryLogos/jane.png">
                     </a>
                 </div>
@@ -51,22 +57,11 @@ permalink: /:language/try-it/
             </div>
         </div>
 
-<<<<<<< HEAD
-            <a class="col-md-4" href="/{{page.language}}/developer/">
-                <img src="/img/userStoryLogos/jane.png">
-            </a>
-            <a class="col-md-4" href="/{{page.language}}/architect">
-                <img src="/img/userStoryLogos/champ.png">
-            </a>
-            <a class="col-md-4" href="/{{page.language}}/operations">
-                <img src="/img/userStoryLogos/todd.png">
-            </a>
-=======
         <!-- Champs section -->
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="/architect">
+                    <a href="/{{page.language}}/architect">
                         <img class="img-fluid role_image" src="/img/userStoryLogos/champ.png">
                     </a>
                 </div>
@@ -77,14 +72,13 @@ permalink: /:language/try-it/
                     Collections provide an efficient way for developers to use them.
                 </div>
             </div>
->>>>>>> upstream/master
         </div>
 
         <!-- Todds section -->
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="/operations">
+                    <a href="/{{page.language}}/operations">
                         <img class="img-fluid role_image" src="/img/userStoryLogos/todd.png">
                     </a>
                 </div>

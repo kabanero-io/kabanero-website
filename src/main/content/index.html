@@ -12,6 +12,12 @@ seo-title: Kabanero
 languages:
 - en
 - es
+- de
+- fr
+- it
+- ja
+- ko
+- pt-BR
 permalink: /:language/
 ---
 
@@ -700,9 +706,6 @@ permalink: /:language/
                 <div class="row emptyRow"></div>
                 {% assign posts = site.posts | where:"language", page.language %}
                 {% for post in posts limit:2%}
-                <script>console.log(`{{post.language}}`)</script>
-                 {% if post.language == page.language %}
-                
                     <div class="row blog_post_row">
                         <div class="col-xl blog_post_column">
                             <div class="row container">
@@ -738,7 +741,6 @@ permalink: /:language/
                         </div>
                     </div>
                     <div class="row emptyRow"></div>
-                     {% endif %} 
                 {% endfor %}
                 <div class="row">
                     <div class="col-xl stackOverFlowCol">

@@ -45,7 +45,7 @@ plugins:
   - jekyll-minifier
   - jekyll-language-plugin
 
-languages: ['en', 'es']
+languages: ['en', 'es', 'de', 'fr', 'it', 'ja', 'ko', 'pt-BR']
 language_data: data.lang.%%
 language_includes_dir: _posts
 

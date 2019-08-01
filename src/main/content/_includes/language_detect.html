@@ -4,39 +4,39 @@
       var currentLanguage = `{{page.language}}`
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       if(currentLanguage !== selectedLanguage){
-        if( selectedLanguage === 'en' || selectedLanguage === 'es'){
+        if( selectedLanguage === 'en' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR'){
         switch(selectedLanguage){
-          case 'en':
+            case 'en':
               window.location = "/en/"
               break; 
-          case 'es':
+            case 'es':
               window.location = "/es/"
               break; 
-              case 'de':
+            case 'de':
               window.location = "/de/"
               break; 
-          case 'fr':
+            case 'fr':
               window.location = "/fr/"
               break; 
-              case 'it':
+            case 'it':
               window.location = "/it/"
               break; 
-          case 'ja':
+            case 'ja':
               window.location = "/ja/"
               break; 
-              case 'ko':
+            case 'ko':
               window.location = "/ko/"
               break; 
-          case 'pt-BR':
+            case 'pt-BR':
               window.location = "/pt-BR/"
               break; 
-              case 'zh_CN':
+            case 'zh_CN':
               window.location = "/zh_CN/"
               break; 
-          case 'zh_TW':
+            case 'zh_TW':
               window.location = "/zh_TW/"
               break; 
-          default:
+            default:
               window.location.pathname = '/en/'
               break;
             }

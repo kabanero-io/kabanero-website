@@ -156,6 +156,20 @@ $color-kabanero:#C43804;
     padding-top: 3em;
 }
 
+.support_block{
+    background-color: #f3f5f7;
+    padding-bottom: 7em;
+    padding-top: 3em;
+}
+
+.cpa_link{
+    font-weight: bold;
+}
+
+.description_text_block{
+    margin-top: 20px;
+}
+
 .video_description{
     padding: 50px 0 0 50px;
 }
@@ -218,10 +232,6 @@ $color-kabanero:#C43804;
     position: relative;
     text-align: center;
     padding: 15px 15px 30px 15px;
-}
-
-#featured_models_title{
-    margin-bottom:20px;
 }
 
 .sectionTitle{

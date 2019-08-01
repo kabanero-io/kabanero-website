@@ -4,7 +4,7 @@
       var currentLanguage = `{{page.language}}`
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       if(currentLanguage !== selectedLanguage){
-        if( selectedLanguage === 'en' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR'){
+        if( selectedLanguage === 'en' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR' || selectedLanguage === 'zh-CH' || selectedLanguage === 'zh-TW'){
         switch(selectedLanguage){
             case 'en':
               window.location = "/en/"
@@ -30,11 +30,11 @@
             case 'pt-BR':
               window.location = "/pt-BR/"
               break; 
-            case 'zh_CN':
-              window.location = "/zh_CN/"
+            case 'zh-CN':
+              window.location = "/zh-CN/"
               break; 
-            case 'zh_TW':
-              window.location = "/zh_TW/"
+            case 'zh-TW':
+              window.location = "/zh-TW/"
               break; 
             default:
               window.location.pathname = '/en/'

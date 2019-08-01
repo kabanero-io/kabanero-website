@@ -4,7 +4,7 @@
       var currentLanguage = `{{page.language}}`
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       if(currentLanguage !== selectedLanguage){
-        if( selectedLanguage === 'en' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR' || selectedLanguage === 'zh-CH' || selectedLanguage === 'zh-TW'){
+        if( selectedLanguage === 'en' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR' || selectedLanguage === 'zh-CN' || selectedLanguage === 'zh-TW'){
         switch(selectedLanguage){
             case 'en':
               window.location = "/en/"

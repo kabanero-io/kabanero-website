@@ -1,5 +1,8 @@
+<div id="google-wrapper">
 <script type="text/javascript">
-  $(document).ready(function () {
+function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
       var currentLanguage = `{{page.language}}`
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       if(currentLanguage !== selectedLanguage){
@@ -44,5 +47,4 @@
             }
           }
       }
-    });
 </script>

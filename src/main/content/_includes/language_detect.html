@@ -1,5 +1,9 @@
-<script type="text/javascript">
-  $(document).ready(function () {
+<div id="google-wrapper">
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
       var currentLanguage = `{{page.language}}`
       var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
       if(currentLanguage !== selectedLanguage){
@@ -44,5 +48,5 @@
             }
           }
       }
-    });
 </script>
+</div>

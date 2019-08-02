@@ -52,6 +52,10 @@ h4 {
     font-weight: 500;
 }
 
+hr {
+    border: 1px solid #D8DCDE;
+}
+
 /* BUTTONS */
 
 .btn {
@@ -625,3 +629,12 @@ footer {
 body > .skiptranslate {
     display: none;
 }
+#intro_content{
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 991.98px){
+    #intro_content {
+         margin-top: 75px;
+    }
+  }

@@ -1,19 +1,8 @@
-/*******************************************************************************
- * Copyright (c) 2017 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
-
- .developer-experience-header{
+.developer-experience-header{
     text-align: center;
-  }
+}
 
-  .workflow_image{
+.workflow_image{
     width: 100%;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -31,39 +20,26 @@
     margin-top: 30px;
 }
 
+.header{
+    font-size: 2.2em;
+}
 
-.helper{
+.install_header_and_logo{
+    display: inline-flex;
+}
+
+.installation_header{
+    margin-top: 22px;
+    margin-right: 15px;
+}
+
+.setupTitle{
     margin-top:30px;
 }
 
-.horizontal-separator{
-    border: 1px solid #D8DCDE;
-  }
-
-.header{
-    font-size: 2.2em;
-  }
-
-.install_header_and_logo{
-      display: inline-flex;
-  }
-
-  .installation_header{
-    margin-top: 22px;
-    margin-right: 15px;
-  }
-
-  h2{
-      font-size: 20px;
-  }
-
-  .setupTitle{
-      margin-top:30px;
-  }
-
-  #introText{
-      margin-top:15px;
-  }
+#introText{
+    margin-top:15px;
+}
 
 .okdLogo{
     height:200px;
@@ -73,14 +49,10 @@
     height:200px;
     margin-top:40px;
     margin-bottom:40px;
-  }
+}
 
 .borderTop{
     border: 1px solid gray;
-}
-
-.centeredCol{
-    text-align: center;
 }
 
 .footerMargins{
@@ -91,10 +63,6 @@
 .seperatorMargin{
     margin-top:30px;
     margin-bottom:30px;
-}
-
-.opVid{
-    height:330px;
 }
 
 pre{
@@ -119,4 +87,4 @@ pre{
     margin-bottom: 8px;
     text-align: center;
     transition: background-color .2s;
-  }
+}

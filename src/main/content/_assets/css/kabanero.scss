@@ -615,3 +615,13 @@ footer {
         margin-top: 76px;
     }
 }
+
+#google-wrapper{
+    display: none;
+}
+.translated-ltr body{ 
+    top: 0px !important;
+}
+body > .skiptranslate {
+    display: none;
+}

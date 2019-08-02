@@ -1,0 +1,58 @@
+<div id="google-wrapper"></div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+      var currentLanguage = `{{page.language}}`
+      var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+      if(currentLanguage !== selectedLanguage){
+        if( selectedLanguage === 'en' || selectedLanguage === 'ru' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR' || selectedLanguage === 'zh-CN' || selectedLanguage === 'zh-TW'){
+        switch(selectedLanguage){
+            case 'en':
+              window.location = "#googtrans(en|en)"
+              break; 
+            case 'es':
+              window.location = "#googtrans(en|es)"
+              break; 
+            case 'de':
+              window.location = "#googtrans(en|de)"
+              break; 
+            case 'fr':
+              window.location = "#googtrans(en|fr)"
+              break; 
+            case 'it':
+              window.location = "#googtrans(en|it)"
+              break; 
+            case 'ja':
+              window.location = "#googtrans(en|ja)"
+              break; 
+              case 'ru':
+              window.location = "#googtrans(en|ru)"
+              break; 
+            case 'ko':
+              window.location = "/ko/"
+              break; 
+            case 'pt-BR':
+              window.location = "/pt-BR/"
+              break; 
+            case 'zh-CN':
+              window.location = "/zh-CN/"
+              break; 
+            case 'zh-TW':
+              window.location = "/zh-TW/"
+              break; 
+            default:
+              window.location.pathname = '/en/'
+              break;
+            }
+          }
+      }
+    });
+</script>

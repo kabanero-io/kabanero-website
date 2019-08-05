@@ -32,19 +32,19 @@ js:
 
 {% include visible-tags.liquid %}
 
-<div id="background_container">
+<div id="background-container">
     <div id="toc_hotspot"></div>
     <!-- Guide's table of contents section -->
-    <div id="toc_column" class="collapse inline open">
-        <div id="toc_inner">
+    <div id="toc-column" class="collapse inline open">
+        <div id="toc-inner">
             <div id="close_container">
                 <img id="toc_close_white" src="{{ " /img/toc_close_white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
             </div>
-            <div id="mobile_close_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+            <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
                 <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
             </div>
-            <h3 id="toc_title">Contents</h3>
-            <div id="toc_container">
+            <h3 id="toc-title">Contents</h3>
+            <div id="toc-container">
                 <ul class="sectlevel1"></ul>
             </div>
             <div id="toc_separator"></div>
@@ -61,19 +61,19 @@ js:
             {% endif %}
         </div>
     </div>
-    <div id="toc_indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
+    <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
         <img src="/img/arrow_white.svg" alt="arrow">
     </div>
-    <div id="toc_line" class="open"></div>
+    <div id="toc-line" class="open"></div>
     <!-- Entire guide section -->
-    <div id="guide_column" class="position_relative open">
+    <div id="guide-column" class="position-relative open">
         <div id="guide_content">
             <!-- Guide header section -->
             <div id="guide_meta" class="sect1" tabindex="0">
-                <h1 id="guide_title">{{ page.title }}</h1>
+                <h1 id="guide-title">{{ page.title }}</h1>
                 <div id="duration_container">
-                    <img src="/img/guide_duration_clock_icon_large.svg" alt="duration">
-                    <span id="guide_duration">{{ page.duration }}</span>
+                    <img src="/img/guide-duration-clock-icon_large.svg" alt="duration">
+                    <span id="guide-duration">{{ page.duration }}</span>
                     <div class="guide_interactive_container">
                         <img class="interactive_bolt_icon" src="/img/guide_lightning_bolt.svg" alt="Interactive">
                         <span class="guide_interactive">Interactive</span>
@@ -83,10 +83,10 @@ js:
             </div>
 
             <!-- This div is used to indicate the original position of the scrollable fixed div. -->
-            <div class="scroller_anchor"></div>
-            <div id="mobile_toc_accordion_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+            <div class="scroller-anchor"></div>
+            <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
                 <div id="mobile_toc_accordion">
-                    <button class="breadcrumb_hamburger toc-toggle collapsed" type="button" tabindex="0">
+                    <button class="breadcrumb-hamburger toc-toggle collapsed" type="button" tabindex="0">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -106,7 +106,7 @@ js:
     </div>
 
     <!-- Code section -->
-    <div id="code_column" class="position_relative" tabindex="0">
+    <div id="code_column" class="position-relative" tabindex="0">
     </div>
 </div>
 

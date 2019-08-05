@@ -9,7 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
- #background_container {
+ #background-container {
     margin-left: 30px;
     margin-top: 30px;
     height: 1500px; /* initial height */
@@ -17,19 +17,19 @@
 
 /* table of contents styling */
 
-#toc_column {
+#toc-column {
     height: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 0px;
 }
 
-.toc_selected {
+.toc-selected {
     padding-left: 22px !important;
     margin-left: -30px;
 }
 
-#toc_column ul li div[href]:hover {
+#toc-column ul li div[href]:hover {
     cursor: pointer;
 }
 
@@ -37,17 +37,17 @@
     box-shadow: 0 0 2px 2px #51a7e8; /* keyboard-only focus styles */
 }
 
-#toc_column ul li div[href]:focus {
+#toc-column ul li div[href]:focus {
     outline: none;
 }
 
 /* content styling */
-#general_content {
+#general-content {
     height: 100%;
     overflow: hidden;
 }
 
-#general_content:focus {
+#general-content:focus {
     outline: none;
 }
 
@@ -113,7 +113,7 @@ div.sectionbody > div.ulist > ul > li > p {
     line-height: 30px;
 }
 
-.breadcrumb_hamburger {
+.breadcrumb-hamburger {
     display: none; 
 }
 
@@ -175,7 +175,7 @@ tableblock {
 }
 
 @media (max-width: 767.98px) {
-    #background_container {
+    #background-container {
         height: auto;
         margin-top: 0px;
     }
@@ -211,6 +211,6 @@ tableblock {
     }
 }
 
-#docsTitle {
+#docs-title {
     margin-left:40px;
 }

@@ -18,10 +18,10 @@
 
 $( document ).ready(function() {
     $(".filter").on("change", filterStacks);
-    $(".stackTile").on("click", toggleStackTileCollapse);
+    $(".stack-tile").on("click", toggleStackTileCollapse);
 
     // Change stack imgs to colored version on mouseover and back to black on mouseout
-    $(".tileImg").hover(el => $(el.target).attr("src",($(el.target).data("color-img"))),
+    $(".tile-img").hover(el => $(el.target).attr("src",($(el.target).data("color-img"))),
         el => $(el.target).attr("src",($(el.target).data("black-img"))));
 });
 
@@ -33,13 +33,13 @@ function filterStacks(){
 
     // if no filter is selected show all tiles
     if(selectedTags.length === 0){
-        $(".stackTile").each((index, tile) => {
+        $(".stack-tile").each((index, tile) => {
             $(tile).show();
         });
         return;
     }
 
-    $(".stackTile").each((index, tile) => {
+    $(".stack-tile").each((index, tile) => {
         let currentTileTags = $(tile).data("tags").split(",");
 
         // filter out the tiles with tags that aren't included in the selected tag filters
@@ -60,7 +60,7 @@ function toggleStackTileCollapse(){
 
     //figure out what row the element that got clicked on is in
     let tilesIndex = 0;
-    let visibleTiles = $(".stackTile:visible");
+    let visibleTiles = $(".stack-tile:visible");
     for(tilesIndex; tilesIndex < visibleTiles.length; tilesIndex++){
         if($(this).is(visibleTiles[tilesIndex])){
             break;
@@ -86,27 +86,27 @@ function getStackCollapseHtml(){
                 <div class="arrowUpInner"></div>
                 <div class="arrowUpOuter"></div>
                 <div class="row collapseRow">
-                    <div class="col-md-2 textAlignCenter">
+                    <div class="col-md-2 text-center">
                         <img src="/img/logos/85x85/helm.png" class="img-fluid">
                         <p>Helm</p>
                     </div>
-                    <div class="col-md-2 textAlignCenter">
+                    <div class="col-md-2 text-center">
                         <img src="/img/logos/85x85/kubernetes.png" class="img-fluid">
                         <p>Kubernetes</p>
                     </div>
-                    <div class="col-md-2 textAlignCenter">
+                    <div class="col-md-2 text-center">
                         <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
                         <p>Prometheus</p>
                     </div>
-                    <div class="col-md-2 textAlignCenter">
-                        <img src="/img/logos/85x85/open_liberty.png" class="img-fluid">
+                    <div class="col-md-2 text-center">
+                        <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
                         <p>Open Liberty</p>
                     </div>
-                    <div class="col-md-2 textAlignCenter">
-                        <img src="/img/logos/85x85/EclipseChe.png" class="img-fluid">
+                    <div class="col-md-2 text-center">
+                        <img src="/img/logos/85x85/eclipse-che.png" class="img-fluid">
                         <p>Eclipse Che</p>
                     </div>
-                    <div class="col-md-2 textAlignCenter">
+                    <div class="col-md-2 text-center">
                         <img src="/img/logos/85x85/tekton.png" class="img-fluid">
                         <p>Tekton</p></div></div><div class="row">
                     <div class="col">

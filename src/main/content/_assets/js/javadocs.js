@@ -30,7 +30,7 @@ var defaultClassHtml = "";
 // Make sure the footer and header of the documentation page is always in the
 // browser viewport.
 function resizeJavaDocWindow() {
-    var topSection = $('#background_container').outerHeight();
+    var topSection = $('#background-container').outerHeight();
     var bottomSection = $('#footer_container').height();
 
     var middleSectionHeight = $(window).height() - (topSection + bottomSection);

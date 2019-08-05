@@ -10,17 +10,17 @@ permalink: /docs/ref/general/
 ---
 {% assign generalDocs = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | sort: 'title' %}
 
-<div id="background_container">
+<div id="background-container">
     <div class="row">
-        <h1 id="docsTitle">Kabanero Docs</h1>
+        <h1 id="docs-title">Kabanero Docs</h1>
     </div>
     <div class="row">
         <!-- table of contents section -->
-        <div id="toc_column" class="col-sm-2 collapsed in">
-            <div id="toc_inner">
+        <div id="toc-column" class="col-sm-2 collapsed in">
+            <div id="toc-inner">
                 {% if generalDocs.size > 0 %}
-                <div id="toc_container">
-                    <ul id="general_toc">
+                <div id="toc-container">
+                    <ul id="general-toc">
                         {% for doc in generalDocs %}
                         <li>
                             <div role="button" href="{{ doc.url }}" tabindex="0">{{ doc.title }}</div>
@@ -34,7 +34,7 @@ permalink: /docs/ref/general/
             </div>
         </div>
         <!-- content -->
-        <div id="general_content" tabindex="0" class="col-sm-9 position_relative">
+        <div id="general-content" tabindex="0" class="col-sm-9 position-relative">
         </div>
     </div>
 </div>

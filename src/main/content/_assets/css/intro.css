@@ -35,7 +35,7 @@ section.banner {
 
 #intro_meta {
     margin: 0 auto;
-    width: 72%; /* calculated to match .sect1 - 80% width of center column which is 90% of background_container */
+    width: 72%; /* calculated to match .sect1 - 80% width of center column which is 90% of background-container */
     max-width: 1082px;
 }
 
@@ -53,7 +53,7 @@ section.banner {
     line-height: 34px;
 }
 
-#background_container {
+#background-container {
     padding-top: 0px;
     padding-left: 5%;
     padding-right: 5%;

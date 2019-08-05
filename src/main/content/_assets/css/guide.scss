@@ -9,7 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
-#background_container, #end_of_guide_background {
+#background-container, #end-of-guide_background {
     background-color: rgb(241, 244, 254);
 }
 
@@ -83,7 +83,7 @@ header {
     margin-left: 23px;
 }
 
-#guide_content a, #end_of_guide a {
+#guide_content a, #end-of-guide a {
     font-weight: 500;
     color: #E3700D;
     transition: color .2s;
@@ -91,7 +91,7 @@ header {
     word-wrap: break-word;
 }
 
-#guide_content a:hover, #end_of_guide a:hover {
+#guide_content a:hover, #end-of-guide a:hover {
     color: #F4914D;
 }
 
@@ -277,7 +277,7 @@ header {
 
 /* GUIDE PAGE LAYOUT */
 
-#background_container {
+#background-container {
     min-height: 600px;
     background-repeat: no-repeat;
     margin-bottom: 100px;
@@ -288,7 +288,7 @@ header {
     margin-bottom: 70px;
 }
 
-#guide_column {
+#guide-column {
     color: #24253a;
     width: 100%;
 }
@@ -312,7 +312,7 @@ header {
     color: #eaf0ff;
 }
 
-#guide_title {
+#guide-title {
     margin-top: 15px;
     margin-bottom: 4px;
 }
@@ -322,7 +322,7 @@ header {
     margin-bottom: 15px;
 }
 
-#guide_duration {
+#guide-duration {
     margin-left: 2px;
     font-size: 16px;
 }
@@ -375,7 +375,7 @@ header {
         position: static; /* Make the header non sticky in mobile view */
     }
 
-    #background_container {
+    #background-container {
         margin: 0;
     }
 
@@ -450,7 +450,7 @@ header {
         cursor: pointer;
     }
         
-    #guide_column {
+    #guide-column {
         width: auto;
         padding-top: 10px;
         padding-bottom: 60px;
@@ -495,20 +495,20 @@ header {
 }
 
 @media (min-width: 1170px) {
-    #background_container {
+    #background-container {
         background-image: inherit;
         margin-bottom: 0;
     }
 }
 
 @media (min-width: 1440px) {
-    #guide_column {
+    #guide-column {
         width: calc(100% - 400px);
         max-width: 1000px;
         display: inline-block;
     }
     
-    #guide_column.expanded {
+    #guide-column.expanded {
         width: 100%;
     }      
 }

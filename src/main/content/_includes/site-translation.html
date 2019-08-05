@@ -5,8 +5,8 @@
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT }, 'google_translate_element');
     }
-    var currentLanguage = `{{page.language}}`
-    var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+    let currentLanguage = `{{page.language}}`
+    let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
     if (currentLanguage !== selectedLanguage) {
       if (selectedLanguage === 'en' || selectedLanguage === 'ru' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR' || selectedLanguage === 'zh-CN' || selectedLanguage === 'zh-TW') {
         switch (selectedLanguage) {

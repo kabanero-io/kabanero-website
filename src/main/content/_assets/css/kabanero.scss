@@ -620,19 +620,23 @@ footer {
     }
 }
 
-#google-translate-wrapper{
-    display: none;
-}
 .translated-ltr body{ 
     top: 0px !important;
 }
+
 body > .skiptranslate {
     display: none;
 }
 
+#translation-disclaimer{
+    margin-bottom: 0 !important;
+    padding-bottom: .60rem;
+    text-align: center;
+}
+
 #intro-content{
     margin-top: 30px;
-  }
+}
   
   @media (max-width: 991.98px){
     #intro-content {

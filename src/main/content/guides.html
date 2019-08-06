@@ -53,27 +53,28 @@ permalink: /guides/
 
 
 <!-- BASIC GUIDES -->
-<div id="guides_basic_banner" class="basic_section container">
+<div id="guides-basic-banner" class="basic-section container">
     <div class="row">
         <div class="col-sm-9">
-            <h2 class="guide_category_title"><b>Kabanero Basics</b>  - Let’s get started</h2>
+            <h2 class="guide-category-title"><b>Kabanero Basics</b>  - Let’s get started</h2>
         </div>
         <div class="col-sm-3">
-            <h2 class="total_guide_count guide_category_title"><b>{{all-guides.size}} guides</b></h2>
+            <h2 class="total-guide-count guide-category-title"><b>{{all-guides.size}} guides</b></h2>
         </div>
     </div>
 </div>
-<div id="guides_basic_container" class="basic_section container">
+<div id="guides-basic-container" class="basic-section container">
     <div class="essential row">
         {% for guide in all-guides %}
-        <div class="guide_column col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="{{ guide.url }}.html" class="guide_item" data-title="{{ guide.title | downcase }}" data-description="{{ guide.description | downcase }}" data-tags="{{ guide.tags | join: ' ' | downcase }}" data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
-                <div class="guide_title_and_description_container">
-                    <h3 class="guide_title">{{guide.title}}</h3>
-                    <p class="guide_description" title="{{guide.description}}">{{guide.description}}</p>
+        <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <a href="{{ guide.url }}.html" class="guide_item" data-title="{{ guide.title | downcase }}" 
+            data-description="{{ guide.description | downcase }}" data-tags="{{ guide.tags | join: ' ' | downcase }}" data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
+                <div class="guide-title-and-description-container">
+                    <h3 class="guide-title">{{guide.title}}</h3>
+                    <p class="guide-description" title="{{guide.description}}">{{guide.description}}</p>
                 </div>
-                <img class="duration_clock_icon" src="/img/guide_duration_clock_icon_small.svg" alt="Duration">
-                <span class="guide_duration">{{guide.duration}}</span>
+                <img class="duration-clock-icon" src="/img/guide-duration-clock-icon-small.svg" alt="Duration">
+                <span class="guide-duration">{{guide.duration}}</span>
             </a>
         </div>
         {% endfor %}

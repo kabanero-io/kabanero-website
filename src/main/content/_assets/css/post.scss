@@ -12,7 +12,7 @@
 //decalre variables
 $color-kabanero:#C43804;
 
- #background_container {
+ #background-container {
     padding-top: 20px;
     background-size: 100% calc(100% - 280px);
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@ $color-kabanero:#C43804;
     }
 }
 
-#intro_logo {
+#intro-logo {
     margin-bottom: 70px;
 
     @media (max-width: 767.98px) {
@@ -231,7 +231,7 @@ $color-kabanero:#C43804;
     top:32px;
 }
 
-.kabanero_colored_link {
+.kabanero-colored-link {
     color: $color-kabanero;
 
     &:hover {
@@ -249,7 +249,7 @@ $color-kabanero:#C43804;
     
 }
 
-.blogTitle{
+.blog-title{
     font-family: 'Hammersmith One', Arial Narrow, Helvetica, Arial;
     font-size:35px;
     padding-left:15px;

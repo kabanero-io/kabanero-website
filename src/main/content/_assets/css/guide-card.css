@@ -45,17 +45,17 @@
     border-left: solid 9px #C43804;
 }
 
-.guide_title_and_description_container {
+.guide-title-and-description-container {
     height: 155px;
     overflow: hidden;
 }
 
-.guide_title_container {
+.guide-title_container {
     height: 60px;
     overflow: hidden;
 }
 
-.guide_title {
+.guide-title {
     color: #24253a;
     margin-top: 0;
     margin-bottom: 9px;
@@ -64,7 +64,7 @@
     line-height: 20px;
 }
 
-.guide_description {
+.guide-description {
     color: #5e6b8d;
     margin: 0;
     font-size: 14px;
@@ -83,7 +83,7 @@
     width: 6px;
 }
 
-.guide_duration {
+.guide-duration {
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
     font-size: 13px;
     color: #24253A;

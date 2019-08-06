@@ -18,29 +18,29 @@
  
 /* INTRO */
 
-#commmunity_intro_background {
+#commmunity-intro-background {
     padding-top: 190px;
     padding-bottom: 115px;
     margin-bottom: 45px;
 }
 
-#commmunity_intro_paragraph_1 {
+#commmunity-intro-paragraph-1 {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-#commmunity_intro_paragraph_2 {
+#commmunity-intro-paragraph-2 {
     margin-bottom: 20px;
 }
 
 @media (max-width: 767.98px) {
-    #commmunity_intro_background {
+    #commmunity-intro-background {
         padding-top: 60px;
         padding-bottom: 60px;
         margin-bottom: 60px;
     }
 
-    #intro_logo {
+    #intro-logo {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 40px;
@@ -52,36 +52,36 @@
 
 /* HOUSTON WE HAVE A PROBLEM */
 
-#houston_container {
+#burning-container {
     padding-top: 75px;
     padding-bottom: 103px;
     margin-bottom: 10px;
 }
 
-#houston_row_1 {
+#burning-row-1 {
     margin-bottom: 45px;
 }
 
-#houston_title {
+#burning-title {
     margin: 0;
 }
 
-#houston_link_1 {
+#burning-link-1 {
     margin-bottom: 50px;
 }
 
-#houston_link_2 {
+#burning-link-2 {
     margin-bottom: 50px;
 }
 
-#houston_description_1 {
+#burning-description-1 {
     padding-left: 30px;
     padding-bottom: 15px;
     border-left: solid 7px #f7c4b2;
     margin-left: 70px;
 }
 
-#houston_description_2 {
+#burning-description-2 {
     padding-left: 30px;
     padding-bottom: 15px;
     border-left: solid 7px #f7c4b2;
@@ -89,29 +89,29 @@
     margin-left: 70px;
 }
 
- #description_paragraph_1 {
+ #description-paragraph-1 {
     margin-bottom: 20px;
 }
 
 @media (max-width: 767.98px) {
 
-    #houston_container {
+    #burning-container {
         padding-bottom: 60px;
         margin-bottom: 60px;
     }
 
-    #houston_links_column {
+    #burning-links-column {
         margin-bottom: 60px;
     }
 
-    #houston_description_1,
-    #houston_description_2 {
+    #burning-description-1,
+    #burning-description-2 {
         padding: 0;
         border-left: none;
         margin-left: 0;
     }
 
-    #houston_description_2 {
+    #burning-description-2 {
         margin-top: 20px;
     }
 }
@@ -120,18 +120,18 @@
 
 /* BECOME A CONTRIBUTOR */
 
-#contributor_title {
+#contributor-title {
     text-align: center;
     margin-bottom: 26px;
 }
 
-#contributor_paragraph {
+#contributor-paragraph {
     text-align: center;
     margin-bottom: 41px;
     line-height: 31px;
 }
 
-#contributor_link_1 {
+#contributor-link-1 {
     margin-bottom: 79px;
     max-width: 557px;
 }
@@ -141,10 +141,10 @@
     margin-bottom: 45px;
 }
 
-#social_media_title {
+#social-media-title {
     margin: 0;
 }
-.social_media_item {
+.social-media-item {
     margin-bottom: 40px;
     height: 274px;
     width: 485px;
@@ -157,38 +157,38 @@
     transition: box-shadow .2s, border .2s;
 }
 
-.social_media_item:hover {
+.social-media-item:hover {
     box-shadow: 0 2px 4px 0 rgba(63,70,89,0.59);
     border-left: solid 14px rgba(196, 56, 4, 0.75);
 }
 
-.social_media_title {
+.social-media-title {
     font-size: 16px;
     color: #24253A;
     margin-bottom: 15px;
 }
 
-.social_media_description {
+.social-media-description {
     color: #24253A;
     line-height: 26px;
     font-size: 14px;
     height: 120px;
 }
 
-.social_media_footer {
+.social-media-footer {
     display: flex;
     align-items: center;
 }
 
-.social_media_link {
+.social-media-link {
     font-size: 20px;
 }
 
-.social_media_logos {
+.social-media-logos {
     margin-left: auto;
 }
 
-.social_media_orange_right_arrow {
+.social-media-orange-right-arrow {
     background-image: url('/img/arrow_lightorange.svg');
     background-repeat: no-repeat;
     margin-left: 15px;
@@ -198,13 +198,13 @@
     height: 17px;
 }
 
-.social_media_item:hover .social_media_orange_right_arrow {
+.social-media-item:hover .social-media-orange-right-arrow {
     transition: all .2s;
     background-image: url('/img/arrow_darkorange.svg');
     margin-left: 35px;
 }
 
-.social_media_item:hover .orange_link_light_background {
+.social-media-item:hover .orange-link-light-background {
     transition: all .2s;
     color: #E3700D;
 }
@@ -212,25 +212,25 @@
 @media (max-width: 1199.98px) {
     /* This is styling for when the cards are all in a single column.
     Allow the cards to become different heights with the same widths.*/
-    .social_media_item {
+    .social-media-item {
         width: 100%;
         height: auto;
     }
-    .social_media_description {
+    .social-media-description {
         height: auto;
     }
 }
 
 @media (max-width: 470px) {
-    .social_media_orange_right_arrow {
+    .social-media-orange-right-arrow {
         display: none;
     }
-    .social_media_link {
+    .social-media-link {
         font-size: 16px;
     }
 }
 
-.connectText{
+.connect-text{
     font-size:25px;
     font-weight:bold;
     position:relative;

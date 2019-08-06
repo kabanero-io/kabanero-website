@@ -5,70 +5,131 @@ permalink: /codewind/
 ---
 
 <!-- Codewind download -->
-<div id="codewind_content" class="container">
+<div id="intro-content" class="container">
     <div class="row">
         <div class="col">
             <h1 id="introducing-eclipse-codewind">Introducing Eclipse Codewind</h1>
 
             <p>Welcome to a technical preview of Eclipse Codewind, an evolution of Microclimate!</p>
 
-            <p>Our first Microclimate release was over a year ago now, and we’ve talked to customers about what’s important to them and learned how to build tools for cloud native applications. As a result of this experience we’ve taken stock and decided to go in a new direction.</p>
+            <p>
+                Our first Microclimate release was over a year ago now, and we’ve talked to customers about what’s important to them and learned 
+                how to build tools for cloud native applications. As a result of this experience we’ve taken stock and decided to go in a new direction.
+            </p>
 
-            <p>Two of the major decisions we’ve made are to switch to the powerful <a href="https://www.eclipse.org/che/">Eclipse Che</a> for our cloud-hosted IDE and evolve our CI/CD pipeline to be based on <a href="https://tekton.dev">Tekton Pipelines</a>. However, today is special for another reason - an initial preview of how we expect our support for local IDEs to evolve.</p>
+            <p>
+                Two of the major decisions we’ve made are to switch to the powerful 
+                <a href="https://www.eclipse.org/che/">Eclipse Che</a> 
+                for our cloud-hosted IDE and evolve our CI/CD pipeline to be based on 
+                <a href="https://tekton.dev">Tekton Pipelines</a>. 
+                However, today is special for another reason - an initial preview of how we expect our support for local IDEs to evolve.
+            </p>
 
-            <p>Developers expect high-quality open source tools to be available in their IDE of choice. To deliver on this, we’ve started putting the local Microclimate installation on a diet and contributed it to a new Eclipse project that we’ve helped to form: Eclipse Codewind. Today we’re happy to announce a first glimpse of what Codewind will look like. This preview shows the state of the codebase as it begins the move to Eclipse.</p>
+            <p>
+                Developers expect high-quality open source tools to be available in their IDE of choice. To deliver on this, we’ve started putting the 
+                local Microclimate installation on a diet and contributed it to a new Eclipse project that we’ve helped to form: Eclipse Codewind. 
+                Today we’re happy to announce a first glimpse of what Codewind will look like. This preview shows the state of the codebase as it begins 
+                the move to Eclipse.
+            </p>
 
-            <p>Why Eclipse? That’s easy - it’s because the Eclipse Foundation has a strong history and community around building vendor-agnostic developer tools. Eclipse also hosts two of the main IDEs that we plan to extend, making it a natural fit for Codewind.</p>
+            <p>
+                Why Eclipse? That’s easy - it’s because the Eclipse Foundation has a strong history and community around building vendor-agnostic 
+                developer tools. Eclipse also hosts two of the main IDEs that we plan to extend, making it a natural fit for Codewind.
+            </p>
 
-            <p>The initial contribution for Codewind is coming from Microclimate. The Eclipse plug-in and Visual Studio Code extension are already open source and licensed under EPL 2. The common library that these depend on (a Docker container for now) has been relicensed under EPL 2 and is in the process of being legally cleared to release at Eclipse. All future releases of Codewind will come from the Eclipse codebase - we hope to see you there soon!</p>
+            <p>
+                The initial contribution for Codewind is coming from Microclimate. The Eclipse plug-in and Visual Studio Code extension are already 
+                open source and licensed under EPL 2. The common library that these depend on (a Docker container for now) has been relicensed under 
+                EPL 2 and is in the process of being legally cleared to release at Eclipse. All future releases of Codewind will come from the Eclipse 
+                codebase - we hope to see you there soon!
+            </p>
 
             <h2 id="limitations">Limitations</h2>
 
             <p>This preview is only available to use on Apple Mac (macOS).</p>
 
-            <p>You must run a local installer (which installs almost 1 Gb of Docker containers - we’re working on it!) in addition to the IDE plug-in/extension.</p>
+            <p>
+                You must run a local installer (which installs almost 1 Gb of Docker containers - we’re working on it!) in addition to the 
+                IDE plug-in/extension.
+            </p>
 
             <p>Projects must be located in <code class="highlighter-rouge">&lt;user&gt;/microclimate-workspace</code>.</p>
 
             <h2 id="prerequisites">Prerequisites</h2>
 
             <ul>
-            <li>Docker</li>
-            <li>Git</li>
-            <li>VS Code or Eclipse</li>
-            <li>Either uninstall Microclimate or prevent the Microclimate images from running. For more information about uninstalling Microclimate, see <a href="https://microclimate.dev/uninstalllinuxmac">Uninstalling Microclimate on Linux or Mac/OS</a>.</li>
+                <li>Docker</li>
+                <li>Git</li>
+                <li>VS Code or Eclipse</li>
+                <li>
+                    Either uninstall Microclimate or prevent the Microclimate images from running. For more information about uninstalling Microclimate, see 
+                    <a href="https://microclimate.dev/uninstalllinuxmac">Uninstalling Microclimate on Linux or Mac/OS</a>.
+                </li>
             </ul>
 
             <h2 id="installing-codewind">Installing Codewind</h2>
 
             <h4 id="downloading-the-release-binary-on-macos">Downloading the release binary on MacOS</h4>
             <ol>
-            <li>Download <a href="https://microclimate.dev/download/codewind" class="download-link trackdownload">codewind</a> to a folder on your system.</li>
-            <li>Make the <code class="highlighter-rouge">codewind</code> file usable with the <code class="highlighter-rouge">chmod +x codewind</code> command.</li>
-            <li>Enter the <code class="highlighter-rouge">./codewind install</code> command in the Terminal.</li>
-            <li>Run the <code class="highlighter-rouge">./codewind</code> command to see the available commands.</li>
+                <li>
+                    Download 
+                    <a href="https://microclimate.dev/download/codewind" class="download-link trackdownload">codewind</a> 
+                    to a folder on your system.
+                </li>
+                <li>
+                    Make the <code class="highlighter-rouge">codewind</code> file usable with the 
+                    <code class="highlighter-rouge">chmod +x codewind</code> command.
+                </li>
+                <li>Enter the <code class="highlighter-rouge">./codewind install</code> command in the Terminal.</li>
+                <li>Run the <code class="highlighter-rouge">./codewind</code> command to see the available commands.</li>
             </ol>
 
             <h4 id="installing-the-vs-code-extension">Installing the VS Code extension</h4>
             <ol>
-            <li>Install VS Code Version 1.27 or later.</li>
-            <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=IBM.codewind">Codewind VS Code extension</a> from the VS Code Marketplace or by searching for <code class="highlighter-rouge">Codewind</code> in the VS Code Extensions view.</li>
-            <li><strong>Optional:</strong> If you plan to work on Java projects, also install the Java Extension Pack.</li>
-            <li>After installing the extension, the Codewind view is available in the Explorer view and the Command Palette. In the VS Code Explorer view group, open the Codewind view, or enter <code class="highlighter-rouge">Focus on Codewind</code> into the Command Palette.</li>
+                <li>Install VS Code Version 1.27 or later.</li>
+                <li>
+                    Install the 
+                    <a href="https://marketplace.visualstudio.com/items?itemName=IBM.codewind">Codewind VS Code extension</a> 
+                    from the VS Code Marketplace or by searching for <code class="highlighter-rouge">Codewind</code> in the VS Code Extensions view.</li>
+                <li><strong>Optional:</strong> If you plan to work on Java projects, also install the Java Extension Pack.</li>
+                <li>
+                    After installing the extension, the Codewind view is available in the Explorer view and the Command Palette. 
+                    In the VS Code Explorer view group, open the Codewind view, or enter <code class="highlighter-rouge">Focus on Codewind</code> 
+                    into the Command Palette.
+                </li>
             </ol>
 
             <h4 id="installing-the-eclipse-plug-in">Installing the Eclipse plug-in</h4>
             <ol>
-            <li>Download and install the <a href="https://www.eclipse.org/downloads/packages/release/">latest Eclipse IDE for Java EE Developers</a> or use an existing installation. The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11).</li>
-            <li>Obtain the plug-in in one of the following ways:
-                <ul>
-                <li><a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=4638524" title="Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client"><img src="https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png" alt="Drag this install button to your running Eclipse workspace. Note: You need to have the Eclipse Marketplace Client."></a> Drag this install button to your running Eclipse workspace. Note: You need to have the Eclipse Marketplace Client.</li>
-                <li>Open the <a href="https://marketplace.eclipse.org/content/codewind">Eclipse IDE</a> and go to <strong>Help</strong>&gt;<strong>Eclipse Marketplace</strong>. Then, search for <code class="highlighter-rouge">Codewind</code>. Click <strong>Install</strong> and finish the wizard and accept licenses as prompted.</li>
-                </ul>
-            </li>
-            <li>When the installation is complete, restart Eclipse.</li>
-            <li>Open the Codewind Explorer view. Go to <strong>Window</strong>&gt;<strong>Show View</strong>&gt;<strong>Other</strong> and type <code class="highlighter-rouge">Codewind</code> in the filter field.</li>
-            <li>Then, select <strong>Codewind Explorer</strong> and click <strong>Open</strong>.</li>
+                <li>
+                    Download and install the 
+                    <a href="https://www.eclipse.org/downloads/packages/release/">latest Eclipse IDE for Java EE Developers</a> 
+                    or use an existing installation. The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11).
+                </li>
+                <li>Obtain the plug-in in one of the following ways:
+                    <ul>
+                        <li>
+                            <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=4638524" 
+                            title="Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client">
+                                <img src="https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png" 
+                                alt="Drag this install button to your running Eclipse workspace. Note: You need to have the Eclipse Marketplace Client.">
+                            </a> 
+                            Drag this install button to your running Eclipse workspace. Note: You need to have the Eclipse Marketplace Client.</li>
+                        <li>
+                            Open the 
+                            <a href="https://marketplace.eclipse.org/content/codewind">Eclipse IDE</a> 
+                            and go to <strong>Help</strong>&gt;<strong>Eclipse Marketplace</strong>. 
+                            Then, search for <code class="highlighter-rouge">Codewind</code>. 
+                            Click <strong>Install</strong> and finish the wizard and accept licenses as prompted.
+                        </li>
+                    </ul>
+                </li>
+                <li>When the installation is complete, restart Eclipse.</li>
+                <li>
+                    Open the Codewind Explorer view. Go to <strong>Window</strong>&gt;<strong>Show View</strong>&gt;<strong>Other</strong> and type 
+                    <code class="highlighter-rouge">Codewind</code> in the filter field.
+                </li>
+                <li>Then, select <strong>Codewind Explorer</strong> and click <strong>Open</strong>.</li>
             </ol>
 
             <h2 id="getting-started">Getting started</h2>
@@ -77,27 +138,49 @@ permalink: /codewind/
 
             <h4 id="getting-started-with-codewind-in-eclipse">Getting started with Codewind in Eclipse</h4>
 
-            <p><strong>Creating a project in Codewind</strong></p>
+            <p>
+                <strong>Creating a project in Codewind</strong>
+            </p>
+
             <ol>
-            <li>To create a project, right-click the <strong>Project Explorer</strong> view. When the menu appears, click <strong>New</strong>&gt;<strong>Project</strong>.</li>
-            <li>In the <strong>New Project</strong> window, click the <code class="highlighter-rouge">Codewind</code> folder and <strong>New Codewind Project</strong>.</li>
-            <li>Name your project, select a template, and click <strong>Finish</strong>.</li>
+                <li>
+                    To create a project, right-click the <strong>Project Explorer</strong> view. When the menu appears, 
+                    click <strong>New</strong>&gt;<strong>Project</strong>.
+                </li>
+                <li>
+                    In the <strong>New Project</strong> window, click the <code class="highlighter-rouge">Codewind</code> 
+                    folder and <strong>New Codewind Project</strong>.
+                </li>
+                <li>Name your project, select a template, and click <strong>Finish</strong>.</li>
             </ol>
 
-            <p><strong>Binding a project in Codewind</strong></p>
+            <p>
+                <strong>Binding a project in Codewind</strong>
+            </p>
+
             <ol>
-            <li>From the <strong>Project Explorer</strong> view, select a node. When the menu appears, click <strong>Codewind</strong>&gt;<strong>Add Project</strong>.</li>
-            <li>In the <strong>Add Project to Codewind</strong> window, select a langauge and, if applicable, a project type.</li>
-            <li>Click <strong>Finish</strong>. The project builds.</li>
+                <li>
+                    From the <strong>Project Explorer</strong> view, select a node. When the menu appears, 
+                    click <strong>Codewind</strong>&gt;<strong>Add Project</strong>.
+                </li>
+                <li>In the <strong>Add Project to Codewind</strong> window, select a langauge and, if applicable, a project type.</li>
+                <li>Click <strong>Finish</strong>. The project builds.</li>
             </ol>
 
             <h4 id="getting-started-with-codewind-in-vs-code">Getting started with Codewind in VS Code</h4>
 
-            <p>In the <code class="highlighter-rouge">README</code> file on the <code class="highlighter-rouge">codewind-vscode</code> repository, see the <a href="https://github.com/microclimate-dev2ops/codewind-vscode#how-to-use"><strong>How to use</strong></a> section to begin working with Codewind in VS Code.</p>
+            <p>
+                In the <code class="highlighter-rouge">README</code> file on the <code class="highlighter-rouge">codewind-vscode</code> repository, 
+                see the <a href="https://github.com/microclimate-dev2ops/codewind-vscode#how-to-use"><strong>How to use</strong></a> section to begin 
+                working with Codewind in VS Code.
+            </p>
 
             <h2 id="deactivating-codewind">Deactivating Codewind</h2>
 
-            <p>With Codewind, you have a single connection that is either active or inactive. To deactivate Codewind, click the <strong>Codewind (Local)</strong> menu and click <strong>Deactivate Connection</strong>.</p>
+            <p>
+                With Codewind, you have a single connection that is either active or inactive. To deactivate Codewind, click the 
+                <strong>Codewind (Local)</strong> menu and click <strong>Deactivate Connection</strong>.
+            </p>
         </div>
 	</div>
 </div>

@@ -16,22 +16,22 @@
  *
  ******************************************************************************/
 
-#background_container {
+#background-container {
     height: 100%;
 }
 
 /* table of column styling */
 
-#row, #toc_column, #toc_inner, #config_content {
+#row, #toc-column, #toc-inner, #config-content {
     height: 100%;
 }
 
-#toc_column {
+#toc-column {
     padding-left: 0;
     padding-top: 20px;
 }
 
-#toc_title {
+#toc-title {
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
     font-size: 14px;
     color: #313653;
@@ -46,25 +46,25 @@ a[target="contentFrame"] {
     color: #5D6A8E;
 }
 
-.toc_main_selected {
+.toc-main-selected {
     padding-left: 22px !important;
     margin-left: -30px !important;
 }
 
-.toc_sub_selected {
+.toc-sub-selected {
     padding-left: 40px !important;
     margin-left: -30px !important;
 }
 
-#config_content {
+#config-content {
     outline: none;
 }
 
-#config_content > .ulist {
+#config-content > .ulist {
     display: none;
 }
 
-iframe.config_content_frame {
+iframe.config-content_frame {
     height: 100%;
     width: 100%;
     border: none;
@@ -74,7 +74,7 @@ iframe.config_content_frame {
     padding-left: 20px;
 }
 
-#config_title { /* not picking up from common, has to have entire config_title css here */
+#config-title { /* not picking up from common, has to have entire config-title css here */
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
     font-size: 35px;
     letter-spacing: 0;
@@ -236,17 +236,17 @@ div.toggle:hover {
 }
 
 @media (max-width: 1024px) {
-    #toc_title {
+    #toc-title {
         position: static;
     }
 
-    #toc_container {
+    #toc-container {
         padding-top: 0px;
     }
 
     /* allow iframe scrolling in ipad */
     /*
-    #config_content {
+    #config-content {
         -webkit-overflow-scrolling: touch;
   	    overflow-y: scroll;
     }
@@ -255,7 +255,7 @@ div.toggle:hover {
         height: unset;
     }
 
-    #background_container {
+    #background-container {
         margin-bottom: 50px;
     }
 }
@@ -272,11 +272,11 @@ div.toggle:hover {
     }
 
     /* hide scrollbar for iframe */
-    #config_content {
+    #config-content {
         overflow: hidden;
     } 
 
-    iframe.config_content_frame {
+    iframe.config-content_frame {
         width: 102%;
     } 
 }

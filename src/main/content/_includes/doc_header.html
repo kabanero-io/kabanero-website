@@ -34,7 +34,7 @@
             <div id="breadcrumb_row">
                 {% if page.url contains '/guides/' and page.url != '/guides/' %}
                     <!-- Hamburger icon for showing the table of contents -->
-                    <button id="breadcrumb_hamburger" class="toc-toggle collapsed" type="button" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column">
+                    <button id="breadcrumb-hamburger" class="toc-toggle collapsed" type="button" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -51,7 +51,7 @@
                     <!-- Javadocs -->
                     {% if page.type == 'Javadoc' %}
                         <li>
-                            <a class="inactive_link">Reference</a>
+                            <a class="inactive-link">Reference</a>
                         </li>
                         <li class="active"> {{ page.doc-type }} </li>
                         {% assign versions = site.pages | where: 'doc-type', page.doc-type | sort: 'version' | reverse %}
@@ -73,7 +73,7 @@
 
                     {% elsif page.type == 'general' %}
                     <li>
-                        <a class="inactive_link">Reference</a>
+                        <a class="inactive-link">Reference</a>
                     </li>
                     <li>
                         <a href="/docs/ref/general/">General</a>
@@ -97,15 +97,15 @@
                 </ol>
             </div>
             {% if page.type == 'config' or page.type == 'feature' or page.type == 'command' or page.type == 'general' %}
-                <div class="breadcrumb_hamburger_nav" role="button" data-toggle="collapse" data-target="#toc_column" aria-expanded="true" aria-controls="toc_column">
+                <div class="breadcrumb-hamburger-nav" role="button" data-toggle="collapse" data-target="#toc-column" aria-expanded="true" aria-controls="toc-column">
                     <!-- Hamburger icon for showing the table of contents -->
-                    <button id="breadcrumb_hamburger" class="collapsed" type="button">
+                    <button id="breadcrumb-hamburger" class="collapsed" type="button">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <span id="breadcrumb_hamburger_title">Table of Content</span>
+                    <span id="breadcrumb-hamburger-title">Table of Content</span>
                 </div>
             {% endif %}
         {% endif %}

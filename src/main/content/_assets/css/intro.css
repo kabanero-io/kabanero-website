@@ -35,7 +35,7 @@ section.banner {
 
 #intro_meta {
     margin: 0 auto;
-    width: 72%; /* calculated to match .sect1 - 80% width of center column which is 90% of background_container */
+    width: 72%; /* calculated to match .sect1 - 80% width of center column which is 90% of background-container */
     max-width: 1082px;
 }
 
@@ -53,7 +53,7 @@ section.banner {
     line-height: 34px;
 }
 
-#background_container {
+#background-container {
     padding-top: 0px;
     padding-left: 5%;
     padding-right: 5%;
@@ -74,11 +74,11 @@ section.banner {
     padding-bottom: 0px;
 }
 
-#intro_content .sect1 > .sectionbody {
+#intro-content .sect1 > .sectionbody {
     padding-top: 19px;
 }
 
-#intro_content div.sect1 {
+#intro-content div.sect1 {
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 50px;
@@ -88,29 +88,29 @@ section.banner {
     background-color: white;
 }
 
-#intro_content div.sect1:not(#intro_meta) {
+#intro-content div.sect1:not(#intro_meta) {
     box-shadow: inset 0px 52px 0px 0px #F7F9E5;
 }
 
-#intro_content div.sect1:not(#intro_meta):not(:first-child) {
+#intro-content div.sect1:not(#intro_meta):not(:first-child) {
     border-top: 3px solid #d4d7e3;
 }
 
-#intro_content h1, 
-#intro_content h2, 
-#intro_content h3, 
-#intro_content h4, 
-#intro_content h5 {
+#intro-content h1, 
+#intro-content h2, 
+#intro-content h3, 
+#intro-content h4, 
+#intro-content h5 {
     color: #1B1C34;
 }
 
-#intro_content h2 {
+#intro-content h2 {
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
     line-height: 26px;
     font-size: 20px;
 }
 
-#intro_content h3 {
+#intro-content h3 {
     font-size: 16px;
     line-height: 26px;
     font-weight: 500;
@@ -118,18 +118,18 @@ section.banner {
     margin-bottom: 0px;
 }
 
-#intro_content h4 {
+#intro-content h4 {
     font-size: 16px;
     font-weight: 500;
     margin-top: 18px;
     margin-bottom: 3px;
 }
 
-#intro_content h5 {
+#intro-content h5 {
     margin-bottom: 0px;
 }
 
-#intro_content p {
+#intro-content p {
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 0px;
@@ -137,7 +137,7 @@ section.banner {
     line-height: 26px;
 }
 
-#intro_content a {
+#intro-content a {
     font-weight: 500;
     color: #E3700D;
     transition: color .2s;
@@ -145,32 +145,32 @@ section.banner {
     word-wrap: break-word;
 }
 
-#intro_content a:hover {
+#intro-content a:hover {
     color: #F4914D;
 }
 
-#intro_content code {
+#intro-content code {
     /* Bootstrap override */
     background-color: #F3F4F7;
     color: #5e6b8d;
     word-wrap: break-word;
 }
 
-#intro_content .sect1 h2 {
+#intro-content .sect1 h2 {
     padding-top: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-#intro_content .sect3 {
+#intro-content .sect3 {
     padding-top: 10px;
 }
 
-#intro_content .sect4 p {
+#intro-content .sect4 p {
     padding-top: 5px;
 }
 
-#intro_content img {
+#intro-content img {
     width: 100%;
     max-width: 650px;
     margin: 0 auto;

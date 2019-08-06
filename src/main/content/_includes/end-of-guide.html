@@ -16,9 +16,9 @@
  -
  ------------------------------------------------------------------------------>
 
-<div id="end_of_guide">
+<div id="end-of-guide">
         <h2 tabindex="0">Nice work! Where to next?</h2>
-        <div id="end_of_guide_left_section">
+        <div id="end-of-guide_left_section">
             <p id="guide_attribution"></p>
             <h3 id="improve_guide_feedback">What could make this guide better?</h3>
             {% if page.layout == 'guide' or page.layout == 'guide-multipane' %}
@@ -41,7 +41,7 @@
             </div>
 
         </div>
-        <div id="end_of_guide_right_section">
+        <div id="end-of-guide_right_section">
             <h3 id="where_to_next">Where to next?</h3>
 
             {% if page.layout == 'iguide-multipane' %}
@@ -64,11 +64,11 @@
                         {% assign related-guide-metadata = list[0] %}
                         <div class="col-sm-12 col-lg-6">
                             <a href="/guides/{{related-guide}}.html" class="small_guide_item">
-                                <div class="guide_title_container">
-                                    <h3 class="guide_title">{{related-guide-metadata.title}}</h3>
+                                <div class="guide-title_container">
+                                    <h3 class="guide-title">{{related-guide-metadata.title}}</h3>
                                 </div>
-                                <img class="duration_clock_icon" src="/img/guide_duration_clock_icon_small.svg" alt="Duration">
-                                <span class="guide_duration">{{related-guide-metadata.duration}}</span>
+                                <img class="duration-clock-icon" src="/img/guide-duration-clock-icon_small.svg" alt="Duration">
+                                <span class="guide-duration">{{related-guide-metadata.duration}}</span>
                                 {% if related-guide-metadata.layout == 'interactive-guide' or related-guide-metadata.layout == 'iguide-multipane' %}
                                 <div class="guide_interactive_container">
                                   <img class="interactive_bolt_icon" src="/img/guide_lightning_bolt.svg" alt="Interactive">

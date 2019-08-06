@@ -32,7 +32,7 @@ $blue-grey-color: #5d6a8e;
 
 // -----------
 
-#contribute_intro_paragraph_1 {
+#contribute-intro-paragraph-1 {
     margin-bottom: 0;
 
     font-size: 20px;
@@ -224,7 +224,7 @@ $blue-grey-color: #5d6a8e;
 }
 
 #guides_microprofile_banner,
-#guides_basic_banner {
+#guides-basic-banner {
     @extend %full-width-and-padding;
     background-color: #DEE1E8;
 }
@@ -239,7 +239,7 @@ $blue-grey-color: #5d6a8e;
     @extend %full-width-and-padding;
 }
 
-#guides_basic_container,
+#guides-basic-container,
 #guides_microprofile_container,
 #guides_additional_container,
 #no_search_results_container {
@@ -272,14 +272,14 @@ $blue-grey-color: #5d6a8e;
     margin-bottom: 27px;
 }
 
-.guide_category_title {
+.guide-category-title {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     color: #3f4659;
 }
 
-.total_guide_count {
+.total-guide-count {
     text-align: right;
     @media (max-width: 767.98px) {
         text-align: left;

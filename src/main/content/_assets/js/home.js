@@ -18,16 +18,16 @@
 
 function hideAllFeaturedModelsCollapses(element){
     $(".featuredModelsCollapse").collapse('hide');
-    $(".featuredModelBox").removeClass('selectedStack');
+    $(".featured-model-box").removeClass('selectedStack');
     $(element).collapse('show');
     $(element).addClass('selectedStack');
 }
 
 function hideAllOpenSourcePlatformsCollapses(id){
-    $(".open_source_platform_content_box").hide();
-    $("#open_source_platform_" + id + "_collapse").show();
-    $(".open_source_platform_box_selected").removeClass("open_source_platform_box_selected");
-    $("#open_source_platform_" + id + "_box").addClass("open_source_platform_box_selected");
-    $(".open_source_platform_vertical_separator_visible").removeClass("open_source_platform_vertical_separator_visible");
-    $("#open_source_platform_" + id + "_separator").addClass("open_source_platform_vertical_separator_visible");
+    $(".open-source-platform-content-box").hide();
+    $("#open-source-platform-" + id + "-collapse").show();
+    $(".open-source-platform-box-selected").removeClass("open-source-platform-box-selected");
+    $("#open-source-platform-" + id + "-box").addClass("open-source-platform-box-selected");
+    $(".open-source-platform-vertical-separator-visible").removeClass("open-source-platform-vertical-separator-visible");
+    $("#open-source-platform-" + id + "-separator").addClass("open-source-platform-vertical-separator-visible");
 }

@@ -156,17 +156,17 @@ html, body{
     color:#2C2E50;
 }
 
-.runtime_download_button_label_container {
+.runtime_download_button-label_container {
     display: inline-block;
     width: 357px;
 }
 
-.eclipse_download_button_label_container {
+.eclipse_download_button-label_container {
     display: inline-block;
     width: 353px;
 }
 
-.runtime_button_sub_label {
+.runtime_button-sub-label {
     font-size: 13px;
     margin-left: 175px;
     margin-right: 149px;
@@ -174,7 +174,7 @@ html, body{
     margin-bottom: 32px;
 }
 
-.eclipse_button_sub_label {
+.eclipse_button-sub-label {
     font-size: 13px;
     margin-left: 210px;
     margin-right: 98px;
@@ -199,7 +199,7 @@ html, body{
     float: right;
 }
 
-.runtime_download_button_label {
+.runtime_download_button-label {
     font-weight: 500;
     padding-top: 20px;
     padding-bottom: 32px;
@@ -207,7 +207,7 @@ html, body{
     padding-right: 85px;
 }
 
-.eclipse_download_button_label {
+.eclipse_download_button-label {
     padding-top: 11px;
     padding-bottom: 11px;
     padding-left: 36px;
@@ -456,11 +456,11 @@ html, body{
     }
 }
 
-.download_detail{
+.download-detail{
     padding: 50px;
 }
 
-.workflow_image{
+.workflow-image{
     width: 100%;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -723,11 +723,11 @@ html, body{
         text-align: left;
     }
 
-    .runtime_download_button_label_container {
+    .runtime_download_button-label_container {
         width: 262px;
     }
 
-    .eclipse_download_button_label_container {
+    .eclipse_download_button-label_container {
         width: 258px;
     }
 
@@ -758,7 +758,7 @@ html, body{
         margin-bottom: 35px;
     }
 
-    .eclipse_button_sub_label {
+    .eclipse_button-sub-label {
         display: none;
     }
 
@@ -810,7 +810,7 @@ html, body{
   margin-top: 3em;
 }
 
-#componentsText{
+#components-text{
     margin-top: 30px;
 }
 
@@ -856,17 +856,17 @@ html, body{
     right:10px;
 }
 
-.role_image{
+.role-image{
     height: 200px;
     border: 4px solid #292828;
     border-radius: 50%;
 }
 
-.role_image:hover{
+.role-image:hover{
     border-color: $color-kabanero;
     background-color: rgba(196, 55, 4, 0.598);
 }
 
-.role_text{
+.role-text{
     margin-top: 15px;
 }

@@ -176,7 +176,7 @@
 }
 
 #issues_up_arrow:hover {
-    background-image: url('/img/up_arrow_yellow.svg');
+    background-image: url('/img/up-arrow-yellow.svg');
 }
 
 #issues_down_arrow {
@@ -184,5 +184,5 @@
 }
 
 #issues_down_arrow:hover {
-    background-image: url('/img/down_arrow_yellow.svg');
+    background-image: url('/img/down-arrow-yellow.svg');
 }

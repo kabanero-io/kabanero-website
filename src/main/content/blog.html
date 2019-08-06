@@ -7,19 +7,24 @@ css:
 permalink: /blog/
 ---
 <!-- BLOG -->
-<div id="background_container">
-    <div id="blog_container" class="container-fluid">
+<div id="background-container">
+    <div id="blog-container" class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-md-11">
-                <h1 class="blogPageTitle" alt="Blog">Blog</h1>
-                <p>Follow <a class="kabanero_colored_link" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> on Twitter or subscribe to our <a class="kabanero_colored_link" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.</p>
+            <div class="col-md-10">
+                <h1 class="blog-page-title" alt="Blog">Blog</h1>
+                <p>
+                    Follow 
+                    <a class="kabanero-colored-link" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> 
+                    on Twitter or subscribe to our 
+                    <a class="kabanero-colored-link" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.
+                </p>
             </div>
             <div class="col-1"></div>
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-11">
+            <div class="col-md-10">
 
                 <!-- Show blog posts from the past 30 days as Latest Posts unless there are less than 3
                      2592000 is 30 days in seconds (30 days * 24 hours * 60 minutes * 60 seconds) -->
@@ -50,12 +55,12 @@ permalink: /blog/
                         {% assign additional_author_count = additional_author_count | plus: 1 %}
                     {% endfor %}
 
-                    <div class="row blog_post_row">
-                        <div class="blog_post_column col">
+                    <div class="row blog-post-row">
+                        <div class="blog-post-column col">
                             {% if count <= latest_posts_count %}
-                                <div class="blog_post_content blogContent">
+                                <div class="blog-post-content blog-content">
                                     {% if post.redirect_link %}
-                                        <h2 class="blog_post_title"><a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="blog_post_title_link">{{ post.title | escape }}</a>
+                                        <h2 class="blog-post-title"><a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="blog-post-title-link">{{ post.title | escape }}</a>
                                             <span class="continued_text">
                                                 {% assign continue_text = ' [Continued on ' %}
                                                 {% assign domain_name = post.redirect_link | remove: "https://" | remove: "http://" | remove: "www." | append: "]" %}
@@ -63,10 +68,10 @@ permalink: /blog/
                                             </span>
                                         </h2>
                                     {% else %}
-                                        <h2 class="blog_post_title"><a href="{{ post.url | relative_url }}" class="blog_post_title_link">{{ post.title | escape }}</a></h2>
+                                        <h2 class="blog-post-title"><a href="{{ post.url | relative_url }}" class="blog-post-title-link">{{ post.title | escape }}</a></h2>
                                     {% endif %}
-                                    <p class="blog_post_date_mobile d-sm-block d-md-none">{{ post.date | date: date_format }}</p>
-                                    <p class="blog_post_paragraph">
+                                    <p class="blog-post-date-mobile d-sm-block d-md-none">{{ post.date | date: date_format }}</p>
+                                    <p class="blog-post-paragraph">
                                         {% if post.blog_description %}
                                             {{ post.blog_description }}
                                         {% else %}
@@ -74,38 +79,38 @@ permalink: /blog/
                                         {% endif %}
                                     </p>
                                     <div class="row">
-                                        <div class="blog_post_author_data_container col-md-7">
-                                            <div class="author_images_container">
-                                                <img src="{{ post.author_picture }}" class="blog_post_author_image" alt="Blog author picture">
+                                        <div class="blog-post-author-data-container col-md-7">
+                                            <div class="author-images-container">
+                                                <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
                                                 {% for author in post.additional_authors %}
-                                                    <img src="{{ author.image }}" class="blog_post_author_image" alt="image of author">
+                                                    <img src="{{ author.image }}" class="blog-post-author-image" alt="image of author">
                                                 {% endfor %}
                                             </div>
-                                            <a class="blog_post_author_name" href="{{ post.author_github }}" target="_blank" rel="noopener">{{ post.author }}</a>
+                                            <a class="blog-post-author-name" href="{{ post.author_github }}" target="_blank" rel="noopener">{{ post.author }}</a>
                                             {% for author in post.additional_authors %}
                                                 {% if additional_author_count == 1 %}
                                                     <span>and </span>
-                                                    <a class="blog_post_author_name" href="{{ author.github }}" target="_blank" rel="noopener">{{ author.name }}</a>
+                                                    <a class="blog-post-author-name" href="{{ author.github }}" target="_blank" rel="noopener">{{ author.name }}</a>
                                                 {% else %}
                                                     <span>and {{ additional_author_count }} others</span>
                                                     {% break %}
                                                 {% endif %}
                                             {% endfor %}
-                                            <span class="blog_post_date" title="{{ post.date | date: date_format }}">on {{ post.date | date: date_format }}</span>
+                                            <span class="blog-post-date" title="{{ post.date | date: date_format }}">on {{ post.date | date: date_format }}</span>
                                         </div>
-                                        <div class="read_more_link_container col-sm-12 col-md-5">
+                                        <div class="read-more-link-container col-sm-12 col-md-5">
                                         {% if post.redirect_link %}
-                                            <a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="read_more_link read_more_link_external">Read more</a>
+                                            <a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="read-more-link read-more-link-external">Read more</a>
                                         {% else %}
-                                            <a href="{{ post.url | relative_url }}" class="read_more_link">Read more</a>
+                                            <a href="{{ post.url | relative_url }}" class="read-more-link">Read more</a>
                                         {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             {% else %}
-                                <div class="blog_post_content blogContent">
+                                <div class="blog-post-content blog-content">
                                     {% if post.redirect_link %}
-                                        <h2 class="blog_post_title_condensed"><a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="blog_post_title_link_condensed">{{ post.title | escape }}</a>
+                                        <h2 class="blog-post-title-condensed"><a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="blog-post-title-link-condensed">{{ post.title | escape }}</a>
                                             <span class="continued_text">
                                                 {% assign continue_text = ' [Continued on ' %}
                                                 {% assign domain_name = post.redirect_link | remove: "https://" | remove: "http://" | remove: "www." | append: "]" %}
@@ -113,10 +118,10 @@ permalink: /blog/
                                             </span>
                                         </h2>
                                     {% else %}
-                                        <h2 class="blog_post_title_condensed"><a href="{{ post.url | relative_url }}" class="blog_post_title_link_condensed">{{ post.title | escape }}</a></h2>
+                                        <h2 class="blog-post-title-condensed"><a href="{{ post.url | relative_url }}" class="blog-post-title-link-condensed">{{ post.title | escape }}</a></h2>
                                     {% endif %}
-                                    <p class="blog_post_date_mobile d-sm-block d-md-none">{{ post.date | date: date_format }}</p>
-                                    <p class="blog_post_paragraph">
+                                    <p class="blog-post-date-mobile d-sm-block d-md-none">{{ post.date | date: date_format }}</p>
+                                    <p class="blog-post-paragraph">
                                         {% if post.blog_description %}
                                             {{ post.blog_description }}
                                         {% else %}
@@ -124,33 +129,33 @@ permalink: /blog/
                                         {% endif %}
                                     </p>
                                     <div class="row">
-                                        <div class="blog_post_author_data_container col-md-7">
-                                            <div class="author_images_container">
-                                                <img src="{{ post.author_picture }}" class="blog_post_author_image" alt="Blog author picture">
+                                        <div class="blog-post-author-data-container col-md-7">
+                                            <div class="author-images-container">
+                                                <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
                                                 {% for author in post.additional_authors %}
-                                                    <img src="{{ author.image }}" class="blog_post_author_image" alt="image of author">
+                                                    <img src="{{ author.image }}" class="blog-post-author-image" alt="image of author">
                                                 {% endfor %}
                                             </div>
-                                            <a class="blog_post_author_name" href="{{ post.author_github }}" target="_blank" rel="noopener">{{ post.author }}</a>
+                                            <a class="blog-post-author-name" href="{{ post.author_github }}" target="_blank" rel="noopener">{{ post.author }}</a>
 
 
                                             {% for author in post.additional_authors %}
                                                 {% if additional_author_count == 1 %}
                                                     <span>and </span>
-                                                    <a class="blog_post_author_name" href="{{ author.github }}" target="_blank" rel="noopener">{{ author.name }}</a>
+                                                    <a class="blog-post-author-name" href="{{ author.github }}" target="_blank" rel="noopener">{{ author.name }}</a>
                                                 {% else %}
                                                     <span>and {{ additional_author_count }} others</span>
                                                     {% break %}
                                                 {% endif %}
                                             {% endfor %}
 
-                                            <span class="blog_post_date" title="{{ post.date | date: date_format }}">on {{ post.date | date: date_format }}</span>
+                                            <span class="blog-post-date" title="{{ post.date | date: date_format }}">on {{ post.date | date: date_format }}</span>
                                         </div>
-                                        <div class="read_more_link_container col-sm-12 col-md-5">
+                                        <div class="read-more-link-container col-sm-12 col-md-5">
                                         {% if post.redirect_link %}
-                                            <a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="read_more_link read_more_link_external">Read more</a>
+                                            <a href="{{ post.redirect_link }}" target="_blank" rel="noopener" class="read-more-link read-more-link-external">Read more</a>
                                         {% else %}
-                                            <a href="{{ post.url | relative_url }}" class="read_more_link">Read more</a>
+                                            <a href="{{ post.url | relative_url }}" class="read-more-link">Read more</a>
                                         {% endif %}
                                         </div>
                                     </div>
@@ -160,11 +165,16 @@ permalink: /blog/
                     </div>
                     {% assign count = count | plus: 1 %}
                 {% endfor %}
-                <div class="row blog_post_row">
-                    <div class="blog_post_column col">
-                        <div id="final_post">
-                            <p class="final_post_title">Stay hot!</p>
-                            <p class="white_text">Follow <a class="orange_link_light_background" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> on Twitter or subscribe to our <a class="orange_link_light_background" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.</p>
+                <div class="row blog-post-row">
+                    <div class="blog-post-column col">
+                        <div id="final-post">
+                            <p class="final-post-title">Stay hot!</p>
+                            <p class="white-text">
+                                Follow 
+                                <a class="orange-link-light-background" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> 
+                                on Twitter or subscribe to our 
+                                <a class="orange-link-light-background" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.
+                            </p>
                         </div>
                     </div>
                 </div>

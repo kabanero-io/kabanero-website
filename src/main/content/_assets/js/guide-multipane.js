@@ -227,7 +227,7 @@ function handleGithubPopup() {
         var navHeight = $('.navbar').height();
         var blurCodeOnRight = (firstCodeSectionTop - navHeight) > 1;
 
-        var firstHotspot = $("#guide_column .hotspot:visible")[0];
+        var firstHotspot = $("#guide-column .hotspot:visible")[0];
         var firstHotspotRect = firstHotspot.getBoundingClientRect();
         var firstHotspotInView = (firstHotspotRect.top > 0) && (firstHotspotRect.bottom <= window.innerHeight);
 
@@ -539,7 +539,7 @@ function restoreCodeColumn(){
     $('.hotspot').on('click', function(){
         if(inSingleColumnView()){
             $("body").addClass("unscrollable");   
-            $("#mobile_toc_accordion_container").css({
+            $("#mobile-toc-accordion-container").css({
                 "pointer-events" : "none"
             });         
             $("#code_column").addClass("modal");
@@ -568,7 +568,7 @@ function restoreCodeColumn(){
 
     $('#dismiss_button').on('click', function(){
         $("body").removeClass("unscrollable");
-        $("#mobile_toc_accordion_container").css({
+        $("#mobile-toc-accordion-container").css({
             "pointer-events" : "auto"
         });
         $("#code_column").removeClass("modal");

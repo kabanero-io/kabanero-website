@@ -13,23 +13,23 @@
     overflow: hidden;
 }
 
-#background_container {
+#background-container {
     background-color: inherit;
 }
 
 /* Table of Contents */
-#toc_column {
+#toc-column {
     left: 0;    
 }
 
-#toc_line {
+#toc-line {
     &.open {
         left: 274px; // 280px minus the width of 6 px
     }
 }
 
 /* Guide Content related to the 3 column code */
-#guide_column {
+#guide-column {
     max-width: initial; /* Take off the width restriction of single pane guides */
 }
 
@@ -349,11 +349,11 @@
 }
 
 @media (min-width: 1170px) {
-    #guide_column {
+    #guide-column {
         width: calc(100% - 780px);
     }
     
-    #background_container {
+    #background-container {
         background-image: inherit;
         margin-bottom: 0;
     }
@@ -393,22 +393,22 @@
 }
 
 @media (min-width: 1440px) {
-    #toc_column{
+    #toc-column{
         &.open {
             width: 280px; /* Override the 400px width from single pane guide */
         }
     }
 
-    #guide_column {
+    #guide-column {
         width: calc(100% - 780px);
         display: inline-block;
     }
 
-    #guide_column.open {
+    #guide-column.open {
         width: calc(100% - 280px - 780px); /* Adjust for the size of the table of contents and the code column */
     }
 
-    #guide_column.expanded {
+    #guide-column.expanded {
         width: calc(100% - 780px);
     }
 

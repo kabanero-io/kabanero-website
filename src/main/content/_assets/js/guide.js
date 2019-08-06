@@ -75,7 +75,7 @@
     }
 
     $('#guide_content pre:not(.no_copy pre):not(.code_command pre):not(.hotspot pre)').hover(function(event) {
-        offset = $('#guide_column').position();	
+        offset = $('#guide-column').position();	
         target = event.currentTarget;	
         var current_target_object = $(event.currentTarget);	
         target_position = current_target_object.position();	
@@ -85,7 +85,7 @@
         console.log("right_position:", right_position);
          $('#copy_to_clipboard').css({	
             top: target_position.top + 1,	
-            right: parseInt($('#guide_column').css('padding-right')) + right_position	
+            right: parseInt($('#guide-column').css('padding-right')) + right_position	
         });	
         $('#copy_to_clipboard').stop().fadeIn();	
      }, function(event) {	

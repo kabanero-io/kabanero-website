@@ -105,7 +105,7 @@ a {
     margin-bottom: 20px;
 }
 
-.inactive_link {
+.inactive-link {
     cursor: default;
     pointer-events: none;
     color: #FFFFFF;
@@ -115,11 +115,11 @@ a {
     font-size: 20px;
 }
 
-.orange_link_light_background, .orange_link_light_background:focus {
+.orange-link-light-background, .orange-link-light-background:focus {
     color: #F69144;
 }
 
-.orange_link_light_background:hover {
+.orange-link-light-background:hover {
     transition: all .2s;
     color: #E3700D;
 }
@@ -142,11 +142,11 @@ a {
     color: #7A9B22;
 }
 
-.light_green_link_dark_background, .light_green_link_dark_background:focus {
+.light-green-link-dark-background, .light-green-link-dark-background:focus {
     color: $color-kabanero;
 }
 
-.light_green_link_dark_background:hover {
+.light-green-link-dark-background:hover {
     transition: all .2s;
     color: #843804;
 }
@@ -178,7 +178,7 @@ a {
     color: #EAF0FF;
 }
 
-.rounded_corner_link {
+.rounded-corner-link {
     display: table;
     width: 100%;
     border: solid 3px;
@@ -193,56 +193,56 @@ a {
     transition: border .2s, background-position .2s;
 }
 
-.rounded_corner_link > div {
+.rounded-corner-link > div {
     display: table-cell;
     vertical-align: middle;
 }
 
-.rounded_corner_link > div > .button_label {
+.rounded-corner-link > div > .button-label {
     font-size: 20px;
     margin-bottom: 11px;
 }
 
-.rounded_corner_link > div > .button_sub_label {
+.rounded-corner-link > div > .button-sub-label {
     font-size: 14px;
 }
 
-.single_line_rounded_corner_link > div > .button_label {
+.single_line_rounded-corner-link > div > .button-label {
     margin-bottom: 0;
 }
 
-.link_blue_right_arrow {
+.link-blue-right-arrow {
     padding-right: 100px;
     background-image: url('/img/arrow_lightgreen.svg');
     background-repeat: no-repeat;
     background-position: right 55px center;
 }
 
-.link_blue_right_arrow:hover {
+.link-blue-right-arrow:hover {
     background-position: right 35px center;
 }
 
-.link_blue_border {
+.link-blue-border {
     border-color: #000000;
 }
 
-.link_blue_border:hover {
+.link-blue-border:hover {
     border-color: $color-kabanero;
 }
 
-.link_blue_border div {
+.link-blue-border div {
     color: #000000;
 }
 
-.link_blue_border div:last-child {
+.link-blue-border div:last-child {
     color: #969191;
 }
 
-.link_blue_border:hover div {
+.link-blue-border:hover div {
     color: #000000;
 }
 
-.link_blue_border:hover div:last-child {
+.link-blue-border:hover div:last-child {
     color: $color-kabanero;
 }
 
@@ -284,30 +284,30 @@ a {
 }
 
 
-.link_green_right_arrow {
+.link-green-right-arrow {
     padding-right: 100px;
     background-image: url('/img/arrow_lightgreen.svg');
     background-repeat: no-repeat;
     background-position: right 50px center;
 }
 
-.link_green_right_arrow:hover {
+.link-green-right-arrow:hover {
     background-position: right 30px center;
 }
 
-.link_green_border {
+.link-green-border {
     border-color: $color-kabanero;
 }
 
-.link_green_border:hover {
+.link-green-border:hover {
     border-color: $color-kabanero;
 }
 
-.link_green_border div {
+.link-green-border div {
     color: $color-kabanero;
 }
 
-.link_green_border div:last-child {
+.link-green-border div:last-child {
     color: $color-kabanero;
 }
 
@@ -327,7 +327,7 @@ a {
     background-color: #96BC32;
 }
 
-.white_red_gradient_background {
+.white-red-gradient-background {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to($color-kabanero));
     background-image: -webkit-linear-gradient(top, #FFFFFF, $color-kabanero);
     background-image: -moz-linear-gradient(top, #FFFFFF, $color-kabanero);
@@ -606,26 +606,16 @@ footer {
     justify-content: center;
 }
 
-.position_relative {
+.position-relative {
     position: relative;
 }
 
-#codewind_content{
-    margin-top: 30px;
-}
-
-@media (max-width: 767.98px){
-    #codewind_content {
-        margin-top: 76px;
-    }
-}
-
-#intro_content{
+#intro-content{
     margin-top: 30px;
   }
   
   @media (max-width: 991.98px){
-    #intro_content {
+    #intro-content {
          margin-top: 75px;
     }
   }

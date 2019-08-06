@@ -228,7 +228,7 @@ nav .container-fluid {
 }
 
 /* Unclickable link */
-#breadcrumb_row a.inactive_link {
+#breadcrumb_row a.inactive-link {
     color:#FFFFFF;
 }
 

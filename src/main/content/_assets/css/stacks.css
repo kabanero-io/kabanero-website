@@ -16,7 +16,7 @@
  *
  ******************************************************************************/
 
-#page_container {
+#page-container {
     position: relative;
     padding-top: 100px;
     overflow: hidden;
@@ -27,34 +27,30 @@
     text-align: center;
 }
 
-.tileImg{
+.tile-img{
     display:block;
     margin:auto;
     margin-top:30px;
 }
 
-.stackTile{
+.stack-tile{
     text-align: center;
 }
 
-.tileLabel{
+.tile-label{
     display: inline-block;
 }
 
-.emptyRow{
+.empty-row{
     height:25px;
 }
 
-.filterOption{
+.filter-option{
     margin-bottom: 3px;
 }
 
-.filterHeader{
+.filter-header{
     margin-bottom: 2px;
-}
-
-.textAlignCenter{
-    text-align: center;
 }
 
 #stackCollapse{

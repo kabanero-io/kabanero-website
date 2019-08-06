@@ -4,50 +4,42 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT }, 'google_translate_element');
   }
-  let currentLanguage = `{{page.language}}`
+  let currentLanguage = 'en'
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
-  if (currentLanguage !== selectedLanguage) {
-    if (selectedLanguage === 'en' || selectedLanguage === 'ru' || selectedLanguage === 'es' || selectedLanguage === 'de' || selectedLanguage === 'fr' || selectedLanguage === 'it' || selectedLanguage === 'ja' || selectedLanguage === 'ko' || selectedLanguage === 'pt-BR' || selectedLanguage === 'zh-CN' || selectedLanguage === 'zh-TW') {
-      switch (selectedLanguage) {
-        case 'en':
-          window.location = "#googtrans(en|en)"
-          $("#translation-disclaimer").remove();
-          break;
-        case 'es':
-          window.location = "#googtrans(en|es)"
-          break;
-        case 'de':
-          window.location = "#googtrans(en|de)"
-          break;
-        case 'fr':
-          window.location = "#googtrans(en|fr)"
-          break;
-        case 'it':
-          window.location = "#googtrans(en|it)"
-          break;
-        case 'ja':
-          window.location = "#googtrans(en|ja)"
-          break;
-        case 'ru':
-          window.location = "#googtrans(en|ru)"
-          break;
-        case 'ko':
-          window.location = "#googtrans(en|ko)"
-          break;
-        case 'pt-BR':
-          window.location = "#googtrans(en|pt-BR)"
-          break;
-        case 'zh-CN':
-          window.location = "#googtrans(en|zn-CH)"
-          break;
-        case 'zh-TW':
-          window.location = "#googtrans(en|zn-TW)"
-          break;
-        default:
-          window.location = '#googtrans(en|en)'
-          $("#translation-disclaimer").remove();
-          break;
-      }
-    }
+  switch (selectedLanguage) {
+    case 'es':
+      window.location = "#googtrans(en|es)"
+      break;
+    case 'de':
+      window.location = "#googtrans(en|de)"
+      break;
+    case 'fr':
+      window.location = "#googtrans(en|fr)"
+      break;
+    case 'it':
+      window.location = "#googtrans(en|it)"
+      break;
+    case 'ja':
+      window.location = "#googtrans(en|ja)"
+      break;
+    case 'ru':
+      window.location = "#googtrans(en|ru)"
+      break;
+    case 'ko':
+      window.location = "#googtrans(en|ko)"
+      break;
+    case 'pt-BR':
+      window.location = "#googtrans(en|pt-BR)"
+      break;
+    case 'zh-CN':
+      window.location = "#googtrans(en|zn-CH)"
+      break;
+    case 'zh-TW':
+      window.location = "#googtrans(en|zn-TW)"
+      break;
+    default:
+      window.location = '#googtrans(en|en)'
+      $("#translation-disclaimer").remove();
+      break;
   }
 </script>

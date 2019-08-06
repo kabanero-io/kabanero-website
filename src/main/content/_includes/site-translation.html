@@ -11,7 +11,7 @@
       switch (selectedLanguage) {
         case 'en':
           window.location = "#googtrans(en|en)"
-          $("#translation-disclaimer").hide();
+          $("#translation-disclaimer").remove();
           break;
         case 'es':
           window.location = "#googtrans(en|es)"
@@ -45,7 +45,7 @@
           break;
         default:
           window.location = '#googtrans(en|en)'
-          $("#translation-disclaimer").hide();
+          $("#translation-disclaimer").remove();
           break;
       }
     }

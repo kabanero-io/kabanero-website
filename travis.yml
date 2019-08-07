@@ -2,3 +2,9 @@ language: ruby
 rvm:
  - 2.2
  - jruby
+
+install:
+  - bundle install
+
+script:
+  - ./scripts/build_jekyll_maven.sh

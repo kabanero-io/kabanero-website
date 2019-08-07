@@ -1,12 +1,16 @@
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
 <script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT }, 'google_translate_element');
   }
 
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
-  window.location = `#googtrans(en|${selectedLanguage})`;
-  
+  Cookies.set('googtrans', `/en/${selectedLanguage}`);
+  console.log(Cookies.get('googtrans'))
+  //window.location = `#googtrans(en|${selectedLanguage})`;
+
   if (selectedLanguage.includes('en')) {
     $("#translation-disclaimer").remove();
   }

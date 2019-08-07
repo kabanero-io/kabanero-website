@@ -16,6 +16,7 @@ $color-kabanero:#C43804;
 /* BODY */
 body {
     font-family: 'IBM Plex Sans', Trebuchet MS, Helvetica, Arial;
+    top: 0px !important;
 }
 
 code {
@@ -620,9 +621,6 @@ footer {
     }
 }
 
-.translated-ltr body{ 
-    top: 0px !important;
-}
 
 body > .skiptranslate {
     display: none;

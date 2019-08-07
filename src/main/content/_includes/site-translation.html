@@ -4,8 +4,9 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT }, 'google_translate_element');
   }
+
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
-  
+
   if (selectedLanguage.includes('en')) {
     document.cookie = "googtrans=/en/en";
     $("#translation-disclaimer").remove();
@@ -13,4 +14,5 @@
   else {
     document.cookie = `googtrans=/en/${selectedLanguage}`;
   }
+
 </script>

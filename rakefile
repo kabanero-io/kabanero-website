@@ -1,1 +1,5 @@
-desc "Printing this from the rakefile!"
+task default: %w[test]
+
+task :test do
+    desc "Printing this from the rakefile!"
+end

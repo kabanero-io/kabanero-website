@@ -43,7 +43,7 @@ public class TLSFilter implements Filter {
 
         if ("http".equals(req.getScheme())) {
           response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY); // HTTP 301
-          response.setHeader("Location", ((HttpServletRequest)req).getRequestURL().replace(0, 4, "https").toString());
+          response.setHeader("Location", ((HttpServletRequest)req).getRequestURL().replace(0, 4, "https").toString()); 
         } else if ("https".equals(req.getScheme())) {
           response.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains"); // Tell browsers that this site should only be accessed using HTTPS, instead of using HTTP. IncludeSubDomains and 1 year set per OWASP.
           response.setHeader("X-Frame-Options", "SAMEORIGIN"); // Prevent framing of this website.

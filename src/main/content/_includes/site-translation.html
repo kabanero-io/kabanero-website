@@ -5,21 +5,13 @@
   }
 
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+  
+
+  window.location = `#googtrans(en|${selectedLanguage})`;
 
   if (selectedLanguage.includes('en')) {
     $("#translation-disclaimer").remove();
   }
-  else{
-    setCookie('googtrans', `/en/${selectedLanguage}`, -1)
-  }
-
-  function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
-
 
 
 </script>

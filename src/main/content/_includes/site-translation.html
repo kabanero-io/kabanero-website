@@ -6,6 +6,7 @@
 
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
 
+  document.cookie = `googtrans=''`;
   document.cookie = `googtrans=/en/${selectedLanguage}`;
 
   if (selectedLanguage.includes('en')) {

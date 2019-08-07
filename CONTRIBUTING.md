@@ -9,6 +9,21 @@ Please raise any bug reports on the Kabanero project repository's GitHub issue t
 
 A good bug report is one that make it easy for everyone to understand what you were trying to do and what went wrong. Provide as much context as possible so we can try to recreate the issue.
 
+Please open issues in their appropriate repository: 
+
+| Repository | Descritpion |
+| --- | --- |
+| [Appsody Extenstion](https://github.com/kabanero-io/appsodyExtension) | This repository is an extension to Codewind that adds support for Appsody projects. |
+| [Blogs](https://github.com/kabanero-io/blogs) | [Blogs](https://kabanero.io/blog) for the Kabanero.io site |
+| [Codewind Templates](https://github.com/kabanero-io/codewind-templates) | Central repository for storing list of supported code templates for use in codewind |
+| [Collections](https://github.com/kabanero-io/collections) | Repo contains source of usable Kabanero Collections |
+| [Docs](https://github.com/kabanero-io/docs) | Common Kabanero documentation and example scripts |
+| [Kabanero CLI](https://github.com/kabanero-io/kabanero-command-line) | Repo for Kabanero-mgmt CLI |
+| [Kabanero Foundation](https://github.com/kabanero-io/kabanero-foundation) | The Kabanero Foundation Instance is a deployment of a Kabanero collection in a specific Kubernetes cluster. |
+| [Kabanero Operator](https://github.com/kabanero-io/kabanero-operator) | The Kabanero Platform Operator |
+| [Kabanero Website](https://github.com/kabanero-io/kabanero-website) | The source code of the website [Kabanero.io](https://kabanero.io/), `YOU ARE HERE` |
+| [Roadmap](https://github.com/kabanero-io/roadmap) | The roadmap repository holds epics and Zenhub boards for managing the on-going work across various Kabanero repositories. |
+
 ## Contributor License Agreement
 If you are contributing code changes via a pull request for anything except trivial changes, you must signoff on the [Individual Contributor License Agreement](https://github.com/kabanero-io/kabanero-website/blob/master/cla/kabanero-cla-individual.pdf) If you are doing this as part of your job you may also wish to get your employer to sign a [CCLA Corporate Contributor License Agreement](https://github.com/kabanero-io/kabanero-website/blob/master/cla/kabanero-cla-corporate.pdf). Instructions how to sign and submit these agreements are located at the top of each document. Trivial changes such as Typos, redundant spaces, minor formatting and spelling errors will be labeled as "CLA trivial", and don't require a signed CLA for consideration.
 
@@ -29,8 +44,9 @@ Contributing to Kabanero
 
 Please ensure you follow the coding standards used throughout the existing code base. Some basic rules include:
 
-all files must have a Copyright including Apache 2.0 License in the header.
-all PRs must have a passing build.
+- all files must have a Copyright including Apache 2.0 License in the header.
+- all PRs must have a passing build.
+- for html images, ids, and classes use hypens for spacing (ex. `this-is-a-class`)
 
 # Local Development Setup
 This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io site.

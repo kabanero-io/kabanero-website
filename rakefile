@@ -1,5 +1,12 @@
-task default: %w[test]
+require "eslintrb/eslinttask"
+
+task default: %w[eslint]
 
 task :test do
     desc "Printing this from the rakefile!"
+end
+
+Eslintrb::EslintTask.new :eslint do |t|
+  t.pattern = 'src/main/content/_assets/js/*.js'
+  t.options = :defaults
 end

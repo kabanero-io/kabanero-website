@@ -23,3 +23,5 @@ gem "jekyll-assets", "~> 3.0"
 gem "ol-asciidoc", :path => "./gems/ol-asciidoc"
 
 gem "rake"
+
+gem "eslintrb"

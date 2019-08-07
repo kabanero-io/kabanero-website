@@ -6,15 +6,11 @@
 
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
 
+  document.cookie = `googtrans=/en/${selectedLanguage}`;
+
   if (selectedLanguage.includes('en')) {
-    document.cookie = `gooogtrans=/en/en`;
     $("#translation-disclaimer").remove();
   }
-  else{
-    document.cookie = `gooogtrans=/en/${selectedLanguage}`;
-  }
-
-
 
 
 </script>

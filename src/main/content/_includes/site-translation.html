@@ -5,8 +5,9 @@
   }
 
   let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
-  window.location = `#googtrans(en|${selectedLanguage})`;
-  
+
+  document.cookie = `googtrans=/en/${selectedLanguage}; path=/`;
+
   if (selectedLanguage.includes('en')) {
     $("#translation-disclaimer").remove();
   }

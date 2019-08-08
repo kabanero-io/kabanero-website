@@ -1,6 +1,6 @@
 require "eslintrb/eslinttask"
 
-task default: %w[test]
+task default: %w[eslint]
 
 task :test do
     desc "Printing this from the rakefile!"

@@ -43,7 +43,7 @@ Contributing to Kabanero
 
 Please ensure you follow the coding standards used throughout the existing code base. Some basic rules include:
 
-- All files must have an Apache 2.0 Copyright notice in the header.
+- All files must have an Apache 2.0 Copyright notice in the header. For example, see the top of [src/main/content/_layouts/default.html](https://github.com/kabanero-io/kabanero-website/blob/master/src/main/content/_layouts/default.html).
 - All PRs must have a passing build.
 - For images, ids, and classes use hypens for spacing (ex. `this-is-a-class`)
 

@@ -1,5 +1,4 @@
 require "eslintrb/eslinttask"
-require 'v8'
 
 task default: %w[eslint]
 

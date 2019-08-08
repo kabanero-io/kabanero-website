@@ -7,6 +7,24 @@ task :test do
 end
 
 Eslintrb::EslintTask.new :eslint do |t|
+  options =
+    {
+      rules: {
+        'no-bitwise' => 1,
+        'curly' => 1,
+        'eqeqeq' => 1,
+        'guard-for-in' => 1,
+        'no-use-before-define' => 1,
+        'no-caller' => 1,
+        'no-new-func' => 1,
+        'no-plusplus' => 1,
+        'no-undef' => 1,
+        'strict' => 1
+      },
+      env: {
+        'browser' => true
+      }
+    }
   t.pattern = 'src/main/content/_assets/js/*.js'
-  t.options = :defaults
+  t.options = options
 end

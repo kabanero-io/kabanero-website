@@ -8,20 +8,20 @@ assignees: ''
 #### Describe the bug
 
 
-#### Expected Behavior
+#### Expected behavior
 
 
-#### Actual Behavior
+#### Actual behavior
 
 
-#### Steps to Reproduce the Bug
+#### Steps to reproduce the bug
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
 
-#### Platform where the bug occured 
+#### Environment where the bug occured 
 - [ ] Firefox (Desktop)
 - [ ] Safari (Desktop)
 - [ ] Chrome (Desktop)

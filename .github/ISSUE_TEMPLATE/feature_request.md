@@ -6,10 +6,10 @@ labels: ''
 assignees: ''
 ---
 
-#### Feature Description
+#### Feature description
 
 
-#### Feature Design or Visual Mockup
+#### Feature design or visual mockup
 
 
 #### Additional context

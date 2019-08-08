@@ -25,3 +25,5 @@ gem "ol-asciidoc", :path => "./gems/ol-asciidoc"
 gem "rake"
 
 gem "eslintrb"
+
+gem "therubyracer"

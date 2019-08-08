@@ -15,7 +15,7 @@ Please open issues in their appropriate repository:
 | --- | --- |
 | [Appsody Extension](https://github.com/kabanero-io/appsodyExtension) | This repository is an extension to Codewind that adds support for Appsody projects. |
 | [Blogs](https://github.com/kabanero-io/blogs) | [Blogs](https://kabanero.io/blog) for the Kabanero.io site |
-| [Codewind Templates](https://github.com/kabanero-io/codewind-templates) | Central repository for storing the list of supported code templates for use in codewind |
+| [Codewind Templates](https://github.com/kabanero-io/codewind-templates) | Central repository for storing the list of supported code templates for use in Codewind |
 | [Collections](https://github.com/kabanero-io/collections) | Repo contains source of usable Kabanero Collections |
 | [Docs](https://github.com/kabanero-io/docs) | Kabanero documentation and example scripts |
 | [Kabanero CLI](https://github.com/kabanero-io/kabanero-command-line) | A command line interface that is used to manage the collections the Kabanero environment presents |
@@ -43,9 +43,9 @@ Contributing to Kabanero
 
 Please ensure you follow the coding standards used throughout the existing code base. Some basic rules include:
 
-- all files must have a Copyright including Apache 2.0 License in the header.
-- all PRs must have a passing build.
-- for html images, ids, and classes use hypens for spacing (ex. `this-is-a-class`)
+- All files must have an Apache 2.0 Copyright notice in the header.
+- All PRs must have a passing build.
+- For images, ids, and classes use hypens for spacing (ex. `this-is-a-class`)
 
 # Local Development Setup
 This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io site.

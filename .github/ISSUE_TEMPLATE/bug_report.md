@@ -1,10 +1,5 @@
----
-name: Bug report
-about: Report a problem with our website to help us improve
-title: ''
-labels: ''
-assignees: ''
----
+# Bug Report for the Kabanero.io website
+
 #### Describe the bug
 
 

@@ -1,10 +1,4 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
----
+# Feature Request for the Kabanero.io website
 
 #### Feature description
 

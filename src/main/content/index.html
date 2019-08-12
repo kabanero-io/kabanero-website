@@ -28,7 +28,7 @@ seo-title: Kabanero
                     <div class="row">
                         <a class="col-md-5" id="get-started-link" href="/try-it">Try It</a>
                         <!-- Button trigger modal -->
-                        <a class="col-md-5" id="whats-new-modal-button" data-toggle="modal" data-target="#exampleModalCenter">See what's new in Kabanero</a>
+                        <a class="col-md-5" id="whats-new-modal-button" data-toggle="modal" data-target="#exampleModalCenter"></a>
                         </div>
                 </div>
         </div>
@@ -49,12 +49,9 @@ seo-title: Kabanero
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            {% assign whatsNewDoc = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | where: 'title', "What's new in Kabanero"%}
             <div class="modal-body">
-                {% assign generalDocs = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | where: 'title', 'Appsody Hello World on Codewind'%}
-                <div id="general-content"  class="col-sm-9 position-relative">
-                    {{generalDocs}}
-                </div>
-                
+                    {{whatsNewDoc}}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

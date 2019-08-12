@@ -166,122 +166,62 @@ main {
 }
 
 #tablet_images {
-    width: 100%;
+  width: 100%;
 }
 
-
-@media (max-width: 991.98px) {
-  main {
-      margin-top: -46px;
-  }
-
-  .navbar {
-    padding: 0;
-    width: 100%;
-    height: 4em;
-    border-bottom: 1px solid rgba(94, 107, 141, 0.29);
-  }
-
-    #tablet_nav {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    #navbarNav {
-      max-width: 67%;
-      z-index: 9999;
-      margin-left: 33%;
-      margin-top: -1em;
-    }
-
-    .navbar-brand {
-      z-index: 99999;
-    }
-
-    .navbar-toggler {
-        border: none;
-        z-index: 99999;
-    }
-
-    .close_button {
-        position: relative;
-        left: -10px;
-        z-index: 99999;
-    }
-
-    .navbar-collapse {
-        background-color: #C43804;
-    }
-
-    #float_right_section {
-        text-align: left;
-    }
-
-    #fork_button {
-        border: none;
-        padding-left: 0;
-        padding-top: 8px;
-        padding-bottom: 27px;
-        border-bottom: 1px solid rgba(201, 214, 254, 0.35);
-        border-radius: 0px;
-    }
-
-    #fork_button:hover {
-        color: #FFFFFF;
-        border: none;
-        border-bottom: 1px solid rgba(201, 214, 254, 0.35);
-    }
-
-    #fork_button {
-        display: block;
-    }
-
+.navbar-toggler {
+  border: none;
 }
 
 @media (max-width: 767.98px) {
-    #navbarNav {
-        max-width: 100%;
-        margin-left: 0;
-    }
+  #navbarNav {
+    max-width: 100%;
+    margin-left: 0;
+  }
 
-    #header_round_links_container {
-        margin-bottom: 40px;
-    }
+  #header_round_links_container {
+    margin-bottom: 40px;
+  }
 
 
-    #ol_nav_title {
-        visibility: hidden;
-    }
+  #ol_nav_title {
+    visibility: hidden;
+  }
 
-    .qa-descriptor {
-        display: none;
-    }
+  .qa-descriptor {
+    display: none;
+  }
 
-    .navbar-nav .nav-link {
-      padding: 1em;
-    }
+  .navbar-nav .nav-link {
+    padding: 1em;
+  }
 
-    .navbar-light .navbar-toggler-icon {
-      margin-bottom: 0.5em;
-      color: white;
-    }
+  .navbar-light .navbar-toggler-icon {
+    margin-bottom: 0.5em;
+    color: white;
+  }
 
-    #kabanero_nav_img{
-      height: 30px;
-      margin: 0px 20px 20px 20px;
-    }
+  #kabanero_nav_img{
+    height: 30px;
+    margin: 0px 20px 20px 20px;
+  }
+
+  .mb-2, .my-2  {
+    margin-bottom: 1rem!important;
+  }
+
 }
 
 .resourcesDropdown{
-    margin-left:36px;
+  margin-left:36px;
 }
 
 .dropdown-option:hover{
-    color: gray !important;
+  color: gray !important;
 }
 
 .navbar-light .navbar-toggler {
-    margin-top: 0.1em;
+  margin-top: 0.1em;
 }
 
 .navbar-light .navbar-toggler-icon {

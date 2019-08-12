@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- ******************************************************************************/ 
+ ******************************************************************************/
 
 /* Nav bar color corrections for light page */
 .navbar-dark .navbar-nav .nav-link {
@@ -46,7 +46,7 @@
         margin-right: 26px;
         margin-left: 26px;
     }
-    
+
     #fork_button {
         border: none;
         padding-left: 0;
@@ -55,13 +55,13 @@
         border-bottom: 1px solid rgba(201, 214, 254, 0.35);
         border-radius: 0px;
     }
-    
+
     #fork_button:hover {
         color: #FFFFFF;
         border: none;
         border-bottom: 1px solid rgba(201, 214, 254, 0.35);
     }
-    
+
     #fork_button {
         display: block;
     }

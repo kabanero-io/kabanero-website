@@ -34,8 +34,8 @@ js:
 {% include visible-tags.liquid %}
 
 <div id="background-container">
-        <div id="toc_hotspot"></div>            
-        <!-- Guide's table of contents section -->            
+        <div id="toc_hotspot"></div>
+        <!-- Guide's table of contents section -->
         <div id="toc-column" class="collapse inline open">
             <div id="toc-inner">
                 {% assign toc = page.document | tocify_asciidoc %}
@@ -44,7 +44,7 @@ js:
                     <img id="toc_close_white" src="{{ " /img/toc_close_white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
                 </div>
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
+                    <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
                 </div>
                 <h3 id="toc-title">Contents</h3>
                 <div id="toc-container">
@@ -62,9 +62,9 @@ js:
                             {% endif %}
                         {% endfor %}
                     </div>
-                {% endif %}                    
-            </div>                                
-        </div>      
+                {% endif %}
+            </div>
+        </div>
         <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
             <img src="/img/arrow_white.svg" alt="arrow">
         </div>
@@ -106,7 +106,7 @@ js:
 
                 <!-- Guide content section -->
                 {{ content }}
-            
+
             </div>
             <div id="guide_section_copied_confirmation">Copied to clipboard</div>
             <img id="copy_to_clipboard" src='/img/guides_copy_button.svg' alt='Copy code block' title='Copy code block'>
@@ -117,7 +117,7 @@ js:
             <div id='code_column_title_container'>
                 <div id='code_column_tabs_container' class='dimmed'>
                     <ul id='code_column_tabs' class='nav' role='tablist'></ul>
-                </div>                    
+                </div>
                 <div class='copyFileButton' tabindex="0">
                     <img src='/img/guides_copy_button.svg' alt='Copy file contents' title='Copy file contents'>
                 </div>

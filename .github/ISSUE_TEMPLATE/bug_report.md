@@ -19,11 +19,11 @@ assignees: ''
 #### Steps to reproduce the bug
 1. Go to '...'
 2. Click on '....'
-3. Scroll down to '....'
+3. Scroll to '....'
 4. See error
 
 
-#### Environment where the bug occured 
+#### Environment where the bug occurred 
 - [ ] Firefox (Desktop)
 - [ ] Safari (Desktop)
 - [ ] Chrome (Desktop)

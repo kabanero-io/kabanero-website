@@ -134,6 +134,7 @@ PLATFORMS
 DEPENDENCIES
   coderay (~> 1.1)
   eslintrb
+  execjs
   jekyll (~> 3.8)
   jekyll-asciidoc (~> 2.1)
   jekyll-assets (~> 3.0)

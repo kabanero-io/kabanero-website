@@ -1,4 +1,11 @@
-# Bug Report for the Kabanero.io website
+---
+name: Bug Report for the Kabanero.io website
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
+
+---
 
 #### Describe the bug
 

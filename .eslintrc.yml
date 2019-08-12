@@ -2,8 +2,6 @@ env:
   browser: true
   jquery: true
   es6: true
-rvm:
-  - 2.4.1
 rules:
   indent:
     - warn

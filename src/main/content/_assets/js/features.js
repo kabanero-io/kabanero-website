@@ -185,7 +185,7 @@ function addOutlineToTabFocus(selector) {
 
 // highlight the selected version
 function setSelectedVersion(resource) {
-    selectedVersions = $("#common_feature_title > .feature_version_selected");
+    let selectedVersions = $("#common_feature_title > .feature_version_selected");
     if (selectedVersions.length > 0) {
         selectedVersions.removeClass('feature_version_selected');
     }

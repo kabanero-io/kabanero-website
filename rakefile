@@ -24,9 +24,9 @@ Eslintrb::EslintTask.new :eslint do |t|
       },
       env: {
         'browser' => true,
-        'jquery' => true
-      },
-      extends: 'eslint:recommended'
+        'jquery' => true,
+        'es6' => true
+      }
     }
   t.pattern = 'src/main/content/_assets/js/*.js'
   t.options = options

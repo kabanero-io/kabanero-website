@@ -6,3 +6,5 @@ rules:
   indent:
     - warn
     - 4
+  no-undef:
+    - warn

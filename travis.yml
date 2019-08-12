@@ -4,6 +4,7 @@ install:
   - bundle install
   - npm install eslint --save-dev
   - ./node_modules/.bin/eslint src/main/content/_assets/js/home.js
+  - ./node_modules/.bin/eslint src/main/content/_assets/js/twitterWidgets.js
 
 script:
   - ./scripts/build_jekyll_maven.sh

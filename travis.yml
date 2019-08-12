@@ -3,8 +3,6 @@ language: ruby
 install:
   - bundle install
   - npm install eslint --save-dev
-  - ./node_modules/.bin/eslint --init
-  - ./node_modules/.bin/eslint
 
 script:
   - ./scripts/build_jekyll_maven.sh

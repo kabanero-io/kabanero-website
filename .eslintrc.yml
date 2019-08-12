@@ -2,9 +2,4 @@ env:
   browser: true
   jquery: true
   es6: true
-rules:
-  indent:
-    - warn
-    - 4
-  no-undef:
-    - warn
+extends: "eslint:recommended"

@@ -19,7 +19,7 @@ Eslintrb::EslintTask.new :eslint do |t|
         'no-caller' => 0,
         'no-new-func' => 0,
         'no-plusplus' => 0,
-        'no-undef' => 1,
+        'no-undef' => 0,
         'strict' => 0
       },
       env: {

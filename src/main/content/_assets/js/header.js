@@ -37,7 +37,9 @@ $(document).ready(function(){
     });
 
     if($('#general_title').text() !== ''){
-    let version = $('#general_title').text().split('v')[1];
+
+    let version = $('#general_title').text().replace( /[^\d.]/g, '');
+    
     if (typeof localStorage.whatsNew !== 'undefined') {
         if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
             if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) { 

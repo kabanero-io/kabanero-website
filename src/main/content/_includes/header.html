@@ -43,20 +43,23 @@
 </header>
 
 <!-- Modal -->
-{% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
-{% for doc in whatsNewDoc %}
-<div class="modal fade"  tabindex="-1" id="whatsNewModal" href="{{ doc.url }}" role="dialog" aria-labelledby="whatsNewModalTitle" aria-hidden="true">
-    <div  class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
+<div class="modal fade" tabindex="-1" id="whatsNewModal" role="dialog" aria-labelledby="whatsNewModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
         <div class="modal-content">
-            <div  class="modal-header">
-                <h5 class="modal-title" id="modal-title"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">What's new in Kabanero</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+                        aria-hidden="true">&times;</span> </button>
             </div>
+            {% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
+            {% for doc in whatsNewDoc %}
+            <div id="modal-doc-url" href="{{ doc.url }}"></div>
+            {% endfor %}
             <div id="modal-body" class="modal-body"></div>
-            <div class="modal-footer"> 
-                    <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>
-             </div>
+            <div class="modal-footer">
+                <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>
+            </div>
         </div>
     </div>
 </div>
-{% endfor %}

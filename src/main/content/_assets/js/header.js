@@ -16,11 +16,14 @@
  *
  ******************************************************************************/
 
-let docHref = $('#whatsNewModal ').attr('href');
-$.get(docHref, function (data) {
-    $('#modal-title').html(($(data).find("#general_title")[0]).innerHTML);
-    $('#modal-body').html(($(data).find(".paragraph")[0]).innerHTML);
-});
+let whatsNewDocUrl = $('#modal-doc-url').attr('href');
+
+if (whatsNewDocUrl) {
+    $("#modal-body").load(whatsNewDocUrl, function (response, status) { });
+}
+else {
+    $("#modal-body").text('There are currently no updates available, please check back later.')
+}
 
 // prevent scrolling when navbar dropdown is opened
 $(document).ready(function(){
@@ -36,8 +39,8 @@ $(document).ready(function(){
 
 
     let version = 0;
-    if($('#modal-title')[0].innerHTML !== '') {
-        version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g)[0]
+    if($('#general_title')[0].innerHTML !== '') {
+        version = $('#general_title')[0].innerHTML.match(/[\d\.]+/g)[0]
     }
 
     if ((typeof localStorage.whatsNew !== 'undefined') && (version === JSON.parse(localStorage.whatsNew).whatsNewVersion)) {

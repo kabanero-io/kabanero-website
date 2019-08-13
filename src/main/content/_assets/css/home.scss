@@ -659,11 +659,14 @@ $color-kabanero:#C43804;
 #modal-close-button{
     @include button-link;
     cursor: pointer;
+    padding: 8px 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .whats-new-modal{
     max-width: 850px;
-    margin-top: 25%;
+    margin-top: 15%;
 }
 
 .term-box{

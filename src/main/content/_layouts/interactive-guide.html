@@ -34,8 +34,8 @@ css:
                     <ul class="sectlevel1"></ul>
                 </div>
                 {% if page.tags %}
-                <h3 id="tag_title">Tags</h3>
-                <div id="tags_container">
+                <h3 id="tag-title">Tags</h3>
+                <div id="tags-container">
                     {% for tag in page.tags %}
                         {% assign lowercase_tag = tag | downcase %}    
                         {% if visibleTags contains lowercase_tag %}
@@ -46,10 +46,10 @@ css:
                 {% endif %}
             </div>
             <div id="guide-column" class="col-sm-9">
-                <div id="guide_content">
+                <div id="guide-content">
                     <div id="first_step_header">
                         <h1 id="guide-title">{{ page.title }}</h1>
-                        <div id="duration_container">
+                        <div id="duration-container">
                             <img src="/img/guide-duration-clock-icon-large.svg" alt="duration">
                             <span id="guide-duration">{{ page.duration }}</span>
                         </div>

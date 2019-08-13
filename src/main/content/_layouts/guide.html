@@ -1,7 +1,6 @@
 ---
 layout: doc
 css:
-- header
 - toc
 - guide-card
 - guide
@@ -38,17 +37,17 @@ js:
                 {% assign toc = page.document | tocify_asciidoc %}
                 {% if toc %}
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
+                    <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
                 </div>
                 <h3 id="toc-title">Contents</h3>
                 <div id="toc-container">
                     {{ toc }}
                 </div>
-                <div id="toc_separator"></div>
+                <div id="toc-separator"></div>
                 {% endif %}
                 {% if page.tags %}
-                    <h3 id="tag_title">Tags</h3>
-                    <div id="tags_container">
+                    <h3 id="tag-title">Tags</h3>
+                    <div id="tags-container">
                         {% for tag in page.tags %}
                             {% if visibleTags contains tag %}
                                 <a href="/guides?search={{ tag }}&key=tag">{{ tag }}</a>
@@ -60,24 +59,24 @@ js:
         </div> 
         <!-- Entire guide section -->
         <div id="guide-column" class="position-relative open">
-            <div id="guide_content">
+            <div id="guide-content">
                 <!-- Guide header section -->
-                <div id="guide_meta" class="sect1" tabindex="0">
+                <div id="guide-meta" class="sect1" tabindex="0">
                     <h1 id="guide-title">{{ page.title }}</h1>
-                    <div id="duration_container">
+                    <div id="duration-container">
                         <span id="guide-duration">{{ page.duration }}</span>
                     </div>
                 </div>
 
                 <div class="scroller-anchor"></div>
                 <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <div id="mobile_toc_accordion">
+                    <div id="mobile-toc-accordion">
                         <button class="breadcrumb-hamburger toc-toggle collapsed" type="button" tabindex="0">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
-                                <img src="{{ " /img/toc_close_green.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
+                                <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
                         </button>
                         <span>Table of contents</span>
                     </div>
@@ -87,8 +86,8 @@ js:
                 {{ content }}
             
             </div>
-            <div id="guide_section_copied_confirmation">Copied to clipboard</div>
-            <a id="copy_to_clipboard" href=""></a>
+            <div id="guide-section-copied-confirmation">Copied to clipboard</div>
+            <a id="copy-to-clipboard" href=""></a>
         </div> 
         
     </div>    

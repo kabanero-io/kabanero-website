@@ -16,10 +16,16 @@
  *
  ******************************************************************************/
 
-// prevent scrolling when navbar dropdown is opened
-$(document).ready(function() {
+let docHref = $('#exampleModalCenter').attr('href');
+$.get(docHref, function (data) {
+    $('#modal-title').html(($(data).find("#general_title")[0]).innerHTML);
+    $('#modal-body').html(($(data).find(".paragraph")[0]).innerHTML);
+});
 
-    $('.navbar-toggler').click(function(){
+// prevent scrolling when navbar dropdown is opened
+$(document).ready(function () {
+
+    $('.navbar-toggler').click(function () {
 
         if ($('.navbar-toggler').hasClass('collapsed')) {
             $('body').css('overflow', 'hidden');
@@ -28,33 +34,28 @@ $(document).ready(function() {
         }
     });
 
-    let docHref = $('#exampleModalCenter').attr('href');
-    $.get(docHref, function (data) {
-        $('#modal-title').html(($(data).find("#general_title")[0]).innerHTML);
-        $('#modal-body').html(($(data).find(".paragraph")[0]).innerHTML);
-    });
-
-    if($('#modal-title')[0].innerHTML){
-        let version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g);
+    let version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g)[0];
     
-        if(version === localStorage.whatsNew.whatsNewVersion){
-            if(!localStorage.whatsNew.didOpenWhatsNew){
-                $("#whats-new-modal-notification").attr("src","/img/notificationNewVersion.svg");
-            }
+    if ((typeof localStorage.whatsNew !== 'undefined') && (version === JSON.parse(localStorage.whatsNew).whatsNewVersion)) {
+        if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
+            $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
         }
-        else if(version !== localStorage.whatsNew.whatsNewVersion){
-            $("#whats-new-modal-notification").attr("src","/img/notificationNewVersion.svg");
-            let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false};
-            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-        }
-
-        $('#exampleModalCenter').on('hidden.bs.modal', function () {
-            let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": true};
-            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-        });
     }
-    
-    console.log(localStorage)
+    else if ((typeof localStorage.whatsNew !== 'undefined') && (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion)) {
+        $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+        let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false };
+        localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+    }
+
+    if(typeof localStorage.whatsNew === 'undefined'){
+        $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
+    }
+
+    $('#exampleModalCenter').on('hidden.bs.modal', function () {
+        let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": true };
+        localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+        $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
+    });
 });
 
 

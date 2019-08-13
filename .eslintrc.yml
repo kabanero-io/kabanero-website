@@ -4,16 +4,12 @@ env:
   es6: true
 rules:
   indent:
-    - error
-    - 4
+    - warn
   linebreak-style:
-    - error
+    - warn
     - unix
-  quotes:
-    - error
-    - single
   semi:
-    - error
+    - warn
     - always
   # #Possible Errors
   # getter-return:

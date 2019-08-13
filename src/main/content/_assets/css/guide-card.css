@@ -1,20 +1,20 @@
-/******************************************************************************
- *
- * Copyright 2019 IBM Corporation and others.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- ******************************************************************************/
+/*******************************************************************************
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ *******************************************************************************/
 
  .guide_item {
     margin-bottom: 40px;
@@ -45,12 +45,12 @@
     border-left: solid 9px #C43804;
 }
 
-.guide-title-and-description-container {
+.guide_title_and_description_container {
     height: 155px;
     overflow: hidden;
 }
 
-.guide-title_container {
+.guide_title_container {
     height: 60px;
     overflow: hidden;
 }
@@ -64,7 +64,7 @@
     line-height: 20px;
 }
 
-.guide-description {
+.guide_description {
     color: #5e6b8d;
     margin: 0;
     font-size: 14px;
@@ -84,14 +84,14 @@
 }
 
 .guide-duration {
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
     font-size: 13px;
     color: #24253A;
     letter-spacing: 0;
 }
 
 .guide_interactive{
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
     font-size: 13px;
     color: #DC6B00;
     letter-spacing: 0;

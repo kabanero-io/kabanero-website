@@ -151,13 +151,13 @@ a {
     color: #843804;
 }
 
-.dark_green_link_light_background, .dark_green_link_light_background:focus {
-    color: #4F660A;
+.kabanero-link-background, .kabanero-link-background:focus {
+    color: $color-kabanero;
 }
 
-.dark_green_link_light_background:hover {
+.kabanero-link-background:hover {
     transition: all .2s;
-    color: #1C2503;
+    color: #F5C5A5;
 }
 
 .blue_link_light_background, .blue_link_light_background:focus {

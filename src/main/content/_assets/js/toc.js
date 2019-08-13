@@ -1,21 +1,20 @@
-/******************************************************************************
- *
- * Copyright 2019 IBM Corporation and others.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- ******************************************************************************/
-
+/*******************************************************************************
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ *******************************************************************************/
 // Keep the table of contents (TOC) in view while scrolling (Desktop only)
 function handleFloatingTableOfContent() {
     if (window.innerWidth >= threeColumnBreakpoint) {
@@ -46,7 +45,7 @@ function enableFloatingTOC() {
 }
 
 function calculateTOCHeight(){
-    var endOfGuidePosition = $("#end-of-guide")[0].getClientRects()[0].top;
+    var endOfGuidePosition = $("#end_of_guide")[0].getClientRects()[0].top;
     var headerHeight = $('header').height();
     return endOfGuidePosition - headerHeight;
 }
@@ -94,7 +93,7 @@ function handleFloatingTOCAccordion() {
     var enableFloatingTOCAccordion = function(){
         // Put the TOC accordion back into the page and remove the
         // scroller-anchor <div>.
-        accordion.removeClass('fixed-toc-accordion');
+        accordion.removeClass('fixed_toc_accordion');
         $('.scroller-anchor').css('height', 0);
         // Restore toc location.
         $('#toc-column').css('margin-top', '0px');
@@ -107,7 +106,7 @@ function handleFloatingTOCAccordion() {
         // which causes a bounce in the page.
         $('.scroller-anchor').css('height', accordion.height());
         // Fix the TOC accordion to the top of the page.
-        accordion.addClass('fixed-toc-accordion');        
+        accordion.addClass('fixed_toc_accordion');        
     };
 
     if(inSingleColumnView()){
@@ -124,11 +123,11 @@ function handleFloatingTOCAccordion() {
             // accordion back into the page and remove the scroller-anchor <div>.
             enableFloatingTOCAccordion();
         } else {
-            //mobile_toc_accordion blocks the top part of the TOC column, need to add margin so that 'X' in TOC is visible
-            var tocDistanceFromTop = $('#toc-column').offset().top;
-            if ($(this).scrollTop() >= tocDistanceFromTop) {
-                $('#toc-column').css('margin-top', '40px');
-            }
+          //mobile-toc-accordion blocks the top part of the TOC column, need to add margin so that 'X' in TOC is visible
+          var tocDistanceFromTop = $('#toc-column').offset().top;
+          if ($(this).scrollTop() >= tocDistanceFromTop) {
+            $('#toc-column').css('margin-top', '40px');
+          }
         }
     }
     else{
@@ -237,7 +236,7 @@ $(document).ready(function() {
     setInitialTOCLineHeight();    
 
     // Add listener for clicking on the
-    $("#toc_hotspot, #toc-indicator").on('mouseenter', function(){
+    $("#toc-hotspot, #toc-indicator").on('mouseenter', function(){
         // Animate out the arrow and highlight the left side of the screen orange to indicate there is a TOC
         if(!$("#toc-column").hasClass('open')){
             $("#toc-line").css(
@@ -247,7 +246,7 @@ $(document).ready(function() {
         }        
     });
 
-    $("#toc_hotspot").on('mouseleave', function(){
+    $("#toc-hotspot").on('mouseleave', function(){
         if(!$("#toc-column").hasClass('open')){
             var x = event.x;
             var y = event.y;
@@ -303,36 +302,36 @@ $(document).ready(function() {
 
     //In single column view, close the TOC after tabbing from the last element in the TOC
     //and focus on the first tabbable element in the first step
-    $('#tags_container').on('keydown', function(){
-        if(inSingleColumnView()) {
-            var tagWithFocus = $(document.activeElement);
-            var lastTag = $('#tags_container').children().last();
-            if (tagWithFocus.is(lastTag)) { //tabbing from the last tag in TOC
-                //hide the toc
-                $('#mobile-close-container').click();
-            }
+    $('#tags-container').on('keydown', function(){
+      if(inSingleColumnView()) {
+        var tagWithFocus = $(document.activeElement);
+        var lastTag = $('#tags-container').children().last();
+        if (tagWithFocus.is(lastTag)) { //tabbing from the last tag in TOC
+          //hide the toc
+          $('#mobile-close-container').click();
         }
+      }
     });
 
     //Hide the TOC when the ESC key is hit (in single column view)
     $('#toc-column').on('keydown', function(e){
-        if(inSingleColumnView()) {
-            if(e.which == 27){ //ESC key code
-                //hide the toc
-                $('#mobile-close-container').click();
-            }
+      if(inSingleColumnView()) {
+        if(e.which == 27){ //ESC key code
+          //hide the toc
+          $('#mobile-close-container').click();
         }
+      }
     });
 
     // Handle collapsing the table of contents from full width back into an orange line on the left side of the page.
-    $('#close_container').on('click', function() {
+    $('#close-container').on('click', function() {
         close_TOC();
     });
 
-    $('#close_container img').on('keydown', function(event) {
+    $('#close-container img').on('keydown', function(event) {
         // Enter key
         if(event.which === 13 || event.keyCode === 13){
-            $('#close_container').click();
+            $('#close-container').click();
         }
     });
 
@@ -356,7 +355,9 @@ $(document).ready(function() {
     $('#toc-container').on('keydown', 'li', function(event) {
         // 'this' is the li element in the #toc-container
         if (event.which === 13 || event.which === 32) {   // Spacebar or Enter
-            this.click();
+          this.click();
         }
     });
+
+
 });

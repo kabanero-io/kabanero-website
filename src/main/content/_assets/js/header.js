@@ -36,6 +36,7 @@ $(document).ready(function(){
         }
     });
 
+    if($('#general_title').text().replace(/[A-Za-z$-']/g, '' !== ''){
     let version = $('#general_title').text().replace(/[A-Za-z$-']/g, '');
     if (typeof localStorage.whatsNew !== 'undefined') {
         if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
@@ -65,7 +66,7 @@ $(document).ready(function(){
         localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
         $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
     });
-
+}
 });
 
 

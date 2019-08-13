@@ -21,9 +21,3 @@ gem "octokit", "~> 4.14"
 gem "jekyll-assets", "~> 3.0"
 
 gem "ol-asciidoc", :path => "./gems/ol-asciidoc"
-
-gem "rake"
-
-gem "eslintrb"
-
-gem "execjs"

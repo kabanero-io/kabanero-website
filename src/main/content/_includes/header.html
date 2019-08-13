@@ -1,40 +1,34 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
-		
-        <a href="/">
-            <img id="kabanero_nav_img" src="/img/Kabanero_logo_white.png" class="img-fluid" alt="Kabanero Nav image">
+    <nav class="navbar navbar-expand-md navbar-light bg-custom">
+        <a class="navbar-brand" href="/">
+          <img id="kabanero_nav_img" src="/img/Kabanero_logo_white.png" class="img-fluid" alt="Kabanero Nav image">
         </a>
-
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="navbar-toggler-icon"></div>
+        <button id="nav-toggle-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon navbar-inverse"></span>
         </button>
 
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<div class="nav-container">
-
-                <a class="float_right_section" target="_blank" href="{{site.slack_url}}">
-                    <img id="header_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="/try-it">Try It</a>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="/collections">Collections</a>
+                </li> -->
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <a class="float_right_section ml-3" target="_blank" href="{{site.slack_url}}">
+                <img id="header_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
                 </a>
                 <a class="float_right_section" target="_blank" href="{{site.stackoverflow_url}}">
-                    <img id="header_stackoverflow_img" src="/img/Header_StackO.svg" class="img-fluid" alt="stackoverflow logo">
+                <img id="header_stackoverflow_img" src="/img/Header_StackO.svg" class="img-fluid" alt="stackoverflow logo">
                 </a>
-				<a class="float_right_section" target="_blank" href="{{site.github_url}}">
-					<img id="header_github_img" src="/img/header_github_icon.svg" class="img-fluid" alt="github logo">
-				</a>
-				<a class="float_right_section" target="_blank" href="{{site.twitter_url}}">
-					<img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid" alt="twitter logo">
+                <a class="float_right_section" target="_blank" href="{{site.github_url}}">
+                <img id="header_github_img" src="/img/header_github_icon.svg" class="img-fluid" alt="github logo">
                 </a>
-
-
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/{{page.language}}/try-it/">Try It</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/collections">Collections</a>
-                    </li> -->
-                </ul>
+                <a class="float_right_section" target="_blank" href="{{site.twitter_url}}">
+                <img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid" alt="twitter logo">
+                </a>
             </div>
         </div>
     </nav>

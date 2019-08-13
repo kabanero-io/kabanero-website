@@ -79,10 +79,10 @@ $(document).ready(function() {
         }
 
         // Count the number of visible guides to calculate the total number
-        var numBasicResults = $('#guides_basic_container .guide_column').children(':visible').length;
-        var numMPResults = $('#guides_microprofile_container .guide_column').children(':visible').length;
-        var numMPEssentialResults = $('#guides_microprofile_container .essential .guide_column').children(':visible').length;
-        var numAdditionalResults = $('#guides_additional_container .guide_column').children(':visible').length;
+        var numBasicResults = $('#guides-basic-container .guide-column').children(':visible').length;
+        var numMPResults = $('#guides_microprofile_container .guide-column').children(':visible').length;
+        var numMPEssentialResults = $('#guides_microprofile_container .essential .guide-column').children(':visible').length;
+        var numAdditionalResults = $('#guides_additional_container .guide-column').children(':visible').length;
         hideEmptyCategories(
             numBasicResults == 0, 
             numMPResults == 0,
@@ -91,32 +91,32 @@ $(document).ready(function() {
         );
 
         // Change the total search results in each categorys' banner    
-        $('#guides_basic_banner .total_guide_count b').text(numBasicResults + count_label);
-        $('#guides_microprofile_banner .total_guide_count b').text(numMPResults + count_label);
-        $('#guides_additional_banner .total_guide_count b').text(numAdditionalResults + count_label);
+        $('#guides-basic-banner .total-guide-count b').text(numBasicResults + count_label);
+        $('#guides_microprofile_banner .total-guide-count b').text(numMPResults + count_label);
+        $('#guides_additional_banner .total-guide-count b').text(numAdditionalResults + count_label);
 
         // Change essential search result number
-        var numBasicEssentialResults = $('#guides_basic_container .essential .guide_column').children(':visible').length;
-        var numMPEssentialResults = $('#guides_microprofile_container .essential .guide_column').children(':visible').length;
-        $('#guides_basic_container .subtitle .essential').text(numBasicEssentialResults + ' essentials');
+        var numBasicEssentialResults = $('#guides-basic-container .essential .guide-column').children(':visible').length;
+        var numMPEssentialResults = $('#guides_microprofile_container .essential .guide-column').children(':visible').length;
+        $('#guides-basic-container .subtitle .essential').text(numBasicEssentialResults + ' essentials');
         $('#guides_microprofile_container .subtitle .essential').text(numMPEssentialResults + ' essentials');
 
         // Change the additional MicroProfile search result number
-        var numMPMoreResults = $('#microprofile_more_guides .guide_column').children(':visible').length;
+        var numMPMoreResults = $('#microprofile_more_guides .guide-column').children(':visible').length;
         $('#additional_microprofile_guides').text(numMPMoreResults + ' additional MicroProfile Guides');
     }
 
     function showAllCategories() {
-        $('.basic_section').show();
+        $('.basic-section').show();
         $('.microprofile_section').show();
         $('.more_section').show();
     }
 
     function hideEmptyCategories(hideBasic, hideMP, hideMPEssentials, hideAdditional) {
         if(hideBasic) {
-            $('.basic_section').hide();
+            $('.basic-section').hide();
         } else {
-            $('.basic_section').show();
+            $('.basic-section').show();
         }
         if(hideMP) {
             $('.microprofile_section').hide();
@@ -148,7 +148,7 @@ $(document).ready(function() {
 
     // Show everything on the guides page
     function defaultView() {
-        $('.guide_column').show();
+        $('.guide-column').show();
         var no_search_text = true;
         updateTotals(no_search_text);
     }

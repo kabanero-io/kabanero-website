@@ -8,8 +8,9 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
+ $color-kabanero:#C43804;
 
-.unscrollable {
+ .unscrollable {
     overflow: hidden;
 }
 
@@ -18,18 +19,18 @@
 }
 
 /* Table of Contents */
-#toc_column {
+#toc-column {
     left: 0;    
 }
 
-#toc_line {
+#toc-line {
     &.open {
         left: 274px; // 280px minus the width of 6 px
     }
 }
 
 /* Guide Content related to the 3 column code */
-#guide_column {
+#guide-column {
     max-width: initial; /* Take off the width restriction of single pane guides */
 }
 
@@ -38,16 +39,16 @@
     max-width: 100%;
 }
 
-#guide_content img {
+#guide-content img {
     max-width: 100%;
 }
 
-#guide_content code.hotspot {
+#guide-content code.hotspot {
     background-color: #F1F4FE;
     color:#5e6b8d;
 }
 
-#guide_content .hotspot:not(.code_command) pre {
+#guide-content .hotspot:not(.code_command) pre {
     font-family:Courier;
     font-size:14px;
     padding: 5px;
@@ -59,7 +60,7 @@
     white-space: pre-wrap;
 }
 
-#guide_content .code_command pre,  #guide_content .code_command code {
+#guide-content .code_command pre,  #guide-content .code_command code {
     background-color: #F1F4FE;
     margin-bottom: 0;
     overflow: hidden;
@@ -81,7 +82,7 @@
     bottom: 0; /* Initially extend the code column the full height */
     overflow: hidden;
 
-    #dismiss_button {
+    #dismiss-button {
         display: none;
     }
 
@@ -96,26 +97,26 @@
             display: block;
             overflow: auto;
 
-            #github_clone_popup {
+            #github-clone-popup {
                 display: none;
             }
 
             // Remove blur
-            #code_column_tabs_container, .code_column {
+            #code-column-tabs-container, .code_column {
                 opacity: 1;
                 filter: none;
             }
 
-            #code_column_tabs_container {
+            #code-column-tabs-container {
                 width: 100%;
             }
 
-            #code_column_tabs {
+            #code-column-tabs {
                 // Give more room for the 'Back to text' button so the tabs don't overlap.
                 max-width: calc(100% - 135px);
             }
 
-            #dismiss_button {
+            #dismiss-button {
                 position: absolute;
                 display: inline-block;
                 top: 0;
@@ -134,7 +135,7 @@
     outline-offset: -1px;
 }
 
-#code_column_content {
+#code-column-content {
     height: calc(100% - 34px); /* Take up the remaining height from the tabs container */
     overflow-y: scroll;
 }
@@ -144,7 +145,7 @@
     filter: blur(1px);
 }
 
-.code_column_title_container {
+.code-column-title-container {
     height: 43px;
     padding-left: 23px; 
     border-bottom: solid 1px #d4d7e3;
@@ -162,7 +163,7 @@
     vertical-align: middle;
 }
 
-#github_clone_popup_container {
+#github-clone-popup-container {
     position: absolute;
     display: none;
     top: 31%;
@@ -170,7 +171,7 @@
     z-index: 2;
 }
 
-#github_clone_popup {
+#github-clone-popup {
     height: 111px;
     margin: 0 20px;
     padding: 19px 0 0 20px;
@@ -178,7 +179,7 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
-#github_clone_popup_title {
+#github-clone-popup-title {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.63;
@@ -186,18 +187,18 @@
     margin-bottom: 14px;
 }
 
-#github_clone_popup_repo {
+#github-clone-popup-repo {
     font-size: 14px;
     line-height: 1.57;
     color: #737373;
     width: 95%;
-    border-bottom: solid 1px #96bc32;
+    border-bottom: solid 1px $color-kabanero;
 }
 
-#github_clone_popup_copy {
+#github-clone-popup-copy {
     width: 48px;
     height: 38px;
-    background-color: #96bc32;
+    background-color: $color-kabanero;
     position: absolute;
     top: 0;
     right: 20px;
@@ -205,24 +206,24 @@
     text-align: center;
 }
 
-#github_clone_popup_copy:hover {
+#github-clone-popup-copy:hover {
     border: solid 1px #b2bbd1;
     cursor: pointer;
 }
 
-#github_clone_popup_copy:active {
+#github-clone-popup-copy:active {
     border: solid 1px #5e6b8d;
 }
 
-#github_clone_popup_copy > img {
+#github-clone-popup-copy > img {
     width: 14px;
     height: 16px;
 }
 
-#code_column_tabs_container {
+#code-column-tabs-container {
     display: inline-block;
 
-    #code_column_tabs {
+    #code-column-tabs {
         max-width: calc(100% - 50px);
         & > li {
             float: left;
@@ -272,7 +273,7 @@
     
 }
 
-.copyFileButton {
+.copy-file-button {
     position: absolute;
     display: none;
     right: 15px;
@@ -349,7 +350,7 @@
 }
 
 @media (min-width: 1170px) {
-    #guide_column {
+    #guide-column {
         width: calc(100% - 780px);
     }
     
@@ -359,24 +360,24 @@
     }
 
     /* Styling for the paragraphs following the edit commands */
-    #guide_content .edit_command_text {
+    #guide-content .edit_command_text {
         position: relative;
         margin-top: -2px; // Overlap the blue border of the command action.
-        border-left: 8px solid #96bc32;
+        border-left: 8px solid $color-kabanero;
         & > p {
             padding-left: 30px;
         }
     }
 
-    #guide_content code.hotspot:not(.code_command):hover {
+    #guide-content code.hotspot:not(.code_command):hover {
         color: #24253A;
         background-color: #C7CCD9;
     }
 }
 
 @media (max-width: 1169.98px) {
-    #guide_content code.hotspot:hover,
-    #guide_content .code_command:hover {
+    #guide-content code.hotspot:hover,
+    #guide-content .code_command:hover {
         cursor: pointer;
     }
 
@@ -393,22 +394,22 @@
 }
 
 @media (min-width: 1440px) {
-    #toc_column{
+    #toc-column{
         &.open {
             width: 280px; /* Override the 400px width from single pane guide */
         }
     }
 
-    #guide_column {
+    #guide-column {
         width: calc(100% - 780px);
         display: inline-block;
     }
 
-    #guide_column.open {
+    #guide-column.open {
         width: calc(100% - 280px - 780px); /* Adjust for the size of the table of contents and the code column */
     }
 
-    #guide_column.expanded {
+    #guide-column.expanded {
         width: calc(100% - 780px);
     }
 

@@ -8,8 +8,9 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
+ $color-kabanero:#C43804;
 
-#background_container, #end_of_guide_background {
+ #background_container, #end_of_guide_background {
     background-color: rgb(241, 244, 254);
 }
 
@@ -39,17 +40,17 @@ header {
     background-color: white;    
 }
 
-#guide_content h1 {
+#guide-content h1 {
     font-size: 28px;
     color: #24253a;
 }
 
-#guide_content h2 {
+#guide-content h2 {
     font-size: 20px;
-    color: #FFFFFF;
+    color: #24253a;
 }
 
-#guide_content h3 {
+#guide-content h3 {
     font-size: 16px;
     line-height: 26px;
     color: #24253a;
@@ -58,7 +59,7 @@ header {
     margin-bottom: 0px;
 }
 
-#guide_content h4 {
+#guide-content h4 {
     font-size: 16px;
     color: #6f7878;
     font-weight: 500;
@@ -66,7 +67,7 @@ header {
     margin-bottom: 0px;
 }
 
-#guide_content p {
+#guide-content p {
     font-size: 14px;
     line-height: 24px;
     padding-top: 15px;
@@ -75,30 +76,30 @@ header {
     margin-bottom: 0px;
 }
 
-#guide_content .system {
+#guide-content .system {
     color: gray;
 }
 
-#guide_content .sidebarblock {
+#guide-content .sidebarblock {
     margin-left: 23px;
 }
 
-#guide_content a, #end_of_guide a {
+#guide-content a, #end_of_guide a {
     font-weight: 500;
-    color: #E3700D;
+    color: #CC4D19;
     transition: color .2s;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
-#guide_content a:hover, #end_of_guide a:hover {
+#guide-content a:hover, #end_of_guide a:hover {
     color: #F4914D;
 }
 
 .code_reference {
     background:#f1f4fe;
     border: 1px solid #c8d6fb;
-    border-left: 5px solid #96bc32;
+    border-left: 5px solid $color-kabanero;
 }
 
 .code_reference:after {
@@ -113,34 +114,39 @@ header {
     border-bottom:20px solid transparent;
 }
 
-#guide_content .codeReference code,
-#guide_content .codeReference pre {
+#guide-content .codeReference code,
+#guide-content .codeReference pre {
     background:#f1f4fe;
 }
 
-#guide_content code,
-#guide_content pre  {
+#guide-content code,
+#guide-content pre  {
     /* Bootstrap override */
     background-color:#f4f4f4;
     color: #5e6b8d;
 }
 
-#guide_content code {
+#guide-content code {
     /* Bootstrap override */
     word-wrap: break-word;
 }
 
-#guide_content pre {
+#guide-content pre {
     border: none;
     border-radius: 0;
     padding: 30px;
+    word-wrap: normal;
+
+    & code {
+        white-space: pre;
+    }
 }
 
-#guide_content .listingblock.command .content pre,
-#guide_content .command .listingblock:not(.no_copy):not(.code_command) .content pre {
+#guide-content .listingblock.command .content pre,
+#guide-content .command .listingblock:not(.no_copy):not(.code_command) .content pre {
     background-color: #FFFFFF;
-    border: 1px solid #96bc32;
-    border-left: 8px solid #96bc32;
+    border: 1px solid $color-kabanero;
+    border-left: 8px solid $color-kabanero;
     border-radius: 3px;    
     overflow: hidden;
     white-space: pre-wrap;       /* css-3 */
@@ -150,12 +156,12 @@ header {
     word-wrap: break-word;  
 }
 
-#guide_content .listingblock.command .content pre,
-#guide_content .command .listingblock:not(.no_copy):not(.code_command) .content pre,
-#guide_content .paragraph.command ~ .listingblock:not(.no_copy):not(.code_command) .content pre{
+#guide-content .listingblock.command .content pre,
+#guide-content .command .listingblock:not(.no_copy):not(.code_command) .content pre,
+#guide-content .paragraph.command ~ .listingblock:not(.no_copy):not(.code_command) .content pre{
     background-color: #FFFFFF;
-    border: 1px solid #96bc32;
-    border-left: 8px solid #96bc32;
+    border: 1px solid $color-kabanero;
+    border-left: 8px solid $color-kabanero;
     border-radius: 3px;    
     overflow: hidden;
     white-space: pre-wrap;       /* css-3 */
@@ -167,17 +173,18 @@ header {
     & code {
         background-color: inherit;
         color: inherit;
+        white-space: pre-wrap;
     }
 }
 
-#guide_content .command .CodeRay code {
+#guide-content .command .CodeRay code {
     background-color: transparent;
 }
 
 /* Create pointed div using pseudo elements */
-#guide_content .code_command > .content {
+#guide-content .code_command > .content {
     position: relative;    
-    border-left: 8px solid #96bc32;
+    border-left: 8px solid $color-kabanero;
     border-top:1px solid #c8d6fb;
     border-bottom:1px solid #c8d6fb;
     width: 90%;
@@ -196,84 +203,116 @@ header {
     }
 }
 
-#guide_content .code_command > .content:after, #guide_content .code_command > .content:before {
+#guide-content .code_command > .content:after, #guide-content .code_command > .content:before {
     content: "";
     position: absolute;
     left: 100%;
     width: 40px;
     height: 50.2%;
 }
-#guide_content .code_command > .content:before {
+#guide-content .code_command > .content:before {
     top: 0px;
     background: linear-gradient(to top right, #F1F4FE 48%, #c8d6fb calc(48% + 1px), transparent calc(48% + 2px));
 }
-#guide_content .code_command > .content:after {
+#guide-content .code_command > .content:after {
     bottom: 0px;
     background: linear-gradient(to bottom right, #F1F4FE 48%, #c8d6fb calc(48% + 1px), transparent calc(48% + 2px));
 }
 /* End of pointed div */
 
-#guide_content .sect1 > .sectionbody {
+#guide-content .sect1 > .sectionbody {
     padding-top: 19px;
+    margin-bottom: 100px;
 }
 
-#guide_content div.sect1 {
+#guide-content div.sect1 {
     padding-bottom: 50px;
     padding-left: 45px;
     padding-right: 45px;
     background-color: white;
 }
 
-#guide_content div.sect1:not(#guide_meta) {
+#guide-content div.sect1:not(#guide-meta) {
     border-top: 3px solid #d4d7e3;
 }
 
-#guide_content .sect1 h2 {
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+#guide-content .sect1 h2 {
+    font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
     line-height: 1.3;
     outline: none;
     margin: 0 -45px;
     padding: 16px 45px 16px 45px;
-    background: #C43804C4;
+    background: #F7F9E5;
 }
 
-#guide_content .sect1 h3 {
+#guide-content .sect1 h3 {
     outline: none;
 }
 
-#guide_content #guide_meta {
+#guide-content #guide-meta {
     padding-top: 40px;
     padding-bottom: 40px;    
 }
 
-#guide_content #related-guides-cards {
+#guide-content #related-guides-cards {
     margin-top: 50px;
 }
 
-#guide_content dl > dt.hdlist1 {
+#guide-content dl > dt.hdlist1 {
     font-size: 16px;
     line-height: 26px;
     padding-top: 26px;
 }
 
-#guide_content dl > dd > p {
+#guide-content dl > dd > p {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 1px;
     padding-bottom: 18px;
 }
 
-#guide_content p.tableblock {
+#guide-content p.tableblock {
     padding-top: 23px;
     padding-bottom: 23px;
 }
 
-#guide_content table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
-#guide_content table thead, #guide_content table tfoot{background:#f7f8f7;font-weight:bold}
-#guide_content table thead tr th,#guide_content table thead tr td,#guide_content table tfoot tr th,#guide_content table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
-#guide_content table tr th,#guide_content table tr td{padding: 0em 1.625em;font-size:inherit;color:rgba(0,0,0,.8)}
-#guide_content table tr.even,#guide_content table tr.alt,#guide_content table tr:nth-of-type(even){background:#f8f8f7}
-#guide_content table thead tr th,#guide_content table tfoot tr th,#guide_content table tbody tr td,#guide_content table tr td,#guide_content table tfoot tr td{display:table-cell;line-height:1.6}
+#guide-content table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+#guide-content table thead, #guide-content table tfoot{background:#f7f8f7;font-weight:bold}
+#guide-content table thead tr th,#guide-content table thead tr td,#guide-content table tfoot tr th,#guide-content table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+#guide-content table tr th,#guide-content table tr td{padding: 0em 1.625em;font-size:inherit;color:rgba(0,0,0,.8)}
+#guide-content table tr.even,#guide-content table tr.alt,#guide-content table tr:nth-of-type(even){background:#f8f8f7}
+#guide-content table thead tr th,#guide-content table tfoot tr th,#guide-content table tbody tr td,#guide-content table tr td,#guide-content table tfoot tr td{display:table-cell;line-height:1.6}
+
+.tab_link {
+    display: inline-block;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    & :hover {
+        color: #CC4D19;
+    }
+}
+
+#guide-content .tab_link.active > p {
+    border-bottom: 2px solid #CC4D19;
+    & > code {
+        color: #CC4D19;
+        cursor: auto;
+    }
+}
+
+#guide-content .windows_link > p, #guide-content .mac_link > p, #guide-content .linux_link > p {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    & code {
+        background-color: white;
+    }
+}
+
+.tab_content {
+    padding-left: 30px;
+}
 
 /* GUIDE PAGE LAYOUT */
 
@@ -288,16 +327,16 @@ header {
     margin-bottom: 70px;
 }
 
-#guide_column {
+#guide-column {
     color: #24253a;
     width: 100%;
 }
 
-#mobile_github_section {
+#mobile-github-section {
     display: none;
 }
 
-#guide_content > .sect1 {
+#guide-content > .sect1 {
     -webkit-box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.27);
     -moz-box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.27);
     box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.27);
@@ -312,29 +351,29 @@ header {
     color: #eaf0ff;
 }
 
-#guide_title {
+#guide-title {
     margin-top: 15px;
     margin-bottom: 4px;
 }
 
-#duration_container {
+#duration-container {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-#guide_duration {
-    margin-left: 2px;
+#guide-duration {
+    margin-left: 15px;
     font-size: 16px;
 }
 
-#guide_section_copied_confirmation, #code_section_copied_confirmation{
+#guide-section-copied-confirmation, #code-section-copied-confirmation{
     position: absolute;
     display: none;
     font-size: 11px;
     color: #5e6b8d;
 }
 
-#copy_to_clipboard {	
+#copy-to-clipboard {	
     position: absolute;	
     display: none;	
     background-color: #eeeff3;	
@@ -359,12 +398,12 @@ header {
 }
 
 @media (min-width: 1170px) {
-    #guide_content code.hotspot {
+    #guide-content code.hotspot {
         background-color: #F1F4FE;
         color:#5e6b8d;
     }
 
-    #guide_content code.hotspot:not(.code_command):hover {
+    #guide-content code.hotspot:not(.code_command):hover {
         color: #24253A;
         background-color: #C7CCD9;
     }
@@ -383,7 +422,7 @@ header {
         display: none;
     }
 
-    #github_clone_popup_container {
+    #github-clone-popup-container {
         display: none;
     }
 
@@ -391,7 +430,7 @@ header {
         margin-bottom: 30px;
     }
 
-    #mobile_github_section {
+    #mobile-github-section {
         display: block;
     }
     
@@ -403,7 +442,7 @@ header {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
     }
     
-    #mobile_github_clone_popup_title {
+    #mobile-github-clone-popup-title {
         font-size: 16px;
         font-weight: 600;        
         line-height: 1.63;
@@ -411,19 +450,19 @@ header {
         margin-bottom: 14px;
 
         & > span:last-child {
-            font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+            font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
         }
     }
     
-    #mobile_github_clone_popup_repo {
+    #mobile-github-clone-popup-repo {
         font-size: 14px;
         line-height: 1.57;
         color: #737373;
         height: 44px;
-        border:1px solid #96bc32;
+        border:1px solid $color-kabanero;
     }
 
-    #mobile_github_clone_popup_repo > span {
+    #mobile-github-clone-popup-repo > span {
         float: left;
         width: calc(100% - 51px);
         white-space: nowrap;
@@ -431,37 +470,37 @@ header {
         padding: 10px;
     }
     
-    #mobile_github_clone_popup_copy {
+    #mobile-github-clone-popup-copy {
         width: 51px;
         height: 42px;
-        background-color: #96bc32;
+        background-color: $color-kabanero;
         float: right;
         right: 39.5px;
         padding: 10px 18px 13px 18px;
         text-align: center;
     }
 
-    #mobile_github_clone_popup_copy > img {
+    #mobile-github-clone-popup-copy > img {
         width: 14px;
         height: 16px;
     }
 
-    #mobile_github_clone_popup_copy:hover {
+    #mobile-github-clone-popup-copy:hover {
         cursor: pointer;
     }
         
-    #guide_column {
+    #guide-column {
         width: auto;
         padding-top: 10px;
         padding-bottom: 60px;
         box-shadow: none;
     } 
 
-    #guide_content pre {
+    #guide-content pre {
         padding: 30px 16px;
     }
 
-    #guide_content div.sect1 {
+    #guide-content div.sect1 {
         padding-left: 24px;
         padding-right: 18px;
     }
@@ -476,20 +515,20 @@ header {
         padding-right: 0;
     }
 
-    #guide_content .hotspot:not(.code_command) pre {
+    #guide-content .hotspot:not(.code_command) pre {
         display: none; /* Hide the hotspot snippets in mobile since there is no right pane */
     }
 
-    #guide_content .code_command > .content {
+    #guide-content .code_command > .content {
         position: relative;    
-        border-left: 8px solid #96bc32;
+        border-left: 8px solid $color-kabanero;
         border-top:1px solid #c8d6fb;
         border-bottom:1px solid #c8d6fb;
         width: 100%;
         margin-bottom: 18px;
     }
     
-    #guide_content .code_command > .content:after, #guide_content .code_command > .content:before {
+    #guide-content .code_command > .content:after, #guide-content .code_command > .content:before {
         display: none;
     }
 }
@@ -502,13 +541,13 @@ header {
 }
 
 @media (min-width: 1440px) {
-    #guide_column {
+    #guide-column {
         width: calc(100% - 400px);
         max-width: 1000px;
         display: inline-block;
     }
     
-    #guide_column.expanded {
+    #guide-column.expanded {
         width: 100%;
     }      
 }

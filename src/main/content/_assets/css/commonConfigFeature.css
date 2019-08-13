@@ -31,7 +31,7 @@ html, body, main {
     padding: 0;
 }
 
-#toc_title {
+#toc-title {
     font-size: 14px;
     text-transform: uppercase;
     position: fixed;  /* keep the TOC heading sticky */
@@ -42,12 +42,12 @@ html, body, main {
     font-size: 12px;
 }
 
-#toc_column ul {
+#toc-column ul {
     padding: 0;
     margin: 0;
 }
 
-#toc_column li {
+#toc-column li {
     letter-spacing: 0;
     line-height: 18px;
     list-style: none;
@@ -58,7 +58,7 @@ html, body, main {
     padding: 7px 30px 7px 10px;
 }
 
-.toc_selected {
+.toc-selected {
     background:#fdf2ea;
     border-left: 8px solid #C438042B; 
     font-weight: 500 !important; 
@@ -67,29 +67,29 @@ html, body, main {
     padding-right: 60px !important;
 }
 
-#toc_column ul li a[href]:hover, #toc_column ul li div[href]:hover {
+#toc-column ul li a[href]:hover, #toc-column ul li div[href]:hover {
     color: #F4914D;
 }
 
-#toc_container {
+#toc-container {
     padding-left: 30px;
 }
 
-#config_content, #feature_content, #command_content, #general_content {
+#config-content, #feature_content, #command_content, #general-content {
     padding-right: 0;
     padding-left: 0;
     background: #FFFFFF;
     box-shadow: -2px 2px 9px -1px rgba(63,70,89,0.22);
 }
 
-#feature_title, #common_feature_title, #config_title, #command_title, #general_title { /* for weird reason, the css for config_title is not picked up */
+#feature_title, #common_feature_title, #config-title, #command_title, #general_title { /* for weird reason, the css for config-title is not picked up */
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
     font-size: 35px;
     letter-spacing: 0;
 }
 
 /* hide scrollbar in chrome, firefox, safari, and IE */
-#feature_content, #command_content, #general_content, #toc_column {
+#feature_content, #command_content, #general-content, #toc-column {
     overflow: hidden;
     height: 100%;
 }
@@ -98,7 +98,7 @@ html, body, main {
     height: 100%;
 }
 
-#toc_inner {
+#toc-inner {
     height: 100%;
     overflow-y: scroll;
     margin-right: -50px;
@@ -114,16 +114,16 @@ html, body, main {
 }
 
 @media (max-width: 767.98px) {
-    #toc_title {
+    #toc-title {
         position: static;
         width: 100%;
     }
 
-    #toc_container {
+    #toc-container {
         padding-top: 0px;
     }
 
-    #config_content, #feature_content, #command_content {
+    #config-content, #feature_content, #command_content {
         display: none;
     }
 
@@ -131,7 +131,7 @@ html, body, main {
         background-color: #24243A;
     }
 
-    #breadcrumb_hamburger {
+    #breadcrumb-hamburger {
         background-color: white;
         width: 40px;
         height: 100%; 
@@ -141,23 +141,23 @@ html, body, main {
         display: none;
     }
 
-    #breadcrumb_hamburger:focus {
+    #breadcrumb-hamburger:focus {
         outline: none;
     }
     
-    #breadcrumb_hamburger:not(.collapsed) {
+    #breadcrumb-hamburger:not(.collapsed) {
         border: none;
     }
     
-    #breadcrumb_hamburger:not(.collapsed) > .sr-only, #breadcrumb_hamburger:not(.collapsed) > .icon-bar {
+    #breadcrumb-hamburger:not(.collapsed) > .sr-only, #breadcrumb-hamburger:not(.collapsed) > .icon-bar {
         display: none;
     }
     
-    #breadcrumb_hamburger:hover .icon-bar {
+    #breadcrumb-hamburger:hover .icon-bar {
         background-color: slategray;
     }
     
-    #breadcrumb_hamburger .sr-only {
+    #breadcrumb-hamburger .sr-only {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -168,7 +168,7 @@ html, body, main {
         border: 0;
     }
     
-    #breadcrumb_hamburger .icon-bar {
+    #breadcrumb-hamburger .icon-bar {
         background-color: #c8d6fb;
         display: block;
         width: 20px;
@@ -176,30 +176,30 @@ html, body, main {
         border-radius: 1px;
     }
 
-    #breadcrumb_hamburger .icon-bar+.icon-bar {
+    #breadcrumb-hamburger .icon-bar+.icon-bar {
         margin-top: 4px;
     }   
 
-    .breadcrumb_hamburger_nav {
+    .breadcrumb-hamburger-nav {
         background-color: white;
         text-align: center;
     }
 
-    .breadcrumb_hamburger_nav:hover {
+    .breadcrumb-hamburger-nav:hover {
         cursor: pointer;
     }
 
-    #breadcrumb_hamburger_title {
+    #breadcrumb-hamburger-title {
         display: none;
     }
 }
 
 @media (min-width: 768px) {
-    #toc_column, #config_content, #feature_content, #command_content, #general_content {
+    #toc-column, #config-content, #feature_content, #command_content, #general-content {
         display: block !important;
     }  
     
-    .breadcrumb_hamburger_nav {
+    .breadcrumb-hamburger-nav {
         display: none !important; 
     }
 }

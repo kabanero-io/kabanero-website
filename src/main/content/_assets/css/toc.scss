@@ -9,9 +9,11 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
+ $color-kabanero:#C43804;
+ 
  /* BREADCRUMB specific to the collapsable table of contents */
 
-#breadcrumb_row .breadcrumb {
+ #breadcrumb_row .breadcrumb {
     display: block;
     width: calc(100% - 76px); /* If you change this value then update guide.js too */
     float: right;
@@ -27,7 +29,7 @@
     padding-left: 30px;
 }
 
-#breadcrumb_hamburger {
+#breadcrumb-hamburger {
     display: inline-block;
     width: 76px;
     height: 100%;
@@ -42,12 +44,12 @@
     display: inline-block;
 }
 
-#breadcrumb_hamburger:not(.collapsed) {
+#breadcrumb-hamburger:not(.collapsed) {
     border-right: none;
     background-color: #ffffff;
 }
 
-#breadcrumb_hamburger:not(.collapsed) > .sr-only, #breadcrumb_hamburger:not(.collapsed) > .icon-bar {
+#breadcrumb-hamburger:not(.collapsed) > .sr-only, #breadcrumb-hamburger:not(.collapsed) > .icon-bar {
     display: none;
 }
 
@@ -55,16 +57,16 @@
     display: none;
 }
 
-#breadcrumb_hamburger:not(.collapsed) > #header_close_toc_svg {
+#breadcrumb-hamburger:not(.collapsed) > #header_close_toc_svg {
     display: block !important;
 }
 
-#breadcrumb_hamburger:focus{
+#breadcrumb-hamburger:focus{
     outline: none;
     box-shadow: 0 0 2px 2px #51a7e8; /* keyboard-only focus styles */
 }
 
-#breadcrumb_hamburger .icon-bar {
+#breadcrumb-hamburger .icon-bar {
     background-color: #c8d6fb;
     display: block;
     width: 20px;
@@ -72,12 +74,12 @@
     border-radius: 1px;
 }
 
-#breadcrumb_hamburger .icon-bar+.icon-bar {
+#breadcrumb-hamburger .icon-bar+.icon-bar {
     margin-top: 4px;
 }
 
 /* TABLE OF CONTENTS */
-#toc_hotspot {
+#toc-hotspot {
     position: fixed;
     z-index: 2;
     opacity: 0;
@@ -87,7 +89,7 @@
     height: 100%;
 }
 
-#toc_column {
+#toc-column {
     position: fixed;
     left: 0;
     padding-bottom: 22px;
@@ -120,11 +122,11 @@
     }
 }
 
-#toc_inner {
+#toc-inner {
     padding-top: 20px;
 }
 
-#toc_indicator {
+#toc-indicator {
     z-index: 5;
     left: 0;
     width: 5px;
@@ -152,7 +154,7 @@
     }
 }
 
-#toc_line {
+#toc-line {
     display: inline-block;
     left: 0;
     width: 6px;
@@ -164,13 +166,13 @@
     }
 }
 
-.scroller_anchor {
+.scroller-anchor {
     height: 0px;
     margin: 0;
     padding: 0;
 }
 
-#mobile_toc_accordion_container {
+#mobile-toc-accordion-container {
     display: none;
     background-color: white;
 
@@ -179,12 +181,12 @@
     }
 }
 
-#mobile_toc_accordion {
+#mobile-toc-accordion {
     vertical-align: middle;
     display: table-cell;
 }
 
-#mobile_toc_accordion .sr-only {
+#mobile-toc-accordion .sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -195,19 +197,19 @@
     border: 0;
 }
 
-#mobile_toc_accordion .icon-bar {
-    background-color: #96bc32;
+#mobile-toc-accordion .icon-bar {
+    background-color: $color-kabanero;
     display: block;
     width: 20px;
     height: 2px;
     border-radius: 1px;
 }
 
-#mobile_toc_accordion .icon-bar+.icon-bar {
+#mobile-toc-accordion .icon-bar+.icon-bar {
     margin-top: 4px;
 }
 
-#toc_container {
+#toc-container {
     .sectlevel1 > li, .sectlevel2 > li {
         list-style: none;
         font-weight: 300;
@@ -234,7 +236,7 @@
 }
 
 /* After the sectlevel2 have been shifted to from under the sectlevel1 li to directly underneath the sectlevel1 step */
-#toc_container .sectlevel1 > .sectlevel2 {
+#toc-container .sectlevel1 > .sectlevel2 {
     padding-left: 0;
 
     > li {
@@ -242,19 +244,19 @@
     }
 }
 
-#toc_container > .sectlevel1 > li:not(.liSelected):hover, #toc_container .sectlevel2 > li:not(.liSelected):hover {
-    border-left: 8px solid #C4380444;
+#toc-container > .sectlevel1 > li:not(.liSelected):hover, #toc-container .sectlevel2 > li:not(.liSelected):hover {
+    border-left: 8px solid #fdf2ea;
     font-weight: 500;
     cursor: pointer;
 }
 
-#toc_container > .sectlevel1 > .liSelected, #toc_container .sectlevel2 > .liSelected {
-    background: #C4380411;
+#toc-container > .sectlevel1 > .liSelected, #toc-container .sectlevel2 > .liSelected {
+    background: #fdf2ea;
     border-left: 8px solid #f4914d;
     font-weight: 500;
 }
 
-#close_container {
+#close-container {
     display: none;
 
     &:after {
@@ -284,11 +286,11 @@
     }
 }
 
-#mobile_close_container {
+#mobile-close-container {
     display: none;
 }
 
-#mobile_close_container:after{
+#mobile-close-container:after{
     clear: both;
     content: "";
     height: 0;
@@ -296,7 +298,7 @@
     display: block;
 }
 
-#mobile_close_container > img {
+#mobile-close-container > img {
     position: absolute;
     display: block;
     top: -5px;
@@ -304,46 +306,46 @@
     margin-top: 20px;
 }
 
-#mobile_close_container > img:hover{
+#mobile-close-container > img:hover{
     cursor: pointer;
 }
 
 #toc_title {
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
     font-size:14px;
     color:#313653;
     margin-left: 27px;
     margin-bottom: 22px;
 }
 
-#toc_container ul {
+#toc-container ul {
     list-style-type: none;
 }
 
-#toc_container .sectlevel1 {
+#toc-container .sectlevel1 {
     padding-left: 0;
 }
 
-#toc_container a {
+#toc-container a {
     display: inline-block;
-    color:#C43804;
+    color:#5d6a8e;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-#toc_container a:hover {
-    color:#FF3F0F;
+#toc-container a:hover {
+    color:#313653;
 }
 
-#toc_separator {
+#toc-separator {
     width: 232px;
     height: 2px;
     border: solid 1px #d4d7e3;
     margin: auto;
 }
 
-#tag_title {
-    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+#tag-title {
+    font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
     font-size:14px;
     color:#313653;
     margin-left: 27px;
@@ -351,30 +353,30 @@
     margin-bottom: 22px;
 }
 
-#tags_container {
+#tags-container {
     margin-left: 27px;
     margin-right: 27px;
 }
 
-#tags_container a {
-    color: #4f660a;
+#tags-container a {
+    color: $color-kabanero;
     margin-right: 15px;
     line-height: 30px;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
-#tags_container a:hover {
-    color: #4f660a;
+#tags-container a:hover {
+    color: #f4914d;
 }
 
 @media (max-width: 1169.98px) {
 
-    #toc_inner {
-        padding-top: 41px; /* This should be the same height as #mobile_toc_accordion_container */
+    #toc-inner {
+        padding-top: 41px; /* This should be the same height as #mobile-toc-accordion-container */
     }
 
-    #mobile_toc_accordion_container {
+    #mobile-toc-accordion-container {
         display: table;
         width: 100%;
         height: 41px;
@@ -383,7 +385,7 @@
         z-index: 7; /* to override the z-index values of 4 and 6 for code mirror in interactive guide */
     }
 
-    #mobile_toc_accordion_container .breadcrumb_hamburger {
+    #mobile-toc-accordion-container .breadcrumb-hamburger {
         border: none;
         background: none;
     }
@@ -396,7 +398,7 @@
         overflow-y: auto;
     }
 
-    #breadcrumb_hamburger, #code_column, #breadcrumb_row .showHamburger {
+    #breadcrumb-hamburger, #code_column, #breadcrumb_row .showHamburger {
         display: none;
     }
 
@@ -420,7 +422,7 @@
     }
 
     #navbar_responsive_button {
-        background-color: #313653;
+        background-color: #FFFFFF;
     }    
 
     #header_background {
@@ -436,7 +438,7 @@
     }
 
     .navbar {
-        background-color: #313653;
+        background-color: $color-kabanero;
         position: static;
     }
 
@@ -467,9 +469,6 @@
     .navbar-fixed-top {
         top: 0;
         border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
     }
     .collapse.in{
         display:block !important;
@@ -504,18 +503,18 @@
     }
 
     /* Table of Contents */
-    #toc_close_white {
+    #toc-close-white {
         display: none;
     }
 
-    #mobile_close_container {
+    #mobile-close-container {
         display: block;
     }
 }
 
 @media (min-width: 1440px) {
 
-    #breadcrumb_hamburger {
+    #breadcrumb-hamburger {
         display: none;
     }
 
@@ -535,7 +534,7 @@
         margin-right: 0;
     }
 
-    #close_container {
+    #close-container {
         display: block;
     }
 
@@ -543,19 +542,19 @@
         margin-top: 0;
     }
     
-    #toc_column.inline {
+    #toc-column.inline {
         display: inline-block;
     }
 
-    #toc_inner {
+    #toc-inner {
         width: inherit;
     }
 }
 
 @media (max-width: 1439.98px) {
-    #toc_hotspot, 
-    #toc_indicator,
-    #toc_line {
+    #toc-hotspot, 
+    #toc-indicator,
+    #toc-line {
         display: none !important; /* Important is to override the display set through javascript */
     }
 }

@@ -32,7 +32,7 @@ $blue-grey-color: #5d6a8e;
 
 // -----------
 
-#contribute_intro_paragraph_1 {
+#contribute-intro-paragraph-1 {
     margin-bottom: 0;
 
     font-size: 20px;
@@ -209,7 +209,7 @@ $blue-grey-color: #5d6a8e;
     right: 0px;
 }
 
-#guides_title {
+#guides-title {
     margin-top: 0;
     margin-bottom: 14px;
     font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
@@ -218,13 +218,13 @@ $blue-grey-color: #5d6a8e;
     letter-spacing: 0;
 }
 
-#guides_description {
+#guides-description {
     font-size: 16px;
-    color: #292828;
+    color: #FFFFFF;
 }
 
 #guides_microprofile_banner,
-#guides_basic_banner {
+#guides-basic-banner {
     @extend %full-width-and-padding;
     background-color: #DEE1E8;
 }
@@ -239,7 +239,7 @@ $blue-grey-color: #5d6a8e;
     @extend %full-width-and-padding;
 }
 
-#guides_basic_container,
+#guides-basic-container,
 #guides_microprofile_container,
 #guides_additional_container,
 #no_search_results_container {
@@ -272,14 +272,14 @@ $blue-grey-color: #5d6a8e;
     margin-bottom: 27px;
 }
 
-.guide_category_title {
+.guide-category-title {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     color: #3f4659;
 }
 
-.total_guide_count {
+.total-guide-count {
     text-align: right;
     @media (max-width: 767.98px) {
         text-align: left;

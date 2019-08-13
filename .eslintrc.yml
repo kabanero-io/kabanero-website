@@ -11,7 +11,7 @@ rules:
   quotes:
     - warn
     - single
-    - allowTemplateLiterals
+    - "allowTemplateLiterals:true"
   semi:
     - warn
     - always

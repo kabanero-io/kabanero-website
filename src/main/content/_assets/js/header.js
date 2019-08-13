@@ -37,9 +37,8 @@ $(document).ready(function(){
     });
 
     if($('#general_title').text() !== ''){
-
     let version = $('#general_title').text().replace( /[^\d.]/g, '');
-    
+
     if (typeof localStorage.whatsNew !== 'undefined') {
         if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
             if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) { 
@@ -58,15 +57,13 @@ $(document).ready(function(){
         else {
             $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
         }
+        $('#whatsNewModal').on('hidden.bs.modal', function () {
+            let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
+            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+            $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
+        });
 
     }
-    if(version !== 0){
-    $('#whatsNewModal').on('hidden.bs.modal', function () {
-        let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
-        localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-        $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
-    });
-}
 }
 });
 

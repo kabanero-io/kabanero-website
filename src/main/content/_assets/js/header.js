@@ -36,8 +36,8 @@ $(document).ready(function(){
         }
     });
 
-    if($('#general_title').text().replace(/[A-Za-z$-']/g, '') !== ''){
-    let version = $('#general_title').text().replace(/[A-Za-z$-']/g, '');
+    if($('#general_title').text() !== ''){
+    let version = $('#general_title').text().split('v')[1];
     if (typeof localStorage.whatsNew !== 'undefined') {
         if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
             if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) { 
@@ -58,14 +58,13 @@ $(document).ready(function(){
         }
 
     }
-
+    if(version !== 0){
     $('#whatsNewModal').on('hidden.bs.modal', function () {
-        console.log(version)
-        console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
         let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
         localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
         $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
     });
+}
 }
 });
 

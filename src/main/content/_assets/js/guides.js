@@ -2,14 +2,14 @@
  *
  * Copyright 2019 IBM Corporation and others.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -140,7 +140,7 @@ $(document).ready(function() {
             $('.no_results_section').show();
 
             var search_text = $('#guide_search_input').val();
-            $('.search_term').text('"' + search_text + '"');
+            $('.search_term').text(`' + search_text + ''`);
         } else {
             $('.no_results_section').hide();
         }
@@ -176,7 +176,7 @@ $(document).ready(function() {
     $(window).on('popstate', function(){
         var input_value = location.search;
         query_string = input_value.substring(8);
-        document.getElementById("guide_search_input").value = query_string;
+        document.getElementById('guide_search_input').value = query_string;
         processSearch(query_string);
     });
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
         if(! value) {
             // Remove query string because search text is empty
             search_value = [location.protocol, '//', location.host, location.pathname].join('');
-            history.pushState(null, "", search_value);
+            history.pushState(null, '', search_value);
         } else {
             // Handle various search functions
             _processSearchText(value);
@@ -215,13 +215,13 @@ $(document).ready(function() {
             var searchTextWithoutTag = value.substring(value.indexOf(':') + 1);
             searchTextWithoutTag = searchTextWithoutTag.trim();
             search_value = '?search=' + encodeURIComponent(searchTextWithoutTag) + '&key=tag';
-            history.pushState(null, "", search_value);
-            document.activeElement.blur()
+            history.pushState(null, '', search_value);
+            document.activeElement.blur();
         } else {
             value = value.trim();
             search_value = '?search=' + encodeURIComponent(value);
-            history.pushState(null, "", search_value);
-            document.activeElement.blur()
+            history.pushState(null, '', search_value);
+            document.activeElement.blur();
         }
     }
 

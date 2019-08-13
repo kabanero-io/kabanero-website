@@ -2,14 +2,14 @@
  *
  * Copyright 2019 IBM Corporation and others.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -26,9 +26,9 @@
 
     $('#preamble').detach().insertAfter('#duration_container');  
 
-    $("#mobile_github_clone_popup_copy").click(function(event){
+    $('#mobile_github_clone_popup_copy').click(function(event){
         event.preventDefault();
-        target = $("#mobile_github_clone_popup_repo > span").get(0);
+        target = $('#mobile_github_clone_popup_repo > span').get(0);
         copy_element_to_clipboard(target, function(){
             var current_target_object = $(event.currentTarget);
             var position = current_target_object.position();	
@@ -39,7 +39,7 @@
         });
     });
 
-    $("#github_clone_popup_copy, #mobile_github_clone_popup_copy").on('keydown', function(event){
+    $('#github_clone_popup_copy, #mobile_github_clone_popup_copy').on('keydown', function(event){
         if(event.which === 13 || event.keyCode === 13){
             $(this).trigger('click');
         }
@@ -50,7 +50,7 @@
         var id = getScrolledVisibleSectionID();
         if (id !== null) {
             var windowHash = window.location.hash;
-            var scrolledToHash = id === "" ? id : '#' + id;
+            var scrolledToHash = id === '' ? id : '#' + id;
             if (windowHash !== scrolledToHash) {
                 // Update the URL hash with new section we scrolled into....
                 var currentPath = window.location.pathname;
@@ -67,7 +67,7 @@
             if(window.innerWidth > twoColumnBreakpoint) {
                 // multipane view
                 // Match the code block on the right to the new id
-                if(typeof(showCorrectCodeBlock) === "function"){
+                if(typeof(showCorrectCodeBlock) === 'function'){
                     showCorrectCodeBlock(id, null, true);
                 }
             }
@@ -82,7 +82,7 @@
         target_width = current_target_object.outerWidth();	
         target_height = current_target_object.outerHeight();
         var right_position = inSingleColumnView() ? 1 : 46;
-        console.log("right_position:", right_position);
+        console.log('right_position:', right_position);
          $('#copy_to_clipboard').css({	
             top: target_position.top + 1,	
             right: parseInt($('#guide-column').css('padding-right')) + right_position	
@@ -117,7 +117,7 @@
 
     $(window).on('scroll', function(event) {
         // Check if a scroll animation from another piece of code is taking place and prevent normal behavior.
-        if($("body").data('scrolling') === true){
+        if($('body').data('scrolling') === true){
             return;
         }
         handleSectionChanging(event);

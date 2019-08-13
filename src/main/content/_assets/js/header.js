@@ -36,37 +36,31 @@ $(document).ready(function(){
         }
     });
 
-    if($('#general_title').text() !== ''){
-    let version = $('#general_title').text().replace( /[^\d.]/g, '');
+    if ($('#general_title').text() !== '') {
+        
+        let version = $('#general_title').text().replace(/[^\d.]/g, '');
 
-    if (typeof localStorage.whatsNew !== 'undefined') {
-        if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
-            if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) { 
-                console.log(version)
-                console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
-                $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+        if (typeof localStorage.whatsNew !== 'undefined') {
+            if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
+                if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
+                    $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+                }
             }
+            else if (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion) {
+                $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+                let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false };
+                localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+            }
+            else {
+                $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
+            }
+            $('#whatsNewModal').on('hidden.bs.modal', function () {
+                let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": true };
+                localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+                $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
+            });
         }
-        else if (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion) {
-            console.log(version)
-            console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
-            $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
-            let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": false };
-            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-        }
-        else {
-            $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
-        }
-        $('#whatsNewModal').on('hidden.bs.modal', function () {
-            console.log(version)
-            console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
-            let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
-            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-            $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
-        });
-
     }
-}
 });
 
 

@@ -50,8 +50,8 @@ function highlight_code_range(code_section, fromLine, toLine, scroll){
     // Wrap each leftover piece of text in a span to handle highlighting a range of lines.
     code_section.find('code').contents().each(function(){
         if (!$(this).is('span')) {
-                var newText = $(this).wrap(`<span class='string'></span>`);
-                $(this).replaceWith(newText);
+            var newText = $(this).wrap(`<span class='string'></span>`);
+            $(this).replaceWith(newText);
         }
     });
     
@@ -354,13 +354,13 @@ function restoreCodeColumn(){
     }
 }
 
- $(document).ready(function() { 
+$(document).ready(function() { 
 
     $(window).on('resize', function(){
         restoreCodeColumn();
     });
      
-     /* Copy button for the github clone command  that pops up initially when opening a guide. */
+    /* Copy button for the github clone command  that pops up initially when opening a guide. */
     $('#github_clone_popup_copy').click(function(event){
         event.preventDefault();
         target = $('#github_clone_popup_repo').get(0);

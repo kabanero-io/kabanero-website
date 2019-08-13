@@ -16,7 +16,7 @@
  *
  ******************************************************************************/
 
- $(document).ready(function() {
+$(document).ready(function() {
     
     var offset;	
     var target;	
@@ -83,12 +83,12 @@
         target_height = current_target_object.outerHeight();
         var right_position = inSingleColumnView() ? 1 : 46;
         console.log('right_position:', right_position);
-         $('#copy_to_clipboard').css({	
+        $('#copy_to_clipboard').css({	
             top: target_position.top + 1,	
             right: parseInt($('#guide-column').css('padding-right')) + right_position	
         });	
         $('#copy_to_clipboard').stop().fadeIn();	
-     }, function(event) {	
+    }, function(event) {	
         if(offset){
             var x = event.clientX - offset.left;	
             var y = event.clientY - offset.top + $(window).scrollTop();	
@@ -100,9 +100,9 @@
                 $('#guide_section_copied_confirmation').stop().fadeOut();	
             }
         }          	
-     });	
+    });	
 
-     $('#copy_to_clipboard').click(function(event) {
+    $('#copy_to_clipboard').click(function(event) {
         event.preventDefault();
         // Target was assigned while hovering over the element to copy.
         copy_element_to_clipboard(target, function(){

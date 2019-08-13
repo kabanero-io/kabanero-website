@@ -127,8 +127,8 @@ function heightOfVisibleBackground() {
 // of whether the bottom is in the browser's viewport
 function getBackgroundAbsoluteBottomPosition() {
     var background = $('#background-container'),
-    elementTop = background.offset().top,
-    elementBottomPosition = elementTop + (background.outerHeight() - backgroundSizeAdjustment);
+        elementTop = background.offset().top,
+        elementBottomPosition = elementTop + (background.outerHeight() - backgroundSizeAdjustment);
     return elementBottomPosition;
 }
 
@@ -574,11 +574,11 @@ $(document).ready(function() {
                 else {
                     // On the first actual guide step. Send focus to the guide meta section.
                     if (inSingleColumnView()){
-                      //In single column view, the TOC hamburger button is in between the first guide step and guide_meta section
+                        //In single column view, the TOC hamburger button is in between the first guide step and guide_meta section
                         $('.breadcrumb-hamburger toc-toggle collapsed').focus();
-                      } else {
-                      elemToFocus = $('#guide_meta');
-                      }
+                    } else {
+                        elemToFocus = $('#guide_meta');
+                    }
                 }
             }
         }
@@ -679,14 +679,14 @@ $(document).ready(function() {
 
     // Handle manual tabbing order through the guide. The tabbing order is: header, breadcrumb, table of contents, #guide_meta, github popup if present, first guide section, through all of the guide section's tabbable elements, to the respective code on the right for that given guide section, through all of its tabbable elements, etc. until the last guide section and code are tabbed through, then to the end of guide section. Shift + tab goes in the reverse order.
     $(window).on('keydown', function(e) {
-      if($('body').data('scrolling') === true){
-           e.preventDefault();
-           e.stopPropagation();
-           return;
-      }
-      var code = e.keyCode || e.which;
-      var shiftIsPressed = e.shiftKey;
-      var elemToFocus;
+        if($('body').data('scrolling') === true){
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+        var code = e.keyCode || e.which;
+        var shiftIsPressed = e.shiftKey;
+        var elemToFocus;
 
         // Tab key
         if (code === 9) {
@@ -727,5 +727,5 @@ $(document).ready(function() {
                 elemToFocus.focus();
             }
         }
-        });
+    });
 });

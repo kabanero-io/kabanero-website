@@ -1,4 +1,11 @@
-# Feature Request for the Kabanero.io website
+---
+name: Feature Request for the Kabanero.io website
+about: Request a new feature for the Kabanero.io website
+title: ''
+labels: ''
+assignees: ''
+
+---
 
 #### Feature description
 

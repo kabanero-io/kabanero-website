@@ -46,14 +46,14 @@ main {
     margin-right: 30px;
 }
 
-#kabanero_nav_img{
-    height: 30px;
-    margin: 0px 35px 5px 50px;
-}
-
 .bg-custom {
     color: #292828;
     background-color: $color-kabanero;
+}
+
+#kabanero_nav_img{
+    height: 30px;
+    margin-bottom: 0.2em !important;
 }
 
 .qa-descriptor {
@@ -118,8 +118,8 @@ main {
 }
 
 #header_twitter_img {
-	height: 25px;
-	margin: 6px 25px 0 0;
+    height: 25px;
+    margin: 6px 25px 0 0;
 }
 
 #header_slack_img {
@@ -147,8 +147,8 @@ main {
 }
 
 #header_github_img{
-	height: 25px;
-	margin: 6px 25px 0 0;
+    height: 25px;
+    margin: 6px 25px 0 0;
 }
 
 #header_stackoverflow_link {
@@ -178,109 +178,20 @@ main {
     width: 100%;
 }
 
-
-@media (max-width: 991.98px) {
-    main {
-        margin-top: -46px;
-    }
-
-    .navbar {
-        padding: 0;
-        width: 100%;
-        height: 46px;
-        border-bottom: 1px solid rgba(94, 107, 141, 0.29);
-    }
-
-    #tablet_nav {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    #navbarNav {
-        max-width: 67%;
-        z-index: 9999;
-        margin-left: 33%;
-        margin-top: -8px;
-    }
-
-    .navbar-brand {
-        margin-left: 18px;
-        z-index: 99999;
-    }
-
-    .navbar-toggler {
-        border: none;
-        z-index: 99999;
-    }
-
-    .navbar-dark .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(235, 247, 173)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-        z-index: 9999999;
-    }
-
-    .close_button {
-        position: relative;
-        left: -10px;
-        z-index: 99999;
-    }
-
-    .navbar-nav {
-        padding-top: 25px;
-        border-top: 1px solid rgba(94, 107, 141, 0.29);
-        margin-top: 45px;
-    }
-
-    .navbar-collapse {
-        background-image: radial-gradient(circle at bottom left, #FFFFFF 0%, $color-kabanero 91%);
-    }
-
-    .navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:active, #fork_button {
-        font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
-        font-size: 35px;
-        color: #FFFFFF;
-        margin-right: 26px;
-        margin-left: 26px;
-    }
-
-    #float_right_section {
-        text-align: left;
-    }
-
-    #fork_button {
-        border: none;
-        padding-left: 0;
-        padding-top: 8px;
-        padding-bottom: 27px;
-        border-bottom: 1px solid rgba(201, 214, 254, 0.35);
-        border-radius: 0px;
-    }
-
-    #fork_button:hover {
-        color: #FFFFFF;
-        border: none;
-        border-bottom: 1px solid rgba(201, 214, 254, 0.35);
-    }
-
-    #fork_button {
-        display: block;
-    }
-
+.navbar-toggler {
+    border: none;
 }
 
 @media (max-width: 767.98px) {
     #navbarNav {
         max-width: 100%;
         margin-left: 0;
-        border-bottom: 2px solid #FAFFC7;
     }
 
     #header_round_links_container {
         margin-bottom: 40px;
     }
 
-    .navbar-collapse.collapse.show {
-        height: 100vh;
-    }
 
     #ol_nav_title {
         visibility: hidden;
@@ -290,6 +201,23 @@ main {
         display: none;
     }
 
+    .navbar-nav .nav-link {
+        padding: 1em;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        margin-bottom: 0.5em;
+        color: white;
+    }
+
+    #kabanero_nav_img{
+        height: 30px;
+        margin: 0px 20px 20px 20px;
+    }
+
+    .mb-2, .my-2  {
+        margin-bottom: 1rem!important;
+    }
 }
 
 .resourcesDropdown{
@@ -298,4 +226,12 @@ main {
 
 .dropdown-option:hover{
     color: gray !important;
+}
+
+.navbar-light .navbar-toggler {
+    margin-top: 0.1em;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }

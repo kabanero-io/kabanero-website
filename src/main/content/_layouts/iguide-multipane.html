@@ -3,7 +3,7 @@ layout: doc
 css:
 - doc-header
 - toc
-- end-of-guide
+- end_of_guide
 - guide-card
 - guide
 - guide-multipane
@@ -33,24 +33,24 @@ js:
 {% include visible-tags.liquid %}
 
 <div id="background-container">
-    <div id="toc_hotspot"></div>
+    <div id="toc-hotspot"></div>
     <!-- Guide's table of contents section -->
     <div id="toc-column" class="collapse inline open">
         <div id="toc-inner">
-            <div id="close_container">
-                <img id="toc_close_white" src="{{ " /img/toc_close_white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
+            <div id="close-container">
+                <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
             </div>
             <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                <img src="{{ " /img/toc_close_green.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
+                <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
             </div>
             <h3 id="toc-title">Contents</h3>
             <div id="toc-container">
                 <ul class="sectlevel1"></ul>
             </div>
-            <div id="toc_separator"></div>
+            <div id="toc-separator"></div>
             {% if page.tags %}
-                <h3 id="tag_title">Tags</h3>
-                <div id="tags_container">
+                <h3 id="tag-title">Tags</h3>
+                <div id="tags-container">
                     {% for tag in page.tags %}
                         {% assign lowercase_tag = tag | downcase %}    
                         {% if visibleTags contains lowercase_tag %}
@@ -62,17 +62,17 @@ js:
         </div>
     </div>
     <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
-        <img src="/img/arrow_white.svg" alt="arrow">
+        <img src="/img/arrow-white.svg" alt="arrow">
     </div>
     <div id="toc-line" class="open"></div>
     <!-- Entire guide section -->
     <div id="guide-column" class="position-relative open">
-        <div id="guide_content">
+        <div id="guide-content">
             <!-- Guide header section -->
-            <div id="guide_meta" class="sect1" tabindex="0">
+            <div id="guide-meta" class="sect1" tabindex="0">
                 <h1 id="guide-title">{{ page.title }}</h1>
-                <div id="duration_container">
-                    <img src="/img/guide-duration-clock-icon_large.svg" alt="duration">
+                <div id="duration-container">
+                    <img src="/img/guide-duration-clock-icon-large.svg" alt="duration">
                     <span id="guide-duration">{{ page.duration }}</span>
                     <div class="guide_interactive_container">
                         <img class="interactive_bolt_icon" src="/img/guide_lightning_bolt.svg" alt="Interactive">
@@ -85,13 +85,13 @@ js:
             <!-- This div is used to indicate the original position of the scrollable fixed div. -->
             <div class="scroller-anchor"></div>
             <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                <div id="mobile_toc_accordion">
+                <div id="mobile-toc-accordion">
                     <button class="breadcrumb-hamburger toc-toggle collapsed" type="button" tabindex="0">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <img src="{{ " /img/toc_close_green.svg " | relative }}" class="TOC_Close_SVG hidden img-responsive" alt="Table of contents close button"/>
+                            <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" class="toc-close-svg hidden img-responsive" alt="Table of contents close button"/>
                     </button>
                     <span>Table of contents</span>
                 </div>
@@ -101,8 +101,8 @@ js:
             {{ content }}
 
         </div>
-        <div id="guide_section_copied_confirmation">Copied to clipboard</div>
-        <img id="copy_to_clipboard" src='/img/guides_copy_button.svg' alt='Copy code block' title='Copy code block'>
+        <div id="guide-section-copied-confirmation">Copied to clipboard</div>
+        <img id="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>
     </div>
 
     <!-- Code section -->
@@ -110,4 +110,4 @@ js:
     </div>
 </div>
 
-{% include end-of-guide.html %}
+{% include end_of_guide.html %}

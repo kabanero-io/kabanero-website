@@ -1,21 +1,20 @@
-/******************************************************************************
- *
- * Copyright 2019 IBM Corporation and others.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- ******************************************************************************/
-
+/*******************************************************************************
+ -
+ - Copyright 2019 IBM Corporation and others.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -     http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+ -
+ *******************************************************************************/
 // The background is shortened by 200px
 var backgroundSizeAdjustment = 200;
 var twoColumnBreakpoint = 1170;
@@ -126,7 +125,7 @@ function heightOfVisibleBackground() {
 // Get the absolute position of the bottom of the dark background regardless
 // of whether the bottom is in the browser's viewport
 function getBackgroundAbsoluteBottomPosition() {
-    var background = $('#background-container'),
+    var background = $('#background_container'),
     elementTop = background.offset().top,
     elementBottomPosition = elementTop + (background.outerHeight() - backgroundSizeAdjustment);
     return elementBottomPosition;
@@ -135,7 +134,7 @@ function getBackgroundAbsoluteBottomPosition() {
 // Determine if the bottom of the visible dark background is now visible
 // in the browser's viewport.
 function isBackgroundBottomVisible() {
-    var background = $('#background-container'),
+    var background = $('#background_container'),
         currentTopPosition = $(window).scrollTop(),
         currentBottomPosition = currentTopPosition + $(window).height(),
         elementBottomPosition = getBackgroundAbsoluteBottomPosition(),
@@ -149,13 +148,15 @@ function isBackgroundBottomVisible() {
 function resizeGuideSections() {
         // Two column view or three column view.
     if (window.innerWidth > twoColumnBreakpoint) {
-        var viewportHeight = window.innerHeight;
-        var headerHeight = $('header').height();
-        var sectionTitleHeight = $("#guide_content h2").first().height();
-        var newSectionHeight = viewportHeight - headerHeight - sectionTitleHeight;
-        $('.sect1:not(#guide_meta):not(#related-guides)').css({
-                'min-height': newSectionHeight + 'px'
-        });
+        if(!onAppleDevice() && !onIE()){
+            var viewportHeight = window.innerHeight;
+            var headerHeight = $('header').height();
+            var sectionTitleHeight = $("#guide-content h2").first().height();
+            var newSectionHeight = viewportHeight - headerHeight - sectionTitleHeight;
+            $('.sect1:not(#guide-meta):not(#related-guides)').css({
+                    'min-height': newSectionHeight + 'px'
+            });
+        }        
         if(window.innerWidth >= threeColumnBreakpoint){
             // In three column view set the width of the #guide-column appropriately.
             if ($("#toc-column").hasClass('in') || $("#toc-column").hasClass('inline')) {
@@ -169,7 +170,7 @@ function resizeGuideSections() {
     }
     // Use initial height for single column view / mobile
     else {
-            $('.sect1:not(#guide_meta):not(#related-guides)').css({
+            $('.sect1:not(#guide-meta):not(#related-guides)').css({
                 'min-height': 'initial'
         });
     }
@@ -181,7 +182,7 @@ function handleFloatingCodeColumn() {
         if(isBackgroundBottomVisible()) {
             // Set the bottom of the code column to the distance between the top of the end of guide section and the bottom of the page.
             var windowHeight = window.innerHeight;
-            var relatedGuidesTopPosition = $("#end-of-guide")[0].getBoundingClientRect().top;
+            var relatedGuidesTopPosition = $("#end_of_guide")[0].getBoundingClientRect().top;
             if(relatedGuidesTopPosition){
                 var bottom = windowHeight - relatedGuidesTopPosition;
                 $("#code_column").css('bottom', bottom + 'px');
@@ -216,7 +217,7 @@ function checkForInertialScrolling (event){
         console.log('Scroll direction was not determined.');
     }
 
-    var section_headers = $('.sect1:not(#guide_meta) h2');
+    var section_headers = $('.sect1:not(#guide-meta) h2');
     section_headers.each(function(index) {
         var elem = $(section_headers.get(index));
         var rect = elem[0].getBoundingClientRect();
@@ -269,7 +270,7 @@ function getScrolledVisibleSectionID() {
     if (window.innerWidth > twoColumnBreakpoint) {
         // multi-column view - header is constant and guide scrolls
         //                     beneath it.
-        topBorder = $('#guide_meta').outerHeight(true); // Border point between
+        topBorder = $('#guide-meta').outerHeight(true); // Border point between
                                                         // guide meta and 1st section
     } else {
         // single-column view - header and guide meta scroll away.
@@ -281,7 +282,7 @@ function getScrolledVisibleSectionID() {
         // scroll is within guide meta.
         id = "";
     } else {
-        var sections = $('.sect1:not(#guide_meta):not(#related-guides), .sect2');
+        var sections = $('.sect1:not(#guide-meta):not(#related-guides), .sect2');
 
         if (window.innerWidth > twoColumnBreakpoint) {
             // multi-column view -
@@ -373,8 +374,8 @@ function getScrolledVisibleSectionID() {
 // Copy over content that should be shown in a different section than where it
 // is generated.
 function createEndOfGuideContent(){
-    var leftSide = $("#end-of-guide_left_section");
-    var rightSide = $("#end-of-guide_right_section");
+    var leftSide = $("#end_of_guide_left_section");
+    var rightSide = $("#end_of_guide_right_section");
     var whatYouLearned = $("#great-work-you-re-done, #great-work-youre-done").siblings().find('p').clone();
     whatYouLearned.first().prepend("Nice work! "); // Start every what you learned statement with 'Nice work!'
     whatYouLearned.attr('tabindex', '0');
@@ -397,9 +398,9 @@ function createEndOfGuideContent(){
     // Create anchor to the end of the guide
     var li = $("<li></li>");
     var a = $("<a></a>");
-    var end_of_guide_title = $('#end-of-guide > h2').first().text();
-    a.attr('href', '#end-of-guide');    
-    a.text(end-of-guide-title);
+    var end_of_guide_title = $('#end_of_guide > h2').first().text();
+    a.attr('href', '#end_of_guide');    
+    a.text(end_of_guide_title);
     li.append(a);
     $("#toc-container > ul").append(li);
 }
@@ -575,10 +576,10 @@ $(document).ready(function() {
                 else {
                     // On the first actual guide step. Send focus to the guide meta section.
                     if (inSingleColumnView()){
-                      //In single column view, the TOC hamburger button is in between the first guide step and guide_meta section
+                      //In single column view, the TOC hamburger button is in between the first guide step and guide-meta section
                       $('.breadcrumb-hamburger toc-toggle collapsed').focus();
                     } else {
-                      elemToFocus = $('#guide_meta');
+                      elemToFocus = $('#guide-meta');
                     }
                 }
             }
@@ -642,7 +643,7 @@ $(document).ready(function() {
                 }
                 else {
                     // If there are no previous steps, focus the guide meta.
-                    elemToFocus = $('#guide_meta');
+                    elemToFocus = $('#guide-meta');
                 }
             }
         }
@@ -665,7 +666,7 @@ $(document).ready(function() {
                     }
                     // On the last step's code column, tab to the end of guide
                     else if($('#toc-container li').last().hasClass('liSelected')){
-                        $('#end-of-guide_left_section').focus();
+                        $('#end_of_guide_left_section').focus();
                     }
                 }
 
@@ -678,7 +679,7 @@ $(document).ready(function() {
         return elemToFocus;
     }
 
-    // Handle manual tabbing order through the guide. The tabbing order is: header, breadcrumb, table of contents, #guide_meta, github popup if present, first guide section, through all of the guide section's tabbable elements, to the respective code on the right for that given guide section, through all of its tabbable elements, etc. until the last guide section and code are tabbed through, then to the end of guide section. Shift + tab goes in the reverse order.
+    // Handle manual tabbing order through the guide. The tabbing order is: header, breadcrumb, table of contents, #guide-meta, github popup if present, first guide section, through all of the guide section's tabbable elements, to the respective code on the right for that given guide section, through all of its tabbable elements, etc. until the last guide section and code are tabbed through, then to the end of guide section. Shift + tab goes in the reverse order.
     $(window).on('keydown', function(e) {
       if($("body").data('scrolling') === true){
          e.preventDefault();
@@ -693,12 +694,12 @@ $(document).ready(function() {
       if (code === 9) {
         var elementWithFocus = $(document.activeElement);
         if (elementWithFocus[0] == $("#guide-column")[0] || elementWithFocus.parents('#guide-column').length > 0) {
-            if (elementWithFocus.attr('id') === 'guide_meta') {
+            if (elementWithFocus.attr('id') === 'guide-meta') {
                 // Tabbing from the initial section before the guide starts
                 if(shiftIsPressed) {
                     // Go to the table of contents if visible
-                    if($('#tags_container:visible').length > 0){
-                        elemToFocus = $('#tags_container a').last();
+                    if($('#tags-container:visible').length > 0){
+                        elemToFocus = $('#tags-container a').last();
                     }
                     // Else go to the breadcrumb
                     else {

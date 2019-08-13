@@ -11,11 +11,11 @@ rules:
   no-constant-condition:
     - warn
   no-dupe-args:
-    - error
+    - warn
   no-dupe-keys:
-    - error
+    - warn
   no-duplicate-case:
-    - error
+    - warn
   no-empty:
     - warn
   no-empty-character-class:
@@ -26,28 +26,26 @@ rules:
     - warn
   no-extra-parens:
     - warn
-  no-extra-semi:
-    - warn
   no-func-assign:
-    - error
+    - warn
   no-invalid-regexp:
-    - error
+    - warn
   no-misleading-character-class:
-    - error
+    - warn
   no-sparse-arrays:
     - warn
   no-template-curly-in-string:
-    - error
+    - warn
   no-unexpected-multiline:
     - warn
   no-unreachable:
-    - error
+    - warn
   no-unsafe-finally:
     - warn
   no-unsafe-negation:
     - warn
   use-isnan:
-    - error
+    - warn
   valid-typeof:
     - warn
     

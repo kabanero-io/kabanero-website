@@ -36,11 +36,7 @@ $(document).ready(function(){
         }
     });
 
-    let version = 0;
-
-    if ($('#general_title')[0].innerHTML !== '') {
-        version = $('#general_title')[0].innerHTML.match(/[\d\.]+/g)[0]
-    }
+    let version = $('#general_title').text() === '' ? 0 : $('#general_title').text().match(/[\d\.]+/g)[0];
 
     if (typeof localStorage.whatsNew !== 'undefined') {
         if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {

@@ -90,7 +90,6 @@ rules:
   no-unneeded-ternary:
     - warn
   quotes:
-    - backtick
     - warn
   
   #ES6-Specific Rules

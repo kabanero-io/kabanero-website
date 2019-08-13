@@ -36,15 +36,18 @@ $(document).ready(function(){
         }
     });
 
-    let version = $('#general_title').text() === '' ? 0 : $('#general_title').text().match(/[\d\.]+/g)[0];
-
+    let version = $('#general_title').text().replace(/[A-Za-z$-']/g, '');
     if (typeof localStorage.whatsNew !== 'undefined') {
         if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
-            if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
+            if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) { 
+                console.log(version)
+                console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
                 $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
             }
         }
         else if (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion) {
+            console.log(version)
+            console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
             $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
             let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": false };
             localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
@@ -57,8 +60,8 @@ $(document).ready(function(){
 
     $('#whatsNewModal').on('hidden.bs.modal', function () {
         console.log(version)
-        console.log($('#general_title').text().match(/[\d\.]+/g)[0])
-        let whatsNew = {"whatsNewVersion": $('#general_title').text().match(/[\d\.]+/g)[0], "didOpenWhatsNew": true };
+        console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
+        let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
         localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
         $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
     });

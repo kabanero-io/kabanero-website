@@ -652,10 +652,6 @@ $color-kabanero:#C43804;
     margin: 10px 0 10px 0;
 }
 
-.notification{
-    @include button-link;
-}
-
 #get-started-link {
     @include button-link;
 }

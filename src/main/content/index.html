@@ -25,12 +25,8 @@ seo-title: Kabanero
                     built for Kubernetes while meeting the technology standards and policies your company defines. Design, develop,
                     deploy, and manage with speed and control!
                 </p>
-                    <div class="row">
-                        <a class="col-md-5" id="get-started-link" href="/try-it">Try It</a>
-                        <!-- Button trigger modal -->
-                        <a class="col-md-5" id="whats-new-modal-button" data-toggle="modal" data-target="#exampleModalCenter"></a>
-                        </div>
-                </div>
+                <a class="col-md-5" id="get-started-link" href="/try-it">Try It</a>
+            </div>
         </div>
         <div class="col-md-4 d-none d-md-block">
             <img src="/img/kabanero-logo-stripe.png " class="img-fluid" alt="boxes">
@@ -38,27 +34,6 @@ seo-title: Kabanero
     </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Here's whats new in the latest release for Kabanero </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            {% assign whatsNewDoc = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | where: 'title', "What's new in Kabanero"%}
-            <div class="modal-body">
-                    {{whatsNewDoc}}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
 <!-- Video- Kabanero Developer Workflow -->
 <div class="area video">

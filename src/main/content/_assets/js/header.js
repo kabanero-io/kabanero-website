@@ -28,4 +28,33 @@ $(document).ready(function() {
         }
     });
 
+    let docHref = $('#exampleModalCenter').attr('href');
+    $.get(docHref, function (data) {
+        $('#modal-title').html(($(data).find("#general_title")[0]).innerHTML);
+        $('#modal-body').html(($(data).find(".paragraph")[0]).innerHTML);
+    });
+
+    if($('#modal-title')[0].innerHTML){
+        let version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g);
+    
+        if(version === localStorage.whatsNew.whatsNewVersion){
+            if(!localStorage.whatsNew.didOpenWhatsNew){
+                $("#whats-new-modal-notification").attr("src","/img/notificationNewVersion.svg");
+            }
+        }
+        else if(version !== localStorage.whatsNew.whatsNewVersion){
+            $("#whats-new-modal-notification").attr("src","/img/notificationNewVersion.svg");
+            let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false};
+            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+        }
+
+        $('#exampleModalCenter').on('hidden.bs.modal', function () {
+            let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": true};
+            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+        });
+    }
+    
+    console.log(localStorage)
 });
+
+

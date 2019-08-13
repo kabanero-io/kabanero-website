@@ -652,14 +652,12 @@ $color-kabanero:#C43804;
     margin: 10px 0 10px 0;
 }
 
-#get-started-link {
-    @include button-link;
+.notification{
+    fill: #C43804 !important;
 }
 
-#whats-new-modal-button{
+#get-started-link {
     @include button-link;
-    margin-left: 5px;
-    cursor: pointer;
 }
 
 .whats-new-modal{

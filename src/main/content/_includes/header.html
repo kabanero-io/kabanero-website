@@ -12,7 +12,10 @@
 
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<div class="nav-container">
-
+                <a id="notification-bell" class="float_right_section">
+                    <img id="whats-new-modal-notification" src="/img/notification.svg" class="img-fluid" alt="What's new on Kabanero" data-toggle="modal" data-target="#exampleModalCenter">
+                </a>
+        
                 <a class="float_right_section" target="_blank" href="{{site.slack_url}}">
                     <img id="header_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
                 </a>
@@ -26,7 +29,6 @@
 					<img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid" alt="twitter logo">
                 </a>
 
-
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/try-it">Try It</a>
@@ -39,3 +41,20 @@
         </div>
     </nav>
 </header>
+
+<!-- Modal -->
+{% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
+{% for doc in whatsNewDoc %}
+<div class="modal fade"  tabindex="-1" id="exampleModalCenter" href="{{ doc.url }}" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div  class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
+        <div class="modal-content">
+            <div  class="modal-header">
+                <h5 class="modal-title" id="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

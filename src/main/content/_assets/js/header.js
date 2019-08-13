@@ -16,7 +16,7 @@
  *
  ******************************************************************************/
 
-let docHref = $('#exampleModalCenter').attr('href');
+let docHref = $('#whatsNewModal ').attr('href');
 $.get(docHref, function (data) {
     $('#modal-title').html(($(data).find("#general_title")[0]).innerHTML);
     $('#modal-body').html(($(data).find(".paragraph")[0]).innerHTML);
@@ -34,7 +34,11 @@ $(document).ready(function(){
         }
     });
 
-    let version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g)[0];
+
+    let version = 0;
+    if($('#modal-title')[0].innerHTML !== '') {
+        version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g)[0]
+    }
 
     if ((typeof localStorage.whatsNew !== 'undefined') && (version === JSON.parse(localStorage.whatsNew).whatsNewVersion)) {
         if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
@@ -51,7 +55,7 @@ $(document).ready(function(){
         $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
     }
 
-    $('#exampleModalCenter').on('hidden.bs.modal', function () {
+    $('#whatsNewModal').on('hidden.bs.modal', function () {
         let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": true };
         localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
         $("#whats-new-modal-notification").attr("src", "/img/notification.svg");

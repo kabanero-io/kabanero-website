@@ -58,6 +58,8 @@ $(document).ready(function(){
             $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
         }
         $('#whatsNewModal').on('hidden.bs.modal', function () {
+            console.log(version)
+            console.log(JSON.parse(localStorage.whatsNew).whatsNewVersion)
             let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
             localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
             $("#whats-new-modal-notification").attr("src", "/img/notification.svg");

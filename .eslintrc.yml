@@ -8,6 +8,9 @@ rules:
   linebreak-style:
     - warn
     - unix
+  quotes:
+    - warn
+    - single
   semi:
     - warn
     - always

@@ -19,7 +19,7 @@
 let whatsNewDocUrl = $('#modal-doc-url').attr('href');
 
 if (whatsNewDocUrl) {
-    $("#modal-body").load(whatsNewDocUrl, function (response, status) { });
+    $("#modal-body").load(whatsNewDocUrl);
 }
 else {
     $("#modal-body").text('There are currently no updates available, please check back later.')

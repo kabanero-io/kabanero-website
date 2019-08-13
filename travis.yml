@@ -4,7 +4,6 @@ install:
   - bundle install
   - npm install eslint --save-dev
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
-  - ./node_modules/.bin/eslint src/main/content/_assets/css/*.css
 
 script:
   - ./scripts/build_jekyll_maven.sh

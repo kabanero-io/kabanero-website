@@ -57,7 +57,8 @@ $(document).ready(function(){
 
     $('#whatsNewModal').on('hidden.bs.modal', function () {
         console.log(version)
-        let whatsNew = {"whatsNewVersion": version, "didOpenWhatsNew": true };
+        console.log($('#general_title').text().match(/[\d\.]+/g)[0])
+        let whatsNew = {"whatsNewVersion": $('#general_title').text().match(/[\d\.]+/g)[0], "didOpenWhatsNew": true };
         localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
         $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
     });

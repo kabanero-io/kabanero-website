@@ -39,23 +39,25 @@ $(document).ready(function(){
 
 
     let version = 0;
-    if($('#general_title')[0].innerHTML !== '') {
+    if ( ($('#general_title')[0] ) && ($('#general_title')[0].innerHTML !== ''))  {
         version = $('#general_title')[0].innerHTML.match(/[\d\.]+/g)[0]
     }
 
-    if ((typeof localStorage.whatsNew !== 'undefined') && (version === JSON.parse(localStorage.whatsNew).whatsNewVersion)) {
-        if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
-            $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+    if (typeof localStorage.whatsNew !== 'undefined') {
+        if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
+            if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
+                $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+            }
         }
-    }
-    else if ((typeof localStorage.whatsNew !== 'undefined') && (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion)) {
-        $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
-        let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false };
-        localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-    }
+        else if (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion) {
+            $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
+            let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false };
+            localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
+        }
+        else {
+            $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
+        }
 
-    if(typeof localStorage.whatsNew === 'undefined'){
-        $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
     }
 
     $('#whatsNewModal').on('hidden.bs.modal', function () {

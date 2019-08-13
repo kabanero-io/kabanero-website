@@ -19,21 +19,6 @@
 //declare variables
 $color-kabanero:#C43804;
 
-@mixin button-link {
-    display: block;
-    width: 227px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #FFFFFF;
-    background-color: $color-kabanero;
-    border-radius: 7px;
-    padding: 10px 25px;
-    margin-top:40px;
-    margin-bottom: 8px;
-    text-align: center;
-    transition: background-color .2s;
-}
-
 /* INTRO */
 .separator {
     margin: 35px 0 35px 0;
@@ -652,17 +637,19 @@ $color-kabanero:#C43804;
     margin: 10px 0 10px 0;
 }
 
-.notification{
-    fill: #C43804 !important;
-}
-
 #get-started-link {
-    @include button-link;
-}
-
-.whats-new-modal{
-    max-width: 850px;
-    margin-top: 25%;
+    display: block;
+    width: 227px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: $color-kabanero;
+    border-radius: 7px;
+    padding: 10px 25px;
+    margin-top:40px;
+    margin-bottom: 8px;
+    text-align: center;
+    transition: background-color .2s;
 }
 
 .term-box{
@@ -677,3 +664,7 @@ $color-kabanero:#C43804;
     margin-bottom: 15px;
 }
 
+.whats-new-modal{
+    max-width: 850px;
+    margin-top: 25%;
+}

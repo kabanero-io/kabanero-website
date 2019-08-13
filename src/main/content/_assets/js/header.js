@@ -23,9 +23,9 @@ $.get(docHref, function (data) {
 });
 
 // prevent scrolling when navbar dropdown is opened
-$(document).ready(function () {
+$(document).ready(function(){
 
-    $('.navbar-toggler').click(function () {
+    $('.navbar-toggler').click(function(){
 
         if ($('.navbar-toggler').hasClass('collapsed')) {
             $('body').css('overflow', 'hidden');
@@ -35,7 +35,7 @@ $(document).ready(function () {
     });
 
     let version = $('#modal-title')[0].innerHTML.match(/[\d\.]+/g)[0];
-    
+
     if ((typeof localStorage.whatsNew !== 'undefined') && (version === JSON.parse(localStorage.whatsNew).whatsNewVersion)) {
         if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
             $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");

@@ -31,7 +31,7 @@ $(document).ready(function(){
         }
     });
     
-    let version = `"${$('#general_title').text().replace(/[^\d.]/g, '')}"`;
+    let version = `${$('#general_title').text().replace(/[^\d.]/g, '')}`;
     let localStorageValue = localStorage.getItem('whatsNew');
     localStorageValue = localStorageValue ? JSON.parse(localStorageValue) : {};
 

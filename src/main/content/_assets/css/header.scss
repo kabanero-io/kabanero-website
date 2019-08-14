@@ -132,13 +132,42 @@ main {
     margin: 6px 25px 0 0;
 }
 
-#whats-new-modal-notification{
-    height: 25px;
-    margin: 6px 25px 0 0;
+#whats-new-toast{
+    margin-bottom: 0;
+    max-width: 100%;
+    text-align: left;
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    border: none;
+    padding: 1rem 1rem;
+    padding-left: 15px;
 }
 
-#notification-bell{
+#whats-new-toast .close-button{
+    color: white;
+}
+
+.toast-text{
+    font-size: 1.1rem;
+}
+
+#learn-more-modal-button{
+    width: 227px;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px 35px;
+    text-align: center;
+    float: right;
+    margin-right: 15px;
     cursor: pointer;
+}
+
+.hide-toast-div{
+    display: none;
 }
 
 #share_blog_twitter_img{

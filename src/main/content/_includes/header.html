@@ -1,4 +1,14 @@
 <header>
+
+    <!-- New release notification toast -->
+    <div aria-atomic="true" id="whats-new-toast" class="toast hide-toast-div" data-autohide="false">
+        <strong class="mr-auto toast-text">Check out what's in the latest release of Kabanero</strong>
+        <button type="button" class="ml-2 mb-1 close close-button" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <a class="col-md-5" id="learn-more-modal-button" data-toggle="modal" data-target="#whatsNewModal">Learn More</a>
+    </div>
+
     <nav class="navbar navbar-expand-md navbar-light bg-custom">
         <a class="navbar-brand" href="/">
           <img id="kabanero_nav_img" src="/img/Kabanero_logo_white.png" class="img-fluid" alt="Kabanero Nav image">
@@ -29,32 +39,28 @@
                 <a class="float_right_section" target="_blank" href="{{site.twitter_url}}">
                 <img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid" alt="twitter logo">
                 </a>
-                <a id="notification-bell" class="float_right_section">
-                <img id="whats-new-modal-notification" src="/img/notification.svg" class="img-fluid" alt="What's new on Kabanero" data-toggle="modal" data-target="#whatsNewModal">
-                </a>
             </div>
         </div>
     </nav>
 </header>
 
-<!-- Modal -->
-<div class="modal fade" tabindex="-1" id="whatsNewModal" role="dialog" aria-labelledby="whatsNewModalTitle"
-    aria-hidden="true">
+
+<!-- What's new Modal -->
+{% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
+{% for doc in whatsNewDoc %}
+<div class="modal fade" tabindex="-1" id="whatsNewModal" href="{{ doc.url }}" role="dialog"
+    aria-labelledby="whatsNewModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modal-title">What's new in Kabanero</h5>
+                <div id="modal-body" class="modal-body"></div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
                         aria-hidden="true">&times;</span> </button>
-            </div>
-            {% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
-            {% for doc in whatsNewDoc %}
-            <div id="modal-doc-url" href="{{ doc.url }}"></div>
-            {% endfor %}
-            <div id="modal-body" class="modal-body"></div>
+                </div>
             <div class="modal-footer">
                 <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>
             </div>
         </div>
     </div>
 </div>
+{% endfor %}

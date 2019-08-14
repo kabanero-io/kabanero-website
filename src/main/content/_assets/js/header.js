@@ -16,17 +16,12 @@
  *
  ******************************************************************************/
 
-let whatsNewDocUrl = $('#modal-doc-url').attr('href');
-if (whatsNewDocUrl) {
-    $("#modal-body").load(whatsNewDocUrl);
-}
-else {
-    $("#modal-body").text('There are currently no updates available, please check back later.')
+if ($('#whatsNewModal').attr('href')) {
+    $("#modal-body").load($('#whatsNewModal').attr('href'));
 }
 
 // prevent scrolling when navbar dropdown is opened
 $(document).ready(function(){
-
     $('.navbar-toggler').click(function(){
 
         if ($('.navbar-toggler').hasClass('collapsed')) {
@@ -35,32 +30,34 @@ $(document).ready(function(){
             $('body').css('overflow', 'auto');
         }
     });
+    
+    let version = `"${$('#general_title').text().replace(/[^\d.]/g, '')}"`;
+    let localStorageValue = localStorage.getItem('whatsNew');
+    localStorageValue = localStorageValue ? JSON.parse(localStorageValue) : {};
 
-    if ($('#general_title').text() !== '') {
-        
-        let version = $('#general_title').text().replace(/[^\d.]/g, '');
-
-        if (typeof localStorage.whatsNew !== 'undefined') {
-            if (version === JSON.parse(localStorage.whatsNew).whatsNewVersion) {
-                if (!JSON.parse(localStorage.whatsNew).didOpenWhatsNew) {
-                    $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
-                }
-            }
-            else if (version !== JSON.parse(localStorage.whatsNew).whatsNewVersion) {
-                $("#whats-new-modal-notification").attr("src", "/img/notificationNewVersion.svg");
-                let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": false };
-                localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-            }
-            else {
-                $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
-            }
-            $('#whatsNewModal').on('hidden.bs.modal', function () {
-                let whatsNew = { "whatsNewVersion": version, "didOpenWhatsNew": true };
-                localStorage.setItem('whatsNew', JSON.stringify(whatsNew));
-                $("#whats-new-modal-notification").attr("src", "/img/notification.svg");
-            });
+    function updateLocalStorageValue(whatsNewVersion, didOpenWhatsNew){
+        localStorageValue['whatsNewVersion'] = whatsNewVersion;
+        localStorageValue['didOpenWhatsNew'] = didOpenWhatsNew;
+        localStorage.setItem('whatsNew', JSON.stringify(localStorageValue));
+    }
+    
+    if (version === localStorageValue['whatsNewVersion']) {
+        if (!localStorageValue['didOpenWhatsNew']) {
+            $('.toast').toast('show');
         }
     }
+    else if (version !== localStorageValue['whatsNewVersion']) {
+        updateLocalStorageValue(version, false)
+        $('.toast').toast('show');
+    }
+
+    $('#whatsNewModal').on('hidden.bs.modal', function () {
+        updateLocalStorageValue(version, true)
+    });
+        
+    $('#whats-new-toast').on('hidden.bs.toast', function () {
+        updateLocalStorageValue(version, true)
+    });
 });
 
 

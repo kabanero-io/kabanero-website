@@ -254,7 +254,7 @@ function addNavHoverListener() {
     });
     tabs.off('mouseleave').on('mouseleave', function() {
         $(this).removeClass('clickableNavListTab');
-    })
+    });
 }
 
 function setDynamicIframeContent() {
@@ -360,7 +360,7 @@ function addClickListener(contents) {
             });
             window.history.pushState(state, null, hashParams);
         }
-    })
+    });
 }
 
 function setPackageContainerHeight() {
@@ -389,21 +389,21 @@ function setIFrameContent(iframeName, href) {
     var http = new XMLHttpRequest();
     http.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-           // replace the content only if the current content is from a different href
-           if (iframeContent.attr('location').href !== href) {    
-               iframeContent.attr('location').replace(href);
-           }
+            // replace the content only if the current content is from a different href
+            if (iframeContent.attr('location').href !== href) {    
+                iframeContent.attr('location').replace(href);
+            }
         } else if (this.status === 404) {
-           if (iframeName === 'iframe.rightIframe') {
-               iframeContent.attr('location').replace(errorhref);
-           }
-           else if (iframeName === '.leftBottom iframe') {
-               iframeContent.attr('location').replace(allClassesHref);
-           }
+            if (iframeName === 'iframe.rightIframe') {
+                iframeContent.attr('location').replace(errorhref);
+            }
+            else if (iframeName === '.leftBottom iframe') {
+                iframeContent.attr('location').replace(allClassesHref);
+            }
         }
-     };
-     http.open('HEAD', href);
-     http.send();
+    };
+    http.open('HEAD', href);
+    http.send();
 }
 
 // If package is provided as hashName, then return the class hash. Otherwise return the package hash.
@@ -411,7 +411,7 @@ function getRemainingHashParam(hash, hashName) {
     var lookForHash = PACKAGE_HASH;
     var returnHash = {};
     if (hashName === PACKAGE_HASH) {
-        lookForHash = CLASS_HASH
+        lookForHash = CLASS_HASH;
     }
     if (hash.indexOf(lookForHash) !== -1) {
         try {
@@ -532,17 +532,17 @@ $(document).ready(function() {
         setDynamicIframeContent();
 
         window.onpopstate = function(event) {
-             if (event.state) {
+            if (event.state) {
                 $.each( event.state, function( key, value ) {
                     setIFrameContent(key, value);
                 });
                 // restore the height in case it is collapsed
                 setPackageContainerHeight();
-             } else {
-                 // This path is exercised with the initial page
-                 setIFrameContent(PACKAGE_FRAME, defaultPackageHtml);
-                 setIFrameContent(CLASS_FRAME, defaultClassHtml);
-             }
-        }
-    })
+            } else {
+                // This path is exercised with the initial page
+                setIFrameContent(PACKAGE_FRAME, defaultPackageHtml);
+                setIFrameContent(CLASS_FRAME, defaultClassHtml);
+            }
+        };
+    });
 });

@@ -47,16 +47,16 @@ $(document).ready(function(){
         }
     }
     else if (version !== localStorageValue['whatsNewVersion']) {
-        updateLocalStorageValue(version, false)
+        updateLocalStorageValue(version, false);
         $('.toast').toast('show');
     }
 
     $('#whatsNewModal').on('hidden.bs.modal', function () {
-        updateLocalStorageValue(version, true)
+        updateLocalStorageValue(version, true);
     });
         
     $('#whats-new-toast').on('hidden.bs.toast', function () {
-        updateLocalStorageValue(version, true)
+        updateLocalStorageValue(version, true);
     });
 });
 

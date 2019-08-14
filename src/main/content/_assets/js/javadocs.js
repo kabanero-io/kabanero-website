@@ -2,30 +2,30 @@
  *
  * Copyright 2019 IBM Corporation and others.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
  ******************************************************************************/
 
-var PACKAGE_FRAME = ".leftBottom iframe";
-var CLASS_FRAME = "iframe.rightIframe";
-var DEFAULT_PACKAGE_HTML = "allclasses-frame.html";
-var DEFAULT_CLASS_HTML = "overview-summary.html";
-var PACKAGE_HASH = "package=";
-var CLASS_HASH = "class=";
+var PACKAGE_FRAME = '.leftBottom iframe';
+var CLASS_FRAME = 'iframe.rightIframe';
+var DEFAULT_PACKAGE_HTML = 'allclasses-frame.html';
+var DEFAULT_CLASS_HTML = 'overview-summary.html';
+var PACKAGE_HASH = 'package=';
+var CLASS_HASH = 'class=';
 
-var defaultHtmlRootPath = "";
-var defaultPackageHtml = "";
-var defaultClassHtml = "";
+var defaultHtmlRootPath = '';
+var defaultPackageHtml = '';
+var defaultClassHtml = '';
 
 // Make sure the footer and header of the documentation page is always in the
 // browser viewport.
@@ -40,54 +40,54 @@ function resizeJavaDocWindow() {
 /* Handles any elements which are not accessible by a screen reader and fixes DAP violations. */
 function addAccessibility() {
     var javadoc_container = $('#javadoc_container').contents();
-    var classFrame = javadoc_container.find("iframe[name='classFrame']");
+    var classFrame = javadoc_container.find('iframe[name="classFrame"]');
 
     // Add accessibility labels to the search input and search reset button, and fix duplicate navigation roles.
-    classFrame.contents().find('#search').attr("aria-label", "Search");
-    classFrame.contents().find("#reset").attr("aria-label", "Reset the search field");
-    classFrame.contents().find('header > nav').removeAttr("role").attr("aria-label", "Header navigation");
-    classFrame.contents().find('footer > nav').removeAttr("role").attr("aria-label", "Footer navigation");
+    classFrame.contents().find('#search').attr('aria-label', 'Search');
+    classFrame.contents().find('#reset').attr('aria-label', 'Reset the search field');
+    classFrame.contents().find('header > nav').removeAttr('role').attr('aria-label', 'Header navigation');
+    classFrame.contents().find('footer > nav').removeAttr('role').attr('aria-label', 'Footer navigation');
 }
 
 function addExpandAndCollapseToggleButtons() {
     var javadoc_container = $('#javadoc_container').contents();
-    var iframes = javadoc_container.find("iframe");
+    var iframes = javadoc_container.find('iframe');
 
-    var leftTop = javadoc_container.find(".leftTop");
-    var leftBottom = javadoc_container.find(".leftBottom");
+    var leftTop = javadoc_container.find('.leftTop');
+    var leftBottom = javadoc_container.find('.leftBottom');
 
     $( iframes ).each(function() {
         // Look for the two left side iframes
-        var isTopLeftPackageIFrame = $(this).attr("name") === "packageListFrame";
-        var isBottomLeftPackageIFrame = $(this).attr("name") === "packageFrame";
-        var isClassFrame = $(this).attr("name") === "classFrame";
+        var isTopLeftPackageIFrame = $(this).attr('name') === 'packageListFrame';
+        var isBottomLeftPackageIFrame = $(this).attr('name') === 'packageFrame';
+        var isClassFrame = $(this).attr('name') === 'classFrame';
 
-        if(isTopLeftPackageIFrame && $(this).contents().find(".toggle").length === 0) {
+        if(isTopLeftPackageIFrame && $(this).contents().find('.toggle').length === 0) {
             var list = $(this).contents().find('ul[title="Packages"]');
-            var header = $(this).contents().find("h2[title='Packages']");
+            var header = $(this).contents().find('h2[title="Packages"]');
 
             // A empty whitespace only <p> element needs to be hidden
-            var emptyParagraphElement = $(this).contents().find("body > p");
+            var emptyParagraphElement = $(this).contents().find('body > p');
             emptyParagraphElement.hide();
 
             var headerHeight = header.outerHeight(true); // true to include margins too
             var toggleButton = $('<div class="toggle" collapsed="false" tabindex=0><img src="/img/all_guides_minus.svg" alt="Collapse" aria-label="Collapse" /></div>');
             toggleButton.on('click', function(){
                 var collapsed = $(this).attr('collapsed');
-                if(collapsed === "true"){
+                if(collapsed === 'true'){
                     // Expand the list
                     list.show();
-                    leftTop.css("height", "45%");
-                    leftBottom.css("height", "55%");
+                    leftTop.css('height', '45%');
+                    leftBottom.css('height', '55%');
                     $(this).empty().append($('<img src="/img/all_guides_minus.svg" alt="Collapse" aria-label="Collapse"/>'));
                     $(this).attr('collapsed', false);
                 }
                 else{
                     // Collapse the list
                     list.hide();
-                    leftTop.css("height", headerHeight);
-                    leftTop.css("overflow", "hidden");
-                    leftBottom.css("height", "86%");
+                    leftTop.css('height', headerHeight);
+                    leftTop.css('overflow', 'hidden');
+                    leftBottom.css('height', '86%');
                     $(this).empty().append($('<img src="/img/all_guides_plus.svg" alt="Expand" aria-label="Expand"/>'));
                     $(this).attr('collapsed', true);                    
                 }
@@ -101,7 +101,7 @@ function addExpandAndCollapseToggleButtons() {
             });
             header.append(toggleButton);            
         }
-        if(isBottomLeftPackageIFrame && $(this).contents().find(".toggle").length === 0) {
+        if(isBottomLeftPackageIFrame && $(this).contents().find('.toggle').length === 0) {
             addExpandAndCollapseToggleButtonForPackageFrame($(this).contents(), leftBottom);
         }        
     });
@@ -114,35 +114,35 @@ function addExpandAndCollapseToggleButtonForPackageFrame(contents, leftBottom) {
     // Add region to the package div
     var packageHeader = contents.find('h1.bar');
     var packageHeaderText = packageHeader.text().replace('/\s/g',' ').trim(); 
-    // Move the header text only if it is showing "All Classes" content
-    if (packageHeaderText === "All Classes") {
+    // Move the header text only if it is showing 'All Classes' content
+    if (packageHeaderText === 'All Classes') {
         contents.find('main.indexContainer').prepend(packageHeader.remove());
     }
     // packageHeader.attr('role', 'region');
 
     // I did not know how to select for text that contained whitespace.
-    // example: "All Classes"
-    var header2 = contents.find("h1:contains('Classes')");
+    // example: 'All Classes'
+    var header2 = contents.find('h1:contains("Classes")');
     var headerHeight2 = header2.outerHeight(true); // true to include margins too
 
     // .text() returns encoded spaces, convert back to normal spaces 
     // for string comparison.
     var header2_text = header2.text().replace('/\s/g',' ').trim();
-    if(header2_text === "All Classes") {
+    if(header2_text === 'All Classes') {
         var toggleButton2 = $('<div class="toggle" collapsed="false" tabindex=0><img src="/img/all_guides_minus.svg" alt="Collapse" aria-label="Collapse" /></div>');
         toggleButton2.on('click', function(){
             var collapsed = $(this).attr('collapsed');
-            if(collapsed === "true"){
+            if(collapsed === 'true'){
                 // Expand the list
                 list2.show();
-                leftBottom.css("height", "55%");
+                leftBottom.css('height', '55%');
                 $(this).empty().append($('<img src="/img/all_guides_minus.svg" alt="Collapse" aria-label="Collapse"/>'));
                 $(this).attr('collapsed', false);
             }
             else{
                 // Collapse the list
                 list2.hide();
-                leftBottom.css("height", headerHeight2);
+                leftBottom.css('height', headerHeight2);
                 $(this).empty().append($('<img src="/img/all_guides_plus.svg" alt="Expand" aria-label="Expand"/>'));
                 $(this).attr('collapsed', true);                    
             }
@@ -159,8 +159,8 @@ function addExpandAndCollapseToggleButtonForPackageFrame(contents, leftBottom) {
 }
 function addiPadScrolling() {
     if (navigator.platform.match(/iPad/)) {
-        $('#javadoc_container').contents().find('.leftTop, .leftBottom, .rightContainer').css("-webkit-overflow-scrolling", "touch");
-        $('#javadoc_container').contents().find('.leftTop, .leftBottom, .rightContainer').css("overflow-y", "scroll");
+        $('#javadoc_container').contents().find('.leftTop, .leftBottom, .rightContainer').css('-webkit-overflow-scrolling', 'touch');
+        $('#javadoc_container').contents().find('.leftTop, .leftBottom, .rightContainer').css('overflow-y', 'scroll');
     }
 }
 
@@ -181,40 +181,39 @@ function addLeftFrameScrollListener(frameToListen, frameElementToListen) {
     var frame = $('#javadoc_container').contents().find(frameToListen);
     var frameHeader = frame.contents().find(frameElementToListen);
     var offsetTop = frameHeader.offset().top;
-    var origPaddingTop = parseInt(frameHeader.css("padding-top").replace("px", ""));
+    var origPaddingTop = parseInt(frameHeader.css('padding-top').replace('px', ''));
     // For FireFox, cannot just use border-top, has to use border-top-color, border-top-style, border-top-width
-    var origBorderTopWidth = frameHeader.css("border-top-width");
-    var origBorderTopStyle = frameHeader.css("border-top-style");
-    var origBorderTopColor = frameHeader.css("border-top-color");
-    var stickyBeforeCss = '<style data-class="sticky">.sticky:before {top:' + origPaddingTop + 'px; ' + 
-    'border-top-width: ' + origBorderTopWidth + '; border-top-style: ' + origBorderTopStyle + '; border-top-color: ' + origBorderTopColor +';}</style>';
+    var origBorderTopWidth = frameHeader.css('border-top-width');
+    var origBorderTopStyle = frameHeader.css('border-top-style');
+    var origBorderTopColor = frameHeader.css('border-top-color');
+    var stickyBeforeCss = `<style data-class='sticky'>.sticky:before {top:${origPaddingTop}px; border-top-width:${origBorderTopWidth}; border-top-style:${origBorderTopStyle}; border-top-color:${origBorderTopColor};}</style>`;
     frame.contents().off('scroll').on('scroll', function(event){
         var topPos = $(this).scrollTop();
         if (topPos >= offsetTop - 20) {
-            if (!frameHeader.hasClass("sticky")) {
+            if (!frameHeader.hasClass('sticky')) {
                 // sticky css will set margin-top to 0, otherwise the rolling content will appear in the margin-top area.
                 // To maintain the spacing and look with margin-top removed, replace padding-top and border-top
                 // with temporarily values and adjust sticky header with calculated padding-top and border-top.
-                frameHeader.css("padding-top", offsetTop + origPaddingTop);
-                frameHeader.css("border-top-width", "0px");
-                frameHeader.css("border-top-style", "solid");
-                frameHeader.css("border-top-color", "transparent");
+                frameHeader.css('padding-top', offsetTop + origPaddingTop);
+                frameHeader.css('border-top-width', '0px');
+                frameHeader.css('border-top-style', 'solid');
+                frameHeader.css('border-top-color', 'transparent');
 
                 if ($(this).find('head style[data-class="sticky"]').length) {
                     $(this).find('head style[data-class="sticky"]').replaceWith(stickyBeforeCss);
                 } else {
                     $(this).find('head').append(stickyBeforeCss);
                 }
-                frameHeader.addClass("sticky");
+                frameHeader.addClass('sticky');
             }
         } else {
-            if (frameHeader.hasClass("sticky")) {
-                frameHeader.removeClass("sticky");
+            if (frameHeader.hasClass('sticky')) {
+                frameHeader.removeClass('sticky');
                 /* restore the original padding-top and border-top css */
-                frameHeader.css("padding-top", origPaddingTop);
-                frameHeader.css("border-top-width", origBorderTopWidth);
-                frameHeader.css("border-top-style", origBorderTopStyle);
-                frameHeader.css("border-top-color", origBorderTopColor);
+                frameHeader.css('padding-top', origPaddingTop);
+                frameHeader.css('border-top-width', origBorderTopWidth);
+                frameHeader.css('border-top-style', origBorderTopStyle);
+                frameHeader.css('border-top-color', origBorderTopColor);
             }
         }
     });
@@ -229,11 +228,11 @@ function hideFooter(element) {
     var rightFrame = javadoc_container.find(CLASS_FRAME);
     var rightFrameViewportHeight = rightFrame.contents()[0].documentElement.clientHeight;
     var height = element.height(); 
-    var footer = $("footer");        
+    var footer = $('footer');        
 
     // Show footer if the scrollTop plus the viewport height of the right iFrame is at least 85% past the bottom of the right iFrame.
     if ((scrollTop + rightFrameViewportHeight) > height * .85) {
-        if(!footer.data('visible') || footer.data('visible') === "false"){
+        if(!footer.data('visible') || footer.data('visible') === 'false'){
             footer.data('visible', true);
             footer.css('display', 'block');
         }
@@ -263,16 +262,16 @@ function setDynamicIframeContent() {
     var hashPage = parent.window.location.hash;
     
     // setup the default html path
-    if (defaultPackageHtml === "") {
-        var alocation = $('#javadoc_container').contents().find(".leftTop iframe").contents().attr("location");
+    if (defaultPackageHtml === '') {
+        var alocation = $('#javadoc_container').contents().find('.leftTop iframe').contents().attr('location');
         defaultHtmlRootPath = getJavaDocHtmlPath(alocation.href, true);
         defaultPackageHtml = defaultHtmlRootPath + DEFAULT_PACKAGE_HTML;
         defaultClassHtml = defaultHtmlRootPath + DEFAULT_CLASS_HTML;
     }
 
-    if (hashPage != "" && hashPage != undefined) {
+    if (hashPage != '' && hashPage != undefined) {
         hashPage = hashPage.substring(1);  // take out the #
-        var splitHashPage = hashPage.split("&");
+        var splitHashPage = hashPage.split('&');
         for (i = 0; i < splitHashPage.length; i++) {
             var hashString = splitHashPage[i].trim();
             if (hashString.indexOf(PACKAGE_HASH) === 0) {
@@ -281,10 +280,10 @@ function setDynamicIframeContent() {
                 var tmpClassPage = hashString;
                 if (hashString.indexOf(CLASS_HASH) === 0) {
                     tmpClassPage = hashString.substring(6);
-                } else if (hashString.indexOf("=") !== -1) {
-                    tmpClassPage = "";
+                } else if (hashString.indexOf('=') !== -1) {
+                    tmpClassPage = '';
                 }
-                if (tmpClassPage !== "") {
+                if (tmpClassPage !== '') {
                     targetPage.class = tmpClassPage;
                 }
             }
@@ -300,7 +299,7 @@ function setDynamicIframeContent() {
 }
 
 function addClickListeners() {
-    var iframes = $('#javadoc_container').contents().find("iframe");
+    var iframes = $('#javadoc_container').contents().find('iframe');
  
     $( iframes ).each(function() {
         addClickListener($(this).contents()); 
@@ -308,7 +307,7 @@ function addClickListeners() {
 }
 
 function addClickListener(contents) {
-    contents.bind("click", function(e) {
+    contents.bind('click', function(e) {
         var handlingClick = true;
         var iframeName = CLASS_FRAME;
         var hashKey = CLASS_HASH;
@@ -322,20 +321,20 @@ function addClickListener(contents) {
             // <a href ...>
             //   <code> ... </code>
             // </a>
-            if (e.target.parentNode.localName === "a") {
+            if (e.target.parentNode.localName === 'a') {
                 href = e.target.parentNode.href;
-                if (e.target.parentNode.target === "packageFrame") {
+                if (e.target.parentNode.target === 'packageFrame') {
                     iframeName = PACKAGE_FRAME;
                     hashKey = PACKAGE_HASH;
                 }
             } else {
                 handlingClick = false;
             }
-        } else if (e.target.target === "packageFrame") {
+        } else if (e.target.target === 'packageFrame') {
             iframeName = PACKAGE_FRAME;
             hashKey = PACKAGE_HASH;
-        } else if (e.target.href && e.target.href.indexOf("javascript:") === 0) {
-            // let javadoc handles the click for "All/Instance/Abstract" methods in
+        } else if (e.target.href && e.target.href.indexOf('javascript:') === 0) {
+            // let javadoc handles the click for 'All/Instance/Abstract' methods in
             // the Method Summary section
             handlingClick = false;
         }
@@ -365,25 +364,25 @@ function addClickListener(contents) {
 }
 
 function setPackageContainerHeight() {
-    var packageContainer = $('#javadoc_container').contents().find(".leftBottom");
-    if (packageContainer.css("height") !== "55%") {
+    var packageContainer = $('#javadoc_container').contents().find('.leftBottom');
+    if (packageContainer.css('height') !== '55%') {
         // restore the height in case it is collapsed
-        packageContainer.css("height", "55%");
+        packageContainer.css('height', '55%');
     }
 }
 
 function setIFrameContent(iframeName, href) {
     var iframeContent = $('#javadoc_container').contents().find(iframeName).contents();
-    var errorhref = "/docs/ref/javadocs/doc-404.html";
+    var errorhref = '/docs/ref/javadocs/doc-404.html';
     // get current version to create path to all classes frame
     var path = window.top.location.pathname;
-    if (path.includes("microprofile")) {
+    if (path.includes('microprofile')) {
         var currentVersion = path.slice(-4, -1);
-        var allClassesHref = "/javadocs/microprofile-" + currentVersion + "-javadoc/allclasses-frame.html";
+        var allClassesHref = '/javadocs/microprofile-' + currentVersion + '-javadoc/allclasses-frame.html';
     }
     else {
         var currentVersion = path.slice(-2, -1);
-        var allClassesHref = "/javadocs/liberty-javaee" + currentVersion + "-javadoc/allclasses-frame.html";
+        var allClassesHref = '/javadocs/liberty-javaee' + currentVersion + '-javadoc/allclasses-frame.html';
     }
 
     // check if href results in 404 and redirect to doc-404.html if it does
@@ -391,15 +390,15 @@ function setIFrameContent(iframeName, href) {
     http.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
            // replace the content only if the current content is from a different href
-           if (iframeContent.attr("location").href !== href) {    
-               iframeContent.attr("location").replace(href);
+           if (iframeContent.attr('location').href !== href) {    
+               iframeContent.attr('location').replace(href);
            }
         } else if (this.status === 404) {
-           if (iframeName === "iframe.rightIframe") {
-               iframeContent.attr("location").replace(errorhref);
+           if (iframeName === 'iframe.rightIframe') {
+               iframeContent.attr('location').replace(errorhref);
            }
-           else if (iframeName === ".leftBottom iframe") {
-               iframeContent.attr("location").replace(allClassesHref);
+           else if (iframeName === '.leftBottom iframe') {
+               iframeContent.attr('location').replace(allClassesHref);
            }
         }
      };
@@ -416,8 +415,8 @@ function getRemainingHashParam(hash, hashName) {
     }
     if (hash.indexOf(lookForHash) !== -1) {
         try {
-            var searchHashToMatch = ".*" + lookForHash + "(.*?.html).*";
-            var regExpToMatch = new RegExp(searchHashToMatch, "g");
+            var searchHashToMatch = '.*' + lookForHash + '(.*?.html).*';
+            var regExpToMatch = new RegExp(searchHashToMatch, 'g');
             var groups = regExpToMatch.exec(hash);
             returnHash[lookForHash] = groups[1];
         } catch (ex) {
@@ -435,28 +434,28 @@ function getRemainingHashParam(hash, hashName) {
 // is used to render the content in the right iframe.
 function setHashParams(url, hashName) {
     var hash = window.location.hash;
-    if (url !== undefined && url != "") {
+    if (url !== undefined && url != '') {
         var htmlPath = getJavaDocHtmlPath(url);
         var hashString = hashName + htmlPath;
         if (window.location.hash.indexOf(hashString) === -1) {
             if (window.location.hash.indexOf(hashName) !== -1) {
                 try {
                     // take out existing hash string with same name first
-                    var hashNameToMatch = "(.*)" + hashName + ".*?.html(.*)";
-                    var regExpToMatch = new RegExp(hashNameToMatch, "g");
+                    var hashNameToMatch = '(.*)' + hashName + '.*?.html(.*)';
+                    var regExpToMatch = new RegExp(hashNameToMatch, 'g');
                     var groups = regExpToMatch.exec(window.location.hash);
                     if (groups) {
                         hash = groups[1] + hashString + groups[2];
                     } else {
-                        hash = "#" + hashString;
+                        hash = '#' + hashString;
                     }
                 } catch (ex) {
                 }
             } else {
-                if (window.location.hash.indexOf("#") === -1) {
-                    hashString = "#" + hashString;  // no hash yet
+                if (window.location.hash.indexOf('#') === -1) {
+                    hashString = '#' + hashString;  // no hash yet
                 } else {
-                    hashString = "&" + hashString;  // already has existing hash
+                    hashString = '&' + hashString;  // already has existing hash
                 }
                 hash = window.location.hash + hashString;
             }
@@ -466,11 +465,11 @@ function setHashParams(url, hashName) {
     // displayed for package/class frame content, provide the hash to point to the default html too.
     if (hash.indexOf(PACKAGE_HASH) === -1) {
         // add default package to hash
-        hash += "&" + PACKAGE_HASH + getJavaDocHtmlPath(defaultPackageHtml);
+        hash += '&' + PACKAGE_HASH + getJavaDocHtmlPath(defaultPackageHtml);
     }
     if (hash.indexOf(CLASS_HASH) === -1) {
         // add default class to hash
-        hash += "&" + CLASS_HASH + getJavaDocHtmlPath(defaultClassHtml);
+        hash += '&' + CLASS_HASH + getJavaDocHtmlPath(defaultClassHtml);
     }
     return hash;
 }
@@ -479,10 +478,10 @@ function setHashParams(url, hashName) {
 // if returnBase is true, return http://localhost:4000/javadocs/microprofile-1.3-javadoc/
 // otherwise return javax/enterprise/context/package-frame.html
 function getJavaDocHtmlPath(href, returnBase) {
-    var javaDocPath = "";
+    var javaDocPath = '';
     try {
-        var stringToMatch = "(.*/javadocs/.*-javadoc/)(.*)";
-        var regExpToMatch = new RegExp(stringToMatch, "g");
+        var stringToMatch = '(.*/javadocs/.*-javadoc/)(.*)';
+        var regExpToMatch = new RegExp(stringToMatch, 'g');
         var groups = regExpToMatch.exec(href);
         if (returnBase) {
             javaDocPath = groups[1];
@@ -512,7 +511,7 @@ $(document).ready(function() {
         addExpandAndCollapseToggleButtons();  
         addNavHoverListener();
         addLeftFrameScrollListener('.leftTop iframe', 'h2[title="Packages"]');
-        addLeftFrameScrollListener(PACKAGE_FRAME, ".bar");
+        addLeftFrameScrollListener(PACKAGE_FRAME, '.bar');
         addScrollListener();
         addClickListeners();
         addiPadScrolling();
@@ -526,8 +525,8 @@ $(document).ready(function() {
         $('#javadoc_container').contents().find(PACKAGE_FRAME).on('load', function(){
             addClickListener($(this).contents());
             // add back the toggle expand/collapse button
-            addExpandAndCollapseToggleButtonForPackageFrame($(this).contents(), $('#javadoc_container').contents().find(".leftBottom"));
-            addLeftFrameScrollListener(PACKAGE_FRAME, ".bar");
+            addExpandAndCollapseToggleButtonForPackageFrame($(this).contents(), $('#javadoc_container').contents().find('.leftBottom'));
+            addLeftFrameScrollListener(PACKAGE_FRAME, '.bar');
         });
 
         setDynamicIframeContent();

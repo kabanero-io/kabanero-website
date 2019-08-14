@@ -90,7 +90,7 @@ function setupDisplayContent() {
 // - update hash if requested
 function loadContent(targetTOC, tocHref, addHash) {
     $('footer').hide();
-    if (targetTOC.length === 1) {
+    if (targetTOC.length === 1 && tocHref !== '/docs/ref/general/docs-welcome.html') { //exclude the intro doc from being highlighted
         setSelectedTOC(targetTOC);
     } else {
         deselectedTOC();
@@ -329,6 +329,16 @@ $(document).ready(function () {
     if (window.location.hash) {
         $(window).trigger('hashchange');
     } else {
-        selectFirstDoc();
+        loadContent($('#intro-hidden'), '/docs/ref/general/docs-welcome.html');
     }
 });
+
+function toggleIcon(button) {
+    let iconId = $(button).data('icon');
+    console.log($(`#${iconId}`).attr('src'));
+    if($(`#${iconId}`).attr('src') === '/img/icon_plus.png'){
+        $(`#${iconId}`).attr('src', '/img/icon_minus.png');
+    }else{
+        $(`#${iconId}`).attr('src', '/img/icon_plus.png');
+    }
+}

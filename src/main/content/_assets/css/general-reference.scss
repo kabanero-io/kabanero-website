@@ -21,12 +21,12 @@
     height: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 0px;
 }
 
 .toc-selected {
     padding-left: 22px !important;
     margin-left: -30px;
+    color: #000000 !important;
 }
 
 #toc-column ul li div[href]:hover {
@@ -45,6 +45,7 @@
 #general-content {
     height: 100%;
     overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 #general-content:focus {
@@ -213,4 +214,29 @@ tableblock {
 
 #docs-title {
     margin-left:40px;
+}
+
+.doc-category{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 36px;
+    color: #000000;
+    letter-spacing: 0.23px;
+    line-height: 26px;
+}
+
+.doc-category:focus {
+    box-shadow:none !important;
+}
+
+#general-toc > li {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.no-display{
+    display:none !important;
+}
+
+.dropdown-item:active, .dropdown-item:hover{
+    color: #ffffff;
+    background-color: #C43804;
 }

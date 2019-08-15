@@ -17,7 +17,7 @@
  ******************************************************************************/
 
 function loadWhatsNewModal(){
-    let currentVersion = $('#modal-title').text().replace(/[^\d.]/g, '');
+    let currentVersion = String($('#modal-title').data('version'));
 
     if (localStorage.didOpenWhatsNew === 'false') {
         $('.toast').toast('show');

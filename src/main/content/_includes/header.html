@@ -52,7 +52,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 {% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.md' %}
-                <h5 id="modal-title" class="modal-title">{{whatsNewDoc[0].title}}</h5>
+                <h5 data-version="{{whatsNewDoc[0].version}}" id="modal-title" class="modal-title">{{whatsNewDoc[0].title}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

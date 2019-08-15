@@ -16,6 +16,17 @@
  *
  ******************************************************************************/
 
+ @mixin button-link {
+    display: block;
+    width: 227px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: $color-kabanero;
+    border-radius: 7px;
+    text-align: center;
+}
+
 /* NAVIGATION BAR */
 
 //declare variables
@@ -132,6 +143,63 @@ main {
     margin: 6px 25px 0 0;
 }
 
+#whats-new-toast{
+    margin-bottom: 0;
+    max-width: 100%;
+    text-align: left;
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    border: none;
+    padding: 1rem 1rem;
+    padding-left: 15px;
+}
+
+#whats-new-toast .close-button{
+    color: white;
+}
+
+.toast-text{
+    font-size: 1.1rem;
+}
+
+#learn-more-modal-button{
+    @include button-link;
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px 35px;
+    text-align: center;
+    float: right;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.hide-toast-div{
+    display: none;
+}
+
+#modal-close-button{
+    @include button-link;
+    cursor: pointer;
+    padding: 8px 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.modal-title{
+    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+    font-size: 35px;
+}
+
+.modal-body{
+    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+}
+
+.whats-new-modal{
+    max-width: 850px;
+    margin-top: 15%;
+}
 #share_blog_twitter_img{
     height: 30px;
     margin: 0 15px 0 0;

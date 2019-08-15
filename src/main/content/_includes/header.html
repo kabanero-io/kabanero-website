@@ -1,4 +1,14 @@
 <header>
+
+    <!-- New release notification toast -->
+    <div aria-atomic="true" id="whats-new-toast" class="toast hide-toast-div" data-autohide="false">
+        <strong class="mr-auto toast-text">Check out what's in the latest release of Kabanero</strong>
+        <button type="button" class="ml-2 mb-1 close close-button" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <a class="col-md-5" id="learn-more-modal-button" data-toggle="modal" data-target="#whats-new-modal">Learn More</a>
+    </div>
+
     <nav class="navbar navbar-expand-md navbar-light bg-custom">
         <a class="navbar-brand" href="/">
           <img id="kabanero_nav_img" src="/img/Kabanero_logo_white.png" class="img-fluid" alt="Kabanero Nav image">
@@ -33,3 +43,26 @@
         </div>
     </nav>
 </header>
+
+
+<!-- What's new Modal -->
+<div class="modal fade" tabindex="-1" id="whats-new-modal" role="dialog"
+    aria-labelledby="whatsNewModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                {% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.md' %}
+                <h5 data-version="{{whatsNewDoc[0].version}}" id="modal-title" class="modal-title">{{whatsNewDoc[0].title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{whatsNewDoc[0].content | markdownify}}
+            </div>
+            <div class="modal-footer">
+                <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>

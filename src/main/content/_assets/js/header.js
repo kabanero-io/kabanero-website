@@ -18,9 +18,9 @@
 
 function loadWhatsNewModal(){
     let currentVersion = String($('#modal-title').data('version'));
-
+    
     if (localStorage.didOpenWhatsNew === 'false') {
-        $('.toast').toast('show'); 
+        $('.toast').toast('show');
     }
     else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
         localStorage.setItem('whatsNewVersion', currentVersion);
@@ -37,7 +37,7 @@ function loadWhatsNewModal(){
     });
 }
 
- // prevent scrolling when navbar dropdown is opened
+// prevent scrolling when navbar dropdown is opened
 $(document).ready(function(){
     $('.navbar-toggler').click(function(){
 
@@ -48,6 +48,6 @@ $(document).ready(function(){
         }
     });    
 
-    loadWhatsNewModal();
+    //loadWhatsNewModal();
 });
 

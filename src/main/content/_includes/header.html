@@ -46,21 +46,23 @@
 
 
 <!-- What's new Modal -->
-{% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
-{% for doc in whatsNewDoc %}
-<div class="modal fade" tabindex="-1" id="whatsNewModal" href="{{ doc.url }}" role="dialog"
+<div class="modal fade" tabindex="-1" id="whatsNewModal" role="dialog"
     aria-labelledby="whatsNewModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered whats-new-modal" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-body"></div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
-                        aria-hidden="true">&times;</span> </button>
-                </div>
+                {% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.adoc' %}
+                <h5 class="modal-title">{{whatsNewDoc[0].title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{whatsNewDoc[0].content | asciidocify}}
+            </div>
             <div class="modal-footer">
                 <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>
             </div>
         </div>
     </div>
 </div>
-{% endfor %}

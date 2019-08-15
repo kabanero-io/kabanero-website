@@ -16,27 +16,24 @@
  *
  ******************************************************************************/
 
-function updateLocalStorageValue(key, value){
-    localStorage.setItem(key, value);
-}
-
 function loadWhatsNewModal(){
-    let currentVersion = $('#general_title').text().replace(/[^\d.]/g, '');
-    if (currentVersion === localStorage.getItem('whatsNewVersion') && !JSON.parse(localStorage.didOpenWhatsNew)) {
+    let currentVersion = $('.modal-title').text().replace(/[^\d.]/g, '');
+    
+    if (currentVersion === localStorage.getItem('whatsNewVersion') && localStorage.didOpenWhatsNew === 'false') {
         $('.toast').toast('show');
     }
     else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
-        updateLocalStorageValue('whatsNewVersion', currentVersion);
-        updateLocalStorageValue('didOpenWhatsNew', false);
+        localStorage.setItem('whatsNewVersion', currentVersion);
+        localStorage.setItem('didOpenWhatsNew', false);
         $('.toast').toast('show');
     }
     
     $('#whatsNewModal').on('hidden.bs.modal', function () {
-        updateLocalStorageValue('didOpenWhatsNew', true);
+        localStorage.setItem('didOpenWhatsNew', true);
     });
     
     $('#whats-new-toast').on('hidden.bs.toast', function () {
-        updateLocalStorageValue('didOpenWhatsNew', true);
+        localStorage.setItem('didOpenWhatsNew', true);
     });
 }
 
@@ -50,13 +47,7 @@ $(document).ready(function(){
             $('body').css('overflow', 'auto');
         }
     });    
-    
-    if ($('#whatsNewModal').attr('href')) {
-        $(".modal-body").load($('#whatsNewModal').attr('href'), function(response, status) {
-            if (status === "success") {
-                loadWhatsNewModal();
-            }
-        });
-    }
+
+    loadWhatsNewModal();
 });
 

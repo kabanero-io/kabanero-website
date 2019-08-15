@@ -15,7 +15,32 @@
  * limitations under the License.
  *
  ******************************************************************************/
-// prevent scrolling when navbar dropdown is opened
+
+function updateLocalStorageValue(key, value){
+    localStorage.setItem(key, value);
+}
+
+function loadWhatsNewModal(){
+    let currentVersion = $('#general_title').text().replace(/[^\d.]/g, '');
+    if (currentVersion === localStorage.getItem('whatsNewVersion') && !JSON.parse(localStorage.didOpenWhatsNew)) {
+        $('.toast').toast('show');
+    }
+    else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
+        updateLocalStorageValue('whatsNewVersion', currentVersion);
+        updateLocalStorageValue('didOpenWhatsNew', false);
+        $('.toast').toast('show');
+    }
+    
+    $('#whatsNewModal').on('hidden.bs.modal', function () {
+        updateLocalStorageValue('didOpenWhatsNew', true);
+    });
+    
+    $('#whats-new-toast').on('hidden.bs.toast', function () {
+        updateLocalStorageValue('didOpenWhatsNew', true);
+    });
+}
+
+ // prevent scrolling when navbar dropdown is opened
 $(document).ready(function(){
     $('.navbar-toggler').click(function(){
 
@@ -24,42 +49,14 @@ $(document).ready(function(){
         } else {
             $('body').css('overflow', 'auto');
         }
-    });
-
+    });    
+    
     if ($('#whatsNewModal').attr('href')) {
         $("#modal-body").load($('#whatsNewModal').attr('href'), function(response, status) {
             if (status === "success") {
-                let version = `${$('#general_title').text().replace(/[^\d.]/g, '')}`;
-                let localStorageValue = localStorage.getItem('whatsNew');
-                localStorageValue = localStorageValue ? JSON.parse(localStorageValue) : {};
-        
-                if (version === localStorageValue['whatsNewVersion']) {
-                    if (!localStorageValue['didOpenWhatsNew']) {
-                        $('.toast').toast('show');
-                    }
-                }
-                else if (version !== localStorageValue['whatsNewVersion']) {
-                    updateLocalStorageValue(version, false);
-                    $('.toast').toast('show');
-                }
-    
-                function updateLocalStorageValue(whatsNewVersion, didOpenWhatsNew){
-                    localStorageValue['whatsNewVersion'] = whatsNewVersion;
-                    localStorageValue['didOpenWhatsNew'] = didOpenWhatsNew;
-                    localStorage.setItem('whatsNew', JSON.stringify(localStorageValue));
-                }
-            
-                $('#whatsNewModal').on('hidden.bs.modal', function () {
-                    updateLocalStorageValue(version, true);
-                });
-                    
-                $('#whats-new-toast').on('hidden.bs.toast', function () {
-                    updateLocalStorageValue(version, true);
-                });
-            } 
+                loadWhatsNewModal();
+            }
         });
     }
-    
 });
-
 

@@ -17,9 +17,9 @@
  ******************************************************************************/
 
 function loadWhatsNewModal(){
-    let currentVersion = $('.modal-title').text().replace(/[^\d.]/g, '');
-    
-    if (currentVersion === localStorage.getItem('whatsNewVersion') && localStorage.didOpenWhatsNew === 'false') {
+    let currentVersion = $('#modal-title').text().replace(/[^\d.]/g, '');
+
+    if (localStorage.didOpenWhatsNew === 'false') {
         $('.toast').toast('show');
     }
     else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
@@ -28,7 +28,7 @@ function loadWhatsNewModal(){
         $('.toast').toast('show');
     }
     
-    $('#whatsNewModal').on('hidden.bs.modal', function () {
+    $('#whats-new-modal').on('hidden.bs.modal', function () {
         localStorage.setItem('didOpenWhatsNew', true);
     });
     

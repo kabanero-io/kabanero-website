@@ -52,7 +52,7 @@ $(document).ready(function(){
     });    
     
     if ($('#whatsNewModal').attr('href')) {
-        $("#modal-body").load($('#whatsNewModal').attr('href'), function(response, status) {
+        $(".modal-body").load($('#whatsNewModal').attr('href'), function(response, status) {
             if (status === "success") {
                 loadWhatsNewModal();
             }

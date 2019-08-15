@@ -20,7 +20,7 @@ function loadWhatsNewModal(){
     let currentVersion = String($('#modal-title').data('version'));
 
     if (localStorage.didOpenWhatsNew === 'false') {
-        $('.toast').toast('show');
+        $('.toast').toast('show'); 
     }
     else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
         localStorage.setItem('whatsNewVersion', currentVersion);

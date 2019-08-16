@@ -39,7 +39,6 @@ Based on the results of the build, and if further review is needed, more discuss
 If the reviewer is satisfied with the results, and agrees to the change, the PR will be merged to integration, otherwise the PR will be closed with an explanation and suggestion for follow up.
 
 ## Coding Standards
-Contributing to Kabanero
 
 Please ensure you follow the coding standards used throughout the existing code base. Some basic rules include:
 
@@ -48,6 +47,7 @@ Please ensure you follow the coding standards used throughout the existing code 
 - For images, ids, and classes use hypens for spacing (ex. `this-is-a-class`)
 
 # Local Development Setup
+
 This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io site.
 
 ## Prereqs
@@ -56,20 +56,24 @@ This section describes the steps needed to set up your local development environ
 - Docker (for optional step)
 - mvn (for optional step)
 
-## Clone the repo
-- `git clone https://github.com/kabanero-io/kabanero-website.git`
-- `cd kabanero-website`
+## Set Up
 
-## Install ruby libraries
-- From inside the `/kabanero-website` directory, run `bundle install`
+1. `git clone https://github.com/kabanero-io/kabanero-website.git`
+1. `cd kabanero-website`
+1. Run `bundle install`
+1. Run `./scripts/jekyll_serve_dev.sh` to have Jekyll serve the static site.
+  * This script calls `jekyll serve` which builds the site and starts a small server to serve the static files. It will do a live reload anytime a file is changed.
+  * This does not run the code we have for the Liberty server in `src/main/java`. To run that code you will need to do the optional Docker step below
+1. Go to http://localhost:4000/ in your browser
 
-## Run server with jekyll script
-- From inside the `/kabanero-website` directory, run `./scripts/jekyll_serve_dev.sh` to start your local server.
-- Go to http://localhost:4000/
+# (Optional) Use Docker to Build and run the full site
 
-## (Optional) Run site in Docker container
-1. Run `./scripts/build_jekyll_maven.sh` which will create a target directory at root with the war and a default server under `target/liberty/wlp/usr/servers`
-1. Run `kube/build-deploy-image.sh` this will create the Docker image on your computer
-1. Run `docker run -d --rm -p 9443:9443 --name kabanero kabanero-site:latest`
-    1. The image name by default is `kabanero-site:latest`, but if you changed the name you will need to replace it with the command above
-    1. Go to https://localhost:9443 in your browser and accept the self signed certificate warning to see the site
+## Prereqs
+  * [Git](https://git-scm.com/downloads)
+  * [Docker](https://docs.docker.com/install/)
+
+1. Clone this repo: `git clone git@github.com:kabanero-io/kabanero-website.git`
+1. `cd` into the root of the repository
+1. Run the docker build commmand: `docker build -t kabanero-site -f kube/Dockerfile .`
+1. Run the docker site in a docker container: `docker run --rm -p 9443:9443 kabanero-site`
+1. Wait a few seconds for the container to start and then go to `https://localhost:9443` in your browser to view the website.

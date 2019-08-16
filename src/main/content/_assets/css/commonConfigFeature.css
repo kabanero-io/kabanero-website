@@ -51,20 +51,11 @@ html, body, main {
     letter-spacing: 0;
     line-height: 18px;
     list-style: none;
-    font-weight: 300;
+    font-weight:500;
     color: #000000;
     font-size: 18px;
     word-wrap: break-word;
     padding: 7px 30px 7px 10px;
-}
-
-.toc-selected {
-    background:#fdf2ea;
-    border-left: 8px solid #C438042B; 
-    font-weight: 500 !important; 
-    color: #666666 !important;
-    margin-right: -30px;
-    padding-right: 60px !important;
 }
 
 #toc-column ul li a[href]:hover, #toc-column ul li div[href]:hover {

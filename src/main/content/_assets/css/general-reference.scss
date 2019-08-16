@@ -21,12 +21,12 @@
     height: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 45px;
 }
 
 .toc-selected {
-    padding-left: 22px !important;
-    margin-left: -30px;
-    color: #000000 !important;
+    font-weight:600 !important;
+    font-size:20px !important;
 }
 
 #toc-column ul li div[href]:hover {
@@ -58,12 +58,16 @@
 }
 
 #general_title {
-    color: #24243B;
+    color: #000000;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight:700;
 }
 
 div.sectionbody > div.paragraph > p, div.sectionbody > div.dlist > dl > dd > p {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
-    color: #24243B;
+    color: #000000;
     letter-spacing: 0;
     line-height: 24px;
     padding-top: 11px;
@@ -74,6 +78,7 @@ div.sectionbody > div.paragraph > p, div.sectionbody > div.dlist > dl > dd > p {
 }
 
 .sect1 > h2 {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     color: #24243B;
     letter-spacing: 0;
@@ -218,7 +223,8 @@ tableblock {
 
 .doc-category{
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 36px;
+    font-size: 16px;
+    font-weight:600;
     color: #000000;
     letter-spacing: 0.23px;
     line-height: 26px;
@@ -226,6 +232,11 @@ tableblock {
 
 .doc-category:focus {
     box-shadow:none !important;
+}
+
+.doc-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
 }
 
 #general-toc > li {
@@ -239,4 +250,18 @@ tableblock {
 .dropdown-item:active, .dropdown-item:hover{
     color: #ffffff;
     background-color: #C43804;
+}
+
+.plus-minus-icon{
+    height: 15px;
+    width: 15px;
+    right: 15px;
+    position: relative;
+    bottom: 1px;
+}
+
+#search-button{
+    height: 30px;
+    position: relative;
+    bottom: 1px;
 }

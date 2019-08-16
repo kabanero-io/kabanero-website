@@ -1,53 +1,71 @@
 ---
 layout: doc
 title: General Reference
-type: general
 css:
 - commonConfigFeature
 - general-reference
 js: general-references
 permalink: /docs/
 ---
-{% assign generalDocs = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | sort: 'title' %}
+{% assign collectionsDoc = site.pages | where: 'type', "doc" %}
+
+{% assign docCategories = '' | split: '' %}
+
+{% for doc in collectionsDoc %}
+    {% assign docCategory = doc.doc-category | split: '/n' %}
+    {% assign docCategories = docCategories | concat: docCategory %}
+{% endfor %}
+
+{% assign uniqueCats =  docCategories | uniq %}
+
+
 {% assign introDoc = site.pages | where: 'title', 'Welcome to Docs' %}
 <div id="background-container">
     <div class="row">
         <!-- table of contents section -->
-        <div id="toc-column" class="col-sm-3 collapsed in">
-            <input type="text" placeholder="search"><hr>
+        <div id="toc-column" class="col-sm-2 collapsed in">
+            <input id="doc-search" type="text" placeholder="search"><button id="search-button" onclick="searchDocs()"><i class="fa fa-search"></i></button>
+            <hr>
             <div class="accordion" id="docs-accordion">
-                <h2>
-                    <button class="btn doc-category" id="general-button" type="button" data-toggle="collapse" data-target="#general-docs" onclick="toggleIcon(this)" data-icon="general-plus-minus-icon">
-                        <img class="plus-minus-icon" id="general-plus-minus-icon" src="/img/icon_plus.png">
-                        General
-                    </button>
-                </h2>
-                <div id="general-docs" class="collapse" data-parent="#docs-accordion">
-                    <div id="toc-inner">
-                        {% if generalDocs.size > 0 %}
-                        <div id="toc-container">
-                            <ul id="general-toc">
-                                {% for doc in introDoc %}
-                                <li class="no-display">
-                                    <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
-                                </li>
-                                {%  endfor %}
-                                {% for doc in generalDocs %}
-                                <li>
-                                    <div role="button" href="{{ doc.url }}" tabindex="0">{{ doc.title }}</div>
-                                </li>
-                                {% endfor %}
-                            </ul>
+                {% for cat in uniqueCats | uniq %}
+                {% assign catNoSpaces = cat | replace: " ", "" %}
+                {% assign dataTarget = "#" | append: catNoSpaces %}
+                {% assign buttonId = catNoSpaces | append: '-button' %}
+                {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
+                    <h2>
+                        <button class="btn doc-category" id={{buttonId}} type="button" data-toggle="collapse" data-target={{dataTarget}} data-icon={{iconId}} onclick="toggleIcon(this)">
+                            <img class="plus-minus-icon" id={{iconId}} src="/img/icon_plus.png">
+                            {{cat}}
+                        </button>
+                    </h2>
+                    {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                    <div id={{catNoSpaces}} class="collapse" data-parent="#docs-accordion">
+                        <div id="toc-inner">
+                            {% if currCatDocs.size > 0 %}
+                            <div id="toc-container">
+                                <ul id="general-toc">
+                                    {% for doc in introDoc %}
+                                    <li class="no-display">
+                                        <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
+                                    </li>
+                                    {%  endfor %}
+                                    {% for doc in currCatDocs %}
+                                    <li class="doc-link">
+                                        <div class="doc-title" role="button" href="{{ doc.url }}" tabindex="0">{{ doc.title }}</div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% else %}
+                            <div>No doc found</div>
+                            {% endif %}
                         </div>
-                        {% else %}
-                        <div>No doc found</div>
-                        {% endif %}
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <!-- content -->
-        <div id="general-content" tabindex="0" class="col-sm-9 position-relative">
+        <div id="general-content" tabindex="0" class="col-sm-10 position-relative">
         </div>
     </div>
 </div>

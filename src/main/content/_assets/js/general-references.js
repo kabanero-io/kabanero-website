@@ -335,10 +335,19 @@ $(document).ready(function () {
 
 function toggleIcon(button) {
     let iconId = $(button).data('icon');
-    console.log($(`#${iconId}`).attr('src'));
     if($(`#${iconId}`).attr('src') === '/img/icon_plus.png'){
         $(`#${iconId}`).attr('src', '/img/icon_minus.png');
     }else{
         $(`#${iconId}`).attr('src', '/img/icon_plus.png');
     }
+}
+
+function searchDocs(){
+    let searchTerm = document.getElementById('doc-search').value.toLowerCase();
+    let docTitles = $(".doc-title");
+    $.each(docTitles, function(index, value){
+        let docTitle = $(value).text().toLowerCase();
+        let parentElement = $(value).parent();
+        !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : parentElement.show();
+    });
 }

@@ -51,7 +51,7 @@ if [ "$JEKYLL_DRAFT_BLOGS" == "true" ]; then
 fi
 
 # Special handling for javadocs
-./scripts/modify_javadoc.sh
+#./scripts/modify_javadoc.sh
 
 echo "Copying guide images to /img/guide"
 mkdir -p src/main/content/img/guide

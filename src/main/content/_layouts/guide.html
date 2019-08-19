@@ -1,7 +1,9 @@
 ---
 layout: doc
 css:
+- header
 - toc
+- end-of-guide
 - guide-card
 - guide
 js:
@@ -9,33 +11,19 @@ js:
 - toc
 - guide
 ---
-<!-----------------------------------------------------------------------------
- -
- - Copyright 2019 IBM Corporation and others.
- -
- - Licensed under the Apache License, Version 2.0 (the "License");
- - you may not use this file except in compliance with the License.
- - You may obtain a copy of the License at
- -
- -     http://www.apache.org/licenses/LICENSE-2.0
- -
- - Unless required by applicable law or agreed to in writing, software
- - distributed under the License is distributed on an "AS IS" BASIS,
- - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- - See the License for the specific language governing permissions and
- - limitations under the License.
- -
- ------------------------------------------------------------------------------>
 
 {% include visible-tags.liquid %}
 
-<div id="background-container">
-    <div class="centered_content">
+<div id="container-fluid">
+    <div class="row">
         <!-- Guide's table of contents section -->            
-        <div id="toc-column" class="collapse inline open">
+        <div id="toc-column" class="col-md-2 collapse inline open">
             <div id="toc-inner">
                 {% assign toc = page.document | tocify_asciidoc %}
                 {% if toc %}
+                <div id="close-container">
+                    <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
+                </div>
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
                     <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
                 </div>
@@ -56,41 +44,58 @@ js:
                     </div>
                 {% endif %}                    
             </div>                                
-        </div> 
-        <!-- Entire guide section -->
-        <div id="guide-column" class="position-relative open">
-            <div id="guide-content">
-                <!-- Guide header section -->
-                <div id="guide-meta" class="sect1" tabindex="0">
-                    <h1 id="guide-title">{{ page.title }}</h1>
-                    <div id="duration-container">
-                        <span id="guide-duration">{{ page.duration }}</span>
-                    </div>
-                </div>
-
-                <div class="scroller-anchor"></div>
-                <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <div id="mobile-toc-accordion">
-                        <button class="breadcrumb-hamburger toc-toggle collapsed" type="button" tabindex="0">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
-                        </button>
-                        <span>Table of contents</span>
-                    </div>
-                </div>
-
-                <!-- Guide content section -->
-                {{ content }}
-            
+        </div>
+        <div class="col-md-10">
+            <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
+                <img src="/img/arrow-white.svg" alt="arrow">
             </div>
-            <div id="guide-section-copied-confirmation">Copied to clipboard</div>
-            <a id="copy-to-clipboard" href=""></a>
+            <!-- Entire guide section -->
+            <div id="guide-column" class="position_relative open">
+                <div id="guide-content">
+                    <!-- Guide header section -->
+                    <div id="guide-meta" class="sect1" tabindex="0">
+                        <h1 id="guide-title">{{ page.title }}</h1>
+                        <div id="duration-container">
+                            <img src="/img/guide-duration-clock-icon-large.svg" alt="duration">
+                            <span id="guide-duration">{{ page.duration }}</span>
+                        </div>
+                        <div id="mobile-github-section">
+                                <div id="mobile-github-clone-popup-title"><span class="dark_green_link_light_background">Git clone</span><span> to get going right away:</span></div>
+                            <div id="mobile-github-clone-popup-repo">
+                                <span>git clone https://github.com/Kabanero-io/guide-{{page.url | replace: '/guides/', ''}}.git</span>
+                                <div id="mobile-github-clone-popup-copy" tabindex="0" aria-label="Copy the Github repository clone command">
+                                    <img src="/img/guides-copy-button-white.svg" alt="Copy Github clone command" title="Copy Github clone command">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scroller-anchor"></div>
+                    <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
+                        <div id="mobile-toc-accordion">
+                            <button class="breadcrumb_hamburger toc-toggle collapsed" type="button" tabindex="0">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <img src="{{ " /img/toc_close_green.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
+                            </button>
+                            <span>Table of contents</span>
+                        </div>
+                    </div>
+
+                    <!-- Guide content section -->
+                    {{ content }}
+                
+                </div>
+                <div id="guide-section-copied-confirmation">Copied to clipboard</div>
+                <img id="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    {% include end-of-guide.html %} 
+                </div>         
+            </div>     
         </div> 
-        
-    </div>    
+    </div>
 </div>
-
-

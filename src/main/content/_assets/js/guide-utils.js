@@ -125,7 +125,7 @@ function heightOfVisibleBackground() {
 // Get the absolute position of the bottom of the dark background regardless
 // of whether the bottom is in the browser's viewport
 function getBackgroundAbsoluteBottomPosition() {
-    var background = $('#background_container'),
+    var background = $('#background-container'),
     elementTop = background.offset().top,
     elementBottomPosition = elementTop + (background.outerHeight() - backgroundSizeAdjustment);
     return elementBottomPosition;
@@ -134,7 +134,7 @@ function getBackgroundAbsoluteBottomPosition() {
 // Determine if the bottom of the visible dark background is now visible
 // in the browser's viewport.
 function isBackgroundBottomVisible() {
-    var background = $('#background_container'),
+    var background = $('#background-container'),
         currentTopPosition = $(window).scrollTop(),
         currentBottomPosition = currentTopPosition + $(window).height(),
         elementBottomPosition = getBackgroundAbsoluteBottomPosition(),

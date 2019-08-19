@@ -533,21 +533,6 @@ header {
     }
 }
 
-@media (min-width: 1170px) {
-    #background_container {
-        background-image: inherit;
-        margin-bottom: 0;
-    }
-}
-
-@media (min-width: 1440px) {
-    #guide-column {
-        width: calc(100% - 400px);
-        max-width: 1000px;
-        display: inline-block;
-    }
-    
-    #guide-column.expanded {
-        width: 100%;
-    }      
+.hidden {
+    display: none;
 }

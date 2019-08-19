@@ -1,26 +1,15 @@
 <script type="text/javascript">
-    var selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
-    var currentContent = location.pathname.split('/')
-    var languages = JSON.parse($("#site-languages-json").html() || "{}");
-    
-    if(currentContent[1] === ''){
-        currentContent[1] = 'en'
-    }
-
-    if ((currentContent[1] !== selectedLanguage) && (languages[currentContent[1]]) && (languages[selectedLanguage])) {
-        switch (selectedLanguage) {
-            case 'es':
-                currentContent[1] = selectedLanguage;
-                window.location.pathname = currentContent.join('/')
-                break;
-                case 'fr':
-                currentContent[1] = selectedLanguage;
-                window.location.pathname = currentContent.join('/')
-                break;
-                default:
-                currentContent[1] = '';
-                window.location.pathname = currentContent.join('')
-                break;
+    $(document).ready(function () {
+        let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+        let currentLanguage = $('html').attr('lang');
+        let languages = JSON.parse($("#site-languages-json").html() || "{}");
+        
+        if ((currentLanguage !== selectedLanguage) && (languages[selectedLanguage])) {
+            if (selectedLanguage !== 'en') {
+                window.location.pathname = `/${selectedLanguage}/`
+            } else {
+                window.location.pathname = '';
+            }
         }
-    }
+    });
 </script>

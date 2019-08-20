@@ -14,10 +14,10 @@ js:
 
 {% include visible-tags.liquid %}
 
-<div id="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <!-- Guide's table of contents section -->            
-        <div id="toc-column" class="col-md-2 collapse inline open">
+        <div id="toc-column" class="col-md-2 collapse block open">
             <div id="toc-inner">
                 {% assign toc = page.document | tocify_asciidoc %}
                 {% if toc %}
@@ -78,7 +78,7 @@ js:
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
-                                    <img src="{{ " /img/toc_close_green.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
+                                    <img src="{{ " /img/toc-close-white.svg " | relative }}" class="hidden img-responsive" alt="Table of contents close button"/>
                             </button>
                             <span>Table of contents</span>
                         </div>
@@ -94,7 +94,7 @@ js:
             <div class="row">
                 <div class="col-md text-center">
                     {% include end-of-guide.html %} 
-                </div>         
+                </div>
             </div>     
         </div> 
     </div>

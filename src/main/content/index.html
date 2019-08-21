@@ -180,32 +180,38 @@ seo-title: Kabanero
             </div>
         </div>
         <div class="row">
-            <div class="col-md model-logo">
+            <div class="col-md model-logo" tabindex="0">
                 <button data-toggle="collapse"
                     href="#microprofile-collapse"
                     aria-expanded="false"
                     aria-controls="microprofile-collapse"
                     class="col featured-model-box"
                     alt="microprofile logo"
-                    onclick="hideAllFeaturedModelsCollapses(this)">Eclipse MicroProfile</button>
+                    tabindex="99">
+                    Eclipse MicroProfile
+                </button>
             </div>
-            <div class="col-md model-logo">
+            <div class="col-md model-logo"  tabindex="0">
                 <button data-toggle="collapse"
                     href="#spring-collapse"
                     aria-expanded="false"
                     aria-controls="spring-collapse"
                     class="col featured-model-box"
                     alt="java spring logo"
-                    onclick="hideAllFeaturedModelsCollapses(this)">Spring</button>
+                    tabindex="99">
+                    Spring
+                </button>
             </div>
-            <div class="col-md model-logo">
+            <div class="col-md model-logo"  tabindex="0">
                 <button data-toggle="collapse"
                     href="#nodejs-collapse"
                     aria-expanded="false"
                     aria-controls="nodejs-collapse"
                     class="col featured-model-box"
                     alt="nodejs logo"
-                    onclick="hideAllFeaturedModelsCollapses(this)">NodeJS</button>
+                    tabindex="99">
+                    NodeJS
+                </button>
             </div>
         </div>
         <div class="row collapse featuredModelsCollapse" id="microprofile-collapse">
@@ -337,7 +343,7 @@ seo-title: Kabanero
         </div>
         <div class="row">
             <div class="col open-source-platform-col">
-                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('modernize')" onkeypress="hideAllOpenSourcePlatformsCollapses('modernize')" >
+                <div role="button" class="open-source-platform-box" data-topic="modernize" tabindex="0">
                     <p class="open-source-platform-paragraph">
                         Modernize Applications
                     </p>
@@ -349,7 +355,7 @@ seo-title: Kabanero
                 </div>
             </div>
             <div class="col open-source-platform-col">
-                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('languages')" onkeypress="hideAllOpenSourcePlatformsCollapses('languages')">
+                <div role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
                     <p class="open-source-platform-paragraph">
                         Languages & Runtimes
                     </p>
@@ -361,7 +367,7 @@ seo-title: Kabanero
                 </div>
             </div>
             <div class="col open-source-platform-col">
-                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('develop')" onkeypress="hideAllOpenSourcePlatformsCollapses('develop')">
+                <div role="button" class="open-source-platform-box" data-topic="develop" tabindex="0">
                     <p class="open-source-platform-paragraph">
                         Develop
                     </p>
@@ -372,7 +378,7 @@ seo-title: Kabanero
                 <div class="open-source-platform-horizontal-separator"></div>
             </div>
             <div class="col open-source-platform-col">
-                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('build')" onkeypress="hideAllOpenSourcePlatformsCollapses('build')">
+                <div role="button" class="open-source-platform-box" data-topic="build" tabindex="0">
                     <p class="open-source-platform-paragraph">
                         Build
                     </p>
@@ -384,7 +390,7 @@ seo-title: Kabanero
                 </div>
             </div>
             <div class="col open-source-platform-col">
-                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('manage')" onkeypress="hideAllOpenSourcePlatformsCollapses('manage')">
+                <div role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
                     <p class="open-source-platform-paragraph">
                         Manage
                     </p>
@@ -438,22 +444,22 @@ seo-title: Kabanero
         </div>
         <div id="open-source-platform-develop-collapse" class="row collapse open-source-platform-content-box">
             <div class="row">
-                <div class="col-1 open-source-platform-image-column">
-                <a class="image-link" target="-blank" href="https://www.eclipse.org/che/">
-                    <img class="open-source-platform-image-centered open-source-platform-image-large" src="/img/logos/85x85/eclipse-che.png" />
-                </a>
+                <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
+                    <a class="image-link" target="_blank" href="https://www.eclipse.org/che/">
+                        <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/logos/85x85/eclipse-che.png" />
+                    </a>
                 </div>
-                <div class="col-1 open-source-platform-image-column">
-                <a class="image-link" target="_blank" href="https://appsody.dev">
-                    <img class="open-source-platform-image-centered open-source-platform-image-large" src="/img/appsody.png" />
-                </a>
+                <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
+                    <a class="image-link" target="_blank" href="https://appsody.dev">
+                        <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/appsody.png" />
+                    </a>
                 </div>
-                <div class="col-1 open-source-platform-image-column">
-                <a class="image-link" target="_blank" href="https://codewind.dev">
-                    <img class="open-source-platform-image-centered open-source-platform-image-large" src="/img/codewind.png" />
-                </a>
+                <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
+                    <a class="image-link" target="_blank" href="https://codewind.dev">
+                        <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/codewind.png" />
+                    </a>
                 </div>
-                <div class="col">
+                <div class="col-md">
                     <p class="open-source-platform-content-title">Develop</p>
                     <p>
                         Develop applications for Kuberentes faster using extensions to industry leading IDEs.

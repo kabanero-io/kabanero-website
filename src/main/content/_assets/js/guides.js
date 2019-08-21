@@ -265,8 +265,9 @@ $(document).ready(function() {
         delay: {
             show: '520'
         },
+        html: true,
         content: function() {
-            return $('#popover_content').html();
+            return $('#popover-content').html();
         },
         trigger: 'focus'
     });

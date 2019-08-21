@@ -10,6 +10,7 @@
  *******************************************************************************/
 
 // Colors
+$color-kabanero:#C43804;
 $popover-color: #f1f4fe;
 $blue-grey-color: #5d6a8e;
 
@@ -176,7 +177,7 @@ $blue-grey-color: #5d6a8e;
 
 .tags_title {
     font-size: 11px;
-    color: #24243b;
+    color: $color-kabanero;;
 }
 
 .tag_button {
@@ -327,4 +328,8 @@ $blue-grey-color: #5d6a8e;
     & .search_term {
         word-wrap: break-word;
     }
+}
+
+.hide{
+    display: none;
 }

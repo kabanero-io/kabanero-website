@@ -48,6 +48,16 @@ permalink: /guides/
             <h2 id="guides-title">Guides</h2>
             <p id="guides-description">The quickest way to learn all things Kabanero, and more!</p>
         </div>
+        <div id="guides_search_container" class="col-xs-12 col-sm-5 col-md-6">
+            <input id="guide_search_input" required class="search-box" placeholder="Search all guides" autocomplete="off"
+            data-toggle="popover" data-placement="bottom" data-html="true" aria-label="Search">
+            <button class="clear_btn" type="reset" tabindex="0" aria-label="Clear search bar"></button>
+            <div id="popover-content" class="hide">
+                <p class="tags_title">Suggested tags</p>
+                <a class="tag_button">appsody</a>
+                <a class="tag_button">nodejs</a>
+            </div>
+        </div>
     </div>
 </div>
 

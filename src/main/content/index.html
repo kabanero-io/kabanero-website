@@ -40,7 +40,7 @@ seo-title: Kabanero
         <div class="row">
             <div class="col-md usage-video">
               <div class="video-wrapper"> 
-                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
+                <iframe width="100%" title="Kabanero Developer Workflow" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
@@ -56,13 +56,13 @@ seo-title: Kabanero
         <div class="col-md-8">
             <div class="list-group list-group-flush list-group-horizontal-md" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action active list-item-centered" id="list-dev-list" data-toggle="list" 
-                href="#list-dev" role="tab" aria-controls="profile">Development</a>
+                href="#list-dev" role="tab">Development</a>
 
                 <a class="list-group-item list-group-item-action list-item-centered" id="list-arch-list" data-toggle="list" 
-                href="#list-arch" role="tab" aria-controls="home">Architecture</a>
+                href="#list-arch" role="tab">Architecture</a>
 
                 <a class="list-group-item list-group-item-action list-item-centered" id="list-op-list" data-toggle="list" 
-                href="#list-op" role="tab" aria-controls="messages">Operations</a>
+                href="#list-op" role="tab">Operations</a>
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -73,7 +73,7 @@ seo-title: Kabanero
                 <div class="tab-pane fade show active" id="list-dev" role="tabpanel" aria-labelledby="list-dev-list">
                     <div class="row">
                         <div class="col-2 img-col">
-                            <img class="list-group-img d-none d-md-block" src="/img/logos/development.png">
+                            <img class="list-group-img d-none d-md-block" src="/img/logos/development.png" alt="Developer image">
                         </div>
                         <p class="col-9 list-group-text">
                             <span class="section-title">Develop more, faster</span>
@@ -337,7 +337,7 @@ seo-title: Kabanero
         </div>
         <div class="row">
             <div class="col open-source-platform-col">
-                <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('modernize')">
+                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('modernize')" onkeypress="hideAllOpenSourcePlatformsCollapses('modernize')" >
                     <p class="open-source-platform-paragraph">
                         Modernize Applications
                     </p>
@@ -349,7 +349,7 @@ seo-title: Kabanero
                 </div>
             </div>
             <div class="col open-source-platform-col">
-                <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('languages')">
+                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('languages')" onkeypress="hideAllOpenSourcePlatformsCollapses('languages')">
                     <p class="open-source-platform-paragraph">
                         Languages & Runtimes
                     </p>
@@ -361,7 +361,7 @@ seo-title: Kabanero
                 </div>
             </div>
             <div class="col open-source-platform-col">
-                <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('develop')">
+                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('develop')" onkeypress="hideAllOpenSourcePlatformsCollapses('develop')">
                     <p class="open-source-platform-paragraph">
                         Develop
                     </p>
@@ -372,7 +372,7 @@ seo-title: Kabanero
                 <div class="open-source-platform-horizontal-separator"></div>
             </div>
             <div class="col open-source-platform-col">
-                <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('build')">
+                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('build')" onkeypress="hideAllOpenSourcePlatformsCollapses('build')">
                     <p class="open-source-platform-paragraph">
                         Build
                     </p>
@@ -384,7 +384,7 @@ seo-title: Kabanero
                 </div>
             </div>
             <div class="col open-source-platform-col">
-                <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('manage')">
+                <div role="button" class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('manage')" onkeypress="hideAllOpenSourcePlatformsCollapses('manage')">
                     <p class="open-source-platform-paragraph">
                         Manage
                     </p>
@@ -507,7 +507,7 @@ seo-title: Kabanero
     <div class="row mr-0">
         <div class="col-sm-2 offset-sm-3">
             <a class="image-link" target="_blank" href="https://kubernetes.io/">
-                <img id="kube-img" src="/img/logos/85x85/kubernetes.png" class="img-fluid d-none d-md-block">
+                <img id="kube-img" src="/img/logos/85x85/kubernetes.png" class="img-fluid d-none d-md-block" alt="Kubernetes logo">
             </a>
         </div>
         <div class="col-sm">
@@ -613,7 +613,7 @@ seo-title: Kabanero
                 </div>
                 <div class="col-sm-4">
                     <a target="_blank" href="{{site.stackoverflow_url}}">
-                        <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img">
+                        <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo">
                     </a>
                 </div>
             </div>
@@ -644,7 +644,7 @@ seo-title: Kabanero
                 </div>
                 <div class="col-md-2">
                     <a target="_blank" href={{site.slack_url}}>
-                        <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link">
+                        <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
                     </a>
                 </div>
             </div>

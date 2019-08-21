@@ -20,45 +20,12 @@ var mobileWidth = 767;
 var generalDocsFolder = "/docs/ref/general/";
 var windowFocus = false;
 
-// setup and listen to click on table of content
-function addTOCClick() {
-    var onclick = function (event) {
-        var resource = $(event.currentTarget);
-        var currentHref = resource.attr("href");
-
-        // handle the click event ourselves so as to take care of updating the hash 
-        event.preventDefault();
-        event.stopPropagation();
-
-        loadContent(resource, currentHref, true);
-
-        if (isMobileView()) {
-            $("#breadcrumb-hamburger").trigger("click");
-        }
-    };
-
-    $("#toc-container > ul > li > div").off("click").on("click", onclick);
-
-    $("#toc-container > ul > li > div").off("keypress").on('keypress', function (event) {
-        event.stopPropagation();
-        // Enter or space key
-        if (event.which === 13 || event.keyCode === 13 || event.which === 32 || event.keyCode === 32) {
-            $(this).trigger('click');
-        }
-    });
-
-    addOutlineToTabFocus("#toc-container > ul > li > div");
-
-    $(window).off('focus').on('focus', function(event) {
-        windowFocus = true;
-    })
-}
-
-// highlight the selected TOC
-function setSelectedTOC(resource) {
+$(".doc-title").click(function(){
+    console.log("custom onclick");
     deselectedTOC();
-    resource.parent().addClass("toc-selected");
-}
+    $(this).parent().addClass("toc-selected");
+    loadContent($(this), $(this).attr("href"), true);
+})
 
 // deselect current TOC
 function deselectedTOC(r) {
@@ -90,11 +57,6 @@ function setupDisplayContent() {
 // - update hash if requested
 function loadContent(targetTOC, tocHref, addHash) {
     $('footer').hide();
-    if (targetTOC.length === 1 && tocHref !== '/docs/ref/general/docs-welcome.html') { //exclude the intro doc from being highlighted
-        setSelectedTOC(targetTOC);
-    } else {
-        deselectedTOC();
-    }
     $("#general-content").load(tocHref, function(response, status) {
         if (status === "success") {
             updateMainBreadcrumb(targetTOC);
@@ -319,7 +281,6 @@ function addWindowResizeListener() {
 }
 
 $(document).ready(function () {  
-    addTOCClick();
     addContentFocusListener();
     addHamburgerClick();
     addHashListener();
@@ -334,12 +295,21 @@ $(document).ready(function () {
 });
 
 function toggleIcon(button) {
+    //toggle the button that was clicked
     let iconId = $(button).data('icon');
     if($(`#${iconId}`).attr('src') === '/img/icon_plus.png'){
         $(`#${iconId}`).attr('src', '/img/icon_minus.png');
     }else{
         $(`#${iconId}`).attr('src', '/img/icon_plus.png');
     }
+    //bootstrap will auto-close the other accordion segments that are open, make sure the icon changes as well
+    let accordionButtons = $(".doc-category")
+    $.each(accordionButtons, function(index, accButton) {
+        let accId = $(accButton).data('icon');
+        if(iconId !== accId){
+            $(`#${accId}`).attr('src', '/img/icon_plus.png');
+        }
+    });
 }
 
 function searchDocs(){

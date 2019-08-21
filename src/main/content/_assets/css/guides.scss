@@ -52,7 +52,7 @@ $blue-grey-color: #5d6a8e;
     transition: width .5s;
 }
 
-#guide_search_input {
+#guide-search-input {
     height: 52px;
     margin-top: 50px;
     max-width: 556px;
@@ -84,11 +84,11 @@ $blue-grey-color: #5d6a8e;
     }
 }
 
-#guide_search_input,.clear_btn,.guides_search_container {
+#guide-search-input,.clear-btn,.guides-search-container {
 	position: relative;
 }
 
-.clear_btn {
+.clear-btn {
 	border:1px solid transparent;
 	background-color: transparent;
 	display: block;
@@ -101,12 +101,12 @@ $blue-grey-color: #5d6a8e;
     right: 35px;
     
     &:focus {
-        box-shadow: 0 0 2px 2px #51a7eB;
+        box-shadow: 0 0 2px 2px #FFFFFF;
     }
     
     &:after {
         content: "X";
-        color: $blue-grey-color;
+        color: $color-kabanero;
         display: block;
         position: absolute;
         z-index: 1;
@@ -115,17 +115,17 @@ $blue-grey-color: #5d6a8e;
         margin: auto;
         text-align: center;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 16px;
         cursor: pointer;
     }
 }
 
 // get rid of clear button when search bar is empty
-.search-box:invalid ~ .clear_btn {
+.search-box:invalid ~ .clear-btn {
 	display: none;
 }
 
-#guides_information_container {
+#guides-information-container {
     position: relative;
     width: 100%;
     padding-top: 35px;
@@ -140,11 +140,11 @@ $blue-grey-color: #5d6a8e;
     }
 }
 
-#guide_search_information {
+#guide-search-information {
     display: inline-block;
 }
 
-#guides_search_container {
+#guides-search-container {
     text-align: right;
 
     // Modification to the default popover styling
@@ -175,21 +175,22 @@ $blue-grey-color: #5d6a8e;
     }
 }
 
-.tags_title {
+.tags-title {
     font-size: 11px;
     color: $color-kabanero;;
 }
 
-.tag_button {
+.tag-button {
     display: inline-block;
     background: transparent;
-    color:#3f465a;
-    border:1px solid #3f465a;
+    color:$color-kabanero;
+    border:1px solid $color-kabanero;
     border-radius:46px;
     padding: 2px 12px;
     margin-bottom: 5px;
     font-size: 14px;
     text-transform: uppercase;
+    cursor: pointer;
 
     opacity: 0.5;
     &:hover {

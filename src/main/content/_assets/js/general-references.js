@@ -284,14 +284,24 @@ $(document).ready(function () {
     addHamburgerClick();
     addHashListener();
     addWindowResizeListener();
-
+    
     //manually tiggering it if we have hash part in URL
     if (window.location.hash) {
         $(window).trigger('hashchange');
+        selectDocFromHash();
     } else {
         loadContent($('#intro-hidden'), '/docs/ref/general/docs-welcome.html');
     }
 });
+
+function selectDocFromHash(){
+    let pageLocation = window.location.hash;
+    pageLocation = pageLocation.substring(1); //take the "#" off of the front of the hash
+    let selectedDocLink = $( 'div[href$="' + pageLocation + '"]' ); //jQuery endswith selector finds the div with the href of the doc in the url
+    let selectedCategory = $(selectedDocLink).data("category");
+    $(`#${selectedCategory}`).click(); //drop down the twistie
+    $(selectedDocLink).click(); //highlight the selected doc
+}
 
 function toggleIcon(button) {
     //toggle the button that was clicked
@@ -315,4 +325,26 @@ function searchDocs(){
         let parentElement = $(value).parent();
         !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
     });
+    hideCategoriesIfEmpty();
+    $(".doc-category:visible").length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
+}
+
+function hideCategoriesIfEmpty(){
+    let categories = $(".doc-category");
+    $.each(categories, function(index, category){
+        let collapseId = $(category).data("target");
+        let childLinks = $(collapseId).find(".doc-link");
+        let isVisible = areLinksVisible(childLinks);
+        isVisible ? $(category).show() : $(category).hide();
+    });
+}
+
+function areLinksVisible(links){
+    let areVisible = false;
+    $.each(links, function(index, link){
+        if($(link).css("display") !== "none"){
+            areVisible = true;
+        }
+    });
+    return areVisible;
 }

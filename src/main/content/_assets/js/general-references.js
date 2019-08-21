@@ -21,7 +21,6 @@ var generalDocsFolder = "/docs/ref/general/";
 var windowFocus = false;
 
 $(".doc-title").click(function(){
-    console.log("custom onclick");
     deselectedTOC();
     $(this).parent().addClass("toc-selected");
     loadContent($(this), $(this).attr("href"), true);

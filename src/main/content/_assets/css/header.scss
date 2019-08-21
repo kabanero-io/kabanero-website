@@ -237,3 +237,8 @@ main {
     font-size: 14px;
     font-weight:600;
 }
+
+.dropdown-item:active, .dropdown-item:hover{
+    color: #ffffff;
+    background-color: #C43804;
+}

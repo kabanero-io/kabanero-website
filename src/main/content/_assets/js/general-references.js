@@ -302,15 +302,11 @@ function toggleIcon(button) {
     }else{
         $(`#${iconId}`).attr('src', '/img/icon_plus.png');
     }
-    //bootstrap will auto-close the other accordion segments that are open, make sure the icon changes as well
-    let accordionButtons = $(".doc-category")
-    $.each(accordionButtons, function(index, accButton) {
-        let accId = $(accButton).data('icon');
-        if(iconId !== accId){
-            $(`#${accId}`).attr('src', '/img/icon_plus.png');
-        }
-    });
 }
+
+$("#doc-search").keyup(function(){
+    searchDocs();
+});
 
 function searchDocs(){
     let searchTerm = document.getElementById('doc-search').value.toLowerCase();
@@ -318,6 +314,6 @@ function searchDocs(){
     $.each(docTitles, function(index, value){
         let docTitle = $(value).text().toLowerCase();
         let parentElement = $(value).parent();
-        !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : parentElement.show();
+        !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
     });
 }

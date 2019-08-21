@@ -45,7 +45,9 @@
             <h3 id="where_to_next">Where to next?</h3>
 
             {% if page.layout == 'iguide-multipane' %}
-                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/iguide-{{page.url | replace: '/guides/', ''}}/tree/master/finish">Download the sample application for this guide bundled with Kabanero on github</a></p>
+                <p>
+                    <a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/iguide-{{page.url | replace: '/guides/', ''}}/tree/master/finish">
+                    Download the sample application for this guide bundled with Kabanero on github</a></p>
                 <br>
             {% endif %}
             {% if page.categories %}

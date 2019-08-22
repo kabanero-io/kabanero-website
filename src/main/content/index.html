@@ -11,7 +11,7 @@ css:
 seo-title: Kabanero
 ---
 <!-- INTRO -->
-<div class="container">
+<div class="container container-fluid">
     <div class="row">
         <div class="col-md-8">
             <div id="intro-content">
@@ -32,57 +32,99 @@ seo-title: Kabanero
             <img src="/img/kabanero-logo-stripe.png " class="img-fluid" alt="boxes">
         </div>
     </div>
-</div>
 
-<!-- Video- Kabanero Developer Workflow -->
-<div class="area video">
-    <div class="container">
+    <!-- Video- Kabanero Developer Workflow -->
+    <div class="area video">
+            <div class="row">
+                <div class="col-md usage-video">
+                <div class="video-wrapper"> 
+                    <iframe width="100%" title="Kabanero Developer Workflow" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Role Boxes -->
+    <div class="area">
         <div class="row">
-            <div class="col-md usage-video">
-              <div class="video-wrapper"> 
-                <iframe width="100%" title="Kabanero Developer Workflow" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="list-group list-group-flush list-group-horizontal-md" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active list-item-centered" id="list-dev-list" data-toggle="list" 
+                    href="#list-dev" role="tab">Development</a>
+
+                    <a class="list-group-item list-group-item-action list-item-centered" id="list-arch-list" data-toggle="list" 
+                    href="#list-arch" role="tab">Architecture</a>
+
+                    <a class="list-group-item list-group-item-action list-item-centered" id="list-op-list" data-toggle="list" 
+                    href="#list-op" role="tab">Operations</a>
+                </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
-    </div>
-</div>
-
-<!-- Role Boxes -->
-<div class="area">
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="list-group list-group-flush list-group-horizontal-md" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active list-item-centered" id="list-dev-list" data-toggle="list" 
-                href="#list-dev" role="tab">Development</a>
-
-                <a class="list-group-item list-group-item-action list-item-centered" id="list-arch-list" data-toggle="list" 
-                href="#list-arch" role="tab">Architecture</a>
-
-                <a class="list-group-item list-group-item-action list-item-centered" id="list-op-list" data-toggle="list" 
-                href="#list-op" role="tab">Operations</a>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-md">
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-dev" role="tabpanel" aria-labelledby="list-dev-list">
+        <div class="row">
+            <div class="col-md">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-dev" role="tabpanel" aria-labelledby="list-dev-list">
+                        <div class="row">
+                            <div class="col-2 img-col">
+                                <img class="list-group-img d-none d-md-block" src="/img/logos/development.png" alt="Developer image">
+                            </div>
+                            <p class="col-9 list-group-text">
+                                <span class="section-title">Develop more, faster</span>
+                                <br><br>
+                                Use your favorite development tools to create apps for Kubernetes faster.
+                                Develop, test, and debug in containers, and deploy with confidence knowing you’re automatically
+                                compliant with company policies. Spend more time writing code rather than re-tooling and
+                                building deep Kubernetes skills. Select a Kabanero Collection customized by your team for languages
+                                and programming models that you use on a daily basis.
+                                <br><br>
+                                <strong>100% Open Source.
+                                    <span class="bumper"></span>
+                                    Automated.
+                                    <span class="bumper"></span>
+                                    Integrated.
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-arch" role="tabpanel" aria-labelledby="list-arch-list">
+                        <div class="row">
+                            <div class="col-2 img-col">
+                                <img class="list-group-img d-none d-md-block" src="/img/logos/architecture.png">
+                            </div>
+                            <p class="col-9 list-group-text">
+                                <span class="section-title">Design more, faster</span>
+                                <br><br>
+                                Use our application stacks infused with expertise to select proven technologies, languages,
+                                and runtimes for building applications for Kubernetes. Apply customizations before sharing the
+                                application stack with developers and operations teams, to ensure your business process and governance
+                                needs are met. Application stacks reduce the decision-cycle time, enabling developers to focus on
+                                delivering line-of-business value without having to become full stack experts.
+                                <br><br>
+                                <strong>100% Open Source.
+                                    <span class="bumper"></span>
+                                    Automated.
+                                    <span class="bumper"></span>
+                                    Integrated.
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-op" role="tabpanel" aria-labelledby="list-op-list">
                     <div class="row">
                         <div class="col-2 img-col">
-                            <img class="list-group-img d-none d-md-block" src="/img/logos/development.png" alt="Developer image">
+                            <img class="list-group-img d-none d-md-block" src="/img/logos/operations.png">
                         </div>
                         <p class="col-9 list-group-text">
-                            <span class="section-title">Develop more, faster</span>
+                            <span class="section-title">Manage with confidence</span>
                             <br><br>
-                            Use your favorite development tools to create apps for Kubernetes faster.
-                            Develop, test, and debug in containers, and deploy with confidence knowing you’re automatically
-                            compliant with company policies. Spend more time writing code rather than re-tooling and
-                            building deep Kubernetes skills. Select a Kabanero Collection customized by your team for languages
-                            and programming models that you use on a daily basis.
+                            Maintain compliance with confidence, using application stacks to deliver the
+                            latest container images with the latest security patches. Bring your existing
+                            applications into your hybrid cloud infrastructure. You get immediate visibility
+                            of your apps in one platform for existing and new apps, with a single view across
+                            hybrid deployments, whether in containers or VMs.
                             <br><br>
                             <strong>100% Open Source.
                                 <span class="bumper"></span>
@@ -92,80 +134,32 @@ seo-title: Kabanero
                             </strong>
                         </p>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="list-arch" role="tabpanel" aria-labelledby="list-arch-list">
-                    <div class="row">
-                        <div class="col-2 img-col">
-                            <img class="list-group-img d-none d-md-block" src="/img/logos/architecture.png">
-                        </div>
-                        <p class="col-9 list-group-text">
-                            <span class="section-title">Design more, faster</span>
-                            <br><br>
-                            Use our application stacks infused with expertise to select proven technologies, languages,
-                            and runtimes for building applications for Kubernetes. Apply customizations before sharing the
-                            application stack with developers and operations teams, to ensure your business process and governance
-                            needs are met. Application stacks reduce the decision-cycle time, enabling developers to focus on
-                            delivering line-of-business value without having to become full stack experts.
-                            <br><br>
-                            <strong>100% Open Source.
-                                <span class="bumper"></span>
-                                Automated.
-                                <span class="bumper"></span>
-                                Integrated.
-                            </strong>
-                        </p>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="list-op" role="tabpanel" aria-labelledby="list-op-list">
-                <div class="row">
-                    <div class="col-2 img-col">
-                        <img class="list-group-img d-none d-md-block" src="/img/logos/operations.png">
-                    </div>
-                    <p class="col-9 list-group-text">
-                        <span class="section-title">Manage with confidence</span>
-                        <br><br>
-                        Maintain compliance with confidence, using application stacks to deliver the
-                        latest container images with the latest security patches. Bring your existing
-                        applications into your hybrid cloud infrastructure. You get immediate visibility
-                        of your apps in one platform for existing and new apps, with a single view across
-                        hybrid deployments, whether in containers or VMs.
-                        <br><br>
-                        <strong>100% Open Source.
-                            <span class="bumper"></span>
-                            Automated.
-                            <span class="bumper"></span>
-                            Integrated.
-                        </strong>
-                    </p>
-                </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
-</div>
 
-<!-- Modernize & Cloud Native boxes -->
-<div class="container area">
-    <div class="row">
-        <div class="col-md term-box">
-            <h2>Modernize</h2>
-            <p>
-                Kabanero can help your team modernize existing applications to leverage benefits of cloud and containers.
-            </p>
-        </div>
-        <div class="col-md term-box">
-            <h2>Cloud Native</h2>
-            <p>
-                Kabanero can help you create cloud native applications with your team.
-            </p>
+    <!-- Modernize & Cloud Native boxes -->
+    <div class="area">
+        <div class="row">
+            <div class="col-md term-box">
+                <h2>Modernize</h2>
+                <p>
+                    Kabanero can help your team modernize existing applications to leverage benefits of cloud and containers.
+                </p>
+            </div>
+            <div class="col-md term-box">
+                <h2>Cloud Native</h2>
+                <p>
+                    Kabanero can help you create cloud native applications with your team.
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Featured Models -->
-<div class="featured-models">
-    <div class="container">
+    <!-- Featured Models -->
+    <div class="featured-models">
         <div class="row">
             <div id="featured-models-col" class="col-md">
                 <h2>Kabanero Collections</h2>
@@ -329,11 +323,9 @@ seo-title: Kabanero
             </div>
         </div>
     </div>
-</div>
 
-<!-- Open Source Platform -->
-<div class="open-source-platform">
-    <div class="container">
+    <!-- Open Source Platform -->
+    <div class="open-source-platform">
         <div class="row">
             <div class="col-12 open-source-platform-title-row">
                 <h2 class="open-source-platform-title">
@@ -506,38 +498,36 @@ seo-title: Kabanero
             </div>
         </div>
     </div>
-</div>
 
-<!-- Foundational Tools-->
-<div class="container foundational-tools foundational-tools-container">
-    <div class="row mr-0">
-        <div class="col-sm-2 offset-sm-3">
-            <a class="image-link" target="_blank" href="https://kubernetes.io/">
-                <img id="kube-img" src="/img/logos/85x85/kubernetes.png" class="img-fluid d-none d-md-block" alt="Kubernetes logo">
-            </a>
-        </div>
-        <div class="col-sm">
-            <div class="row">
-                <div class="col">
-                    <p class="open-source-platform-content-title">Built on a foundation of:</p>
-                </div>
+    <!-- Foundational Tools-->
+    <div class="foundational-tools foundational-tools-container">
+        <div class="row mr-0">
+            <div class="col-sm-2 offset-sm-3">
+                <a class="image-link" target="_blank" href="https://kubernetes.io/">
+                    <img id="kube-img" src="/img/logos/85x85/kubernetes.png" class="img-fluid d-none d-md-block" alt="Kubernetes logo">
+                </a>
             </div>
-            <div class="row">
-                <div class="col">
-                    <span>Kubernetes&reg;</span>
-                    <span class="dot-separator orange"></span>
-                    <span>Knative</span>
-                    <span class="dot-separator orange"></span>
-                    <span>Istio</span>
+            <div class="col-sm">
+                <div class="row">
+                    <div class="col">
+                        <p class="open-source-platform-content-title">Built on a foundation of:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span>Kubernetes&reg;</span>
+                        <span class="dot-separator orange"></span>
+                        <span>Knative</span>
+                        <span class="dot-separator orange"></span>
+                        <span>Istio</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Support -->
-<div class="support-block">
-    <div class="container">
+    <!-- Support -->
+    <div class="support-block">
         <div class="row">
             <div class="col text-center">
                 <h2>When you are ready for support, we've got you covered</h2>
@@ -555,115 +545,115 @@ seo-title: Kabanero
             </div>
         </div>
     </div>
-</div>
 
-<!-- Blog Posts -->
-<div class="container area">
-    <div class="row">
-        <div class="col text-center">
-            <h2 class="latest-news">Latest News</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="row visit-blog-row">
-                <div class="col-xl">
-                    <div class="row container">
-                        <h3 class="col-md-5 visit-text">Visit our Blog!</h3>
-                        <div class="col-md-3"></div>
-                        <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">Visit</a>
-                    </div>
-                </div>
+    <!-- Blog Posts -->
+    <div class="area">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="latest-news">Latest News</h2>
             </div>
-            <div class="row empty-row"></div>
-            {% for post in site.posts limit:2 %}
-                <div class="row blog-post-row">
-                    <div class="col-xl blog-post-column">
-                        <div class="row container">
-                            <div class="blog-header">
-                                <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
-                                <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
-                                <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
-                            </div>
-                        </div>
-                        <div class="row title-row container">
-                            {% if post.redirect_link %}
-                                <h2><a href="{{ post.redirect_link }}" class="blog-title">{{ post.title | escape }}</a></h2>
-                            {% else %}
-                                <h2><a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title | escape }}</a></h2>
-                            {% endif %}
-                        </div>
-                        <div class="row container">
-                            {% if post.redirct_link %}
-                                <p>{{ post.seo-description | escape }}</p>
-                            {% else %}
-                                <p>{{ post.seo-description | escape }}</p>
-                            {% endif %}
-                        </div>
-                        <div class="row container">
-                            <div class="text-right">
-                            {% if post.redirect_link %}
-                                <a href="{{ post.redirect_link }}" class="blog-read-more">Read more</a>
-                            {% else %}
-                                <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more</a>
-                            {% endif %}
-                            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="row visit-blog-row">
+                    <div class="col-xl">
+                        <div class="row">
+                            <h3 class="col-md-5 visit-text">Visit our Blog!</h3>
+                            <div class="col-md-3"></div>
+                            <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">Visit</a>
                         </div>
                     </div>
                 </div>
                 <div class="row empty-row"></div>
-            {% endfor %}
-            <div class="row boxed-row">
-                <div class="col-sm-8">
-                    <h3>Find us on Stack Overflow</h3>
-                </div>
-                <div class="col-sm-4">
-                    <a target="_blank" href="{{site.stackoverflow_url}}">
-                        <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo">
-                    </a>
-                </div>
-            </div>
-            <div class="row boxed-row">
-                <div class="col-sm-6">
-                    <h3 class="get-involved">Get Involved!</h3>
-                </div>
-                <div class="col-sm-6">
-                    <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">Contribute to Kabanero</a>
-                </div>
-            </div>
-            <div class="row empty-row"></div>
-        </div>
-        <div class="col-xl-5 offset-xl-1" id="twitter-col">
-            <div class="row">
-                <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">Tweets by {{site.twitter_username}} </a>
-            </div>
-            <div class="row boxed-row">
-                <div class="col-md-10">
-                    <div class="row">
-                        <h3 class="slack-text">Chat with us on Slack</h3>
+                {% for post in site.posts limit:2 %}
+                    <div class="row blog-post-row">
+                        <div class="col-xl blog-post-column">
+                            <div class="row">
+                                <div class="blog-header">
+                                    <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
+                                    <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
+                                    <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
+                                </div>
+                            </div>
+                            <div class="row title-row">
+                                {% if post.redirect_link %}
+                                    <h2><a href="{{ post.redirect_link }}" class="blog-title">{{ post.title | escape }}</a></h2>
+                                {% else %}
+                                    <h2><a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title | escape }}</a></h2>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                {% if post.redirct_link %}
+                                    <p>{{ post.seo-description | escape }}</p>
+                                {% else %}
+                                    <p>{{ post.seo-description | escape }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <div class="text-right">
+                                {% if post.redirect_link %}
+                                    <a href="{{ post.redirect_link }}" class="blog-read-more">Read more</a>
+                                {% else %}
+                                    <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more</a>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <a target="_blank" href={{site.slack_invite_url}}>
-                            <p class="slack-invite">Request an invite to the channel.</p>
+                    <div class="row empty-row"></div>
+                {% endfor %}
+                <div class="row boxed-row">
+                    <div class="col-sm-8">
+                        <h3>Find us on Stack Overflow</h3>
+                    </div>
+                    <div class="col-sm-4">
+                        <a target="_blank" href="{{site.stackoverflow_url}}">
+                            <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <a target="_blank" href={{site.slack_url}}>
-                        <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
-                    </a>
+                <div class="row boxed-row">
+                    <div class="col-sm-6">
+                        <h3 class="get-involved">Get Involved!</h3>
+                    </div>
+                    <div class="col-sm-6">
+                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">Contribute to Kabanero</a>
+                    </div>
                 </div>
+                <div class="row empty-row"></div>
             </div>
-            <div class="row boxed-row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="get-involved">See what we're cooking up next!</h3>
+            <div class="col-xl-5 offset-xl-1" id="twitter-col">
+                <div class="row">
+                    <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">Tweets by {{site.twitter_username}} </a>
+                </div>
+                <div class="row boxed-row">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <h3 class="slack-text">Chat with us on Slack</h3>
+                        </div>
+                        <div class="row">
+                            <a target="_blank" href={{site.slack_invite_url}}>
+                                <p class="slack-invite">Request an invite to the channel.</p>
+                            </a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">Join the Community</a>
+                    <div class="col-md-2">
+                        <a target="_blank" href={{site.slack_url}}>
+                            <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="row boxed-row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="get-involved">See what we're cooking up next!</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">Join the Community</a>
+                            </div>
                         </div>
                     </div>
                 </div>

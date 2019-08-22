@@ -72,7 +72,7 @@ $color-kabanero:#C43804;
 .open-source-platform-box{
     height:120px;
     background-color: #5d5d5d;
-    color: #bfbfbf;
+    color: white;
     border:1px solid $color-kabanero;
     cursor: pointer;
 }
@@ -164,6 +164,7 @@ $color-kabanero:#C43804;
 
 .cpa-link{
     font-weight: bold;
+    color: #0553a7;
 }
 
 .description-text-block{

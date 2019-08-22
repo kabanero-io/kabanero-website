@@ -10,22 +10,19 @@ css:
 - blog
 seo-title: Kabanero
 ---
+{% assign t = site.data[site.active_lang].index %}
+
 <!-- INTRO -->
 <div class="container">
     <div class="row">
         <div class="col-md-8">
             <div id="intro-content">
                 <img src="/img/kabanero-final.svg" class="img-fluid" id="kabanero-img" alt="boxes">
-                <h3 id="intro-lighten-up-title">Create more, faster</h3>
+                <h3 id="intro-lighten-up-title">{{t.intro-title}}</h3>
                 <p id="intro-paragraph">
-                    Kabanero is an open source project focused on bringing together foundational open source technologies into a
-                    modern microservices-based framework. Developing apps for container platforms requires harmony between developers,
-                    architects, and operations. Today’s developers need to be efficient at much more than writing code. Architects and
-                    operations get overloaded with choices, standards, and compliance. Kabanero speeds development of applications
-                    built for Kubernetes while meeting the technology standards and policies your company defines. Design, develop,
-                    deploy, and manage with speed and control!
+                        {{t.intro-paragraph}}
                 </p>
-                <a class="col-md-5" id="get-started-link" href="/try-it">Try It</a>
+                <a class="col-md-5" id="get-started-link" href="/try-it"> {{t.try-it}} </a>
             </div>
         </div>
         <div class="col-md-4 d-none d-md-block">
@@ -56,13 +53,13 @@ seo-title: Kabanero
         <div class="col-md-8">
             <div class="list-group list-group-flush list-group-horizontal-md" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action active list-item-centered" id="list-dev-list" data-toggle="list" 
-                href="#list-dev" role="tab" aria-controls="profile">Development</a>
+                href="#list-dev" role="tab" aria-controls="profile">{{t.development.tab}}</a>
 
                 <a class="list-group-item list-group-item-action list-item-centered" id="list-arch-list" data-toggle="list" 
-                href="#list-arch" role="tab" aria-controls="home">Architecture</a>
+                href="#list-arch" role="tab" aria-controls="home">{{t.architecture.tab}}</a>
 
                 <a class="list-group-item list-group-item-action list-item-centered" id="list-op-list" data-toggle="list" 
-                href="#list-op" role="tab" aria-controls="messages">Operations</a>
+                href="#list-op" role="tab" aria-controls="messages">{{t.operations.tab}}</a>
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -76,19 +73,15 @@ seo-title: Kabanero
                             <img class="list-group-img d-none d-md-block" src="/img/logos/development.png">
                         </div>
                         <p class="col-9 list-group-text">
-                            <span class="section-title">Develop more, faster</span>
+                            <span class="section-title">{{t.development.section-title}}</span>
                             <br><br>
-                            Use your favorite development tools to create apps for Kubernetes faster.
-                            Develop, test, and debug in containers, and deploy with confidence knowing you’re automatically
-                            compliant with company policies. Spend more time writing code rather than re-tooling and
-                            building deep Kubernetes skills. Select a Kabanero Collection customized by your team for languages
-                            and programming models that you use on a daily basis.
+                                {{t.development.description}}
                             <br><br>
-                            <strong>100% Open Source.
+                            <strong>{{t.open-source-bumper}}
                                 <span class="bumper"></span>
-                                Automated.
+                                {{t.automated-bumper}}
                                 <span class="bumper"></span>
-                                Integrated.
+                                {{t.integrated-bumper}}
                             </strong>
                         </p>
                     </div>
@@ -99,19 +92,15 @@ seo-title: Kabanero
                             <img class="list-group-img d-none d-md-block" src="/img/logos/architecture.png">
                         </div>
                         <p class="col-9 list-group-text">
-                            <span class="section-title">Design more, faster</span>
+                            <span class="section-title">{{t.architecture.section-title}}</span>
                             <br><br>
-                            Use our application stacks infused with expertise to select proven technologies, languages,
-                            and runtimes for building applications for Kubernetes. Apply customizations before sharing the
-                            application stack with developers and operations teams, to ensure your business process and governance
-                            needs are met. Application stacks reduce the decision-cycle time, enabling developers to focus on
-                            delivering line-of-business value without having to become full stack experts.
+                                {{t.architecture.description}}
                             <br><br>
-                            <strong>100% Open Source.
+                            <strong>{{t.open-source-bumper}}
                                 <span class="bumper"></span>
-                                Automated.
+                                {{t.automated-bumper}}
                                 <span class="bumper"></span>
-                                Integrated.
+                                {{t.integrated-bumper}}
                             </strong>
                         </p>
                     </div>
@@ -122,19 +111,15 @@ seo-title: Kabanero
                         <img class="list-group-img d-none d-md-block" src="/img/logos/operations.png">
                     </div>
                     <p class="col-9 list-group-text">
-                        <span class="section-title">Manage with confidence</span>
+                        <span class="section-title">{{t.operations.section-title}}</span>
                         <br><br>
-                        Maintain compliance with confidence, using application stacks to deliver the
-                        latest container images with the latest security patches. Bring your existing
-                        applications into your hybrid cloud infrastructure. You get immediate visibility
-                        of your apps in one platform for existing and new apps, with a single view across
-                        hybrid deployments, whether in containers or VMs.
+                            {{t.operations.description}}
                         <br><br>
-                        <strong>100% Open Source.
+                        <strong>{{t.open-source-bumper}}
                             <span class="bumper"></span>
-                            Automated.
+                            {{t.automated-bumper}}
                             <span class="bumper"></span>
-                            Integrated.
+                            {{t.integrated-bumper}}
                         </strong>
                     </p>
                 </div>
@@ -149,15 +134,15 @@ seo-title: Kabanero
 <div class="container area">
     <div class="row">
         <div class="col-md term-box">
-            <h2>Modernize</h2>
+            <h2>{{t.modernize-box.header}}</h2>
             <p>
-                Kabanero can help your team modernize existing applications to leverage benefits of cloud and containers.
+                {{t.modernize-box.description}}
             </p>
         </div>
         <div class="col-md term-box">
-            <h2>Cloud Native</h2>
+            <h2>{{t.cloud-native-box.header}}</h2>
             <p>
-                Kabanero can help you create cloud native applications with your team.
+                {{t.cloud-native-box.description}}
             </p>
         </div>
     </div>
@@ -168,15 +153,9 @@ seo-title: Kabanero
     <div class="container">
         <div class="row">
             <div id="featured-models-col" class="col-md">
-                <h2>Kabanero Collections</h2>
+                <h2>{{t.featured-models.header}}</h2>
                 <p class="description-text-block">
-                    A <strong>Kabanero Collection</strong> leads a company down a golden path to develop quality
-                    microservice-based applications. A Kabanero Collection provides guides for developers,
-                    templates for simplicity and consistency of developing applications, a
-                    runtime in a certified base container image infused with expertise for
-                    Kubernetes deployments, and an integrated toolchain for developing
-                    with modern tools.
-                </p>
+                    {{t.featured-models.a}} <strong>{{t.featured-models.header}}</strong>{{t.featured-models.description}}
             </div>
         </div>
         <div class="row">
@@ -187,7 +166,7 @@ seo-title: Kabanero
                     aria-controls="microprofile-collapse"
                     class="col featured-model-box"
                     alt="microprofile logo"
-                    onclick="hideAllFeaturedModelsCollapses(this)">Eclipse MicroProfile</button>
+                    onclick="hideAllFeaturedModelsCollapses(this)">{{t.featured-models.eclipse-microProfile.tab-name}}</button>
             </div>
             <div class="col-md model-logo">
                 <button data-toggle="collapse"
@@ -196,7 +175,7 @@ seo-title: Kabanero
                     aria-controls="spring-collapse"
                     class="col featured-model-box"
                     alt="java spring logo"
-                    onclick="hideAllFeaturedModelsCollapses(this)">Spring</button>
+                    onclick="hideAllFeaturedModelsCollapses(this)">{{t.featured-models.spring.tab-name}}</button>
             </div>
             <div class="col-md model-logo">
                 <button data-toggle="collapse"
@@ -205,7 +184,7 @@ seo-title: Kabanero
                     aria-controls="nodejs-collapse"
                     class="col featured-model-box"
                     alt="nodejs logo"
-                    onclick="hideAllFeaturedModelsCollapses(this)">NodeJS</button>
+                    onclick="hideAllFeaturedModelsCollapses(this)">{{t.featured-models.node.tab-name}}</button>
             </div>
         </div>
         <div class="row collapse featuredModelsCollapse" id="microprofile-collapse">
@@ -214,34 +193,30 @@ seo-title: Kabanero
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://openliberty.io/">
                             <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
-                            <p>Open Liberty</p>
+                            <p>{{t.common.open-liberty}}</p>
                         </a>
                     </div>
                     <div class="col text-center">
                         <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                        <p>Operators</p>
+                        <p>{{t.common.operators}}</p>
                     </div>
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://prometheus.io/">
                             <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                            <p>Prometheus&reg;</p>
+                            <p>{{t.common.prometheus}}&reg;</p>
                         </a>
                     </div>
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://tekton.dev/">
                             <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                            <p>Tekton&trade;</p>
+                            <p>{{t.common.tekton}}&trade;</p>
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col dopdown-text">
                         <p>
-                            Eclipse MicroProfile is a set of APIs used to optimize Java applications
-                            for a microservices architecture. With this stack, you can deliver microservices
-                            based upon the Eclipse MicroProfile specifications. Build and run high-quality
-                            applications with Open Liberty runtime, which includes OpenJDK with container-optimizations
-                            in OpenJ9.
+                                {{t.featured-models.eclipse-microProfile.description}}
                         </p>
                     </div>
                 </div>
@@ -253,33 +228,30 @@ seo-title: Kabanero
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://openliberty.io/">
                             <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
-                            <p>Open Liberty</p>
+                            <p>{{t.common.open-liberty}}</p>
                         </a>
                     </div>
                     <div class="col text-center">
                         <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                        <p>Operators</p>
+                        <p>{{t.common.operators}}</p>
                     </div>
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://prometheus.io/">
                             <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                            <p>Prometheus&reg;</p>
+                            <p>{{t.common.prometheus}}&reg;</p>
                             </a>
                     </div>
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://tekton.dev/">
                             <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                            <p>Tekton&trade;</p>
+                            <p>{{t.common.tekton}}&trade;</p>
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col dopdown-text">
                         <p>
-                            Spring&reg; is a framework used in Java application development. With this application stack,
-                            you can deliver microservices based upon the Spring framework provided by Pivotal.
-                            Open Liberty runtime provides support for Spring applications with OpenJDK and
-                            container-optimizations in OpenJ9.
+                            {{t.featured-models.spring.description}}
                         </p>
                     </div>
                 </div>
@@ -291,32 +263,30 @@ seo-title: Kabanero
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://nodejs.org">
                             <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
-                            <p>NodeJS</p>
+                            <p>{{t.common.nodeJS}}</p>
                         </a>
                     </div>
                     <div class="col text-center">
                         <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                        <p>Operators</p>
+                        <p>{{t.common.operators}}</p>
                     </div>
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://prometheus.io/">
                             <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                            <p>Prometheus&reg;</p>
+                            <p>{{t.common.prometheus}}&reg;</p>
                         </a>
                     </div>
                     <div class="col text-center">
                         <a class="image-link" target="_blank" href="https://tekton.dev/">
                             <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                            <p>Tekton&trade;</p>
+                            <p>{{t.common.tekton}}&trade;</p>
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col dopdown-text">
                         <p>
-                            Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser.
-                            Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers.
-                            It fits well in web-based frontends and backend API services for microservices-based applications.
+                                {{t.featured-models.node.description}}
                         </p>
                     </div>
                 </div>
@@ -331,7 +301,7 @@ seo-title: Kabanero
         <div class="row">
             <div class="col-12 open-source-platform-title-row">
                 <h2 class="open-source-platform-title">
-                    Kabanero Application Development and Deployment Lifecycle
+                        {{t.open-source-platform.header}}
                 </h2>
             </div>
         </div>
@@ -339,7 +309,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('modernize')">
                     <p class="open-source-platform-paragraph">
-                        Modernize Applications
+                        {{t.open-source-platform.modernize.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -351,7 +321,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('languages')">
                     <p class="open-source-platform-paragraph">
-                        Languages & Runtimes
+                            {{t.open-source-platform.runtimes.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -363,7 +333,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('develop')">
                     <p class="open-source-platform-paragraph">
-                        Develop
+                            {{t.open-source-platform.develop.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -374,7 +344,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('build')">
                     <p class="open-source-platform-paragraph">
-                        Build
+                        {{t.open-source-platform.build.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -386,7 +356,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div class="open-source-platform-box" onclick="hideAllOpenSourcePlatformsCollapses('manage')">
                     <p class="open-source-platform-paragraph">
-                        Manage
+                        {{t.open-source-platform.manage.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -401,12 +371,9 @@ seo-title: Kabanero
                     </a>
                 </div>
                 <div class="col">
-                    <p class="open-source-platform-content-title">Modernize Applications</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.modernize.tab-name}}</p>
                     <p>
-                        Plan, execute, and enhance your cloud modernization journey.
-                        Kabanero integrates with free modernization tooling from IBM for Java applications.
-                        Choose to re-factor applications based on ROI. Accelerate development efforts with assistance
-                        within your IDE using guided code changes.
+                            {{t.open-source-platform.modernize.description}}
                     </p>
                 </div>
             </div>
@@ -414,25 +381,22 @@ seo-title: Kabanero
         <div id="open-source-platform-languages-collapse" class="row collapse open-source-platform-content-box">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Languages and Runtimes</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
                     <p>
-                        Use the right language for the job. Java is at the core of most modern application
-                        environments and can support Eclipse MicroProfile or Spring-based microservices.
-                        No matter your workload, we have runtimes and application stacks to simplify
-                        application development and delivery on Kubernetes.
+                            {{t.open-source-platform.runtimes.description}}
                     </p>
                 </div>
             </div>
             <div class="row languages-row">
                 <div class="col">
-                    <span>Java</span><span class="dot-separator"></span>
-                    <span>Node</span><span class="dot-separator"></span>
-                    <span>Go</span><span class="dot-separator"></span>
-                    <span>Python</span><span class="dot-separator"></span>
-                    <span>MicroProfile</span><span class="dot-separator"></span>
-                    <span>Jakarta EE</span><span class="dot-separator"></span>
-                    <span>Spring</span><span class="dot-separator"></span>
-                    <span>Open Liberty</span>
+                    <span>{{t.common.java}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.node}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.go}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.python}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.microProfile}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.jakarta}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.spring}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.open-liberty}}</span>
                 </div>
             </div>
         </div>
@@ -454,12 +418,9 @@ seo-title: Kabanero
                 </a>
                 </div>
                 <div class="col">
-                    <p class="open-source-platform-content-title">Develop</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.develop.tab-name}}</p>
                     <p>
-                        Develop applications for Kuberentes faster using extensions to industry leading IDEs.
-                        Perform inner loop development of applications directly in containers from day one.
-                        Eclipse Codewind provides extensions to VS Code, Eclipse, as well as Eclipse Che for
-                        teams preferring a cloud hosted IDE. Hosted or local, it’s the same experience.
+                            {{t.open-source-platform.develop.description}}
                     </p>
                 </div>
             </div>
@@ -474,13 +435,9 @@ seo-title: Kabanero
                     </a>
                 </div>
                 <div class="col">
-                    <p class="open-source-platform-content-title">Build</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.build.tab-name}}</p>
                     <p>
-                        DevOps is critical for a successful microservices-based deployment.
-                        Kabanero supplies an integrated open source CI/CD (continuous integration / continuous delivery)
-                        infrastructure based on the open source project Tekton. Kabanero provides for a rich
-                        set of stages that pipelines can use to integrate features like patching,
-                        vulnerability scanning, and more.
+                            {{t.open-source-platform.build.description}}
                     </p>
                 </div>
             </div>
@@ -488,13 +445,9 @@ seo-title: Kabanero
         <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Manage</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.manage.tab-name}}</p>
                     <p>
-                        Applications are deployed with best practices for Kubernetes deployments including
-                        scale, security, health and liveness probes. Kabanero also provides the ability to
-                        augment the base images with additional management capabilities as defined in the application stack.
-                        See everything from a single pane of glass with insights and correlation spanning traditional and Kubernetes
-                        applications for proactive problem determination.
+                            {{t.open-source-platform.manage.description}}
                     </p>
                 </div>
             </div>
@@ -513,16 +466,16 @@ seo-title: Kabanero
         <div class="col-sm">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Built on a foundation of:</p>
+                    <p class="open-source-platform-content-title">{{t.foundational-tools.title}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <span>Kubernetes&reg;</span>
+                    <span>{{t.common.kubernetes}}&reg;</span>
                     <span class="dot-separator orange"></span>
-                    <span>Knative</span>
+                    <span>{{t.common.knative}}</span>
                     <span class="dot-separator orange"></span>
-                    <span>Istio</span>
+                    <span>{{t.common.istio}}</span>
                 </div>
             </div>
         </div>
@@ -534,18 +487,16 @@ seo-title: Kabanero
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h2>When you are ready for support, we've got you covered</h2>
+                <h2>{{t.support.header}}</h2>
             </div>
         </div>
         <div class="row">
             <div class="col text-center description-text-block">
-                The Kabanero open source project is included within 
+                    {{t.support.description}}
                 <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
-                    IBM Cloud Pak for Applications
+                    {{t.support.link}}
                 </a>
-                as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
-                to move your core business applications to any cloud, in containers. Built and supported 
-                on Red Hat OpenShift.
+                {{t.support.description-cont}}
             </div>
         </div>
     </div>
@@ -555,7 +506,7 @@ seo-title: Kabanero
 <div class="container area">
     <div class="row">
         <div class="col text-center">
-            <h2 class="latest-news">Latest News</h2>
+            <h2 class="latest-news">{{t.blogs-section.latest-news}}</h2>
         </div>
     </div>
     <div class="row">
@@ -563,9 +514,9 @@ seo-title: Kabanero
             <div class="row visit-blog-row">
                 <div class="col-xl">
                     <div class="row container">
-                        <h3 class="col-md-5 visit-text">Visit our Blog!</h3>
+                        <h3 class="col-md-5 visit-text">{{t.blogs-section.visit-text}}</h3>
                         <div class="col-md-3"></div>
-                        <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">Visit</a>
+                        <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">{{t.blogs-section.visit}}</a>
                     </div>
                 </div>
             </div>
@@ -597,9 +548,9 @@ seo-title: Kabanero
                         <div class="row container">
                             <div class="text-right">
                             {% if post.redirect_link %}
-                                <a href="{{ post.redirect_link }}" class="blog-read-more">Read more</a>
+                                <a href="{{ post.redirect_link }}" class="blog-read-more">{{t.blogs-section.read-more}}</a>
                             {% else %}
-                                <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more</a>
+                                <a href="{{ post.url | relative_url }}" class="blog-read-more">{{t.blogs-section.read-more}}</a>
                             {% endif %}
                             </div>
                         </div>
@@ -609,7 +560,7 @@ seo-title: Kabanero
             {% endfor %}
             <div class="row boxed-row">
                 <div class="col-sm-8">
-                    <h3>Find us on Stack Overflow</h3>
+                    <h3>{{t.find-us}}</h3>
                 </div>
                 <div class="col-sm-4">
                     <a target="_blank" href="{{site.stackoverflow_url}}">
@@ -619,26 +570,26 @@ seo-title: Kabanero
             </div>
             <div class="row boxed-row">
                 <div class="col-sm-6">
-                    <h3 class="get-involved">Get Involved!</h3>
+                    <h3 class="get-involved">{{t.get-involved}}</h3>
                 </div>
                 <div class="col-sm-6">
-                    <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">Contribute to Kabanero</a>
+                    <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">{{t.contribute}}</a>
                 </div>
             </div>
             <div class="row empty-row"></div>
         </div>
         <div class="col-xl-5 offset-xl-1" id="twitter-col">
             <div class="row">
-                <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">Tweets by {{site.twitter_username}} </a>
+                <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">{{t.tweet-by}}{{site.twitter_username}} </a>
             </div>
             <div class="row boxed-row">
                 <div class="col-md-10">
                     <div class="row">
-                        <h3 class="slack-text">Chat with us on Slack</h3>
+                        <h3 class="slack-text">{{t.chat-with-us}}</h3>
                     </div>
                     <div class="row">
                         <a target="_blank" href={{site.slack_invite_url}}>
-                            <p class="slack-invite">Request an invite to the channel.</p>
+                            <p class="slack-invite">{{t.request-an-invite}}</p>
                         </a>
                     </div>
                 </div>
@@ -652,12 +603,12 @@ seo-title: Kabanero
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <h3 class="get-involved">See what we're cooking up next!</h3>
+                            <h3 class="get-involved">{{t.see-what-is-cookin}}</h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">Join the Community</a>
+                            <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">{{t.join-community}}</a>
                         </div>
                     </div>
                 </div>

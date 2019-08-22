@@ -4,11 +4,13 @@ title: Operations
 css: operations
 permalink: /operations/
 ---
+{% assign t = site.data[site.active_lang].operations %}
+
 <div id="intro-content" class="container">
     <!-- Intro title -->
     <div class="row">
         <div class="col">
-            <p class="header developer-experience-header">Kabanero Foundation Installation</p>
+            <p class="header developer-experience-header">{{t.intro-title}}</p>
             <hr/>
         </div>
     </div>
@@ -18,10 +20,7 @@ permalink: /operations/
         <div class="col text-center">
             <div>
                 <p id="intro-text">
-                    Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. 
-                    Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade 
-                    deployments infused with Kubernetes expertise. The applications being deployed will be based upon 
-                    a set of curated collections, which this install will activate a default set of featured collections.
+                        {{t.intro-text}}
                 </p>
             </div>
         </div>
@@ -34,7 +33,7 @@ permalink: /operations/
                 <div class="col text-center">
                     <a href="/operations/kabanero-foundation-setup">
                         <img class="img-fluid kabaneroLogo" src="/img/installation-symbol.png"><br>
-                        <a class="col-md-5" id="kabanero-foundation-setup-link" href="/operations/kabanero-foundation-setup/">Try It - Install Kabanero Foundation</a>
+                        <a class="col-md-5" id="kabanero-foundation-setup-link" href="/operations/kabanero-foundation-setup/">{{t.try-it-install-button}}</a>
                     </a>
                 </div>
             </div>
@@ -44,7 +43,7 @@ permalink: /operations/
     <!-- Pre-footer message -->
     <div class="row border-top footer-margins">
         <div class="col text-center">
-            <p>Kabanero Foundation includes an operator-based installation to leverage all the benefits of Kubernetes</p>
+            <p>{{t.footer-text}}</p>
         </div>
     </div>
 </div>

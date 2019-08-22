@@ -8,6 +8,7 @@ js:
 - guides
 permalink: /guides/
 ---
+{% assign t = site.data[site.active_lang].guides %}
 
 <!-- Build a list of all the documents in the guides code base -->
 {% assign static-guides = site.pages | where: 'layout', 'guide' %}
@@ -45,8 +46,8 @@ permalink: /guides/
 <div id="guides_information_container" class="container-fluid">
     <div class="row">
         <div id="guide_search_information" class="col-xs-12 col-sm-7 col-md-6">
-            <h2 id="guides-title">Guides</h2>
-            <p id="guides-description">The quickest way to learn all things Kabanero, and more!</p>
+            <h2 id="guides-title">{{t.page-title}}</h2>
+            <p id="guides-description">{{t.page-description}}</p>
         </div>
     </div>
 </div>
@@ -56,10 +57,10 @@ permalink: /guides/
 <div id="guides-basic-banner" class="basic-section container-fluid">
     <div class="row">
         <div class="col-sm-9">
-            <h2 class="guide-category-title"><b>Kabanero Basics</b>  - Let’s get started</h2>
+            <h2 class="guide-category-title"><b>{{t.basic-guides.title}}</b>  {{t.basic-guides.title-two}}</h2>
         </div>
         <div class="col-sm-3">
-            <h2 class="total-guide-count guide-category-title"><b>{{all-guides.size}} guides</b></h2>
+            <h2 class="total-guide-count guide-category-title"><b>{{all-guides.size}} {{t.basic-guides.catigory-title}}</b></h2>
         </div>
     </div>
 </div>

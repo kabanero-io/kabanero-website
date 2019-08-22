@@ -8,11 +8,12 @@ css:
 js: general-references
 permalink: /docs/ref/general/
 ---
+{% assign t = site.data[site.active_lang].general-reference %}
 {% assign generalDocs = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | sort: 'title' %}
 
 <div id="background-container">
     <div class="row">
-        <h1 id="docs-title">Kabanero Docs</h1>
+        <h1 id="docs-title">{{t.page-header}}</h1>
     </div>
     <div class="row">
         <!-- table of contents section -->

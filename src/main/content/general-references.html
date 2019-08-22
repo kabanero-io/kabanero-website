@@ -11,9 +11,11 @@ permalink: /docs/
 
 {% assign docCategories = '' | split: '' %}
 
-{% for doc in collectionsDoc | where: doc.doc-category %}
+{% for doc in collectionsDoc %}
+    {% if doc.doc-category %}
     {% assign docCategory = doc.doc-category | split: '/n' %}
     {% assign docCategories = docCategories | concat: docCategory %}
+    {% endif %}
 {% endfor %}
 
 {% assign uniqueCats =  docCategories | uniq %}
@@ -27,7 +29,7 @@ permalink: /docs/
             <input id="doc-search" type="text" placeholder="search">
             <hr>
             <div class="accordion" id="docs-accordion">
-                {% for cat in uniqueCats | uniq %}
+                {% for cat in uniqueCats %}
                 {% assign catNoSpaces = cat | replace: " ", "" %}
                 {% assign dataTarget = "#" | append: catNoSpaces %}
                 {% assign buttonId = catNoSpaces | append: '-button' %}

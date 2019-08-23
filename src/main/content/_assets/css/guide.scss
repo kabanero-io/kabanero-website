@@ -68,7 +68,7 @@ header {
 }
 
 #guide-content p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -221,14 +221,12 @@ header {
 /* End of pointed div */
 
 #guide-content .sect1 > .sectionbody {
-    padding-top: 19px;
+    padding: 19px 0 0 25px;
     margin-bottom: 100px;
 }
 
 #guide-content div.sect1 {
     padding-bottom: 50px;
-    padding-left: 45px;
-    padding-right: 45px;
     background-color: white;
 }
 
@@ -240,8 +238,7 @@ header {
     font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
     line-height: 1.3;
     outline: none;
-    margin: 0 -45px;
-    padding: 16px 45px 16px 45px;
+    padding: 16px 0 16px 25px;
     background: #F7F9E5;
 }
 
@@ -250,8 +247,7 @@ header {
 }
 
 #guide-content #guide-meta {
-    padding-top: 40px;
-    padding-bottom: 40px;    
+    padding: 40px 0 40px 25px;
 }
 
 #guide-content #related-guides-cards {
@@ -500,11 +496,6 @@ header {
         padding: 30px 16px;
     }
 
-    #guide-content div.sect1 {
-        padding-left: 24px;
-        padding-right: 18px;
-    }
-
     .listingblock {
         margin-left: -24px;
         margin-right: -18px;
@@ -533,21 +524,6 @@ header {
     }
 }
 
-@media (min-width: 1170px) {
-    #background_container {
-        background-image: inherit;
-        margin-bottom: 0;
-    }
-}
-
-@media (min-width: 1440px) {
-    #guide-column {
-        width: calc(100% - 400px);
-        max-width: 1000px;
-        display: inline-block;
-    }
-    
-    #guide-column.expanded {
-        width: 100%;
-    }      
+.hidden {
+    display: none;
 }

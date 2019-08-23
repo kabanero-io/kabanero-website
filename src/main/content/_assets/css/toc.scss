@@ -94,7 +94,6 @@
     left: 0;
     padding-bottom: 22px;
     vertical-align: top;
-    background-color: white;
     z-index: 7; /* to override the z-index valued of 4 and 6 for code mirror in interactive guide */
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
 
@@ -123,7 +122,8 @@
 }
 
 #toc-inner {
-    padding-top: 20px;
+    padding: 20px 0 0 20px;
+    position: fixed;
 }
 
 #toc-indicator {
@@ -374,6 +374,7 @@
 
     #toc-inner {
         padding-top: 41px; /* This should be the same height as #mobile-toc-accordion-container */
+        background-color: #FFFFFF;
     }
 
     #mobile-toc-accordion-container {
@@ -542,8 +543,8 @@
         margin-top: 0;
     }
     
-    #toc-column.inline {
-        display: inline-block;
+    #toc-column.block {
+        display: block;
     }
 
     #toc-inner {

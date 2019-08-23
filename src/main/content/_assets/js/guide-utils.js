@@ -125,16 +125,16 @@ function heightOfVisibleBackground() {
 // Get the absolute position of the bottom of the dark background regardless
 // of whether the bottom is in the browser's viewport
 function getBackgroundAbsoluteBottomPosition() {
-    var background = $('#background_container'),
-    elementTop = background.offset().top,
-    elementBottomPosition = elementTop + (background.outerHeight() - backgroundSizeAdjustment);
+    var background = $('#background-container'),
+        elementTop = background.offset().top,
+        elementBottomPosition = elementTop + (background.outerHeight() - backgroundSizeAdjustment);
     return elementBottomPosition;
 }
 
 // Determine if the bottom of the visible dark background is now visible
 // in the browser's viewport.
 function isBackgroundBottomVisible() {
-    var background = $('#background_container'),
+    var background = $('#background-container'),
         currentTopPosition = $(window).scrollTop(),
         currentBottomPosition = currentTopPosition + $(window).height(),
         elementBottomPosition = getBackgroundAbsoluteBottomPosition(),
@@ -439,7 +439,7 @@ function accessContentsFromHash(hash, callback) {
         } else {
             // Multi-column View
             // Account for the sticky header. Display the targeted section below it.
-            var stickyHeaderAdjustment = $('.container-fluid').height() || 0;
+            var stickyHeaderAdjustment = 0; //$('.container-fluid').height() || 0;
             scrollSpot -= stickyHeaderAdjustment;
         }
         $("body").data('scrolling', true); // Prevent the default window scroll from triggering until the animation is done.

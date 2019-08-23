@@ -1,3 +1,32 @@
+_includes:
+  header:
+    whats-new-toast-text: Check out what's in the latest release of Kabanero
+    learn-more: Learn More
+    try-it: Try It
+    close: Close
+  doc_header:
+    toggle-navigation: Toggle navigation
+    guides: Guides
+    general: General
+    docs: Docs
+    reference: Reference
+    table-of-content: Table of Content
+  end_of_guide:
+    end-of-guide: Way to go! What's next?
+    improve-guide-feedback: What could make this guide better?
+    need-help: Need help?
+    ask-questions: Ask a question on Stack Overflow
+    where-to-next: Where to next?
+    keep-exploring: Keep exploring
+    with-these-guides: with these guides.
+    interactive: Interactive
+  footer:
+    open-source: an IBM open source project
+    copyright: Copyright IBM Corp. 2019
+
+
+
+
 page-not-found:
   err-message: The requested page does not exist.
 

@@ -77,8 +77,7 @@ permalink: /guides/
     <div class="essential row">
         {% for guide in all-guides %}
         <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                {% assign href = '' %}
-                {% if guide.name contains 'adoc' %}
+                {% if guide.name contains '.adoc' %}
                     {% assign href = guide.url | append: '.html' %}
                 {% else %}
                     {% assign href = guide.url %}

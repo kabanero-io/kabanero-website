@@ -50,7 +50,12 @@ js:
                     {{ toc }}
                 </div>
                 <div id="toc-separator"></div>
+                {% else %}
+                    {% include toc.html %}  
                 {% endif %}
+
+
+
                 {% if page.tags %}
                     <h3 id="tag-title">Tags</h3>
                     <div id="tags-container">

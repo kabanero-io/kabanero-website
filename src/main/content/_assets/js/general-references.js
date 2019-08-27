@@ -20,45 +20,11 @@ var mobileWidth = 767;
 var generalDocsFolder = "/docs/ref/general/";
 var windowFocus = false;
 
-// setup and listen to click on table of content
-function addTOCClick() {
-    var onclick = function (event) {
-        var resource = $(event.currentTarget);
-        var currentHref = resource.attr("href");
-
-        // handle the click event ourselves so as to take care of updating the hash 
-        event.preventDefault();
-        event.stopPropagation();
-
-        loadContent(resource, currentHref, true);
-
-        if (isMobileView()) {
-            $("#breadcrumb-hamburger").trigger("click");
-        }
-    };
-
-    $("#toc-container > ul > li > div").off("click").on("click", onclick);
-
-    $("#toc-container > ul > li > div").off("keypress").on('keypress', function (event) {
-        event.stopPropagation();
-        // Enter or space key
-        if (event.which === 13 || event.keyCode === 13 || event.which === 32 || event.keyCode === 32) {
-            $(this).trigger('click');
-        }
-    });
-
-    addOutlineToTabFocus("#toc-container > ul > li > div");
-
-    $(window).off('focus').on('focus', function(event) {
-        windowFocus = true;
-    })
-}
-
-// highlight the selected TOC
-function setSelectedTOC(resource) {
+$(".doc-title").click(function(){
     deselectedTOC();
-    resource.parent().addClass("toc-selected");
-}
+    $(this).parent().addClass("toc-selected");
+    loadContent($(this), $(this).attr("href"), true);
+})
 
 // deselect current TOC
 function deselectedTOC(r) {
@@ -90,11 +56,6 @@ function setupDisplayContent() {
 // - update hash if requested
 function loadContent(targetTOC, tocHref, addHash) {
     $('footer').hide();
-    if (targetTOC.length === 1) {
-        setSelectedTOC(targetTOC);
-    } else {
-        deselectedTOC();
-    }
     $("#general-content").load(tocHref, function(response, status) {
         if (status === "success") {
             updateMainBreadcrumb(targetTOC);
@@ -319,16 +280,71 @@ function addWindowResizeListener() {
 }
 
 $(document).ready(function () {  
-    addTOCClick();
     addContentFocusListener();
     addHamburgerClick();
     addHashListener();
     addWindowResizeListener();
-
+    
     //manually tiggering it if we have hash part in URL
     if (window.location.hash) {
         $(window).trigger('hashchange');
+        selectDocFromHash();
     } else {
-        selectFirstDoc();
+        loadContent($('#intro-hidden'), '/docs/ref/general/docs-welcome.html');
     }
 });
+
+function selectDocFromHash(){
+    let pageLocation = window.location.hash;
+    pageLocation = pageLocation.substring(1); //take the "#" off of the front of the hash
+    let selectedDocLink = $( 'div[href$="' + pageLocation + '"]' ); //jQuery endswith selector finds the div with the href of the doc in the url
+    let selectedCategory = $(selectedDocLink).data("category");
+    $(`#${selectedCategory}`).click(); //drop down the twistie
+    $(selectedDocLink).click(); //highlight the selected doc
+}
+
+function toggleIcon(button) {
+    //toggle the button that was clicked
+    let iconId = $(button).data('icon');
+    if($(`#${iconId}`).attr('src') === '/img/icon_plus.png'){
+        $(`#${iconId}`).attr('src', '/img/icon_minus.png');
+    }else{
+        $(`#${iconId}`).attr('src', '/img/icon_plus.png');
+    }
+}
+
+$("#doc-search").keyup(function(){
+    searchDocs();
+});
+
+function searchDocs(){
+    let searchTerm = document.getElementById('doc-search').value.toLowerCase();
+    let docTitles = $(".doc-title");
+    $.each(docTitles, function(index, value){
+        let docTitle = $(value).text().toLowerCase();
+        let parentElement = $(value).parent();
+        !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
+    });
+    hideCategoriesIfEmpty();
+    $(".doc-category:visible").length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
+}
+
+function hideCategoriesIfEmpty(){
+    let categories = $(".doc-category");
+    $.each(categories, function(index, category){
+        let collapseId = $(category).data("target");
+        let childLinks = $(collapseId).find(".doc-link");
+        let isVisible = areLinksVisible(childLinks);
+        isVisible ? $(category).show() : $(category).hide();
+    });
+}
+
+function areLinksVisible(links){
+    let areVisible = false;
+    $.each(links, function(index, link){
+        if($(link).css("display") !== "none"){
+            areVisible = true;
+        }
+    });
+    return areVisible;
+}

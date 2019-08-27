@@ -16,28 +16,14 @@
  *
  ******************************************************************************/
 
-function hideAllFeaturedModelsCollapses(){
-    $(".featuredModelsCollapse").collapse('hide');
-    $(".featured-model-box").removeClass('selectedStack');
-}
-
-function hideAllOpenSourcePlatformsCollapses(){
-    let id = $(this).data("topic");
-
-    $(".open-source-platform-content-box").hide();
-    $(`#open-source-platform-${id}-collapse`).show();
-
-    $(".open-source-platform-box-selected").removeClass("open-source-platform-box-selected");
-    $(`#open-source-platform-${id}-box`).addClass("open-source-platform-box-selected");
-
-    $(".open-source-platform-vertical-separator-visible").removeClass("open-source-platform-vertical-separator-visible");
-    $(`#open-source-platform-${id}-separator`).addClass("open-source-platform-vertical-separator-visible");
-}
-
-$( document ).ready(function() {
-    $(".open-source-platform-box").on("click keypress", hideAllOpenSourcePlatformsCollapses);
-    // keypress is for accessibility. We put tabindex on the div (instead of the button) so the highlight 
-    // is over the whole element when tabbed into focus. The button doesn't get highlighted when tabbed due to css on it
-    $(".model-logo > button").on("click keypress", hideAllFeaturedModelsCollapses);
-    $(".model-logo").on("keypress", function(){$(this).children("button").click();});
+$(".featured-model-box").click(function() {
+    $(".featuredModelsCollapse:visible").collapse('hide');
 });
+
+function hoverFeaturedCollection(element){
+    element.setAttribute('src', '/img/featured-collection-white.png');
+}
+
+function unhoverFeaturedCollection(element){
+    element.setAttribute('src', '/img/featured-collection-black.png')
+}

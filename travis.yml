@@ -1,4 +1,6 @@
 language: ruby
+rvm:
+  - 2.6.3p62
 
 install:
   - bundle install

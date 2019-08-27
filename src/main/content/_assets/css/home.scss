@@ -51,7 +51,7 @@ $color-kabanero:#C43804;
 }
 
 .open-source-platform{
-    background-color: #292828;
+    background-color: #FFFFFF;
     padding: 15px 0 15px 0;
 }
 
@@ -72,14 +72,14 @@ $color-kabanero:#C43804;
 
 .open-source-platform-box{
     height:120px;
-    background-color: #5d5d5d;
-    color: white;
-    border:1px solid $color-kabanero;
+    background-color: #d8d8d8;
+    color: #000000;
+    border:5px solid #000000;
     cursor: pointer;
 }
 
 .open-source-platform-box:hover{
-    border-color: #fbae61;
+    background-color: #FFFFFF;
 }
 
 .open-source-platform-box-selected{
@@ -92,7 +92,7 @@ $color-kabanero:#C43804;
 
 .open-source-platform-horizontal-separator{
     margin-top:60px;
-    border-top:3px solid $color-kabanero;
+    border-top:5px solid #000000;
 }
 
 .open-source-platform-vertical-separator{
@@ -109,9 +109,14 @@ $color-kabanero:#C43804;
 
 .open-source-platform-content-box{
     padding:20px;
-    background-color: white;
-    color: black;
-    border-top:6px solid #fbae61;
+    background-color: #f4f5f7;
+    color: #000000;
+    border-top:6px solid #000000;
+}
+
+.no-margin{
+    margin-left:0px !important;
+    margin-right:0px !important;
 }
 
 .open-source-platform-content-title{
@@ -151,14 +156,22 @@ $color-kabanero:#C43804;
 }
 
 .featured-models{
-    background-color: #f3f5f7;
+    background-color: #f4f5f7;
     margin-top: 3em;
     padding-bottom: 7em;
     padding-top: 3em;
+    margin-left:-15px;
+    margin-right:-15px;
+    margin-bottom:5vh;
 }
 
-.support-block{
-    background-color: #f3f5f7;
+.support-title{
+    background-color:#f4f5f7;
+    padding-top: 3em;
+}
+
+.support-text{
+    background-color: #f4f5f7;
     padding-bottom: 7em;
     padding-top: 3em;
 }
@@ -476,6 +489,12 @@ $color-kabanero:#C43804;
     color: #ffffff;
 }
 
+.black-button{
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: #ffffff;
+}
+
 .visit-blog-button{
     margin: 10px 0 10px 20px;
 }
@@ -544,12 +563,11 @@ $color-kabanero:#C43804;
 }
 
 .foundational-tools{
-    background-color: #292828;
+    background-color: #f4f5f7;
     padding: 15px 0 100px 0;
 }
 
 .foundational-tools-container{
-    background-color:white;
     padding-top: 20px;
     padding-bottom: 30px;
 }
@@ -609,7 +627,7 @@ $color-kabanero:#C43804;
 }
 
 .slack-invite{
-    color:$color-kabanero;
+    color:#000000;
     font-size:16px;
     font-weight: bolder;
     margin: 0 0 0 15px;
@@ -644,8 +662,8 @@ $color-kabanero:#C43804;
     width: 227px;
     font-size: 17px;
     font-weight: 500;
-    color: #FFFFFF;
-    background-color: $color-kabanero;
+    color: #000000;
+    background-color: #d8d8d8;
     border-radius: 7px;
     padding: 10px 25px;
     margin-top:40px;
@@ -664,5 +682,21 @@ $color-kabanero:#C43804;
     max-height: 60%;
     max-width: 60%;
     margin-bottom: 15px;
+}
+
+.role-box{
+    border: 1px solid #979797;
+    border-top: 10px solid #000000;
+    margin-left:25px;
+    margin-right:25px;
+    padding: 10px 25px 10px 25px;
+}
+
+.centered{
+    text-align:center;
+}
+
+.role-box-img{
+    height:200px !important;
 }
 

@@ -14,7 +14,8 @@ permalink: /guides/
 {% assign multipane-static-guides = site.pages | where: 'layout', 'guide-multipane' %}
 {% assign interactive-guides = site.pages | where: 'layout', 'interactive-guide' %}
 {% assign multipane-iguides = site.pages | where: 'layout', 'iguide-multipane' %}
-{% assign all-markdown-files = static-guides | concat: interactive-guides | concat: multipane-static-guides | concat: multipane-iguides | sort: 'releasedate' | reverse %}
+{% assign markdown-guides = site.pages | where: 'layout', 'guide-markdown' %}
+{% assign all-markdown-files = static-guides | concat: interactive-guides | concat: multipane-static-guides | concat: markdown-guides | concat: multipane-iguides | sort: 'releasedate' | reverse %}
 {% assign all-guides = '' | split: '' %}
 
 <!-- Remove any documents deemed private (archived, templates, etc) -->

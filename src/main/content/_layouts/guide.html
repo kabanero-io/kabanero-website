@@ -40,10 +40,10 @@ js:
                 {% assign toc = page.document | tocify_asciidoc %}
                 <script></script>
                 <div id="close-container">
-                    <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
+                    <!-- <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/> -->
                 </div>
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
+                    <!-- <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                         -->
                 </div>
                 <h3 id="toc-title">Contents</h3>
                 <div id="toc-container">
@@ -53,14 +53,13 @@ js:
                 </div>
                 <div id="toc-separator"></div>
 
-
+                
                 {% if page.tags %}
                     <h3 id="tag-title">Tags</h3>
                     <div id="tags-container">
                         {% for tag in page.tags %}
-                            {% if visibleTags contains tag %}
-                                <a href="/guides?search={{ tag }}&key=tag">{{ tag }}</a>
-                            {% endif %}
+                        <script>console.log(`{{tag}}`)</script>
+                                <a href="/guides?search={{ tag }}&key=tag">{{ tag }}</a>   
                         {% endfor %}
                     </div>
                 {% endif %}                    

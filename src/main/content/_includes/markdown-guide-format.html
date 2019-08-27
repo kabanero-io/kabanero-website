@@ -12,6 +12,11 @@
                 if (element.className !== 'sect1') {
                     paragraph.append(element);
                 }
+                if (element.nodeName === 'H3') {
+                    let sect2 = $('<div class="sect2"></div>')
+                    sect2.append(element)
+                    paragraph.append(sect2);
+                }
             });
             sectionbody.append(paragraph);
             sect1.append(sectionbody);

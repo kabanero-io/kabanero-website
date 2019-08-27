@@ -88,10 +88,14 @@ body{
     color: #000000;
     border:5px solid #000000;
     cursor: pointer;
-}
 
-.open-source-platform-box:hover{
-    background-color: #FFFFFF;
+    &:hover{
+        background-color: #FFFFFF;
+    }
+
+    &:focus{
+        outline: $color-kabanero auto 5px;
+    }
 }
 
 .open-source-platform-box-selected{

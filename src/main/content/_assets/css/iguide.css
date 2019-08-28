@@ -26,7 +26,7 @@
     margin-bottom: 8px;
 }
 
-#code_column code  {
+#code-column code  {
     /* Bootstrap override */
     background-color:#f4f4f4;
     color: #5e6b8d;

@@ -10,7 +10,7 @@
  *******************************************************************************/
  $color-kabanero:#C43804;
 
- #background_container, #end_of_guide_background {
+ #background-container, #end_of_guide_background {
     background-color: rgb(241, 244, 254);
 }
 
@@ -312,7 +312,7 @@ header {
 
 /* GUIDE PAGE LAYOUT */
 
-#background_container {
+#background-container {
     min-height: 600px;
     background-repeat: no-repeat;
     margin-bottom: 100px;
@@ -410,7 +410,7 @@ header {
         position: static; /* Make the header non sticky in mobile view */
     }
 
-    #background_container {
+    #background-container {
         margin: 0;
     }
 

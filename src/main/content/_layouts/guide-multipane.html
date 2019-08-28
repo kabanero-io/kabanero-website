@@ -14,29 +14,11 @@ js:
 - guide-multipane
 ---
 
-<!-----------------------------------------------------------------------------
- -
- - Copyright 2019 IBM Corporation and others.
- -
- - Licensed under the Apache License, Version 2.0 (the "License");
- - you may not use this file except in compliance with the License.
- - You may obtain a copy of the License at
- -
- -     http://www.apache.org/licenses/LICENSE-2.0
- -
- - Unless required by applicable law or agreed to in writing, software
- - distributed under the License is distributed on an "AS IS" BASIS,
- - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- - See the License for the specific language governing permissions and
- - limitations under the License.
- -
- ------------------------------------------------------------------------------>
-
 {% include visible-tags.liquid %}
 
-<div id="background_container">
-        <div id="toc-hotspot"></div>
-        <!-- Guide's table of contents section -->
+<div id="background-container">
+        <div id="toc-hotspot"></div>            
+        <!-- Guide's table of contents section -->            
         <div id="toc-column" class="collapse inline open">
             <div id="toc-inner">
                 {% assign toc = page.document | tocify_asciidoc %}
@@ -45,7 +27,7 @@ js:
                     <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
                 </div>
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
+                    <img src="{{ " /img/toc-close-white.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
                 </div>
                 <h3 id="toc-title">Contents</h3>
                 <div id="toc-container">
@@ -81,9 +63,9 @@ js:
                         <span id="guide-duration">{{ page.duration }}</span>
                     </div>
                     <div id="mobile-github-section">
-                        <div id="mobile-github-clone-popup-title"><span class="kabanero-link-background">Git clone</span><span> to get going right away:</span></div>
+                        <div id="mobile-github-clone-popup-title"><span class="dark-green-link-light-background">Git clone</span><span> to get going right away:</span></div>
                         <div id="mobile-github-clone-popup-repo">
-                            <span>git clone {{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}.git</span>
+                            <span>git clone https://github.com/Kabanero/guide-{{page.url | replace: '/guides/', ''}}.git</span>
                             <div id="mobile-github-clone-popup-copy" tabindex="0" aria-label="Copy the Github repository clone command">
                                 <img src="/img/guides-copy-button-white.svg" alt="Copy Github clone command" title="Copy Github clone command">
                             </div>
@@ -99,7 +81,7 @@ js:
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
-                                <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" class="toc-close-svg hidden img-responsive" alt="Table of contents close button"/>
+                                <img src="{{ " /img/toc-close-white.svg " | relative }}" class="TOC-Close-SVG hidden img-responsive" alt="Table of contents close button"/>
                         </button>
                         <span>Table of contents</span>
                     </div>
@@ -114,12 +96,12 @@ js:
         </div>
 
         <!-- Code section -->
-        <div id="code_column" class="position_relative" tabindex="0">
+        <div id="code-column" class="position_relative" tabindex="0">
             <div id='code-column-title-container'>
                 <div id='code-column-tabs-container' class='dimmed'>
                     <ul id='code-column-tabs' class='nav' role='tablist'></ul>
                 </div>                    
-                <div class='copy-file-button' tabindex="0">
+                <div class='copyFileButton' tabindex="0">
                     <img src='/img/guides-copy-button.svg' alt='Copy file contents' title='Copy file contents'>
                 </div>
             </div>
@@ -129,7 +111,7 @@ js:
                 <div id="github-clone-popup" tabindex="0">
                     <div id="github-clone-popup-title">Git clone this repo to get going right away:</div>
                     <div id="github-clone-popup-repo">
-                            git clone {{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}.git
+                            git clone https://github.com/Kabanero/guide-{{page.url | replace: '/guides/', ''}}.git
                     </div>
                     <div id="github-clone-popup-copy" tabindex="0">
                         <img src="/img/guides-copy-button-white.svg" alt="Copy github clone command" title="Copy github clone command">

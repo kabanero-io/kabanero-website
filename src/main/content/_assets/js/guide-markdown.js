@@ -22,18 +22,29 @@ $(document).ready(function () {
         guideContentSection.append(sect1);
     });
 
-
-    $('#toc-container').append($('#markdown-toc'))
-    if ($('#markdown-toc > li > ul')) {
-        $('#markdown-toc > li > ul').addClass('sectlevel2')
-    }
-
-    var li = $("<li/>");
-    var a = $("<a/>");
-    var end_of_guide_title = $('#end_of_guide > h2').first().text();
-    a.attr('href', '#end_of_guide');
-    a.text(end_of_guide_title);
-    li.append(a);
-    $("#toc-container > ul").append(li);
+    let ul = $("<ul/>", { class: "sectlevel1" });
+    $('div#guide-content-section h2, h3').each(function (i, header) {
+        if (header.id !== "toc-title" && header.id !== "tag-title" && header.id !== "improve_guide_feedback" && header.id !== "need_help" && header.id !== "where_to_next") {
+            if (header.nodeName === "H2") {
+                let li = $("<li/>");
+                let a = $("<a/>");
+                a.attr('href', `#${header.id}`)
+                a.text(`${header.innerHTML}`)
+                li.append(a)
+                ul.append(li)
+            }
+            if (header.nodeName === "H3") {
+                let ul = $("<ul/>", { class: "sectlevel2" });
+                let li = $("<li/>");
+                let a = $("<a/>");
+                a.attr('href', `#${header.id}`)
+                a.text(`${header.innerHTML}`)
+                li.append(a)
+                ul.append(li)
+                $('.sectlevel1').append(ul)
+            }
+        }
+        $("#toc-container").append(ul)
+    });
 
 });

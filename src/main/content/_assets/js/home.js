@@ -47,9 +47,9 @@ $(".featured-model-box").click(function() {
  });
  
  function hoverFeaturedCollection(element){
-    element.setAttribute('src', '/img/featured-collection-white.png');
+    element.setAttribute('src', '/img/collections-icon-rollover.png');
  }
  
  function unhoverFeaturedCollection(element){
-    element.setAttribute('src', '/img/featured-collection-black.png')
+    element.setAttribute('src', '/img/collections-icon.png')
  }

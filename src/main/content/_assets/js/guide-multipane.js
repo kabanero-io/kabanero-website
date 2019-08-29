@@ -52,8 +52,8 @@ function highlight_code_range(code_section, fromLine, toLine, scroll){
     // Wrap each leftover piece of text in a span to handle highlighting a range of lines.
     code_section.find('code').contents().each(function(){
         if (!$(this).is('span')) {
-                var newText = $(this).wrap('<span class="string"></span>');
-                $(this).replaceWith(newText);
+            var newText = $(this).wrap('<span class="string"></span>');
+            $(this).replaceWith(newText);
         }
     });
     
@@ -235,6 +235,7 @@ function handleGithubPopup() {
             showGithubPopup();
             return;
         }
+
         if(firstCodeSection.is('h3')){
             firstCodeSection = firstCodeSection.parents('.sect1').find('h2').first();
         }
@@ -244,11 +245,12 @@ function handleGithubPopup() {
 
         var firstHotspot = $("#guide-column .hotspot:visible")[0];
         var firstHotspotRect = firstHotspot.getBoundingClientRect();
-        var firstHotspotInView = (firstHotspotRect.top > 0) && (firstHotspotRect.bottom <= window.innerHeight);
 
+        var firstHotspotInView = (firstHotspotRect.top > 0) && (firstHotspotRect.bottom <= window.innerHeight);
         // Only show the Github popup if above the first section with code
         // and if hotspots weren't hovered over to reveal the code behind the popup.
         var hotspotHovered = $("#github-clone-popup-container").data('hotspot-hovered');
+
         if(blurCodeOnRight && !(firstHotspotInView && hotspotHovered)){
             showGithubPopup();
         }
@@ -361,9 +363,6 @@ function setActiveTab(activeTab){
 function restoreCodeColumn(){
     if(!inSingleColumnView()){
         $("body").removeClass("unscrollable");
-        $("#code-column").css({
-            "top": "100px"
-        });
         $("#code-column").removeClass("modal");
         remove_highlighting(); // Remove previously highlighted hotspots from mobile view
     }
@@ -462,6 +461,10 @@ $(document).ready(function() {
 
     $(window).on('resize', function(){
         restoreCodeColumn();
+        // let code column resize with its containing col class
+        // need this because fixed position doesn't care about the parent col
+        let codeColumn = $("#code-column");
+        codeColumn.width(codeColumn.parent().width());
     });
      
     /* Copy button for the github clone command  that pops up initially when opening a guide. */
@@ -672,6 +675,7 @@ $(document).ready(function() {
     // In mobile view if the user clicks a hotspot it shows a modal of the file with the hotspot code highlighted.
     $('.hotspot').on('click', function(){
         if(inSingleColumnView()){
+
             $("body").addClass("unscrollable");   
             $("#mobile-toc-accordion-container").css({
                 "pointer-events" : "none"
@@ -693,7 +697,7 @@ $(document).ready(function() {
             var bottom = scrollTo + window.innerHeight - hotspot_height - 5;
             var height = bottom - scrollTo;
             $("#code-column").css({
-                "top" : scrollTo + mobile_toc_height + hotspot_height + 5 + "px",
+                "top" : "200px",
                 "height" : height
             });
             handleHotspotHover($(this));

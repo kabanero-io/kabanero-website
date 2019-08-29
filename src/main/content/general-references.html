@@ -29,6 +29,9 @@ permalink: /docs/
             <input id="doc-search" type="text" placeholder="search">
             <hr>
             <div class="accordion" id="docs-accordion">
+                <div id="welcome-doc" class="doc-category doc-title" href="{{ introDoc[0].url }}">
+                    {{introDoc[0].title}}
+                </div>
                 {% for cat in uniqueCats %}
                 {% assign catNoSpaces = cat | replace: " ", "" %}
                 {% assign dataTarget = "#" | append: catNoSpaces %}

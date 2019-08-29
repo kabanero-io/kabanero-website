@@ -4,13 +4,13 @@ env:
   es6: true
 rules:
   indent:
-    - off
+    - warn
   linebreak-style:
-    - off
+    - warn
     - unix
   quotes:
-    - off
+    - warn
     - single
   semi:
-    - off
+    - warn
     - always

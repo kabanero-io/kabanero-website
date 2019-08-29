@@ -41,7 +41,7 @@ h2:first-of-type{
 }
 
 ol{
-    margin:0 15px 0 15px;
+    margin:0 15px 15px 15px;
 
     & .kabanero-colored-button{
         margin-bottom:30px;
@@ -49,5 +49,9 @@ ol{
 
     & img{
         margin-bottom:30px;
+    }
+    
+    & .code-block{
+        margin: 10px 0 30px 0;
     }
 }

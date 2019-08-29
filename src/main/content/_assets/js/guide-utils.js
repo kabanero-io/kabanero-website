@@ -146,7 +146,7 @@ function isBackgroundBottomVisible() {
 // section and the code column transitions better by making the section height
 // in two and three column view at least as tall as the viewport.
 function resizeGuideSections() {
-        // Two column view or three column view.
+    // Two column view or three column view.
     if (window.innerWidth > twoColumnBreakpoint) {
         if(!onAppleDevice() && !onIE()){
             var viewportHeight = window.innerHeight;
@@ -154,7 +154,7 @@ function resizeGuideSections() {
             var sectionTitleHeight = $('#guide-content h2').first().height();
             var newSectionHeight = viewportHeight - headerHeight - sectionTitleHeight;
             $('.sect1:not(#guide-meta):not(#related-guides)').css({
-                    'min-height': newSectionHeight + 'px'
+                'min-height': newSectionHeight + 'px'
             });
         }        
         if(window.innerWidth >= threeColumnBreakpoint){
@@ -170,8 +170,8 @@ function resizeGuideSections() {
     }
     // Use initial height for single column view / mobile
     else {
-            $('.sect1:not(#guide-meta):not(#related-guides)').css({
-                'min-height': 'initial'
+        $('.sect1:not(#guide-meta):not(#related-guides)').css({
+            'min-height': 'initial'
         });
     }
 }
@@ -270,8 +270,7 @@ function getScrolledVisibleSectionID() {
     if (window.innerWidth > twoColumnBreakpoint) {
         // multi-column view - header is constant and guide scrolls
         //                     beneath it.
-        topBorder = $('#guide-meta').outerHeight(true); // Border point between
-                                                        // guide meta and 1st section
+        topBorder = $('#guide-meta').outerHeight(true); // Border point between guide meta and 1st section
     } else {
         // single-column view - header and guide meta scroll away.
         //                      TOC anchors to top of page at $('.scroller-anchor).
@@ -506,8 +505,8 @@ $(document).ready(function() {
     }
 
     $('#feedback_ratings img').hover (function(event) {
-      $('#feedback_ratings img').not($(this)).css('opacity', '.50');
-      $(this).css('opacity', '1');
+        $('#feedback_ratings img').not($(this)).css('opacity', '.50');
+        $(this).css('opacity', '1');
     });
 
     $(window).on('resize', function(){
@@ -578,10 +577,10 @@ $(document).ready(function() {
                 else {
                     // On the first actual guide step. Send focus to the guide meta section.
                     if (inSingleColumnView()){
-                      //In single column view, the TOC hamburger button is in between the first guide step and guide-meta section
-                      $('.breadcrumb-hamburger toc-toggle collapsed').focus();
+                        //In single column view, the TOC hamburger button is in between the first guide step and guide-meta section
+                        $('.breadcrumb-hamburger toc-toggle collapsed').focus();
                     } else {
-                      elemToFocus = $('#guide-meta');
+                        elemToFocus = $('#guide-meta');
                     }
                 }
             }
@@ -683,43 +682,43 @@ $(document).ready(function() {
 
     // Handle manual tabbing order through the guide. The tabbing order is: header, breadcrumb, table of contents, #guide-meta, github popup if present, first guide section, through all of the guide section's tabbable elements, to the respective code on the right for that given guide section, through all of its tabbable elements, etc. until the last guide section and code are tabbed through, then to the end of guide section. Shift + tab goes in the reverse order.
     $(window).on('keydown', function(e) {
-      if($('body').data('scrolling') === true){
-         e.preventDefault();
-         e.stopPropagation();
-         return;
-      }
-      var code = e.keyCode || e.which;
-      var shiftIsPressed = e.shiftKey;
-      var elemToFocus;
+        if($('body').data('scrolling') === true){
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+        var code = e.keyCode || e.which;
+        var shiftIsPressed = e.shiftKey;
+        var elemToFocus;
 
-      // Tab key
-      if (code === 9) {
-        var elementWithFocus = $(document.activeElement);
-        if (elementWithFocus[0] == $('#guide-column')[0] || elementWithFocus.parents('#guide-column').length > 0) {
-            if (elementWithFocus.attr('id') === 'guide-meta') {
-                // Tabbing from the initial section before the guide starts
-                if(shiftIsPressed) {
-                    // Go to the table of contents if visible
-                    if($('#tags-container:visible').length > 0){
-                        elemToFocus = $('#tags-container a').last();
+        // Tab key
+        if (code === 9) {
+            var elementWithFocus = $(document.activeElement);
+            if (elementWithFocus[0] == $('#guide-column')[0] || elementWithFocus.parents('#guide-column').length > 0) {
+                if (elementWithFocus.attr('id') === 'guide-meta') {
+                    // Tabbing from the initial section before the guide starts
+                    if(shiftIsPressed) {
+                        // Go to the table of contents if visible
+                        if($('#tags-container:visible').length > 0){
+                            elemToFocus = $('#tags-container a').last();
+                        }
+                        // Else go to the breadcrumb
+                        else {
+                            elemToFocus = $('#breadcrumb_row a').last();
+                        }
                     }
-                    // Else go to the breadcrumb
                     else {
-                        elemToFocus = $('#breadcrumb_row a').last();
+                        // The intro step doesn't have elements you can tab to go straight to code_column
+                        if(!inSingleColumnView()){
+                            // Do not prevent the default tab behavior in single column view.
+                            elemToFocus = $('#code_column');
+                        }
                     }
                 }
                 else {
-                    // The intro step doesn't have elements you can tab to go straight to code_column
-                    if(!inSingleColumnView()){
-                        // Do not prevent the default tab behavior in single column view.
-                        elemToFocus = $('#code_column');
-                    }
+                    elemToFocus = getGuideColumnFocusElement(elementWithFocus, shiftIsPressed);
                 }
             }
-            else {
-                elemToFocus = getGuideColumnFocusElement(elementWithFocus, shiftIsPressed);
-            }
-        }
         // Handle tabbing from code column
         else if (elementWithFocus[0] == $('#code_column')[0] || elementWithFocus.parents('#code_column').length > 0) {
             elemToFocus = getCodeColumnFocusElement(elementWithFocus, shiftIsPressed);

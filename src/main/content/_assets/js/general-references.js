@@ -24,7 +24,7 @@ $('.doc-title').click(function(){
     deselectedTOC();
     $(this).parent().addClass('toc-selected');
     loadContent($(this), $(this).attr('href'), true);
-})
+});
 
 // deselect current TOC
 function deselectedTOC(r) {

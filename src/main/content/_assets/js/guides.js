@@ -140,7 +140,7 @@ $(document).ready(function() {
             $('.no_results_section').show();
 
             var search_text = $('#guide-search-input').val();
-            $('.search_term').text("" + search_text + "");
+            $('.search_term').text('' + search_text + '');
         } else {
             $('.no_results_section').hide();
         }
@@ -216,12 +216,12 @@ $(document).ready(function() {
             searchTextWithoutTag = searchTextWithoutTag.trim();
             search_value = '?search=' + encodeURIComponent(searchTextWithoutTag) + '&key=tag';
             history.pushState(null, '', search_value);
-            document.activeElement.blur()
+            document.activeElement.blur();
         } else {
             value = value.trim();
             search_value = '?search=' + encodeURIComponent(value);
             history.pushState(null, '', search_value);
-            document.activeElement.blur()
+            document.activeElement.blur();
         }
     }
 

@@ -52,8 +52,8 @@ function highlight_code_range(code_section, fromLine, toLine, scroll){
     // Wrap each leftover piece of text in a span to handle highlighting a range of lines.
     code_section.find('code').contents().each(function(){
         if (!$(this).is('span')) {
-                var newText = $(this).wrap('<span class="string"></span>');
-                $(this).replaceWith(newText);
+            var newText = $(this).wrap('<span class="string"></span>');
+            $(this).replaceWith(newText);
         }
     });
     

@@ -51,7 +51,7 @@ function addTOCClick() {
 
     $(window).off('focus').on('focus', function(event) {
         windowFocus = true;
-    })
+    });
 }
 
 // setup and listen to click on the See Also section
@@ -275,7 +275,7 @@ function addHamburgerClick() {
                     updateHashInUrl('');
                 }
             }
-        })
+        });
     }
 }
 

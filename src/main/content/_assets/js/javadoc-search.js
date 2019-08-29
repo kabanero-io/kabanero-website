@@ -32,31 +32,31 @@ function getName(name) {
     for (i = 0; i < name.length; i++) {
         ch = name.charAt(i);
         switch (ch) {
-            case '(':
-            case ')':
-            case '<':
-            case '>':
-            case ',':
-                anchor += '-';
-                break;
-            case ' ':
-            case '[':
-                break;
-            case ']':
-                anchor += ':A';
-                break;
-            case '$':
-                if (i == 0)
-                    anchor += 'Z:Z';
-                anchor += ':D';
-                break;
-            case '_':
-                if (i == 0)
-                    anchor += 'Z:Z';
-                anchor += ch;
-                break;
-            default:
-                anchor += ch;
+        case '(':
+        case ')':
+        case '<':
+        case '>':
+        case ',':
+            anchor += '-';
+            break;
+        case ' ':
+        case '[':
+            break;
+        case ']':
+            anchor += ':A';
+            break;
+        case '$':
+            if (i == 0)
+                anchor += 'Z:Z';
+            anchor += ':D';
+            break;
+        case '_':
+            if (i == 0)
+                anchor += 'Z:Z';
+            anchor += ch;
+            break;
+        default:
+            anchor += ch;
         }
     }
     return anchor;
@@ -98,7 +98,7 @@ $.widget('custom.catcomplete', $.ui.autocomplete, {
     },
     _renderMenu: function(ul, items) {
         var rMenu = this,
-                currentCategory = '';
+            currentCategory = '';
         $.each(items, function(index, item) {
             var li;
             if (item.l !== noResult.l && item.category !== currentCategory) {
@@ -121,8 +121,8 @@ $.widget('custom.catcomplete', $.ui.autocomplete, {
             label = getHighlightedText(item.l);
         } else if (item.category === catPackages) {
             label = (item.m)
-                    ? getHighlightedText(item.m + '/' + item.l)
-                    : getHighlightedText(item.l);
+                ? getHighlightedText(item.m + '/' + item.l)
+                : getHighlightedText(item.l);
         } else if (item.category === catTypes) {
             label = getHighlightedText(item.p + '.' + item.l);
         } else if (item.category === catMembers) {
@@ -136,18 +136,18 @@ $.widget('custom.catcomplete', $.ui.autocomplete, {
         if (item.category === catSearchTags) {
             if (item.d) {
                 $('<a/>').attr('href', '#')
-                        .html(label + '<span class=\'searchTagHolderResult\'> (' + item.h + ')</span><br><span class=\'searchTagDescResult\'>'
-                                + item.d + '</span><br>')
-                        .appendTo($li);
+                    .html(label + '<span class=\'searchTagHolderResult\'> (' + item.h + ')</span><br><span class=\'searchTagDescResult\'>'
+                        + item.d + '</span><br>')
+                    .appendTo($li);
             } else {
                 $('<a/>').attr('href', '#')
-                        .html(label + '<span class=\'searchTagHolderResult\'> (' + item.h + ')</span>')
-                        .appendTo($li);
+                    .html(label + '<span class=\'searchTagHolderResult\'> (' + item.h + ')</span>')
+                    .appendTo($li);
             }
         } else {
             $('<a/>').attr('href', '#')
-                    .html(label)
-                    .appendTo($li);
+                .html(label)
+                .appendTo($li);
         }
         return $li;
     }
@@ -220,8 +220,8 @@ $(function() {
                 $.each(packageSearchIndex, function(index, item) {
                     item[category] = catPackages;
                     pkg = (item.m)
-                            ? (item.m + '/' + item.l)
-                            : item.l;
+                        ? (item.m + '/' + item.l)
+                        : item.l;
                     if (exactMatcher.test(item.l)) {
                         presult.unshift(item);
                         pCount++;

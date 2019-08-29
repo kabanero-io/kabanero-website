@@ -2,14 +2,14 @@
  -
  - Copyright 2019 IBM Corporation and others.
  -
- - Licensed under the Apache License, Version 2.0 (the "License");
+ - Licensed under the Apache License, Version 2.0 (the 'License');
  - you may not use this file except in compliance with the License.
  - You may obtain a copy of the License at
  -
  -     http://www.apache.org/licenses/LICENSE-2.0
  -
  - Unless required by applicable law or agreed to in writing, software
- - distributed under the License is distributed on an "AS IS" BASIS,
+ - distributed under the License is distributed on an 'AS IS' BASIS,
  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  - See the License for the specific language governing permissions and
  - limitations under the License.
@@ -64,21 +64,21 @@ function debounce(func, wait, immediate) {
 function copy_element_to_clipboard(target, callback){
     // IE
     if(window.clipboardData){
-        window.clipboardData.setData("Text", target.innerText);
+        window.clipboardData.setData('Text', target.innerText);
     } 
     else{
         var temp = $('<textarea>');
         temp.css({
-            position: "absolute",
-            left:     "-1000px",
-            top:      "-1000px",
+            position: 'absolute',
+            left:     '-1000px',
+            top:      '-1000px',
         });       
         
         // Create a temporary element for copying the text.
         // Prepend <br> with newlines because jQuery .text() strips the <br>'s and we use .text() because we don't want all of the html tags copied to the clipboard.
         var text = $(target).clone().find('br').prepend('\r\n').end().text().trim();
         temp.text(text);
-        $("body").append(temp);
+        $('body').append(temp);
         temp.select();
         
         // Try to copy the selection and if it fails display a popup to copy manually.
@@ -151,7 +151,7 @@ function resizeGuideSections() {
         if(!onAppleDevice() && !onIE()){
             var viewportHeight = window.innerHeight;
             var headerHeight = $('header').height();
-            var sectionTitleHeight = $("#guide-content h2").first().height();
+            var sectionTitleHeight = $('#guide-content h2').first().height();
             var newSectionHeight = viewportHeight - headerHeight - sectionTitleHeight;
             $('.sect1:not(#guide-meta):not(#related-guides)').css({
                     'min-height': newSectionHeight + 'px'
@@ -159,12 +159,12 @@ function resizeGuideSections() {
         }        
         if(window.innerWidth >= threeColumnBreakpoint){
             // In three column view set the width of the #guide-column appropriately.
-            if ($("#toc-column").hasClass('in') || $("#toc-column").hasClass('inline')) {
+            if ($('#toc-column').hasClass('in') || $('#toc-column').hasClass('inline')) {
                 // TOC is expanded.  Adjust #guide-column width to account for TOC column.
-                $("#guide-column").removeClass('expanded');
+                $('#guide-column').removeClass('expanded');
             } else {
                 // TOC is closed.  Maximize width of #guide-column.
-                $("#guide-column").addClass('expanded');
+                $('#guide-column').addClass('expanded');
             }
         }
     }
@@ -182,16 +182,16 @@ function handleFloatingCodeColumn() {
         if(isBackgroundBottomVisible()) {
             // Set the bottom of the code column to the distance between the top of the end of guide section and the bottom of the page.
             var windowHeight = window.innerHeight;
-            var relatedGuidesTopPosition = $("#end_of_guide")[0].getBoundingClientRect().top;
+            var relatedGuidesTopPosition = $('#end_of_guide')[0].getBoundingClientRect().top;
             if(relatedGuidesTopPosition){
                 var bottom = windowHeight - relatedGuidesTopPosition;
-                $("#code_column").css('bottom', bottom + 'px');
+                $('#code_column').css('bottom', bottom + 'px');
             } else {
-                $("#code_column").css('bottom', 'auto');
+                $('#code_column').css('bottom', 'auto');
             }
         } else {
             // The entire viewport is filled with the code column
-            $("#code_column").css('bottom', '0');
+            $('#code_column').css('bottom', '0');
         }
     }
 }
@@ -203,7 +203,7 @@ function checkForInertialScrolling (event){
     }
     var origEvent = event.originalEvent;
     var windowHeight = $(window).height();
-    var navbarHeight = $("nav").height();
+    var navbarHeight = $('nav').height();
     var scrollPosition;
 
     var dir;
@@ -258,7 +258,7 @@ function checkForInertialScrolling (event){
 
 /**
  * Find the section that is most visible in the viewport and return the id.
- * Returns "" (empty string, not NULL) if the window scrollTop is within the
+ * Returns '' (empty string, not NULL) if the window scrollTop is within the
  * guide's meta.
  */
 function getScrolledVisibleSectionID() {
@@ -280,7 +280,7 @@ function getScrolledVisibleSectionID() {
 
     if (scrollTop <= topBorder) {
         // scroll is within guide meta.
-        id = "";
+        id = '';
     } else {
         var sections = $('.sect1:not(#guide-meta):not(#related-guides), .sect2');
 
@@ -374,35 +374,35 @@ function getScrolledVisibleSectionID() {
 // Copy over content that should be shown in a different section than where it
 // is generated.
 function createEndOfGuideContent(){
-    var leftSide = $("#end_of_guide_left_section");
-    var rightSide = $("#end_of_guide_right_section");
-    var whatYouLearned = $("#great-work-you-re-done, #great-work-youre-done").siblings().find('p').clone();
-    whatYouLearned.first().prepend("Nice work! "); // Start every what you learned statement with 'Nice work!'
+    var leftSide = $('#end_of_guide_left_section');
+    var rightSide = $('#end_of_guide_right_section');
+    var whatYouLearned = $('#great-work-you-re-done, #great-work-youre-done').siblings().find('p').clone();
+    whatYouLearned.first().prepend('Nice work! '); // Start every what you learned statement with 'Nice work!'
     whatYouLearned.attr('tabindex', '0');
     leftSide.prepend(whatYouLearned);
-    $("#great-work-you-re-done, #great-work-youre-done").parent().remove(); // Remove section from the main guide column.
-    $("#toc-container a[href='#great-work-you-re-done'], #toc-container a[href='#great-work-youre-done']").parent().remove(); // Remove from TOC.
+    $('#great-work-you-re-done, #great-work-youre-done').parent().remove(); // Remove section from the main guide column.
+    $('#toc-container a[href="#great-work-you-re-done"], #toc-container a[href="#great-work-youre-done"]').parent().remove(); // Remove from TOC.
     // Concatenate the guide title and guide attribution license and append it to the end of guide.
-    var guideAttributionText = $("#guide-attribution").siblings().find('p').html();
+    var guideAttributionText = $('#guide-attribution').siblings().find('p').html();
     if(guideAttributionText){
-        $("#guide_attribution").html(guideAttributionText);
-        $("#guide-attribution").parent().remove();
-        $("#toc-container a[href='#guide-attribution']").parent().remove(); // Remove from TOC.
+        $('#guide_attribution').html(guideAttributionText);
+        $('#guide-attribution').parent().remove();
+        $('#toc-container a[href="#guide-attribution"]').parent().remove(); // Remove from TOC.
     }
 
-    var relatedLinks = $("#related-links").siblings().find('p').clone();
+    var relatedLinks = $('#related-links').siblings().find('p').clone();
     rightSide.append(relatedLinks);
-    $("#related-links").parent().remove(); // Remove section from the main guide column.
-    $("#toc-container a[href='#related-links']").parent().remove(); // Remove from TOC.
+    $('#related-links').parent().remove(); // Remove section from the main guide column.
+    $('#toc-container a[href="#related-links"]').parent().remove(); // Remove from TOC.
 
     // Create anchor to the end of the guide
-    var li = $("<li></li>");
-    var a = $("<a></a>");
+    var li = $('<li></li>');
+    var a = $('<a></a>');
     var end_of_guide_title = $('#end_of_guide > h2').first().text();
     a.attr('href', '#end_of_guide');    
     a.text(end_of_guide_title);
     li.append(a);
-    $("#toc-container > ul").append(li);
+    $('#toc-container > ul').append(li);
 }
 
 // Adjust the window for the sticky header.
@@ -416,7 +416,7 @@ function shiftWindow() {
  * hash is not valid, defaultToFirstPage() is called to scroll to the top of
  * the guide.
  *
- * @param String hash   The provided hash should begin with "#" as returned
+ * @param String hash   The provided hash should begin with '#' as returned
  *                      from window.location.
  * @param callback      Optional callback to execute after the window has animated to the new section. This can be used to focus a specific element on the new section.
  */
@@ -442,13 +442,13 @@ function accessContentsFromHash(hash, callback) {
             var stickyHeaderAdjustment = 0; //$('.container-fluid').height() || 0;
             scrollSpot -= stickyHeaderAdjustment;
         }
-        $("body").data('scrolling', true); // Prevent the default window scroll from triggering until the animation is done.
-        $("html, body").animate({scrollTop: scrollSpot}, 400, function() {
+        $('body').data('scrolling', true); // Prevent the default window scroll from triggering until the animation is done.
+        $('html, body').animate({scrollTop: scrollSpot}, 400, function() {
             // Callback after animation.  Change the focus.
             $focusSection.focus();
-            $("body").data('scrolling', false);   // Allow the default window scroll listener to process scrolls again.
+            $('body').data('scrolling', false);   // Allow the default window scroll listener to process scrolls again.
             // Check if the section was actually focused
-            if ($focusSection.is(":focus")) {
+            if ($focusSection.is(':focus')) {
                 if(callback){
                     callback();
                 }
@@ -473,7 +473,7 @@ function accessContentsFromHash(hash, callback) {
  * Resets the guide to the top.
  */
 function defaultToFirstPage() {
-    $("html, body").scrollTop(0);
+    $('html, body').scrollTop(0);
 
     // Remove highlighted TOC element
     $('.liSelected').removeClass('liSelected');
@@ -490,21 +490,21 @@ function defaultToFirstPage() {
 $(document).ready(function() {
 
     function addGuideRatingsListener(){
-        $("#feedback_ratings img").on('click', function(event){
+        $('#feedback_ratings img').on('click', function(event){
             var rating = $(this).data('guide-rating');
             // Send rating to google analytics
             // The first parameter '1' is the slot for the custom variable
             // The last parameter '3' is opt_scope is which is page level storage
-            if(typeof ga === "function"){
-                ga(1, "Guide Review", rating, 3);
+            if(typeof ga === 'function'){
+                ga(1, 'Guide Review', rating, 3);
             }
-            $("#feedback_ratings img").not($(this)).css('opacity', '.30');
+            $('#feedback_ratings img').not($(this)).css('opacity', '.30');
             $(this).css('opacity', '1');
         });
     }
 
-    $("#feedback_ratings img").hover (function(event) {
-      $("#feedback_ratings img").not($(this)).css('opacity', '.50');
+    $('#feedback_ratings img').hover (function(event) {
+      $('#feedback_ratings img').not($(this)).css('opacity', '.50');
       $(this).css('opacity', '1');
     });
 
@@ -529,7 +529,7 @@ $(document).ready(function() {
         handleFloatingCodeColumn();
     });
 
-    window.addEventListener("hashchange", function(e){
+    window.addEventListener('hashchange', function(e){
         e.preventDefault();
 
         var hash = location.hash;
@@ -569,7 +569,7 @@ $(document).ready(function() {
                     }
                     else {
                         accessContentsFromHash(prevStepHash, function(){
-                            $("#code_column").find('[tabindex=0], a[href], button, instruction, action').filter(':visible:not(:disabled)').last().focus();
+                            $('#code_column').find('[tabindex=0], a[href], button, instruction, action').filter(':visible:not(:disabled)').last().focus();
                         });
                     }
                 }
@@ -617,11 +617,11 @@ $(document).ready(function() {
     // Handle tabbing from inside the code column
     function getCodeColumnFocusElement(elementWithFocus, shiftIsPressed) {
         var elemToFocus;
-        var tabbableElements = $("#code_column").find('[tabindex=0], a[href], button, instruction, action').filter(':visible:not(:disabled)'); // Get list of all tabbable elements under current step widgets.
+        var tabbableElements = $('#code_column').find('[tabindex=0], a[href], button, instruction, action').filter(':visible:not(:disabled)'); // Get list of all tabbable elements under current step widgets.
         var lastTabbable = tabbableElements.last();
         if(shiftIsPressed){
             // Shift tab from the code column
-            if(elementWithFocus[0] === $("#code_column")[0]){
+            if(elementWithFocus[0] === $('#code_column')[0]){
                 var thisStepHash = $('#toc-container .liSelected').children().attr('href'); // Get the next step's toc hash
                 if(thisStepHash){
                     var step = $(thisStepHash);
@@ -681,7 +681,7 @@ $(document).ready(function() {
 
     // Handle manual tabbing order through the guide. The tabbing order is: header, breadcrumb, table of contents, #guide-meta, github popup if present, first guide section, through all of the guide section's tabbable elements, to the respective code on the right for that given guide section, through all of its tabbable elements, etc. until the last guide section and code are tabbed through, then to the end of guide section. Shift + tab goes in the reverse order.
     $(window).on('keydown', function(e) {
-      if($("body").data('scrolling') === true){
+      if($('body').data('scrolling') === true){
          e.preventDefault();
          e.stopPropagation();
          return;
@@ -693,7 +693,7 @@ $(document).ready(function() {
       // Tab key
       if (code === 9) {
         var elementWithFocus = $(document.activeElement);
-        if (elementWithFocus[0] == $("#guide-column")[0] || elementWithFocus.parents('#guide-column').length > 0) {
+        if (elementWithFocus[0] == $('#guide-column')[0] || elementWithFocus.parents('#guide-column').length > 0) {
             if (elementWithFocus.attr('id') === 'guide-meta') {
                 // Tabbing from the initial section before the guide starts
                 if(shiftIsPressed) {
@@ -719,7 +719,7 @@ $(document).ready(function() {
             }
         }
         // Handle tabbing from code column
-        else if (elementWithFocus[0] == $("#code_column")[0] || elementWithFocus.parents('#code_column').length > 0) {
+        else if (elementWithFocus[0] == $('#code_column')[0] || elementWithFocus.parents('#code_column').length > 0) {
             elemToFocus = getCodeColumnFocusElement(elementWithFocus, shiftIsPressed);
         }
 

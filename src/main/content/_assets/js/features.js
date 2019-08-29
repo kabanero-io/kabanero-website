@@ -2,14 +2,14 @@
  *
  * Copyright 2019 IBM Corporation and others.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -32,7 +32,7 @@ function addTOCClick() {
     var onclick = function (event) {
         var resource = $(event.currentTarget);
         //setSelectedTOC(resource);
-        var currentHref = resource.attr("href");
+        var currentHref = resource.attr('href');
 
         // handle the click event ourselves so as to take care of updating the hash 
         event.preventDefault();
@@ -41,13 +41,13 @@ function addTOCClick() {
         loadContent(resource, currentHref, true);
 
         if (isMobileView()) {
-            $("#breadcrumb-hamburger").trigger("click");
+            $('#breadcrumb-hamburger').trigger('click');
         }
     }
 
-    $("#toc-container > ul > li > div").off("click").on("click", onclick);
+    $('#toc-container > ul > li > div').off('click').on('click', onclick);
 
-    $("#toc-container > ul > li > div").off("keypress").on('keypress', function (event) {
+    $('#toc-container > ul > li > div').off('keypress').on('keypress', function (event) {
         event.stopPropagation();
         // Enter or space key
         if (event.which === 13 || event.keyCode === 13 || event.which === 32 || event.keyCode === 32) {
@@ -55,7 +55,7 @@ function addTOCClick() {
         }
     });
 
-    addOutlineToTabFocus("#toc-container > ul > li > div");
+    addOutlineToTabFocus('#toc-container > ul > li > div');
 
     $(window).off('focus').on('focus', function(event) {
         windowFocus = true;
@@ -64,13 +64,13 @@ function addTOCClick() {
 
 // highlight the selected TOC
 function setSelectedTOC(resource) {
-    var currentTOCSelected = $(".toc-selected");
-    var newHref = resource.attr("href");
+    var currentTOCSelected = $('.toc-selected');
+    var newHref = resource.attr('href');
 
     if (currentTOCSelected.length === 1) {      
-        currentTOCSelected.removeClass("toc-selected");
+        currentTOCSelected.removeClass('toc-selected');
     }
-    resource.parent().addClass("toc-selected");
+    resource.parent().addClass('toc-selected');
 }
 
 // Add extra css to the doc, set the doc height, and scroll to the content
@@ -92,8 +92,8 @@ function setupDisplayContent() {
 function loadContent(targetTOC, tocHref, addHash, versionHref) {
     $('footer').hide();
     setSelectedTOC(targetTOC);
-    $("#feature_content").load(tocHref, function(response, status) {
-        if (status === "success") {
+    $('#feature_content').load(tocHref, function(response, status) {
+        if (status === 'success') {
             common_feature_title = $('#common_feature_title');
             if (common_feature_title.length === 1) {
                 if (versionHref) {
@@ -122,7 +122,7 @@ function loadContent(targetTOC, tocHref, addHash, versionHref) {
 function addVersionClick(hrefToClick) {
     var onclick = function(event) {
         var resource = $(event.currentTarget);
-        var currentHref = resource.attr("href");
+        var currentHref = resource.attr('href');
 
         // handle the click event ourselves so as to take care of updating the hash and creating
         // the push state 
@@ -133,9 +133,9 @@ function addVersionClick(hrefToClick) {
         updateHashInUrl(currentHref);
     }
 
-    $("#common_feature_title > .feature_version").off("click").on("click", onclick);
+    $('#common_feature_title > .feature_version').off('click').on('click', onclick);
 
-    $("#common_feature_title > .feature_version").off("keypress").on('keypress', function (event) {
+    $('#common_feature_title > .feature_version').off('keypress').on('keypress', function (event) {
         event.stopPropagation();
         // Enter or space key
         if (event.which === 13 || event.keyCode === 13 || event.which === 32 || event.keyCode === 32) {
@@ -144,24 +144,24 @@ function addVersionClick(hrefToClick) {
     });
 
     // trigger a click on the default or the version passed in
-    if (hrefToClick === "default") {
-        $("#common_feature_title > .feature_version:first").trigger('click');
+    if (hrefToClick === 'default') {
+        $('#common_feature_title > .feature_version:first').trigger('click');
     } else {
-        var resource = $('#common_feature_title > .feature_version[href="' + hrefToClick + '"]');
+        var resource = $('#common_feature_title > .feature_version[href="" + hrefToClick + ""]');
         if (resource.length === 1) {
             resource.trigger('click');
         } else {
-            $("#common_feature_title > .feature_version:first").trigger('click');
+            $('#common_feature_title > .feature_version:first').trigger('click');
         }
     }
 
-    addOutlineToTabFocus("#common_feature_title > .feature_version");
+    addOutlineToTabFocus('#common_feature_title > .feature_version');
 }
 
 // events to detect keyboard focus and add outline to the element. Outline will not
 // be added if the focus is thru mouse event.
 function addOutlineToTabFocus(selector) {
-    $(selector).off("blur").on("blur", function(event) {
+    $(selector).off('blur').on('blur', function(event) {
         if ($(this).hasClass('addFocus')) {
             $(this).removeClass('addFocus');
         }
@@ -174,7 +174,7 @@ function addOutlineToTabFocus(selector) {
 
     $(selector).off('focusin').on('focusin', function(event) {
         if (!mousedown && !windowFocus) {
-            $(this).addClass("addFocus");
+            $(this).addClass('addFocus');
             // scroll the parent window back up if it is scroll down
             adjustParentWindow();
         }
@@ -185,7 +185,7 @@ function addOutlineToTabFocus(selector) {
 
 // highlight the selected version
 function setSelectedVersion(resource) {
-    selectedVersions = $("#common_feature_title > .feature_version_selected");
+    selectedVersions = $('#common_feature_title > .feature_version_selected');
     if (selectedVersions.length > 0) {
         selectedVersions.removeClass('feature_version_selected');
     }
@@ -195,8 +195,8 @@ function setSelectedVersion(resource) {
 // highlight selected version, load the version doc, and update the main breadcrumb 
 function loadVersionContent(versionElement, versionHref) {
     setSelectedVersion(versionElement);
-    $("#common_feature_content").load(versionHref, function(response, status) {
-        if (status === "success") {
+    $('#common_feature_content').load(versionHref, function(response, status) {
+        if (status === 'success') {
             $('#feature_title').hide();
             setupDisplayContent();
             updateMainBreadcrumb(versionElement, 'full_title');
@@ -209,9 +209,9 @@ function loadVersionContent(versionElement, versionHref) {
 
 // update the main breadcrumb
 function updateMainBreadcrumb(resource, attrForTitle) {
-    var lastBreadcrumb = $(".breadcrumb.fluid-container").find("li:last-child");
-    var lastBreadcrumbAnchorTag = lastBreadcrumb.find("a");
-    if (lastBreadcrumbAnchorTag.hasClass("inactive-link")) {
+    var lastBreadcrumb = $('.breadcrumb.fluid-container').find('li:last-child');
+    var lastBreadcrumbAnchorTag = lastBreadcrumb.find('a');
+    if (lastBreadcrumbAnchorTag.hasClass('inactive-link')) {
         // remove existing inactive link
         lastBreadcrumb.remove();
     }
@@ -222,7 +222,7 @@ function updateMainBreadcrumb(resource, attrForTitle) {
         if (attrForTitle) {
             title = resource.attr(attrForTitle);
         }
-        $(".breadcrumb.fluid-container").append("<li><a class='inactive-link'>" + title + "</a></li>");
+        $('.breadcrumb.fluid-container').append('<li><a class="inactive-link">' + title + '</a></li>');
     }
 }
 
@@ -230,12 +230,12 @@ function updateMainBreadcrumb(resource, attrForTitle) {
 // so that when hashchange is triggered, there is no need to handle the event.
 function updateHashInUrl(href) {
     var hashInUrl = href;
-    if (href.indexOf("/feature/") !== -1) {
+    if (href.indexOf('/feature/') !== -1) {
         hashInUrl = href.substring(18);
     }
 
     lastClickElementHref = hashInUrl;
-    window.location.hash = "#" + hashInUrl;
+    window.location.hash = '#' + hashInUrl;
 }
 
 // check if mobile view or not
@@ -249,7 +249,7 @@ function isMobileView() {
 
 // add css to features-that-enable-this-feature per design
 function addClassToFeaturesThatEnableThisFeature() {
-    var featuresThatEnableThisFeature = $("#features-that-enable-this-feature");
+    var featuresThatEnableThisFeature = $('#features-that-enable-this-feature');
     if (featuresThatEnableThisFeature.length === 1) {
         var ulist = featuresThatEnableThisFeature.parent().find('.ulist');
         if (ulist.length === 1) {
@@ -264,16 +264,16 @@ function setContainerHeight() {
     if (!isMobileView()) {  
         // the height is viewport - header so that the last toc will be in 
         // view without the need to scroll the outer container
-        $("#background-container").css("height", $(window).height() - $('header').height()); 
-        $("#background-container").css("margin-bottom", "60px");     
+        $('#background-container').css('height', $(window).height() - $('header').height()); 
+        $('#background-container').css('margin-bottom', '60px');     
     }
 }
 
 // select the first doc in the table of content
 function selectFirstDoc() {
     if (!isMobileView()) {
-        var firstTOCElement = $("#toc-container > ul > li > div").first();
-        loadContent(firstTOCElement, firstTOCElement.attr("href"));
+        var firstTOCElement = $('#toc-container > ul > li > div').first();
+        loadContent(firstTOCElement, firstTOCElement.attr('href'));
         updateMainBreadcrumb();
         return firstTOCElement;
     }
@@ -293,10 +293,10 @@ function adjustParentWindow() {
 // doc.
 function addFeatureContentFocusListener() {
     var mousedown = false;
-    $("#feature_content").on('mousedown', function(event) {
+    $('#feature_content').on('mousedown', function(event) {
         mousedown = true;
     });
-    $('#feature_content').on("focusin", function(e) {
+    $('#feature_content').on('focusin', function(e) {
         if (!mousedown) {
             adjustParentWindow();
             $('#feature_content').scrollTop(0);
@@ -308,20 +308,20 @@ function addFeatureContentFocusListener() {
 // setup and listen to hamburger click event
 function addHamburgerClick() {
     if (isMobileView()) {
-        var hamburger = $(".breadcrumb-hamburger-nav");
+        var hamburger = $('.breadcrumb-hamburger-nav');
 
-        hamburger.on("click", function (e) {
-            if ($("#toc-column").hasClass('in')) {
-                $("#feature_content").show();
-                $("#breadcrumb-hamburger").show();
-                $("#breadcrumb-hamburger-title").show();
+        hamburger.on('click', function (e) {
+            if ($('#toc-column').hasClass('in')) {
+                $('#feature_content').show();
+                $('#breadcrumb-hamburger').show();
+                $('#breadcrumb-hamburger-title').show();
             } else {
-                $("#feature_content").hide();
-                $("#breadcrumb-hamburger").hide();
-                $("#breadcrumb-hamburger-title").hide();
-                $("#background-container").css("height", "auto");
+                $('#feature_content').hide();
+                $('#breadcrumb-hamburger').hide();
+                $('#breadcrumb-hamburger-title').hide();
+                $('#background-container').css('height', 'auto');
                 if (window.location.hash) { 
-                    updateHashInUrl("");
+                    updateHashInUrl('');
                 }
             }
         })
@@ -332,10 +332,10 @@ function addHamburgerClick() {
 function handleHashInCommonToc(href) {
     if (href.lastIndexOf('-') !== -1) {
         // take out the version from the href and look for the remaining html in the table of content. 
-        // It is assumed that the version appears at the end of the file name with the format "-x.x"
+        // It is assumed that the version appears at the end of the file name with the format '-x.x'
         // and before the .html file extension, eg. beanValidation-2.0.html.
-        var commonTOCHtml = href.substring(0, href.lastIndexOf('-')) + ".html";
-        var tocElement = $("#toc-container").find("div[href='" + commonTOCHtml + "']");
+        var commonTOCHtml = href.substring(0, href.lastIndexOf('-')) + '.html';
+        var tocElement = $('#toc-container').find('div[href="" + commonTOCHtml + ""]');
         if (tocElement.length === 1) {
             loadContent(tocElement, commonTOCHtml, false, href);
         }
@@ -377,22 +377,22 @@ function addHashListener() {
             lastClickElementHref = null;
 
             if (window.location.hash) {
-                var tocHref = "/docs/ref/feature/" + window.location.hash.substring(1);
-                var tocElement = $("#toc-container").find("div[href='" + tocHref + "']");
+                var tocHref = '/docs/ref/feature/' + window.location.hash.substring(1);
+                var tocElement = $('#toc-container').find('div[href="" + tocHref + ""]');
                 if (tocElement.length === 1) {
                     loadContent(tocElement, tocHref);
                 } else {
                     // check whether it is a hash belonging to a common toc
                     tocElement = handleHashInCommonToc(tocHref);
                 }
-                if (isMobileView() && $("#toc-column").hasClass('in')) {
-                    $(".breadcrumb-hamburger-nav").trigger('click');
+                if (isMobileView() && $('#toc-column').hasClass('in')) {
+                    $('.breadcrumb-hamburger-nav').trigger('click');
                 }
                 scrollToTOC(tocElement);
             } else {
                 if (isMobileView()) {
-                    if (!$("#toc-column").hasClass('in')) {
-                        $(".breadcrumb-hamburger-nav").trigger('click');
+                    if (!$('#toc-column').hasClass('in')) {
+                        $('.breadcrumb-hamburger-nav').trigger('click');
                     }
                 } else {
                     scrollToTOC(selectFirstDoc());
@@ -410,10 +410,10 @@ function addWindowResizeListener() {
             addHamburgerClick();
         } else {
             if (!$('#toc-column').hasClass('in')) {
-                $(".breadcrumb-hamburger-nav").trigger('click');
+                $('.breadcrumb-hamburger-nav').trigger('click');
             }
-            $("#breadcrumb-hamburger").hide();
-            $("#breadcrumb-hamburger-title").hide();
+            $('#breadcrumb-hamburger').hide();
+            $('#breadcrumb-hamburger-title').hide();
             setContainerHeight();
         }
     });

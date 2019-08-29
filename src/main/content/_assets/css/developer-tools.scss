@@ -1,0 +1,53 @@
+.hidden-row{
+    display:none;
+}
+
+h2:first-of-type{
+    margin: 30px 0 30px 0;
+}
+
+.prereq-text{
+    font-weight:500;
+    color:#000000;
+    font-size:18px;
+    & a{
+        color:#000000;
+        text-decoration: underline !important;
+    }
+
+    & a:hover{
+        color:#C43804
+    }
+}
+
+#instruction-select-row{
+    margin-top:30px;
+}
+
+.install-select-button{
+    &:hover{
+        background:#C43804;
+        color:#ffffff
+    }
+
+    &:focus{
+        outline:0;
+        box-shadow:0;
+    }
+}
+
+.content-row{
+    margin-top:50px;
+}
+
+ol{
+    margin:0 15px 0 15px;
+
+    & .kabanero-colored-button{
+        margin-bottom:30px;
+    }
+
+    & img{
+        margin-bottom:30px;
+    }
+}

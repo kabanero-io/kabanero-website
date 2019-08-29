@@ -1,0 +1,117 @@
+---
+layout: default
+js:
+- developer-tools
+css:
+- get-started
+- developer-tools
+seo-title: developer-tools
+permalink: /developer-tools/
+---
+<div class="container">
+    <div class="row text-center" id="title-row">
+        <h1 class="col">Getting Started</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <h2 class="col-md-12">Install Developer Tools</h2>
+        <p class="col-md-12">Empower your development team to work with agility and speed! Developer tools give your team access to the Collection(s) that have been activated 
+            in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also
+            can be used in conjunction with their CLI using XCode. Share these instructions with your development team or simply invite them to your Collection 
+            from Kabanero Foundation.
+        </p>
+        <h2 class="col-md-12">Prerequisites: <span class="prereq-text"><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> or <a href="https://www.eclipse.org" target="_blank">Eclipse</a>, <a href="https://git-scm.com/" target="_blank">Git</a>, and <a href="https://www.docker.com" target="_blank">Docker (Docker Compose for Mac)</a></span></h2>
+    </div>
+    <div class="row" id="instruction-select-row">
+        <h3 class="col-md-12">Install Codewind using:</h3>
+        <div class="btn-group col-md-6" role="group">
+            <button type="button" class="btn btn-outline-dark col-md-4 kabanero-colored-button install-select-button" onclick="changeInstructionSelection(this)" data-content="visual-studio">Visual Sutdio Code</button>
+            <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="eclipse">Eclipse</button>
+            <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="cli">CLI Instructions</button>
+        </div>
+    </div>
+    <div class="row content-row" id="visual-studio">
+        <ol class="col-md-12">
+            <li>
+                <p>Install Codewind in Visual Studio Code.</p>
+            </li>
+            <a href="https://www.eclipse.org/codewind/" target="_blank" role="button" class="btn kabanero-colored-button">Install Codewind</a>
+            <li>
+                <p>Open the Codewind workspace and create a new project.</p>
+                <img class="img-fluid col-md-6" src="/img/dev-tools-new-codewind.png">
+            </li>
+            <li>
+                <p>Select the project template.</p>
+                <img class="img-fluid col-md-8" src="/img/dev-tools-template.png">
+            </li>
+        </ol>
+        <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link">Learn More</a></p>
+    </div>
+    <div class="row content-row hidden-row" id="eclipse">
+        <ol class="col-md-12">
+            <li>
+                <p>Install Codewind in Eclipse for Java EE Developers.</p>
+                <small>*Note: The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11)</small>
+            </li>
+            <a href="https://www.eclipse.org/codewind/" target="_blank" role="button" class="btn kabanero-colored-button">Install Codewind</a>
+            <li>
+                <p>Follow the wizard and accept licenses.</p>
+            </li>
+            <li>
+                <p>After installation is complete, restart Eclipse.</p>
+            </li>
+            <li>
+                <p>Navigate to Codewind view.</p>
+                <p>Window > Show View > Other > Codewind > Codewind Explorer</p>
+            </li>
+            <li>
+                <p>Install Docker Images.</p>
+                <p>Double-click on the Codewind item in the explorer to install. This may take a few minutes.</p>
+            </li>
+            <li>
+                <p>Create a new project or work with an existing one.</p>
+                <p>Codewind creates a folder called codewind-workspace within your home directory (C:\codewind-workspace on Windows) to contain your projects</p>
+            </li>
+        </ol>
+        <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link">Learn More</a></p>
+    </div>
+    <div class="row content-row hidden-row" id="cli">
+        <p>The Kabanero uses Appsody as its CLI experience to access collections</p>
+        <p>MacOS <a href="#">Need a differnet platform?</a></p>
+        <ol class="col-md-12">
+            <li>
+                <p>Install XCode Command Line Tools and Homebrew.</p>
+                <code>xcode-select --install</code>
+                <p>To install Homebrew run:</p>
+                <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code>
+            </li>
+            <li>
+                <p>Install the Appsody plugin.</p>
+                <code>brew install appsody/appsody/appsody</code>
+            </li>
+            <li>
+                <p>Select the Kabanero Collection.</p>
+                <p>To see a list of all available public collections run:</p>
+                <code>$ appsody list</code>
+            </li>
+            <p class="col-md-12">Need more help using Appsody? <a href="https://appsody.dev/docs" target="_blank" class="cpa-link">Learn More</a></p>
+        </ol>
+    </div>
+    <!-- Support -->
+    <div class="row support-title">
+        <div class="col">
+            <h2 class="text-center">When you are ready for support, we've got you covered</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center description-text-block">
+            The Kabanero open source project is included within 
+            <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
+                IBM Cloud Pak for Applications
+            </a>
+            as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
+            to move your core business applications to any cloud, in containers. Built and supported 
+            on Red Hat OpenShift.
+        </div>
+    </div>
+</div>

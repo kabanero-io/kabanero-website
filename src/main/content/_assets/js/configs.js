@@ -127,7 +127,7 @@ function removeHashRefTOC(href) {
     var hashHref = $('#toc-container').find('a[href^="" + href + "#"]');
     $(hashHref).each(function () {
         $(this).parent().remove();
-    })
+    });
 }
 
 // Set the href for iframe to load the content. The call will not trigger a refresh.
@@ -514,7 +514,7 @@ function handleExpandCollapseTitle(titleId, isShow) {
                             (nestedDataId !== dataId && (nestedDataId.indexOf(dataId + '/') === 0))) {
                             hideElements.push($(this));
                         }
-                    })
+                    });
                 }
             }
 
@@ -533,7 +533,7 @@ function handleExpandCollapseTitle(titleId, isShow) {
     });
     $(hideElements).each(function () {
         $(this).hide();
-    })
+    });
     if (!isMobileView()) {
         $('iframe[name=contentFrame]').contents().trigger('scroll'); // trigger a scroll event to update the breadcrumb
     }
@@ -574,10 +574,10 @@ function modifyFixedTableColumnWidth() {
             if (currentColWidths) {
                 $(cols).each(function (index) {
                     $(this).css('width', currentColWidths[index]);
-                })
+                });
             }
         }
-    })
+    });
 }
 
 // Find the table of content element for the content. If processHash is specified, return
@@ -838,7 +838,7 @@ function handleParentWindowScrolling() {
                     if ($(this).parent().is(':visible') && isInViewport($(this), frameContents, closestAnchor)) {
                         return false;
                     }
-                })
+                });
 
                 if (closestAnchor.element && !closestAnchor.inView) {
                     // normal scrolling elements
@@ -850,7 +850,7 @@ function handleParentWindowScrolling() {
                     createClickableBreadcrumb(getContentBreadcrumbTitle(), true);
                 }
             }
-        })
+        });
     }
 }
 
@@ -974,7 +974,7 @@ function handlePopstate() {
                 selectFirstDoc();
             }
         }
-    }
+    };
 }
 
 // Determine the content breadcrumb visibility:
@@ -1040,7 +1040,7 @@ function addHamburgerClick() {
                     updateHashInUrl('');
                 }
             }
-        })
+        });
     }
 }
 
@@ -1092,7 +1092,7 @@ function updateHashAfterRedirect() {
         }
     
         var iframeContent = $('iframe[name="contentFrame"]').contents();
-        var location = iframeContent.attr('location')
+        var location = iframeContent.attr('location');
         if (location.pathname + location.hash === href) {
             replaceHistoryState('#' + hashValue);
         }
@@ -1174,7 +1174,7 @@ $(document).ready(function () {
             adjustFrameHeight();
             var TOCSubElement = findTOCElement(true);
             if (TOCSubElement) {
-                setSelectedTOC(TOCSubElement, true)
+                setSelectedTOC(TOCSubElement, true);
             } else if (TOCElement) {
                 setSelectedTOC(TOCElement, true);
             }

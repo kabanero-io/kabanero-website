@@ -246,6 +246,10 @@ $(document).ready(function() {
         }        
     });
 
+    $('#toc-indicator').mouseleave(function(){
+        $('#toc-indicator').removeClass('open');
+    });
+
     $('#toc-hotspot').on('mouseleave', function(){
         if(!$('#toc-column').hasClass('open')){
             var x = event.x;

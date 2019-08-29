@@ -394,15 +394,17 @@ function createEndOfGuideContent(){
     rightSide.append(relatedLinks);
     $('#related-links').parent().remove(); // Remove section from the main guide column.
     $('#toc-container a[href="#related-links"]').parent().remove(); // Remove from TOC.
-
-    // Create anchor to the end of the guide
-    var li = $('<li></li>');
-    var a = $('<a></a>');
-    var end_of_guide_title = $('#end_of_guide > h2').first().text();
-    a.attr('href', '#end_of_guide');    
-    a.text(end_of_guide_title);
-    li.append(a);
-    $('#toc-container > ul').append(li);
+    
+    //Only create anchor to the end of the guide if the file is in .adoc format
+    if($('#markdown-toc').length === 0){
+        var li = $('<li></li>');
+        var a = $('<a></a>');
+        var end_of_guide_title = $('#end_of_guide > h2').first().text();
+        a.attr('href', '#end_of_guide');    
+        a.text(end_of_guide_title);
+        li.append(a);
+        $("#toc-container > ul").append(li);
+    }
 }
 
 // Adjust the window for the sticky header.

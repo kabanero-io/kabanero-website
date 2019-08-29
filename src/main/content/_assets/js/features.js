@@ -43,7 +43,7 @@ function addTOCClick() {
         if (isMobileView()) {
             $('#breadcrumb-hamburger').trigger('click');
         }
-    }
+    };
 
     $('#toc-container > ul > li > div').off('click').on('click', onclick);
 
@@ -59,7 +59,7 @@ function addTOCClick() {
 
     $(window).off('focus').on('focus', function(event) {
         windowFocus = true;
-    })
+    });
 }
 
 // highlight the selected TOC
@@ -131,7 +131,7 @@ function addVersionClick(hrefToClick) {
 
         loadVersionContent(resource, currentHref);
         updateHashInUrl(currentHref);
-    }
+    };
 
     $('#common_feature_title > .feature_version').off('click').on('click', onclick);
 
@@ -165,7 +165,7 @@ function addOutlineToTabFocus(selector) {
         if ($(this).hasClass('addFocus')) {
             $(this).removeClass('addFocus');
         }
-    })
+    });
 
     var mousedown = false;
     $(selector).off('mousedown').on('mousedown', function(event) {
@@ -324,7 +324,7 @@ function addHamburgerClick() {
                     updateHashInUrl('');
                 }
             }
-        })
+        });
     }
 }
 
@@ -432,4 +432,4 @@ $(document).ready(function () {
     } else {
         selectFirstDoc();
     }
-})
+});

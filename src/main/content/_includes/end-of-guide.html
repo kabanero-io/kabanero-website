@@ -15,12 +15,13 @@
  - limitations under the License.
  -
  ------------------------------------------------------------------------------>
+ {% assign t = site.data[site.active_lang]._includes.end_of_guide %}
 
 <div id="end_of_guide">
-        <h2 tabindex="0">Way to go! What's next?</h2>
+        <h2 tabindex="0">{{t.end-of-guide}}</h2>
         <div id="end_of_guide_left_section">
             <p id="guide_attribution"></p>
-            <h3 id="improve_guide_feedback">What could make this guide better?</h3>
+            <h3 id="improve_guide_feedback">{{t.improve-guide-feedback}}</h3>
             {% if page.layout == 'guide' or page.layout == 'guide-multipane' %}
                 <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}/issues">Raise an issue</a> to share feedback</p>
                 <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}/pulls">Create a pull request</a> to contribute to this guide</p>
@@ -29,8 +30,8 @@
                 <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/iguide-{{page.url | replace: '/guides/', ''}}/pulls">Create a pull request</a> to contribute to this guide</p>
             {% endif %}
 
-            <h3 id="need_help">Need help?</h3>
-            <p><a target="_blank" rel="noopener noreferrer" href="{{site.stackoverflow_url}}">Ask a question on Stack Overflow</a></p>
+            <h3 id="need_help">{{t.need-help}}</h3>
+            <p><a target="_blank" rel="noopener noreferrer" href="{{site.stackoverflow_url}}">{{t.ask-questions}}</a></p>
             <!--
             <h3 id="feedback_rating_question">What did you think of this guide?</h3>
             <div id="feedback_ratings">
@@ -42,7 +43,7 @@
             -->
         </div>
         <div id="end_of_guide_right_section">
-            <h3 id="where_to_next">Where to next?</h3>
+            <h3 id="where_to_next">{{t.where-to-next}}</h3>
 
             {% if page.layout == 'iguide-multipane' %}
                 <p>
@@ -51,7 +52,7 @@
                 <br>
             {% endif %}
             {% if page.categories %}
-            <p>Keep exploring <b>{{ page.categories }}</b> with these guides.</p>
+            <p>{{t.keep-exploring}} <b>{{ page.categories }}</b> {{t.with-these-guides}}</p>
             {% endif %}
 
             <!-- Related guides section -->
@@ -74,7 +75,7 @@
                                 {% if related-guide-metadata.layout == 'interactive-guide' or related-guide-metadata.layout == 'iguide-multipane' %}
                                 <div class="guide_interactive_container">
                                   <img class="interactive_bolt_icon" src="/img/guide_lightning_bolt.svg" alt="Interactive">
-                                  <span class="guide_interactive">Interactive</span>
+                                  <span class="guide_interactive">{{t.interactive}}</span>
                                 </div>
                                 {% endif %}
                             </a>

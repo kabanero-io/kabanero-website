@@ -15,6 +15,7 @@
  - limitations under the License.
  -
  ------------------------------------------------------------------------------>
+ {% assign t = site.data[site.active_lang]._includes.footer %}
 
 <footer>
         <div id="footer_kabanero_background">
@@ -23,7 +24,7 @@
                     <div id="kabanero_footer_logo">
                         <img id="header_slack_img" src="/img/Kabanero_full_logo-white.svg" class="img-fluid" alt="Kabanero logo">
                     </div>
-                    <p id="footer_project">an IBM open source project</p>
+                    <p id="footer_project">{{t.open-source}}</p>
                 </div>
                 <div id="footer_round_links_container">
                     <a id="footer_twitter_link" class="footer_round_btn" href="{{site.twitter_url}}" target="_blank" rel="noopener" aria-label="Twitter"></a>
@@ -36,7 +37,7 @@
 
         <div id="footer_bottom_container" class="footer_container container-fluid">
             <div id="footer_bottom_left_section">
-                <p id="footer_copyright">&copy; Copyright IBM Corp. 2019</p>
+                <p id="footer_copyright">&copy; {{t.copyright}}</p>
                 <p class="vertical_bar">|</p>
                 <a id="footer_privacy_policy_link" href="https://www.ibm.com/privacy/" target="_blank" rel="noopener" class="left_footer_link">Privacy policy</a>
                 <p class="vertical_bar">|</p>

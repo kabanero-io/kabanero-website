@@ -10,354 +10,76 @@ css:
 - blog
 seo-title: Kabanero
 ---
+{% assign t = site.data[site.active_lang].index %}
+
 <!-- INTRO -->
 <div class="container">
     <div class="row">
         <div class="col-md-8">
             <div id="intro-content">
                 <img src="/img/kabanero-final.svg" class="img-fluid" id="kabanero-img" alt="boxes">
-                <h3 id="intro-lighten-up-title">Create more, faster</h3>
+                <h3 id="intro-lighten-up-title">{{t.intro-title}}</h3>
                 <p id="intro-paragraph">
-                    Kabanero is an open source project focused on bringing together foundational open source technologies into a
-                    modern microservices-based framework. Developing apps for container platforms requires harmony between developers,
-                    architects, and operations. Today’s developers need to be efficient at much more than writing code. Architects and
-                    operations get overloaded with choices, standards, and compliance. Kabanero speeds development of applications
-                    built for Kubernetes while meeting the technology standards and policies your company defines. Design, develop,
-                    deploy, and manage with speed and control!
+                        {{t.intro-paragraph}}
                 </p>
-                <a class="col-md-5" id="get-started-link" href="/try-it">Try It</a>
+                <a class="col-md-5" id="get-started-link" href="/try-it"> {{t.try-it}} </a>
+                    Kabanero is an open source microservices-based framework that enables developers, architects and operation teams to work together, faster.
+                    Speed the development of applications built for Kubernetes while meeting the technology standards and policies your company defines.
+                </p>
+                <a class="col-md-5" id="get-started-link" href="/get-started">Get Started</a>
             </div>
         </div>
         <div class="col-md-4 d-none d-md-block">
             <img src="/img/kabanero-logo-stripe.png " class="img-fluid" alt="boxes">
         </div>
     </div>
-</div>
 
-<!-- Video- Kabanero Developer Workflow -->
-<div class="area video">
-    <div class="container">
-        <div class="row">
-            <div class="col-md usage-video">
-              <div class="video-wrapper"> 
+    <!-- Video- Kabanero Developer Workflow -->
+    <div class="row area video">
+        <div class="col-md usage-video">
+            <div class="video-wrapper"> 
                 <iframe width="100%" title="Kabanero Developer Workflow" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+                  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Role Boxes -->
-<div class="area">
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="list-group list-group-flush list-group-horizontal-md" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active list-item-centered" id="list-dev-list" data-toggle="list" 
-                href="#list-dev" role="tab">Development</a>
-
-                <a class="list-group-item list-group-item-action list-item-centered" id="list-arch-list" data-toggle="list" 
-                href="#list-arch" role="tab">Architecture</a>
-
-                <a class="list-group-item list-group-item-action list-item-centered" id="list-op-list" data-toggle="list" 
-                href="#list-op" role="tab">Operations</a>
+    <!-- New Role Boxes -->
+    <div class="row area">
+        <h2 class="col text-center" id="role-box-title">Something for your whole team</h2>
+        <div class="row centered">
+            <div class="col-md-4">
+                <h3>Development</h3>
+                <div class="role-box">
+                    <img class="role-box-img" src="/img/logos/development.png" alt="Developer image">
+                    <p>Use your favorite development tools to create apps for Kubernetes faster. Develop, test, debug in containers and deploy with confidence.</p>
+                    <a role="button" class="btn btn-outline-dark col-md-8" href="/developer">Learn More</a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-md">
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-dev" role="tabpanel" aria-labelledby="list-dev-list">
-                    <div class="row">
-                        <div class="col-2 img-col">
-                            <img class="list-group-img d-none d-md-block" src="/img/logos/development.png" alt="Developer image">
-                        </div>
-                        <p class="col-9 list-group-text">
-                            <span class="section-title">Develop more, faster</span>
-                            <br><br>
-                            Use your favorite development tools to create apps for Kubernetes faster.
-                            Develop, test, and debug in containers, and deploy with confidence knowing you’re automatically
-                            compliant with company policies. Spend more time writing code rather than re-tooling and
-                            building deep Kubernetes skills. Select a Kabanero Collection customized by your team for languages
-                            and programming models that you use on a daily basis.
-                            <br><br>
-                            <strong>100% Open Source.
-                                <span class="bumper"></span>
-                                Automated.
-                                <span class="bumper"></span>
-                                Integrated.
-                            </strong>
-                        </p>
-                    </div>
+            <div class="col-md-4">
+                <h3>Architecture</h3>
+                <div class="role-box">
+                    <img class="role-box-img" src="/img/logos/architecture.png">
+                    <p>Use our curated collections and tailor them to your company. Manage your collections for your teams knowing they are automatically compliant with company policies.</p>
+                    <a role="button" class="btn btn-outline-dark col-md-8" href="/architect">Learn More</a>
                 </div>
-                <div class="tab-pane fade" id="list-arch" role="tabpanel" aria-labelledby="list-arch-list">
-                    <div class="row">
-                        <div class="col-2 img-col">
-                            <img class="list-group-img d-none d-md-block" src="/img/logos/architecture.png">
-                        </div>
-                        <p class="col-9 list-group-text">
-                            <span class="section-title">Design more, faster</span>
-                            <br><br>
-                            Use our application stacks infused with expertise to select proven technologies, languages,
-                            and runtimes for building applications for Kubernetes. Apply customizations before sharing the
-                            application stack with developers and operations teams, to ensure your business process and governance
-                            needs are met. Application stacks reduce the decision-cycle time, enabling developers to focus on
-                            delivering line-of-business value without having to become full stack experts.
-                            <br><br>
-                            <strong>100% Open Source.
-                                <span class="bumper"></span>
-                                Automated.
-                                <span class="bumper"></span>
-                                Integrated.
-                            </strong>
-                        </p>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="list-op" role="tabpanel" aria-labelledby="list-op-list">
-                <div class="row">
-                    <div class="col-2 img-col">
-                        <img class="list-group-img d-none d-md-block" src="/img/logos/operations.png">
-                    </div>
-                    <p class="col-9 list-group-text">
-                        <span class="section-title">Manage with confidence</span>
-                        <br><br>
-                        Maintain compliance with confidence, using application stacks to deliver the
-                        latest container images with the latest security patches. Bring your existing
-                        applications into your hybrid cloud infrastructure. You get immediate visibility
-                        of your apps in one platform for existing and new apps, with a single view across
-                        hybrid deployments, whether in containers or VMs.
-                        <br><br>
-                        <strong>100% Open Source.
-                            <span class="bumper"></span>
-                            Automated.
-                            <span class="bumper"></span>
-                            Integrated.
-                        </strong>
-                    </p>
-                </div>
+            </div>
+            <div class="col-md-4">
+                <h3>Operations</h3>
+                <div class="role-box">
+                    <img class="role-box-img" src="/img/logos/operations.png">
+                    <p>Easily manage the cloud based infrastructure including Kubernetes and get immediate visibility of your apps in one platform for existing and new apps whether in containers or VMs.</p>
+                    <a role="button" class="btn btn-outline-dark col-md-8" href="/operations">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
-  </div>
-</div>
-
-<!-- Modernize & Cloud Native boxes -->
-<div class="container area">
-    <div class="row">
-        <div class="col-md term-box">
-            <h2>Modernize</h2>
-            <p>
-                Kabanero can help your team modernize existing applications to leverage benefits of cloud and containers.
-            </p>
-        </div>
-        <div class="col-md term-box">
-            <h2>Cloud Native</h2>
-            <p>
-                Kabanero can help you create cloud native applications with your team.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- Featured Models -->
-<div class="featured-models">
-    <div class="container">
-        <div class="row">
-            <div id="featured-models-col" class="col-md">
-                <h2>Kabanero Collections</h2>
-                <p class="description-text-block">
-                    A <strong>Kabanero Collection</strong> leads a company down a golden path to develop quality
-                    microservice-based applications. A Kabanero Collection provides guides for developers,
-                    templates for simplicity and consistency of developing applications, a
-                    runtime in a certified base container image infused with expertise for
-                    Kubernetes deployments, and an integrated toolchain for developing
-                    with modern tools.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md model-logo" tabindex="0">
-                <button data-toggle="collapse"
-                    href="#microprofile-collapse"
-                    aria-expanded="false"
-                    aria-controls="microprofile-collapse"
-                    class="col featured-model-box"
-                    alt="microprofile logo"
-                    tabindex="99">
-                    Eclipse MicroProfile
-                </button>
-            </div>
-            <div class="col-md model-logo"  tabindex="0">
-                <button data-toggle="collapse"
-                    href="#spring-collapse"
-                    aria-expanded="false"
-                    aria-controls="spring-collapse"
-                    class="col featured-model-box"
-                    alt="java spring logo"
-                    tabindex="99">
-                    Spring
-                </button>
-            </div>
-            <div class="col-md model-logo"  tabindex="0">
-                <button data-toggle="collapse"
-                    href="#nodejs-collapse"
-                    aria-expanded="false"
-                    aria-controls="nodejs-collapse"
-                    class="col featured-model-box"
-                    alt="nodejs logo"
-                    tabindex="99">
-                    NodeJS
-                </button>
-            </div>
-        </div>
-        <div class="row collapse featuredModelsCollapse" id="microprofile-collapse">
-            <div class="col card card-body">
-                <div class="row collapseRow">
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://openliberty.io/">
-                            <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
-                            <p>Open Liberty</p>
-                        </a>
-                    </div>
-                    <div class="col text-center">
-                        <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                        <p>Operators</p>
-                    </div>
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://prometheus.io/">
-                            <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                            <p>Prometheus&reg;</p>
-                        </a>
-                    </div>
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://tekton.dev/">
-                            <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                            <p>Tekton&trade;</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col dopdown-text">
-                        <p>
-                            Eclipse MicroProfile is a set of APIs used to optimize Java applications
-                            for a microservices architecture. With this stack, you can deliver microservices
-                            based upon the Eclipse MicroProfile specifications. Build and run high-quality
-                            applications with Open Liberty runtime, which includes OpenJDK with container-optimizations
-                            in OpenJ9.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row collapse featuredModelsCollapse" id="spring-collapse">
-            <div class="col card card-body">
-                <div class="row collapseRow">
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://openliberty.io/">
-                            <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
-                            <p>Open Liberty</p>
-                        </a>
-                    </div>
-                    <div class="col text-center">
-                        <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                        <p>Operators</p>
-                    </div>
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://prometheus.io/">
-                            <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                            <p>Prometheus&reg;</p>
-                            </a>
-                    </div>
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://tekton.dev/">
-                            <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                            <p>Tekton&trade;</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col dopdown-text">
-                        <p>
-                            Spring&reg; is a framework used in Java application development. With this application stack,
-                            you can deliver microservices based upon the Spring framework provided by Pivotal.
-                            Open Liberty runtime provides support for Spring applications with OpenJDK and
-                            container-optimizations in OpenJ9.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row collapse featuredModelsCollapse" id="nodejs-collapse">
-            <div class="col card card-body">
-                <div class="row collapseRow">
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://nodejs.org">
-                            <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
-                            <p>NodeJS</p>
-                        </a>
-                    </div>
-                    <div class="col text-center">
-                        <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                        <p>Operators</p>
-                    </div>
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://prometheus.io/">
-                            <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                            <p>Prometheus&reg;</p>
-                        </a>
-                    </div>
-                    <div class="col text-center">
-                        <a class="image-link" target="_blank" href="https://tekton.dev/">
-                            <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                            <p>Tekton&trade;</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col dopdown-text">
-                        <p>
-                            Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser.
-                            Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers.
-                            It fits well in web-based frontends and backend API services for microservices-based applications.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Open Source Platform -->
-<div class="open-source-platform">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 open-source-platform-title-row">
-                <h2 class="open-source-platform-title">
-                    Kabanero Application Development and Deployment Lifecycle
-                </h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col open-source-platform-col">
-                <div role="button" class="open-source-platform-box" data-topic="modernize" tabindex="0">
-                    <p class="open-source-platform-paragraph">
-                        Modernize Applications
-                    </p>
-                </div>
-                <div class="open-source-platform-vertical-separator"></div>
-            </div>
-            <div class="col open-source-platform-col">
-                <div class="open-source-platform-horizontal-separator">
-                </div>
-            </div>
+     <!-- Open Source Platform -->
+     <div class="area open-source-platform">
+        <div class="row" id="box-row">
             <div class="col open-source-platform-col">
                 <div role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
                     <p class="open-source-platform-paragraph">
-                        Languages & Runtimes
+                        Languages<br>& Runtimes
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -369,7 +91,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div role="button" class="open-source-platform-box" data-topic="develop" tabindex="0">
                     <p class="open-source-platform-paragraph">
-                        Develop
+                            {{t.open-source-platform.develop.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -380,7 +102,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div role="button" class="open-source-platform-box" data-topic="build" tabindex="0">
                     <p class="open-source-platform-paragraph">
-                        Build
+                        {{t.open-source-platform.build.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -392,53 +114,32 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
                     <p class="open-source-platform-paragraph">
-                        Manage
+                        Deploy
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
             </div>
         </div>
-        <div id="open-source-platform-modernize-collapse" class="row collapse open-source-platform-content-box">
-            <div class="row">
-                <div class="col-1 open-source-platform-image-column">
-                    <a class="image-link" target="_blank" href="https://www.ibm.com/cloud/garage/practices/learn/ibm-transformation-advisor">
-                    <img class="open-source-platform-image-centered open-source-platform-image-large"
-                            src="/img/logos/transformation-advisor-logo-light.svg">
-                    </a>
-                </div>
-                <div class="col">
-                    <p class="open-source-platform-content-title">Modernize Applications</p>
-                    <p>
-                        Plan, execute, and enhance your cloud modernization journey.
-                        Kabanero integrates with free modernization tooling from IBM for Java applications.
-                        Choose to re-factor applications based on ROI. Accelerate development efforts with assistance
-                        within your IDE using guided code changes.
-                    </p>
-                </div>
-            </div>
-        </div>
         <div id="open-source-platform-languages-collapse" class="row collapse open-source-platform-content-box">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Languages and Runtimes</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
                     <p>
-                        Use the right language for the job. Java is at the core of most modern application
-                        environments and can support Eclipse MicroProfile or Spring-based microservices.
-                        No matter your workload, we have runtimes and application stacks to simplify
-                        application development and delivery on Kubernetes.
+                        Use the right language for the job. Java is at the core of most modern application environments and can support Eclipse MicroProfile or Spring-based microservices. 
+                        No matter your workload, we have runtimes and application stacks to simplify application development and delivery on Kubernetes.
                     </p>
                 </div>
             </div>
             <div class="row languages-row">
                 <div class="col">
-                    <span>Java</span><span class="dot-separator"></span>
-                    <span>Node</span><span class="dot-separator"></span>
-                    <span>Go</span><span class="dot-separator"></span>
-                    <span>Python</span><span class="dot-separator"></span>
-                    <span>MicroProfile</span><span class="dot-separator"></span>
-                    <span>Jakarta EE</span><span class="dot-separator"></span>
-                    <span>Spring</span><span class="dot-separator"></span>
-                    <span>Open Liberty</span>
+                    <span>{{t.common.java}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.node}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.go}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.python}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.microProfile}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.jakarta}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.spring}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.open-liberty}}</span>
                 </div>
             </div>
         </div>
@@ -460,12 +161,9 @@ seo-title: Kabanero
                     </a>
                 </div>
                 <div class="col-md">
-                    <p class="open-source-platform-content-title">Develop</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.develop.tab-name}}</p>
                     <p>
-                        Develop applications for Kuberentes faster using extensions to industry leading IDEs.
-                        Perform inner loop development of applications directly in containers from day one.
-                        Eclipse Codewind provides extensions to VS Code, Eclipse, as well as Eclipse Che for
-                        teams preferring a cloud hosted IDE. Hosted or local, it’s the same experience.
+                            {{t.open-source-platform.develop.description}}
                     </p>
                 </div>
             </div>
@@ -480,13 +178,9 @@ seo-title: Kabanero
                     </a>
                 </div>
                 <div class="col">
-                    <p class="open-source-platform-content-title">Build</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.build.tab-name}}</p>
                     <p>
-                        DevOps is critical for a successful microservices-based deployment.
-                        Kabanero supplies an integrated open source CI/CD (continuous integration / continuous delivery)
-                        infrastructure based on the open source project Tekton. Kabanero provides for a rich
-                        set of stages that pipelines can use to integrate features like patching,
-                        vulnerability scanning, and more.
+                            {{t.open-source-platform.build.description}}
                     </p>
                 </div>
             </div>
@@ -494,23 +188,17 @@ seo-title: Kabanero
         <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Manage</p>
+                    <p class="open-source-platform-content-title">Deploy</p>
                     <p>
-                        Applications are deployed with best practices for Kubernetes deployments including
-                        scale, security, health and liveness probes. Kabanero also provides the ability to
-                        augment the base images with additional management capabilities as defined in the application stack.
-                        See everything from a single pane of glass with insights and correlation spanning traditional and Kubernetes
-                        applications for proactive problem determination.
+                            {{t.open-source-platform.manage.description}}
                     </p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Foundational Tools-->
-<div class="container foundational-tools foundational-tools-container">
-    <div class="row mr-0">
+    <!-- Foundational Tools-->
+    <div class="foundational-tools foundational-tools-container row">
         <div class="col-sm-2 offset-sm-3">
             <a class="image-link" target="_blank" href="https://kubernetes.io/">
                 <img id="kube-img" src="/img/logos/85x85/kubernetes.png" class="img-fluid d-none d-md-block" alt="Kubernetes logo">
@@ -519,151 +207,301 @@ seo-title: Kabanero
         <div class="col-sm">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Built on a foundation of:</p>
+                    <p class="open-source-platform-content-title">{{t.foundational-tools.title}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <span>Kubernetes&reg;</span>
-                    <span class="dot-separator orange"></span>
-                    <span>Knative</span>
-                    <span class="dot-separator orange"></span>
-                    <span>Istio</span>
+                    <span class="foundational-tech"><u>Kubernetes&reg;</u></span>
+                    <span class="foundational-tech"><u>Knative</u></span>
+                    <span class="foundational-tech"><u>Istio</u></span>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="row featured-models">
+        <h2 class="col-md-12 text-center" id="featured-collections-title">Featured Collections</h2>
+        <div class="col">
+            <button data-toggle="collapse"
+                    href="#microprofile-collapse"
+                    aria-expanded="false"
+                    aria-controls="microprofile-collapse"
+                    class="col featured-model-box"
+                    alt="microprofile logo"
+                    tabindex="99">
+                    <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
+                    <br><label class="featured-model-label">Eclipse MicroProfile</label>
+            </button>
+        </div>
+        <div class="col">
+            <button data-toggle="collapse"
+                    href="#spring-collapse"
+                    aria-expanded="false"
+                    aria-controls="spring-collapse"
+                    class="col featured-model-box"
+                    alt="java spring logo"
+                    tabindex="99">
+                    <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
+                    <br><label class="featured-model-label">Spring</label>
+            </button>
+        </div>
+        <div class="col">
+            <button data-toggle="collapse"
+                    href="#nodejs-collapse"
+                    aria-expanded="false"
+                    aria-controls="nodejs-collapse"
+                    class="col featured-model-box"
+                    alt="nodejs logo"
+                    tabindex="99">
+                    <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
+                    <br><label class="featured-model-label">NodeJS</label>
+            </button>
+        </div>
+    </div>
+    <div class="row collapse featuredModelsCollapse" id="microprofile-collapse">
+        <div class="col card card-body">
+            <div class="row collapseRow">
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://openliberty.io/">
+                        <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
+                        <p>Open Liberty</p>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <img src="/img/logos/85x85/operator.png" class="img-fluid">
+                    <p>Operators</p>
+                </div>
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://prometheus.io/">
+                        <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
+                        <p>Prometheus&reg;</p>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://tekton.dev/">
+                        <img src="/img/logos/85x85/tekton.png" class="img-fluid">
+                        <p>Tekton&trade;</p>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col dopdown-text">
+                    <p>
+                        Eclipse MicroProfile is a set of APIs used to optimize Java applications
+                        for a microservices architecture. With this stack, you can deliver microservices
+                        based upon the Eclipse MicroProfile specifications. Build and run high-quality
+                        applications with Open Liberty runtime, which includes OpenJDK with container-optimizations
+                        in OpenJ9.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row collapse featuredModelsCollapse" id="spring-collapse">
+        <div class="col card card-body">
+            <div class="row collapseRow">
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://openliberty.io/">
+                        <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
+                        <p>Open Liberty</p>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <img src="/img/logos/85x85/operator.png" class="img-fluid">
+                    <p>Operators</p>
+                </div>
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://prometheus.io/">
+                        <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
+                        <p>Prometheus&reg;</p>
+                        </a>
+                </div>
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://tekton.dev/">
+                        <img src="/img/logos/85x85/tekton.png" class="img-fluid">
+                        <p>Tekton&trade;</p>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col dopdown-text">
+                    <p>
+                        Spring&reg; is a framework used in Java application development. With this application stack,
+                        you can deliver microservices based upon the Spring framework provided by Pivotal.
+                        Open Liberty runtime provides support for Spring applications with OpenJDK and
+                        container-optimizations in OpenJ9.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row collapse featuredModelsCollapse" id="nodejs-collapse">
+        <div class="col card card-body">
+            <div class="row collapseRow">
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://nodejs.org">
+                        <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
+                        <p>NodeJS</p>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <img src="/img/logos/85x85/operator.png" class="img-fluid">
+                    <p>Operators</p>
+                </div>
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://prometheus.io/">
+                        <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
+                        <p>Prometheus&reg;</p>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a class="image-link" target="_blank" href="https://tekton.dev/">
+                        <img src="/img/logos/85x85/tekton.png" class="img-fluid">
+                        <p>Tekton&trade;</p>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col dopdown-text">
+                    <p>
+                        Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser.
+                        Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers.
+                        It fits well in web-based frontends and backend API services for microservices-based applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Support -->
-<div class="support-block">
-    <div class="container">
+    <!-- Support -->
+    <div class="row support-title">
+        <div class="col">
+            <h2 class="text-center">When you are ready for support, we've got you covered</h2>
+        </div>
+    </div>
+    <div class="row support-text">
+        <div class="col text-center description-text-block">
+            The Kabanero open source project is included within 
+            <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
+                IBM Cloud Pak for Applications
+            </a>
+            as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
+            to move your core business applications to any cloud, in containers. Built and supported 
+            on Red Hat OpenShift.
+        </div>
+    </div>
+
+    <!-- Blog Posts -->
+    <div class="area">
         <div class="row">
             <div class="col text-center">
-                <h2>When you are ready for support, we've got you covered</h2>
+                <h2 class="latest-news">Latest News</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col text-center description-text-block">
-                The Kabanero open source project is included within 
-                <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
-                    IBM Cloud Pak for Applications
-                </a>
-                as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
-                to move your core business applications to any cloud, in containers. Built and supported 
-                on Red Hat OpenShift.
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Blog Posts -->
-<div class="container area">
-    <div class="row">
-        <div class="col text-center">
-            <h2 class="latest-news">Latest News</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="row visit-blog-row">
-                <div class="col-xl">
-                    <div class="row container">
-                        <h3 class="col-md-5 visit-text">Visit our Blog!</h3>
-                        <div class="col-md-3"></div>
-                        <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">Visit</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row empty-row"></div>
-            {% for post in site.posts limit:2 %}
-                <div class="row blog-post-row">
-                    <div class="col-xl blog-post-column">
-                        <div class="row container">
-                            <div class="blog-header">
-                                <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
-                                <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
-                                <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
-                            </div>
-                        </div>
-                        <div class="row title-row container">
-                            {% if post.redirect_link %}
-                                <h2><a href="{{ post.redirect_link }}" class="blog-title">{{ post.title | escape }}</a></h2>
-                            {% else %}
-                                <h2><a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title | escape }}</a></h2>
-                            {% endif %}
-                        </div>
-                        <div class="row container">
-                            {% if post.redirct_link %}
-                                <p>{{ post.seo-description | escape }}</p>
-                            {% else %}
-                                <p>{{ post.seo-description | escape }}</p>
-                            {% endif %}
-                        </div>
-                        <div class="row container">
-                            <div class="text-right">
-                            {% if post.redirect_link %}
-                                <a href="{{ post.redirect_link }}" class="blog-read-more">Read more</a>
-                            {% else %}
-                                <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more</a>
-                            {% endif %}
-                            </div>
+            <div class="col-xl-6">
+                <div class="row visit-blog-row">
+                    <div class="col-xl">
+                        <div class="row">
+                            <h3 class="col-md-5 visit-text">Visit our Blog!</h3>
+                            <div class="col-md-3"></div>
+                            <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">Visit</a>
                         </div>
                     </div>
                 </div>
                 <div class="row empty-row"></div>
-            {% endfor %}
-            <div class="row boxed-row">
-                <div class="col-sm-8">
-                    <h3>Find us on Stack Overflow</h3>
-                </div>
-                <div class="col-sm-4">
-                    <a target="_blank" href="{{site.stackoverflow_url}}">
-                        <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo">
-                    </a>
-                </div>
-            </div>
-            <div class="row boxed-row">
-                <div class="col-sm-6">
-                    <h3 class="get-involved">Get Involved!</h3>
-                </div>
-                <div class="col-sm-6">
-                    <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">Contribute to Kabanero</a>
-                </div>
-            </div>
-            <div class="row empty-row"></div>
-        </div>
-        <div class="col-xl-5 offset-xl-1" id="twitter-col">
-            <div class="row">
-                <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">Tweets by {{site.twitter_username}} </a>
-            </div>
-            <div class="row boxed-row">
-                <div class="col-md-10">
-                    <div class="row">
-                        <h3 class="slack-text">Chat with us on Slack</h3>
+                {% for post in site.posts limit:2 %}
+                    <div class="row blog-post-row">
+                        <div class="col-xl blog-post-column">
+                            <div class="row">
+                                <div class="blog-header">
+                                    <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
+                                    <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
+                                    <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
+                                </div>
+                            </div>
+                            <div class="row title-row">
+                                {% if post.redirect_link %}
+                                    <h2><a href="{{ post.redirect_link }}" class="blog-title">{{ post.title | escape }}</a></h2>
+                                {% else %}
+                                    <h2><a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title | escape }}</a></h2>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                {% if post.redirct_link %}
+                                    <p>{{ post.seo-description | escape }}</p>
+                                {% else %}
+                                    <p>{{ post.seo-description | escape }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <div class="text-right">
+                                {% if post.redirect_link %}
+                                    <a href="{{ post.redirect_link }}" class="blog-read-more">Read more</a>
+                                {% else %}
+                                    <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more</a>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <a target="_blank" href={{site.slack_invite_url}}>
-                            <p class="slack-invite">Request an invite to the channel.</p>
+                    <div class="row empty-row"></div>
+                {% endfor %}
+                <div class="row boxed-row">
+                    <div class="col-sm-8">
+                        <h3>Find us on Stack Overflow</h3>
+                    </div>
+                    <div class="col-sm-4">
+                        <a target="_blank" href="{{site.stackoverflow_url}}">
+                            <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <a target="_blank" href={{site.slack_url}}>
-                        <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
-                    </a>
+                <div class="row boxed-row">
+                    <div class="col-sm-6">
+                        <h3 class="get-involved">Get Involved!</h3>
+                    </div>
+                    <div class="col-sm-6">
+                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">Contribute to Kabanero</a>
+                    </div>
                 </div>
+                <div class="row empty-row"></div>
             </div>
-            <div class="row boxed-row">
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="get-involved">See what we're cooking up next!</h3>
+            <div class="col-xl-5 offset-xl-1" id="twitter-col">
+                <div class="row">
+                    <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">Tweets by {{site.twitter_username}} </a>
+                </div>
+                <div class="row boxed-row">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <h3 class="slack-text">Chat with us on Slack</h3>
+                        </div>
+                        <div class="row">
+                            <a target="_blank" href={{site.slack_invite_url}}>
+                                <p class="slack-invite">Request an invite to the channel.</p>
+                            </a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">Join the Community</a>
+                    <div class="col-md-2">
+                        <a target="_blank" href={{site.slack_url}}>
+                            <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="row boxed-row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="get-involved">See what we're cooking up next!</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">Join the Community</a>
+                            </div>
                         </div>
                     </div>
                 </div>

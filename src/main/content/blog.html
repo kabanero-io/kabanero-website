@@ -6,18 +6,20 @@ css:
 - header-light
 permalink: /blog/
 ---
+{% assign t = site.data[site.active_lang].blog %}
+
 <!-- BLOG -->
 <div id="background-container">
     <div id="blog-container" class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
             <div class="col-md-10">
-                <h1 class="blog-page-title" alt="Blog">Blog</h1>
+                <h1 class="blog-page-title" alt="Blog">{{t.header}}</h1>
                 <p>
-                    Follow 
+                    {{t.follow}}
                     <a class="kabanero-colored-link" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> 
-                    on Twitter or subscribe to our 
-                    <a class="kabanero-colored-link" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.
+                    {{t.on-twitter}}
+                    <a class="kabanero-colored-link" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">{{t.rss}}</a>.
                 </p>
             </div>
             <div class="col-1"></div>
@@ -168,12 +170,12 @@ permalink: /blog/
                 <div class="row blog-post-row">
                     <div class="blog-post-column col">
                         <div id="final-post">
-                            <p class="final-post-title">Stay hot!</p>
+                            <p class="final-post-title">{{t.stay-hot}}</p>
                             <p class="white-text">
-                                Follow 
+                               {{t.follow}}
                                 <a class="orange-link-light-background" href="{{site.twitter_url}}" target="_blank" rel="noopener">@{{site.twitter_username}}</a> 
-                                on Twitter or subscribe to our 
-                                <a class="orange-link-light-background" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">RSS feed</a>.
+                                {{t.on-twitter}}
+                                <a class="orange-link-light-background" href="https://kabanero.io/feed.xml" target="_blank" rel="noopener">{{t.rss}}</a>.
                             </p>
                         </div>
                     </div>

@@ -41,3 +41,15 @@ $( document ).ready(function() {
     $(".model-logo > button").on("click keypress", hideAllFeaturedModelsCollapses);
     $(".model-logo").on("keypress", function(){$(this).children("button").click();});
 });
+
+$(".featured-model-box").click(function() {
+    $(".featuredModelsCollapse:visible").collapse('hide');
+ });
+ 
+ function hoverFeaturedCollection(element){
+    element.setAttribute('src', '/img/collections-icon-rollover.png');
+ }
+ 
+ function unhoverFeaturedCollection(element){
+    element.setAttribute('src', '/img/collections-icon.png')
+ }

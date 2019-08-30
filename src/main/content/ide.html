@@ -4,12 +4,14 @@ title: Kabanero Developer Experience for IDEs
 css: developer
 permalink: /developer/ide/
 ---
+{% assign t = site.data[site.active_lang].ide %}
+
 <!-- INTRO -->
 <div id="intro-content" class="container">
     <div class="row">
         <div class="col">
             <div class="dev-exp-title">
-                <p class="header developer-experience-header">Kabanero Developer Experience for IDEs</p>
+                <p class="header developer-experience-header">{{t.intro-title}}</p>
             </div>
         </div>
     </div>
@@ -19,16 +21,12 @@ permalink: /developer/ide/
         <div class="col">
             <div id="components-text" class="page-description">
                 <p>
-                    Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative,
-                    without having to spend time defining container images, build infrastructure, or Kube yaml. 
-                    Focus on developing new applications and let the Kabanero tools do the heavy lifting of building 
-                    and packaging deployment-ready containers. Try it for yourself, using extensions 
-                    to popular IDEs. If you are interested in a 
-                    <a href="/developer/cli/">simple CLI experience, try it here</a>.
+                        {{t.intro-text}}
+                    <a href="/developer/cli/">{{t.cli-example-link}}</a>.
                 </p>
                 <p>
-                    The Kabanero Development Experience for IDE includes Eclipse Codewind and Appsody. You can 
-                    <a href="/developer/">learn more about these open source projects here</a>.
+                        {{t.intro-text-bottom}} 
+                    <a href="/developer/">{{t.learn-more-link}}</a>.
                 </p>
                 <img class="img-fluid workflow-image" src="/img/jane-codewind-pic.png">
             </div>
@@ -47,11 +45,10 @@ permalink: /developer/ide/
                     <div class="row">
                         <div class="col">
                             <div id="components-text">
-                                <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">Check out the video (Create a Node app)</a>
+                                <a href="https://youtu.be/Ri7RJ5XyY60" target="_blank">{{t.video}}</a>
                                 <p>
-                                    You can go from zero to application running in Knative/Kubernetes in under 5
-                                    minutes, working only with the app code - no tinkering with Dockerfiles, no
-                                    learning Kube and Kube Yaml, no non-sense.</p>
+                                    {{t.zero-to-application}}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -62,29 +59,27 @@ permalink: /developer/ide/
                     <div class="row">
                         <div class="col">
                             <div id="components-text">
-                                <strong>Try it with VS Code</strong>
+                                <strong>{{t.vs-code}}</strong>
                                 <div>
                                     <ol type="1">
                                         <li>
                                             <a href="https://marketplace.visualstudio.com/items?itemName=IBM.codewind"
-                                                target="_blank">Install Codewind from the VS Code
-                                                Marketplace
+                                                target="_blank">{{t.vs-codewind-link}}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://github.com/kabanero-io/appsodyExtension"
-                                                target="_blank">Install Appsody Extension for
-                                                Codewind
+                                                target="_blank">{{t.apposdy-extention-link}}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://appsody.dev/docs/getting-started/quick-start"
                                                 target="_blank">
-                                                Install Appsody CLI
+                                                {{t.appsody-cli-link}}
                                             </a> 
-                                            (optional for direct CLI access)
+                                            {{t.optional-message}}
                                         </li>
-                                        <li>Try it for yourself.</li>
+                                        <li>{{t.try-it-yourself}}</li>
                                     </ol>
                                 </div>
                             </div>
@@ -97,31 +92,30 @@ permalink: /developer/ide/
                     <div class="row">
                         <div class="col">
                             <div id="components-text">
-                                <strong>Try it with Eclipse</strong>
+                                <strong>{{t.eclipse}}</strong>
                                 <div>
                                     <ol type="1">
                                         <li>
                                             <a href="https://marketplace.eclipse.org/content/codewind" target="_blank">
-                                                Install Codewind from the Eclipse Marketplace
+                                                {{t.eclipse-link}}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://github.com/kabanero-io/appsodyExtension" target="_blank">
-                                                Install Appsody Extension for Codewind
+                                                {{t.apposdy-extention-link}}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="https://appsody.dev/docs/getting-started/quick-start" target="_blank">
-                                                Install Appsody CLI
+                                                {{t.appsody-cli-link}}
                                             </a> 
-                                            (optional for direct CLI access)</li>
-                                        <li>Try it for yourself.</li>
+                                            {{t.optional-message}}</li>
+                                        <li>{{t.try-it-yourself}}</li>
                                     </ol>
                                 </div>
                             </div>
                             <p>
-                                Note: If you want to leave the IDE experience and go straight to CLI,
-                                you will need to install the Appsody CLI separately.
+                                    {{t.note}}
                             </p>
                         </div>
                     </div>

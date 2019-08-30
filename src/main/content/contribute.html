@@ -6,6 +6,7 @@ css:
  - issues
 permalink: /contribute/
 ---
+{% assign t = site.data[site.active_lang].contribute %}
 
 <!-- INTRO -->
 <div id="contribute-intro-background" class="white-red-gradient-background">
@@ -16,16 +17,15 @@ permalink: /contribute/
             </div>
             <div class="col-md-8">
                 <p id="contribute-intro-paragraph-1">
-                    Anyone can contribute to the Kabanero project and we welcome your contributions!
+                    {{t.contribute-intro-paragraph-1}}
                 </p>
                 <p id="contribute-intro-paragraph-2">
-                    The Kabanero community welcomes contributions at all levels. Whether you're just starting out or a seasoned committer, 
-                    every user has the potential to spice up Kabanero.
+                    {{t.contribute-intro-paragraph-2}}
                 </p>
                 <p>
-                    Kabanero is licensed under 
+                        {{t.licensed-under}}
                     <a href="{{site.github_url}}/kabanero-website/blob/master/LICENSE" target="_blank" rel="noopener" class="light-green-link-dark-background">
-                        Apache License, Version 2.0
+                        {{t.apache-license}}
                     </a>
                 </p>
             </div>
@@ -42,15 +42,14 @@ permalink: /contribute/
     </div>
     <div class="row">
         <div class="col-md-4">
-            <h2 id="getting-started-title">Getting Started</h2>
+            <h2 id="getting-started-title">{{t.getting-started.intro-title}}</h2>
         </div>
         <div class="col-md-8">
             <p id="getting-started-paragraph">
-                Thank you for joining the Kabanero community. We can’t wait to see what we build together! There 
-                are so many ways to contribute to Kabanero; just be sure to check out the contributor guidelines.
+                    {{t.getting-started.intro-paragraph}}
             </p>
             <a class="btn btn-kabanero" target="_blank" role="button" href="{{site.github_url}}/kabanero-website/blob/master/CONTRIBUTING.md" aria-expanded="false">
-                View the contributor guidelines
+                    {{t.getting-started.guidelines}}
             </a>
         </div>
     </div>
@@ -65,18 +64,16 @@ permalink: /contribute/
     </div>
     <div class="row">
         <div class="col-md-4">
-            <h2 id="kabanero-future-title">Raising Issues</h2>
+            <h2 id="kabanero-future-title">{{t.future-of-kabanero.intro-title}}</h2>
         </div>
         <div class="col-md-8">
             <p id="kabanero-future-paragraph">
-                Please raise any bug reports on the Kabanero project repository's GitHub issue tracker. Be sure to search the list to see if your issue has already been raised.
-
-                A good bug report is one that make it easy for everyone to understand what you were trying to do and what went wrong. Provide as much context as possible so we can try to recreate the issue.
+                    {{t.future-of-kabanero.intro-text}}
             </p>
             <div class="row">
                 <div class="col-12">
                     <a href="{{site.github_url}}/roadmap/issues/new" target="_blank" rel="noopener" class="btn btn-kabanero">
-                        Open issues for new features
+                        {{t.future-of-kabanero.open-issues}}
                     </a>                            
                 </div>
             </div>
@@ -91,12 +88,12 @@ permalink: /contribute/
             <div class="row">
                 <p id="ways-to-connect-text">
                     <br>
-                    Have your own flavors to add to Kabanero?  Come see what the community is cooking up!
+                    {{t.connect.intro-text}}
                 </p>
             </div>
             <div class="row">
                 <a id="ways-to-connect-link-1" href="/community" class="rounded-corner-link link-green-border link-green-right-arrow">
-                    <div class="button-label"><p class="connect-text">Connect with your community</p></div>
+                    <div class="button-label"><p class="connect-text">{{t.connect.community}}</p></div>
                 </a>
             </div>
         </div>

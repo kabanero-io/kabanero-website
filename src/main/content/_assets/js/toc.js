@@ -123,11 +123,11 @@ function handleFloatingTOCAccordion() {
             // accordion back into the page and remove the scroller-anchor <div>.
             enableFloatingTOCAccordion();
         } else {
-          //mobile-toc-accordion blocks the top part of the TOC column, need to add margin so that 'X' in TOC is visible
-          var tocDistanceFromTop = $('#toc-column').offset().top;
-          if ($(this).scrollTop() >= tocDistanceFromTop) {
-            $('#toc-column').css('margin-top', '40px');
-          }
+            //mobile-toc-accordion blocks the top part of the TOC column, need to add margin so that 'X' in TOC is visible
+            var tocDistanceFromTop = $('#toc-column').offset().top;
+            if ($(this).scrollTop() >= tocDistanceFromTop) {
+                $('#toc-column').css('margin-top', '40px');
+            }
         }
     }
     else{
@@ -307,24 +307,24 @@ $(document).ready(function() {
     //In single column view, close the TOC after tabbing from the last element in the TOC
     //and focus on the first tabbable element in the first step
     $('#tags-container').on('keydown', function(){
-      if(inSingleColumnView()) {
-        var tagWithFocus = $(document.activeElement);
-        var lastTag = $('#tags-container').children().last();
-        if (tagWithFocus.is(lastTag)) { //tabbing from the last tag in TOC
-          //hide the toc
-          $('#mobile-close-container').click();
+        if(inSingleColumnView()) {
+            var tagWithFocus = $(document.activeElement);
+            var lastTag = $('#tags-container').children().last();
+            if (tagWithFocus.is(lastTag)) { //tabbing from the last tag in TOC
+                //hide the toc
+                $('#mobile-close-container').click();
+            }
         }
-      }
     });
 
     //Hide the TOC when the ESC key is hit (in single column view)
     $('#toc-column').on('keydown', function(e){
-      if(inSingleColumnView()) {
-        if(e.which == 27){ //ESC key code
-          //hide the toc
-          $('#mobile-close-container').click();
+        if(inSingleColumnView()) {
+            if(e.which == 27){ //ESC key code
+                //hide the toc
+                $('#mobile-close-container').click();
+            }
         }
-      }
     });
 
     // Handle collapsing the table of contents from full width back into an orange line on the left side of the page.
@@ -359,9 +359,7 @@ $(document).ready(function() {
     $('#toc-container').on('keydown', 'li', function(event) {
         // 'this' is the li element in the #toc-container
         if (event.which === 13 || event.which === 32) {   // Spacebar or Enter
-          this.click();
+            this.click();
         }
     });
-
-
 });

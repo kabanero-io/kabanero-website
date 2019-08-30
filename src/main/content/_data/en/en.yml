@@ -2,13 +2,15 @@ _includes:
   header:
     whats-new-toast-text: Check out what's in the latest release of Kabanero
     learn-more: Learn More
-    try-it: Try It
+    getting-started: Getting Started
+    resources: Resources
     close: Close
   doc_header:
     toggle-navigation: Toggle navigation
     guides: Guides
     general: General
     docs: Docs
+    blogs: Blog
     reference: Reference
     table-of-content: Table of Content
   end_of_guide:
@@ -124,6 +126,8 @@ docs:
 
 general-reference:
   page-header: Kabanero Docs
+  welcome-to-docs: Welcome to Docs
+  no-doc-found: No doc found
 
 guides:
   page-title: Guides
@@ -156,20 +160,20 @@ ide:
 
 index:
   intro-title: Create more, faster
-  intro-paragraph: Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework. Developing apps for container platforms requires harmony between developers, architects, and operations. Today’s developers need to be efficient at much more than writing code. Architects and operations get overloaded with choices, standards, and compliance. Kabanero speeds development of applications built for Kubernetes while meeting the technology standards and policies your company defines. Design, develop, deploy, and manage with speed and control!
-  try-it: Try It
+  intro-paragraph: Kabanero is an open source microservices-based framework that enables developers, architects and operation teams to work together, faster. Speed the development of applications built for Kubernetes while meeting the technology standards and policies your company defines.
+  get-started: Get Started
   development:
+    something-for-whole-team: Something for your whole team
     tab: Development
-    section-title: Develop more, faster
-    description: Use your favorite development tools to create apps for Kubernetes faster. Develop, test, and debug in containers, and deploy with confidence knowing you’re automatically compliant with company policies. Spend more time writing code rather than re-tooling and building deep Kubernetes skills. Select a Kabanero Collection customized by your team for languages and programming models that you use on a daily basis.
+    description: Use your favorite development tools to create apps for Kubernetes faster. Develop, test, debug in containers and deploy with confidence.
   architecture:
     tab: Architecture
     section-title: Design more, faster
-    description: Use our application stacks infused with expertise to select proven technologies, languages, and runtimes for building applications for Kubernetes. Apply customizations before sharing the application stack with developers and operations teams, to ensure your business process and governance needs are met. Application stacks reduce the decision-cycle time, enabling developers to focus on delivering line-of-business value without having to become full stack experts.
+    description: Use our curated collections and tailor them to your company. Manage your collections for your teams knowing they are automatically compliant with company policies.
   operations:
     tab: Operations
     section-title: Manage with confidence
-    description: Maintain compliance with confidence, using application stacks to deliver the latest container images with the latest security patches. Bring your existing applications into your hybrid cloud infrastructure. You get immediate visibility of your apps in one platform for existing and new apps, with a single view across hybrid deployments, whether in containers or VMs.
+    description: Easily manage the cloud based infrastructure including Kubernetes and get immediate visibility of your apps in one platform for existing and new apps whether in containers or VMs.
   open-source-bumper: 100% Open Source.
   automated-bumper: Automated.
   integrated-bumper: Integrated.
@@ -198,7 +202,8 @@ index:
       tab-name: Modernize Applications
       description: Plan, execute, and enhance your cloud modernization journey. Kabanero integrates with free modernization tooling from IBM for Java applications. Choose to re-factor applications based on ROI. Accelerate development efforts with assistance within your IDE using guided code changes.
     runtimes:
-      tab-name: Languages & Runtimes
+      languages: Languages 
+      runtimes: Runtimes
       description: Use the right language for the job. Java is at the core of most modern application environments and can support Eclipse MicroProfile or Spring-based microservices. No matter your workload, we have runtimes and application stacks to simplify application development and delivery on Kubernetes.
     develop:
       tab-name: Develop
@@ -206,11 +211,16 @@ index:
     build:
       tab-name: Build
       description: DevOps is critical for a successful microservices-based deployment. Kabanero supplies an integrated open source CI/CD (continuous integration / continuous delivery) infrastructure based on the open source project Tekton. Kabanero provides for a rich set of stages that pipelines can use to integrate features like patching, vulnerability scanning, and more.
-    manage:
-      tab-name: Manage
+    deploy:
+      tab-name: Deploy
       description: Applications are deployed with best practices for Kubernetes deployments including scale, security, health and liveness probes. Kabanero also provides the ability to augment the base images with additional management capabilities as defined in the application stack. See everything from a single pane of glass with insights and correlation spanning traditional and Kubernetes applications for proactive problem determination.
   foundational-tools: 
     title: 'Built on a foundation of:'
+  featured-collections:
+    title: Featured Collections
+    eclips-microprofile-paragraph: Eclipse MicroProfile is a set of APIs used to optimize Java applications for a microservices architecture. With this stack, you can deliver microservices based upon the Eclipse MicroProfile specifications. Build and run high-quality applications with Open Liberty runtime, which includes OpenJDK with container-optimizations in OpenJ9.
+    spring-paragraph: is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Open Liberty runtime provides support for Spring applications with OpenJDK and container-optimizations in OpenJ9.
+    nodejs-paragraph: Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser. Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers. It fits well in web-based frontends and backend API services for microservices-based applications.
   support:
     header: When you are ready for support, we've got you covered
     description: The Kabanero open source project is included within 
@@ -245,6 +255,8 @@ index:
     kubernetes: Kubernetes
     knative: Knative
     istio: Istio
+    learn-more: Learn More
+    eclipse-microProfile: Eclipse MicroProfile
 
 kabanero-foundation-setup:
   intro-title: Kabanero Foundation Installation

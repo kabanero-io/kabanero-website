@@ -402,7 +402,7 @@ function createEndOfGuideContent(){
         a.attr('href', '#end_of_guide');    
         a.text(end_of_guide_title);
         li.append(a);
-        $("#toc-container > ul").append(li);
+        $('#toc-container > ul').append(li);
     }
 }
 
@@ -719,16 +719,16 @@ $(document).ready(function() {
                     elemToFocus = getGuideColumnFocusElement(elementWithFocus, shiftIsPressed);
                 }
             }
-        // Handle tabbing from code column
-        else if (elementWithFocus[0] == $('#code_column')[0] || elementWithFocus.parents('#code_column').length > 0) {
-            elemToFocus = getCodeColumnFocusElement(elementWithFocus, shiftIsPressed);
-        }
+            // Handle tabbing from code column
+            else if (elementWithFocus[0] == $('#code_column')[0] || elementWithFocus.parents('#code_column').length > 0) {
+                elemToFocus = getCodeColumnFocusElement(elementWithFocus, shiftIsPressed);
+            }
 
-        if(elemToFocus && elemToFocus.length > 0){
-            // Only stop the default tab/shift+tab behavior if we found a custom element to override the default behavior to tab to.
-            e.preventDefault();
-            elemToFocus.focus();
+            if(elemToFocus && elemToFocus.length > 0){
+                // Only stop the default tab/shift+tab behavior if we found a custom element to override the default behavior to tab to.
+                e.preventDefault();
+                elemToFocus.focus();
+            }
         }
-      }
     });
 });

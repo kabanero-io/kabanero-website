@@ -20,6 +20,10 @@
 $color-kabanero:#C43804;
 
 /* INTRO */
+body{
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
 .separator {
     margin: 35px 0 35px 0;
 }
@@ -31,10 +35,12 @@ $color-kabanero:#C43804;
 .video-wrapper {
 	position: relative;
 	padding-bottom: 35%;
-	padding-top: 25px;
+    padding-top: 25px;
+    margin-top: 25px;
 	height: 0;
 }
 .video-wrapper iframe {
+    border: 1px solid #979797;
 	position: absolute;
 	top: 0;
 	left: 10%;
@@ -43,15 +49,22 @@ $color-kabanero:#C43804;
 }
 
 .video{
-    background-color: #292828;
     color: white;
     padding: 15px 0 15px 0;
     margin-top: 0px;
 }
 
+#box-row{
+    margin-top:30px;
+    margin-right:30px;
+    margin-left:30px;
+}
+
 .open-source-platform{
-    background-color: #292828;
+    background-color: #000000;
     padding: 15px 0 15px 0;
+    margin-left:-15px;
+    margin-right:-15px;
 }
 
 .open-source-platform-col{
@@ -71,14 +84,18 @@ $color-kabanero:#C43804;
 
 .open-source-platform-box{
     height:120px;
-    background-color: #5d5d5d;
-    color: white;
-    border:1px solid $color-kabanero;
+    background-color: #d8d8d8;
+    color: #000000;
+    border:5px solid #000000;
     cursor: pointer;
-}
 
-.open-source-platform-box:hover{
-    border-color: #fbae61;
+    &:hover{
+        background-color: #FFFFFF;
+    }
+
+    &:focus{
+        outline: $color-kabanero auto 5px;
+    }
 }
 
 .open-source-platform-box-selected{
@@ -91,7 +108,7 @@ $color-kabanero:#C43804;
 
 .open-source-platform-horizontal-separator{
     margin-top:60px;
-    border-top:3px solid $color-kabanero;
+    border-top:5px solid $color-kabanero;
 }
 
 .open-source-platform-vertical-separator{
@@ -108,9 +125,16 @@ $color-kabanero:#C43804;
 
 .open-source-platform-content-box{
     padding:20px;
-    background-color: white;
-    color: black;
-    border-top:6px solid #fbae61;
+    background-color: #f4f5f7;
+    color: #000000;
+    border-top:6px solid #000000;
+    margin-right:30px !important;
+    margin-left:30px !important;
+}
+
+.no-margin{
+    margin-left:0px !important;
+    margin-right:0px !important;
 }
 
 .open-source-platform-content-title{
@@ -150,21 +174,24 @@ $color-kabanero:#C43804;
 }
 
 .featured-models{
-    background-color: #f3f5f7;
+    background-color: #f4f5f7;
     margin-top: 3em;
-    padding-bottom: 7em;
+    padding-bottom: 3em;
     padding-top: 3em;
+    margin-left:-15px;
+    margin-right:-15px;
 }
 
-.support-block{
-    background-color: #f3f5f7;
-    padding-bottom: 7em;
+.support-title{
     padding-top: 3em;
 }
 
 .cpa-link{
     font-weight: bold;
-    color: #0553a7;
+    color: #C43804;
+    &:hover{
+        color:#DB8869;
+    }
 }
 
 .description-text-block{
@@ -440,8 +467,8 @@ $color-kabanero:#C43804;
 }
 
 .featuredModelsCollapse{
-    position: relative;
-    top: 30px;
+    background-color:#f4f5f7;
+    padding: 30px 30px 30px 30px;
 }
 
 .foundational-toolsText{
@@ -475,6 +502,12 @@ $color-kabanero:#C43804;
     color: #ffffff;
 }
 
+.black-button{
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: #ffffff;
+}
+
 .visit-blog-button{
     margin: 10px 0 10px 20px;
 }
@@ -501,10 +534,6 @@ $color-kabanero:#C43804;
     background-color: #ffffff;
 }
 
-.empty-row{
-    height: 20px;
-}
-
 .blog-post-column{
     border: 1px solid #D8DCDE;
     border-radius: 3px;
@@ -528,28 +557,20 @@ $color-kabanero:#C43804;
 }
 
 .featured-model-box{
-    border-radius: 4rem;
-    color: black;
-    background-color: white;
-    border: 0px;
-    outline: 0px !important;
-    height: 4rem;
-    font-size: 16px;
-}
+    border:0;
+    background-color:#f4f5f7;
 
-.featured-model-box:hover{
-    color:white;
-    background-color: $color-kabanero;
+    &:focus{
+       outline:0; 
+    }
 }
 
 .foundational-tools{
-    background-color: #292828;
-    padding: 15px 0 100px 0;
+    padding: 15px 0 0 0;
 }
 
 .foundational-tools-container{
-    background-color:white;
-    padding-top: 20px;
+    padding-top: 50px;
     padding-bottom: 30px;
 }
 
@@ -608,7 +629,7 @@ $color-kabanero:#C43804;
 }
 
 .slack-invite{
-    color:$color-kabanero;
+    color:#000000;
     font-size:16px;
     font-weight: bolder;
     margin: 0 0 0 15px;
@@ -643,7 +664,7 @@ $color-kabanero:#C43804;
     width: 227px;
     font-size: 17px;
     font-weight: 500;
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: $color-kabanero;
     border-radius: 7px;
     padding: 10px 25px;
@@ -665,3 +686,44 @@ $color-kabanero:#C43804;
     margin-bottom: 15px;
 }
 
+.role-box{
+    border: 1px solid #979797;
+    border-top: 10px solid $color-kabanero;
+    margin-left:25px;
+    margin-right:25px;
+    padding: 10px 25px 10px 25px;
+    height:420px;
+}
+
+.centered{
+    text-align:center;
+}
+
+.role-box-img{
+    height:127px !important;
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+#role-box-title{
+    margin-bottom:5vh;
+}
+
+.btn-outline-dark{
+    border: 2px solid $color-kabanero;
+    border-radius: 7px;
+    margin-bottom:20px;
+}
+
+#featured-collections-title{
+    margin-bottom:30px;
+}
+
+.featured-model-label{
+    margin-top:10px;
+}
+
+.foundational-tech{
+    margin-left:5px;
+    margin-right:5px;
+}

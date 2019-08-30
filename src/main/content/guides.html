@@ -15,7 +15,8 @@ permalink: /guides/
 {% assign multipane-static-guides = site.pages | where: 'layout', 'guide-multipane' %}
 {% assign interactive-guides = site.pages | where: 'layout', 'interactive-guide' %}
 {% assign multipane-iguides = site.pages | where: 'layout', 'iguide-multipane' %}
-{% assign all-markdown-files = static-guides | concat: interactive-guides | concat: multipane-static-guides | concat: multipane-iguides | sort: 'releasedate' | reverse %}
+{% assign markdown-guides = site.pages | where: 'layout', 'guide-markdown' %}
+{% assign all-markdown-files = static-guides | concat: interactive-guides | concat: multipane-static-guides | concat: markdown-guides | concat: multipane-iguides | sort: 'releasedate' | reverse %}
 {% assign all-guides = '' | split: '' %}
 
 <!-- Remove any documents deemed private (archived, templates, etc) -->
@@ -78,7 +79,12 @@ permalink: /guides/
     <div class="essential row">
         {% for guide in all-guides %}
         <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="{{ guide.url }}.html" class="guide_item" data-title="{{ guide.title | downcase }}" 
+                {% if guide.name contains '.adoc' %}
+                    {% assign href = guide.url | append: '.html' %}
+                {% else %}
+                    {% assign href = guide.url %}
+                {% endif %}
+            <a href="{{href}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
             data-description="{{ guide.description | downcase }}" data-tags="{{ guide.tags | join: ' ' | downcase }}" data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
                 <div class="guide-title-and-description-container">
                     <h3 class="guide-title">{{guide.title}}</h3>

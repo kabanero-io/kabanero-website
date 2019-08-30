@@ -1,41 +1,76 @@
 ---
 layout: doc
 title: General Reference
-type: general
 css:
 - commonConfigFeature
 - general-reference
 js: general-references
-permalink: /docs/ref/general/
+permalink: /docs/
 ---
-{% assign t = site.data[site.active_lang].general-reference %}
-{% assign generalDocs = site.pages | where: 'layout', 'general-reference' | where: 'type', 'general' | sort: 'title' %}
+{% assign collectionsDoc = site.pages %}
 
-<div id="background-container">
-    <div class="row">
-        <h1 id="docs-title">{{t.page-header}}</h1>
-    </div>
+{% assign docCategories = '' | split: '' %}
+
+{% for doc in collectionsDoc %}
+    {% if doc.doc-category %}
+    {% assign docCategory = doc.doc-category | split: '/n' %}
+    {% assign docCategories = docCategories | concat: docCategory %}
+    {% endif %}
+{% endfor %}
+
+{% assign uniqueCats =  docCategories | uniq %}
+
+
+{% assign introDoc = site.pages | where: 'title', 'Welcome to Docs' %}
+<div id="background-container" class="container-fluid">
     <div class="row">
         <!-- table of contents section -->
         <div id="toc-column" class="col-sm-2 collapsed in">
-            <div id="toc-inner">
-                {% if generalDocs.size > 0 %}
-                <div id="toc-container">
-                    <ul id="general-toc">
-                        {% for doc in generalDocs %}
-                        <li>
-                            <div role="button" href="{{ doc.url }}" tabindex="0">{{ doc.title }}</div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% else %}
-                <div>No doc found</div>
-                {% endif %}
+            <input id="doc-search" type="text" placeholder="search">
+            <hr>
+            <div class="accordion" id="docs-accordion">
+                {% for cat in uniqueCats %}
+                {% assign catNoSpaces = cat | replace: " ", "" %}
+                {% assign dataTarget = "#" | append: catNoSpaces %}
+                {% assign buttonId = catNoSpaces | append: '-button' %}
+                {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
+                    <h2 id="noSearchResults" class="no-display">
+                        No Search Results
+                    </h2>
+                    <h2>
+                        <button class="btn doc-category" id={{buttonId}} type="button" data-toggle="collapse" data-target={{dataTarget}} data-icon={{iconId}} onclick="toggleIcon(this)">
+                            <img class="plus-minus-icon" id={{iconId}} src="/img/icon_plus.png">
+                            {{cat}}
+                        </button>
+                    </h2>
+                    {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                    <div id={{catNoSpaces}} class="collapse" >
+                        <div id="toc-inner">
+                            {% if currCatDocs.size > 0 %}
+                            <div id="toc-container">
+                                <ul id="general-toc">
+                                    {% for doc in introDoc %}
+                                    <li class="no-display">
+                                        <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
+                                    </li>
+                                    {%  endfor %}
+                                    {% for doc in currCatDocs %}
+                                    <li class="doc-link">
+                                        <div class="doc-title" role="button" href="{{ doc.url }}" tabindex="0" data-category={{buttonId}}>{{ doc.title }}</div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% else %}
+                            <div>No doc found</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <!-- content -->
-        <div id="general-content" tabindex="0" class="col-sm-9 position-relative">
+        <div id="general-content" tabindex="0" class="col-sm-10 position-relative">
         </div>
     </div>
 </div>

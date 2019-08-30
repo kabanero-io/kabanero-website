@@ -19,14 +19,9 @@ seo-title: Kabanero
             <div id="intro-content">
                 <img src="/img/kabanero-final.svg" class="img-fluid" id="kabanero-img" alt="boxes">
                 <h3 id="intro-lighten-up-title">{{t.intro-title}}</h3>
-                <p id="intro-paragraph">
-                        {{t.intro-paragraph}}
+                    {{t.intro-paragraph}}
                 </p>
-                <a class="col-md-5" id="get-started-link" href="/try-it"> {{t.try-it}} </a>
-                    Kabanero is an open source microservices-based framework that enables developers, architects and operation teams to work together, faster.
-                    Speed the development of applications built for Kubernetes while meeting the technology standards and policies your company defines.
-                </p>
-                <a class="col-md-5" id="get-started-link" href="/get-started">Get Started</a>
+                <a class="col-md-5" id="get-started-link" href="/get-started">{{t.get-started}}</a>
             </div>
         </div>
         <div class="col-md-4 d-none d-md-block">
@@ -45,30 +40,30 @@ seo-title: Kabanero
     </div>
     <!-- New Role Boxes -->
     <div class="row area">
-        <h2 class="col text-center" id="role-box-title">Something for your whole team</h2>
+        <h2 class="col text-center" id="role-box-title">{{t.development.something-for-whole-team}}</h2>
         <div class="row centered">
             <div class="col-md-4">
-                <h3>Development</h3>
+                <h3>{{t.development.tab}}</h3>
                 <div class="role-box">
                     <img class="role-box-img" src="/img/logos/development.png" alt="Developer image">
-                    <p>Use your favorite development tools to create apps for Kubernetes faster. Develop, test, debug in containers and deploy with confidence.</p>
-                    <a role="button" class="btn btn-outline-dark col-md-8" href="/developer">Learn More</a>
+                    <p>{{t.development.description}}</p>
+                    <a role="button" class="btn btn-outline-dark col-md-8" href="/developer">{{t.common.learn-more}}</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <h3>Architecture</h3>
+                <h3>{{t.architecture.tab}}</h3>
                 <div class="role-box">
                     <img class="role-box-img" src="/img/logos/architecture.png">
-                    <p>Use our curated collections and tailor them to your company. Manage your collections for your teams knowing they are automatically compliant with company policies.</p>
-                    <a role="button" class="btn btn-outline-dark col-md-8" href="/architect">Learn More</a>
+                    <p>{{t.architecture.description}}</p>
+                    <a role="button" class="btn btn-outline-dark col-md-8" href="/architect">{{t.common.learn-more}}</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <h3>Operations</h3>
+                <h3>{{t.operations.tab}}</h3>
                 <div class="role-box">
                     <img class="role-box-img" src="/img/logos/operations.png">
-                    <p>Easily manage the cloud based infrastructure including Kubernetes and get immediate visibility of your apps in one platform for existing and new apps whether in containers or VMs.</p>
-                    <a role="button" class="btn btn-outline-dark col-md-8" href="/operations">Learn More</a>
+                    <p>{{t.operations.description}}</p>
+                    <a role="button" class="btn btn-outline-dark col-md-8" href="/operations">{{t.common.learn-more}}</a>
                 </div>
             </div>
         </div>
@@ -79,7 +74,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
                     <p class="open-source-platform-paragraph">
-                        Languages<br>& Runtimes
+                            {{t.open-source-platform.runtimes.languages}}<br>& {{t.open-source-platform.runtimes.runtimes}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -114,7 +109,7 @@ seo-title: Kabanero
             <div class="col open-source-platform-col">
                 <div role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
                     <p class="open-source-platform-paragraph">
-                        Deploy
+                            {{t.open-source-platform.deploy.tab-name}}
                     </p>
                 </div>
                 <div class="open-source-platform-vertical-separator"></div>
@@ -125,8 +120,7 @@ seo-title: Kabanero
                 <div class="col">
                     <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
                     <p>
-                        Use the right language for the job. Java is at the core of most modern application environments and can support Eclipse MicroProfile or Spring-based microservices. 
-                        No matter your workload, we have runtimes and application stacks to simplify application development and delivery on Kubernetes.
+                        {{t.open-source-platform.runtimes.description}}
                     </p>
                 </div>
             </div>
@@ -188,9 +182,9 @@ seo-title: Kabanero
         <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
             <div class="row">
                 <div class="col">
-                    <p class="open-source-platform-content-title">Deploy</p>
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.deploy.tab-name}}</p>
                     <p>
-                            {{t.open-source-platform.manage.description}}
+                            {{t.open-source-platform.deploy.description}}
                     </p>
                 </div>
             </div>
@@ -212,15 +206,15 @@ seo-title: Kabanero
             </div>
             <div class="row">
                 <div class="col">
-                    <span class="foundational-tech"><u>Kubernetes&reg;</u></span>
-                    <span class="foundational-tech"><u>Knative</u></span>
-                    <span class="foundational-tech"><u>Istio</u></span>
+                    <span class="foundational-tech"><u>{{t.common.kubernetes}}&reg;</u></span>
+                    <span class="foundational-tech"><u>{{t.common.knative}}</u></span>
+                    <span class="foundational-tech"><u>{{t.common.istio}}</u></span>
                 </div>
             </div>
         </div>
     </div>
     <div class="row featured-models">
-        <h2 class="col-md-12 text-center" id="featured-collections-title">Featured Collections</h2>
+        <h2 class="col-md-12 text-center" id="featured-collections-title">{{t.featured-collections.title}}</h2>
         <div class="col">
             <button data-toggle="collapse"
                     href="#microprofile-collapse"
@@ -230,7 +224,7 @@ seo-title: Kabanero
                     alt="microprofile logo"
                     tabindex="99">
                     <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
-                    <br><label class="featured-model-label">Eclipse MicroProfile</label>
+                    <br><label class="featured-model-label">{{t.common.eclipse-microProfile}}</label>
             </button>
         </div>
         <div class="col">
@@ -242,7 +236,7 @@ seo-title: Kabanero
                     alt="java spring logo"
                     tabindex="99">
                     <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
-                    <br><label class="featured-model-label">Spring</label>
+                    <br><label class="featured-model-label">{{t.common.spring}}</label>
             </button>
         </div>
         <div class="col">
@@ -254,7 +248,7 @@ seo-title: Kabanero
                     alt="nodejs logo"
                     tabindex="99">
                     <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
-                    <br><label class="featured-model-label">NodeJS</label>
+                    <br><label class="featured-model-label">{{t.common.nodeJS}}</label>
             </button>
         </div>
     </div>
@@ -264,23 +258,23 @@ seo-title: Kabanero
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://openliberty.io/">
                         <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
-                        <p>Open Liberty</p>
+                        <p>{{t.common.open-liberty}}</p>
                     </a>
                 </div>
                 <div class="col text-center">
                     <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                    <p>Operators</p>
+                    <p>{{t.common.operations}}</p>
                 </div>
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://prometheus.io/">
                         <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                        <p>Prometheus&reg;</p>
+                        <p>{{t.common.prometheus}}&reg;</p>
                     </a>
                 </div>
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://tekton.dev/">
                         <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                        <p>Tekton&trade;</p>
+                        <p>{{t.common.tekton}}&trade;</p>
                     </a>
                 </div>
             </div>
@@ -288,11 +282,7 @@ seo-title: Kabanero
             <div class="row">
                 <div class="col dopdown-text">
                     <p>
-                        Eclipse MicroProfile is a set of APIs used to optimize Java applications
-                        for a microservices architecture. With this stack, you can deliver microservices
-                        based upon the Eclipse MicroProfile specifications. Build and run high-quality
-                        applications with Open Liberty runtime, which includes OpenJDK with container-optimizations
-                        in OpenJ9.
+                        {{t.featured-collections.eclips-microprofile-paragraph}}
                     </p>
                 </div>
             </div>
@@ -304,23 +294,23 @@ seo-title: Kabanero
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://openliberty.io/">
                         <img src="/img/logos/85x85/open-liberty.png" class="img-fluid">
-                        <p>Open Liberty</p>
+                        <p>{{t.common.open-liberty}}</p>
                     </a>
                 </div>
                 <div class="col text-center">
                     <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                    <p>Operators</p>
+                    <p>{{t.common.operations}}</p>
                 </div>
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://prometheus.io/">
                         <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                        <p>Prometheus&reg;</p>
+                        <p>{{t.common.prometheus}}&reg;</p>
                         </a>
                 </div>
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://tekton.dev/">
                         <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                        <p>Tekton&trade;</p>
+                        <p>{{t.common.tekton}}&trade;</p>
                     </a>
                 </div>
             </div>
@@ -328,10 +318,7 @@ seo-title: Kabanero
             <div class="row">
                 <div class="col dopdown-text">
                     <p>
-                        Spring&reg; is a framework used in Java application development. With this application stack,
-                        you can deliver microservices based upon the Spring framework provided by Pivotal.
-                        Open Liberty runtime provides support for Spring applications with OpenJDK and
-                        container-optimizations in OpenJ9.
+                        {{t.common.spring}}&reg; {{t.featured-collections.spring-paragraph}}
                     </p>
                 </div>
             </div>
@@ -343,23 +330,23 @@ seo-title: Kabanero
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://nodejs.org">
                         <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
-                        <p>NodeJS</p>
+                        <p>{{t.common.nodeJS}}</p>
                     </a>
                 </div>
                 <div class="col text-center">
                     <img src="/img/logos/85x85/operator.png" class="img-fluid">
-                    <p>Operators</p>
+                    <p>{{t.common.operations}}</p>
                 </div>
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://prometheus.io/">
                         <img src="/img/logos/85x85/prometheus.png" class="img-fluid">
-                        <p>Prometheus&reg;</p>
+                        <p>{{t.common.prometheus}}&reg;</p>
                     </a>
                 </div>
                 <div class="col text-center">
                     <a class="image-link" target="_blank" href="https://tekton.dev/">
                         <img src="/img/logos/85x85/tekton.png" class="img-fluid">
-                        <p>Tekton&trade;</p>
+                        <p>{{t.common.tekton}}&trade;</p>
                     </a>
                 </div>
             </div>
@@ -367,9 +354,7 @@ seo-title: Kabanero
             <div class="row">
                 <div class="col dopdown-text">
                     <p>
-                        Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser.
-                        Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers.
-                        It fits well in web-based frontends and backend API services for microservices-based applications.
+                        {{t.featured-collections.nodejs-paragraph}}
                     </p>
                 </div>
             </div>
@@ -379,18 +364,16 @@ seo-title: Kabanero
     <!-- Support -->
     <div class="row support-title">
         <div class="col">
-            <h2 class="text-center">When you are ready for support, we've got you covered</h2>
+            <h2 class="text-center">{{t.support.header}}</h2>
         </div>
     </div>
     <div class="row support-text">
         <div class="col text-center description-text-block">
-            The Kabanero open source project is included within 
+            {{t.support.description}}
             <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
-                IBM Cloud Pak for Applications
+                {{t.support.link}}
             </a>
-            as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
-            to move your core business applications to any cloud, in containers. Built and supported 
-            on Red Hat OpenShift.
+            {{t.support.description-cont}}
         </div>
     </div>
 
@@ -398,7 +381,7 @@ seo-title: Kabanero
     <div class="area">
         <div class="row">
             <div class="col text-center">
-                <h2 class="latest-news">Latest News</h2>
+                <h2 class="latest-news">{{t.blogs-section.latest-news}}</h2>
             </div>
         </div>
         <div class="row">
@@ -406,9 +389,9 @@ seo-title: Kabanero
                 <div class="row visit-blog-row">
                     <div class="col-xl">
                         <div class="row">
-                            <h3 class="col-md-5 visit-text">Visit our Blog!</h3>
+                            <h3 class="col-md-5 visit-text">{{t.blogs-section.visit-text}}</h3>
                             <div class="col-md-3"></div>
-                            <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">Visit</a>
+                            <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">{{t.blogs-section.visit}}</a>
                         </div>
                     </div>
                 </div>
@@ -440,9 +423,9 @@ seo-title: Kabanero
                             <div class="row">
                                 <div class="text-right">
                                 {% if post.redirect_link %}
-                                    <a href="{{ post.redirect_link }}" class="blog-read-more">Read more</a>
+                                    <a href="{{ post.redirect_link }}" class="blog-read-more">{{t.blogs-section.read-more}}</a>
                                 {% else %}
-                                    <a href="{{ post.url | relative_url }}" class="blog-read-more">Read more</a>
+                                    <a href="{{ post.url | relative_url }}" class="blog-read-more">{{t.blogs-section.read-more}}</a>
                                 {% endif %}
                                 </div>
                             </div>
@@ -452,7 +435,7 @@ seo-title: Kabanero
                 {% endfor %}
                 <div class="row boxed-row">
                     <div class="col-sm-8">
-                        <h3>Find us on Stack Overflow</h3>
+                        <h3>{{t.find-us}}</h3>
                     </div>
                     <div class="col-sm-4">
                         <a target="_blank" href="{{site.stackoverflow_url}}">
@@ -462,26 +445,26 @@ seo-title: Kabanero
                 </div>
                 <div class="row boxed-row">
                     <div class="col-sm-6">
-                        <h3 class="get-involved">Get Involved!</h3>
+                        <h3 class="get-involved">{{t.get-involved}}</h3>
                     </div>
                     <div class="col-sm-6">
-                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">Contribute to Kabanero</a>
+                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">{{t.contribute}}</a>
                     </div>
                 </div>
                 <div class="row empty-row"></div>
             </div>
             <div class="col-xl-5 offset-xl-1" id="twitter-col">
                 <div class="row">
-                    <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">Tweets by {{site.twitter_username}} </a>
+                    <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">{{t.tweets-by}} {{site.twitter_username}} </a>
                 </div>
                 <div class="row boxed-row">
                     <div class="col-md-10">
                         <div class="row">
-                            <h3 class="slack-text">Chat with us on Slack</h3>
+                            <h3 class="slack-text">{{t.chat-with-us}}</h3>
                         </div>
                         <div class="row">
                             <a target="_blank" href={{site.slack_invite_url}}>
-                                <p class="slack-invite">Request an invite to the channel.</p>
+                                <p class="slack-invite">{{t.request-an-invite}}</p>
                             </a>
                         </div>
                     </div>
@@ -495,12 +478,12 @@ seo-title: Kabanero
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <h3 class="get-involved">See what we're cooking up next!</h3>
+                                <h3 class="get-involved">{{t.see-what-is-cookin}}</h3>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">Join the Community</a>
+                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">{{t.join-community}}</a>
                             </div>
                         </div>
                     </div>

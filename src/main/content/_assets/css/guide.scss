@@ -10,6 +10,10 @@
  *******************************************************************************/
  $color-kabanero:#C43804;
 
+ body {
+    font-family: Trebuchet MS, Helvetica, Arial;
+}
+
  #background-container, #end_of_guide_background {
     background-color: rgb(241, 244, 254);
 }
@@ -121,7 +125,7 @@ header {
 #guide-content pre  {
     /* Bootstrap override */
     background-color:#f4f4f4;
-    color: #5e6b8d;
+    color: rgb(187, 98, 66);
 }
 
 #guide-content code {
@@ -183,8 +187,8 @@ header {
 #guide-content .code_command > .content {
     position: relative;    
     border-left: 8px solid $color-kabanero;
-    border-top:1px solid #c8d6fb;
-    border-bottom:1px solid #c8d6fb;
+    border-top:1px solid $color-kabanero;
+    border-bottom:1px solid $color-kabanero;
     width: 90%;
 
     & pre {
@@ -210,11 +214,11 @@ header {
 }
 #guide-content .code_command > .content:before {
     top: 0px;
-    background: linear-gradient(to top right, #F1F4FE 48%, #c8d6fb calc(48% + 1px), transparent calc(48% + 2px));
+    background: linear-gradient(to top right, #f4f5f7 48%, $color-kabanero calc(48% + 1px), transparent calc(48% + 2px));
 }
 #guide-content .code_command > .content:after {
     bottom: 0px;
-    background: linear-gradient(to bottom right, #F1F4FE 48%, #c8d6fb calc(48% + 1px), transparent calc(48% + 2px));
+    background: linear-gradient(to bottom right, #f4f5f7 48%, $color-kabanero calc(48% + 1px), transparent calc(48% + 2px));
 }
 /* End of pointed div */
 

@@ -75,33 +75,21 @@ $(document).ready(function() {
     }
 
     $('#guide-content pre:not(.no_copy pre):not(.code_command pre):not(.hotspot pre)').hover(function(event) {
-        offset = $('#guide-column').position();	
-        target = event.currentTarget;	
-        var current_target_object = $(event.currentTarget);	
-        target_position = current_target_object.position();	
-        target_width = current_target_object.outerWidth();	
+        offset = $('#guide-column').position();
+        target = event.currentTarget;
+        var current_target_object = $(event.currentTarget);
+        target_position = current_target_object.position();
+        target_width = current_target_object.outerWidth();
         target_height = current_target_object.outerHeight();
         var right_position = inSingleColumnView() ? 1 : 46;
-         $('#copy-to-clipboard').css({	
-            top: target_position.top + 1,	
-            right: parseInt($('#guide-column').css('padding-right')) + right_position	
-        });	
-        $('#copy-to-clipboard').stop().fadeIn();	
-     }, function(event) {	
-        if(offset){
-            var x = event.clientX - offset.left;	
-            var y = event.clientY - offset.top + $(window).scrollTop();	
-            if(!(x > target_position.left	
-            && x < target_position.left + target_width	
-            && y > target_position.top	
-            && y < target_position.top + target_height)) {	
-                $('#copy-to-clipboard').stop().fadeOut();	
-                $('#guide-section-copied-confirmation').stop().fadeOut();	
-            }
-        }          	
-     });	
+        $('#copy-to-clipboard').css({
+            top: target_position.top + 1,
+            right: parseInt($('#guide-column').css('padding-right')) + right_position
+        });
+        $('#copy-to-clipboard').stop().fadeIn();
+    });
 
-     $('#copy-to-clipboard').click(function(event) {
+    $('#copy-to-clipboard').click(function(event) {
         event.preventDefault();
         // Target was assigned while hovering over the element to copy.
         copy_element_to_clipboard(target, function(){

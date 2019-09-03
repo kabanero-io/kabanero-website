@@ -60,7 +60,7 @@
 }
 
 #guide-content .code_command pre,  #guide-content .code_command code {
-    background-color: #F1F4FE;
+    background-color: #f4f5f7;
     margin-bottom: 0;
     overflow: hidden;
     white-space: pre-wrap;       /* css-3 */
@@ -279,14 +279,14 @@
     padding: 5px 6px;
 
     &:hover {
-        border: solid 1px #b2bbd1;
+        border: solid 1px #f4914d;
         cursor: pointer;
         top: 7px;
         right: 14px;
     }
     
     &:active {
-        border: solid 1px #5e6b8d;
+        border: solid 1px #f4914d;
     }
     
     &:focus {

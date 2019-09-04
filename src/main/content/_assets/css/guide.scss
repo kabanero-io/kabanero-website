@@ -241,7 +241,7 @@ header {
     line-height: 1.3;
     outline: none;
     padding: 16px 0 16px 25px;
-    background: #F7F9E5;
+    background: #C4380477;
 }
 
 #guide-content .sect1 h3 {
@@ -523,4 +523,15 @@ header {
 
 .hidden {
     display: none;
+}
+
+.imageblock > .content > img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1000px) {
+    .imageblock > .content img {
+        width: 75%;
+    }
 }

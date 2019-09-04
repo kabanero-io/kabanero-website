@@ -43,8 +43,8 @@
 }
 
 #guide-content code.hotspot {
-    background-color: #F1F4FE;
-    color:#5e6b8d;
+    color: #FFFFFF;
+    background-color: $color-kabanero;
 }
 
 #guide-content .hotspot:not(.code_command) pre {
@@ -364,8 +364,8 @@
     }
 
     #guide-content code.hotspot:not(.code_command):hover {
-        color: #24253A;
-        background-color: #C7CCD9;
+        color: #FFFFFF;
+        background-color: #C4380477;
     }
 }
 

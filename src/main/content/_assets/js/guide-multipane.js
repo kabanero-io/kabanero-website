@@ -2,14 +2,14 @@
  -
  - Copyright 2019 IBM Corporation and others.
  -
- - Licensed under the Apache License, Version 2.0 (the "License");
+ - Licensed under the Apache License, Version 2.0 (the 'License');
  - you may not use this file except in compliance with the License.
  - You may obtain a copy of the License at
  -
  -     http://www.apache.org/licenses/LICENSE-2.0
  -
  - Unless required by applicable law or agreed to in writing, software
- - distributed under the License is distributed on an "AS IS" BASIS,
+ - distributed under the License is distributed on an 'AS IS' BASIS,
  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  - See the License for the specific language governing permissions and
  - limitations under the License.
@@ -37,7 +37,7 @@ function link_hotspots_to_file(code_block, header, index){
         hotspots = hotspots.add(code_block.prevUntil('.code_column', '.paragraph').find('code[class*=hotspot], span[class*=hotspot], div[class*=hotspot]'));
     }
     hotspots.each(function(){
-        if($(this).data('file-index') === "undefined"){
+        if($(this).data('file-index') === 'undefined'){
             $(this).data('file-index', index);
         }        
     });
@@ -52,8 +52,8 @@ function highlight_code_range(code_section, fromLine, toLine, scroll){
     // Wrap each leftover piece of text in a span to handle highlighting a range of lines.
     code_section.find('code').contents().each(function(){
         if (!$(this).is('span')) {
-                var newText = $(this).wrap('<span class="string"></span>');
-                $(this).replaceWith(newText);
+            var newText = $(this).wrap('<span class="string"></span>');
+            $(this).replaceWith(newText);
         }
     });
     
@@ -75,13 +75,13 @@ function highlight_code_range(code_section, fromLine, toLine, scroll){
         }
     }
     var range = highlightStart.nextUntil(highlightEnd);
-    range.wrapAll("<div class='highlightSection'></div>");
+    range.wrapAll('<div class="highlightSection"></div>');
 
     if(scroll){
-        var scrollTop = $("#code-column-content")[0].scrollTop;
+        var scrollTop = $('#code-column-content')[0].scrollTop;
         var position = range.position().top;
-        var titleBarHeight = $("#code-column-title-container").outerHeight();
-        $("#code-column-content").animate({scrollTop: scrollTop + position - titleBarHeight});
+        var titleBarHeight = $('#code-column-title-container').outerHeight();
+        $('#code-column-content').animate({scrollTop: scrollTop + position - titleBarHeight});
     }        
 }
 
@@ -166,7 +166,7 @@ var handleHotspotHover = debounce(function(hotspot){
     if(hotspot.data('hovering') == false){
         return;
     }
-    $("#github-clone-popup-container").data('hotspot-hovered', true); // Track if a hotspot was hovered over to hide the github popup
+    $('#github-clone-popup-container').data('hotspot-hovered', true); // Track if a hotspot was hovered over to hide the github popup
     hideGithubPopup();
     var header = get_header_from_element(hotspot);
     var fileIndex = hotspot.data('file-index');
@@ -203,20 +203,20 @@ var handleHotspotHover = debounce(function(hotspot){
 }, 250);
 
 function showGithubPopup(){
-    $("#github-clone-popup-container").fadeIn();
-    $("#code_column .code_column, #code-column-tabs-container").addClass('dimmed', {duration:400});
+    $('#github-clone-popup-container').fadeIn();
+    $('#code_column .code_column, #code-column-tabs-container').addClass('dimmed', {duration:400});
     $('.code_column_tab').attr('disabled', true);
-    $(".copy-file-button").hide();
+    $('.copy-file-button').hide();
     $('#code-column-content').css({
         'overflow-y': 'hidden'
     });
 }
 
 function hideGithubPopup(){
-    $("#github-clone-popup-container").fadeOut();
-    $("#code_column .code_column, #code-column-tabs-container").removeClass('dimmed', {duration:400});
+    $('#github-clone-popup-container').fadeOut();
+    $('#code_column .code_column, #code-column-tabs-container').removeClass('dimmed', {duration:400});
     $('.code_column_tab').attr('disabled', false);
-    $(".copy-file-button").show();
+    $('.copy-file-button').show();
     $('#code-column-content').css({
         'overflow-y': 'scroll'
     });
@@ -226,7 +226,7 @@ function hideGithubPopup(){
    Handle showing/hiding the Github popup.
 */
 function handleGithubPopup() {
-    var githubPopup = $("#github-clone-popup-container");
+    var githubPopup = $('#github-clone-popup-container');
     if(githubPopup.length > 0){
         // Check if the first guide section that has code to show on the right has been scrolled past yet.
         // If so, then the Github popup will be dismissed. If the first section hasn't been scrolled past yet but a hotspot is showing on the next section then also hide it.
@@ -242,13 +242,13 @@ function handleGithubPopup() {
         var navHeight = $('.navbar').height();
         var blurCodeOnRight = (firstCodeSectionTop - navHeight) > 1;
 
-        var firstHotspot = $("#guide-column .hotspot:visible")[0];
+        var firstHotspot = $('#guide-column .hotspot:visible')[0];
         var firstHotspotRect = firstHotspot.getBoundingClientRect();
         var firstHotspotInView = (firstHotspotRect.top > 0) && (firstHotspotRect.bottom <= window.innerHeight);
 
         // Only show the Github popup if above the first section with code
         // and if hotspots weren't hovered over to reveal the code behind the popup.
-        var hotspotHovered = $("#github-clone-popup-container").data('hotspot-hovered');
+        var hotspotHovered = $('#github-clone-popup-container').data('hotspot-hovered');
         if(blurCodeOnRight && !(firstHotspotInView && hotspotHovered)){
             showGithubPopup();
         }
@@ -261,7 +261,7 @@ function handleGithubPopup() {
 // Look through current step's tabs and if a duplicate file was already shown then hide it.
 function hideDuplicateTabs(id){
     var visibleTabs = $('#code-column-tabs li:visible');
-    var substeps = $("#" + id).parents('.sect1').find('h2, h3');
+    var substeps = $('#' + id).parents('.sect1').find('h2, h3');
     var substepIds = [];
     for(var i = 0; i < substeps.length; i++){
         substepIds.push(substeps[i].id);
@@ -271,7 +271,7 @@ function hideDuplicateTabs(id){
     for(var j = visibleTabs.length-1; j >= 0; --j){
         var tab = $(visibleTabs.get(j));
         var data_id = tab.attr('data-section-id');
-        if(!tab.is(":visible")){
+        if(!tab.is(':visible')){
             // The tab could have been hidden by a previous iteration so only look for duplicates if it is visible.
             continue;
         }
@@ -327,7 +327,7 @@ function hideDuplicateTabs(id){
 function loadPreviousStepsTabs(){
     // Reveal the files from previous sections in case the user loaded a later step from a bookmarked hash.
     var lastTab = $('#code-column-tabs li:visible').last();
-    var previousHiddenTabs = lastTab.prevAll().not(":visible");
+    var previousHiddenTabs = lastTab.prevAll().not(':visible');
     for(var i = previousHiddenTabs.length - 1; i >= 0; --i){
         var tab = previousHiddenTabs.get(i);
         var fileName = tab.innerText.trim();
@@ -352,19 +352,19 @@ function setActiveTab(activeTab){
     activeTab.show();
 
     // Adjust the code content to take up the remaining height
-    var tabListHeight = $("#code-column-title-container").outerHeight();
-    $("#code-column-content").css({
-        "height": "calc(100% - " + tabListHeight + "px)"
+    var tabListHeight = $('#code-column-title-container').outerHeight();
+    $('#code-column-content').css({
+        'height': 'calc(100% - ' + tabListHeight + 'px)'
     });
 }
 
 function restoreCodeColumn(){
     if(!inSingleColumnView()){
-        $("body").removeClass("unscrollable");
-        $("#code_column").css({
-            "top": "100px"
+        $('body').removeClass('unscrollable');
+        $('#code_column').css({
+            'top': '100px'
         });
-        $("#code_column").removeClass("modal");
+        $('#code_column').removeClass('modal');
         remove_highlighting(); // Remove previously highlighted hotspots from mobile view
     }
 }
@@ -384,7 +384,7 @@ function parse_tags(code_block){
     });
 
     // Remove the line numbers before the start/end tags and space between the line numbers and start/end tags
-    code_block.find("span:contains('tag::'), span:contains('end::')").each(function(){
+    code_block.find('span:contains("tag::"), span:contains("end::")').each(function(){
         var line_num = $(this).prevAll('.line-numbers').first();
         line_num.nextUntil($(this)).andSelf().remove();
     });
@@ -393,8 +393,8 @@ function parse_tags(code_block){
     var hideList;
     var classList = code_block[0].classList;
     for(var i=0; i < classList.length; i++){
-        if(classList[i].indexOf("hide_tags=") > -1){
-            hideList = classList[i].substring(10).split(",");
+        if(classList[i].indexOf('hide_tags=') > -1){
+            hideList = classList[i].substring(10).split(',');
             break;
         }
     }
@@ -407,7 +407,7 @@ function parse_tags(code_block){
         var start_index = text.indexOf('tag::') + 5;
         var end_index = text.indexOf('[]');
         var tag_name = text.substring(start_index, end_index);
-        var end = $(this).nextAll("span:contains('end::" + tag_name + "')").first();
+        var end = $(this).nextAll('span:contains("end::" + tag_name + "")').first();
         var content = $(this).nextUntil(end);
 
         // Check if the tag should be hidden
@@ -431,7 +431,7 @@ function parse_tags(code_block){
                 var tag = $(this).attr('data-hotspot-tag');
                 if(tag){
                     // Add a comma delimited list of tags so that nested tags can work.
-                    tag = tag + "," + tag_name;
+                    tag = tag + ',' + tag_name;
                     $(this).attr('data-hotspot-tag', tag);
                 }
                 else {
@@ -465,9 +465,9 @@ $(document).ready(function() {
     });
      
     /* Copy button for the github clone command  that pops up initially when opening a guide. */
-    $("#github-clone-popup-copy").click(function(event){
+    $('#github-clone-popup-copy').click(function(event){
         event.preventDefault();
-        var target = $("#github-clone-popup-repo").get(0);
+        var target = $('#github-clone-popup-repo').get(0);
         copy_element_to_clipboard(target, function(){
             var position = $('#github-clone-popup-container').position();
             $('#code-section-copied-confirmation').css({	
@@ -503,9 +503,9 @@ $(document).ready(function() {
             parse_tags(code_block);
 
             // Create a tab in the code column for this file.
-            var tab = $("<li class='code_column_tab' role='presentation' tabindex='0'></li>");
+            var tab = $('<li class="code_column_tab" role="presentation" tabindex="0"></li>');
             tab.attr('data-section-id', header.id);
-            var anchor = $("<a>" + fileName + "</a>");
+            var anchor = $('<a>' + fileName + '</a>');
             tab.append(anchor);
 
             code_section.tab = tab;
@@ -544,7 +544,7 @@ $(document).ready(function() {
     // Map the guide sections that don't have any code sections to the previous section's code. This assumes that the first section is what you'll learn which has no code to show on the right to begin with.
     var sections = $('.sect1:not(#guide-meta):not(#related-guides) > h2, .sect2:not(#guide-meta):not(#related-guides) > h3');
     var first_section = sections[0];
-    var first_code_block = $("#code_column .code_column").first();    
+    var first_code_block = $('#code_column .code_column').first();    
     var first_code_section = {};
     first_code_section.code = first_code_block;
     first_code_section.tab = $('.code_column_tab').first();
@@ -575,7 +575,7 @@ $(document).ready(function() {
 
             // Show the code block
             var data_id = $(this).attr('data-section-id');
-            var code_block = $($("#code_column .code_column[data-section-id='" + data_id + "']").get(fileIndex));
+            var code_block = $($('#code_column .code_column[data-section-id="" + data_id + ""]').get(fileIndex));
             // Save the code section for later when the user comes back to this section and we want to show the most recent code viewed.
             recent_sections[data_id] = code_sections[data_id][fileIndex];
             $('#code_column .code_column').not(code_block).hide();
@@ -624,15 +624,15 @@ $(document).ready(function() {
                             // Only one line to highlight.
                             fromLine = parseInt(value);
                             toLine = parseInt(value);
-                            ranges = fromLine + "-" + toLine;
+                            ranges = fromLine + '-' + toLine;
                         }                        
                     }
                     else {
                         // Hotspot is a tag name.
                         // Find the start line for the tag using tag::<tag_name>[] and the end line for the tag using end::<tag_name>[]
-                        var line_numbers = code_block.find(".line-numbers[data-hotspot-tag]").filter(function(){
-                            var hotspot_tag = $(this).attr("data-hotspot-tag");
-                            var tags = hotspot_tag.split(",");
+                        var line_numbers = code_block.find('.line-numbers[data-hotspot-tag]').filter(function(){
+                            var hotspot_tag = $(this).attr('data-hotspot-tag');
+                            var tags = hotspot_tag.split(',');
                             for(var i =0; i <tags.length; i++){
                                 var tag = tags[i];
                                 if(tag === value){
@@ -646,7 +646,7 @@ $(document).ready(function() {
 
                         fromLine = parseInt(tag_start.text());
                         toLine = parseInt(tag_end.text());                     
-                        ranges = fromLine + "-" + toLine;
+                        ranges = fromLine + '-' + toLine;
 
                         // Trim the extra whitespace in the code
                         var code = code_block.find('code');
@@ -657,7 +657,7 @@ $(document).ready(function() {
                     if(snippet.data('highlight-ranges')){
                         // Add lines to the hotspot
                         var old_ranges = snippet.data('highlight-ranges');
-                        old_ranges += "," + ranges;
+                        old_ranges += ',' + ranges;
                         snippet.data('highlight-ranges', old_ranges);                    
                     }
                     else {
@@ -672,15 +672,15 @@ $(document).ready(function() {
     // In mobile view if the user clicks a hotspot it shows a modal of the file with the hotspot code highlighted.
     $('.hotspot').on('click', function(){
         if(inSingleColumnView()){
-            $("body").addClass("unscrollable");   
-            $("#mobile-toc-accordion-container").css({
-                "pointer-events" : "none"
+            $('body').addClass('unscrollable');   
+            $('#mobile-toc-accordion-container').css({
+                'pointer-events' : 'none'
             });         
-            $("#code_column").addClass("modal");
+            $('#code_column').addClass('modal');
             
 
             var top = $(this).offset().top;
-            var mobile_toc_height = $("#mobile-toc-accordion").height();
+            var mobile_toc_height = $('#mobile-toc-accordion').height();
             var scrollTo = top - mobile_toc_height;
             
             // Scroll the hotspot to the top of the page, with the paragraph encompassing the hotspot shown.
@@ -692,22 +692,22 @@ $(document).ready(function() {
             var hotspot_height = $(this).height();
             var bottom = scrollTo + window.innerHeight - hotspot_height - 5;
             var height = bottom - scrollTo;
-            $("#code_column").css({
-                "top" : scrollTo + mobile_toc_height + hotspot_height + 5 + "px",
-                "height" : height
+            $('#code_column').css({
+                'top' : scrollTo + mobile_toc_height + hotspot_height + 5 + 'px',
+                'height' : height
             });
             handleHotspotHover($(this));
         }
     });
 
     $('#dismiss-button').on('click', function(){
-        $("body").removeClass("unscrollable");
-        $("#mobile-toc-accordion-container").css({
-            "pointer-events" : "auto"
+        $('body').removeClass('unscrollable');
+        $('#mobile-toc-accordion-container').css({
+            'pointer-events' : 'auto'
         });
-        $("#code_column").removeClass("modal");
-        $("#code_column").css({
-            "height" : 'auto'
+        $('#code_column').removeClass('modal');
+        $('#code_column').css({
+            'height' : 'auto'
         });
         remove_highlighting();
     });
@@ -751,8 +751,8 @@ $(document).ready(function() {
 
         var event0 = event.originalEvent;
         var dir = (event0.deltaY) < 0 ? 'up' : 'down';
-        var codeColumn = $("#code_column")[0];
-        var codeColumnContent = $("#code-column-content").get(0);
+        var codeColumn = $('#code_column')[0];
+        var codeColumnContent = $('#code-column-content').get(0);
 
         if(!(this.scrollTop > 0 || this.offsetHeight > codeColumnContent.offsetHeight)){
             // Element is not scrollable. If the code file has no scrollbar, the page will still scroll if the event is propagated to the window scroll listener so we need to prevent propagation.
@@ -775,16 +775,16 @@ $(document).ready(function() {
     });
 
     // Set the github clone popup top to match the first section
-    var firstSection = $(".sect1:not(#guide-meta)").first();
+    var firstSection = $('.sect1:not(#guide-meta)').first();
     if(firstSection.length > 0){
         var firstSectionTop = firstSection.get(0).offsetTop;
-        $("#github-clone-popup-container").css('top', firstSectionTop);
+        $('#github-clone-popup-container').css('top', firstSectionTop);
     }
 
-    $(".copy-file-button").click(function(event){
+    $('.copy-file-button').click(function(event){
         event.preventDefault();
         // Remove the line numbers from being copied.
-        var target_copy = $("#code_column .code_column:visible .content code").clone();
+        var target_copy = $('#code_column .code_column:visible .content code').clone();
         target_copy.find('.line-numbers').remove();
         var target = target_copy[0];
         copy_element_to_clipboard(target, function(){
@@ -798,16 +798,16 @@ $(document).ready(function() {
     });
 
     // Handle enter key presses on the copy file button
-    $(".copy-file-button").on('keypress', function(event){
+    $('.copy-file-button').on('keypress', function(event){
         // Enter key
-        if(event.key === "Enter"){
+        if(event.key === 'Enter'){
             $(this).trigger('click');
         }
     });  
 
     $(window).on('scroll', function(event) {
         // Check if a scroll animation from another piece of code is taking place and prevent normal behavior.
-        if($("body").data('scrolling') === true){
+        if($('body').data('scrolling') === true){
             return;
         }
         handleGithubPopup();
@@ -822,7 +822,7 @@ $(document).ready(function() {
             loadPreviousStepsTabs();
         }
 
-        if(window.location.hash === ""){
+        if(window.location.hash === ''){
             handleGithubPopup();
         }
     });

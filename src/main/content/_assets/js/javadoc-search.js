@@ -2,61 +2,61 @@
  *
  * Copyright 2019 IBM Corporation and others.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
  ******************************************************************************/
 
-var noResult = {l: "No results found"};
-var category = "category";
-var catModules = "Modules";
-var catPackages = "Packages";
-var catTypes = "Types";
-var catMembers = "Members";
-var catSearchTags = "SearchTags";
-var highlight = "<span class=\"resultHighlight\">$&</span>";
-var camelCaseRegexp = "";
-var secondaryMatcher = "";
+var noResult = {l: 'No results found'};
+var category = 'category';
+var catModules = 'Modules';
+var catPackages = 'Packages';
+var catTypes = 'Types';
+var catMembers = 'Members';
+var catSearchTags = 'SearchTags';
+var highlight = '<span class=\'resultHighlight\'>$&</span>';
+var camelCaseRegexp = '';
+var secondaryMatcher = '';
 function getName(name) {
-    var anchor = "";
+    var anchor = '';
     var ch = '';
     for (i = 0; i < name.length; i++) {
         ch = name.charAt(i);
         switch (ch) {
-            case '(':
-            case ')':
-            case '<':
-            case '>':
-            case ',':
-                anchor += "-";
-                break;
-            case ' ':
-            case '[':
-                break;
-            case ']':
-                anchor += ":A";
-                break;
-            case '$':
-                if (i == 0)
-                    anchor += "Z:Z";
-                anchor += ":D";
-                break;
-            case '_':
-                if (i == 0)
-                    anchor += "Z:Z";
-                anchor += ch;
-                break;
-            default:
-                anchor += ch;
+        case '(':
+        case ')':
+        case '<':
+        case '>':
+        case ',':
+            anchor += '-';
+            break;
+        case ' ':
+        case '[':
+            break;
+        case ']':
+            anchor += ':A';
+            break;
+        case '$':
+            if (i == 0)
+                anchor += 'Z:Z';
+            anchor += ':D';
+            break;
+        case '_':
+            if (i == 0)
+                anchor += 'Z:Z';
+            anchor += ch;
+            break;
+        default:
+            anchor += ch;
         }
     }
     return anchor;
@@ -71,89 +71,89 @@ function getHighlightedText(item) {
 }
 var watermark = 'Search';
 $(function() {
-    $("#search").prop("disabled", false);
-    $("#reset").prop("disabled", false);
-    $("#search").val(watermark).addClass('watermark');
-    $("#search").blur(function() {
+    $('#search').prop('disabled', false);
+    $('#reset').prop('disabled', false);
+    $('#search').val(watermark).addClass('watermark');
+    $('#search').blur(function() {
         if ($(this).val().length == 0) {
             $(this).val(watermark).addClass('watermark');
         }
     });
-    $("#search").keydown(function() {
+    $('#search').keydown(function() {
         if ($(this).val() == watermark) {
             $(this).val('').removeClass('watermark');
         }
     });
-    $("#reset").click(function() {
-        $("#search").val('');
-        $("#search").focus();
+    $('#reset').click(function() {
+        $('#search').val('');
+        $('#search').focus();
     });
-    $("#search").focus();
-    $("#search")[0].setSelectionRange(0, 0);
+    $('#search').focus();
+    $('#search')[0].setSelectionRange(0, 0);
 });
-$.widget("custom.catcomplete", $.ui.autocomplete, {
+$.widget('custom.catcomplete', $.ui.autocomplete, {
     _create: function() {
         this._super();
-        this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+        this.widget().menu('option', 'items', '> :not(.ui-autocomplete-category)');
     },
     _renderMenu: function(ul, items) {
         var rMenu = this,
-                currentCategory = "";
+            currentCategory = '';
         $.each(items, function(index, item) {
             var li;
             if (item.l !== noResult.l && item.category !== currentCategory) {
-                ul.append("<li class=\"ui-autocomplete-category\">" + item.category + "</li>");
+                ul.append('<li class=\'ui-autocomplete-category\'>' + item.category + '</li>');
                 currentCategory = item.category;
             }
             li = rMenu._renderItemData(ul, item);
             if (item.category) {
-                li.attr("aria-label", item.category + " : " + item.l);
-                li.attr("class", "resultItem");
+                li.attr('aria-label', item.category + ' : ' + item.l);
+                li.attr('class', 'resultItem');
             } else {
-                li.attr("aria-label", item.l);
-                li.attr("class", "resultItem");
+                li.attr('aria-label', item.l);
+                li.attr('class', 'resultItem');
             }
         });
     },
     _renderItem: function(ul, item) {
-        var label = "";
+        var label = '';
         if (item.category === catModules) {
             label = getHighlightedText(item.l);
         } else if (item.category === catPackages) {
             label = (item.m)
-                    ? getHighlightedText(item.m + "/" + item.l)
-                    : getHighlightedText(item.l);
+                ? getHighlightedText(item.m + '/' + item.l)
+                : getHighlightedText(item.l);
         } else if (item.category === catTypes) {
-            label = getHighlightedText(item.p + "." + item.l);
+            label = getHighlightedText(item.p + '.' + item.l);
         } else if (item.category === catMembers) {
-            label = getHighlightedText(item.p + "." + (item.c + "." + item.l));
+            label = getHighlightedText(item.p + '.' + (item.c + '.' + item.l));
         } else if (item.category === catSearchTags) {
             label = getHighlightedText(item.l);
         } else {
             label = item.l;
         }
-        $li = $("<li/>").appendTo(ul);
+        $li = $('<li/>').appendTo(ul);
         if (item.category === catSearchTags) {
             if (item.d) {
-                $("<a/>").attr("href", "#")
-                        .html(label + "<span class=\"searchTagHolderResult\"> (" + item.h + ")</span><br><span class=\"searchTagDescResult\">"
-                                + item.d + "</span><br>")
-                        .appendTo($li);
+                $('<a/>').attr('href', '#')
+                    .html(label + '<span class=\'searchTagHolderResult\'> (' + item.h + ')</span><br><span class=\'searchTagDescResult\'>'
+                        + item.d + '</span><br>')
+                    .appendTo($li);
             } else {
-                $("<a/>").attr("href", "#")
-                        .html(label + "<span class=\"searchTagHolderResult\"> (" + item.h + ")</span>")
-                        .appendTo($li);
+                $('<a/>').attr('href', '#')
+                    .html(label + '<span class=\'searchTagHolderResult\'> (' + item.h + ')</span>')
+                    .appendTo($li);
             }
         } else {
-            $("<a/>").attr("href", "#")
-                    .html(label)
-                    .appendTo($li);
+            $('<a/>').attr('href', '#')
+                .html(label)
+                .appendTo($li);
         }
         return $li;
     }
 });
 $(function() {
-    $("#search").catcomplete({
+    $('#search').catcomplete({
         minLength: 1,
         delay: 100,
         source: function(request, response) {
@@ -164,14 +164,14 @@ $(function() {
             var tgresult = new Array();
             var secondaryresult = new Array();
             var displayCount = 0;
-            var exactMatcher = new RegExp("^" + $.ui.autocomplete.escapeRegex(request.term) + "$", "i");
-            camelCaseRegexp = ($.ui.autocomplete.escapeRegex(request.term)).split(/(?=[A-Z])/).join("([a-z0-9_$]*?)");
-            var camelCaseMatcher = new RegExp("^" + camelCaseRegexp);
-            secondaryMatcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+            var exactMatcher = new RegExp('^' + $.ui.autocomplete.escapeRegex(request.term) + '$', 'i');
+            camelCaseRegexp = ($.ui.autocomplete.escapeRegex(request.term)).split(/(?=[A-Z])/).join('([a-z0-9_$]*?)');
+            var camelCaseMatcher = new RegExp('^' + camelCaseRegexp);
+            secondaryMatcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), 'i');
 
             // Return the nested innermost name from the specified object
             function nestedName(e) {
-                return e.l.substring(e.l.lastIndexOf(".") + 1);
+                return e.l.substring(e.l.lastIndexOf('.') + 1);
             }
 
             // Sort array items by short name (as opposed to fully qualified name).
@@ -216,12 +216,12 @@ $(function() {
             }
             if (packageSearchIndex) {
                 var pCount = 0;
-                var pkg = "";
+                var pkg = '';
                 $.each(packageSearchIndex, function(index, item) {
                     item[category] = catPackages;
                     pkg = (item.m)
-                            ? (item.m + "/" + item.l)
-                            : item.l;
+                        ? (item.m + '/' + item.l)
+                        : item.l;
                     if (exactMatcher.test(item.l)) {
                         presult.unshift(item);
                         pCount++;
@@ -244,7 +244,7 @@ $(function() {
                         tCount++;
                     } else if (camelCaseMatcher.test(s)) {
                         tresult.unshift(item);
-                    } else if (secondaryMatcher.test(item.p + "." + item.l)) {
+                    } else if (secondaryMatcher.test(item.p + '.' + item.l)) {
                         secondaryresult.push(item);
                     }
                 });
@@ -261,7 +261,7 @@ $(function() {
                         mCount++;
                     } else if (camelCaseMatcher.test(s)) {
                         mresult.unshift(item);
-                    } else if (secondaryMatcher.test(item.c + "." + item.l)) {
+                    } else if (secondaryMatcher.test(item.c + '.' + item.l)) {
                         secondaryresult.push(item);
                     }
                 });
@@ -297,34 +297,34 @@ $(function() {
             if (!ui.content.length) {
                 ui.content.push(noResult);
             } else {
-                $("#search").empty();
+                $('#search').empty();
             }
         },
         autoFocus: true,
         position: {
-            collision: "flip"
+            collision: 'flip'
         },
         select: function(event, ui) {
             // prevent click event handling by the iframe
             event.stopPropagation();
 
             if (ui.item.l !== noResult.l) {
-                var url = "";
+                var url = '';
                 if (ui.item.category === catModules) {
-                    url = ui.item.l + "-summary.html";
+                    url = ui.item.l + '-summary.html';
                 } else if (ui.item.category === catPackages) {
-                    url = ui.item.l.replace(/\./g, '/') + "/package-summary.html";
+                    url = ui.item.l.replace(/\./g, '/') + '/package-summary.html';
                 } else if (ui.item.category === catTypes) {
-                    if (ui.item.p === "<Unnamed>") {
-                        url = ui.item.l + ".html";
+                    if (ui.item.p === '<Unnamed>') {
+                        url = ui.item.l + '.html';
                     } else {
-                        url = ui.item.p.replace(/\./g, '/') + "/" + ui.item.l + ".html";
+                        url = ui.item.p.replace(/\./g, '/') + '/' + ui.item.l + '.html';
                     }
                 } else if (ui.item.category === catMembers) {
-                    if (ui.item.p === "<Unnamed>") {
-                        url = ui.item.c + ".html" + "#";
+                    if (ui.item.p === '<Unnamed>') {
+                        url = ui.item.c + '.html' + '#';
                     } else {
-                        url = ui.item.p.replace(/\./g, '/') + "/" + ui.item.c + ".html" + "#";
+                        url = ui.item.p.replace(/\./g, '/') + '/' + ui.item.c + '.html' + '#';
                     }
                     if (ui.item.url) {
                         url += ui.item.url;
@@ -337,10 +337,10 @@ $(function() {
                 if (top !== window) {
                     // get the javadoc base path eg. http://localhost:4000/javadocs/microprofile-1.3-javadoc/
                     var currentHref = parent.classFrame.location.href;
-                    var javaDocPath = "";
+                    var javaDocPath = '';
                     try {
-                        var stringToMatch = "(.*/javadocs/.*-javadoc/)(.*)";
-                        var regExpToMatch = new RegExp(stringToMatch, "g");
+                        var stringToMatch = '(.*/javadocs/.*-javadoc/)(.*)';
+                        var regExpToMatch = new RegExp(stringToMatch, 'g');
                         var groups = regExpToMatch.exec(currentHref);
                         javaDocPath = groups[1];
                     } catch (e) {
@@ -353,21 +353,21 @@ $(function() {
 
                     // building the hash
                     var hash = top.window.location.hash;
-                    if (hash.indexOf("class=") !== -1) {
+                    if (hash.indexOf('class=') !== -1) {
                         try {
-                            var hashNameToMatch = "(.*)class=.*?.html(.*)";
-                            var regExpToMatch = new RegExp(hashNameToMatch, "g");
+                            var hashNameToMatch = '(.*)class=.*?.html(.*)';
+                            var regExpToMatch = new RegExp(hashNameToMatch, 'g');
                             var groups = regExpToMatch.exec(hash);
-                            hash = groups[1] + "class=" + url + groups[2];
+                            hash = groups[1] + 'class=' + url + groups[2];
                         } catch (ex) {
 
                         }
                     } else {
-                        hash = "#class=" + url + "&package=allclasses-frame.html"; // putting in default html for package iframe
+                        hash = '#class=' + url + '&package=allclasses-frame.html'; // putting in default html for package iframe
                     }
                     if (hash !== top.window.location.hash) {
                         var state = {};
-                        state["iframe.rightIframe"] = href;
+                        state['iframe.rightIframe'] = href;
                         // create a history entry
                         top.window.history.pushState(state, null, hash);
                     }

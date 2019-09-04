@@ -27,3 +27,12 @@
 {% for js_name in layout.js %}
   {% asset {{js_name}}.js %}
 {% endfor %}
+
+<script id="site-languages-json" type="application/json">
+  {% raw %}{{% endraw %}
+  {% for language in site.languages %}
+    "{{ language }}": "{{ language }}"
+    {% if forloop.last != true %},{% endif %}
+  {% endfor %}
+  {% raw %}}{% endraw %}
+  </script>

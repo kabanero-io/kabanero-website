@@ -4,11 +4,13 @@ title: Kabanero developer experience
 css: developer
 permalink: /developer/
 ---
+{% assign t = site.data[site.active_lang].developer %}
+
 <!-- INTRO -->
 <div id="intro-content" class="container">
     <div class="row">
         <div class="col">
-            <p class="header developer-experience-header">Kabanero Developer Experience</p>
+            <p class="header developer-experience-header">{{t.intro-title}}</p>
             <hr/>
         </div>
     </div>
@@ -19,11 +21,7 @@ permalink: /developer/
         <div class="col">
             <div id="components-text" class="page-description">
                 <p>
-                    Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, 
-                    without having to spend time defining container images, build infrastructure, or Kube yaml. 
-                    Focus on developing new applications  and let the Kabanero tools do the heavy lifting of 
-                    building and packaging  deployment-ready containers. Go ahead and try it for yourself, either 
-                    by using extensions for popular IDEs, or our command-line tools.
+                        {{t.intro-text}}
                 </p>
             </div>
         </div>
@@ -37,7 +35,7 @@ permalink: /developer/
             <div class="install-img">
                 <a href="/developer/ide/">
                     <img class="img-fluid logo" src="/img/logos/ide-logo.png">
-                    <h2 class="install-header">Install instructions for IDE</h2>
+                    <h2 class="install-header">{{t.instructions.ide}}</h2>
                 </a>
             </div>
         </div>
@@ -45,7 +43,7 @@ permalink: /developer/
             <div class="install-img">
                 <a href="/developer/cli/">
                     <img class="img-fluid logo" src="/img/logos/cli-logo.png">
-                    <h2 class="install-header">Install instructions for CLI</h2>
+                    <h2 class="install-header">{{t.instructions.cli}}</h2>
                 </a>
             </div>  
         </div>
@@ -57,32 +55,25 @@ permalink: /developer/
 <div class="container">
     <div class="row" id="frameworks-top-row">
         <p>
-            The Kabanero Developer Experience includes two open source projects, Eclipse Codewind and Appsody.
-            Learn more about them below.
+                {{t.developer-experience.description}}
         </p>
     </div>
     <div class="row">
         <img class="img-fluid logo" src="/img/codewind.png">
         <div class="col download-detail">
             <p>
-                Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code,
-                Eclipse, and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they
-                already know. You can rapidly iterate, debug, and performance test apps inside containers with the same environment
-                as production.
+                    {{t.developer-experience.codewind.text}}
             </p>
-            <a href="https://codewind.dev" target="_blank">Learn more about Codewind</a>
+            <a href="https://codewind.dev" target="_blank">{{t.developer-experience.codewind.link}}</a>
         </div>
     </div>
     <div class="row">
         <img class="img-fluid logo" src="/img/appsody.png">
         <div class="col download-detail">
             <p>
-                Appsody provides Kabanero with simplicity in the creation of cloud-native applications in
-                containers. Appsody provides pre-configured container images (stacks) and project templates for a
-                growing set of popular open source runtimes and frameworks, providing a foundation on which to 
-                build applications for Kubernetes and Knative deployments.
+                    {{t.developer-experience.appsody.text}}
             </p>
-            <a href="https://appsody.dev" target="_blank">Learn more about Appsody</a>
+            <a href="https://appsody.dev" target="_blank">{{t.developer-experience.appsody.link}}</a>
         </div>
     </div>
 </div>

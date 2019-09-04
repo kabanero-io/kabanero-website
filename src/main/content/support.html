@@ -5,14 +5,15 @@ css: support
 js: support
 permalink: /support/
 ---
+{% assign t = site.data[site.active_lang].support %}
 
 <!-- ENTERPRISE SUPPORT SECTION -->
 <div class="container">
     <div id="not-alone-text">
-        You are not alone...
+        {{t.not-alone-text}}
     </div>
     <p id="support-for-all-text">
-        Whether you're an enterprise or a smaller crew, there's Kabanero support for all
+        {{t.support-for-all-text}}
     </p>
 </div>
 
@@ -21,15 +22,15 @@ permalink: /support/
 <div id="contribute-section">
 
         <div id="contribute-title">
-            Become a contributor
+            {{t.contribute.contribute-title}}
         </div>
         <p id="contribute-text">
-            Kabanero is speeding toward the future, but your contributions can get us there at lightspeed
+            {{t.contribute.contribute-text}}
         </p>
         <div>
             <a id="contribute-link" href="/contribute/">
                 <div>
-                    <div class="button-label">Contribute to Kabanero</div>
+                    <div class="button-label">{{t.contribute.button-label}}</div>
                 </div>
             </a>
         </div>

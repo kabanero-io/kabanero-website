@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        let selectedLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
+        let currentLanguage = $('html').attr('lang');
+        let languages = JSON.parse($("#site-languages-json").html() || "{}");
+        
+        if ((currentLanguage !== selectedLanguage) && (languages[selectedLanguage])) {
+            if (selectedLanguage !== 'en') {
+                window.location.pathname = `/${selectedLanguage}/`
+            } else {
+                window.location.pathname = '';
+            }
+        }
+    });
+</script>

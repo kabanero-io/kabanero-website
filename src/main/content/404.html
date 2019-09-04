@@ -4,6 +4,8 @@ title: 404
 css: 404page
 permalink: /404.html
 ---
+{% assign t = site.data[site.active_lang].page-not-found %}
+
 <!-----------------------------------------------------------------------------
  -
  - Copyright 2019 IBM Corporation and others.
@@ -23,5 +25,5 @@ permalink: /404.html
  ------------------------------------------------------------------------------>
 
 <div id="page-container">
-    <h2 id="error-message">The requested page does not exist.</h2>
+    <h2 id="error-message">{{t.err-message}}</h2>
 </div>

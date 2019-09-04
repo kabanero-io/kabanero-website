@@ -2,14 +2,14 @@
  -
  - Copyright 2019 IBM Corporation and others.
  -
- - Licensed under the Apache License, Version 2.0 (the "License");
+ - Licensed under the Apache License, Version 2.0 (the 'License');
  - you may not use this file except in compliance with the License.
  - You may obtain a copy of the License at
  -
  -     http://www.apache.org/licenses/LICENSE-2.0
  -
  - Unless required by applicable law or agreed to in writing, software
- - distributed under the License is distributed on an "AS IS" BASIS,
+ - distributed under the License is distributed on an 'AS IS' BASIS,
  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  - See the License for the specific language governing permissions and
  - limitations under the License.
@@ -37,39 +37,39 @@ function handleFloatingTableOfContent() {
 }
 
 function disableFloatingTOC() {
-    $('#toc-inner').width("").css({"position": "", "top": ""});
+    $('#toc-inner').width('').css({'position': '', 'top': ''});
 }
 
 function enableFloatingTOC() {
-    $('#toc-inner').css({"position":"fixed", "top":"100px"});    
+    $('#toc-inner').css({'position':'fixed', 'top':'100px'});    
 }
 
 function calculateTOCHeight(){
-    var endOfGuidePosition = $("#end_of_guide")[0].getClientRects()[0].top;
+    var endOfGuidePosition = $('#end_of_guide')[0].getClientRects()[0].top;
     var headerHeight = $('header').height();
     return endOfGuidePosition - headerHeight;
 }
 
 function shrinkTOCIndicator() {
     $('#toc-line').css({
-        "position": "", 
-        "top": "",
-        "height": calculateTOCHeight()
+        'position': '', 
+        'top': '',
+        'height': calculateTOCHeight()
     });
 }
 
 function expandTOCIndicator() {
     $('#toc-line').css({
-        "position":"fixed",
-        "top":"101px",
-        "height": calculateTOCHeight()
+        'position':'fixed',
+        'top':'101px',
+        'height': calculateTOCHeight()
     });
 }
 
 // Remove previous TOC section highlighted and highlight correct step
 function updateTOCHighlighting(id) {
     $('.liSelected').removeClass('liSelected');
-    var anchor = $("#toc-container a[href='#" + id + "']");
+    var anchor = $('#toc-container a[href="#" + id + ""]');
     anchor.parent().addClass('liSelected');
 }
 
@@ -83,7 +83,7 @@ function handleTOCScrolling() {
         // The TOC cannot fit in the dark background, allow the TOC to scroll out of viewport
         // to avoid the TOC overflowing out of the dark background
         var negativeNumber = visible_background_height - toc_height + 100;
-        $('#toc-inner').css({"position":"fixed", "top":negativeNumber});
+        $('#toc-inner').css({'position':'fixed', 'top':negativeNumber});
     }
 }
 
@@ -112,7 +112,7 @@ function handleFloatingTOCAccordion() {
     if(inSingleColumnView()){
         // Get the accordion start location.  It is the same as
         // scroller-anchor, a <div> that initially has a height of 0.
-        var scroller_anchor = $(".scroller-anchor").offset().top;
+        var scroller_anchor = $('.scroller-anchor').offset().top;
         // Check if user has scrolled and the current scroll position is below
         // where the scroller-anchor starts and the accordion has not yet been
         // fixed to the top of the page.
@@ -152,9 +152,9 @@ function TOCEntryClick(liElement, event) {
 
     // Close the TOC if not in 3 column view
     if(inSingleColumnView()){
-        $("#mobile-close-container").trigger('click');
+        $('#mobile-close-container').trigger('click');
     } else if(window.innerWidth < threeColumnBreakpoint){
-        $("#breadcrumb-hamburger").trigger('click');
+        $('#breadcrumb-hamburger').trigger('click');
     }
 
     var windowHash = window.location.hash;
@@ -190,41 +190,41 @@ function restoreCurrentStep(){
 
 function open_TOC(){
     if(!inSingleColumnView()){        
-        $("#toc-title").css('margin-top', '0px');
-        $("#toc-column").addClass('inline');
-        $("#guide-column").removeClass('expanded');
+        $('#toc-title').css('margin-top', '0px');
+        $('#toc-column').addClass('inline');
+        $('#guide-column').removeClass('expanded');
 
-        $("#toc-line").addClass("open");            
-        $("#toc-column").addClass("open");
-        $("#guide-column").addClass("open");
+        $('#toc-line').addClass('open');            
+        $('#toc-column').addClass('open');
+        $('#guide-column').addClass('open');
 
-        $("#toc-indicator").addClass('open hidden');
+        $('#toc-indicator').addClass('open hidden');
 
         restoreCurrentStep();
     }
 }
 
 function close_TOC(){
-    $("#toc-title").css('margin-top', '20px');
+    $('#toc-title').css('margin-top', '20px');
 
     // Remove display type from the table of contents
-    $("#toc-column").removeClass('inline');
+    $('#toc-column').removeClass('inline');
 
     // Update the width of the guide-column to accomodate the larger space when the browser is in 3 column view.
-    $("#guide-column").addClass('expanded');
+    $('#guide-column').addClass('expanded');
 
     // Remove open class to transition back
-    $("#toc-line").removeClass("open");
-    $("#toc-column").removeClass("open");
-    $("#guide-column").removeClass("open");
+    $('#toc-line').removeClass('open');
+    $('#toc-column').removeClass('open');
+    $('#guide-column').removeClass('open');
 
-    $("#toc-indicator").removeClass('open hidden');
+    $('#toc-indicator').removeClass('open hidden');
 
     restoreCurrentStep();
 }
 
 function setInitialTOCLineHeight(){  
-    $("#toc-line").css(
+    $('#toc-line').css(
         {'height': calculateTOCHeight()}
     );
 }
@@ -236,26 +236,26 @@ $(document).ready(function() {
     setInitialTOCLineHeight();    
 
     // Add listener for clicking on the
-    $("#toc-hotspot, #toc-indicator").on('mouseenter', function(){
+    $('#toc-hotspot, #toc-indicator').on('mouseenter', function(){
         // Animate out the arrow and highlight the left side of the screen orange to indicate there is a TOC
-        if(!$("#toc-column").hasClass('open')){
-            $("#toc-line").css(
+        if(!$('#toc-column').hasClass('open')){
+            $('#toc-line').css(
                 {'background-color': 'rgb(255, 216, 191)'}
             );
-            $("#toc-indicator").addClass('open');            
+            $('#toc-indicator').addClass('open');            
         }        
     });
 
-    $("#toc-indicator").mouseleave(function(){
-        $("#toc-indicator").removeClass('open');
+    $('#toc-indicator').mouseleave(function(){
+        $('#toc-indicator').removeClass('open');
     });
 
-    $("#toc-hotspot").on('mouseleave', function(){
-        if(!$("#toc-column").hasClass('open')){
+    $('#toc-hotspot').on('mouseleave', function(){
+        if(!$('#toc-column').hasClass('open')){
             var x = event.x;
             var y = event.y;
             var headerHeight = $('header').height();
-            var indicatorHeight = $("#toc-indicator").outerHeight();
+            var indicatorHeight = $('#toc-indicator').outerHeight();
             
             y = y - headerHeight;
             if(x >= 0 && x <= this.offsetWidth && y >= 0 && y <= indicatorHeight){
@@ -263,33 +263,33 @@ $(document).ready(function() {
                 return;
             }
 
-            $("#toc-line").css(
+            $('#toc-line').css(
                 {'background-color': 'transparent'}
             );  
-            $("#toc-indicator").removeClass('open');
+            $('#toc-indicator').removeClass('open');
         }        
     });
 
-    $("#toc-indicator").on('click', function(){
+    $('#toc-indicator').on('click', function(){
         open_TOC();
     });
 
-    $("#toc-indicator").on("keydown", function(e){
+    $('#toc-indicator').on('keydown', function(e){
         if(e.which === 13){
             open_TOC();
         }
     });
     
-    $("#breadcrumb-hamburger").on('click', function(){
+    $('#breadcrumb-hamburger').on('click', function(){
         // Handle resizing of the guide column when collapsing/expanding the TOC in 3 column view.
         if(window.innerWidth >= threeColumnBreakpoint){
-            if ($("#toc-column").hasClass('in')) {
+            if ($('#toc-column').hasClass('in')) {
                 // TOC is expanded
-                $("#guide-column").addClass('expanded');
+                $('#guide-column').addClass('expanded');
             }
             else {
                 // TOC is closed
-                $("#guide-column").removeClass('expanded');
+                $('#guide-column').removeClass('expanded');
             }
             restoreCurrentStep();
         }
@@ -299,8 +299,8 @@ $(document).ready(function() {
 
     //In single column view, set focus on 'X' initially when TOC is expanded
     $('#toc-column').on('shown.bs.collapse', function(){
-        if ($('#mobile-close-container').attr("class").trim().length == 0) { //TOC is visible, doesn't have class 'collapsed'
-            $("#mobile-close-container  img").focus(); //focus on 'X'
+        if ($('#mobile-close-container').attr('class').trim().length == 0) { //TOC is visible, doesn't have class 'collapsed'
+            $('#mobile-close-container  img').focus(); //focus on 'X'
         }
     });
 

@@ -2,17 +2,15 @@ env:
   browser: true
   jquery: true
   es6: true
-extends: 'eslint:recommended'
 rules:
   indent:
-    - error
-    - 4
+    - warn
   linebreak-style:
-    - error
+    - warn
     - unix
   quotes:
-    - error
-    - double
+    - warn
+    - single
   semi:
-    - error
+    - warn
     - always

@@ -2,14 +2,14 @@
  *
  * Copyright 2019 IBM Corporation and others.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -17,26 +17,26 @@
  ******************************************************************************/
 
 var mobileWidth = 767;
-var generalDocsFolder = "/docs/ref/general/";
+var generalDocsFolder = '/docs/ref/general/';
 var windowFocus = false;
 
-$(".doc-title").click(function(){
+$('.doc-title').click(function(){
     deselectedTOC();
-    $(this).parent().addClass("toc-selected");
-    loadContent($(this), $(this).attr("href"), true);
-})
+    $(this).parent().addClass('toc-selected');
+    loadContent($(this), $(this).attr('href'), true);
+});
 
 // deselect current TOC
 function deselectedTOC(r) {
-    var currentTOCSelected = $(".toc-selected");
+    var currentTOCSelected = $('.toc-selected');
     if (currentTOCSelected.length === 1) {      
-        currentTOCSelected.removeClass("toc-selected");
+        currentTOCSelected.removeClass('toc-selected');
     }
 }
 
 
 function getTOCElement(href) {
-    return $("#toc-container > ul > li > div[href$='" + href + "']");    
+    return $('#toc-container > ul > li > div[href$="" + href + ""]');    
 }
 
 // Add extra css to the doc, set the doc height, and scroll to the content
@@ -56,8 +56,8 @@ function setupDisplayContent() {
 // - update hash if requested
 function loadContent(targetTOC, tocHref, addHash) {
     $('footer').hide();
-    $("#general-content").load(tocHref, function(response, status) {
-        if (status === "success") {
+    $('#general-content').load(tocHref, function(response, status) {
+        if (status === 'success') {
             updateMainBreadcrumb(targetTOC);
             setupDisplayContent();
             $('footer').show();
@@ -78,7 +78,7 @@ function loadContent(targetTOC, tocHref, addHash) {
 // events to detect keyboard focus and add outline to the element. Outline will not
 // be added if the focus is thru mouse event.
 function addOutlineToTabFocus(selector) {
-    $(selector).off("blur").on("blur", function(event) {
+    $(selector).off('blur').on('blur', function(event) {
         if ($(this).hasClass('addFocus')) {
             $(this).removeClass('addFocus');
         }
@@ -91,7 +91,7 @@ function addOutlineToTabFocus(selector) {
 
     $(selector).off('focusin').on('focusin', function(event) {
         if (!mousedown && !windowFocus) {
-            $(this).addClass("addFocus");
+            $(this).addClass('addFocus');
             // scroll the parent window back up if it is scroll down
             adjustParentWindow();
         }
@@ -102,9 +102,9 @@ function addOutlineToTabFocus(selector) {
 
 // update the main breadcrumb
 function updateMainBreadcrumb(resource, attrForTitle) {
-    var lastBreadcrumb = $(".breadcrumb.fluid-container").find("li:last-child");
-    var lastBreadcrumbAnchorTag = lastBreadcrumb.find("a");
-    if (lastBreadcrumbAnchorTag.hasClass("inactive-link")) {
+    var lastBreadcrumb = $('.breadcrumb.fluid-container').find('li:last-child');
+    var lastBreadcrumbAnchorTag = lastBreadcrumb.find('a');
+    if (lastBreadcrumbAnchorTag.hasClass('inactive-link')) {
         // remove existing inactive link
         lastBreadcrumb.remove();
     }
@@ -115,7 +115,7 @@ function updateMainBreadcrumb(resource, attrForTitle) {
         if (attrForTitle) {
             title = resource.attr(attrForTitle);
         }
-        $(".breadcrumb.fluid-container").append("<li><a class='inactive-link'>" + title + "</a></li>");
+        $('.breadcrumb.fluid-container').append('<li><a class="inactive-link">' + title + '</a></li>');
     }
 }
 
@@ -128,7 +128,7 @@ function updateHashInUrl(href) {
     }
 
     //lastClickElementHref = hashInUrl;
-    window.location.hash = "#" + hashInUrl;
+    window.location.hash = '#' + hashInUrl;
 }
 
 // check if mobile view or not
@@ -146,16 +146,16 @@ function setContainerHeight() {
     if (!isMobileView()) {  
         // the height is viewport - header so that the last toc will be in 
         // view without the need to scroll the outer container
-        $("#background-container").css("height", $(window).height() - $('header').height()); 
-        $("#background-container").css("margin-bottom", "60px");     
+        $('#background-container').css('height', $(window).height() - $('header').height()); 
+        $('#background-container').css('margin-bottom', '60px');     
     }
 }
 
 // select the first doc in the table of content
 function selectFirstDoc() {
     if (!isMobileView()) {
-        var firstTOCElement = $("#toc-container > ul > li > div").first();
-        loadContent(firstTOCElement, firstTOCElement.attr("href"));
+        var firstTOCElement = $('#toc-container > ul > li > div').first();
+        loadContent(firstTOCElement, firstTOCElement.attr('href'));
         return firstTOCElement;
     }
 }
@@ -174,10 +174,10 @@ function adjustParentWindow() {
 // doc.
 function addContentFocusListener() {
     var mousedown = false;
-    $("#general-content").on('mousedown', function(event) {
+    $('#general-content').on('mousedown', function(event) {
         mousedown = true;
     });
-    $('#general-content').on("focusin", function(e) {
+    $('#general-content').on('focusin', function(e) {
         if (!mousedown) {
             adjustParentWindow();
             $('#general-content').scrollTop(0);
@@ -189,20 +189,20 @@ function addContentFocusListener() {
 // setup and listen to hamburger click event
 function addHamburgerClick() {
     if (isMobileView()) {
-        var hamburger = $(".breadcrumb-hamburger-nav");
+        var hamburger = $('.breadcrumb-hamburger-nav');
 
-        hamburger.on("click", function (e) {
-            if ($("#toc-column").hasClass('in')) {
-                $("#general-content").show();
-                $("#breadcrumb-hamburger").show();
-                $("#breadcrumb-hamburger-title").show();
+        hamburger.on('click', function (e) {
+            if ($('#toc-column').hasClass('in')) {
+                $('#general-content').show();
+                $('#breadcrumb-hamburger').show();
+                $('#breadcrumb-hamburger-title').show();
             } else {
-                $("#general-content").hide();
-                $("#breadcrumb-hamburger").hide();
-                $("#breadcrumb-hamburger-title").hide();
-                $("#background-container").css("height", "auto");
+                $('#general-content').hide();
+                $('#breadcrumb-hamburger').hide();
+                $('#breadcrumb-hamburger-title').hide();
+                $('#background-container').css('height', 'auto');
                 if (window.location.hash) { 
-                    updateHashInUrl("");
+                    updateHashInUrl('');
                 }
             }
         });
@@ -241,19 +241,19 @@ function addHashListener() {
     $(window).on('hashchange', function () {
         if (window.location.hash) {
             var tocHref = generalDocsFolder + window.location.hash.substring(1);
-            var tocElement = $("#toc-container").find("div[href='" + tocHref + "']");
+            var tocElement = $('#toc-container').find('div[href="" + tocHref + ""]');
             if (tocElement.length === 1) {
                 scrollToTOC(tocElement);
             }
             // attempt to load as it could be a reference doc that is not in table of content
             loadContent(tocElement, tocHref);
-            if (isMobileView() && $("#toc-column").hasClass('in')) {
-                $(".breadcrumb-hamburger-nav").trigger('click');
+            if (isMobileView() && $('#toc-column').hasClass('in')) {
+                $('.breadcrumb-hamburger-nav').trigger('click');
             }
         } else {
             if (isMobileView()) {
-                if (!$("#toc-column").hasClass('in')) {
-                    $(".breadcrumb-hamburger-nav").trigger('click');
+                if (!$('#toc-column').hasClass('in')) {
+                    $('.breadcrumb-hamburger-nav').trigger('click');
                 }
             } else {
                 scrollToTOC(selectFirstDoc());
@@ -270,10 +270,10 @@ function addWindowResizeListener() {
             addHamburgerClick();
         } else {
             if (!$('#toc-column').hasClass('in')) {
-                $(".breadcrumb-hamburger-nav").trigger('click');
+                $('.breadcrumb-hamburger-nav').trigger('click');
             }
-            $("#breadcrumb-hamburger").hide();
-            $("#breadcrumb-hamburger-title").hide();
+            $('#breadcrumb-hamburger').hide();
+            $('#breadcrumb-hamburger-title').hide();
             setContainerHeight();
         }
     });
@@ -296,9 +296,9 @@ $(document).ready(function () {
 
 function selectDocFromHash(){
     let pageLocation = window.location.hash;
-    pageLocation = pageLocation.substring(1); //take the "#" off of the front of the hash
-    let selectedDocLink = $( 'div[href$="' + pageLocation + '"]' ); //jQuery endswith selector finds the div with the href of the doc in the url
-    let selectedCategory = $(selectedDocLink).data("category");
+    pageLocation = pageLocation.substring(1); //take the '#' off of the front of the hash
+    let selectedDocLink = $( 'div[href$="" + pageLocation + ""]' ); //jQuery endswith selector finds the div with the href of the doc in the url
+    let selectedCategory = $(selectedDocLink).data('category');
     $(`#${selectedCategory}`).click(); //drop down the twistie
     $(selectedDocLink).click(); //highlight the selected doc
 }
@@ -313,27 +313,27 @@ function toggleIcon(button) {
     }
 }
 
-$("#doc-search").keyup(function(){
+$('#doc-search').keyup(function(){
     searchDocs();
 });
 
 function searchDocs(){
     let searchTerm = document.getElementById('doc-search').value.toLowerCase();
-    let docTitles = $(".doc-title");
+    let docTitles = $('.doc-title');
     $.each(docTitles, function(index, value){
         let docTitle = $(value).text().toLowerCase();
         let parentElement = $(value).parent();
         !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
     });
     hideCategoriesIfEmpty();
-    $(".doc-category:visible").length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
+    $('.doc-category:visible').length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
 }
 
 function hideCategoriesIfEmpty(){
-    let categories = $(".doc-category");
+    let categories = $('.doc-category');
     $.each(categories, function(index, category){
-        let collapseId = $(category).data("target");
-        let childLinks = $(collapseId).find(".doc-link");
+        let collapseId = $(category).data('target');
+        let childLinks = $(collapseId).find('.doc-link');
         let isVisible = areLinksVisible(childLinks);
         isVisible ? $(category).show() : $(category).hide();
     });
@@ -342,7 +342,7 @@ function hideCategoriesIfEmpty(){
 function areLinksVisible(links){
     let areVisible = false;
     $.each(links, function(index, link){
-        if($(link).css("display") !== "none"){
+        if($(link).css('display') !== 'none'){
             areVisible = true;
         }
     });

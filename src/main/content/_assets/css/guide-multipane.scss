@@ -10,11 +10,15 @@
  *******************************************************************************/
  $color-kabanero:#C43804;
 
+ body {
+     font-family: Trebuchet MS, Helvetica, Arial;
+ }
+
  .unscrollable {
     overflow: hidden;
 }
 
-#background_container {
+#background-container {
     background-color: inherit;
 }
 
@@ -29,11 +33,6 @@
     }
 }
 
-/* Guide Content related to the 3 column code */
-#guide-column {
-    max-width: initial; /* Take off the width restriction of single pane guides */
-}
-
 .hotspot:not(.code_command) {
     display: inline-block;
     max-width: 100%;
@@ -44,8 +43,8 @@
 }
 
 #guide-content code.hotspot {
-    background-color: #F1F4FE;
-    color:#5e6b8d;
+    color: #FFFFFF;
+    background-color: $color-kabanero;
 }
 
 #guide-content .hotspot:not(.code_command) pre {
@@ -61,7 +60,7 @@
 }
 
 #guide-content .code_command pre,  #guide-content .code_command code {
-    background-color: #F1F4FE;
+    background-color: #f4f5f7;
     margin-bottom: 0;
     overflow: hidden;
     white-space: pre-wrap;       /* css-3 */
@@ -72,13 +71,13 @@
 }
 
 /* Code Column */
-#code_column {
+#code-column {
     padding: 0;
     background-color: #f1f4fe;
     position: fixed;
-    width: 780px;
-    left: calc(100% - 780px); /* Adjust for the width and padding */
-    top: 100px;
+    width: 40vw;
+    right: 15px;
+    top: 0px;
     bottom: 0; /* Initially extend the code column the full height */
     overflow: hidden;
 
@@ -86,8 +85,7 @@
         display: none;
     }
 
-    @media screen and (max-width: 1169.98px) {
-        position: absolute;
+    @media screen and (max-width: 768px) {
         display: none;
         left: 0;
         width: 100%;
@@ -102,7 +100,7 @@
             }
 
             // Remove blur
-            #code-column-tabs-container, .code_column {
+            #code-column-tabs-container, .code-column {
                 opacity: 1;
                 filter: none;
             }
@@ -114,6 +112,7 @@
             #code-column-tabs {
                 // Give more room for the 'Back to text' button so the tabs don't overlap.
                 max-width: calc(100% - 135px);
+                margin-bottom: 5px;
             }
 
             #dismiss-button {
@@ -122,16 +121,14 @@
                 top: 0;
                 right: 50px;
                 background:#ffffff;
-                border:1px solid #96bc32;
+                border:1px solid $color-kabanero;
                 border-radius:3px;
-                width:92px;
-                height:38px;
             }
         }
     }
 }
 
-#code_column:focus {
+#code-column:focus {
     outline-offset: -1px;
 }
 
@@ -227,7 +224,7 @@
         max-width: calc(100% - 50px);
         & > li {
             float: left;
-    
+            margin-top: 15px;
             & > a {
                 text-overflow: ellipsis;
                 overflow: hidden;
@@ -236,7 +233,7 @@
                 letter-spacing: 0;
                 height: 44px;
                 padding: 8px 5px;
-                border: 1px solid #acb3c6;
+                border-right: 1px solid #acb3c6;
                 border-bottom: transparent;
                 margin-right: 0;           /* Overlay bootstrap's margin so tabs are condensed   */
                 color: #5D6A8E !important;
@@ -282,14 +279,14 @@
     padding: 5px 6px;
 
     &:hover {
-        border: solid 1px #b2bbd1;
+        border: solid 1px #f4914d;
         cursor: pointer;
         top: 7px;
         right: 14px;
     }
     
     &:active {
-        border: solid 1px #5e6b8d;
+        border: solid 1px #f4914d;
     }
     
     &:focus {
@@ -310,19 +307,19 @@
     display: none;
 }
 
-.code_column .CodeRay {
+.code-column .CodeRay {
     border: none;
     border-radius: 0;
     padding-left: 0;
     padding-right: 0;
 }
 
-.code_column .CodeRay code {
+.code-column .CodeRay code {
     display: block;
     padding-bottom: 34px;
 }
 
-.code_column .CodeRay code, .code_column .CodeRay .highlightSection {
+.code-column .CodeRay code, .code-column .CodeRay .highlightSection {
     padding-left: 23px;
     padding-right: 31px;   
 }
@@ -350,11 +347,8 @@
 }
 
 @media (min-width: 1170px) {
-    #guide-column {
-        width: calc(100% - 780px);
-    }
     
-    #background_container {
+    #background-container {
         background-image: inherit;
         margin-bottom: 0;
     }
@@ -370,8 +364,8 @@
     }
 
     #guide-content code.hotspot:not(.code_command):hover {
-        color: #24253A;
-        background-color: #C7CCD9;
+        color: #FFFFFF;
+        background-color: #C4380477;
     }
 }
 
@@ -381,7 +375,11 @@
         cursor: pointer;
     }
 
-    .listingblock.code_column {
+    .listingblock{
+        width: 95%;
+    }
+
+    .listingblock.code-column {
         margin-left: 0;
         margin-right: 0;
     }
@@ -398,23 +396,5 @@
         &.open {
             width: 280px; /* Override the 400px width from single pane guide */
         }
-    }
-
-    #guide-column {
-        width: calc(100% - 780px);
-        display: inline-block;
-    }
-
-    #guide-column.open {
-        width: calc(100% - 280px - 780px); /* Adjust for the size of the table of contents and the code column */
-    }
-
-    #guide-column.expanded {
-        width: calc(100% - 780px);
-    }
-
-    #code_column {
-        left: calc(100% - 780px); /* Adjust for the width and padding */
-        display: inline-block;
     }
 }

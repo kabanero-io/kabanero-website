@@ -606,7 +606,7 @@ $(document).ready(function() {
                 }
                 else{
                     // If tabbing away from the last tabbable element in the section or there are no tabbable elements in the guide section, focus on the code column
-                    elemToFocus = $('#code_column');
+                    elemToFocus = $('#code-column');
                 }
             }
         }

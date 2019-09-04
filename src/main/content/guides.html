@@ -79,13 +79,10 @@ permalink: /guides/
     <div class="essential row">
         {% for guide in all-guides %}
         <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                {% if guide.name contains '.adoc' %}
-                    {% assign href = guide.url | append: '.html' %}
-                {% else %}
-                    {% assign href = guide.url %}
-                {% endif %}
-            <a href="{{href}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
-            data-description="{{ guide.description | downcase }}" data-tags="{{ guide.tags | join: ' ' | downcase }}" data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
+            <a href="{{guide.url}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
+            data-description="{{ guide.description | downcase }}" 
+            data-tags="{{ guide.tags | join: ' ' | downcase }}" 
+            data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
                 <div class="guide-title-and-description-container">
                     <h3 class="guide-title">{{guide.title}}</h3>
                     <p class="guide-description" title="{{guide.description}}">{{guide.description}}</p>

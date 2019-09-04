@@ -1,5 +1,4 @@
-# This script is to automate the publication of guides to 
-# kabanero.io and the staging site (kabanerodev.mybluemix.net)
+# This script is to automate the publication of guides to kabanero.io
 #
 # The assumption is that guides that are ready for kabanero.io 
 # have a GitHub repository name starting with:
@@ -15,7 +14,7 @@ require 'octokit'
 cloneDraftGuides = ARGV[0]
 
 # --------------------------------------------
-# Get all the Open Liberty repositories
+# Get all the Kabanero-io repositories
 # --------------------------------------------
 client = Octokit::Client.new :access_token => ENV['PAT']
 client.auto_paginate = true
@@ -38,7 +37,7 @@ def directory_exists?(repo_name)
 end
 
 # --------------------------------------------
-# Filter for Open Liberty guide repositories
+# Filter for Kabanero guide repositories
 # --------------------------------------------
 guides = []
 repos.each do |element|

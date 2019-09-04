@@ -31,21 +31,21 @@ js:
  - limitations under the License.
  -
  ------------------------------------------------------------------------------>
-
+ 
 {% include visible-tags.liquid %}
 
-<div id="background_container">
-        <div id="toc-hotspot"></div>
-        <!-- Guide's table of contents section -->
-        <div id="toc-column" class="collapse inline open">
+<div id="background-container" class="container-fluid">
+    <div class="row">
+        <!-- Guide's table of contents section -->            
+        <div id="toc-column" class="col-md-2 collapse block open">
             <div id="toc-inner">
                 {% assign toc = page.document | tocify_asciidoc %}
                 {% if toc %}
                 <div id="close-container">
-                    <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
+                    <!--<img id="toc-close-white" src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>-->
                 </div>
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>                        
+                    <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
                 </div>
                 <h3 id="toc-title">Contents</h3>
                 <div id="toc-container">
@@ -57,88 +57,89 @@ js:
                     <h3 id="tag-title">Tags</h3>
                     <div id="tags-container">
                         {% for tag in page.tags %}
-                            {% assign lowercase_tag = tag | downcase %}
-                            {% if visibleTags contains lowercase_tag %}
                                 <a href="/guides?search={{ tag }}&key=tag">{{ tag }}</a>
-                            {% endif %}
                         {% endfor %}
                     </div>
                 {% endif %}                    
             </div>                                
-        </div>      
-        <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
-            <img src="/img/arrow-white.svg" alt="arrow">
-        </div>
-        <div id="toc-line" class="open"></div>
+         </div>
         <!-- Entire guide section -->
-        <div id="guide-column" class="position_relative open">
-            <div id="guide-content">
-                <!-- Guide header section -->
-                <div id="guide-meta" class="sect1" tabindex="0">
-                    <h1 id="guide-title">{{ page.title }}</h1>
-                    <div id="duration-container">
-                        <img src="/img/guide-duration-clock-icon-large.svg" alt="duration">
-                        <span id="guide-duration">{{ page.duration }}</span>
-                    </div>
-                    <div id="mobile-github-section">
-                        <div id="mobile-github-clone-popup-title"><span class="kabanero-link-background">Git clone</span><span> to get going right away:</span></div>
-                        <div id="mobile-github-clone-popup-repo">
-                            <span>git clone {{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}.git</span>
-                            <div id="mobile-github-clone-popup-copy" tabindex="0" aria-label="Copy the Github repository clone command">
-                                <img src="/img/guides-copy-button-white.svg" alt="Copy Github clone command" title="Copy Github clone command">
+        <div class="col-md-5">
+            <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
+                <img src="/img/arrow-white.svg" alt="arrow">
+            </div>
+            <div id="guide-column" class="position_relative open">
+                <div id="guide-content">
+                    <!-- Guide header section -->
+                    <div id="guide-meta" class="sect1" tabindex="0">
+                        <h1 id="guide-title">{{ page.title }}</h1>
+                        <div id="duration-container">
+                            <img src="/img/guide-duration-clock-icon-large.svg" alt="duration">
+                            <span id="guide-duration">{{ page.duration }}</span>
+                        </div>
+                        <div id="mobile-github-section">
+                            <div id="mobile-github-clone-popup-title"><span class="dark-green-link-light-background">Git clone</span><span> to get going right away:</span></div>
+                            <div id="mobile-github-clone-popup-repo">
+                                <span>git clone https://github.com/Kabanero/guide-{{page.url | replace: '/guides/guide-', ''}}.git</span>
+                                <div id="mobile-github-clone-popup-copy" tabindex="0" aria-label="Copy the Github repository clone command">
+                                    <img src="/img/guides-copy-button-white.svg" alt="Copy Github clone command" title="Copy Github clone command">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="scroller-anchor"></div>
-                <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
-                    <div id="mobile-toc-accordion">
-                        <button class="breadcrumb-hamburger toc-toggle collapsed" type="button" tabindex="0">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" class="toc-close-svg hidden img-responsive" alt="Table of contents close button"/>
-                        </button>
-                        <span>Table of contents</span>
+                    <div class="scroller-anchor"></div>
+                    <div id="mobile-toc-accordion-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
+                        <div id="mobile-toc-accordion">
+                            <button class="breadcrumb-hamburger toc-toggle collapsed" type="button" tabindex="0">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <img src="{{ " /img/toc-close-white.svg " | relative }}" class="TOC-Close-SVG hidden img-responsive" alt="Table of contents close button"/>
+                            </button>
+                            <span>Table of contents</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Guide content section -->
-                {{ content }}
-            
+                    <!-- Guide content section -->
+                    {{ content }}
+                
+                </div>
+                <div id="guide-section-copied-confirmation">Copied to clipboard</div>
+                <img id="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>
             </div>
-            <div id="guide-section-copied-confirmation">Copied to clipboard</div>
-            <img id="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>
         </div>
 
         <!-- Code section -->
-        <div id="code_column" class="position_relative" tabindex="0">
-            <div id='code-column-title-container'>
-                <div id='code-column-tabs-container' class='dimmed'>
-                    <ul id='code-column-tabs' class='nav' role='tablist'></ul>
-                </div>                    
-                <div class='copy-file-button' tabindex="0">
-                    <img src='/img/guides-copy-button.svg' alt='Copy file contents' title='Copy file contents'>
+        <div class="col-md">
+            <div id="code-column" class="position_relative" tabindex="0">
+                <div id='code-column-title-container'>
+                    <div id='code-column-tabs-container' class='dimmed'>
+                        <ul id='code-column-tabs' class='nav' role='tablist'></ul>
+                    </div>                    
+                    <div class='copy-file-button' tabindex="0">
+                        <img src='/img/guides-copy-button.svg' alt='Copy file contents' title='Copy file contents'>
+                    </div>
                 </div>
-            </div>
-            <div id="code-column-content"></div>
+                <div id="code-column-content"></div>
 
-            <div id="github-clone-popup-container">
-                <div id="github-clone-popup" tabindex="0">
-                    <div id="github-clone-popup-title">Git clone this repo to get going right away:</div>
-                    <div id="github-clone-popup-repo">
-                            git clone {{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}.git
-                    </div>
-                    <div id="github-clone-popup-copy" tabindex="0">
-                        <img src="/img/guides-copy-button-white.svg" alt="Copy github clone command" title="Copy github clone command">
+                <div id="github-clone-popup-container">
+                    <div id="github-clone-popup" tabindex="0">
+                        <div id="github-clone-popup-title">Git clone this repo to get going right away:</div>
+                        <div id="github-clone-popup-repo">
+                                git clone https://github.com/Kabanero-io/guide-{{page.url | replace: '/guides/', ''}}.git
+                        </div>
+                        <div id="github-clone-popup-copy" tabindex="0">
+                            <img src="/img/guides-copy-button-white.svg" alt="Copy github clone command" title="Copy github clone command">
+                        </div>
                     </div>
                 </div>
+                <div id="code-section-copied-confirmation">Copied to clipboard</div>
+                <button id="dismiss-button" aria-label="Back to text" tabindex="0">Back to text</button>
             </div>
-            <div id="code-section-copied-confirmation">Copied to clipboard</div>
-            <button id="dismiss-button" aria-label="Back to text" tabindex="0">Back to text</button>
-        </div>
+        </div><!-- end col -->
+    </div><!-- end row -->
 </div>
 
 {% include end-of-guide.html %}

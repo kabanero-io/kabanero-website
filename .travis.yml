@@ -8,4 +8,4 @@ install:
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
 script:
-  # - ./scripts/build_jekyll_maven.sh
+  - ./scripts/build_jekyll_maven.sh

@@ -27,7 +27,7 @@ seo-title: Kabanero
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">
-                    <img src="/img/kabanero-logo-stripe.png " class="img-fluid" alt="boxes">
+                    <img src="/img/kabanero-logo-stripe.png " class="img-fluid" id="kabanero-logo" alt="boxes">
                 </div>
             </div>
 
@@ -70,130 +70,130 @@ seo-title: Kabanero
                     </div>
                 </div>
             </div>
-        
-            <!-- Open Source Platform -->
-            <div class="area open-source-platform">
-                <div class="row" id="box-row">
-                    <div class="col open-source-platform-col">
-                        <div role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
-                            <p class="open-source-platform-paragraph">
-                                    {{t.open-source-platform.runtimes.languages}}<br>& {{t.open-source-platform.runtimes.runtimes}}
-                            </p>
-                        </div>
-                        <div class="open-source-platform-vertical-separator"></div>
+        </div>
+        <!-- Open Source Platform -->
+        <div class="area open-source-platform col-md-12">
+            <div class="row" id="box-row">
+                <div class="col open-source-platform-col">
+                    <div role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
+                        <p class="open-source-platform-paragraph">
+                                {{t.open-source-platform.runtimes.languages}}<br>& {{t.open-source-platform.runtimes.runtimes}}
+                        </p>
                     </div>
-                    <div class="col open-source-platform-col">
-                        <div class="open-source-platform-horizontal-separator">
-                        </div>
-                    </div>
-                    <div class="col open-source-platform-col">
-                        <div role="button" class="open-source-platform-box" data-topic="develop" tabindex="0">
-                            <p class="open-source-platform-paragraph">
-                                    {{t.open-source-platform.develop.tab-name}}
-                            </p>
-                        </div>
-                        <div class="open-source-platform-vertical-separator"></div>
-                    </div>
-                    <div class="col open-source-platform-col">
-                        <div class="open-source-platform-horizontal-separator"></div>
-                    </div>
-                    <div class="col open-source-platform-col">
-                        <div role="button" class="open-source-platform-box" data-topic="build" tabindex="0">
-                            <p class="open-source-platform-paragraph">
-                                {{t.open-source-platform.build.tab-name}}
-                            </p>
-                        </div>
-                        <div class="open-source-platform-vertical-separator"></div>
-                    </div>
-                    <div class="col open-source-platform-col">
-                        <div class="open-source-platform-horizontal-separator">
-                        </div>
-                    </div>
-                    <div class="col open-source-platform-col">
-                        <div role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
-                            <p class="open-source-platform-paragraph">
-                                    {{t.open-source-platform.deploy.tab-name}}
-                            </p>
-                        </div>
-                        <div class="open-source-platform-vertical-separator"></div>
+                    <div class="open-source-platform-vertical-separator"></div>
+                </div>
+                <div class="col open-source-platform-col">
+                    <div class="open-source-platform-horizontal-separator">
                     </div>
                 </div>
-                <div id="open-source-platform-languages-collapse" class="row collapse open-source-platform-content-box">
-                    <div class="row">
-                        <div class="col">
-                            <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
-                            <p>
-                                {{t.open-source-platform.runtimes.description}}
-                            </p>
-                        </div>
+                <div class="col open-source-platform-col">
+                    <div role="button" class="open-source-platform-box" data-topic="develop" tabindex="0">
+                        <p class="open-source-platform-paragraph">
+                                {{t.open-source-platform.develop.tab-name}}
+                        </p>
                     </div>
-                    <div class="row languages-row">
-                        <div class="col">
-                            <span>{{t.common.java}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.node}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.go}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.python}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.microProfile}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.jakarta}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.spring}}</span><span class="dot-separator"></span>
-                            <span>{{t.common.open-liberty}}</span>
-                        </div>
+                    <div class="open-source-platform-vertical-separator"></div>
+                </div>
+                <div class="col open-source-platform-col">
+                    <div class="open-source-platform-horizontal-separator"></div>
+                </div>
+                <div class="col open-source-platform-col">
+                    <div role="button" class="open-source-platform-box" data-topic="build" tabindex="0">
+                        <p class="open-source-platform-paragraph">
+                            {{t.open-source-platform.build.tab-name}}
+                        </p>
+                    </div>
+                    <div class="open-source-platform-vertical-separator"></div>
+                </div>
+                <div class="col open-source-platform-col">
+                    <div class="open-source-platform-horizontal-separator">
                     </div>
                 </div>
-                <div id="open-source-platform-develop-collapse" class="row collapse open-source-platform-content-box">
-                    <div class="row">
-                        <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
-                            <a class="image-link" target="_blank" href="https://www.eclipse.org/che/">
-                                <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/logos/85x85/eclipse-che.png" />
-                            </a>
-                        </div>
-                        <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
-                            <a class="image-link" target="_blank" href="https://appsody.dev">
-                                <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/appsody.png" />
-                            </a>
-                        </div>
-                        <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
-                            <a class="image-link" target="_blank" href="https://codewind.dev">
-                                <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/codewind.png" />
-                            </a>
-                        </div>
-                        <div class="col-md">
-                            <p class="open-source-platform-content-title">{{t.open-source-platform.develop.tab-name}}</p>
-                            <p>
-                                    {{t.open-source-platform.develop.description}}
-                            </p>
-                        </div>
+                <div class="col open-source-platform-col">
+                    <div role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
+                        <p class="open-source-platform-paragraph">
+                                {{t.open-source-platform.deploy.tab-name}}
+                        </p>
+                    </div>
+                    <div class="open-source-platform-vertical-separator"></div>
+                </div>
+            </div>
+            <div id="open-source-platform-languages-collapse" class="row collapse open-source-platform-content-box">
+                <div class="row">
+                    <div class="col">
+                        <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
+                        <p>
+                            {{t.open-source-platform.runtimes.description}}
+                        </p>
                     </div>
                 </div>
-                <div id="open-source-platform-build-collapse" class="row collapse open-source-platform-content-box">
-                    <div class="row">
-                        <div class="col-1 open-source-platform-image-column">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img class="open-source-platform-image-centered open-source-platform-image-large"
-                                    src="/img/logos/100x100/tekton.png"
-                                    alt="tekton logo">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <p class="open-source-platform-content-title">{{t.open-source-platform.build.tab-name}}</p>
-                            <p>
-                                    {{t.open-source-platform.build.description}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
-                    <div class="row">
-                        <div class="col">
-                            <p class="open-source-platform-content-title">{{t.open-source-platform.deploy.tab-name}}</p>
-                            <p>
-                                    {{t.open-source-platform.deploy.description}}
-                            </p>
-                        </div>
+                <div class="row languages-row">
+                    <div class="col">
+                        <span>{{t.common.java}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.node}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.go}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.python}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.microProfile}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.jakarta}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.spring}}</span><span class="dot-separator"></span>
+                        <span>{{t.common.open-liberty}}</span>
                     </div>
                 </div>
             </div>
-
+            <div id="open-source-platform-develop-collapse" class="row collapse open-source-platform-content-box">
+                <div class="row">
+                    <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
+                        <a class="image-link" target="_blank" href="https://www.eclipse.org/che/">
+                            <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/logos/85x85/eclipse-che.png" />
+                        </a>
+                    </div>
+                    <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
+                        <a class="image-link" target="_blank" href="https://appsody.dev">
+                            <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/appsody.png" />
+                        </a>
+                    </div>
+                    <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
+                        <a class="image-link" target="_blank" href="https://codewind.dev">
+                            <img class="img-fluid open-source-platform-image-centered open-source-platform-image-large" src="/img/codewind.png" />
+                        </a>
+                    </div>
+                    <div class="col-md">
+                        <p class="open-source-platform-content-title">{{t.open-source-platform.develop.tab-name}}</p>
+                        <p>
+                                {{t.open-source-platform.develop.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="open-source-platform-build-collapse" class="row collapse open-source-platform-content-box">
+                <div class="row">
+                    <div class="col-1 open-source-platform-image-column">
+                        <a class="image-link" target="_blank" href="https://tekton.dev/">
+                            <img class="open-source-platform-image-centered open-source-platform-image-large"
+                                src="/img/logos/100x100/tekton.png"
+                                alt="tekton logo">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <p class="open-source-platform-content-title">{{t.open-source-platform.build.tab-name}}</p>
+                        <p>
+                                {{t.open-source-platform.build.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
+                <div class="row">
+                    <div class="col">
+                        <p class="open-source-platform-content-title">{{t.open-source-platform.deploy.tab-name}}</p>
+                        <p>
+                                {{t.open-source-platform.deploy.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
             <!-- Foundational Tools-->
             <div class="foundational-tools foundational-tools-container row">
                 <div class="col-sm-2 offset-sm-3">
@@ -216,8 +216,10 @@ seo-title: Kabanero
                     </div>
                 </div>
             </div>
-            <div class="row featured-models text-center">
-                <h2 class="col-md-12 text-center" id="featured-collections-title">{{t.featured-collections.title}}</h2>
+        </div>
+        <div class="col-md-12 featured-models text-center">
+            <h2 class="col-md-12 text-center" id="featured-collections-title">{{t.featured-collections.title}}</h2>
+            <div class="row">
                 <div class="col">
                     <button data-toggle="collapse"
                             href="#microprofile-collapse"
@@ -255,117 +257,118 @@ seo-title: Kabanero
                     </button>
                 </div>
             </div>
-            <div class="row collapse featuredModelsCollapse" id="microprofile-collapse">
-                <div class="col card card-body collections-card">
-                    <div class="row collapseRow">
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://openliberty.io/">
-                                <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
-                                <p>{{t.common.open-liberty}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" href="#">
-                                <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
-                                <p>{{t.common.operators}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://prometheus.io/">
-                                <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
-                                <p>{{t.common.prometheus}}&reg;</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
-                                <p>{{t.common.tekton}}&trade;</p>
-                            </a>
-                        </div>
+        </div>
+        <div class="row collapse featuredModelsCollapse justify-content-md-center" id="microprofile-collapse">
+            <div class="col-md-6 card card-body collections-card">
+                <div class="row collapseRow">
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://openliberty.io/">
+                            <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
+                            <p>{{t.common.open-liberty}}</p>
+                        </a>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col dopdown-text">
-                            <p>
-                                {{t.featured-collections.eclips-microprofile-paragraph}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row collapse featuredModelsCollapse" id="spring-collapse">
-                <div class="col card card-body collections-card">
-                    <div class="row collapseRow">
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://openliberty.io/">
-                                <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
-                                <p>{{t.common.open-liberty}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
+                    <div class="col text-center">
+                        <a class="image-link" href="#">
                             <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
                             <p>{{t.common.operators}}</p>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://prometheus.io/">
-                                <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
-                                <p>{{t.common.prometheus}}&reg;</p>
-                                </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
-                                <p>{{t.common.tekton}}&trade;</p>
-                            </a>
-                        </div>
+                        </a>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col dopdown-text">
-                            <p>
-                                {{t.common.spring}}&reg; {{t.featured-collections.spring-paragraph}}
-                            </p>
-                        </div>
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://prometheus.io/">
+                            <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
+                            <p>{{t.common.prometheus}}&reg;</p>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://tekton.dev/">
+                            <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
+                            <p>{{t.common.tekton}}&trade;</p>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col dopdown-text">
+                        <p>
+                            {{t.featured-collections.eclips-microprofile-paragraph}}
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="row collapse featuredModelsCollapse" id="nodejs-collapse">
-                <div class="col card card-body collections-card">
-                    <div class="row collapseRow">
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://nodejs.org">
-                                <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
-                                <p>{{t.common.nodeJS}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
-                            <p>{{t.common.operators}}</p>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://prometheus.io/">
-                                <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
-                                <p>{{t.common.prometheus}}&reg;</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
-                                <p>{{t.common.tekton}}&trade;</p>
-                            </a>
-                        </div>
+        </div>
+        <div class="row collapse featuredModelsCollapse justify-content-md-center" id="spring-collapse">
+            <div class="col-md-6 card card-body collections-card">
+                <div class="row collapseRow">
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://openliberty.io/">
+                            <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
+                            <p>{{t.common.open-liberty}}</p>
+                        </a>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col dopdown-text">
-                            <p>
-                                {{t.featured-collections.nodejs-paragraph}}
-                            </p>
-                        </div>
+                    <div class="col text-center">
+                        <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
+                        <p>{{t.common.operators}}</p>
+                    </div>
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://prometheus.io/">
+                            <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
+                            <p>{{t.common.prometheus}}&reg;</p>
+                            </a>
+                    </div>
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://tekton.dev/">
+                            <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
+                            <p>{{t.common.tekton}}&trade;</p>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col dopdown-text">
+                        <p>
+                            {{t.common.spring}}&reg; {{t.featured-collections.spring-paragraph}}
+                        </p>
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row collapse featuredModelsCollapse justify-content-md-center" id="nodejs-collapse">
+            <div class="col-md-6 card card-body collections-card">
+                <div class="row collapseRow">
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://nodejs.org">
+                            <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
+                            <p>{{t.common.nodeJS}}</p>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
+                        <p>{{t.common.operators}}</p>
+                    </div>
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://prometheus.io/">
+                            <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
+                            <p>{{t.common.prometheus}}&reg;</p>
+                        </a>
+                    </div>
+                    <div class="col text-center">
+                        <a class="image-link" target="_blank" href="https://tekton.dev/">
+                            <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
+                            <p>{{t.common.tekton}}&trade;</p>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col dopdown-text">
+                        <p>
+                            {{t.featured-collections.nodejs-paragraph}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
             <!-- Support -->
             <div class="row support-title">
                 <div class="col">

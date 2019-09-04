@@ -63,10 +63,8 @@ body{
 }
 
 .open-source-platform{
-    background-color: #000000;
+    background-color: #292828;
     padding: 15px 0 15px 0;
-    margin-left:-20vw;
-    margin-right:-20vw;
 }
 
 .open-source-platform-col{
@@ -179,8 +177,6 @@ body{
     background-color: #f4f5f7;
     margin-top: 3em;
     padding: 3em 20vw 3em 20vw;
-    margin-left:-25vw;
-    margin-right:-25vw;
 }
 
 .support-title{
@@ -734,4 +730,8 @@ body{
 .collections-card{
     margin-left:20vw;
     margin-right:20vw;
+}
+
+#kabanero-logo{
+    max-height:400px;
 }

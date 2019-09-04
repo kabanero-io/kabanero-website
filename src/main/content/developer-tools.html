@@ -20,14 +20,16 @@ permalink: /developer-tools/
             can be used in conjunction with their CLI using XCode. Share these instructions with your development team or simply invite them to your Collection 
             from Kabanero Foundation.
         </p>
-        <h2 class="col-md-12">Prerequisites: <span class="prereq-text"><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> or <a href="https://www.eclipse.org" target="_blank">Eclipse</a>, <a href="https://git-scm.com/" target="_blank">Git</a>, and <a href="https://www.docker.com" target="_blank">Docker (Docker Compose for Mac)</a></span></h2>
+        <h2 class="col-md-12">Prerequisites: <span class="prereq-text"><a href="https://code.visualstudio.com/" target="_blank" aria-label="Link to Visual Studio Code site">Visual Studio Code</a> or 
+            <a href="https://www.eclipse.org" target="_blank" aria-label="Link to Eclipse site">Eclipse</a>, <a href="https://git-scm.com/" target="_blank" aria-label="Link to git site">Git</a>, and 
+            <a href="https://www.docker.com" target="_blank" aria-label="Link to docker site">Docker (Docker Compose for Mac)</a></span></h2>
     </div>
     <div class="row" id="instruction-select-row">
         <h3 class="col-md-12">Install Codewind using:</h3>
         <div class="btn-group col-md-6" role="group">
-            <button type="button" class="btn btn-outline-dark col-md-4 kabanero-colored-button install-select-button" onclick="changeInstructionSelection(this)" data-content="visual-studio">Visual Sutdio Code</button>
-            <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="eclipse">Eclipse</button>
-            <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="cli">CLI Instructions</button>
+            <button type="button" class="btn btn-outline-dark col-md-4 kabanero-colored-button install-select-button" onclick="changeInstructionSelection(this)" data-content="visual-studio" aria-label="Display developer tools install instructions for Visual Studio Code">Visual Sutdio Code</button>
+            <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="eclipse" aria-label="Display developer tools install instructions for Eclipse">Eclipse</button>
+            <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="cli" aria-label="Display developer tools install instructions for CLI">CLI Instructions</button>
         </div>
     </div>
     <div class="row content-row" id="visual-studio">
@@ -35,7 +37,7 @@ permalink: /developer-tools/
             <li>
                 <p>Install Codewind in Visual Studio Code.</p>
             </li>
-            <a href="https://www.eclipse.org/codewind/" target="_blank" role="button" class="btn kabanero-colored-button">Install Codewind</a>
+            <a href="https://www.eclipse.org/codewind/mdt-vsc-overview.html" target="_blank" role="button" class="btn kabanero-colored-button" aria-label="Link to Codewind for Visual Studio Code install">Install Codewind</a>
             <li>
                 <p>Open the Codewind workspace and create a new project.</p>
                 <img class="img-fluid col-md-6" src="/img/dev-tools-new-codewind.png">
@@ -45,7 +47,7 @@ permalink: /developer-tools/
                 <img class="img-fluid col-md-8" src="/img/dev-tools-template.png">
             </li>
         </ol>
-        <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link">Learn More</a></p>
+        <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">Learn More</a></p>
     </div>
     <div class="row content-row hidden-row" id="eclipse">
         <ol class="col-md-12">
@@ -53,7 +55,7 @@ permalink: /developer-tools/
                 <p>Install Codewind in Eclipse for Java EE Developers.</p>
                 <small>*Note: The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11)</small>
             </li>
-            <a href="https://www.eclipse.org/codewind/" target="_blank" role="button" class="btn kabanero-colored-button">Install Codewind</a>
+            <a href="https://www.eclipse.org/codewind/" target="_blank" role="button" class="btn kabanero-colored-button" aria-label="Link to Eclipse Codewind install">Install Codewind</a>
             <li>
                 <p>Follow the wizard and accept licenses.</p>
             </li>
@@ -73,7 +75,7 @@ permalink: /developer-tools/
                 <p>Codewind creates a folder called codewind-workspace within your home directory (C:\codewind-workspace on Windows) to contain your projects</p>
             </li>
         </ol>
-        <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link">Learn More</a></p>
+        <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">Learn More</a></p>
     </div>
     <div class="row content-row hidden-row" id="cli">
         <p>The Kabanero uses Appsody as its CLI experience to access collections</p>
@@ -103,7 +105,7 @@ permalink: /developer-tools/
                 </div>
             </li>
         </ol>
-        <p class="col-md-12">Need more help using Appsody? <a href="https://appsody.dev/docs" target="_blank" class="cpa-link">Learn More</a></p>
+        <p class="col-md-12">Need more help using Appsody? <a href="https://appsody.dev/docs" target="_blank" class="cpa-link" aria-label="Link to Appsody docs">Learn More</a></p>
     </div>
     <!-- Support -->
     <div class="row support-title">
@@ -114,7 +116,7 @@ permalink: /developer-tools/
     <div class="row">
         <div class="col text-center description-text-block">
             The Kabanero open source project is included within 
-            <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
+            <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link" aria-label="Navigate to IBM Cloud Pak for Applications information page">
                 IBM Cloud Pak for Applications
             </a>
             as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 

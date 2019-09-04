@@ -5,6 +5,8 @@ _includes:
     getting-started: Getting Started
     resources: Resources
     close: Close
+    docs: Docs
+    blogs: Blog
   doc_header:
     toggle-navigation: Toggle navigation
     guides: Guides

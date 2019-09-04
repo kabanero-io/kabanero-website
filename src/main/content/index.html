@@ -12,36 +12,37 @@ seo-title: Kabanero
 ---
 {% assign t = site.data[site.active_lang].index %}
 
-<!-- INTRO -->
 <div class="container-fluid">
+
+    <!-- Intro and Get Started Button -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <div id="intro-content">
+                <img src="/img/kabanero-final.svg" class="img-fluid" id="kabanero-img" alt="boxes">
+                <h3 id="intro-lighten-up-title">{{t.intro-title}}</h3>
+                    {{t.intro-paragraph}}
+                <a class="col-md-5" id="get-started-link" href="/get-started" aria-label="Navigate to getting started">{{t.get-started}}</a>
+            </div>
+        </div>
+        <div class="col-md-2 d-none d-md-block">
+            <img src="/img/kabanero-logo-stripe.png " class="img-fluid" id="kabanero-logo" alt="boxes">
+        </div>
+    </div>
+
+    <!-- Video about the Kabanero Developer Workflow -->
     <div class="row justify-content-md-center">
         <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-8">
-                    <div id="intro-content">
-                        <img src="/img/kabanero-final.svg" class="img-fluid" id="kabanero-img" alt="boxes">
-                        <h3 id="intro-lighten-up-title">{{t.intro-title}}</h3>
-                            {{t.intro-paragraph}}
-                        </p>
-                        <a class="col-md-5" id="get-started-link" href="/get-started" aria-label="Navigate to getting started">{{t.get-started}}</a>
-                    </div>
-                </div>
-                <div class="col-md-4 d-none d-md-block">
-                    <img src="/img/kabanero-logo-stripe.png " class="img-fluid" id="kabanero-logo" alt="boxes">
-                </div>
+            <div class="video-wrapper"> 
+                <iframe width="100%" title="Kabanero Developer Workflow" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+        </div>
+    </div>
 
-            <!-- Video- Kabanero Developer Workflow -->
-            <div class="row area video">
-                <div class="col-md usage-video">
-                    <div class="video-wrapper"> 
-                        <iframe width="100%" title="Kabanero Developer Workflow" height="400px" src="https://www.youtube.com/embed/_7--MS0RNXI" 
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <!-- New Role Boxes -->
-            <div class="row area">
+    <!-- Role Boxes -->
+    <div class="row area justify-content-md-center">
+        <div class="col-md-8">
+            <div class="row">
                 <h2 class="col text-center" id="role-box-title">{{t.development.something-for-whole-team}}</h2>
             </div>
             <div class="row text-center">
@@ -71,75 +72,89 @@ seo-title: Kabanero
                 </div>
             </div>
         </div>
-        <!-- Open Source Platform -->
-        <div class="area open-source-platform col-md-12">
-            <div class="row" id="box-row">
+    </div>
+
+    <!-- Open Source Platform Box Buttons -->
+    <div class="row area open-source-platform justify-content-md-center">
+        <div class="col-md-8">
+            <div class="row">
+                <!-- Languages & Runtimes -->
                 <div class="col open-source-platform-col">
-                    <div role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
+                    <div id="open-source-platform-languages-box" role="button" class="open-source-platform-box" data-topic="languages" tabindex="0">
                         <p class="open-source-platform-paragraph">
-                                {{t.open-source-platform.runtimes.languages}}<br>& {{t.open-source-platform.runtimes.runtimes}}
+                            {{t.open-source-platform.runtimes.languages}}<br>& {{t.open-source-platform.runtimes.runtimes}}
                         </p>
                     </div>
-                    <div class="open-source-platform-vertical-separator"></div>
                 </div>
+
                 <div class="col open-source-platform-col">
-                    <div class="open-source-platform-horizontal-separator">
-                    </div>
+                    <div class="open-source-platform-horizontal-separator"></div>
                 </div>
+
+                <!-- Develop -->
                 <div class="col open-source-platform-col">
-                    <div role="button" class="open-source-platform-box" data-topic="develop" tabindex="0">
+                    <div id="open-source-platform-develop-box" role="button" class="open-source-platform-box" data-topic="develop" tabindex="0">
                         <p class="open-source-platform-paragraph">
                                 {{t.open-source-platform.develop.tab-name}}
                         </p>
                     </div>
-                    <div class="open-source-platform-vertical-separator"></div>
                 </div>
+
                 <div class="col open-source-platform-col">
                     <div class="open-source-platform-horizontal-separator"></div>
                 </div>
+
+                <!-- Build -->
                 <div class="col open-source-platform-col">
-                    <div role="button" class="open-source-platform-box" data-topic="build" tabindex="0">
+                    <div id="open-source-platform-build-box" role="button" class="open-source-platform-box" data-topic="build" tabindex="0">
                         <p class="open-source-platform-paragraph">
                             {{t.open-source-platform.build.tab-name}}
                         </p>
                     </div>
-                    <div class="open-source-platform-vertical-separator"></div>
                 </div>
+
                 <div class="col open-source-platform-col">
                     <div class="open-source-platform-horizontal-separator">
                     </div>
                 </div>
+
+                <!-- Deploy -->
                 <div class="col open-source-platform-col">
-                    <div role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
+                    <div id="open-source-platform-deploy-box" role="button" class="open-source-platform-box" data-topic="manage" tabindex="0">
                         <p class="open-source-platform-paragraph">
-                                {{t.open-source-platform.deploy.tab-name}}
+                        {{t.open-source-platform.deploy.tab-name}}
                         </p>
                     </div>
-                    <div class="open-source-platform-vertical-separator"></div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Open Source Platform Detail Box -->
+    <div class="row open-source-platform justify-content-md-center">
+        
+        <!-- Languages $ Runtime detail -->
+        <div class="col-md-8">
             <div id="open-source-platform-languages-collapse" class="row collapse open-source-platform-content-box">
-                <div class="row">
-                    <div class="col">
-                        <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
-                        <p>
-                            {{t.open-source-platform.runtimes.description}}
-                        </p>
-                    </div>
+                <div class="col">
+                    <p class="open-source-platform-content-title">{{t.open-source-platform.runtimes.tab-name}}</p>
+                    <p>{{t.open-source-platform.runtimes.description}}</p>
                 </div>
-                <div class="row languages-row">
-                    <div class="col">
-                        <span>{{t.common.java}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.node}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.go}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.python}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.microProfile}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.jakarta}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.spring}}</span><span class="dot-separator"></span>
-                        <span>{{t.common.open-liberty}}</span>
-                    </div>
+                <div class="col">
+                    <span>{{t.common.java}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.node}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.go}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.python}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.microProfile}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.jakarta}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.spring}}</span><span class="dot-separator"></span>
+                    <span>{{t.common.open-liberty}}</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Develop detail -->
+        <div class="col-md-8">
             <div id="open-source-platform-develop-collapse" class="row collapse open-source-platform-content-box">
                 <div class="row">
                     <div class="col-md-1 d-none d-md-block open-source-platform-image-column">
@@ -159,12 +174,14 @@ seo-title: Kabanero
                     </div>
                     <div class="col-md">
                         <p class="open-source-platform-content-title">{{t.open-source-platform.develop.tab-name}}</p>
-                        <p>
-                                {{t.open-source-platform.develop.description}}
-                        </p>
+                        <p>{{t.open-source-platform.develop.description}}</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Build detail -->
+        <div class="col-md-8">
             <div id="open-source-platform-build-collapse" class="row collapse open-source-platform-content-box">
                 <div class="row">
                     <div class="col-1 open-source-platform-image-column">
@@ -177,24 +194,29 @@ seo-title: Kabanero
                     <div class="col">
                         <p class="open-source-platform-content-title">{{t.open-source-platform.build.tab-name}}</p>
                         <p>
-                                {{t.open-source-platform.build.description}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
-                <div class="row">
-                    <div class="col">
-                        <p class="open-source-platform-content-title">{{t.open-source-platform.deploy.tab-name}}</p>
-                        <p>
-                                {{t.open-source-platform.deploy.description}}
+                            {{t.open-source-platform.build.description}}
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Deploy detail -->
         <div class="col-md-8">
-            <!-- Foundational Tools-->
+            <div id="open-source-platform-manage-collapse" class="row collapse open-source-platform-content-box">
+                <div class="row">
+                    <div class="col">
+                        <p class="open-source-platform-content-title">{{t.open-source-platform.deploy.tab-name}}</p>
+                        <p>{{t.open-source-platform.deploy.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Built on Kubernetes -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
             <div class="foundational-tools foundational-tools-container row">
                 <div class="col-sm-2 offset-sm-3">
                     <a class="image-link" target="_blank" href="https://kubernetes.io/">
@@ -217,39 +239,45 @@ seo-title: Kabanero
                 </div>
             </div>
         </div>
-        <div class="col-md-12 featured-models text-center">
-            <h2 class="col-md-12 text-center" id="featured-collections-title">{{t.featured-collections.title}}</h2>
+    </div>
+
+    <!-- Featured Collections Buttons-->
+    <div class="row featured-models justify-content-md-center">
+        <div class="col-md-8">
             <div class="row">
-                <div class="col">
+                <h2 class="col-md-12 text-center" id="featured-collections-title">{{t.featured-collections.title}}</h2>
+            </div>
+            <div class="row">
+                <div class="col model-logo text-center" tabindex="0">
                     <button data-toggle="collapse"
                             href="#microprofile-collapse"
                             aria-expanded="false"
                             aria-controls="microprofile-collapse"
-                            class="col featured-model-box"
+                            class="featured-model-box"
                             alt="microprofile logo"
                             tabindex="99">
                             <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
                             <br><label class="featured-model-label">{{t.common.eclipse-microProfile}}</label>
                     </button>
                 </div>
-                <div class="col">
+                <div class="col model-logo text-center" tabindex="0">
                     <button data-toggle="collapse"
                             href="#spring-collapse"
                             aria-expanded="false"
                             aria-controls="spring-collapse"
-                            class="col featured-model-box"
+                            class="featured-model-box"
                             alt="java spring logo"
                             tabindex="99">
                             <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
                             <br><label class="featured-model-label">{{t.common.spring}}</label>
                     </button>
                 </div>
-                <div class="col">
+                <div class="col model-logo text-center" tabindex="0">
                     <button data-toggle="collapse"
                             href="#nodejs-collapse"
                             aria-expanded="false"
                             aria-controls="nodejs-collapse"
-                            class="col featured-model-box"
+                            class="featured-model-box"
                             alt="nodejs logo"
                             tabindex="99">
                             <img class="img img-fluid" src="/img/collections-icon.png" onmouseover="hoverFeaturedCollection(this)" onmouseout="unhoverFeaturedCollection(this)">
@@ -258,247 +286,277 @@ seo-title: Kabanero
                 </div>
             </div>
         </div>
-        <div class="col-md-12 collapse featuredModelsCollapse" id="microprofile-collapse">
-            <div class="row justify-content-md-center card-row">
-                <div class="col-md-6 card card-body">
-                    <div class="row collapseRow">
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://openliberty.io/">
-                                <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
-                                <p>{{t.common.open-liberty}}</p>
-                            </a>
+    </div>
+
+    <!-- Featured Collections Detail boxs -->
+
+    <!-- Eclipse Microprofile -->
+    <div class="row featured-collections-detail justify-content-md-center">
+        <div class="col-md-8">
+            <div class="collapse featured-collections-collapse" id="microprofile-collapse">
+                <div class="row card-row">
+                    <div class="col-md card card-body">
+                        <div class="row collapseRow">
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://openliberty.io/">
+                                    <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
+                                    <p>{{t.common.open-liberty}}</p>
+                                </a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" href="#">
+                                    <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
+                                    <p>{{t.common.operators}}</p>
+                                </a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://prometheus.io/">
+                                    <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
+                                    <p>{{t.common.prometheus}}&reg;</p>
+                                </a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://tekton.dev/">
+                                    <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
+                                    <p>{{t.common.tekton}}&trade;</p>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col text-center">
-                            <a class="image-link" href="#">
+                        <hr>
+                        <div class="row">
+                            <div class="col dopdown-text">
+                                <p>{{t.featured-collections.eclips-microprofile-paragraph}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spring -->
+    <div class="row featured-collections-detail justify-content-md-center">
+        <div class="col-md-8">
+            <div class="collapse featured-collections-collapse" id="spring-collapse">
+                <div class="row card-row">
+                    <div class="col-md card card-body">
+                        <div class="row collapseRow">
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://openliberty.io/">
+                                    <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
+                                    <p>{{t.common.open-liberty}}</p>
+                                </a>
+                            </div>
+                            <div class="col text-center">
                                 <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
                                 <p>{{t.common.operators}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://prometheus.io/">
-                                <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
-                                <p>{{t.common.prometheus}}&reg;</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
-                                <p>{{t.common.tekton}}&trade;</p>
-                            </a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col dopdown-text">
-                            <p>
-                                {{t.featured-collections.eclips-microprofile-paragraph}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 collapse featuredModelsCollapse justify-content-md-center" id="spring-collapse">
-            <div class="row justify-content-md-center card-row">
-                <div class="col-md-6 card card-body">
-                    <div class="row collapseRow">
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://openliberty.io/">
-                                <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
-                                <p>{{t.common.open-liberty}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
-                            <p>{{t.common.operators}}</p>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://prometheus.io/">
-                                <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
-                                <p>{{t.common.prometheus}}&reg;</p>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://prometheus.io/">
+                                    <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
+                                    <p>{{t.common.prometheus}}&reg;</p>
                                 </a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://tekton.dev/">
+                                    <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
+                                    <p>{{t.common.tekton}}&trade;</p>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
-                                <p>{{t.common.tekton}}&trade;</p>
-                            </a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col dopdown-text">
-                            <p>
-                                {{t.common.spring}}&reg; {{t.featured-collections.spring-paragraph}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 collapse featuredModelsCollapse justify-content-md-center" id="nodejs-collapse">
-            <div class="row justify-content-md-center card-row">
-                <div class="col-md-6 card card-body">
-                    <div class="row collapseRow">
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://nodejs.org">
-                                <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
-                                <p>{{t.common.nodeJS}}</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
-                            <p>{{t.common.operators}}</p>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://prometheus.io/">
-                                <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
-                                <p>{{t.common.prometheus}}&reg;</p>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a class="image-link" target="_blank" href="https://tekton.dev/">
-                                <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
-                                <p>{{t.common.tekton}}&trade;</p>
-                            </a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col dopdown-text">
-                            <p>
-                                {{t.featured-collections.nodejs-paragraph}}
-                            </p>
+                        <hr>
+                        <div class="row">
+                            <div class="col dopdown-text">
+                                <p>{{t.common.spring}}&reg; {{t.featured-collections.spring-paragraph}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Node.js -->
+    <div class="row featured-collections-detail justify-content-md-center">
         <div class="col-md-8">
-            <!-- Support -->
-            <div class="row support-title">
+            <div class="collapse featured-collections-collapse" id="nodejs-collapse">
+                <div class="row card-row">
+                    <div class="col-md card card-body">
+                        <div class="row collapseRow">
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://nodejs.org">
+                                    <img src="/img/logos/100x100/nodejs.png" class="img-fluid stackImg">
+                                    <p>{{t.common.nodeJS}}</p>
+                                </a>
+                            </div>
+                            <div class="col text-center">
+                                <img src="/img/logos/85x85/operator.png" class="img-fluid stackImg">
+                                <p>{{t.common.operators}}</p>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://prometheus.io/">
+                                    <img src="/img/logos/85x85/prometheus.png" class="img-fluid stackImg">
+                                    <p>{{t.common.prometheus}}&reg;</p>
+                                </a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="image-link" target="_blank" href="https://tekton.dev/">
+                                    <img src="/img/logos/85x85/tekton.png" class="img-fluid stackImg">
+                                    <p>{{t.common.tekton}}&trade;</p>
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col dopdown-text">
+                                <p>{{t.featured-collections.nodejs-paragraph}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support -->
+    <div class="row justify-content-md-center area">
+        <div class="col-md-8">
+            <div class="row">
                 <div class="col">
                     <h2 class="text-center">{{t.support.header}}</h2>
                 </div>
             </div>
             <div class="row support-text">
-                <div class="col text-center description-text-block">
-                    {{t.support.description}}
-                    <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link" aria-label="Navigate to IBM Cloud Pak for Applications information page">
-                        {{t.support.link}}
-                    </a>
-                    {{t.support.description-cont}}
+                <div class="col text-center support-desc-text">
+                    <p>
+                        {{t.support.description}}
+                        <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link" aria-label="Navigate to IBM Cloud Pak for Applications information page">
+                            {{t.support.link}}
+                        </a>
+                        {{t.support.description-cont}}
+                    </p>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Blog Posts -->
-            <div class="area">
-                <div class="row">
-                    <div class="col text-center">
-                        <h2 class="latest-news">{{t.blogs-section.latest-news}}</h2>
-                    </div>
+    <!-- Latest News -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <div class="row area">
+                <div class="col text-center">
+                    <h2 class="latest-news">{{t.blogs-section.latest-news}}</h2>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="row visit-blog-row">
-                            <div class="col-xl">
-                                <div class="row">
-                                    <h3 class="col-md-5 visit-text">{{t.blogs-section.visit-text}}</h3>
-                                    <div class="col-md-3"></div>
-                                    <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog" aria-label="Visit Kabanero blog">{{t.blogs-section.visit}}</a>
-                                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom two columns Blog/Twitter-->
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <div class="row">
+                <!-- Left Blogs / Get Involved Column -->
+                <div class="col-xl-6">
+                    <div class="row visit-blog-row">
+                        <div class="col-xl">
+                            <div class="row">
+                                <h3 class="col-md-5 visit-text">{{t.blogs-section.visit-text}}</h3>
+                                <div class="col-md-3"></div>
+                                <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog" aria-label="Visit Kabanero blog">{{t.blogs-section.visit}}</a>
                             </div>
                         </div>
-                        <div class="row empty-row"></div>
-                        {% for post in site.posts limit:2 %}
-                            <div class="row blog-post-row">
-                                <div class="col-xl blog-post-column">
-                                    <div class="row">
-                                        <div class="blog-header">
-                                            <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
-                                            <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
-                                            <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="row title-row">
-                                        {% if post.redirect_link %}
-                                            <h2><a href="{{ post.redirect_link }}" class="blog-title">{{ post.title | escape }}</a></h2>
-                                        {% else %}
-                                            <h2><a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title | escape }}</a></h2>
-                                        {% endif %}
-                                    </div>
-                                    <div class="row">
-                                        {% if post.redirct_link %}
-                                            <p>{{ post.seo-description | escape }}</p>
-                                        {% else %}
-                                            <p>{{ post.seo-description | escape }}</p>
-                                        {% endif %}
-                                    </div>
-                                    <div class="row">
-                                        <div class="text-right">
-                                        {% if post.redirect_link %}
-                                            <a href="{{ post.redirect_link }}" class="blog-read-more" aria-label="Read the blog titled {{ post.title }}">{{t.blogs-section.read-more}}</a>
-                                        {% else %}
-                                            <a href="{{ post.url | relative_url }}" class="blog-read-more" aria-label="Read the blog titled {{ post.title }}">{{t.blogs-section.read-more}}</a>
-                                        {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row empty-row"></div>
-                        {% endfor %}
-                        <div class="row boxed-row">
-                            <div class="col-sm-8">
-                                <h3>{{t.find-us}}</h3>
-                            </div>
-                            <div class="col-sm-4">
-                                <a target="_blank" href="{{site.stackoverflow_url}}">
-                                    <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo" aria-label="Navigate to Kabanero questions on Stackoverflow">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row boxed-row">
-                            <div class="col-sm-6">
-                                <h3 class="get-involved">{{t.get-involved}}</h3>
-                            </div>
-                            <div class="col-sm-6">
-                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute" aria="View Kabanero contribution information">{{t.contribute}}</a>
-                            </div>
-                        </div>
-                        <div class="row empty-row"></div>
                     </div>
-                    <div class="col-xl-5 offset-xl-1" id="twitter-col">
-                        <div class="row">
-                            <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">{{t.tweets-by}} {{site.twitter_username}} </a>
-                        </div>
-                        <div class="row boxed-row">
-                            <div class="col-md-10">
+                    <div class="row empty-row"></div>
+                    {% for post in site.posts limit:2 %}
+                        <div class="row blog-post-row">
+                            <div class="col-xl blog-post-column">
                                 <div class="row">
-                                    <h3 class="slack-text">{{t.chat-with-us}}</h3>
+                                    <div class="blog-header">
+                                        <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
+                                        <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
+                                        <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
+                                    </div>
+                                </div>
+                                <div class="row title-row">
+                                    {% if post.redirect_link %}
+                                        <h2><a href="{{ post.redirect_link }}" class="blog-title">{{ post.title | escape }}</a></h2>
+                                    {% else %}
+                                        <h2><a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title | escape }}</a></h2>
+                                    {% endif %}
                                 </div>
                                 <div class="row">
-                                    <a target="_blank" href={{site.slack_invite_url}} aria-label="Request an invite to the Kabanero Slack channel">
-                                        <p class="slack-invite">{{t.request-an-invite}}</p>
-                                    </a>
+                                    {% if post.redirct_link %}
+                                        <p>{{ post.seo-description | escape }}</p>
+                                    {% else %}
+                                        <p>{{ post.seo-description | escape }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="row">
+                                    <div class="text-right">
+                                    {% if post.redirect_link %}
+                                        <a href="{{ post.redirect_link }}" class="blog-read-more" aria-label="Read the blog titled {{ post.title }}">{{t.blogs-section.read-more}}</a>
+                                    {% else %}
+                                        <a href="{{ post.url | relative_url }}" class="blog-read-more" aria-label="Read the blog titled {{ post.title }}">{{t.blogs-section.read-more}}</a>
+                                    {% endif %}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
-                                <a target="_blank" href={{site.slack_url}} aria-label="Navigate to Kabanero Slack channel">
-                                    <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
+                        </div>
+                        <div class="row empty-row"></div>
+                    {% endfor %}
+                    <div class="row boxed-row">
+                        <div class="col-sm-8">
+                            <h3>{{t.find-us}}</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <a target="_blank" href="{{site.stackoverflow_url}}">
+                                <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo" aria-label="Navigate to Kabanero questions on Stackoverflow">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row boxed-row">
+                        <div class="col-sm-6">
+                            <h3 class="get-involved">{{t.get-involved}}</h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute" aria="View Kabanero contribution information">{{t.contribute}}</a>
+                        </div>
+                    </div>
+                    <div class="row empty-row"></div>
+                </div>
+
+                <!-- Right column Twitter -->
+                <div class="col-xl-5 offset-xl-1" id="twitter-col">
+                    <div class="row">
+                        <a class="twitter-timeline" data-height="622.5" href="{{site.twitter_url}}">{{t.tweets-by}} {{site.twitter_username}} </a>
+                    </div>
+                    <div class="row boxed-row">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <h3 class="slack-text">{{t.chat-with-us}}</h3>
+                            </div>
+                            <div class="row">
+                                <a target="_blank" href={{site.slack_invite_url}} aria-label="Request an invite to the Kabanero Slack channel">
+                                    <p class="slack-invite">{{t.request-an-invite}}</p>
                                 </a>
                             </div>
                         </div>
-                        <div class="row boxed-row">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col">
-                                        <h3 class="get-involved">{{t.see-what-is-cookin}}</h3>
-                                    </div>
+                        <div class="col-md-2">
+                            <a target="_blank" href={{site.slack_url}} aria-label="Navigate to Kabanero Slack channel">
+                                <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row boxed-row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="get-involved">{{t.see-what-is-cookin}}</h3>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/community" aria-label="View the Kabanero community page">{{t.join-community}}</a>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a role="button" class="btn kabanero-colored-button boxed-button" href="/community" aria-label="View the Kabanero community page">{{t.join-community}}</a>
                                 </div>
                             </div>
                         </div>

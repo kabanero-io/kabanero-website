@@ -28,6 +28,7 @@ function hideAllOpenSourcePlatformsCollapses(){
     $(`#open-source-platform-${id}-collapse`).show();
 
     $('.open-source-platform-box-selected').removeClass('open-source-platform-box-selected');
+    console.log(`#open-source-platform-${id}-box`)
     $(`#open-source-platform-${id}-box`).addClass('open-source-platform-box-selected');
 
     $('.open-source-platform-vertical-separator-visible').removeClass('open-source-platform-vertical-separator-visible');
@@ -43,13 +44,13 @@ $( document ).ready(function() {
 });
 
 $('.featured-model-box').click(function() {
-    $('.featuredModelsCollapse:visible').collapse('hide');
- });
+    $('.featured-collections-collapse:visible').collapse('hide');
+});
  
- function hoverFeaturedCollection(element){
+function hoverFeaturedCollection(element){
     element.setAttribute('src', '/img/collections-icon-rollover.png');
- }
+}
  
- function unhoverFeaturedCollection(element){
+function unhoverFeaturedCollection(element){
     element.setAttribute('src', '/img/collections-icon.png')
- }
+}

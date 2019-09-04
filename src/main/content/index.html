@@ -23,7 +23,7 @@ seo-title: Kabanero
                         <h3 id="intro-lighten-up-title">{{t.intro-title}}</h3>
                             {{t.intro-paragraph}}
                         </p>
-                        <a class="col-md-5" id="get-started-link" href="/get-started">{{t.get-started}}</a>
+                        <a class="col-md-5" id="get-started-link" href="/get-started" aria-label="Navigate to getting started">{{t.get-started}}</a>
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">
@@ -50,7 +50,7 @@ seo-title: Kabanero
                     <div class="role-box">
                         <img class="role-box-img img-fluid" src="/img/logos/development.png" alt="Developer image">
                         <p>{{t.development.description}}</p>
-                        <a role="button" class="btn btn-outline-dark col-md-8" href="/developer">{{t.common.learn-more}}</a>
+                        <a role="button" class="btn btn-outline-dark col-md-8" href="/developer" aria-label="Learn more about the Kabanero developer experience">{{t.common.learn-more}}</a>
                     </div>
                 </div>
                 <div class="col-xl-4">
@@ -58,7 +58,7 @@ seo-title: Kabanero
                     <div class="role-box">
                         <img class="role-box-img img-fluid"" src="/img/logos/architecture.png">
                         <p>{{t.architecture.description}}</p>
-                        <a role="button" class="btn btn-outline-dark col-md-8" href="/architect">{{t.common.learn-more}}</a>
+                        <a role="button" class="btn btn-outline-dark col-md-8" href="/architect" aria-label="Learn more about the Kabanero collections management">{{t.common.learn-more}}</a>
                     </div>
                 </div>
                 <div class="col-xl-4">
@@ -66,7 +66,7 @@ seo-title: Kabanero
                     <div class="role-box">
                         <img class="role-box-img img-fluid"" src="/img/logos/operations.png">
                         <p>{{t.operations.description}}</p>
-                        <a role="button" class="btn btn-outline-dark col-md-8" href="/operations">{{t.common.learn-more}}</a>
+                        <a role="button" class="btn btn-outline-dark col-md-8" href="/operations" aria-label="Learn more about Kabanero foundation installation">{{t.common.learn-more}}</a>
                     </div>
                 </div>
             </div>
@@ -375,7 +375,7 @@ seo-title: Kabanero
             <div class="row support-text">
                 <div class="col text-center description-text-block">
                     {{t.support.description}}
-                    <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
+                    <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link" aria-label="Navigate to IBM Cloud Pak for Applications information page">
                         {{t.support.link}}
                     </a>
                     {{t.support.description-cont}}
@@ -396,7 +396,7 @@ seo-title: Kabanero
                                 <div class="row">
                                     <h3 class="col-md-5 visit-text">{{t.blogs-section.visit-text}}</h3>
                                     <div class="col-md-3"></div>
-                                    <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog">{{t.blogs-section.visit}}</a>
+                                    <a role="button" class="btn col-md-3 visit-blog-button kabanero-colored-button" href="/blog" aria-label="Visit Kabanero blog">{{t.blogs-section.visit}}</a>
                                 </div>
                             </div>
                         </div>
@@ -428,9 +428,9 @@ seo-title: Kabanero
                                     <div class="row">
                                         <div class="text-right">
                                         {% if post.redirect_link %}
-                                            <a href="{{ post.redirect_link }}" class="blog-read-more">{{t.blogs-section.read-more}}</a>
+                                            <a href="{{ post.redirect_link }}" class="blog-read-more" aria-label="Read the blog titled {{ post.title }}">{{t.blogs-section.read-more}}</a>
                                         {% else %}
-                                            <a href="{{ post.url | relative_url }}" class="blog-read-more">{{t.blogs-section.read-more}}</a>
+                                            <a href="{{ post.url | relative_url }}" class="blog-read-more" aria-label="Read the blog titled {{ post.title }}">{{t.blogs-section.read-more}}</a>
                                         {% endif %}
                                         </div>
                                     </div>
@@ -444,7 +444,7 @@ seo-title: Kabanero
                             </div>
                             <div class="col-sm-4">
                                 <a target="_blank" href="{{site.stackoverflow_url}}">
-                                    <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo">
+                                    <img src="/img/stackoverflow-orange.svg" class="img-fluid stackoverflow-img" alt="Stackoverflow logo" aria-label="Navigate to Kabanero questions on Stackoverflow">
                                 </a>
                             </div>
                         </div>
@@ -453,7 +453,7 @@ seo-title: Kabanero
                                 <h3 class="get-involved">{{t.get-involved}}</h3>
                             </div>
                             <div class="col-sm-6">
-                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute">{{t.contribute}}</a>
+                                <a role="button" class="btn kabanero-colored-button boxed-button" href="/contribute" aria="View Kabanero contribution information">{{t.contribute}}</a>
                             </div>
                         </div>
                         <div class="row empty-row"></div>
@@ -468,13 +468,13 @@ seo-title: Kabanero
                                     <h3 class="slack-text">{{t.chat-with-us}}</h3>
                                 </div>
                                 <div class="row">
-                                    <a target="_blank" href={{site.slack_invite_url}}>
+                                    <a target="_blank" href={{site.slack_invite_url}} aria-label="Request an invite to the Kabanero Slack channel">
                                         <p class="slack-invite">{{t.request-an-invite}}</p>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <a target="_blank" href={{site.slack_url}}>
+                                <a target="_blank" href={{site.slack_url}} aria-label="Navigate to Kabanero Slack channel">
                                     <img src="/img/slack-icon-orange.svg" class="img-fluid slack-link" alt="Slack logo">
                                 </a>
                             </div>
@@ -488,7 +488,7 @@ seo-title: Kabanero
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/community">{{t.join-community}}</a>
+                                        <a role="button" class="btn kabanero-colored-button boxed-button" href="/community" aria-label="View the Kabanero community page">{{t.join-community}}</a>
                                     </div>
                                 </div>
                             </div>

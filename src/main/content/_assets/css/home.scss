@@ -465,9 +465,8 @@ body{
 
 .featuredModelsCollapse{
     background-color:#f4f5f7;
-    padding: 30px 30px 30px 30px;
-    margin-left:-20vw;
-    margin-right:-20vw;
+    padding: 30px 0 30px 0;
+    max-width:100%;
 }
 
 .foundational-toolsText{
@@ -727,11 +726,10 @@ body{
     margin-right:5px;
 }
 
-.collections-card{
-    margin-left:20vw;
-    margin-right:20vw;
-}
-
 #kabanero-logo{
     max-height:400px;
+}
+
+.card-row{
+    max-width:100%
 }

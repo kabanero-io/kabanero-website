@@ -23,5 +23,5 @@ deploy:
   script: ./deploy.sh
   on:
     repo: kidus60/kabanero-website
-    branch: master
+    branch: test-travis
   skip_cleanup: true

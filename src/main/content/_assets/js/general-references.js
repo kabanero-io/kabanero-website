@@ -241,7 +241,7 @@ function addHashListener() {
     $(window).on('hashchange', function () {
         if (window.location.hash) {
             var tocHref = generalDocsFolder + window.location.hash.substring(1);
-            var tocElement = $('#toc-container').find('div[href="" + tocHref + ""]');
+            var tocElement = $('#toc-container').find(`div[href="${tocHref}"]`);
             if (tocElement.length === 1) {
                 scrollToTOC(tocElement);
             }
@@ -297,7 +297,7 @@ $(document).ready(function () {
 function selectDocFromHash(){
     let pageLocation = window.location.hash;
     pageLocation = pageLocation.substring(1); //take the '#' off of the front of the hash
-    let selectedDocLink = $( 'div[href$="" + pageLocation + ""]' ); //jQuery endswith selector finds the div with the href of the doc in the url
+    let selectedDocLink = $( `div[href$="${pageLocation}"]` ); //jQuery endswith selector finds the div with the href of the doc in the url
     let selectedCategory = $(selectedDocLink).data('category');
     $(`#${selectedCategory}`).click(); //drop down the twistie
     $(selectedDocLink).click(); //highlight the selected doc

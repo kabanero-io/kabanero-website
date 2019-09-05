@@ -185,19 +185,6 @@ index:
   cloud-native-box:
     header: Cloud Native
     description: Kabanero can help you create cloud native applications with your team.
-  featured-models:
-    header: Kabanero Collections
-    a: A
-    description: leads a company down a golden path to develop quality microservice-based applications. A Kabanero Collection provides guides for developers, templates for simplicity and consistency of developing applications, a runtime in a certified base container image infused with expertise for Kubernetes deployments, and an integrated toolchain for developing with modern tools.
-    eclipse-microProfile: 
-      tab-name: Eclipse MicroProfile
-      description: Eclipse MicroProfile is a set of APIs used to optimize Java applications for a microservices architecture. With this stack, you can deliver microservices based upon the Eclipse MicroProfile specifications. Build and run high-quality applications with Open Liberty runtime, which includes OpenJDK with container-optimizations in OpenJ9.
-    spring:
-     tab-name: Spring
-     description: Spring&reg; is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Open Liberty runtime provides support for Spring applications with OpenJDK and container-optimizations in OpenJ9.
-    node: 
-      tab-name: NodeJS
-      description: Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser. Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers. It fits well in web-based frontends and backend API services for microservices-based applications.
   open-source-platform:
     header: Kabanero Application Development and Deployment Lifecycle
     modernize:

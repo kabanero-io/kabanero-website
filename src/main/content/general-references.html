@@ -42,12 +42,14 @@ permalink: /docs/
                         No Search Results
                     </h2>
                     <div class="row">
-                        <h2 class="col-xl-12">
-                            <button class="btn doc-category" id={{buttonId}} type="button" data-toggle="collapse" data-target={{dataTarget}} data-icon={{iconId}} onclick="toggleIcon(this)">
-                                <img class="plus-minus-icon" id={{iconId}} src="/img/icon_plus.png">
-                                {{cat}}
-                            </button>
-                        </h2>
+                        <div class="col-xl-12">
+                            <h2>
+                                <button class="btn doc-category" id={{buttonId}} type="button" data-toggle="collapse" data-target={{dataTarget}} data-icon={{iconId}} onclick="toggleIcon(this)">
+                                    <img class="plus-minus-icon" id={{iconId}} src="/img/icon_plus.png">
+                                    {{cat}}
+                                </button>
+                            </h2>
+                        </div>
                     </div>
                     {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
                     <div id={{catNoSpaces}} class="collapse" >

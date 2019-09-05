@@ -29,6 +29,7 @@
 
 #welcome-doc, #toc-column ul li div[href]:hover {
     cursor: pointer;
+    margin-bottom:10px;
 }
 
 .addFocus {
@@ -255,7 +256,8 @@ tableblock {
     width: 15px;
     right: 15px;
     position: relative;
-    bottom: 1px;
+    top:5px;
+    float:left;
 }
 
 #search-button{

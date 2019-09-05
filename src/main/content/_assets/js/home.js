@@ -41,6 +41,14 @@ $( document ).ready(function() {
     // is over the whole element when tabbed into focus. The button doesn't get highlighted when tabbed due to css on it
     $('.model-logo > button').on('click keypress', hideAllFeaturedModelsCollapses);
     $('.model-logo').on('keypress', function(){$(this).children('button').click();});
+
+    // Let the document know when the mouse is being used
+    $(document.body).on('mousedown', function() {
+        document.body.classList.add('using-mouse');
+    });
+    $(document.body).on('keydown', function() {
+        document.body.classList.remove('using-mouse');
+    });
 });
 
 $('.featured-model-box').click(function() {

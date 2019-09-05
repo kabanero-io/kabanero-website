@@ -18,6 +18,11 @@ body {
     font-family: 'IBM Plex Sans', Trebuchet MS, Helvetica, Arial;
 }
 
+/* When mouse is detected, all focused elements have outline removed, otherwise keep the outline for accessability  */
+body.using-mouse :focus {
+    outline: none;
+}
+
 code {
     color: $color-kabanero;
     background-color: #F5F5F5;

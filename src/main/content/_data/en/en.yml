@@ -247,24 +247,18 @@ index:
     learn-more: Learn More
     eclipse-microProfile: Eclipse MicroProfile
 
-kabanero-foundation-setup:
-  intro-title: Kabanero Foundation Installation
-  intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster.  Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a collection. Kabanero Foundation installs the foundational open technologies (Knative, Istio, Tekton), then activates a default set of featured collections.
-  intro-text-bottom: This experience is typically performed by a cloud operations team, although anyone skilled in setting up Kubernetes can also install Kabanero.
-  prerequisites:
+install:
+  title: Install Kabanero Foundation
+  intro-text: Installing Kabanero Foundation will allow you to acitvate, manage, and share collections with your team all while maintaining governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
+  intro-text-bottom: "The full suite of Kabanero Foundation components that will be installed include: Istio, Knative, Eventing, Serving, and Tekton pipelines. Follow the instructions to set up Kubernetes, install the Kabanero Operator, and set up your Tekton pipeline."
+  prereq:
     header: Prerequisites
-    text: Kabanero Foundation is installed in a Kubernetes cluster. Kubernetes must first be installed. Today Kabanero has been tested on the Origin Community Distribution of Kubernetes (OKD) version 3.11. There is intent to also expand testing to additional distributions including upstream Kubernetes and Red Hat OpenShift in the future.
-    okd-insturctions: OKD install instructions
-    minimum-requirements: Kabanero minimum resource requirements
-  try-operator-based: 
-    header: Try the operator-based Kabanero Foundation Install
-    follow-instructions: Follow the instructions for the
-    link: scripted Kabanero Foundation setup.
-  guide-through: 
-    text: 'This will guide you through:'
-    step-one: Setup of Kubernetes access needed for the install.
-    step-two: Installation of the Kabanero operator.
-    step-three: Setup of your first pipeline
+    and: and
+    min-res: Minimun resource requirements
+    okd-version: OKD Version
+    okd-alt: Link to OKD install
+  instructions: view instructions
+
 
 operations:
   intro-title: Kabanero Foundation Installation

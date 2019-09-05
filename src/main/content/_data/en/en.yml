@@ -1,3 +1,5 @@
+common:
+  instructions: View Instructions
 _includes:
   header:
     whats-new-toast-text: Check out what's in the latest release of Kabanero
@@ -257,8 +259,6 @@ install:
     min-res: Minimun resource requirements
     okd-version: OKD Version
     okd-alt: Link to OKD install
-  instructions: view instructions
-
 
 operations:
   intro-title: Kabanero Foundation Installation

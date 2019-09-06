@@ -321,21 +321,27 @@ function searchDocs(){
     let searchTerm = document.getElementById('doc-search').value.toLowerCase();
     let docTitles = $('.doc-title');
     $.each(docTitles, function(index, value){
-        let docTitle = $(value).text().toLowerCase();
-        let parentElement = $(value).parent();
-        !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
+        if($(value).attr('id') !== 'welcome-doc'){
+            let docTitle = $(value).text().toLowerCase();
+            console.log(docTitle);
+            let parentElement = $(value).parent();
+            !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
+            console.log(!docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected'));
+        }
     });
     hideCategoriesIfEmpty();
-    $('.doc-category:visible').length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
+    $('.doc-category:visible').length === 1 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
 }
 
 function hideCategoriesIfEmpty(){
     let categories = $('.doc-category');
     $.each(categories, function(index, category){
-        let collapseId = $(category).data('target');
-        let childLinks = $(collapseId).find('.doc-link');
-        let isVisible = areLinksVisible(childLinks);
-        isVisible ? $(category).show() : $(category).hide();
+        if($(category).attr('id') !== 'welcome-doc'){
+            let collapseId = $(category).data('target');
+            let childLinks = $(collapseId).find('.doc-link');
+            let isVisible = areLinksVisible(childLinks);
+            isVisible ? $(category).show() : $(category).hide();
+        }
     });
 }
 

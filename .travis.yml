@@ -26,4 +26,3 @@ deploy:
     repo: kidus60/kabanero-website
     branch: test-travis
     tags: false
-

@@ -42,4 +42,4 @@ else
 fi
 
 echo ibmcloud cf blue-green-deploy $APP_NAME --delete-old-apps --smoke-test "$CUR_DIR"/smoke-test.py
-ibmcloud cf blue-green-deploy $APP_NAME 
+ibmcloud cf blue-green-deploy $APP_NAME --delete-old-apps 

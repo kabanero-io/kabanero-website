@@ -9,14 +9,16 @@ install:
 
 script: 
  - ./scripts/build_jekyll_maven.sh
+
+sudo: false
+
 before_deploy: 
  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-# - chmod -R u+x ./Bluemix_CLI/bin
-# - chmod +x ./scripts/ibmcloud-cf-push.sh
+
 deploy: 
   provider: script
-  script: ./scripts/ibmcloud-cf-push.sh kabanero-kidus
+  skip_cleanup: true
+  script: ./scripts/ibmcloud-cf-push.sh kidus
   on:
     repo: kidus60/kabanero-website
     branch: test-travis
-  skip_cleanup: true

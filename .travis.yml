@@ -16,10 +16,14 @@ before_deploy:
  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 
 deploy:
-  skip_cleanup: true
   provider: releases
-  api_key: rjU9Og1aAoMvEtyKlcFuby09hYJSmomHgbAiT2a86N1MepJXPzhPP0mSNwIb7gzyAcx6Vd6enP8dA04/8a0uTSWp6UNydK/gQmhGni1Zsw6/rfXqSX+3gQ+nouepeaiw97+yK8Xii4n+kYjA2qr/7fiS7VkWMjnivb/Yv/aBx8WaM6xv4kerw+l3XTE5ngCca1L6+IHE1TNjhxCStCRZjKSdVRvw3XlMN3NtJiP9+aWaFfF7IOYTNm2n+X5EqHW1IqBW5OZVLVu5vuTAqPBd/OxV5GBC+/5hS1v0X+FhEyKULGqfvW0mxoq9/ilHMCbzRaUOzRKL+uZoxDBbumyA5hgAG8EZLCHk8Bico1WEqB/v0L/NXxs9wlblMNllma9MxbSTpHHh7igfTu2p7tPEbFFwTkgra5Zx06tjwiDrsSz7SqAfydnnWEHJzjPevtt+hJ5r7WY44zBPDsl+2wrKN2J7xcBcy8bGFKEvBdeeSfugahUEJDHjMlwwoAEZtgU6d2u0oOyl4HMKv6UH0m510mmlLfGg1OOEupdabaJk32TZLpaXby7gnxpUhDSdOrBVRkfA6fYhghOY7qRzwTLpOgMgdAx24/jM0fnMe8BeRbdCw7kmGNuBl53qTxaga+u80ITjqsRCAcRsxe+Kul6c0ImD3qHwvXbsxTWX/3oHNxE=
+  skip_cleanup: true
+  api_key:
+    secure: rjU9Og1aAoMvEtyKlcFuby09hYJSmomHgbAiT2a86N1MepJXPzhPP0mSNwIb7gzyAcx6Vd6enP8dA04/8a0uTSWp6UNydK/gQmhGni1Zsw6/rfXqSX+3gQ+nouepeaiw97+yK8Xii4n+kYjA2qr/7fiS7VkWMjnivb/Yv/aBx8WaM6xv4kerw+l3XTE5ngCca1L6+IHE1TNjhxCStCRZjKSdVRvw3XlMN3NtJiP9+aWaFfF7IOYTNm2n+X5EqHW1IqBW5OZVLVu5vuTAqPBd/OxV5GBC+/5hS1v0X+FhEyKULGqfvW0mxoq9/ilHMCbzRaUOzRKL+uZoxDBbumyA5hgAG8EZLCHk8Bico1WEqB/v0L/NXxs9wlblMNllma9MxbSTpHHh7igfTu2p7tPEbFFwTkgra5Zx06tjwiDrsSz7SqAfydnnWEHJzjPevtt+hJ5r7WY44zBPDsl+2wrKN2J7xcBcy8bGFKEvBdeeSfugahUEJDHjMlwwoAEZtgU6d2u0oOyl4HMKv6UH0m510mmlLfGg1OOEupdabaJk32TZLpaXby7gnxpUhDSdOrBVRkfA6fYhghOY7qRzwTLpOgMgdAx24/jM0fnMe8BeRbdCw7kmGNuBl53qTxaga+u80ITjqsRCAcRsxe+Kul6c0ImD3qHwvXbsxTWX/3oHNxE=
   file: "$TRAVIS_BUILD_DIR/kabanero-website.tar.gz"
   script: "./scripts/ibmcloud-cf-push.sh kidus"
   on:
-    tags: true
+    repo: kidus60/kabanero-website
+    branch: test-travis
+    tags: false
+

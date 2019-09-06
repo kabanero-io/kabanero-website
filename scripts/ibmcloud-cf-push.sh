@@ -1,4 +1,26 @@
 #!/bin/bash
+
+# verify that the required Cloud Foundry variables are set
+# - IBM_CLOUD_API: IBM Cloud API endpoint 
+if [ -z "$IBM_CLOUD_API" ]; then
+    echo 'Error: IBM Cloud API endpoint is undefined.'
+fi
+
+# - IBM_CLOUD_ORGANIZATION: IBM Cloud Foundry organization name
+if [ -z "$IBM_CLOUD_ORGANIZATION" ]; then
+    echo 'Error: IBM Cloud Foundry organization name is undefined.'
+fi
+
+# - CF_SPACE: IBM Cloud Foundry space name
+if [ -z "$IBM_CLOUD_SPACE" ]; then
+    echo 'Error: IBM Cloud Foundry space name is undefined.'
+fi
+
+# - IBM_CLOUD_API: IBM Cloud API key
+if [ -z "$IBM_CLOUD_API_KEY" ]; then
+    echo 'Error: IBM Cloud API key is undefined.'
+fi
+
 set -e
 
 CUR_DIR="$(cd $(dirname $0) && pwd)"

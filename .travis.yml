@@ -11,13 +11,13 @@ sudo: required
 
 script: 
   - ./scripts/build_jekyll_maven.sh
-before_deploy: 
-- curl -L https://clis.ng.bluemix.net/download/bluemix-cli/0.6.1/linux64 | tar -zx
-- chmod -R u+x ./Bluemix_CLI/bin
-- chmod +x ./deploy.sh
+# before_deploy: 
+# - curl -L https://clis.ng.bluemix.net/download/bluemix-cli/0.6.1/linux64 | tar -zx
+# - chmod -R u+x ./Bluemix_CLI/bin
+# - chmod +x ./scripts/ibmcloud-cf-push.sh
 deploy: 
   provider: script
-  script: ./deploy.sh
+  script: ./scripts/ibmcloud-cf-push.sh
   on:
     repo: kidus60/kabanero-website
     branch: master

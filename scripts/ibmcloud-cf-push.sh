@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+CUR_DIR="$(cd $(dirname $0) && pwd)"
 
 # verify that the required Cloud Foundry variables are set
 # - IBM_CLOUD_API: IBM Cloud API endpoint 
@@ -21,9 +24,6 @@ if [ -z "$IBM_CLOUD_API_KEY" ]; then
     echo 'Error: IBM Cloud API key is undefined.'
 fi
 
-set -e
-
-CUR_DIR="$(cd $(dirname $0) && pwd)"
 APP_NAME=$1
 
 echo "============== Logging into IBM Cloud's Cloud Foundry via ibmcloud CLI =============="

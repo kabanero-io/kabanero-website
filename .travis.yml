@@ -15,7 +15,7 @@ before_deploy:
 # - chmod +x ./scripts/ibmcloud-cf-push.sh
 deploy: 
   provider: script
-  script: ./scripts/ibmcloud-cf-push.sh
+  script: ./scripts/ibmcloud-cf-push.sh kabanero-kidus
   on:
     repo: kidus60/kabanero-website
     branch: test-travis

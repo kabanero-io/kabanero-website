@@ -41,5 +41,5 @@ else
     ibmcloud cf install-plugin -f blue-green-deploy -r CF-Community
 fi
 
-
+echo ibmcloud cf blue-green-deploy $APP_NAME --delete-old-apps --smoke-test "$CUR_DIR"/smoke-test.py
 ibmcloud cf blue-green-deploy $APP_NAME --delete-old-apps --smoke-test "$CUR_DIR"/smoke-test.py

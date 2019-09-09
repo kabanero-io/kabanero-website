@@ -7,7 +7,7 @@ install:
   - npm install eslint --save-dev
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
-script: >
+script: 
     if [ $JEKYLL_ENV == "production" ]; then
       cp robots.txt src/main/content/robots.txt      
       ./scripts/build_jekyll_maven.sh

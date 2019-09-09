@@ -24,6 +24,5 @@ deploy:
   - provider: script
     skip_cleanup: true
     on:
-      repo: $USER/kabanero-website
-      branch: production
-      script: "echo $USER"
+      repo: $TRAVIS_REPO_SLUG
+      script: "echo $TRAVIS_REPO_SLUG "

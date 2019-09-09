@@ -8,9 +8,6 @@ install:
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
 script: 
- - echo $TRAVIS_REPO_SLUG
- - echo  $TRAVIS_BRANCH
- - echo $TRAVIS_PULL_REQUEST
  - ./scripts/build_jekyll_maven.sh
 
 sudo: false
@@ -29,4 +26,5 @@ deploy:
     on:
       repo: $TRAVIS_REPO_SLUG
       branch: $TRAVIS_BRANCH
-      condition: $TRAVIS_PULL_REQUEST = false 
+      if: type = api 
+    script: "./scripts/ibmcloud-cf-push.sh"

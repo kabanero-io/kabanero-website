@@ -8,9 +8,9 @@ install:
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
 script: 
- - echo $TYPE
+ - echo type
  - ./scripts/build_jekyll_maven.sh
- - echo $type
+ 
 
 sudo: false
 

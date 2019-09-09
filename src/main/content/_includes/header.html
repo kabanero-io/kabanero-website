@@ -12,7 +12,7 @@
     </div>
 
     <nav class="navbar navbar-expand-md navbar-light bg-custom">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/" aria-label="Navigate to Kabanero home page">
           <img id="kabanero_nav_img" src="/img/Kabanero_logo_white.png" class="img-fluid" alt="Kabanero Nav image">
         </a>
         <button id="nav-toggle-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,15 +22,15 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="/get-started">{{t.getting-started}}</a>
+                <a class="nav-link" href="/get-started" aria-label="Navigate to getting started">{{t.getting-started}}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="resources-dropdown" role="button" data-toggle="dropdown">
                         {{t.resources}}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/docs/">{{t.docs}}</a>
-                        <a class="dropdown-item" href="/blog/">{{t.blogs}}</a>
+                        <a class="dropdown-item" href="/docs/" aria-label="Navigate to Kabanero docs">{{t.docs}}</a>
+                        <a class="dropdown-item" href="/blog/" aria-label="Navigate to Kabanero blog">{{t.blogs}}</a>
                     </div>
                 </li>
                 <!-- <li class="nav-item">
@@ -38,16 +38,16 @@
                 </li> -->
             </ul>
             <div class="form-inline my-2 my-lg-0">
-                <a class="float_right_section ml-3" target="_blank" href="{{site.slack_url}}">
+                <a class="float_right_section ml-3" target="_blank" href="{{site.slack_url}}" aria-label="Navigate to Kabanero Slack channel">
                 <img id="footer_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
                 </a>
-                <a class="float_right_section" target="_blank" href="{{site.stackoverflow_url}}">
+                <a class="float_right_section" target="_blank" href="{{site.stackoverflow_url}}" aria-label="Navigate to Kabanero questions on Stackoverflow">
                 <img id="header_stackoverflow_img" src="/img/Header_StackO.svg" class="img-fluid" alt="stackoverflow logo">
                 </a>
-                <a class="float_right_section" target="_blank" href="{{site.github_url}}">
+                <a class="float_right_section" target="_blank" href="{{site.github_url}}" aria-label="Navigate to Kabanero-io github org">
                 <img id="header_github_img" src="/img/header_github_icon.svg" class="img-fluid" alt="github logo">
                 </a>
-                <a class="float_right_section" target="_blank" href="{{site.twitter_url}}">
+                <a class="float_right_section" target="_blank" href="{{site.twitter_url}}" aria-label="Navigate to Kabanero Twitter feed">
                 <img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid" alt="twitter logo">
                 </a>
             </div>

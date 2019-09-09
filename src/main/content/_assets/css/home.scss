@@ -54,17 +54,9 @@ body{
     margin-top: 0px;
 }
 
-#box-row{
-    margin-top:30px;
-    margin-right:30px;
-    margin-left:30px;
-}
-
 .open-source-platform{
-    background-color: #000000;
+    background-color: #292828;
     padding: 15px 0 15px 0;
-    margin-left:-15px;
-    margin-right:-15px;
 }
 
 .open-source-platform-col{
@@ -86,13 +78,12 @@ body{
     height:120px;
     background-color: #d8d8d8;
     color: #000000;
-    border:5px solid #000000;
     cursor: pointer;
 
     &:hover{
         background-color: #FFFFFF;
     }
-
+    
     &:focus{
         outline: $color-kabanero auto 5px;
     }
@@ -100,10 +91,7 @@ body{
 
 .open-source-platform-box-selected{
     background-color:white;
-    color:black;
-    border: 4px solid;
-    border-image-source: linear-gradient(180deg, $color-kabanero, #e3690a);
-    border-image-slice:1;
+    border: 4px solid #292828;
 }
 
 .open-source-platform-horizontal-separator{
@@ -111,25 +99,11 @@ body{
     border-top:5px solid $color-kabanero;
 }
 
-.open-source-platform-vertical-separator{
-    height:50px;
-    margin-left:50%;
-}
-
-.open-source-platform-vertical-separator-visible{
-    border-width:0 0 0 3px;
-    border-left: solid;
-    border-image-source: linear-gradient(180deg, #e3690a, #fbae61);
-    border-image-slice:1;
-}
-
 .open-source-platform-content-box{
     padding:20px;
     background-color: #f4f5f7;
     color: #000000;
     border-top:6px solid #000000;
-    margin-right:30px !important;
-    margin-left:30px !important;
 }
 
 .no-margin{
@@ -176,14 +150,6 @@ body{
 .featured-models{
     background-color: #f4f5f7;
     margin-top: 3em;
-    padding-bottom: 3em;
-    padding-top: 3em;
-    margin-left:-15px;
-    margin-right:-15px;
-}
-
-.support-title{
-    padding-top: 3em;
 }
 
 .cpa-link{
@@ -194,7 +160,8 @@ body{
     }
 }
 
-.description-text-block{
+.support-desc-text{
+    font-size: 18px;
     margin-top: 20px;
 }
 
@@ -273,17 +240,6 @@ body{
     padding-right: 15px;
     right: 0;
     color: #292828;
-}
-
-.model-logo{
-    text-align: center;
-    font-size: 1.2em;
-    margin-left: 1.8em;
-    margin-top: 10px;
-}
-
-.model-logo .img-fluid{
-    height: 100px;
 }
 
 #open_source_title {
@@ -466,9 +422,9 @@ body{
     margin-bottom:30px
 }
 
-.featuredModelsCollapse{
-    background-color:#f4f5f7;
-    padding: 30px 30px 30px 30px;
+.featured-collections-detail{
+    padding-top: 25px;
+    background-color: #f4f5f7;
 }
 
 .foundational-toolsText{
@@ -559,10 +515,6 @@ body{
 .featured-model-box{
     border:0;
     background-color:#f4f5f7;
-
-    &:focus{
-       outline:0; 
-    }
 }
 
 .foundational-tools{
@@ -692,7 +644,7 @@ body{
     margin-left:25px;
     margin-right:25px;
     padding: 10px 25px 10px 25px;
-    height:420px;
+    min-height:445px;
 }
 
 .centered{
@@ -700,7 +652,7 @@ body{
 }
 
 .role-box-img{
-    height:127px !important;
+    max-height:127px;
     margin-top:10px;
     margin-bottom:30px;
 }
@@ -726,4 +678,12 @@ body{
 .foundational-tech{
     margin-left:5px;
     margin-right:5px;
+}
+
+#kabanero-logo{
+    max-height:400px;
+}
+
+.card-row{
+    max-width:100%
 }

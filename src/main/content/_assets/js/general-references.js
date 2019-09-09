@@ -241,7 +241,7 @@ function addHashListener() {
     $(window).on('hashchange', function () {
         if (window.location.hash) {
             var tocHref = generalDocsFolder + window.location.hash.substring(1);
-            var tocElement = $('#toc-container').find('div[href="" + tocHref + ""]');
+            var tocElement = $('#toc-container').find(`div[href="${tocHref}"]`);
             if (tocElement.length === 1) {
                 scrollToTOC(tocElement);
             }
@@ -297,7 +297,7 @@ $(document).ready(function () {
 function selectDocFromHash(){
     let pageLocation = window.location.hash;
     pageLocation = pageLocation.substring(1); //take the '#' off of the front of the hash
-    let selectedDocLink = $( 'div[href$="" + pageLocation + ""]' ); //jQuery endswith selector finds the div with the href of the doc in the url
+    let selectedDocLink = $( `div[href$="${pageLocation}"]` ); //jQuery endswith selector finds the div with the href of the doc in the url
     let selectedCategory = $(selectedDocLink).data('category');
     $(`#${selectedCategory}`).click(); //drop down the twistie
     $(selectedDocLink).click(); //highlight the selected doc
@@ -321,21 +321,27 @@ function searchDocs(){
     let searchTerm = document.getElementById('doc-search').value.toLowerCase();
     let docTitles = $('.doc-title');
     $.each(docTitles, function(index, value){
-        let docTitle = $(value).text().toLowerCase();
-        let parentElement = $(value).parent();
-        !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
+        if($(value).attr('id') !== 'welcome-doc'){
+            let docTitle = $(value).text().toLowerCase();
+            console.log(docTitle);
+            let parentElement = $(value).parent();
+            !docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected') ? $(parentElement).hide() : $(parentElement).show();
+            console.log(!docTitle.includes(searchTerm) && !parentElement.hasClass('toc-selected'));
+        }
     });
     hideCategoriesIfEmpty();
-    $('.doc-category:visible').length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
+    $('.doc-category:visible').length === 1 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
 }
 
 function hideCategoriesIfEmpty(){
     let categories = $('.doc-category');
     $.each(categories, function(index, category){
-        let collapseId = $(category).data('target');
-        let childLinks = $(collapseId).find('.doc-link');
-        let isVisible = areLinksVisible(childLinks);
-        isVisible ? $(category).show() : $(category).hide();
+        if($(category).attr('id') !== 'welcome-doc'){
+            let collapseId = $(category).data('target');
+            let childLinks = $(collapseId).find('.doc-link');
+            let isVisible = areLinksVisible(childLinks);
+            isVisible ? $(category).show() : $(category).hide();
+        }
     });
 }
 

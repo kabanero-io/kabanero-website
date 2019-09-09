@@ -1,3 +1,5 @@
+common:
+  instructions: View Instructions
 _includes:
   header:
     whats-new-toast-text: Check out what's in the latest release of Kabanero
@@ -5,6 +7,8 @@ _includes:
     getting-started: Getting Started
     resources: Resources
     close: Close
+    docs: Docs
+    blogs: Blog
   doc_header:
     toggle-navigation: Toggle navigation
     guides: Guides
@@ -183,19 +187,6 @@ index:
   cloud-native-box:
     header: Cloud Native
     description: Kabanero can help you create cloud native applications with your team.
-  featured-models:
-    header: Kabanero Collections
-    a: A
-    description: leads a company down a golden path to develop quality microservice-based applications. A Kabanero Collection provides guides for developers, templates for simplicity and consistency of developing applications, a runtime in a certified base container image infused with expertise for Kubernetes deployments, and an integrated toolchain for developing with modern tools.
-    eclipse-microProfile: 
-      tab-name: Eclipse MicroProfile
-      description: Eclipse MicroProfile is a set of APIs used to optimize Java applications for a microservices architecture. With this stack, you can deliver microservices based upon the Eclipse MicroProfile specifications. Build and run high-quality applications with Open Liberty runtime, which includes OpenJDK with container-optimizations in OpenJ9.
-    spring:
-     tab-name: Spring
-     description: Spring&reg; is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Open Liberty runtime provides support for Spring applications with OpenJDK and container-optimizations in OpenJ9.
-    node: 
-      tab-name: NodeJS
-      description: Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser. Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers. It fits well in web-based frontends and backend API services for microservices-based applications.
   open-source-platform:
     header: Kabanero Application Development and Deployment Lifecycle
     modernize:
@@ -258,24 +249,16 @@ index:
     learn-more: Learn More
     eclipse-microProfile: Eclipse MicroProfile
 
-kabanero-foundation-setup:
-  intro-title: Kabanero Foundation Installation
-  intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster.  Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a collection. Kabanero Foundation installs the foundational open technologies (Knative, Istio, Tekton), then activates a default set of featured collections.
-  intro-text-bottom: This experience is typically performed by a cloud operations team, although anyone skilled in setting up Kubernetes can also install Kabanero.
-  prerequisites:
+install:
+  title: Install Kabanero Foundation
+  intro-text: Installing Kabanero Foundation will allow you to acitvate, manage, and share collections with your team all while maintaining governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
+  intro-text-bottom: "The full suite of Kabanero Foundation components that will be installed include: Istio, Knative, Eventing, Serving, and Tekton pipelines. Follow the instructions to set up Kubernetes, install the Kabanero Operator, and set up your Tekton pipeline."
+  prereq:
     header: Prerequisites
-    text: Kabanero Foundation is installed in a Kubernetes cluster. Kubernetes must first be installed. Today Kabanero has been tested on the Origin Community Distribution of Kubernetes (OKD) version 3.11. There is intent to also expand testing to additional distributions including upstream Kubernetes and Red Hat OpenShift in the future.
-    okd-insturctions: OKD install instructions
-    minimum-requirements: Kabanero minimum resource requirements
-  try-operator-based: 
-    header: Try the operator-based Kabanero Foundation Install
-    follow-instructions: Follow the instructions for the
-    link: scripted Kabanero Foundation setup.
-  guide-through: 
-    text: 'This will guide you through:'
-    step-one: Setup of Kubernetes access needed for the install.
-    step-two: Installation of the Kabanero operator.
-    step-three: Setup of your first pipeline
+    and: and
+    min-res: Minimun resource requirements
+    okd-version: OKD Version
+    okd-alt: Link to OKD install
 
 operations:
   intro-title: Kabanero Foundation Installation

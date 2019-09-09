@@ -7,40 +7,71 @@ css:
 seo-title: foundation-install
 permalink: /foundation-install/
 ---
+{% assign t = site.data[site.active_lang] %}
+
 <div class="container">
-    <div class="row text-center" id="title-row">
-        <h1 class="col">Getting Started</h1>
-        <hr>
-    </div>
-    <div class="row">
-        <h2 class="col-md-12">Install Kabanero Foundation</h2>
-        <p class="col-md-12 body-text">Installing Kabanero Foundation will allow you to acitvate, manage, and share collections with your team all while maintaining governance over each piece of the collection.
-            Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, 
-            but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
-        </p>
-        <p class="col-md-12 body-text">The full suite of Kabanero Foundation components that will be installed include: Istio, Knative, Eventing, Serving, and Tekton pipelines. Follow the instructions to
-            set up Kubernetes, install the Kabanero Operator, and set up your Tekton pipeline.
-        </p>
-        <h2 class="col-md-12">Prerequisites: <span class="prereq-text"><a href="https://kubernetes.io/" target="_blank">Kubernetes</a> and <a href="https://docs.openshift.com/container-platform/3.11/welcome/index.html" target="_blank">OKD Version 3.11</a></span></h2>
-        <div class="col-md-2 button-div">
-            <a href="/operations/kabanero-foundation-setup/" role="button" class="btn kabanero-colored-button col">View Instructions</a>
+    <div class="row text-center">
+        <div class="col-md">
+            <h1>{{t._includes.header.getting-started}}</h1>
+            <hr>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md">
+            <h2>{{t.install.title}}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <p class="body-text">{{t.install.intro-text}}</p>
+            <p class="body-text">{{t.install.intro-text-bottom}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <h2 class="d-inline">{{t.install.prereq.header}}: </h2>
+            <span class="prereq-text">
+                <ul>
+                    <li>
+                        <a href="https://github.com/kabanero-io/kabanero-foundation#cluster-hardware-capacity" 
+                        target="_blank" aria-label="{{t.install.prereq.min-res}}">{{t.install.prereq.min-res}}</a>
+                    </li>
+                    <li>
+                        <a href="https://docs.openshift.com/container-platform/3.11/welcome/index.html" 
+                        target="_blank" aria-label="{{t.install.prereq.okd-alt}}">{{t.install.prereq.okd-version}} 3.11</a>
+                    </li>
+                    <li>
+                        <a href="https://kubernetes.io/" target="_blank" aria-label="Link to Kubernetes site">{{t.index.common.kubernetes}}</a> 
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 button-div">
+            <a href="/docs#scripted-kabanero-foundation-setup.html" 
+                role="button" class="btn kabanero-colored-button col" 
+                aria-label="Link to Kabanero Foundation install instructions">{{t.common.instructions}}</a>
+        </div>
+    </div>
+
     <!-- Support -->
     <div class="row support-title">
         <div class="col">
-            <h2 class="text-center">When you are ready for support, we've got you covered</h2>
+            <h2 class="text-center">{{t.index.support.header}}</h2>
         </div>
     </div>
     <div class="row">
         <div class="col text-center description-text-block">
-            The Kabanero open source project is included within 
-            <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link">
-                IBM Cloud Pak for Applications
+            {{t.index.support.description}}
+            <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link" aria-label="{{t.index.support.link}}">
+                {{t.index.support.link}}
             </a>
-            as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
-            to move your core business applications to any cloud, in containers. Built and supported 
-            on Red Hat OpenShift.
+            {{t.index.support.description-cont}}
         </div>
     </div>
 </div>

@@ -28,6 +28,7 @@ function hideAllOpenSourcePlatformsCollapses(){
     $(`#open-source-platform-${id}-collapse`).show();
 
     $('.open-source-platform-box-selected').removeClass('open-source-platform-box-selected');
+    console.log(`#open-source-platform-${id}-box`)
     $(`#open-source-platform-${id}-box`).addClass('open-source-platform-box-selected');
 
     $('.open-source-platform-vertical-separator-visible').removeClass('open-source-platform-vertical-separator-visible');
@@ -40,16 +41,24 @@ $( document ).ready(function() {
     // is over the whole element when tabbed into focus. The button doesn't get highlighted when tabbed due to css on it
     $('.model-logo > button').on('click keypress', hideAllFeaturedModelsCollapses);
     $('.model-logo').on('keypress', function(){$(this).children('button').click();});
+
+    // Let the document know when the mouse is being used
+    $(document.body).on('mousedown', function() {
+        document.body.classList.add('using-mouse');
+    });
+    $(document.body).on('keydown', function() {
+        document.body.classList.remove('using-mouse');
+    });
 });
 
 $('.featured-model-box').click(function() {
-    $('.featuredModelsCollapse:visible').collapse('hide');
- });
+    $('.featured-collections-collapse:visible').collapse('hide');
+});
  
- function hoverFeaturedCollection(element){
+function hoverFeaturedCollection(element){
     element.setAttribute('src', '/img/collections-icon-rollover.png');
- }
+}
  
- function unhoverFeaturedCollection(element){
+function unhoverFeaturedCollection(element){
     element.setAttribute('src', '/img/collections-icon.png')
- }
+}

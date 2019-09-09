@@ -9,6 +9,7 @@ install:
 
 script: 
  - ./scripts/build_jekyll_maven.sh
+ - echo $TRAVIS_PULL_REQUEST
 
 sudo: false
 
@@ -26,5 +27,6 @@ deploy:
     on:
       repo: $TRAVIS_REPO_SLUG
       branch: $TRAVIS_BRANCH
-      if: type = api 
+      if: fork = true AND \
+          type = api 
     script: "./scripts/ibmcloud-cf-push.sh"

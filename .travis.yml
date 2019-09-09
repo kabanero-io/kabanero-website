@@ -9,10 +9,10 @@ install:
 
 script: 
    - if [ $JEKYLL_ENV == "production" ]; then
-      cp robots.txt src/main/content/robots.txt
-      ./scripts/build_jekyll_maven.sh
+      cp robots.txt src/main/content/robots.txt;
+      ./scripts/build_jekyll_maven.sh;
     else
-      ./scripts/build_jekyll_maven.sh
+      ./scripts/build_jekyll_maven.sh;
     fi
 
 sudo: false

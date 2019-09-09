@@ -2,22 +2,27 @@ language: ruby
 rvm:
   - 2.6.3
 
-install:
-  - bundle install
-  - npm install eslint --save-dev
-  - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+# install:
+#   - bundle install
+#   - npm install eslint --save-dev
+#   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
-script: 
- - ./scripts/build_jekyll_maven.sh
+# script: 
+#  - ./scripts/build_jekyll_maven.sh
 
-sudo: false
+# sudo: false
 
-before_deploy: 
- - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+# before_deploy: 
+#  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 
 deploy:
-  provider: script
-  skip_cleanup: true
-  on:
-    tags: true
-  script: "./scripts/ibmcloud-cf-push.sh kabanero-prod"
+  - provider: script
+    skip_cleanup: true
+    on:
+     tags: true
+    script: "./scripts/ibmcloud-cf-push.sh kabanero-prod"
+  - provider: script
+    skip_cleanup: true
+    on:
+      repo: $USER/kabanero-website
+      branch: production

@@ -7,5 +7,16 @@ install:
   - npm install eslint --save-dev
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
-script:
-  # - ./scripts/build_jekyll_maven.sh
+script: 
+ - ./scripts/build_jekyll_maven.sh
+
+sudo: false
+
+before_deploy: 
+ - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  on:
+    tags: true

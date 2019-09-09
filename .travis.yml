@@ -28,6 +28,5 @@ deploy:
     on:
       repo: $TRAVIS_REPO_SLUG
       branch: $TRAVIS_BRANCH
-      if: fork = false
-      #condition: $TRAVIS_EVENT_TYPE = api
+      condition: $TRAVIS_EVENT_TYPE = api
     script: "./scripts/ibmcloud-cf-push.sh"

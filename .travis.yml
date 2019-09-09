@@ -30,4 +30,4 @@ deploy:
       repo: $TRAVIS_REPO_SLUG
       branch: $TRAVIS_BRANCH
 
-      script: 'echo "worked"'
+      script: - echo "worked"

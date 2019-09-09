@@ -10,6 +10,7 @@ install:
 script: 
  - echo $TRAVIS_REPO_SLUG
  - echo  $TRAVIS_BRANCH
+ - echo $TRAVIS_PULL_REQUEST
  - ./scripts/build_jekyll_maven.sh
 
 sudo: false
@@ -28,4 +29,5 @@ deploy:
     on:
       repo: $TRAVIS_REPO_SLUG
       branch: $TRAVIS_BRANCH
+
       script: 'echo "worked"'

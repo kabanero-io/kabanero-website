@@ -19,6 +19,8 @@ deploy:
   provider: script
   skip_cleanup: true
   on:
-    branch: master
     tags: true
+    branches:
+      only:
+      - master
   script: "./scripts/ibmcloud-cf-push.sh kidus"

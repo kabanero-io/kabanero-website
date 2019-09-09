@@ -25,4 +25,5 @@ deploy:
     skip_cleanup: true
     on:
       repo: $TRAVIS_REPO_SLUG
-      script: "echo $TRAVIS_REPO_SLUG "
+      branch: $TRAVIS_BRANCH
+      script: "echo $TRAVIS_REPO_SLUG $TRAVIS_BRANCH"

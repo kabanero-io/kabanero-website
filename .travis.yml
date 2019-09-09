@@ -9,7 +9,6 @@ install:
 
 script: 
  - ./scripts/build_jekyll_maven.sh
- 
 
 sudo: false
 

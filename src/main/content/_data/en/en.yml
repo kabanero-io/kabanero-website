@@ -263,7 +263,7 @@ install:
 operations:
   intro-title: Kabanero Foundation Installation
   intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a set of curated collections, which this install will activate a default set of featured collections.
-  try-it-install-button: Try It - Install Kabanero Foundation
+  install-button: Install Kabanero Foundation
   footer-text: Kabanero Foundation includes an operator-based installation to leverage all the benefits of Kubernetes
 
 support:

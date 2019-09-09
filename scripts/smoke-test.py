@@ -19,5 +19,5 @@ if status_code == 200 and json_status == "ok":
     print("smoke test passed")
     exit(0)
 else:
-    print(f"Response for {url} was: {status_code} {json}")
+    print("Response for {url} was: {status_code} {json}")
     exit(1)

@@ -8,7 +8,7 @@ install:
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
 script: 
- - echo type
+ - echo $TRAVIS_EVENT_TYPE
  - ./scripts/build_jekyll_maven.sh
  
 

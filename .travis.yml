@@ -18,8 +18,7 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: "./scripts/ibmcloud-cf-push.sh kidus"
   on:
-    repo: kidus60/kabanero-website
-    branch: test-travis 
+    branch: master
     tags: true
+  script: "./scripts/ibmcloud-cf-push.sh kidus"

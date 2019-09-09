@@ -29,4 +29,4 @@ deploy:
     on:
       repo: $TRAVIS_REPO_SLUG
       branch: $TRAVIS_BRANCH
-      condition: $TRAVIS_PULL_REQUEST = false
+      condition: $TRAVIS_PULL_REQUEST = false 

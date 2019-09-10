@@ -47,7 +47,7 @@ jobs:
 
 
 # before_deploy: 
-#  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+#  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh 
 
 # deploy:
 #   - provider: script

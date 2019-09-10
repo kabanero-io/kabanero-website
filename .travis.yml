@@ -2,30 +2,73 @@ language: ruby
 rvm:
   - 2.6.3
 
-install:
-  - bundle install
-  - npm install eslint --save-dev
-  - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+# install:
+#   - bundle install
+#   - npm install eslint --save-dev
+#   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
-script: 
- - echo ${TRAVIS_REPO_SLUG%/*} 
- - ./scripts/build_jekyll_maven.sh
+env:
+  matrix:
+    - TEST_PART=1
+    - TEST_PART=2
+    - [...]
+
+# the following line is needed to enable the TravisCI build conditions
+conditions: v1
+
+stages:
+  - name: Unit Tests
+    if: type IN (push, pull_request) 
+  - name: Fork Deploy
+    if: fork = true 
+  - name: Production Deploy
+    if: fork = false
+  # - name: Ui Tests
+  #   if: 
 
 sudo: false
 
-before_deploy: 
- - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+jobs:
+  include:
+    - stage: Unit Tests
+      install:
+          - bundle install
+          - npm install eslint --save-dev
+          - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+      script:
+        - ./scripts/build_jekyll_maven.sh
 
-deploy:
-  - provider: script
-    skip_cleanup: true
-    on:
-     tags: true
-    script: "./scripts/ibmcloud-cf-push.sh kabanero-prod"
-  - provider: script
-    skip_cleanup: true
-    on:
-      repo: $TRAVIS_REPO_SLUG
-      branch: $TRAVIS_BRANCH
-      condition: "$TRAVIS_EVENT_TYPE = api"
-    script: "./scripts/ibmcloud-cf-push.sh kabanero-cf-deploy"
+    - stage: Fork Deploy
+      name: Deploy a branch from your fork to IBM CF
+      env: 
+      install: 
+        - bundle install
+      skip_cleanup: true
+        on:
+        repo: $TRAVIS_REPO_SLUG
+        branch: $TRAVIS_BRANCH
+        condition: "$TRAVIS_EVENT_TYPE = api"
+      script: 
+        - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        - ./scripts/ibmcloud-cf-push.sh 
+
+
+
+
+
+# before_deploy: 
+#  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+
+# deploy:
+#   - provider: script
+#     skip_cleanup: true
+#     on:
+#      tags: true
+#     script: "./scripts/ibmcloud-cf-push.sh kabanero-prod"
+#   - provider: script
+#     skip_cleanup: true
+#     on:
+#       repo: $TRAVIS_REPO_SLUG
+#       branch: $TRAVIS_BRANCH
+#       condition: "$TRAVIS_EVENT_TYPE = api"
+#     script: "./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}"

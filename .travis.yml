@@ -29,7 +29,7 @@ jobs:
         - ./scripts/build_jekyll_maven.sh
         
     - stage: Deploy
-      name: Deploy a branch from your fork to IBM CF
+      name: Deploying branch $TRAVIS_BRANCH from $TRAVIS_REPO_SLUG repot to IBM CF
       env: 
       install: 
         - bundle install
@@ -43,7 +43,7 @@ jobs:
         - ./scripts/ibmcloud-cf-push.sh 
 
     - stage: Deploy
-      name: Deploy a branch from your fork to IBM CF
+      name: Deploying branch $TRAVIS_BRANCH to Kabanero.io production
       env: 
       install: 
         - bundle install

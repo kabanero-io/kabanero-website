@@ -12,7 +12,7 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request) 
   - name: Deploy
-    if: type IS push
+    if: type IN (push)
   # - name: Ui Tests
   #   if: 
 
@@ -27,7 +27,7 @@ jobs:
           - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
         - ./scripts/build_jekyll_maven.sh
-
+        
     - stage: Deploy
       name: Deploy a branch from your fork to IBM CF
       env: 
@@ -42,6 +42,19 @@ jobs:
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 
 
+    - stage: Deploy
+      name: Deploy a branch from your fork to IBM CF
+      env: 
+      install: 
+        - bundle install
+      skip_cleanup: true
+      on:
+        repo: $TRAVIS_REPO_SLUG
+        branch: $TRAVIS_BRANCH
+        condition: "$TRAVIS_EVENT_TYPE = api"
+      script: 
+        - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        - ./scripts/ibmcloud-cf-push.sh 
 
 
 

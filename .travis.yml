@@ -37,7 +37,7 @@ jobs:
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
-        condition: "$TRAVIS_EVENT_TYPE = api"
+        condition: "$TRAVIS_REPO_SLUG != kabanero-io/kabanero-website"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 
@@ -49,9 +49,9 @@ jobs:
         - bundle install
       skip_cleanup: true
       on:
-        repo: $TRAVIS_REPO_SLUG
+        repo: kabanero-io/kabanero-website
         branch: $TRAVIS_BRANCH
-        condition: "$TRAVIS_EVENT_TYPE = api"
+        condition: "$TRAVIS_REPO_SLUG = kabanero-io/kabanero-website"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 

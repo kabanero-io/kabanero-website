@@ -13,8 +13,8 @@ stages:
   - name: Fork Deploy
     if: (type IN (push, api)) AND ($TRAVIS_REPO_SLUG != kabanero-io/kabanero-website)
   - name: Production Deploy
-    if: (type IN (push, api))
-    condition: $TRAVIS_REPO_SLUG = kabanero-io/kabanero-website
+    if: (type IN (push, api)) AND ($TRAVIS_REPO_SLUG = kabanero-io/kabanero-website) 
+    
 
 jobs:  
   include:

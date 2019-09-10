@@ -16,11 +16,11 @@ stages:
     if: (type IN (push, api))
     condition: $TRAVIS_REPO_SLUG = kabanero-io/kabanero-website
 
-jobs: 
+jobs:  
   include:
     - stage: "Unit Tests"
       name: "Running Unit Tests"
-      install:
+      install: 
           - bundle install
           - npm install eslint --save-dev
           - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js

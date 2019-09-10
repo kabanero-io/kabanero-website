@@ -32,11 +32,10 @@ jobs:
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
-        condition: "$TRAVIS_REPO_SLUG = kabanero-io/kabanero-website"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/build_jekyll_maven.sh        
-        - ./scripts/ibmcloud-cf-push.sh 
+        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}
 
     - stage: "Production Deploy"
       name: "Production deploy"
@@ -47,11 +46,11 @@ jobs:
       on:
         repo: kabanero-io/kabanero-website
         branch: $TRAVIS_BRANCH
-        condition: "$TRAVIS_REPO_SLUG != kabanero-io/kabanero-website"
+        condition: "$TRAVIS_REPO_SLUG = kabanero-io/kabanero-website"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/build_jekyll_maven.sh    
-        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}
+        - ./scripts/ibmcloud-cf-push.sh 
 
 
 # before_deploy: 

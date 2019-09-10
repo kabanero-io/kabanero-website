@@ -11,9 +11,9 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request, api) 
   - name: Fork Deploy
-    if: (type IN (push)) AND (fork == true)
+    if: (type IN (push, api)) AND (fork == true)
   - name: Production Deploy
-    if: (type IN (push) )AND (fork == false)
+    if: (type IN (push, api) )AND (fork == false)
 
 jobs:
   include:
@@ -24,6 +24,8 @@ jobs:
           - npm install eslint --save-dev
           - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
+        - echo fork
+        - echo env(fork)
         - ./scripts/build_jekyll_maven.sh
         
     - stage: "Fork Deploy"

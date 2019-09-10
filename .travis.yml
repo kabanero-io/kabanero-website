@@ -2,13 +2,18 @@ language: ruby
 rvm:
   - 2.6.3
 
+env:
+  global:
+    - DOCS_=hi
+  matrix:
+
 stages:
   - name: Unit Tests
     if: type IN (push, pull_request, api) 
   - name: Fork Deploy
-    if: type IN (push)
-  # - name: Ui Tests
-  #   if: 
+    if: type IN (push) AND fork = true
+  - name: Production Deploy
+    if: type IN (push) AND fork = false
 
 
 sudo: false
@@ -16,6 +21,7 @@ sudo: false
 jobs:
   include:
     - stage: "Unit Tests"
+      name: "Running Unit Tests"
       install:
           - bundle install
           - npm install eslint --save-dev
@@ -33,12 +39,11 @@ jobs:
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
-        condition: "$IS_FORK = true"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 
 
-    - stage: Deploy
+    - stage: "Production Deploy"
       name: "Production deploy"
       env: 
       install: 
@@ -47,12 +52,9 @@ jobs:
       on:
         repo: kabanero-io/kabanero-website
         branch: $TRAVIS_BRANCH
-        condition: "$IS_FORK = false"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 
-
-
 
 
 # before_deploy: 

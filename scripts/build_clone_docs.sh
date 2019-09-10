@@ -7,7 +7,7 @@
 
 branch_name="$1"
 
-pushd src/main/content
+pushd ../src/main/content
 
 # Remove the folder to allow this repeating execution of this script
 rm -rf docs

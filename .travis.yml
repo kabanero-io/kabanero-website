@@ -4,7 +4,7 @@ rvm:
 
 stages:
   - name: Unit Tests
-    if: type IN (push, pull_request, api) 
+    if: type IN (push, pull_request) 
   - name: Fork Deploy
     if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) != kabanero-io/kabanero-website)
   - name: Production Deploy
@@ -19,8 +19,6 @@ jobs:
           - npm install eslint --save-dev
           - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
-        - echo ${DOCS_GIT_REVISION}
-        - echo $DOCS_GIT_REVISION
         - ./scripts/build_jekyll_maven.sh
 
     - stage: "Fork Deploy"

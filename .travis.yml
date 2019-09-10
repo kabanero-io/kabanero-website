@@ -19,7 +19,6 @@ sudo: false
 
 jobs:
   include:
-    - stage: Unit Tests
     - stage: Fork Deploy
       name: Deploy a branch from your fork to IBM CF
       env: 
@@ -32,7 +31,7 @@ jobs:
         #condition: "$TRAVIS_EVENT_TYPE = api"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-        - ./scripts/ibmcloud-cf-push.sh 
+        - ./scripts/ibmcloud-cf-push.sh  
 
 
 

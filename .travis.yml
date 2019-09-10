@@ -8,9 +8,8 @@ install:
   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
 script: 
- - echo $TRAVIS_REPO_SLUG[0]
+ - echo ${TRAVIS_REPO_SLUG%/*} 
  - ./scripts/build_jekyll_maven.sh
- - echo ${TRAVIS_REPO_SLUG[0]}
 
 sudo: false
 

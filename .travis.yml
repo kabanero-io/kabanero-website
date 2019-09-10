@@ -6,9 +6,9 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request, api) 
   - name: Fork Deploy
-    if: (type IN (push, api)) AND ("$TRAVIS_REPO_SLUG != kabanero-io/kabanero-website")
+    if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) != kabanero-io/kabanero-website)
   - name: Production Deploy
-    if: (type IN (push, api)) AND ("$TRAVIS_REPO_SLUG = kabanero-io/kabanero-website")
+    if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) = kabanero-io/kabanero-website)
 
 jobs:  
   include:
@@ -38,7 +38,7 @@ jobs:
         - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}
 
 
-        
+
     - stage: "Production Deploy"
       name: "Production deploy"
       env: JEKYLL_ENV=none

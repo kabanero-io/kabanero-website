@@ -12,9 +12,9 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request) 
   - name: Fork Deploy
-    if: fork = true 
+    if: fork IS true
   - name: Production Deploy
-    if: fork = false
+    if: fork IS false
   # - name: Ui Tests
   #   if: 
 

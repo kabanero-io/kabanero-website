@@ -24,8 +24,8 @@ jobs:
           - npm install eslint --save-dev
           - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
-        - echo fork
-        - echo env(fork)
+        - echo IS_FORK
+        - echo $IS_FORK
         - ./scripts/build_jekyll_maven.sh
         
     - stage: "Fork Deploy"

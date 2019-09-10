@@ -2,18 +2,13 @@ language: ruby
 rvm:
   - 2.6.3
 
-env:
-  global:
-    - DOCS_=hi
-  matrix:
-
 stages:
   - name: Unit Tests
     if: type IN (push, pull_request, api) 
   - name: Fork Deploy
-    if: (type IN (push, api)) AND ($TRAVIS_REPO_SLUG != kabanero-io/kabanero-website)
+    if: (type IN (push, api)) 
   - name: Production Deploy
-    if: (type IN (push, api)) AND ($TRAVIS_REPO_SLUG = kabanero-io/kabanero-website) 
+    if: (type IN (push, api))
     
 
 jobs:  
@@ -36,6 +31,7 @@ jobs:
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
+        condition: "$TRAVIS_REPO_SLUG = kabanero-io/kabanero-website"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/build_jekyll_maven.sh        
@@ -43,17 +39,18 @@ jobs:
 
     - stage: "Production Deploy"
       name: "Production deploy"
-      env: JEKYLL_ENV=pro
+      env: JEKYLL_ENV=none
       install: 
         - bundle install
       skip_cleanup: true
       on:
         repo: kabanero-io/kabanero-website
         branch: $TRAVIS_BRANCH
+        condition: "$TRAVIS_REPO_SLUG != kabanero-io/kabanero-website"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/build_jekyll_maven.sh    
-        - ./scripts/ibmcloud-cf-push.sh 
+        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}
 
 
 # before_deploy: 

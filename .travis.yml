@@ -31,7 +31,7 @@ jobs:
         
     - stage: "Fork Deploy"
       name: "Deploy to IBM CF from forked repository"
-      env: 
+      env: JEKYLL_ENV=development
       install: 
         - bundle install
       skip_cleanup: true
@@ -40,11 +40,12 @@ jobs:
         branch: $TRAVIS_BRANCH
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        - ./scripts/build_jekyll_maven.sh        
         - ./scripts/ibmcloud-cf-push.sh 
 
     - stage: "Production Deploy"
       name: "Production deploy"
-      env: 
+      env: JEKYLL_ENV=pro
       install: 
         - bundle install
       skip_cleanup: true
@@ -53,6 +54,7 @@ jobs:
         branch: $TRAVIS_BRANCH
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        - ./scripts/build_jekyll_maven.sh    
         - ./scripts/ibmcloud-cf-push.sh 
 
 

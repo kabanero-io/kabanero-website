@@ -2,23 +2,34 @@ language: ruby
 rvm:
   - 2.6.3
 
-install:
-  - bundle install
-  - npm install eslint --save-dev
-  - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+# install:
+#   - bundle install
+#   - npm install eslint --save-dev
+#   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
-script: - ./scripts/build_jekyll_maven.sh
 
 stages:
+  - name: Unit Tests
+    if: type IN (push, pull_request) 
   - name: Fork Deploy
     if: fork = true 
   - name: Production Deploy
     if: fork = false
+  # - name: Ui Tests
+  #   if: 
 
 sudo: false
 
 jobs:
   include:
+    - stage: Unit Tests
+      install:
+          - bundle install
+          - npm install eslint --save-dev
+          - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+      script:
+        - ./scripts/build_jekyll_maven.sh
+
     - stage: Fork Deploy
       name: Deploy a branch from your fork to IBM CF
       env: 
@@ -28,10 +39,10 @@ jobs:
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
-        #condition: "$TRAVIS_EVENT_TYPE = api"
+        condition: "$TRAVIS_EVENT_TYPE = api"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-        - ./scripts/ibmcloud-cf-push.sh  
+        - ./scripts/ibmcloud-cf-push.sh 
 
 
 

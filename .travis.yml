@@ -37,7 +37,7 @@ jobs:
         #- ./scripts/build_clone_blogs.sh ${DOCS_GIT_URL} ${DOCS_GIT_REVISION}
        # - ./scripts/build_clone_blogs.sh ${DOCS_GIT_URL} ${DOCS_GIT_REVISION}
         - ./scripts/build_jekyll_maven.sh        
-        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
+       # - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
 
     - stage: "Production Deploy"
       name: "Production deploy"

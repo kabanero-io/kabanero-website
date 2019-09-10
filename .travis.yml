@@ -25,7 +25,7 @@ jobs:
 
     - stage: "Fork Deploy"
       name: "Deploy to IBM CF from forked repository"
-      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
+      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true JEKYLL_ENV=development
       install: 
         - bundle install
       skip_cleanup: true
@@ -34,10 +34,10 @@ jobs:
         branch: $TRAVIS_BRANCH
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-        #- ./scripts/build_clone_blogs.sh ${DOCS_GIT_URL} ${DOCS_GIT_REVISION}
-       # - ./scripts/build_clone_blogs.sh ${DOCS_GIT_URL} ${DOCS_GIT_REVISION}
-        - ./scripts/build_jekyll_maven.sh        
-       # - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
+        - ./scripts/build_clone_blogs.sh ${BLOGS_GIT_URL} ${BLOGS_GIT_REVISION}
+        - ./scripts/build_clone_docs.sh ${DOCS_GIT_URL} ${DOCS_GIT_REVISION}
+        - ./scripts/build.sh         
+        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
 
     - stage: "Production Deploy"
       name: "Production deploy"

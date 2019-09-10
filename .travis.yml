@@ -11,9 +11,9 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request, api) 
   - name: Fork Deploy
-    if: fork == "true"
+    if: type IN (push) AND fork == "true"
   - name: Production Deploy
-    if: type IN (push) AND fork == false
+    if: type IN (push) AND fork == "false"
 
 jobs:
   include:

@@ -69,7 +69,7 @@ function expandTOCIndicator() {
 // Remove previous TOC section highlighted and highlight correct step
 function updateTOCHighlighting(id) {
     $('.liSelected').removeClass('liSelected');
-    var anchor = $('#toc-container a[href="#" + id + ""]');
+    var anchor = $(`#toc-container a[href="#${id}"]`);
     anchor.parent().addClass('liSelected');
 }
 

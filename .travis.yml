@@ -11,10 +11,8 @@ rvm:
 stages:
   - name: Unit Tests
     if: type IN (push, pull_request) 
-  - name: Fork Deploy
-    if: fork IS true
-  - name: Production Deploy
-    if: fork IS false
+  - name: Deploy
+    if: type IS push
   # - name: Ui Tests
   #   if: 
 
@@ -30,7 +28,7 @@ jobs:
       script:
         - ./scripts/build_jekyll_maven.sh
 
-    - stage: Fork Deploy
+    - stage: Deploy
       name: Deploy a branch from your fork to IBM CF
       env: 
       install: 

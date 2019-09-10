@@ -204,7 +204,7 @@ var handleHotspotHover = debounce(function(hotspot){
 
 function showGithubPopup(){
     $('#github-clone-popup-container').fadeIn();
-    $('#code_column .code_column, #code-column-tabs-container').addClass('dimmed', {duration:400});
+    $('#code-column .code-column, #code-column-tabs-container').addClass('dimmed', {duration:400});
   
     $('.code_column_tab').attr('disabled', true);
     $('.copy-file-button').hide();
@@ -215,7 +215,7 @@ function showGithubPopup(){
 
 function hideGithubPopup(){
     $('#github-clone-popup-container').fadeOut();
-    $('#code_column .code_column, #code-column-tabs-container').removeClass('dimmed', {duration:400});
+    $('#code-column .code-column, #code-column-tabs-container').removeClass('dimmed', {duration:400});
 
     $('.code_column_tab').attr('disabled', false);
     $('.copy-file-button').show();
@@ -551,7 +551,7 @@ $(document).ready(function() {
     // Map the guide sections that don't have any code sections to the previous section's code. This assumes that the first section is what you'll learn which has no code to show on the right to begin with.
     var sections = $('.sect1:not(#guide-meta):not(#related-guides) > h2, .sect2:not(#guide-meta):not(#related-guides) > h3');
     var first_section = sections[0];
-    var first_code_block = $('#code_column .code_column').first();
+    var first_code_block = $('#code-column .code-column').first();
     var first_code_section = {};
     first_code_section.code = first_code_block;
     first_code_section.tab = $('.code_column_tab').first();
@@ -582,8 +582,8 @@ $(document).ready(function() {
 
             // Show the code block
             var data_id = $(this).attr('data-section-id');
-            var code_block = $($('#code_column .code_column[data-section-id="' + data_id + '"]').get(fileIndex));
 
+            var code_block = $($('#code-column .code-column[data-section-id="' + data_id + '"]').get(fileIndex));
             // Save the code section for later when the user comes back to this section and we want to show the most recent code viewed.
             recent_sections[data_id] = code_sections[data_id][fileIndex];
             $('#code-column .code-column').not(code_block).hide();
@@ -685,7 +685,7 @@ $(document).ready(function() {
                 'pointer-events' : 'none'
             });
             
-            $('#code_column').addClass('modal');
+            $('#code-column').addClass('modal');
             
             var top = $(this).offset().top;
             var mobile_toc_height = $('#mobile-toc-accordion').height();
@@ -700,7 +700,7 @@ $(document).ready(function() {
             var hotspot_height = $(this).height();
             var bottom = scrollTo + window.innerHeight - hotspot_height - 5;
             var height = bottom - scrollTo;
-            $('#code_column').css({
+            $('#code-column').css({
                 'top' : '200px',
                 'height' : height
             });
@@ -714,8 +714,8 @@ $(document).ready(function() {
             'pointer-events' : 'auto'
         });
       
-        $('#code_column').removeClass('modal');
-        $('#code_column').css({
+        $('#code-column').removeClass('modal');
+        $('#code-column').css({
             'height' : 'auto'
         });
         remove_highlighting();
@@ -760,15 +760,15 @@ $(document).ready(function() {
 
         var event0 = event.originalEvent;
         var dir = (event0.deltaY) < 0 ? 'up' : 'down';
-        var codeColumn = $('#code_column')[0];
+        var codeColumn = $('#code-column')[0];
         var codeColumnContent = $('#code-column-content').get(0);
+        console.log("bye")
 
         if(!(this.scrollTop > 0 || this.offsetHeight > codeColumnContent.offsetHeight)){
             // Element is not scrollable. If the code file has no scrollbar, the page will still scroll if the event is propagated to the window scroll listener so we need to prevent propagation.
             event.stopPropagation();
             event.preventDefault();
         }
-
         // If the code column is at the top and the browser is scrolled down, the element has no scrollTop and does not respond to changing its scrollTop.
         else if(!(dir == 'down' && this.parentElement.scrollTop === 0)){
             var delta = event0.wheelDelta || -event0.detail || -event0.deltaY;
@@ -793,7 +793,7 @@ $(document).ready(function() {
     $('.copy-file-button').click(function(event){
         event.preventDefault();
         // Remove the line numbers from being copied.
-        var target_copy = $('#code_column .code_column:visible .content code').clone();
+        var target_copy = $('#code-column .code-column:visible .content code').clone();
 
         target_copy.find('.line-numbers').remove();
         var target = target_copy[0];

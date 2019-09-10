@@ -7,14 +7,6 @@ rvm:
 #   - npm install eslint --save-dev
 #   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
-env:
-  matrix:
-    - TEST_PART=1
-    - TEST_PART=2
-    - [...]
-
-# the following line is needed to enable the TravisCI build conditions
-conditions: v1
 
 stages:
   - name: Unit Tests

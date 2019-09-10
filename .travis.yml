@@ -2,19 +2,14 @@ language: ruby
 rvm:
   - 2.6.3
 
-# install:
-#   - bundle install
-#   - npm install eslint --save-dev
-#   - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
-
-
 stages:
   - name: Unit Tests
-    if: type IN (push, pull_request) 
+    if: type IN (push, pull_request, api) 
   - name: Deploy
     if: type IN (push)
   # - name: Ui Tests
   #   if: 
+
 
 sudo: false
 
@@ -26,10 +21,11 @@ jobs:
           - npm install eslint --save-dev
           - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
+        - echo $IS_FORK
         - ./scripts/build_jekyll_maven.sh
         
     - stage: Deploy
-      name: Deploying branch "${TRAVIS_BRANCH}" from $TRAVIS_REPO_SLUG repot to IBM CF
+      name: "Deploying branch $TRAVIS_BRANCH from $TRAVIS_REPO_SLUG repot to IBM CF"
       env: 
       install: 
         - bundle install
@@ -37,7 +33,7 @@ jobs:
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
-        condition: "$TRAVIS_REPO_SLUG != kabanero-io/kabanero-website"
+        condition: "$IS_FORK = true"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 
@@ -51,7 +47,7 @@ jobs:
       on:
         repo: kabanero-io/kabanero-website
         branch: $TRAVIS_BRANCH
-        condition: "$TRAVIS_REPO_SLUG = kabanero-io/kabanero-website"
+        condition: "$IS_FORK = false"
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/ibmcloud-cf-push.sh 

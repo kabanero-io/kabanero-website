@@ -9,7 +9,6 @@ stages:
     if: (type IN (push, api)) 
   - name: Production Deploy
     if: (type IN (push, api))
-    
 
 jobs:  
   include:

@@ -10,6 +10,7 @@ install:
 script: 
  - echo $TRAVIS_REPO_SLUG[0]
  - ./scripts/build_jekyll_maven.sh
+ - echo ${TRAVIS_REPO_SLUG[0]}
 
 sudo: false
 

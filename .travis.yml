@@ -44,7 +44,7 @@ jobs:
       install: 
         - bundle install
       skip_cleanup: true
-        on:
+      on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
         condition: "$TRAVIS_EVENT_TYPE = api"

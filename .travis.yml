@@ -4,11 +4,11 @@ rvm:
 
 stages:
   - name: Unit Tests
-    if: type IN (push, pull_request) 
+    if: type IN (push, pull_request, api) 
   - name: Fork Deploy
     if: (type IN (push, api)) AND (repo == kidus60/kabanero-website)
   - name: Production Deploy
-    if: (type IN (push, api)) AND (repo == kabanero-io/kabanero-website)
+    if: (type IN (push, api)) AND (repo != kabanero-io/kabanero-website)
 
 jobs:  
   include:

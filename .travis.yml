@@ -23,7 +23,7 @@ jobs:
 
     - stage: "Fork Deploy"
       name: "Deploy to IBM CF from forked repository"
-      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
+      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true $TRAVIS_REPO_SLUG
       install:
         - bundle install
       skip_cleanup: true

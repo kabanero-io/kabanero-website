@@ -23,6 +23,8 @@ jobs:
     - stage: "Jekyll build site"
       name: "Building website with Jekyll and using Maven to package"
       env: TRAVIS_TEST=true
+      install:
+        - bundle install
       script:
         - ./scripts/build_jekyll_maven.sh
 

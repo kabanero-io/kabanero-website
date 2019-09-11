@@ -2,10 +2,53 @@ language: ruby
 rvm:
   - 2.6.3
 
-install:
-  - bundle install
-  - npm install eslint --save-dev
-  - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+stages:
+  - name: Unit Tests
+    if: type IN (push, pull_request, api)
+  - name: Fork Deploy
+    if: (type IN (push)) AND (repo != kabanero-io/kabanero-website)
+  - name: Production Deploy
+    if: (type IN (push)) AND (repo == kabanero-io/kabanero-website)
 
-script:
-  - ./scripts/build_jekyll_maven.sh
+jobs:
+  include:
+    - stage: "Unit Tests"
+      name: "Running Unit Tests"
+      install:
+        - bundle install
+        - npm install eslint --save-dev
+        - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+      script:
+        - ./scripts/build_jekyll_maven.sh
+
+    - stage: "Fork Deploy" 
+      name: "Deploy to IBM CF from forked repository"
+      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
+      install:
+        - bundle install
+      skip_cleanup: true
+      on: 
+        repo: $TRAVIS_REPO_SLUG
+        branch: $TRAVIS_BRANCH
+      script:
+        - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
+        - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
+        - ./scripts/build.sh
+        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
+
+    - stage: "Production Deploy"
+      name: "Deploy Kabanero to production"
+      env: JEKYLL_ENV=production
+      install:
+        - bundle install
+      skip_cleanup: true
+      on:
+        repo: kabanero-io/kabanero-website
+        branch: $TRAVIS_BRANCH
+      script:
+        - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
+        - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
+        - ./scripts/build.sh
+        - ./scripts/ibmcloud-cf-push.sh kabanero-prod

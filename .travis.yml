@@ -15,9 +15,10 @@ jobs:
     - stage: "Linting Test"
       name: "Running lint testing"
       install:
-        - bundle install
         - npm install eslint --save-dev
         - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+      script:
+        - ./scripts/build_gem_dependencies.sh
         
     - stage: "Jekyll build"
       name: "Building the website with Jekyll and using Maven to package"
@@ -36,4 +37,4 @@ jobs:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:
-        - ./.travis/cf_deploy.sh
+        - ./scripts/cf_deploy.sh

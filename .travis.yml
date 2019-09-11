@@ -3,16 +3,16 @@ rvm:
   - 2.6.3
 
 stages:
-  - name: Unit Tests
+  - name: Linting Test
     if: type IN (push, pull_request, api)
   - name: Fork Deploy
-    if: (type IN (push)) AND (repo != kabanero-io/kabanero-website)
+    if: (type IN (api)) AND (repo != kabanero-io/kabanero-website)
   - name: Production Deploy
-    if: (type IN (push)) AND (repo == kabanero-io/kabanero-website)
+    if: (type IN (api)) AND (repo == kabanero-io/kabanero-website)
 
 jobs:
   include:
-    - stage: "Unit Tests"
+    - stage: "Linting Test"
       name: "Running Unit Tests"
       env: TRAVIS_UNIT_TEST=true
       install:

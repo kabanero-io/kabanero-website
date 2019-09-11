@@ -21,13 +21,13 @@ jobs:
       script:
         - ./scripts/build_jekyll_maven.sh
 
-    - stage: "Fork Deploy"
+    - stage: "Fork Deploy" 
       name: "Deploy to IBM CF from forked repository"
       env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
       install:
         - bundle install
       skip_cleanup: true
-      on:
+      on: 
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:

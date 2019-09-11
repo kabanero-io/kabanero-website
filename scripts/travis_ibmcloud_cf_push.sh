@@ -1,4 +1,3 @@
-#!/bin/sh
 
 SCRIPT_DIR=$(dirname $0)
 

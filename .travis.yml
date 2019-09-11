@@ -30,7 +30,6 @@ jobs:
 
     - stage: "Deploy" 
       name: "Deploy website"
-      env: TRAVIS_TEST=true
       install:
         - bundle install 
       skip_cleanup: true

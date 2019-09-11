@@ -3,16 +3,16 @@ rvm:
   - 2.6.3
 
 stages:
-  - name: Linting Test
+  - name: Linting test
     if: type IN (api)
-  - name: Jekyll build
+  - name: Jekyll build site
     if: type IN (api)
   - name: Deploy
     if: (type IN (push))
 
 jobs:
   include:
-    - stage: "Linting Test"
+    - stage: "Linting test"
       name: "Running lint testing"
       install:
         - npm install eslint --save-dev
@@ -20,7 +20,7 @@ jobs:
       script:
         - ./scripts/build_gem_dependencies.sh
         
-    - stage: "Jekyll build"
+    - stage: "Jekyll build site"
       name: "Building website with Jekyll and using Maven to package"
       env: TRAVIS_TEST=true
       script:

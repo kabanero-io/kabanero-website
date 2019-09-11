@@ -4,11 +4,11 @@ rvm:
 
 stages:
   - name: Linting test
-    if: type IN (api)
+    if: type IN (push, pull_request)
   - name: Jekyll build site
-    if: type IN (api)
+    if: type IN (push, pull_request)
   - name: Deploy
-    if: (type IN (push))
+    if: (type IN (api))
 
 jobs:
   include:

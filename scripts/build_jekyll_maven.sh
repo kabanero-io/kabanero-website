@@ -12,11 +12,10 @@ JEKYLL_BUILD_FLAGS=""
 echo "Ruby version:"
 echo `ruby -v`
 
-echo "Cloning repositories with name starting with guide or iguide..."
-
 if [ "$TRAVIS_UNIT_TEST" == "true" ]; then
-    return
+    echo "Travis Unit Testing.. skipping guide clone"
 else
+    echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb
 fi
 

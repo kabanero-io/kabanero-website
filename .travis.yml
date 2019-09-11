@@ -13,7 +13,7 @@ stages:
 jobs:
   include:
     - stage: "Unit Tests"
-      name: "Running Unit Tests"
+      name: "Running Unit Tests" ${TRAVIS_REPO_SLUG}
       install:
         - bundle install
         - npm install eslint --save-dev
@@ -23,7 +23,7 @@ jobs:
 
     - stage: "Fork Deploy"
       name: "Deploy to IBM CF from forked repository"
-      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true $TRAVIS_REPO_SLUG
+      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
       install:
         - bundle install
       skip_cleanup: true

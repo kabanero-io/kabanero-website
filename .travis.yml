@@ -5,7 +5,7 @@ rvm:
 stages:
   - name: Linting Test
     if: type IN (api)
-  - name: Jekyll build stage
+  - name: Jekyll build
     if: type IN (api)
   - name: Deploy
     if: (type IN (push))

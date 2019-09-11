@@ -6,7 +6,7 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request) 
   - name: Fork Deploy
-    if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) != kabanero-io/kabanero-website)
+    if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) = kidus60/kabanero-website)
   - name: Production Deploy
     if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) = kabanero-io/kabanero-website)
 
@@ -32,8 +32,8 @@ jobs:
         branch: $TRAVIS_BRANCH
       script: 
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-        - ./scripts/build_clone_blogs.sh ${BLOGS_GIT_URL} ${BLOGS_GIT_REVISION}
-        - ./scripts/build_clone_docs.sh ${DOCS_GIT_URL} ${DOCS_GIT_REVISION}
+        - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
+        - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
         - ./scripts/build.sh         
         - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
 

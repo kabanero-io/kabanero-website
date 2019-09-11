@@ -6,7 +6,7 @@ source $SCRIPT_DIR/build_clone_blogs.sh   $BLOGS_GIT_URL  $BLOGS_GIT_REVISION
 source $SCRIPT_DIR/build_clone_docs.sh  $DOCS_GIT_URL   $DOCS_GIT_REVISION
 source $SCRIPT_DIR/build.sh
 echo "$JEKYLL_ENV"
-if [ "$JEKYLL_ENV"=="production" ]; then
+if [ "$JEKYLL_ENV" == "production" ]; then
     echo "production build"
     #source $SCRIPT_DIR/bmcloud-cf-push.sh kabanero-prod
 else

@@ -13,7 +13,7 @@ echo "Ruby version:"
 echo `ruby -v`
 
 echo "Cloning repositories with name starting with guide or iguide..."
-ruby ./scripts/build_clone_guides.rb
+#ruby ./scripts/build_clone_guides.rb
 
 # Development environment only actions
 if [ "$JEKYLL_ENV" != "production" ]; then 
@@ -25,7 +25,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     # Development environments with draft docs/guides
     if [ "$JEKYLL_DRAFT_GUIDES" == "true" ]; then
         echo "Clone draft guides for test environments..."
-        ruby ./scripts/build_clone_guides.rb "draft-guide"    
+        #ruby ./scripts/build_clone_guides.rb "draft-guide"    
 
         # Need to make sure there are draft-iguide* folders before using the find command
         # If we don't, the find command will fail because the path does not exist

@@ -13,7 +13,7 @@ echo "Ruby version:"
 echo `ruby -v`
 
 if [ "$TRAVIS_TEST" == "true" ]; then
-    echo "Travis Unit Testing.. skipping guide clone"
+    echo "Travis testing.. skipping guide clone"
 else
     echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb

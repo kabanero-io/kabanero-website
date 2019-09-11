@@ -4,11 +4,11 @@ rvm:
 
 stages:
   - name: Linting Test
-    if: type IN (push)
+    if: type IN (api)
   - name: Jekyll build stage
-    if: type IN (push)
+    if: type IN (api)
   - name: Deploy
-    if: (type IN (api))
+    if: (type IN (push))
 
 jobs:
   include:
@@ -21,17 +21,13 @@ jobs:
         - ./scripts/build_gem_dependencies.sh
         
     - stage: "Jekyll build"
-      name: "Building the website with Jekyll and using Maven to package"
+      name: "Building website with Jekyll and using Maven to package"
       env: TRAVIS_TEST=true
-      install:
-        - bundle install
       script:
         - ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy" 
-      name: "Deploying Website"
-      install:
-        - bundle install
+      name: "Deploying Website to IBM CF"
       skip_cleanup: true
       on: 
         repo: $TRAVIS_REPO_SLUG

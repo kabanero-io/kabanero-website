@@ -15,9 +15,9 @@ echo `ruby -v`
 echo "Cloning repositories with name starting with guide or iguide..."
 
 if [ "$TRAVIS_UNIT_TEST" == "true" ]; then
-    ruby ./scripts/build_clone_guides.rb
-else
     return
+else
+    ruby ./scripts/build_clone_guides.rb
 fi
 
 # Development environment only actions

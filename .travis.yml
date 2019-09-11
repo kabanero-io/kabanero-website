@@ -4,69 +4,51 @@ rvm:
 
 stages:
   - name: Unit Tests
-    if: type IN (push, pull_request, api) 
+    if: type IN (push, pull_request, api)
   - name: Fork Deploy
-    if: (type IN (push, api)) AND (repo != kabanero-io/kabanero-website)
+    if: (type IN (api)) AND (repo != kabanero-io/kabanero-website)
   - name: Production Deploy
-    if: (type IN (push, api)) AND (repo == kabanero-io/kabanero-website)
+    if: (type IN (api)) AND (repo == kabanero-io/kabanero-website)
 
-jobs:  
+jobs:
   include:
     - stage: "Unit Tests"
       name: "Running Unit Tests"
-      install: 
-          - bundle install
-          - npm install eslint --save-dev
-          - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+      install:
+        - bundle install
+        - npm install eslint --save-dev
+        - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
         - ./scripts/build_jekyll_maven.sh
 
     - stage: "Fork Deploy"
       name: "Deploy to IBM CF from forked repository"
       env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
-      install: 
+      install:
         - bundle install
       skip_cleanup: true
       on:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
-      script: 
+      script:
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
         - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
-        - ./scripts/build.sh         
+        - ./scripts/build.sh
         - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
 
     - stage: "Production Deploy"
       name: "Production deploy"
-      env: JEKYLL_ENV=production 
-      install: 
+      env: JEKYLL_ENV=production
+      install:
         - bundle install
       skip_cleanup: true
       on:
         repo: kabanero-io/kabanero-website
         branch: $TRAVIS_BRANCH
-      script: 
+      script:
         - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
         - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
         - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
-        - ./scripts/build.sh    
+        - ./scripts/build.sh
         - ./scripts/ibmcloud-cf-push.sh kabanero-prod
-
-
-# before_deploy: 
-#  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh 
-
-# deploy:
-#   - provider: script
-#     skip_cleanup: true
-#     on:
-#      tags: true
-#     script: "./scripts/ibmcloud-cf-push.sh kabanero-prod"
-#   - provider: script
-#     skip_cleanup: true
-#     on:
-#       repo: $TRAVIS_REPO_SLUG
-#       branch: $TRAVIS_BRANCH
-#       condition: "$TRAVIS_EVENT_TYPE = api"
-#     script: "./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}"

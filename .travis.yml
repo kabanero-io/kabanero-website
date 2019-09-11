@@ -27,7 +27,7 @@ jobs:
         - ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy" 
-      name: "Deploying website"
+      name: "Deploy website"
       skip_cleanup: true
       on: 
         repo: $TRAVIS_REPO_SLUG

@@ -14,7 +14,7 @@ jobs:
   include:
     - stage: "Unit Tests"
       name: "Running Unit Tests"
-      env: $TRAVIS_UNIT_TEST=true
+      env: TRAVIS_UNIT_TEST=true
       install:
         - bundle install
         - npm install eslint --save-dev

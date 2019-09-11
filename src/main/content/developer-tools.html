@@ -27,7 +27,7 @@ permalink: /developer-tools/
     <div class="row" id="instruction-select-row">
         <h3 class="col-md-12">Install Codewind using:</h3>
         <div class="btn-group col-md-6" role="group">
-            <button type="button" class="btn btn-outline-dark col-md-4 kabanero-colored-button install-select-button" onclick="changeInstructionSelection(this)" data-content="visual-studio" aria-label="Display developer tools install instructions for Visual Studio Code">Visual Sutdio Code</button>
+            <button type="button" class="btn btn-outline-dark col-md-4 kabanero-colored-button install-select-button" onclick="changeInstructionSelection(this)" data-content="visual-studio" aria-label="Display developer tools install instructions for Visual Studio Code">Visual Studio Code</button>
             <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="eclipse" aria-label="Display developer tools install instructions for Eclipse">Eclipse</button>
             <button type="button" class="btn btn-outline-dark col-md-4 install-select-button" onclick="changeInstructionSelection(this)" data-content="cli" aria-label="Display developer tools install instructions for CLI">CLI Instructions</button>
         </div>
@@ -35,9 +35,13 @@ permalink: /developer-tools/
     <div class="row content-row" id="visual-studio">
         <ol class="col-md-12">
             <li>
-                <p>Install Codewind in Visual Studio Code.</p>
+                <p>
+                    Install Codewind in Visual Studio Code.
+                    You must have VS Code installed first. If you do not, please visit the
+                    <a target="_blank" href="https://code.visualstudio.com/download">VS Code Download</a> page and download VS Code.
+                </p>
+                <a href="vscode:extension/IBM.codewind" role="button" class="btn kabanero-colored-button" aria-label="Link to Codewind for Visual Studio Code install">Install Codewind</a>
             </li>
-            <a href="https://www.eclipse.org/codewind/mdt-vsc-overview.html" target="_blank" role="button" class="btn kabanero-colored-button" aria-label="Link to Codewind for Visual Studio Code install">Install Codewind</a>
             <li>
                 <p>Open the Codewind workspace and create a new project.</p>
                 <img class="img-fluid col-md-6" src="/img/dev-tools-new-codewind.png">
@@ -54,8 +58,10 @@ permalink: /developer-tools/
             <li>
                 <p>Install Codewind in Eclipse for Java EE Developers.</p>
                 <small>*Note: The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11)</small>
+                <div>
+                    <a href="https://marketplace.eclipse.org/content/codewind" target="_blank" role="button" class="btn kabanero-colored-button" aria-label="Link to Eclipse Codewind install">Install Codewind</a>
+                </div>
             </li>
-            <a href="https://www.eclipse.org/codewind/" target="_blank" role="button" class="btn kabanero-colored-button" aria-label="Link to Eclipse Codewind install">Install Codewind</a>
             <li>
                 <p>Follow the wizard and accept licenses.</p>
             </li>
@@ -64,7 +70,7 @@ permalink: /developer-tools/
             </li>
             <li>
                 <p>Navigate to Codewind view.</p>
-                <p>Window > Show View > Other > Codewind > Codewind Explorer</p>
+                <code>Window > Show View > Other > Codewind > Codewind Explorer</code>
             </li>
             <li>
                 <p>Install Docker Images.</p>
@@ -72,7 +78,7 @@ permalink: /developer-tools/
             </li>
             <li>
                 <p>Create a new project or work with an existing one.</p>
-                <p>Codewind creates a folder called codewind-workspace within your home directory (C:\codewind-workspace on Windows) to contain your projects</p>
+                <p>Codewind creates a folder called codewind-workspace within your home directory (<code>C:\codewind-workspace</code> on Windows) to contain your projects</p>
             </li>
         </ol>
         <p class="col-md-12">Need more help using Codewind? <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">Learn More</a></p>

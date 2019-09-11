@@ -13,7 +13,7 @@ stages:
 jobs:
   include:
     - stage: "Linting Test"
-      name: "Running Unit Tests"
+      name: "Running lint testing"
       env: TRAVIS_UNIT_TEST=true
       install:
         - bundle install

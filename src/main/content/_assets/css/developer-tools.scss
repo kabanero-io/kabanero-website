@@ -1,9 +1,9 @@
-.hidden-row{
+.hide {
     display:none;
 }
 
-h2:first-of-type{
-    margin: 30px 0 30px 0;
+.image-max {
+    max-height: 500px;
 }
 
 .prereq-text{
@@ -36,12 +36,16 @@ h2:first-of-type{
     }
 }
 
-.content-row{
-    margin-top:50px;
+.content-row {
+    margin-top: 25px;
 }
 
-ol{
-    margin:0 15px 15px 15px;
+.dev-tool-prereq {
+    display: inline;
+}
+
+.content-row ol{
+    margin-top: 25px;
 
     & .kabanero-colored-button{
         margin-bottom:30px;

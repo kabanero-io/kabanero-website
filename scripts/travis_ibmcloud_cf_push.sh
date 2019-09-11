@@ -7,8 +7,8 @@ source $SCRIPT_DIR/build_clone_docs.sh    $DOCS_GIT_URL   $DOCS_GIT_REVISION
 source $SCRIPT_DIR/build.sh
 
 if [ "$JEKYLL_ENV" == "production" ]; then
-    source $SCRIPT_DIR/bmcloud-cf-push.sh "kabanero-prod"
+    source $SCRIPT_DIR/ibmcloud-cf-push.sh "kabanero-prod"
 else
 
-    source $SCRIPT_DIR/bmcloud-cf-push.sh "${TRAVIS_REPO_SLUG%/*}-kabanero"
+    source $SCRIPT_DIR/ibmcloud-cf-push.sh "${TRAVIS_REPO_SLUG%/*}-kabanero"
 fi

@@ -28,6 +28,8 @@ jobs:
 
     - stage: "Deploy" 
       name: "Deploy website"
+      install:
+        - bundle install
       skip_cleanup: true
       on: 
         repo: $TRAVIS_REPO_SLUG

@@ -13,7 +13,12 @@ echo "Ruby version:"
 echo `ruby -v`
 
 echo "Cloning repositories with name starting with guide or iguide..."
-ruby ./scripts/build_clone_guides.rb
+
+if [ "$TRAVIS_UNIT_TEST" == "true" ]; then
+    ruby ./scripts/build_clone_guides.rb
+else
+    return
+fi
 
 # Development environment only actions
 if [ "$JEKYLL_ENV" != "production" ]; then 

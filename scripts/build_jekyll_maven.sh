@@ -16,7 +16,7 @@ if [ "$TRAVIS_TEST" == "true" ]; then
     echo "Travis testing.. skipping guide clone"
 else
     echo "Cloning repositories with name starting with guide or iguide..."
-    #ruby ./scripts/build_clone_guides.rb
+    ruby ./scripts/build_clone_guides.rb
 fi
 
 # Development environment only actions

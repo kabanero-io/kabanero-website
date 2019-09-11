@@ -6,9 +6,9 @@ stages:
   - name: Unit Tests
     if: type IN (push, pull_request) 
   - name: Fork Deploy
-    if: (type IN (push, api)) AND (env($TRAVIS_REPO_SLUG) = kidus60/kabanero-website)
+    if: (type IN (push, api)) AND (env(TRAVIS_REPO_SLUG) = "kidus60/kabanero-website")
   - name: Production Deploy
-    if: (type IN (push, api)) AND (env($TRAVIS_REPO_SLUG) = kabanero-io/kabanero-website)
+    if: (type IN (push, api)) AND (env("$TRAVIS_REPO_SLUG") = kabanero-io/kabanero-website)
 
 jobs:  
   include:

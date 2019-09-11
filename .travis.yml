@@ -13,7 +13,7 @@ stages:
 jobs:
   include:
     - stage: "Unit Tests"
-      name: "Running Unit Tests ${TRAVIS_REPO_SLUG}"
+      name: "Running Unit Tests env($TRAVIS_REPO_SLUG)"
       install:
         - bundle install
         - npm install eslint --save-dev

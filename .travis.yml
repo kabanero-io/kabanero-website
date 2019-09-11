@@ -4,27 +4,30 @@ rvm:
 
 stages:
   - name: Linting Test
-    if: type IN (push, pull_request, api)
-  - name: Fork Deploy
-    if: (type IN (api)) AND (repo != kabanero-io/kabanero-website)
-  - name: Production Deploy
-    if: (type IN (api)) AND (repo == kabanero-io/kabanero-website)
+    if: type IN (push)
+  - name: Jekyll build stage
+    if: type IN (push)
+  - name: Deploy
+    if: (type IN (api))
 
 jobs:
   include:
     - stage: "Linting Test"
       name: "Running lint testing"
+      install:
+        - npm install eslint --save-dev
+        - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+        
+    - stage: "Jekyll build"
+      name: "Building the website with Jekyll and using Maven to package"
       env: TRAVIS_TEST=true
       install:
         - bundle install
-        - npm install eslint --save-dev
-        - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
       script:
         - ./scripts/build_jekyll_maven.sh
 
-    - stage: "Fork Deploy" 
-      name: "Deploy to IBM CF from forked repository"
-      env: JEKYLL_DRAFT_GUIDES=true JEKYLL_DRAFT_BLOGS=true
+    - stage: "Deploy" 
+      name: "Deploying Website"
       install:
         - bundle install
       skip_cleanup: true
@@ -32,24 +35,4 @@ jobs:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:
-        - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-        - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
-        - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
-        - ./scripts/build.sh
-        - ./scripts/ibmcloud-cf-push.sh ${TRAVIS_REPO_SLUG%/*}-kabanero
-
-    - stage: "Production Deploy"
-      name: "Deploy Kabanero to production"
-      env: JEKYLL_ENV=production
-      install:
-        - bundle install
-      skip_cleanup: true
-      on:
-        repo: kabanero-io/kabanero-website
-        branch: $TRAVIS_BRANCH
-      script:
-        - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-        - ./scripts/build_clone_blogs.sh $BLOGS_GIT_URL $BLOGS_GIT_REVISION
-        - ./scripts/build_clone_docs.sh  $DOCS_GIT_URL  $DOCS_GIT_REVISION
-        - ./scripts/build.sh
-        - ./scripts/ibmcloud-cf-push.sh kabanero-prod
+        - ./.travis/cf_deploy.sh

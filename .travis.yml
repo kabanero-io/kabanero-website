@@ -15,6 +15,7 @@ jobs:
     - stage: "Linting Test"
       name: "Running lint testing"
       install:
+        - bundle install
         - npm install eslint --save-dev
         - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
         

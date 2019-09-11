@@ -27,10 +27,10 @@ jobs:
         - ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy" 
-      name: "Deploying Website to IBM CF"
+      name: "Deploying website"
       skip_cleanup: true
       on: 
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:
-        - ./scripts/cf_deploy.sh
+        - ./scripts/travis_ibmcloud_cf_push.sh

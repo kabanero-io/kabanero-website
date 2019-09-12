@@ -3,7 +3,7 @@ rvm:
   - 2.6.3
 
 before_install:
-  - sudo apt-get install python3.6
+  - sudo apt-get install python3-bs4 -y
 
 stages:
   - name: Linting test

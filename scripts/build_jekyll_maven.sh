@@ -4,13 +4,15 @@
 
 # Exit immediately if a simple command exits with a non-zero status.
 set -e
-
+CUR_DIR="$(cd $(dirname $0) && pwd)"
 JEKYLL_BUILD_FLAGS=""
 
 ./scripts/build_gem_dependencies.sh
 
 echo "Ruby version:"
 echo `ruby -v`
+
+CONTENT_DIR="$CUR_DIR"/../../src/main/content
 
 if [ "$TRAVIS_TEST" == "true" ]; then
     echo "Travis testing.. skipping guide clone"
@@ -58,14 +60,14 @@ fi
 #./scripts/modify_javadoc.sh
 
 echo "Copying guide images to /img/guide"
-mkdir -p src/main/content/img/guide
+mkdir -p "$CONTENT_DIR"/img/guide
 # Check if any draft guide images exist first
-if [ -e src/main/content/guides/draft-guide*/assets/* ]
- then cp src/main/content/guides/draft-guide*/assets/* src/main/content/img/guide/
+if [ -e "$CONTENT_DIR"/guides/draft-guide*/assets/* ]
+ then cp "$CONTENT_DIR"/guides/draft-guide*/assets/* src/main/content/img/guide/
 fi
 # Check if any published guide images exist first
-if [ -e src/main/content/guides/guide*/assets/* ]
- then cp src/main/content/guides/guide*/assets/* src/main/content/img/guide/
+if [ -e "$CONTENT_DIR"/guides/guide*/assets/* ]
+ then cp "$CONTENT_DIR"guides/guide*/assets/* src/main/content/img/guide/
 fi
 
 # Move any js/css files from guides to the _assets folder for jekyll-assets minification.

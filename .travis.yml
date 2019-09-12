@@ -30,11 +30,12 @@ jobs:
 
     - stage: "Deploy" 
       name: "Deploy website"
+      env: TRAVIS_TEST=true
       install:
         - bundle install 
         - sudo add-apt-repository ppa:jonathonf/python-3.6 -y
         - sudo apt-get update -q
-        - sudo apt-get install python3.6
+        - sudo apt-get install python3.7
       skip_cleanup: true
       on: 
         repo: $TRAVIS_REPO_SLUG

@@ -2,9 +2,6 @@ language: ruby
 rvm:
   - 2.6.3
 
-before_install:
-  - sudo apt-get install python3.6 -y
-
 stages:
   - name: Linting test
     if: type IN (push, pull_request)
@@ -33,6 +30,8 @@ jobs:
 
     - stage: "Deploy" 
       name: "Deploy website"
+      before_install:
+        - sudo apt-get install python3.6 -y
       install:
         - bundle install 
       skip_cleanup: true

@@ -28,14 +28,13 @@ jobs:
       env: TRAVIS_TEST=true
       install:
         - bundle install
-        - sudo pip3 install -r requirements.txt
       script:
         - ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy" 
       name: "Deploy website"
       before_install:
-        - sudo apt-get install python3.6 -y
+        - sudo pip3 install -r requirements.txt
       install:
         - bundle install 
       skip_cleanup: true

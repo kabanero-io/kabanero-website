@@ -32,14 +32,13 @@ jobs:
       name: "Deploy website"
       install:
         - bundle install 
+        - sudo add-apt-repository ppa:jonathonf/python-3.6 -y
+        - sudo apt-get update -q
+        - sudo apt-get install python3.6
       skip_cleanup: true
       on: 
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:
-        - python3 -V
-        - sudo add-apt-repository ppa:jonathonf/python-3.6 -y
-        - sudo apt-get update -q
-        - sudo apt-get install python3.6
         - python3 -V
         - ./scripts/travis_ibmcloud_cf_push.sh

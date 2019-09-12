@@ -46,4 +46,5 @@ jobs:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:
+        - echo python3 -V
         - ./scripts/travis_ibmcloud_cf_push.sh

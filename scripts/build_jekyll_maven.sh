@@ -12,8 +12,6 @@ JEKYLL_BUILD_FLAGS=""
 echo "Ruby version:"
 echo `ruby -v`
 
-CONTENT_DIR="$CUR_DIR"/../../src/main/content
-
 if [ "$TRAVIS_TEST" == "true" ]; then
     echo "Travis testing.. skipping guide clone"
 else
@@ -60,14 +58,16 @@ fi
 #./scripts/modify_javadoc.sh
 
 echo "Copying guide images to /img/guide"
-mkdir -p "$CONTENT_DIR"/img/guide
+mkdir -p src/main/content/img/guide
 # Check if any draft guide images exist first
-if [ -e "$CONTENT_DIR"/guides/draft-guide*/assets/* ]
- then cp "$CONTENT_DIR"/guides/draft-guide*/assets/* src/main/content/img/guide/
+if [ -e src/main/content/guides/draft-guide*/assets/* ]
+    echo src/main/content/guides/draft-guide*/assets/* 
+ then cp src/main/content/guides/draft-guide*/assets/* src/main/content/img/guide/
 fi
 # Check if any published guide images exist first
-if [ -e "$CONTENT_DIR"/guides/guide*/assets/* ]
- then cp "$CONTENT_DIR"guides/guide*/assets/* src/main/content/img/guide/
+if [ -e src/main/content/guides/guide*/assets/* ]
+    echo src/main/content/guides/draft-guide*/assets/* 
+ then cp src/main/content/guides/guide*/assets/* src/main/content/img/guide/
 fi
 
 

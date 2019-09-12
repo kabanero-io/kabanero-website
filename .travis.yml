@@ -4,9 +4,6 @@ language: ruby
 rvm:
   - 2.6.3
 
-python:
-  - "3.6"
-
 stages:
   - name: Linting test
     if: type IN (api)
@@ -36,8 +33,9 @@ jobs:
     - stage: "Deploy" 
       name: "Deploy website"
       before_install:
-          - sudo add-apt-repository ppa:jonathonf/python-3.6 -y
-          - sudo apt-get update -q
+          - sudo apt-get install software-properties-common python-software-properties
+          - sudo add-apt-repository ppa:jonathonf/python-3.6
+          - sudo apt-get update 
           - sudo apt-get install python3.6
       install:
         - bundle install 
@@ -46,5 +44,5 @@ jobs:
         repo: $TRAVIS_REPO_SLUG
         branch: $TRAVIS_BRANCH
       script:
-        - echo python3 -V
+        - python3 -V
         - ./scripts/travis_ibmcloud_cf_push.sh

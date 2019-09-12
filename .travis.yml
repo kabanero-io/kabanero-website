@@ -1,3 +1,5 @@
+sudo: enabled
+
 language: ruby
 rvm:
   - 2.6.3
@@ -7,11 +9,11 @@ python:
 
 stages:
   - name: Linting test
-    if: type IN (push, pull_request)
+    if: type IN (api)
   - name: Jekyll build site
-    if: type IN (push, pull_request)
+    if: type IN (api)
   - name: Deploy
-    if: (type IN (api))
+    if: (type IN (push))
 
 jobs:
   include:
@@ -34,7 +36,9 @@ jobs:
     - stage: "Deploy" 
       name: "Deploy website"
       before_install:
-        - sudo pip3 install -r requirements.txt
+          - sudo add-apt-repository ppa:jonathonf/python-3.6 -y
+          - sudo apt-get update -q
+          - sudo apt-get install python3.6
       install:
         - bundle install 
       skip_cleanup: true

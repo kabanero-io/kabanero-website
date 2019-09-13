@@ -1,5 +1,3 @@
-sudo: required
-
 language: ruby
 rvm:
   - 2.6.3
@@ -13,4 +11,5 @@ before_install:
 
 script:
   - docker cp src/main/content/_assets/js  imgname:/src/main/content/_assets/
-  - exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+  # - exec -it imgname /bin/bash -c "src/main/content/_assets/js/*.js"
+  # - exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"

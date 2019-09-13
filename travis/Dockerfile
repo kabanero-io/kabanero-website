@@ -4,7 +4,8 @@ FROM ruby:latest
 # update the repository sources list
 # and install dependencies
 RUN apt-get update \
-    && apt-get install -y curl 
+    && apt-get install -y curl \
+    && apt-get -y install maven
 
 ENV NODE_VERSION=12.6.0
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -17,16 +18,11 @@ RUN npm install eslint --save-dev
 RUN groupadd -rg 1000 user \
     && useradd -rg user -u 1000 -d / user \
     && chown user:user /
-
-# COPY ./Gemfile /
-# COPY ./Gemfile.lock /
-# COPY ./gems /gems
-# COPY ./scripts /scripts
-# COPY ./robots.txt /
+    
 COPY . .
 COPY ./.eslintrc.yml  src/main/content/_assets/js/
 COPY src/main/content/_assets/js src/main/content/_assets/js
 
 RUN node --version
 RUN npm --version
-
+RUN mvn -version

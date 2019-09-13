@@ -3,12 +3,10 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t  kidusimage  -f travis/Dockerfile .
-
 install:
   - gem install bundle
   - bundle install
+  - docker build -t  kidusimage  -f travis/Dockerfile .
 
 stages:
   - name: Linting test

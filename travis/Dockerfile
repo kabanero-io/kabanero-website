@@ -16,9 +16,9 @@ RUN npm install eslint --save-dev
 
 RUN mkdir -p src/main/content/_assets/js
 
-COPY ../scripts /scripts
-COPY ../Gemfile /
-COPY ../Gemfile.lock /
+COPY ./scripts /scripts
+COPY ./Gemfile /
+COPY ./Gemfile.lock /
 
 COPY ../gems /gem
 

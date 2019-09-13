@@ -20,7 +20,7 @@ COPY ./scripts /scripts
 COPY ./Gemfile /
 COPY ./Gemfile.lock /
 
-COPY ../gems /gem
+COPY ./gems /gem
 
 RUN scripts/build_gem_dependencies.sh
 

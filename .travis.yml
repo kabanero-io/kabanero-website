@@ -5,12 +5,19 @@ services:
 
 before_install:
   - docker build -t  kidusimage  -f travis/Dockerfile .
-  - docker run -ti -d --name imgname kidusimage /bin/bash 
+  - docker run -ti -d --name imgname kidusimage  
+
 install:
   - gem install bundle
   - bundle install
 
-script:
-  - docker cp src/main/content/_assets/js  imgname:/src/main/content/_assets/
-  - docker cp .eslintrc.yml  imgname:/src/main/content/_assets/
-  - docker exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+stages:
+  - name: Linting test
+    if: type IN (push)
+
+jobs:
+  include:
+    - stage: "Linting test"
+      name: "Running lint testing"
+      script:
+        - docker exec -it imgname bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"

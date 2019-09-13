@@ -3,7 +3,7 @@ _site
 .jekyll-cache
 cla
 target
-.eslintrc.yml
+/src/main/content/_assets/js/twitterWidgets.js
 .gitignore
 CONTRIBUTING.md
 IBM-Trademark-Policy.md

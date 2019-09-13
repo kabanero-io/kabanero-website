@@ -12,5 +12,5 @@ install:
 
 script:
   - docker cp src/main/content/_assets/js  imgname:/src/main/content/_assets/
-  #- exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+  - docker cp .eslintrc.yml  imgname:/src/main/content/_assets/
   - docker exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"

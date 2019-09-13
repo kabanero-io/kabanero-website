@@ -8,19 +8,18 @@ js: general-references
 permalink: /docs/
 ---
 {% assign t = site.data[site.active_lang].general-reference %}
-{% assign collectionsDoc = site.pages %}
+{% assign collectionsDoc = site.pages | sort: "doc-order" %}
 
 {% assign docCategories = '' | split: '' %}
 
 {% for doc in collectionsDoc %}
     {% if doc.doc-category %}
-    {% assign docCategory = doc.doc-category | split: '/n' %}
-    {% assign docCategories = docCategories | concat: docCategory %}
+        {% assign docCategory = doc.doc-category | split: '/n' %}
+        {% assign docCategories = docCategories | concat: docCategory %}
     {% endif %}
 {% endfor %}
 
-{% assign uniqueCats =  docCategories | uniq %}
-
+{% assign uniqueCats = docCategories | uniq %}
 
 {% assign introDoc = site.pages | where: 'title', t.welcome-to-docs %}
 <div id="background-container" class="container-fluid">
@@ -55,22 +54,22 @@ permalink: /docs/
                     <div id={{catNoSpaces}} class="collapse" >
                         <div id="toc-inner">
                             {% if currCatDocs.size > 0 %}
-                            <div id="toc-container">
-                                <ul id="general-toc">
-                                    {% for doc in introDoc %}
-                                    <li class="no-display">
-                                        <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
-                                    </li>
-                                    {%  endfor %}
-                                    {% for doc in currCatDocs %}
-                                    <li class="doc-link">
-                                        <div class="doc-title" role="button" href="{{ doc.url }}" tabindex="0" data-category={{buttonId}}>{{ doc.title }}</div>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                                <div id="toc-container">
+                                    <ul id="general-toc">
+                                        {% for doc in introDoc %}
+                                        <li class="no-display">
+                                            <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
+                                        </li>
+                                        {%  endfor %}
+                                        {% for doc in currCatDocs %}
+                                        <li class="doc-link">
+                                            <div class="doc-title" role="button" href="{{ doc.url }}" tabindex="0" data-category={{buttonId}}>{{ doc.title }}</div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             {% else %}
-                            <div>{{t.no-doc-found}}</div>
+                                <div>{{t.no-doc-found}}</div>
                             {% endif %}
                         </div>
                     </div>

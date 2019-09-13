@@ -41,6 +41,7 @@ RUN mkdir -p /home/jekyll \
     && useradd -rg jekyll -u 1000 -d /home/jekyll jekyll \
     && chown jekyll:jekyll /home/jekyll
 
+RUN mkdir -p /home/jekyll/src/main/content/_assets/
 # Create a mount point where Docker can access the source files on my local system (host system)
 VOLUME /home/jekyll
 

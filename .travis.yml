@@ -7,11 +7,12 @@ rvm:
 services:
   - docker
 
-before_install:
-  - docker build -t  kidusimage  -f travis/Dockerfile .
-  - docker run -ti -d --name imgname kidusimage /bin/bash 
-
+install:
+  - gem install bundle
+  - bundle install
 script:
-  - docker cp src/main/content/_assets/js  imgname:/src/main/content/_assets/
+  - docker build -t  kidusimage  -f travis/Dockerfile .
+  - docker run -ti -d --name imgname kidusimage /bin/bash bundle install
+  - docker cp src/main/content/_assets/js  imgname:/home/jekyll/src/main/content/_assets/
  # - exec -it imgname /bin/bash -c "src/main/content/_assets/js/*.js"
   - exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"

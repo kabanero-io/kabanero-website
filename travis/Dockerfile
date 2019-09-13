@@ -14,7 +14,10 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
 RUN npm install eslint --save-dev
 
-RUN mkdir -p src/main/content/_assets/js
+RUN mkdir -p src/main/content/_assets/js \
+    && groupadd -rg 1000 user \
+    && useradd -rg user -u 1000 -d / user \
+    && chown user:user /
 
 RUN node --version
 RUN npm --version

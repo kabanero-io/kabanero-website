@@ -9,8 +9,8 @@ before_install:
 install:
   - gem install bundle
   - bundle install
-  
+
 script:
   - docker cp src/main/content/_assets/js  imgname:/src/main/content/_assets/
   #- exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
-  - exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+  - docker exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"

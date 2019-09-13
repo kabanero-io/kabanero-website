@@ -21,5 +21,3 @@ jobs:
       name: "Running lint testing"
       script:
         - docker exec -it imgname bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
-      after_script:
-        - exit

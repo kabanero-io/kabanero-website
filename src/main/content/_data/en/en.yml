@@ -9,6 +9,7 @@ _includes:
     close: Close
     docs: Docs
     blogs: Blog
+    guides: Guides
   doc_header:
     toggle-navigation: Toggle navigation
     guides: Guides

@@ -14,11 +14,16 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
 RUN npm install eslint --save-dev
 
-RUN mkdir -p /src \
-    && groupadd -rg 1000 user \
+RUN groupadd -rg 1000 user \
     && useradd -rg user -u 1000 -d / user \
     && chown user:user /
 
+# COPY ./Gemfile /
+# COPY ./Gemfile.lock /
+# COPY ./gems /gems
+# COPY ./scripts /scripts
+# COPY ./robots.txt /
+COPY . .
 COPY ./.eslintrc.yml  src/main/content/_assets/js/
 COPY src/main/content/_assets/js src/main/content/_assets/js
 

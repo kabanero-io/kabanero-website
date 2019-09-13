@@ -5,7 +5,6 @@ services:
 
 before_install:
   - docker build -t  kidusimage  -f travis/Dockerfile .
-  - docker run -ti -d --name imgname kidusimage  
 
 install:
   - gem install bundle
@@ -14,10 +13,19 @@ install:
 stages:
   - name: Linting test
     if: type IN (push)
+  - name: Jekyll build site
+    if: type IN (push)
 
 jobs:
   include:
     - stage: "Linting test"
       name: "Running lint testing"
       script:
-        - docker exec -it imgname bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+        - docker run -it kidusimage bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+
+    - stage: "Jekyll build site"
+      name: "Building website with Jekyll and using Maven to package"
+      script:
+        - docker run -it kidusimage bash -c "./scripts/build_jekyll_maven.sh -yes"
+
+      

@@ -7,13 +7,13 @@ services:
 
 install:
   - docker build -t kidusimage  -f travis/Dockerfile . 
-  #- docker save image_a:latest image_b:dev image_c:prod | gzip -2 > "$HOME/docker/docker_images.tar.gz"
+  - docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:
   - name: Linting test
-    if: type IN (api)
+    if: type IN (push)
   - name: Jekyll build site
-    if: type IN (api)
+    if: type IN (pus)
   - name: Deploy
     if: (type IN (push))
   

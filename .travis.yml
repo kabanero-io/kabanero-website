@@ -1,13 +1,9 @@
 services:
   - docker
 
-#env:
-  #- DOCKER_RUN_COMMAND="docker run -it kidusimage bash -c"
-
-
 install:
-  - docker build -t kidusimage  -f travis/Dockerfile . 
-  - docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
+  - docker build -t kidusimage  -f travis/Dockerfile .
+  #- docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:
   - name: Linting test
@@ -16,39 +12,39 @@ stages:
     if: type IN (push)
   - name: Deploy
     if: (type IN (push))
-  
+
 jobs:
   include:
     - stage: "Linting test"
       name: "Running lint testing"
       script:
         - docker run -it -e DOCS_GIT_URL=${DOCS_GIT_URL}
-            -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
-            -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
-            -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
+          -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
+          -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
+          -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
           kidusimage bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
 
     - stage: "Jekyll build site"
       name: "Building website with Jekyll and using Maven to package"
       script:
         - docker run -it -e DOCS_GIT_URL=${DOCS_GIT_URL}
-            -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
-            -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
-            -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
+          -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
+          -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
+          -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
           kidusimage bash -c "./scripts/build_jekyll_maven.sh"
 
-    - stage: "Deploy" 
+    - stage: "Deploy"
       name: "Deploy website"
       script:
-         - docker run -it 
-            -e IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION} 
-            -e IBM_CLOUD_SPACE=${IBM_CLOUD_SPACE}
-            -e IBM_CLOUD_API_KEY=${IBM_CLOUD_API_KEY}
-            -e IBM_CLOUD_API=${IBM_CLOUD_API}
-            -e DOCS_GIT_URL=${DOCS_GIT_URL}
-            -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
-            -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
-            -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
-            -e JEKYLL_ENV=${JEKYLL_ENV}
-            -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*}
+        - docker run -it
+          -e IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION}
+          -e IBM_CLOUD_SPACE=${IBM_CLOUD_SPACE}
+          -e IBM_CLOUD_API_KEY=${IBM_CLOUD_API_KEY}
+          -e IBM_CLOUD_API=${IBM_CLOUD_API}
+          -e DOCS_GIT_URL=${DOCS_GIT_URL}
+          -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
+          -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
+          -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
+          -e JEKYLL_ENV=${JEKYLL_ENV}
+          -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*}
           kidusimage bash -c "./travis/travis_ibmcloud_cf_push.sh"

@@ -2,13 +2,15 @@ services:
   - docker
 
 install:
-  - docker build -t  kidusimage  -f travis/Dockerfile .
+  - docker build -t kidusimage  -f travis/Dockerfile . 
 
 stages:
   - name: Linting test
-    if: type IN (push)
+    if: type IN (api)
   - name: Jekyll build site
-    if: type IN (push)
+    if: type IN (api)
+  - name: Deploy
+    if: (type IN (push))
   
 jobs:
   include:
@@ -22,4 +24,7 @@ jobs:
       script:
         - docker run -it kidusimage bash -c "./scripts/build_jekyll_maven.sh"
 
-      
+    - stage: "Deploy" 
+      name: "Deploy website"
+      script:
+         - docker run -it kidusimage bash -c "./scripts/travis_ibmcloud_cf_push.sh"

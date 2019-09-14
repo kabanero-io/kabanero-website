@@ -1,14 +1,9 @@
 services:
   - docker
 
-env:
-  global:
-    - DOCKER_COMMAND=docker run -it kidusimage bash -c 
-
-
 script:
   - docker build -t kidusimage  -f travis/Dockerfile . 
- # - docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
+  #- docker save image_a:latest image_b:dev image_c:prod | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:
   - name: Linting test

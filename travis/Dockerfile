@@ -23,9 +23,6 @@ COPY . .
 COPY ./.eslintrc.yml  src/main/content/_assets/js/
 COPY src/main/content/_assets/js src/main/content/_assets/js
 
-RUN mkdir -p /root/.ssh && \
-    chmod 0700 /root/.ssh && \
-
 
 RUN node --version
 RUN npm --version

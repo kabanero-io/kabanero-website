@@ -5,7 +5,10 @@ FROM ruby:latest
 # and install dependencies
 RUN apt-get update \
     && apt-get install -y curl \
-    && apt-get -y install maven
+    && apt-get -y install maven \
+    && apt-get -y install python3-pip
+
+RUN pip3 install requests
 
 ENV NODE_VERSION=12.6.0
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash

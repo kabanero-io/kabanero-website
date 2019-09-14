@@ -1,11 +1,6 @@
-sudo: required
-
-services:
-  - docker
+language: ruby
 
 install:
-  - gem install bundle
-  - bundle install
   - docker build -t  kidusimage  -f travis/Dockerfile .
 
 stages:

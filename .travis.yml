@@ -1,20 +1,9 @@
 services:
   - docker
 
-env:
-  - DOCKER_RUN_COMMAND="docker run -it kidusimage bash -c"
-  - DOCKER_RUN_COMMAND_DEPLOY="docker run -it 
-    -r IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION} 
-    -r IBM_CLOUD_SPACE=${IBM_CLOUD_SPACE}
-    -r IBM_CLOUD_API_KEY=${IBM_CLOUD_API_KEY}
-    -r IBM_CLOUD_API=${IBM_CLOUD_API}
-    -r DOCS_GIT_URL=${DOCS_GIT_URL}
-    -r DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
-    -r IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION}
-    -r BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
-    -r BLOGS_GIT_URL=${BLOGS_GIT_URL}
-    -r BLOGS_GIT_URL=${JEKYLL_ENV}
-    kidusimage bash -c"
+#env:
+  #- DOCKER_RUN_COMMAND="docker run -it kidusimage bash -c"
+
 
 install:
   - docker build -t kidusimage  -f travis/Dockerfile . 
@@ -37,8 +26,21 @@ jobs:
 
     - stage: "Jekyll build site"
       name: "Building website with Jekyll and using Maven to package"
+      env:
+        - DOCKER_RUN_COMMAND_DEPLOY="docker run -it 
+          -r IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION} 
+          -r IBM_CLOUD_SPACE=${IBM_CLOUD_SPACE}
+          -r IBM_CLOUD_API_KEY=${IBM_CLOUD_API_KEY}
+          -r IBM_CLOUD_API=${IBM_CLOUD_API}
+          -r DOCS_GIT_URL=${DOCS_GIT_URL}
+          -r DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
+          -r IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION}
+          -r BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
+          -r BLOGS_GIT_URL=${BLOGS_GIT_URL}
+          -r BLOGS_GIT_URL=${JEKYLL_ENV}
+          kidusimage bash -c"
       script:
-        - $DOCKER_RUN_COMMAND "./scripts/build_jekyll_maven.sh"
+        - $DOCKER_RUN_COMMAND_DEPLOY "./scripts/build_jekyll_maven.sh"
 
     - stage: "Deploy" 
       name: "Deploy website"

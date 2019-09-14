@@ -6,16 +6,16 @@ install:
   #- docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:
-  - name: Linting test
+  - name: Run Linting test and build site
     if: type IN (push)
-  - name: Jekyll build site
-    if: type IN (push)
+  # - name: Jekyll build site
+  #   if: type IN (push)
   - name: Deploy
-    if: (type IN (push))
+    if: (type IN (api))
 
 jobs:
   include:
-    - stage: "Linting test"
+    - stage: "Run Linting test and build site"
       name: "Running lint testing"
       script:
         - docker run -it -e DOCS_GIT_URL=${DOCS_GIT_URL}
@@ -23,15 +23,21 @@ jobs:
           -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
           -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
           kidusimage bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
-
-    - stage: "Jekyll build site"
-      name: "Building website with Jekyll and using Maven to package"
-      script:
+          
         - docker run -it -e DOCS_GIT_URL=${DOCS_GIT_URL}
           -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
           -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
           -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
           kidusimage bash -c "./scripts/build_jekyll_maven.sh"
+
+    # - stage: "Jekyll build site"
+    #   name: "Building website with Jekyll and using Maven to package"
+    #   script:
+    #     - docker run -it -e DOCS_GIT_URL=${DOCS_GIT_URL}
+    #       -e DOCS_GIT_REVISION=${DOCS_GIT_REVISION}
+    #       -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION}
+    #       -e BLOGS_GIT_URL=${BLOGS_GIT_URL}
+    #       kidusimage bash -c "./scripts/build_jekyll_maven.sh"
 
     - stage: "Deploy"
       name: "Deploy website"

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd $(dirname $0) && pwd)/../scripts/"
-ls "$SCRIPT_DIR"
 
 curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 $SCRIPT_DIR/build_clone_blogs.sh   $BLOGS_GIT_URL  $BLOGS_GIT_REVISION

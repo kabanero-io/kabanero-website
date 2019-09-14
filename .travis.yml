@@ -27,4 +27,4 @@ jobs:
     - stage: "Deploy" 
       name: "Deploy website"
       script:
-         - docker run -it kidusimage bash -c "./scripts/travis_ibmcloud_cf_push.sh"
+         - docker run -it kidusimage bash -c "./travis/travis_ibmcloud_cf_push.sh"

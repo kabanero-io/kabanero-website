@@ -24,6 +24,6 @@ jobs:
     - stage: "Jekyll build site"
       name: "Building website with Jekyll and using Maven to package"
       script:
-        - docker run -it kidusimage bash -c "./scripts/build_jekyll_maven.sh -yes"
+        - docker run -it kidusimage bash -c "./scripts/build_jekyll_maven.sh"
 
       

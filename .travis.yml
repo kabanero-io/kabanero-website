@@ -1,7 +1,6 @@
-language: ruby
-rvm:
-  - 2.6.3
-  
+services:
+  - docker
+
 install:
   - docker build -t  kidusimage  -f travis/Dockerfile .
 
@@ -10,7 +9,7 @@ stages:
     if: type IN (push)
   - name: Jekyll build site
     if: type IN (push)
-
+  
 jobs:
   include:
     - stage: "Linting test"

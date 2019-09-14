@@ -1,9 +1,14 @@
 services:
   - docker
 
+env:
+  global:
+    - DOCKER_COMMAND=docker run -it kidusimage bash -c 
+
+
 script:
   - docker build -t kidusimage  -f travis/Dockerfile . 
-  - docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
+ # - docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:
   - name: Linting test
@@ -28,4 +33,4 @@ jobs:
     - stage: "Deploy" 
       name: "Deploy website"
       script:
-         - docker run -it kidusimage bash -c "./travis/travis_ibmcloud_cf_push.sh"
+         - DOCKER_COMMAND "./travis/travis_ibmcloud_cf_push.sh"

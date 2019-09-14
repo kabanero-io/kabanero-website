@@ -31,4 +31,4 @@ jobs:
     - stage: "Deploy" 
       name: "Deploy website"
       script:
-         - DOCKER_COMMAND "./travis/travis_ibmcloud_cf_push.sh"
+         - $DOCKER_COMMAND "./travis/travis_ibmcloud_cf_push.sh"

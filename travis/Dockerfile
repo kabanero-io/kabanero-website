@@ -25,4 +25,4 @@ COPY . .
 #RUN node --version
 #RUN npm --version
 #RUN mvn -version
-#RUN python3 --version    
+#RUN python3 --version

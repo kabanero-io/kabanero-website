@@ -2,7 +2,7 @@ services:
   - docker
 
 env:
-  - DOCKER_COMMAND=docker run -it kidusimage bash -c
+  - DOCKER_COMMAND="docker run -it kidusimage bash -c"
 
 install:
   - docker build -t kidusimage  -f travis/Dockerfile . 

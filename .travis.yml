@@ -3,7 +3,7 @@ services:
 
 install:
   - docker build -t kidusimage  -f travis/Dockerfile .
-  - docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
+  #- docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:
   - name: Linting test

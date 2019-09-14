@@ -17,12 +17,11 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
 RUN npm install eslint --save-dev
 
-COPY . .
-
 RUN mkdir /root/.ssh && chmod 0700 /root/.ssh \
     && ssh-keyscan -t rsa bitbucket.org >> /root/.ssh/known_hosts \
     && ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 
+COPY . .
 #RUN node --version
 #RUN npm --version
 #RUN mvn -version

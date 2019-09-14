@@ -23,7 +23,6 @@ COPY . .
 COPY ./.eslintrc.yml  src/main/content/_assets/js/
 COPY src/main/content/_assets/js src/main/content/_assets/js
 
-
 RUN node --version
 RUN npm --version
 RUN mvn -version

@@ -1,7 +1,10 @@
 services:
   - docker
 
-script:
+env:
+  - DOCKER_COMMAND=docker run -it kidusimage bash -c
+
+install:
   - docker build -t kidusimage  -f travis/Dockerfile . 
   #- docker save image_a:latest image_b:dev image_c:prod | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
@@ -28,4 +31,4 @@ jobs:
     - stage: "Deploy" 
       name: "Deploy website"
       script:
-         - docker run -it kidusimage bash -c "./travis/travis_ibmcloud_cf_push.sh"
+         - DOCKER_COMMAND "./travis/travis_ibmcloud_cf_push.sh"

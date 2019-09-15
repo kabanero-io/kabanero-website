@@ -8,11 +8,11 @@ install:
 
 stages:
   - name: Run lint test
-    if: type IN (push)
+    if: type IN push
   - name: Jekyll build site
-    if: type IN (push)
+    if: type IN push
   - name: Deploy
-    if: (type IN (api))
+    if: type IN api
 
 jobs:
   include:

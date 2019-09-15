@@ -1,8 +1,11 @@
 services:
   - docker
 
+before_install:
+  - docker pull kidus60/kidusimage:latest
+
 install:
-  - docker build -t kidusimage  -f travis/Dockerfile .
+  - docker build --cache-from kidus60/kidusimage:latest -t kidusimage  -f travis/Dockerfile .
   #- docker save kidusimage:latest | gzip -2 > "$HOME/docker/docker_images.tar.gz"
 
 stages:

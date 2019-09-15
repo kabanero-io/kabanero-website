@@ -21,12 +21,12 @@ jobs:
     - stage: "Run lint test"
       name: "Running lint testing"
       script:
-        - travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+        - ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
 
     - stage: "Jekyll build site"
       name: "Building website with Jekyll and using Maven to package"
       script:
-        - travis/docker_run.sh ./scripts/build_jekyll_maven.sh
+        - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy"
       name: "Deploy website"

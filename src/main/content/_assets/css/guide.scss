@@ -525,13 +525,8 @@ header {
     display: none;
 }
 
-.imageblock > .content > img {
+.imageblock > .content img {
     max-width: 100%;
     height: auto;
-}
-
-@media (min-width: 1000px) {
-    .imageblock > .content img {
-        width: 75%;
-    }
+    max-height: 500px;
 }

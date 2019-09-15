@@ -8,19 +8,8 @@ js: general-references
 permalink: /docs/
 ---
 {% assign t = site.data[site.active_lang].general-reference %}
-{% assign collectionsDoc = site.pages %}
-
-{% assign docCategories = '' | split: '' %}
-
-{% for doc in collectionsDoc %}
-    {% if doc.doc-category %}
-    {% assign docCategory = doc.doc-category | split: '/n' %}
-    {% assign docCategories = docCategories | concat: docCategory %}
-    {% endif %}
-{% endfor %}
-
-{% assign uniqueCats =  docCategories | uniq %}
-
+{% assign catsMeta = site.pages | where: 'title', 'doc categories meta' %}
+{% assign categories = catsMeta[0].categories %}
 
 {% assign introDoc = site.pages | where: 'title', t.welcome-to-docs %}
 <div id="background-container" class="container-fluid">
@@ -33,8 +22,8 @@ permalink: /docs/
                 <div id="welcome-doc" class="doc-category doc-title" href="{{ introDoc[0].url }}">
                     {{introDoc[0].title}}
                 </div>
-                {% for cat in uniqueCats %}
-                {% assign catNoSpaces = cat | replace: " ", "" %}
+                {% for cat in categories %}
+                {% assign catNoSpaces = cat | strip %}
                 {% assign dataTarget = "#" | append: catNoSpaces %}
                 {% assign buttonId = catNoSpaces | append: '-button' %}
                 {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
@@ -55,22 +44,22 @@ permalink: /docs/
                     <div id={{catNoSpaces}} class="collapse" >
                         <div id="toc-inner">
                             {% if currCatDocs.size > 0 %}
-                            <div id="toc-container">
-                                <ul id="general-toc">
-                                    {% for doc in introDoc %}
-                                    <li class="no-display">
-                                        <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
-                                    </li>
-                                    {%  endfor %}
-                                    {% for doc in currCatDocs %}
-                                    <li class="doc-link">
-                                        <div class="doc-title" role="button" href="{{ doc.url }}" tabindex="0" data-category={{buttonId}}>{{ doc.title }}</div>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                                <div id="toc-container">
+                                    <ul id="general-toc">
+                                        {% for doc in introDoc %}
+                                        <li class="no-display">
+                                            <div class="no-display" id="intro-hidden" role="button" href="{{ doc.url }}"></div>
+                                        </li>
+                                        {%  endfor %}
+                                        {% for doc in currCatDocs %}
+                                        <li class="doc-link">
+                                            <div class="doc-title" role="button" href="{{ doc.url }}" tabindex="0" data-category={{buttonId}}>{{ doc.title }}</div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             {% else %}
-                            <div>{{t.no-doc-found}}</div>
+                                <div>{{t.no-doc-found}}</div>
                             {% endif %}
                         </div>
                     </div>

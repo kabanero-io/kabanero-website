@@ -1,5 +1,7 @@
-services:
-  - docker
+language: minimal
+
+before_install:
+  - docker pull kidus60/travis-testing:latest 
 
 install:
   - docker build --cache-from kidus60/travis-testing:latest -t travis-testing -f travis/Dockerfile .

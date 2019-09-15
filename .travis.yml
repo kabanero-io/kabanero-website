@@ -6,7 +6,7 @@ before_install:
   - docker pull kidus60/kidusimage:latest
 
 install:
-  - docker build --cache-from kidus60/kidusimage:latest -t kidus60/kidusimage  -f travis/Dockerfile .
+  - docker build --cache-from kidus60/kidusimage:latest -t kidusimage  -f travis/Dockerfile .
 
 stages:
   - name: Run lint test

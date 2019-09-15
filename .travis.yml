@@ -7,25 +7,18 @@ install:
   - docker build --cache-from kidus60/travis-testing:latest -t travis-testing -f travis/Dockerfile .
 
 stages:
-  - name: Run lint test
-    if: type IN push
-  - name: Jekyll build site
+  - name: Running tests
     if: type IN push
   - name: Deploy
-    if: type IN api
+    if: type IN push
 
 jobs:
   include:
-    - stage: "Run lint test"
-      name: "Running lint testing"
+    - stage: "Running tests"
+      name: "Running lint testing and building website with Jekyll"
       script:
         - ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
-
-    - stage: "Jekyll build site"
-      name: "Building website with Jekyll and using Maven to package"
-      script:
         - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh
-
     - stage: "Deploy"
       name: "Deploy website"
       script:

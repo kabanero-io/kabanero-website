@@ -14,7 +14,7 @@ stages:
   - name: Jekyll build site
     if: type IN (push)
   - name: Deploy
-    if: (type IN (api))
+    if: (type IN (push))
 
 jobs:
   include:

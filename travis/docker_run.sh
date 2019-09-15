@@ -10,5 +10,5 @@ docker run -it \
           -e BLOGS_GIT_URL=${BLOGS_GIT_URL} \
           -e JEKYLL_ENV=${JEKYLL_ENV} \
           -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*} \
-          kidusimage bash -c "$1" 
+          travis-testing bash -c "$1" 
           

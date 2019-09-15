@@ -1,8 +1,7 @@
-services:
-  - docker
+language: minimal
 
 install:
-  - docker build --cache-from kidus60/kidusimage:latest -t kidusimage  -f travis/Dockerfile .
+  - docker build --cache-from kidus60/travis-testing:latest -t travis-testing -f travis/Dockerfile .
 
 stages:
   - name: Run lint test
@@ -10,7 +9,7 @@ stages:
   - name: Jekyll build site
     if: type IN (push)
   - name: Deploy
-    if: (type IN (api))
+    if: (type IN (push))
 
 jobs:
   include:

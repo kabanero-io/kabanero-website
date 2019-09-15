@@ -8,9 +8,9 @@ install:
 
 stages:
   - name: Running tests
-    if: type IN push
+    if: type IN (push)
   - name: Deploy
-    if: type IN push
+    if: type IN (push)
 
 jobs:
   include:

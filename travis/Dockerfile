@@ -22,7 +22,7 @@ RUN mkdir /root/.ssh && chmod 0700 /root/.ssh \
 
 COPY . .
 
-RUN npm --version
-RUN mvn -version
-RUN python3 --version
-RUN ruby -v
+# RUN npm --version
+# RUN mvn -version
+# RUN python3 --version
+# RUN ruby -v

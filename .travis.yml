@@ -1,12 +1,10 @@
 language: minimal
-services:
-  - docker
 
 cache:
   directories:
     - docker-cache
 
-before_script:
+before_install:
   - |
     filename=docker-cache/saved_images.tar
     if [[ -f "$filename" ]]; then docker load < "$filename"; fi
@@ -14,7 +12,7 @@ before_script:
     docker pull kidus60/travis-testing
     docker save -o "$filename" kidus60/travis-testing
 
-script:
+install:
   - docker build --cache-from kidus60/travis-testing -t travis-testing -f travis/Dockerfile .
 
 stages:

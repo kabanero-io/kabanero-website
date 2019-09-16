@@ -7,10 +7,15 @@ cache:
     - docker-cache
 
 before_script:
-  - docker pull kidus60/travis-testing:latest
+  - |
+    filename=docker-cache/saved_images.tar
+    if [[ -f "$filename" ]]; then docker load < "$filename"; fi
+    mkdir -p docker-cache
+    docker pull kidus60/travis-testing
+    docker save -o "$filename" kidus60/travis-testing
 
-install:
-  - docker build --cache-from kidus60/travis-testing:latest -t travis-testing -f travis/Dockerfile .
+script:
+  - docker build --cache-from kidus60/travis-testing -t travis-testing -f travis/Dockerfile .
 
 stages:
   - name: Running tests

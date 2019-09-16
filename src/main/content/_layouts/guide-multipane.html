@@ -42,7 +42,7 @@ js:
                 {% assign toc = page.document | tocify_asciidoc %}
                 {% if toc %}
                 <div id="close-container">
-                    <!--<img id="toc-close-white" src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>-->
+                    <img id="toc-close-white" src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
                 </div>
                 <div id="mobile-close-container" data-toggle="collapse" data-target="#toc-column" aria-expanded="false" aria-controls="toc-column">
                     <img src="{{ " /img/toc-close-kabanero.svg " | relative }}" alt="Table of contents close button" tabindex="0"/>
@@ -64,7 +64,7 @@ js:
             </div>                                
          </div>
         <!-- Entire guide section -->
-        <div class="col-md-5">
+        <div class="col-md-5 guide-column-container">
             <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
                 <img src="/img/arrow-white.svg" alt="arrow">
             </div>

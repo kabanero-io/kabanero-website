@@ -330,6 +330,22 @@ header {
     width: 100%;
 }
 
+@media (min-width: 1440px) {
+    #guide-column{
+        &.expanded {
+            width: 140%; 
+        }
+        &.open {
+            width: 100%; 
+        }
+
+    }
+}
+
+.guide-column-shift-left{
+    padding-left: 0px; 
+}
+
 #mobile-github-section {
     display: none;
 }
@@ -492,6 +508,10 @@ header {
         padding-top: 10px;
         padding-bottom: 60px;
         box-shadow: none;
+    } 
+
+    .expanded {
+        width: calc(100% - 780px);
     } 
 
     #guide-content pre {

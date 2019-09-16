@@ -191,12 +191,13 @@ function restoreCurrentStep(){
 function open_TOC(){
     if(!inSingleColumnView()){        
         $('#toc-title').css('margin-top', '0px');
-        $('#toc-column').addClass('inline');
+        $('#toc-column').addClass('block');
         $('#guide-column').removeClass('expanded');
 
         $('#toc-line').addClass('open');            
         $('#toc-column').addClass('open');
         $('#guide-column').addClass('open');
+        $('.guide-column-container').removeClass('guide-column-shift-left');
 
         $('#toc-indicator').addClass('open hidden');
 
@@ -205,17 +206,17 @@ function open_TOC(){
 }
 
 function close_TOC(){
-    $('#toc-title').css('margin-top', '20px');
+    //$('#toc-title').css('margin-top', '20px');
 
     // Remove display type from the table of contents
-    $('#toc-column').removeClass('inline');
+    $('#toc-column').removeClass('block');
 
     // Update the width of the guide-column to accomodate the larger space when the browser is in 3 column view.
     $('#guide-column').addClass('expanded');
 
     // Remove open class to transition back
     $('#toc-line').removeClass('open');
-    $('#toc-column').removeClass('open');
+    $('.guide-column-container').addClass('guide-column-shift-left');
     $('#guide-column').removeClass('open');
 
     $('#toc-indicator').removeClass('open hidden');

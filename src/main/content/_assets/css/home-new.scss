@@ -20,6 +20,10 @@
 $color-kabanero:#C43804;
 
 /* INTRO */
+body{
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
 .separator {
     margin: 35px 0 35px 0;
 }
@@ -31,10 +35,12 @@ $color-kabanero:#C43804;
 .video-wrapper {
 	position: relative;
 	padding-bottom: 35%;
-	padding-top: 25px;
+    padding-top: 25px;
+    margin-top: 25px;
 	height: 0;
 }
 .video-wrapper iframe {
+    border: 1px solid #979797;
 	position: absolute;
 	top: 0;
 	left: 10%;
@@ -43,7 +49,6 @@ $color-kabanero:#C43804;
 }
 
 .video{
-    background-color: #292828;
     color: white;
     padding: 15px 0 15px 0;
     margin-top: 0px;
@@ -71,46 +76,39 @@ $color-kabanero:#C43804;
 
 .open-source-platform-box{
     height:120px;
-    background-color: #5d5d5d;
-    color: white;
-    border:1px solid $color-kabanero;
+    background-color: #d8d8d8;
+    color: #000000;
     cursor: pointer;
-}
 
-.open-source-platform-box:hover{
-    border-color: #fbae61;
+    &:hover{
+        background-color: #FFFFFF;
+    }
+    
+    &:focus{
+        outline: $color-kabanero auto 5px;
+    }
 }
 
 .open-source-platform-box-selected{
     background-color:white;
-    color:black;
-    border: 4px solid;
-    border-image-source: linear-gradient(180deg, $color-kabanero, #e3690a);
-    border-image-slice:1;
+    border: 4px solid #292828;
 }
 
 .open-source-platform-horizontal-separator{
     margin-top:60px;
-    border-top:3px solid $color-kabanero;
-}
-
-.open-source-platform-vertical-separator{
-    height:50px;
-    margin-left:50%;
-}
-
-.open-source-platform-vertical-separator-visible{
-    border-width:0 0 0 3px;
-    border-left: solid;
-    border-image-source: linear-gradient(180deg, #e3690a, #fbae61);
-    border-image-slice:1;
+    border-top:5px solid $color-kabanero;
 }
 
 .open-source-platform-content-box{
     padding:20px;
-    background-color: white;
-    color: black;
-    border-top:6px solid #fbae61;
+    background-color: #f4f5f7;
+    color: #000000;
+    border-top:6px solid #000000;
+}
+
+.no-margin{
+    margin-left:0px !important;
+    margin-right:0px !important;
 }
 
 .open-source-platform-content-title{
@@ -150,24 +148,20 @@ $color-kabanero:#C43804;
 }
 
 .featured-models{
-    background-color: #f3f5f7;
+    background-color: #f4f5f7;
     margin-top: 3em;
-    padding-bottom: 7em;
-    padding-top: 3em;
-}
-
-.support-block{
-    background-color: #f3f5f7;
-    padding-bottom: 7em;
-    padding-top: 3em;
 }
 
 .cpa-link{
     font-weight: bold;
-    color: #0553a7;
+    color: #C43804;
+    &:hover{
+        color:#DB8869;
+    }
 }
 
-.description-text-block{
+.support-desc-text{
+    font-size: 18px;
     margin-top: 20px;
 }
 
@@ -246,17 +240,6 @@ $color-kabanero:#C43804;
     padding-right: 15px;
     right: 0;
     color: #292828;
-}
-
-.model-logo{
-    text-align: center;
-    font-size: 1.2em;
-    margin-left: 1.8em;
-    margin-top: 10px;
-}
-
-.model-logo .img-fluid{
-    height: 100px;
 }
 
 #open_source_title {
@@ -439,9 +422,9 @@ $color-kabanero:#C43804;
     margin-bottom:30px
 }
 
-.featuredModelsCollapse{
-    position: relative;
-    top: 30px;
+.featured-collections-detail{
+    background-color: #f4f5f7;
+    padding-top:25px;
 }
 
 .foundational-toolsText{
@@ -475,6 +458,12 @@ $color-kabanero:#C43804;
     color: #ffffff;
 }
 
+.black-button{
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: #ffffff;
+}
+
 .visit-blog-button{
     margin: 10px 0 10px 20px;
 }
@@ -501,10 +490,6 @@ $color-kabanero:#C43804;
     background-color: #ffffff;
 }
 
-.empty-row{
-    height: 20px;
-}
-
 .blog-post-column{
     border: 1px solid #D8DCDE;
     border-radius: 3px;
@@ -528,28 +513,16 @@ $color-kabanero:#C43804;
 }
 
 .featured-model-box{
-    border-radius: 4rem;
-    color: black;
-    background-color: white;
-    border: 0px;
-    outline: 0px !important;
-    height: 4rem;
-    font-size: 16px;
-}
-
-.featured-model-box:hover{
-    color:white;
-    background-color: $color-kabanero;
+    border:0;
+    background-color:#f4f5f7;
 }
 
 .foundational-tools{
-    background-color: #292828;
-    padding: 15px 0 100px 0;
+    padding: 15px 0 0 0;
 }
 
 .foundational-tools-container{
-    background-color:white;
-    padding-top: 20px;
+    padding-top: 50px;
     padding-bottom: 30px;
 }
 
@@ -608,7 +581,7 @@ $color-kabanero:#C43804;
 }
 
 .slack-invite{
-    color:$color-kabanero;
+    color:#000000;
     font-size:16px;
     font-weight: bolder;
     margin: 0 0 0 15px;
@@ -643,7 +616,7 @@ $color-kabanero:#C43804;
     width: 227px;
     font-size: 17px;
     font-weight: 500;
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: $color-kabanero;
     border-radius: 7px;
     padding: 10px 25px;
@@ -663,4 +636,54 @@ $color-kabanero:#C43804;
     max-height: 60%;
     max-width: 60%;
     margin-bottom: 15px;
+}
+
+.role-box{
+    border: 1px solid #979797;
+    border-top: 10px solid $color-kabanero;
+    margin-left:25px;
+    margin-right:25px;
+    padding: 10px 25px 10px 25px;
+    min-height:445px;
+}
+
+.centered{
+    text-align:center;
+}
+
+.role-box-img{
+    max-height:127px;
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+#role-box-title{
+    margin-bottom:5vh;
+}
+
+.btn-outline-dark{
+    border: 2px solid $color-kabanero;
+    border-radius: 7px;
+    margin-bottom:20px;
+}
+
+#featured-collections-title{
+    margin-bottom:30px;
+}
+
+.featured-model-label{
+    margin-top:10px;
+}
+
+.foundational-tech{
+    margin-left:5px;
+    margin-right:5px;
+}
+
+#kabanero-logo{
+    max-height:400px;
+}
+
+.card-row{
+    max-width:100%
 }

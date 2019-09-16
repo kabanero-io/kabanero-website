@@ -329,10 +329,21 @@ header {
     color: #24253a;
 }
 
-@media (min-width: 960px) and (max-width: 700px){
+@media (min-width: 960px){
     #guide-column{
         &.expanded {
             width: calc(140%);
+        }
+        &.open {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 960px){
+    #end_of_guide{
+        &.expanded {
+            width: calc(122%);
         }
         &.open {
             width: 100%;

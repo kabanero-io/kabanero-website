@@ -198,6 +198,7 @@ function open_TOC(){
         $('#toc-column').addClass('open');
         $('#guide-column').addClass('open');
         $('.guide-column-container').removeClass('guide-column-shift-left');
+        $('#end_of_guide').removeClass('expanded');
 
         $('#toc-indicator').addClass('open hidden');
 
@@ -213,6 +214,7 @@ function close_TOC(){
 
     // Update the width of the guide-column to accomodate the larger space when the browser is in 3 column view.
     $('#guide-column').addClass('expanded');
+    $('#end_of_guide').addClass('expanded');
 
     // Remove open class to transition back
     $('#toc-line').removeClass('open');

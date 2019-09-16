@@ -1,4 +1,3 @@
-
 # Clone the docs (draft or published)
 #
 # git clone does not like to clone into folders that are populated.  We are doing

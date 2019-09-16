@@ -48,7 +48,7 @@ Please ensure you follow the coding standards used throughout the existing code 
 
 # Local Development Setup
 
-This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io site.
+This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io site. This runs jekyll serve which runs a small server that only shows front end changes. If you need to make backend changes see below
 
 ## Prereqs
 - ruby
@@ -68,6 +68,8 @@ This section describes the steps needed to set up your local development environ
 
 # (Optional) Use Docker to Build and run the full site
 
+The above [Local development setup](#local-development-setup) runs the front end jekyll build using a small server that is not related to our backend. The actual site does have a backend we run on Open Liberty. This backend code can be run by following these steps.
+
 ## Prereqs
   * [Git](https://git-scm.com/downloads)
   * [Docker](https://docs.docker.com/install/)
@@ -77,3 +79,17 @@ This section describes the steps needed to set up your local development environ
 1. Run the docker build commmand: `docker build -t kabanero-site -f kube/Dockerfile .`
 1. Run the docker site in a docker container: `docker run --rm -p 9443:9443 kabanero-site`
 1. Wait a few seconds for the container to start and then go to `https://localhost:9443` in your browser to view the website.
+
+# Render a Guide locally
+
+Once you have your local development environment setup you can render guides as your write them.
+
+## Prereqs
+* [Local development setup](#local-development-setup)
+
+## Render your guide
+
+1. Create a new dir called `guides` under `src/main/content/`
+1. Inside the new `guides` dir, make a new folder called `guide-name_of_your_guide`
+1. Create the `README.adoc` in that newly created folder and place your content in there.
+1. Start your local dev server and go to `https://localhost:4000/guides` to see all the guides rendered.

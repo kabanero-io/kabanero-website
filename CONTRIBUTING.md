@@ -90,6 +90,6 @@ Once you have your local development environment setup you can render guides as 
 ## Render your guide
 
 1. Create a new dir called `guides` under `src/main/content/`
-1. Make a new folder called `guide-name_of_your_guide`
+1. Inside the new `guides` dir, make a new folder called `guide-name_of_your_guide`
 1. Create the `README.adoc` in that newly created folder and place your content in there.
 1. Start your local dev server and go to `https://localhost:4000/guides` to see all the guides rendered.

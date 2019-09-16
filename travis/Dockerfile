@@ -17,5 +17,5 @@ RUN npm install eslint --save-dev
 RUN mkdir -p src/main/content/_assets/js
 
 RUN node --version
-RUN npm --version
+RUN npm --version 
 

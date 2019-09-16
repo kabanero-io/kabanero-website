@@ -16,7 +16,7 @@ Please [view our contribution guidelines](https://github.com/kabanero-io/kabaner
 Please see [Contributing to the blog](https://github.com/kabanero-io/blogs) in our Blogs repository.
 
 ## Contributing to the guides
-Each guide resides in its own repository and is dynamically pulled into the kabanero.io build process through the `scripts/build.sh` shell script. The content of the guide can be written in HTML, markdown, or AsciiDoc formats- AsciiDoc is preferred. The following front matter variables must be set:
+Each guide resides in its own repository and is dynamically pulled into kabanero.io via the build process. The content of the guide can be written in HTML, markdown, or AsciiDoc formats- AsciiDoc is preferred. The following front matter variables must be set:
 ```
 ---
 permalink: /guides/nameofguide/

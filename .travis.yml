@@ -1,12 +1,11 @@
-sudo: required
+language: ruby
+rvm:
+  - 2.6.3
 
-services:
-  - docker
-
-before_install:
-  - docker build -t  kidusimage  -f travis/Dockerfile .
-  - docker run -ti -d --name imgname kidusimage /bin/bash 
+install:
+  - bundle install
+  - npm install eslint --save-dev
+  - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
 
 script:
-  - docker cp src/main/content/_assets/js  imgname:/src/main/content/_assets/
-  - exec -it imgname /bin/bash -c "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+  - ./scripts/build_jekyll_maven.sh

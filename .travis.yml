@@ -10,7 +10,7 @@ stages:
   - name: Running tests
     if: type IN (push)
   - name: Deploy
-    if: type IN (push)
+    if: type IN (api)
 
 jobs:
   include:
@@ -19,6 +19,7 @@ jobs:
       script:
         - ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
         - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh
+        
     - stage: "Deploy"
       name: "Deploy website"
       script: 

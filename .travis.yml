@@ -2,8 +2,12 @@ language: minimal
 services:
   - docker
 
+cache:
+  directories:
+    - docker-cache
+
 before_script:
-  - docker pull kidus60/travis-testing:latest || true
+  - docker pull kidus60/travis-testing:latest
 
 install:
   - docker build --cache-from kidus60/travis-testing:latest -t travis-testing -f travis/Dockerfile .

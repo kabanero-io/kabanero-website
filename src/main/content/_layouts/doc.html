@@ -1,8 +1,10 @@
 ---
 css: 
 - header
+- newDocs
 js:
 - header
+- newDocs
 ---
 <!-----------------------------------------------------------------------------
  -
@@ -32,12 +34,46 @@ js:
     {% include analytics.html %}
 
     {% include header.html %}
+    {% assign t = site.data[site.active_lang].general-reference %}
+    {% assign catsMeta = site.pages | where: 'title', 'doc categories meta' %}
+    {% assign categories = catsMeta[0].categories %}
 
-    <main aria-label="Content">
+    {% assign introDoc = site.pages | where: 'title', t.welcome-to-docs %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2">
+                <input id="doc-search" type="text" placeholder="search">
+                <hr>
+                <nav>
+                    {% for cat in categories %}
+                    {% assign catNoSpaces = cat | strip %}
+                    {% assign dataTarget = "#" | append: catNoSpaces %}
+                    {% assign buttonId = catNoSpaces | append: '-button' %}
+                    {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
+                    <div class="toc-item">
+                        <a class="toc-category">{{cat}}</a>
+                        {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                        <ul class="nav">
+                            {% for doc in currCatDocs %}
+                            <li>
+                                <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </nav>
+            </div>
+            <div class="col-xl-8" id="general-content">
+                <h1>{{ page.title }}</h1>
+                <main aria-label="Content">
+                    {{ content }}
+                  </main>
+            </div>
+        </div>
+    </div>
 
-      {{ content }}
-
-    </main>
+    
 
     {% include footer.html %}
 

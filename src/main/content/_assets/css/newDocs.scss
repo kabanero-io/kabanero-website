@@ -1,0 +1,38 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.container-fluid{
+    margin-top:50px;
+}
+
+.toc-item{
+    font-weight:500;
+    margin-bottom:10px;
+    & .toc-category{
+        font-size:22px;
+    }
+
+    & ul{
+        display:none;
+    }
+
+    & .doc-title{
+        font-weight:400;
+    }
+}
+
+.nav{
+    margin: 0 0 10px 10px;
+}
+
+.open {
+    & ul{
+        display:block;
+    }
+}
+
+.activeDoc{
+    font-weight:600 !important;
+}
+

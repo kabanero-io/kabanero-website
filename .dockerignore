@@ -2,7 +2,6 @@ _site
 .github
 .jekyll-cache
 cla
-target
 .gitignore
 CONTRIBUTING.md
 IBM-Trademark-Policy.md

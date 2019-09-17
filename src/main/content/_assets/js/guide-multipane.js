@@ -468,7 +468,7 @@ $(document).ready(function() {
         // let code column resize with its containing col class
         // need this because fixed position doesn't care about the parent col
         let codeColumn = $("#code-column");
-        codeColumn.width(codeColumn.parent().width());
+        //codeColumn.width(codeColumn.parent().width());
     });
      
     /* Copy button for the github clone command  that pops up initially when opening a guide. */

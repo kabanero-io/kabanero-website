@@ -327,6 +327,7 @@ header {
 
 #guide-column {
     color: #24253a;
+    width: 100%;
 }
 
 @media (min-width: 960px){
@@ -513,10 +514,10 @@ header {
     }
         
     #guide-column {
-        width: auto;
         padding-top: 10px;
         padding-bottom: 60px;
         box-shadow: none;
+        width: calc(250%);
     } 
 
     .expanded {

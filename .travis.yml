@@ -1,11 +1,26 @@
-language: ruby
-rvm:
-  - 2.6.3
+language: minimal
+
+before_install:
+  - docker pull kidus60/travis-testing:latest 
 
 install:
-  - bundle install
-  - npm install eslint --save-dev
-  - ./node_modules/.bin/eslint src/main/content/_assets/js/*.js
+  - docker build --cache-from kidus60/travis-testing:latest -t travis-testing -f travis/Dockerfile .
 
-script:
-  - ./scripts/build_jekyll_maven.sh
+stages:
+  - name: Running tests
+    if: type IN (push, pull_request)
+  - name: Deploy
+    if: type IN (api)
+
+jobs:
+  include:
+    - stage: "Running tests"
+      name: "Running lint testing and building website with Jekyll"
+      script:
+        - ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+        - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh
+
+    - stage: "Deploy"
+      name: "Deploy website"
+      script: 
+        -  ./travis/docker_run.sh ./travis/travis_ibmcloud_cf_push.sh

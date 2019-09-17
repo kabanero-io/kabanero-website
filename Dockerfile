@@ -12,15 +12,13 @@
 # see the changes when you refresh your browser.
 
 # To build this image, from the directory that contains this Dockerfile:
-# docker build --tag lauracowen/jekyll .
+# docker build --tag kabanero-dev .
 #
 # To run a container:
-# docker run --name jekyll -it -d -p 4000:4000 -v <root directory of Jekyll site on host machine>:/home/jekyll lauracowen/jekyll
+# docker run --name jekyll -it -d -p 4000:4000 -v <path to kabanero-website repo>:/home/jekyll kabanero-dev
 
 # Use the official Ruby image as a parent image
 FROM ruby:latest
-
-# INSTALL NODEJS AND NPM (it's a dependency of something in the Jekyll setup)
 
 # replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -31,6 +29,7 @@ RUN apt-get update \
     && apt-get install -y curl \
     && apt-get -y autoclean
 
+# INSTALL NODEJS AND NPM (it's a dependency in the Jekyll setup)
 # nvm environment variables
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 9.0.0
@@ -50,8 +49,7 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # confirm installation
-RUN node -v
-RUN npm -v
+RUN node -v && npm -v
 
 # INSTALLING AND RUNNING JEKYLL
 
@@ -68,8 +66,7 @@ VOLUME /home/jekyll
 WORKDIR /home/jekyll
 
 # kabanero.io gem dependencies
-COPY ./scripts /home/jekyll/scripts
-RUN scripts/build_gem_dependencies.sh
+
 
 # kabanero.io custom gems
 COPY ./gems /home/jekyll/gems
@@ -78,10 +75,13 @@ RUN pushd gems/ol-asciidoc \
     && gem install ol-asciidoc-0.0.1.gem \
     && popd
 
+COPY Gemfile /home/jekyll
+
+COPY ./scripts /home/jekyll/scripts
+RUN scripts/build_gem_dependencies.sh
+
 # Serve the site
 ENTRYPOINT ["bash", "./scripts/jekyll_serve_dev.sh"]
 
 # Make port 4000 available to the world outside this container
 EXPOSE 4000
-
-

@@ -66,18 +66,9 @@ VOLUME /home/jekyll
 WORKDIR /home/jekyll
 
 # kabanero.io gem dependencies
-
-
-# kabanero.io custom gems
-COPY ./gems /home/jekyll/gems
-RUN pushd gems/ol-asciidoc \
-    && gem build ol-asciidoc.gemspec \
-    && gem install ol-asciidoc-0.0.1.gem \
-    && popd
-
-COPY Gemfile /home/jekyll
-
 COPY ./scripts /home/jekyll/scripts
+COPY Gemfile /home/jekyll
+COPY ./gems /home/jekyll/gems
 RUN scripts/build_gem_dependencies.sh
 
 # Serve the site

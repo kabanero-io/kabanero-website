@@ -41,31 +41,36 @@ js:
     {% assign introDoc = site.pages | where: 'title', t.welcome-to-docs %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-2">
-                <input id="doc-search" type="text" placeholder="search">
+            <div class="col-xl-3" id="toc-col">
+                <div class="row">
+                    <input class="col-xl-9" id="doc-search" type="text" placeholder="search">
+                </div>
                 <hr>
-                <nav>
-                    {% for cat in categories %}
-                    {% assign catNoSpaces = cat | strip %}
-                    {% assign dataTarget = "#" | append: catNoSpaces %}
-                    {% assign buttonId = catNoSpaces | append: '-button' %}
-                    {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
-                    <div class="toc-item">
-                        <a class="toc-category">{{cat}}</a>
-                        {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
-                        <ul class="nav">
-                            {% for doc in currCatDocs %}
-                            <li>
-                                <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endfor %}
-                </nav>
+                <div class="row">
+                    <nav class="sidenav">
+                        {% for cat in categories %}
+                        {% assign catNoSpaces = cat | strip %}
+                        {% assign dataTarget = "#" | append: catNoSpaces %}
+                        {% assign buttonId = catNoSpaces | append: '-button' %}
+                        {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
+                        <div class="toc-item">
+                            <img class="plus-minus-icon" src="/img/icon_plus.png">
+                            <a class="toc-category">{{cat}}</a>
+                            {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                            <ul class="nav">
+                                {% for doc in currCatDocs %}
+                                <li>
+                                    <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </nav>
+                </div>
             </div>
             <div class="col-xl-8" id="general-content">
-                <h1>{{ page.title }}</h1>
+                <h1 class="content-title">{{ page.title }}</h1>
                 <main aria-label="Content">
                     {{ content }}
                   </main>

@@ -3,7 +3,6 @@ _site
 .jekyll-cache
 cla
 target
-.eslintrc.yml
 .gitignore
 CONTRIBUTING.md
 IBM-Trademark-Policy.md

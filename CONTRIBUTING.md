@@ -93,3 +93,24 @@ Once you have your local development environment setup you can render guides as 
 1. Inside the new `guides` dir, make a new folder called `guide-name_of_your_guide`
 1. Create the `README.adoc` in that newly created folder and place your content in there.
 1. Start your local dev server and go to `https://localhost:4000/guides` to see all the guides rendered.
+
+# Deploying your own instance of the Kabanero website to IBM Cloud Foundry
+
+1. If you haven't already done so, go to [Travis-ci](https://travis-ci.com) and [Sign up with GitHub](https://travis-ci.com/signin).
+1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
+1. Click on your accont in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
+1. Click on the Dashboard tab at the top of the page and under "Active repositories" click on kabanero-website.
+1. [Follow these steps](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings) to set the list of environment variables needed for Travis to successfully build and push your fork.
+  * IBM_CLOUD_ORGANIZATION - IBM Cloud Organization to deploy to
+  * IBM_CLOUD_SPACE - IBM Cloud Foundry space (within the declared organziation) to deploy to
+  * IBM_CLOUD_API_KEY - IBM Cloud credentials to login to cloud foundry via ibmcloud cli for the specified API endpoint **Note: For security reasons do not activate the "DISPLAY VALUE IN BUILD LOG" button**
+  * IBM_CLOUD_API - IBM Cloud API endpoint to deploy to
+ 
+  * Optionally, you can set these environment variables to specify the repositories and branches of blogs and docs to be cloned from
+
+  * DOCS_GIT_URL - Git url to clone for the docs repository (https://github.com/kabanero-io/docs.git by default)
+  * DOCS_GIT_REVISION - (master by default)
+  * BLOGS_GIT_URL - Git url to clone for the blogs repository (https://github.com/kabanero-io/blogs.git by default)
+  * BLOGS_GIT_REVISION - (master by default)
+
+1. Finally from [Travis-ci](https://travis-ci.com) click on your forked repository for the kabanero-website then click on the dropdown button labled 'More options' on the right hand side of the window above the 'Restart build' button. From the dropdown click on 'Trigger build', select a branch you want deployed to Cloud Foundry and click on 'Trigger custom build'. The job will start immediately and takes about 10 minutes to deploy.

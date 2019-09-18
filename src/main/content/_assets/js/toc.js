@@ -44,52 +44,6 @@ function enableFloatingTOC() {
     $('#toc-inner').css({'position':'fixed', 'top':'100px'});    
 }
 
-function guideView() {
-    if (inSingleColumnView()) {
-        if ($('#toc-column').hasClass('open')) {
-            $('#normal-guide-column').removeClass('col-md-10');
-            $('#normal-guide-column').addClass('col-md-12');
-
-            $('#markdown-guide-column').removeClass('col-md-10');
-            $('#markdown-guide-column').addClass('col-md-12');
-        }
-        $('#multipane-guide-column').removeClass('col-md-5');
-        $('#multipane-guide-column').addClass('col-md-12');
-
-    } else {
-        if ($('#toc-column').hasClass('open')) {
-            $('#normal-guide-column').removeClass('col-md-12');
-            $('#normal-guide-column').addClass('col-md-10');
-
-            $('#markdown-guide-column').removeClass('col-md-12');
-            $('#markdown-guide-column').addClass('col-md-10');
-        }
-
-        $('#multipane-guide-column').removeClass('col-md-12');
-        $('#multipane-guide-column').addClass('col-md-5');
-    }
-}
-
-function tocCloseGuideResize() {
-    if (!inSingleColumnView()) {
-        $('#normal-guide-column').removeClass('col-md-10');
-        $('#normal-guide-column').addClass('col-md-12');
-
-        $('#markdown-guide-column').removeClass('col-md-10');
-        $('#markdown-guide-column').addClass('col-md-12');
-    }
-}
-
-function tocOpenGuideResize() {
-    if (!inSingleColumnView()) {
-        $('#normal-guide-column').removeClass('col-md-12');
-        $('#normal-guide-column').addClass('col-md-10');
-
-        $('#markdown-guide-column').removeClass('col-md-12');
-        $('#markdown-guide-column').addClass('col-md-10');
-    }
-}
-
 function calculateTOCHeight(){
     var endOfGuidePosition = $('#end_of_guide')[0].getClientRects()[0].top;
     var headerHeight = $('header').height();
@@ -283,10 +237,9 @@ function setInitialTOCLineHeight(){
 
 
 $(document).ready(function() {
-    guideView();
+    
     reorganizeTOCElements();
     setInitialTOCLineHeight();    
-    $(window).on('resize',guideView);
 
     // Add listener for clicking on the
     $('#toc-hotspot, #toc-indicator').on('mouseenter', function(){
@@ -325,13 +278,11 @@ $(document).ready(function() {
 
     $('#toc-indicator').on('click', function(){
         open_TOC();
-        tocOpenGuideResize();
     });
 
     $('#toc-indicator').on('keydown', function(e){
         if(e.which === 13){
             open_TOC();
-            tocOpenGuideResize();
         }
     });
     
@@ -385,7 +336,6 @@ $(document).ready(function() {
     // Handle collapsing the table of contents from full width back into an orange line on the left side of the page.
     $('#close-container').on('click', function() {
         close_TOC();
-        tocCloseGuideResize();
     });
 
     $('#close-container img').on('keydown', function(event) {

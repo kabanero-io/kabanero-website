@@ -45,48 +45,48 @@ function enableFloatingTOC() {
 }
 
 function guideView() {
-  if (inSingleColumnView()) {
-    if ($("#toc-column").hasClass("open")) {
-      $("#normal-guide-column").removeClass("col-md-10");
-      $("#normal-guide-column").addClass("col-md-12");
+    if (inSingleColumnView()) {
+        if ($('#toc-column').hasClass('open')) {
+            $('#normal-guide-column').removeClass('col-md-10');
+            $('#normal-guide-column').addClass('col-md-12');
 
-      $("#markdown-guide-column").removeClass("col-md-10");
-      $("#markdown-guide-column").addClass("col-md-12");
+            $('#markdown-guide-column').removeClass('col-md-10');
+            $('#markdown-guide-column').addClass('col-md-12');
+        }
+        $('#multipane-guide-column').removeClass('col-md-5');
+        $('#multipane-guide-column').addClass('col-md-12');
+
+    } else {
+        if ($('#toc-column').hasClass('open')) {
+            $('#normal-guide-column').removeClass('col-md-12');
+            $('#normal-guide-column').addClass('col-md-10');
+
+            $('#markdown-guide-column').removeClass('col-md-12');
+            $('#markdown-guide-column').addClass('col-md-10');
+        }
+
+        $('#multipane-guide-column').removeClass('col-md-12');
+        $('#multipane-guide-column').addClass('col-md-5');
     }
-    $("#multipane-guide-column").removeClass("col-md-5");
-    $("#multipane-guide-column").addClass("col-md-12");
-
-  } else {
-    if ($("#toc-column").hasClass("open")) {
-      $("#normal-guide-column").removeClass("col-md-12");
-      $("#normal-guide-column").addClass("col-md-10");
-
-      $("#markdown-guide-column").removeClass("col-md-12");
-      $("#markdown-guide-column").addClass("col-md-10");
-    }
-
-    $("#multipane-guide-column").removeClass("col-md-12");
-    $("#multipane-guide-column").addClass("col-md-5");
-  }
 }
 
 function tocCloseGuideResize() {
-    if(!inSingleColumnView()){ 
-    $('#normal-guide-column').removeClass('col-md-10');
-    $('#normal-guide-column').addClass('col-md-12');
+    if (!inSingleColumnView()) {
+        $('#normal-guide-column').removeClass('col-md-10');
+        $('#normal-guide-column').addClass('col-md-12');
 
-    $('#markdown-guide-column').removeClass('col-md-10');
-    $('#markdown-guide-column').addClass('col-md-12');
+        $('#markdown-guide-column').removeClass('col-md-10');
+        $('#markdown-guide-column').addClass('col-md-12');
     }
 }
 
 function tocOpenGuideResize() {
-    if(!inSingleColumnView()){ 
-    $('#normal-guide-column').removeClass('col-md-12');
-    $('#normal-guide-column').addClass('col-md-10');
+    if (!inSingleColumnView()) {
+        $('#normal-guide-column').removeClass('col-md-12');
+        $('#normal-guide-column').addClass('col-md-10');
 
-    $('#markdown-guide-column').removeClass('col-md-12');
-    $('#markdown-guide-column').addClass('col-md-10');
+        $('#markdown-guide-column').removeClass('col-md-12');
+        $('#markdown-guide-column').addClass('col-md-10');
     }
 }
 

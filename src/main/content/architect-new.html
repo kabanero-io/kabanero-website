@@ -1,14 +1,17 @@
 ---
 layout: default
-title: Kabanero Collection Management Experience
+title: Collection Management Experience
 css: architect
-permalink: /architect/collection-management/
+permalink: /new-architect/
+published: false
 ---
+{% assign t = site.data[site.active_lang].collection-management %}
+
 <div id="intro-content" class="container">
     <!-- Intro title -->
     <div class="row">
         <div class="col text-center">
-            <p class="header">Kabanero Collection Management Experience</p>
+            <p class="header">{{t.intro-title}}</p>
             <hr/>
         </div>
     </div>
@@ -18,9 +21,7 @@ permalink: /architect/collection-management/
         <div class="col text-center">
             <div>
                 <p>
-                    The solution architect (or someone serving that role) provides governance over the set of collections available for developers to seamlessly use, 
-                    empowering developers with agility and speed while complying with company policies. This management CLI and access to the correct GitHub repositories 
-                    enable this governance. 
+                        {{t.intro-text}}
                 </p>
                 <!-- Removed until the readme is updated is real install instructions
                 <p id="intro-text">
@@ -36,9 +37,12 @@ permalink: /architect/collection-management/
     <!-- Collections Documentation -->
     <div class="row">
         <div class="col-md">
-            {% assign collectionsDoc = site.pages | where: 'title', 'Kabanero Collections Overview' %}
-            <h3>{{collectionsDoc[0].title}}</h3>
-            {{ collectionsDoc[0].content }}
+            {% assign collectionsDoc = site.pages | where: 'title', 'Kabanero Collections' %}
+
+            {% for doc in collectionsDoc limit:1 %}
+                <h3>{{doc.title}}</h3>
+                {{ doc.content }}
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -124,6 +124,7 @@
 #toc-inner {
     padding: 20px 0 0 20px;
     position: fixed;
+    top: 100px;
 }
 
 #toc-indicator {
@@ -553,7 +554,7 @@
     }
 }
 
-@media (max-width: 1439.98px) {
+@media (max-width: 1000px) {
     #toc-hotspot, 
     #toc-indicator,
     #toc-line {

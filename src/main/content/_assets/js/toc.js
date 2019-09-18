@@ -44,6 +44,52 @@ function enableFloatingTOC() {
     $('#toc-inner').css({'position':'fixed', 'top':'100px'});    
 }
 
+function guideView() {
+  if (inSingleColumnView()) {
+    if ($("#toc-column").hasClass("open")) {
+      $("#normal-guide-column").removeClass("col-md-10");
+      $("#normal-guide-column").addClass("col-md-12");
+
+      $("#markdown-guide-column").removeClass("col-md-10");
+      $("#markdown-guide-column").addClass("col-md-12");
+    }
+    $("#multipane-guide-column").removeClass("col-md-5");
+    $("#multipane-guide-column").addClass("col-md-12");
+
+  } else {
+    if ($("#toc-column").hasClass("open")) {
+      $("#normal-guide-column").removeClass("col-md-12");
+      $("#normal-guide-column").addClass("col-md-10");
+
+      $("#markdown-guide-column").removeClass("col-md-12");
+      $("#markdown-guide-column").addClass("col-md-10");
+    }
+
+    $("#multipane-guide-column").removeClass("col-md-12");
+    $("#multipane-guide-column").addClass("col-md-5");
+  }
+}
+
+function tocCloseGuideResize() {
+    if(!inSingleColumnView()){ 
+    $('#normal-guide-column').removeClass('col-md-10');
+    $('#normal-guide-column').addClass('col-md-12');
+
+    $('#markdown-guide-column').removeClass('col-md-10');
+    $('#markdown-guide-column').addClass('col-md-12');
+    }
+}
+
+function tocOpenGuideResize() {
+    if(!inSingleColumnView()){ 
+    $('#normal-guide-column').removeClass('col-md-12');
+    $('#normal-guide-column').addClass('col-md-10');
+
+    $('#markdown-guide-column').removeClass('col-md-12');
+    $('#markdown-guide-column').addClass('col-md-10');
+    }
+}
+
 function calculateTOCHeight(){
     var endOfGuidePosition = $('#end_of_guide')[0].getClientRects()[0].top;
     var headerHeight = $('header').height();
@@ -191,7 +237,7 @@ function restoreCurrentStep(){
 function open_TOC(){
     if(!inSingleColumnView()){        
         $('#toc-title').css('margin-top', '0px');
-        $('#toc-column').addClass('inline');
+        $('#toc-column').addClass('block');
         $('#guide-column').removeClass('expanded');
 
         $('#toc-line').addClass('open');            
@@ -199,7 +245,8 @@ function open_TOC(){
         $('#guide-column').addClass('open');
 
         $('#toc-indicator').addClass('open hidden');
-
+        $('#code-column').width('40vw');
+        
         restoreCurrentStep();
     }
 }
@@ -208,7 +255,7 @@ function close_TOC(){
     $('#toc-title').css('margin-top', '20px');
 
     // Remove display type from the table of contents
-    $('#toc-column').removeClass('inline');
+    $('#toc-column').removeClass('block');
 
     // Update the width of the guide-column to accomodate the larger space when the browser is in 3 column view.
     $('#guide-column').addClass('expanded');
@@ -219,6 +266,11 @@ function close_TOC(){
     $('#guide-column').removeClass('open');
 
     $('#toc-indicator').removeClass('open hidden');
+
+    // let code column resize with its containing col class
+    // need this because fixed position doesn't care about the parent col
+    let codeColumn = $('#code-column');
+    codeColumn.width(codeColumn.parent().width());
 
     restoreCurrentStep();
 }
@@ -231,9 +283,10 @@ function setInitialTOCLineHeight(){
 
 
 $(document).ready(function() {
-
+    guideView();
     reorganizeTOCElements();
     setInitialTOCLineHeight();    
+    $(window).on('resize',guideView);
 
     // Add listener for clicking on the
     $('#toc-hotspot, #toc-indicator').on('mouseenter', function(){
@@ -272,11 +325,13 @@ $(document).ready(function() {
 
     $('#toc-indicator').on('click', function(){
         open_TOC();
+        tocOpenGuideResize();
     });
 
     $('#toc-indicator').on('keydown', function(e){
         if(e.which === 13){
             open_TOC();
+            tocOpenGuideResize();
         }
     });
     
@@ -330,6 +385,7 @@ $(document).ready(function() {
     // Handle collapsing the table of contents from full width back into an orange line on the left side of the page.
     $('#close-container').on('click', function() {
         close_TOC();
+        tocCloseGuideResize();
     });
 
     $('#close-container img').on('keydown', function(event) {

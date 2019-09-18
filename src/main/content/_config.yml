@@ -16,14 +16,12 @@ asciidoctor:
   base_dir: :docdir
   safe: 0
   attributes:
-    - sectanchors=''
     - icons=font
     - source-highlighter=coderay
     - coderay-linenums-mode=inline
     - coderay-linenums=true
     - coderay-css=class
     - allow-uri-read
-    - sectanchors
 
 google_tag_manager: UA-140304192-1
 

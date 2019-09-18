@@ -39,7 +39,7 @@ js:
     {% assign categories = catsMeta[0].categories %}
 
     {% assign introDoc = site.pages | where: 'title', t.welcome-to-docs %}
-    <div class="container-fluid">
+    <div class="container-fluid" id="doc-container">
         <div class="row">
             <div class="col-xl-3" id="toc-col">
                 <div class="row">
@@ -48,6 +48,14 @@ js:
                 <hr>
                 <div class="row">
                     <nav class="sidenav">
+                        <div id="welcome-doc" class="doc-title doc-category" href="{{ introDoc[0].url }}">
+                            <a href="{{ introDoc[0].url }}">
+                                {{introDoc[0].title}}
+                            </a>
+                        </div>
+                        <h2 id="noSearchResults" class="no-display">
+                            No Search Results
+                        </h2>
                         {% for cat in categories %}
                         {% assign catNoSpaces = cat | strip %}
                         {% assign dataTarget = "#" | append: catNoSpaces %}
@@ -73,7 +81,7 @@ js:
                 <h1 class="content-title">{{ page.title }}</h1>
                 <main aria-label="Content">
                     {{ content }}
-                  </main>
+                </main>
             </div>
         </div>
     </div>

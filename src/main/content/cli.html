@@ -46,17 +46,60 @@ permalink: /developer/cli/
 
     <!-- Try it using the CLI -->
     <div class="row">
-        <div id="components-text" class="col-md-4 offset-md-4">
-            <h2>Try Kabanero using the CLI</h2>
-            <ol type="1">
+        <!-- Appsody CLI install and getting started steps -->
+        <div id="components-text" class="col-md">
+            <h2> Try it using the Appsody CLI</h2>
+            <p>
+                Kabanero uses Appsody as its CLI experience to access collections. These instructions will get you starting using the CLI.
+            </p>
+            <ol>
                 <li>
-                    <a href="https://appsody.dev/docs/getting-started/installation" target="_blank">Install Appsody</a>
+                    Follow the <a target="_blank" href="https://appsody.dev/docs/getting-started/installation">instructions to install the Appsody CLI</a>
                 </li>
-                <li>Point Appsody at your collections</li>
-                <li>Create a project: cli cmd example</li>
-                <li>Write some code</li>
-                <li>Deploy: cli cmd example</li>
+                <li>
+                    Add your Kabanero Collection Hub Repository.
+                    <ul>
+                        <li>
+                            <code>appsody repo add kabanero YOUR_COLLECTION_HUB_URL</code>
+                            <ul>
+                                <li>
+                                    If you do not have a collection hub URL, you can use the 
+                                    <a target="_blank" href="https://github.com/kabanero-io/collections" 
+                                    aria-label="public Kabanero Collections repository">public Kabanero Collection Hub</a> 
+                                    URL:
+
+                                    <p>
+                                        <code>https://github.com/kabanero-io/collections/releases/download/v0.1.2/kabanero-index.yaml</code>
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Optional - List your available collections
+                    <ul>
+                        <li>
+                            <code>appsody list kabanero</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Create an application
+                    <ul>
+                        <li>
+                            Create a new project directory and <code>cd</code> into it
+                        </li>
+                        <li>
+                            <code>appsody init kabanero/COLLECTION_ID</code> (COLLECTION_ID can be seen from the appsody list command above)
+                        </li>
+                    </ul>
+                </li>
             </ol>
+            <p>
+                Need more help using Appsody? 
+                <a href="https://appsody.dev/docs" target="_blank" class="cpa-link" aria-label="Link to Appsody docs">Learn More</a>
+            </p>
         </div>
     </div>
 </div>

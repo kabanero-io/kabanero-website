@@ -13,8 +13,6 @@ RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.s
 ENV NVM_DIR=/root/.nvm
 ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
-RUN curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-
 RUN npm install eslint --save-dev
 
 # add github to known hosts file for cloning repos
@@ -22,4 +20,6 @@ RUN mkdir /root/.ssh && touch /root/.ssh/known_hosts \
     && ssh-keyscan -H github.com >> /root/.ssh/known_hosts \
     && chmod 600 /root/.ssh/known_hosts
     
+RUN curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+
 COPY . .

@@ -17,36 +17,36 @@
  *******************************************************************************/
 
  .guide_item {
-    margin-bottom: 40px;
-    height: 235px;
-    padding-top: 22px;
-    padding-left: 14px;
-    padding-right: 20px;
+    margin-bottom: 0.8em;
+    height: 18em;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     display: block;
-    border-left: solid 9px #eeeff3;
+    border-left: solid 0.3em #eeeff3;
     box-shadow:0 2px 4px 0 rgba(63,70,89,0.31);
     transition: box-shadow .2s, border .2s;
 }
 
 .small_guide_item {
-    margin-bottom: 40px;
-    height: 100px;
-    padding-top: 9px;
-    padding-left: 14px;
-    padding-right: 20px;
+    margin-bottom: 0.8em;
+    height: 20em;
+    padding-top: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     display: block;
-    border-left: solid 9px #9ea6bb;
+    border-left: solid 0.3em #9ea6bb;
     box-shadow:0 2px 4px 0 rgba(63,70,89,0.31);
     transition: box-shadow .2s, border .2s;
 }
 
 .guide_item:hover, .small_guide_item:hover {
     box-shadow:0 2px 4px 0 rgba(63,70,89,0.59);
-    border-left: solid 9px #C43804;
+    border-left: solid 0.3em #C43804;
 }
 
 .guide_title_and_description_container {
-    height: 155px;
+    height: 1em;
     overflow: hidden;
 }
 
@@ -58,24 +58,23 @@
 .guide-title {
     color: #24253a;
     margin-top: 0;
-    margin-bottom: 9px;
+    margin-bottom: 1em;
     overflow: hidden;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1em;
+
 }
 
 .guide_description {
     color: #5e6b8d;
     margin: 0;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 0.6em;
 }
 
 .guide_interactive_container{
     border: 1px solid #F69144;
-    border-radius: 100px;
+    border-radius: 0.2em;
     float: right;
-    padding: 0px 5px;
+    padding: 0px 0.1em;
 }
 
 .interactive_bolt_icon {
@@ -85,14 +84,14 @@
 
 .guide-duration {
     font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
-    font-size: 13px;
+    font-size: 1em;
     color: #24253A;
     letter-spacing: 0;
 }
 
 .guide_interactive{
     font-family: BunueloBold, Arial Narrow, Helvetica, Arial;
-    font-size: 13px;
+    font-size: 1em;
     color: #DC6B00;
     letter-spacing: 0;
     text-transform: uppercase;

@@ -101,10 +101,10 @@ Once you have your local development environment setup you can render guides as 
 1. Click on your accont in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
 1. Click on the Dashboard tab at the top of the page and under "Active repositories" click on kabanero-website.
 1. [Follow these steps](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings) to set the list of environment variables needed for Travis to successfully build and push your fork.
-  * IBM_CLOUD_ORGANIZATION - IBM Cloud Organization to deploy to
-  * IBM_CLOUD_SPACE - IBM Cloud Foundry space (within the declared organziation) to deploy to
-  * IBM_CLOUD_API_KEY - IBM Cloud credentials to login to cloud foundry via ibmcloud cli for the specified API endpoint **Note: For security reasons do not activate the "DISPLAY VALUE IN BUILD LOG" button**
-  * IBM_CLOUD_API - IBM Cloud API endpoint to deploy to
+   * IBM_CLOUD_ORGANIZATION - IBM Cloud Organization to deploy to
+   * IBM_CLOUD_SPACE - IBM Cloud Foundry space (within the declared organziation) to deploy to
+   * IBM_CLOUD_API_KEY - IBM Cloud credentials to login to cloud foundry via ibmcloud cli for the specified API endpoint **Note: For security reasons do not activate the "DISPLAY VALUE IN BUILD LOG" button**
+   * IBM_CLOUD_API - IBM Cloud API endpoint to deploy to
  
   * Optionally, you can set these environment variables to specify the repositories and branches of blogs and docs to be cloned from
 

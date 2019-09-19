@@ -1,16 +1,6 @@
-function loadContent(href){
-    $("#general-content").load(href);
-}
-
 $(".toc-category").click(function(){
     $(this).parent().toggleClass('open');
     $(this).parent().find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
-});
-
-$(".doc-title").click(function(){
-    loadContent($(this).attr('href'));
-    $('.activeDoc').removeClass('activeDoc');
-    $(this).addClass('activeDoc');
 });
 
 $('#doc-search').keyup(function(){
@@ -65,5 +55,4 @@ function selectDocInToc(){
 
 $(document).ready(function(){
     selectDocInToc();
-    
 });

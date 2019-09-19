@@ -395,6 +395,12 @@ header {
     }
 }
 
+@media (min-width: 1000px) {
+    #normal-guide-guide-section {
+        width: 75%;
+    }
+}
+
 @media (min-width: 1170px) {
     #guide-content code.hotspot {
         background-color: #F1F4FE;

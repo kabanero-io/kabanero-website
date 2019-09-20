@@ -8,7 +8,7 @@ install:
 
 stages:
   - name: Running tests
-    if: type IN (push)
+    if: (type IN (push)) AND (fork = false)
   - name: Deploy
     if: type IN (api)
 

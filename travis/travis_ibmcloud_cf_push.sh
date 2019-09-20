@@ -2,7 +2,6 @@
 
 SCRIPT_DIR="$(cd $(dirname $0) && pwd)/../scripts/"
 
-curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 $SCRIPT_DIR/build_clone_blogs.sh   $BLOGS_GIT_URL  $BLOGS_GIT_REVISION
 $SCRIPT_DIR/build_clone_docs.sh    $DOCS_GIT_URL   $DOCS_GIT_REVISION
 $SCRIPT_DIR/build_jekyll_maven.sh

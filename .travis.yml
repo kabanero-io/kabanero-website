@@ -8,7 +8,7 @@ install:
 
 stages:
   - name: Running tests
-    if: (type IN (push)) AND (repo IN (env(kidus60/kabanero-website)) )
+    if: (type IN (push)) AND (repo IN (kabanero-io/kabanero-website))
   - name: Deploy
     if: type IN (api)
 

@@ -8,7 +8,7 @@ install:
 
 stages:
   - name: Running tests
-    if: (type IN (pull_request)) AND (repo IN (kabanero-io/kabanero-website))
+    if: (type IN (pull_request))
   - name: Deploy
     if: type IN (api)
 

@@ -1,7 +1,6 @@
 language: minimal
 
 before_install:
-  - ./travis/repo.sh
   - docker pull  kabanerobuild/website-travis:latest 
 
 install:
@@ -9,7 +8,7 @@ install:
 
 stages:
   - name: Running tests
-    if: (type IN (push))
+    if: (type IN (push) AND head_repo IN (kidus60/kabanero-website))
   - name: Deploy
     if: type IN (api)
 

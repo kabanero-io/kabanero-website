@@ -1,11 +1,7 @@
 language: minimal
 
 before_install:
-  - if [ "$TRAVIS_REPO_SLUG" != "kidus60/kabanero-website" ];
-  then
-    echo "Only builds from kubernetes/ingress-nginx repository is allowed.";  
-  exit 0;
-  fi
+  - ./travis/repo.sh
   - docker pull  kabanerobuild/website-travis:latest 
 
 install:

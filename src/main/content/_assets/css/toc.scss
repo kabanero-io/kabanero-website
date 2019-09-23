@@ -124,12 +124,13 @@
 #toc-inner {
     padding: 20px 0 0 20px;
     position: fixed;
+    top: 100px;
 }
 
 #toc-indicator {
     z-index: 5;
     left: 0;
-    width: 5px;
+    width: 20px;
     height: 30px;
     position: fixed;
     background-color: #f4914d;
@@ -142,12 +143,11 @@
         display: inline-block;
         width: 45px;
         transition: .5s ease-in;
-        padding: 7px 0;
     }
 
     & > img {
         width: 16px;
-        height: 16px;
+        height: 30px;
         margin-right: 5px;
         float: right;
         transform: rotate(-90deg);
@@ -553,7 +553,7 @@
     }
 }
 
-@media (max-width: 1439.98px) {
+@media (max-width: 1000px) {
     #toc-hotspot, 
     #toc-indicator,
     #toc-line {

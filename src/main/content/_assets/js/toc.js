@@ -191,7 +191,7 @@ function restoreCurrentStep(){
 function open_TOC(){
     if(!inSingleColumnView()){        
         $('#toc-title').css('margin-top', '0px');
-        $('#toc-column').addClass('inline');
+        $('#toc-column').addClass('block');
         $('#guide-column').removeClass('expanded');
 
         $('#toc-line').addClass('open');            
@@ -199,7 +199,8 @@ function open_TOC(){
         $('#guide-column').addClass('open');
 
         $('#toc-indicator').addClass('open hidden');
-
+        $('#code-column').width('40vw');
+        
         restoreCurrentStep();
     }
 }
@@ -208,7 +209,7 @@ function close_TOC(){
     $('#toc-title').css('margin-top', '20px');
 
     // Remove display type from the table of contents
-    $('#toc-column').removeClass('inline');
+    $('#toc-column').removeClass('block');
 
     // Update the width of the guide-column to accomodate the larger space when the browser is in 3 column view.
     $('#guide-column').addClass('expanded');
@@ -219,6 +220,11 @@ function close_TOC(){
     $('#guide-column').removeClass('open');
 
     $('#toc-indicator').removeClass('open hidden');
+
+    // let code column resize with its containing col class
+    // need this because fixed position doesn't care about the parent col
+    let codeColumn = $('#code-column');
+    codeColumn.width(codeColumn.parent().width());
 
     restoreCurrentStep();
 }
@@ -231,7 +237,7 @@ function setInitialTOCLineHeight(){
 
 
 $(document).ready(function() {
-
+    
     reorganizeTOCElements();
     setInitialTOCLineHeight();    
 

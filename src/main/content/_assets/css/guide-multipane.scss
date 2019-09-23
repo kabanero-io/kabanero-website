@@ -70,6 +70,12 @@
     word-wrap: break-word;      
 }
 
+@media screen and (max-width: 1000px) {
+    #multipane-code-column {
+        display: none;
+    }
+  }
+  
 /* Code Column */
 #code-column {
     padding: 0;

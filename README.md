@@ -26,8 +26,8 @@ permalink: /guides/guiderepository/
 - description: `one line description of the guide`
 - tags: `(optional) array of tags associated with the guide`
 ```
-The naming convention for `permalink` is `/guide/` followed by the github repository URL path **Not including kabanero-io**. 
-   * For example the appropriate `permalink` for https://github.com/kabanero-io/guide-overview/ would be `/guides/guide-overview/`
+The naming convention for `permalink` is `/guide/` followed by the github repository URL path not including guide- **Everything after https://github.com/kabanero-io/guide-**. 
+   * For example the appropriate `permalink` for https://github.com/kabanero-io/guide-overview/ would be `/guides/overview/`
 
 `layout` could also be `guide-multipane` which renders that code column to show code on the side.
 

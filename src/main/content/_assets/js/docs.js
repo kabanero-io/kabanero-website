@@ -1,5 +1,4 @@
 $(".toc-item").click(function(){
-    console.log($(this).find(".plus-minus-icon"));
     $(this).toggleClass('open');
     $(this).find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
 })

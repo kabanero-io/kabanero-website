@@ -1,7 +1,7 @@
-$(".toc-category").click(function(){
-    $(this).parent().toggleClass('open');
-    $(this).parent().find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
-});
+$(".toc-item").click(function(){
+    $(this).toggleClass('open');
+    $(this).find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
+})
 
 $('#doc-search').keyup(function(){
     searchDocs();

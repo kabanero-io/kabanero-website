@@ -21,6 +21,7 @@ jobs:
         - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy"
-      name: "Deploy website"
+      name: "Deploy website" 
       script: 
         -  ./travis/docker_run.sh ./travis/travis_ibmcloud_cf_push.sh
+ 

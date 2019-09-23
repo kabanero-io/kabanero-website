@@ -3,6 +3,11 @@ $(".toc-category").click(function(){
     $(this).parent().find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
 });
 
+$(".plus-minus-icon").click(function(){
+    $(this).parent().toggleClass('open');
+    $(this).attr('src') === '/img/icon_plus.png' ? $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).parent().find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
+});
+
 $('#doc-search').keyup(function(){
     searchDocs();
 });

@@ -6,6 +6,8 @@ before_install:
 install:
   - docker build --cache-from  kabanerobuild/website-travis:latest -t website-travis -f travis/Dockerfile .
 
+script:
+  - echo $TRAVIS_PULL_REQUEST
 stages:
   - name: Running tests
     if: (type IN (push)) AND (head_repo == kidus60/kabanero-website)

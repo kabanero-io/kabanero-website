@@ -10,7 +10,7 @@ script:
   - echo $TRAVIS_PULL_REQUEST
 stages:
   - name: Running tests
-    if: (type IN (push)) AND (head_repo == kidus60/kabanero-website)
+    if: (type IN (push)) 
   - name: Deploy
     if: type IN (api)
 

@@ -2,12 +2,11 @@ language: minimal
 
 before_install:
   - docker pull  kabanerobuild/website-travis:latest 
+  - echo $TRAVIS_PULL_REQUEST
 
 install:
   - docker build --cache-from  kabanerobuild/website-travis:latest -t website-travis -f travis/Dockerfile .
 
-script:
-  - echo $TRAVIS_PULL_REQUEST
 stages:
   - name: Running tests
     if: (type IN (push)) 

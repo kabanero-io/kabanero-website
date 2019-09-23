@@ -23,11 +23,11 @@
             <p id="guide_attribution"></p>
             <h3 id="improve_guide_feedback">{{t.improve-guide-feedback}}</h3>
             {% if page.layout == 'guide' or page.layout == 'guide-multipane' or page.layout == 'guide-markdown' %}
-                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-link}}/issues">Raise an issue</a> to share feedback</p>
-                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-link}}/pulls">Create a pull request</a> to contribute to this guide</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-url}}/issues">Raise an issue</a> to share feedback</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-url}}/pulls">Create a pull request</a> to contribute to this guide</p>
             {% elsif page.layout == 'iguide-multipane' %}
-                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-link}}/issues">Raise an issue</a> to share feedback</p>
-                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-link}}/pulls">Create a pull request</a> to contribute to this guide</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-url}}/issues">Raise an issue</a> to share feedback</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="{{page.github-url}}/pulls">Create a pull request</a> to contribute to this guide</p>
             {% endif %}
 
             <h3 id="need_help">{{t.need-help}}</h3>

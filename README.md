@@ -20,6 +20,7 @@ Each guide resides in its own repository and is dynamically pulled into kabanero
 ```
 ---
 permalink: /guides/nameofguide/
+github-url: URL of the guide repository in github for example: https://github.com/kabanero-io/guide-overview
 ---
 - layout: guide
 - duration: `time required to complete the guide`

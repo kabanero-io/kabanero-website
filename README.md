@@ -19,14 +19,16 @@ Please see [Contributing to the blog](https://github.com/kabanero-io/blogs) in o
 Each guide resides in its own repository and is dynamically pulled into kabanero.io via the build process. The content of the guide can be written in HTML, markdown, or AsciiDoc formats- AsciiDoc is preferred. The following front matter variables must be set:
 ```
 ---
-permalink: /guides/nameofguide/
-github-url: URL of the guide repository in github for example: https://github.com/kabanero-io/guide-overview
+permalink: /guides/guiderepository/
 ---
 - layout: guide
 - duration: `time required to complete the guide`
 - description: `one line description of the guide`
 - tags: `(optional) array of tags associated with the guide`
 ```
+The naming convention for `permalink` is `/guide/` followed by the github repository URL path **Not including kabanero-io**. 
+   * For example the appropriate `permalink` for https://github.com/kabanero-io/guide-overview/ would be `/guides/guide-overview/`
+
 `layout` could also be `guide-multipane` which renders that code column to show code on the side.
 
 To get started open an issue to get a repository in the kabanero-io github org created for your guide. Make sure `draft-guide-` is appended to the beginning of the repo name. `draft-` ensures it will not get published to the site. `guide-` ensures our build process will pull in the guide during build.

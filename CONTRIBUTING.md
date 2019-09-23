@@ -80,19 +80,6 @@ The above [Local development setup](#local-development-setup) runs the front end
 1. Run the docker site in a docker container: `docker run --rm -p 9443:9443 kabanero-site`
 1. Wait a few seconds for the container to start and then go to `https://localhost:9443` in your browser to view the website.
 
-# Render a Guide locally
-
-Once you have your local development environment setup you can render guides as your write them.
-
-## Prereqs
-* [Local development setup](#local-development-setup)
-
-## Render your guide
-
-1. Create a new dir called `guides` under `src/main/content/`
-1. Inside the new `guides` dir, make a new folder called `guide-name_of_your_guide`
-1. Create the `README.adoc` in that newly created folder and place your content in there.
-1. Start your local dev server and go to `https://localhost:4000/guides` to see all the guides rendered.
 
 # Deploying your own instance of the Kabanero website to IBM Cloud Foundry
 

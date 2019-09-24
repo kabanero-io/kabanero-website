@@ -12,7 +12,7 @@ ruby -v
 
 # Guides that are ready to be published to the Code Conjuring site
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then 
     echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb;
 fi
@@ -28,7 +28,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     # Development environments with draft docs/guides
     if [ "$JEKYLL_DRAFT_GUIDES" == "true" ]; then
 
-        if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+        if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then 
             echo "Clone draft guides for test environments..." 
             ruby ./scripts/build_clone_guides.rb "draft-guide"; 
         fi

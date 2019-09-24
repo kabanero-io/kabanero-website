@@ -12,8 +12,8 @@ ruby -v
 
 # Guides that are ready to be published to the Code Conjuring site
 
-if [ -z "${TRAVIS_TESTING}"]; then 
-    echo "Cloning repositories with name starting with guide or iguide..."
+if [ -z "$TRAVIS_TESTING" ]; then 
+    #echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb
 fi
 
@@ -24,9 +24,9 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     cp robots.txt "$CONTENT_DIR"/robots.txt
 
     # Development environments with draft docs/guides
-    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [  -z "${TRAVIS_TESTING}" ]; then
+    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [  -z "$TRAVIS_TESTING" ]; then
 
-            echo "Clone draft guides for test environments..." 
+            #echo "Clone draft guides for test environments..." 
             ruby ./scripts/build_clone_guides.rb "draft-guide" 
         #./scripts/build_clone_docs.sh "draft" # Argument is branch name of kabanero-io/docs
     else

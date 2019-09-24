@@ -26,13 +26,10 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     cp robots.txt "$CONTENT_DIR"/robots.txt
 
     # Development environments with draft docs/guides
-    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ]; then
-
-        if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then 
+    if [ "$JEKYLL_DRAFT_GUIDES" == "true" &&  "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    
             echo "Clone draft guides for test environments..." 
             ruby ./scripts/build_clone_guides.rb "draft-guide"; 
-        fi
-        
         #./scripts/build_clone_docs.sh "draft" # Argument is branch name of kabanero-io/docs
     else
         echo "not cloning draft guides"

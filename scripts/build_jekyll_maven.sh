@@ -11,9 +11,9 @@ ruby -v
 ./scripts/build_gem_dependencies.sh
 
 # Guides that are ready to be published to the Code Conjuring site
-echo "Cloning repositories with name starting with guide or iguide..."
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+    echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb;
 fi
 

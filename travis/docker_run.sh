@@ -12,4 +12,4 @@ docker run -it \
           -e JEKYLL_ENV=${JEKYLL_ENV} \
           -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*} \
           -e TRAVIS_PULL_REQUEST=${TRAVIS_PULL_REQUEST} \
-          website-travis bash -c "$1" 
+          website-travis bash -c "$1"  

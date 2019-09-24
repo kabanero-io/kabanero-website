@@ -16,8 +16,6 @@ jobs:
   include:
     - stage: "Running tests"
       name: "Running lint testing and building website with Jekyll"
-      env:
-        - TRAVIS_TESTING=true
       script:
         - ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
         - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh

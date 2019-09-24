@@ -41,7 +41,12 @@ function disableFloatingTOC() {
 }
 
 function enableFloatingTOC() {
-    $('#toc-inner').css({'position':'fixed', 'top':'100px'});    
+    // The toc has a fixed position- this will allow it to scroll with the user and stay "snapped" at the top once the header disappears
+    var heightOfHeaderPix = 100;
+    var pixFromTop = $(window).scrollTop();
+    var newTop = heightOfHeaderPix - pixFromTop;
+    var tocTop = newTop < 0 ? 0 : newTop;
+    $('#toc-inner').css({'position':'fixed', 'top': tocTop});    
 }
 
 function calculateTOCHeight(){

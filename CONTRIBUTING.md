@@ -80,6 +80,8 @@ The above [Local development setup](#local-development-setup) runs the front end
 1. Run the docker site in a docker container: `docker run --rm -p 9443:9443 kabanero-site`
 1. Wait a few seconds for the container to start and then go to `https://localhost:9443` in your browser to view the website.
 
+# Contributing to the guides
+Please see [Contributing to the guides](https://github.com/kabanero-io/draft-guides-template#contributing-to-the-guides) in our Guides Template repository.
 
 # Deploying your own instance of the Kabanero website to IBM Cloud Foundry
 

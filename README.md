@@ -16,7 +16,7 @@ Please [view our contribution guidelines](https://github.com/kabanero-io/kabaner
 Please see [Contributing to the blog](https://github.com/kabanero-io/blogs) in our Blogs repository.
 
 ## Contributing to the guides
-Please see [Contributing to guides](https://github.com/kabanero-io/draft-guides-template) in our Guides Template repository.
+Please see [Contributing to the guides](https://github.com/kabanero-io/draft-guides-template#contributing-to-the-guides) in our Guides Template repository.
 
 ## Community
 - [Kabanero on Twitter](https://twitter.com/Kabaneroio)

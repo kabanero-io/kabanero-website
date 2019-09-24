@@ -1,9 +1,5 @@
 language: minimal
 
-env:
-  global:
-    - PAT=travis pubkey -r kabanero-io/kabanero-website
-
 before_install:
   - docker pull  kabanerobuild/website-travis:latest 
 

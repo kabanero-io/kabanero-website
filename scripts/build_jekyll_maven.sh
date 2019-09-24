@@ -17,8 +17,6 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     ruby ./scripts/build_clone_guides.rb;
 fi
 
-ruby ./scripts/build_clone_guides.rb
-
 # Development environment only actions
 if [ "$JEKYLL_ENV" != "production" ]; then 
     echo "Not in production environment..."
@@ -27,7 +25,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
 
     # Development environments with draft docs/guides
     if [ "$JEKYLL_DRAFT_GUIDES" == "true" &&  "$TRAVIS_PULL_REQUEST" == "false" ]; then
-    
+
             echo "Clone draft guides for test environments..." 
             ruby ./scripts/build_clone_guides.rb "draft-guide"; 
         #./scripts/build_clone_docs.sh "draft" # Argument is branch name of kabanero-io/docs

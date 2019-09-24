@@ -16,7 +16,9 @@ cloneDraftGuides = ARGV[0]
 # --------------------------------------------
 # Get all the Kabanero-io repositories
 # --------------------------------------------
-client = Octokit::Client.new :access_token => ENV['PAT']
+client = Octokit::Client.new \
+  client_id:     Rails.application.secrets.github_key,
+  client_secret: Rails.application.secrets.github_secret
 client.auto_paginate = true
 repos = client.org_repos('kabanero-io')
 

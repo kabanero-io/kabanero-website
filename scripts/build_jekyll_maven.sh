@@ -14,7 +14,7 @@ ruby -v
 
 if [ -z "${TRAVIS_TESTING}"]; then 
     echo "Cloning repositories with name starting with guide or iguide..."
-    ruby ./scripts/build_clone_guides.rb;
+    ruby ./scripts/build_clone_guides.rb
 fi
 
 # Development environment only actions
@@ -27,7 +27,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [  -z "${TRAVIS_TESTING}" ]; then
 
             echo "Clone draft guides for test environments..." 
-            ruby ./scripts/build_clone_guides.rb "draft-guide"; 
+            ruby ./scripts/build_clone_guides.rb "draft-guide" 
         #./scripts/build_clone_docs.sh "draft" # Argument is branch name of kabanero-io/docs
     else
         echo "not cloning draft guides"

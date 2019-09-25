@@ -1,5 +1,10 @@
 language: minimal
 
+env:
+  global:
+    secure: YmgKyw4USKeD1vpNVR3hdpYLrL08rBAoXsmSQEyIvTPXUBDWXLcC8LcEDDvRTzZY3prbsnhDLqw7DL25M02+XgqdNodTS3zhnSSo0cPHSDmwDH8nlrTdXcdh/IfzMJNy6UQPgLRAfCARuBQLnCChoMHwuPkXQo2yQfzJ0T6jW/5tl+yUZ08MV7Hrjykzbwn0WB/MKFqLnjKm8OQ5cIrtneGtXuGfhecfhVziSn616kyXA0U4MmBDKqSL7gxmuATAH2o9qr29EdvsgPNn5G3KrQnQS+QunFgROCOD3ijhgOOuO9ezLfrXNIs/dISsn1krhnlJMAGdB/RzfqHyHQoXPlBhiDwQVE+k8aaC8WL//l8BEOzpM814wyvjO4fIv5HCDviKl0vC1LLcZ/Bb9vRzKJYHICTcQ5QN84ScezvyZro0SwZWJCK2kosbsT0uAOdb2unZ9+WRWKhXuBstl9joCJGxAiAQD/IBab7zSPYreG0+XAGfmekEekmsEnUvJ9X0VwV2dH+KfND8hHl6rCnAbCMAgmhVKFPd4bJaLZEco06HfAtK9CC3/t2lAQp4b9YEzBW+bmlsIhXSg5RkMUaOf3SumxgWBptd74ZNAFJqrw+ZRB5nrjSlW0Lmh7mSaxdoiVHFdXcO84XSg05pfwAQ8eNdRdtIALh+IGZjeBT5fI8=
+    
+    
 before_install:
   - docker pull  kabanerobuild/website-travis:latest 
 

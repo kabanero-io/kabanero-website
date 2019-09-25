@@ -42,14 +42,14 @@ fi
 
 if [ "$TRAVIS_EVENT_TYPE" != "pull_request"]; then 
 
-echo "Copying guide images to /img/guide"
-mkdir -p "$CONTENT_DIR"/img/guide
-# Check if any published guide images exist first
-for GUIDE in $( ls "$CONTENT_DIR"/guides ); do
-	if [[ -d "$CONTENT_DIR/guides/$GUIDE"/assets ]]; then
-		cp "$CONTENT_DIR/guides/$GUIDE"/assets/* "$CONTENT_DIR"/img/guide/
-	fi
-done
+    echo "Copying guide images to /img/guide"
+    mkdir -p "$CONTENT_DIR"/img/guide
+    # Check if any published guide images exist first
+    for GUIDE in $( ls "$CONTENT_DIR"/guides ); do
+        if [[ -d "$CONTENT_DIR/guides/$GUIDE"/assets ]]; then
+            cp "$CONTENT_DIR/guides/$GUIDE"/assets/* "$CONTENT_DIR"/img/guide/
+        fi
+    done
 
 fi
 

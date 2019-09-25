@@ -1,8 +1,9 @@
 language: minimal
 
 before_install:
-  - gem install travis
-  - travis login --auto -y
+  - sudo apt install ruby-dev libffi-dev make gcc
+  - sudo gem install travis
+  - travis login --auto 
   - docker pull  kabanerobuild/website-travis:latest 
 
 install:

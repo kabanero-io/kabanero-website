@@ -18,4 +18,3 @@ RUN npm install eslint --save-dev
 RUN curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
 
 COPY . .
-

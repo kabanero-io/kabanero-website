@@ -25,5 +25,5 @@ jobs:
 
     - stage: "Deploy"
       name: "Deploy website"
-      script: 
+      script:    
         -  ./travis/docker_run.sh ./travis/travis_ibmcloud_cf_push.sh

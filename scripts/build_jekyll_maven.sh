@@ -40,6 +40,8 @@ if [ "$JEKYLL_DRAFT_BLOGS" == "true" ]; then
     JEKYLL_BUILD_FLAGS="--drafts"
 fi
 
+if [ "$TRAVIS_EVENT_TYPE" != "pull_request"]; then 
+
 echo "Copying guide images to /img/guide"
 mkdir -p "$CONTENT_DIR"/img/guide
 # Check if any published guide images exist first
@@ -48,6 +50,8 @@ for GUIDE in $( ls "$CONTENT_DIR"/guides ); do
 		cp "$CONTENT_DIR/guides/$GUIDE"/assets/* "$CONTENT_DIR"/img/guide/
 	fi
 done
+
+fi
 
 # Build draft and published blogs
 ./scripts/build_clone_blogs.sh

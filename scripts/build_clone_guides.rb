@@ -19,7 +19,7 @@ cloneDraftGuides = ARGV[0]
 client = Octokit::Client.new :access_token => ENV['PAT']
 client.auto_paginate = true
 repos = client.org_repos('kabanero-io')
-print repos
+
 # --------------------------------------------
 # Travis CI related steps
 # --------------------------------------------

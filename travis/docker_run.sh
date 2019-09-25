@@ -10,5 +10,6 @@ docker run -it \
           -e BLOGS_GIT_REVISION=${BLOGS_GIT_REVISION} \
           -e BLOGS_GIT_URL=${BLOGS_GIT_URL} \
           -e JEKYLL_ENV=${JEKYLL_ENV} \
+          -e PAT=${PAT} \
           -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*} \
           website-travis bash -c "$1" 

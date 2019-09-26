@@ -3,6 +3,10 @@
 # Introduction
 Kabanero.io is a portable, mobile enabled web application hosted on [IBM Cloud](https://cloud.ibm.com). It features [Jekyll](https://jekyllrb.com/) based templates with [Asciidoctor](http://asciidoctor.org/) support. New content, such as blog posts and guides, can be easily added in HTML, markdown or AsciiDoc format.
 
+- Content for the website is [/src/main/content](https://github.com/kabanero-io/kabanero-website/tree/master/src/main/content)
+- Doc contributions can be made in [the docs repository](https://github.com/kabanero-io/docs)
+- Get started contributing a guide in [the draft guides template repository](https://github.com/kabanero-io/draft-guides-template)
+
 ## Portability
 The graphical user interface is built to work consistently across all major web browsers, including Chrome, Edge, Internet Explorer, Firefox and Safari.
 

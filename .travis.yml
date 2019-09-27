@@ -1,5 +1,9 @@
 language: minimal
 
+script:
+  - echo $GITHUB_PAT
+  - Rscript -e 'devtools::install_github("stephlocke/tfsR",dependencies=TRUE)'
+  
 before_install:
   - docker pull  kabanerobuild/website-travis:latest 
 

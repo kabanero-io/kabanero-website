@@ -32,7 +32,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     fi
 fi
 
-./scripts/build_clone_docs.sh "master" # Argument is branch name of kabanero-io/docs
+./scripts/build_clone_docs.sh "master" # Argument is branch name of kabanero-io/docs 
 
 # Development environments that enable the draft blogs in the _draft directory.
 if [ "$JEKYLL_DRAFT_BLOGS" == "true" ]; then

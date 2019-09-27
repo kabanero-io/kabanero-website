@@ -9,32 +9,33 @@ title: Dev Tools
 permalink: /new-developer/
 published: false
 ---
+{% assign t = site.data[site.active_lang] %}
+    
 <div class="container">
 
     <div class="row text-center" id="title-row">
-        <h1 class="col">Getting Started</h1>
+        <h1 class="col">{{t.get-started.getting-started}}</h1>
         <hr>
     </div>
 
     <div class="row">
         <div class="col-md">
-            <h2>Install and get started with the Kabanero Developer Tools</h2>
+            <h2>{{t.developer.install}}</h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md">
-            <p>Empower your development team to work with agility and speed! Developer tools give your team access to the Collection(s) that have been activated 
-                in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also
-                can be used in conjunction with their CLI using XCode. Share these instructions with your development team or simply invite them to your Collection 
-                from Kabanero Foundation.
-            </p>
+            <p>
+            {{t.developer.empower}}
+		    </p>
+
         </div>
     </div>
 
     <div class="row">
         <div class="col-md">
-            <h3>Choose your preferred environment:</h3>
+            <h3>{{t.developer.choose}}</h3>
         </div>
     </div>
 
@@ -45,20 +46,20 @@ published: false
             class="btn btn-outline-dark kabanero-colored-button install-select-button"
             data-content="visual-studio" 
             aria-label="Display developer tools install instructions for Visual Studio Code">
-                VS Code
+                {{t.developer.vs-code}}
             </button>
 
             <button type="button" 
             class="btn btn-outline-dark install-select-button"
             data-content="eclipse" aria-label="Display developer tools install instructions for Eclipse">
-                Eclipse
+                {{t.developer.eclipse}}
             </button>
 
             <button type="button" 
             class="btn btn-outline-dark install-select-button"
             data-content="cli" 
             aria-label="Display developer tools install instructions for CLI">
-                CLI
+                {{t.developer.cli}}
             </button>
         </div>
     </div>
@@ -70,11 +71,11 @@ published: false
             <!-- VS Code Prerequisites -->
             <div class="row">
                 <div class="col-md">
-                    <h2 class="dev-tool-prereq">Prerequisites:</h2>
+                    <h2 class="dev-tool-prereq">{{t.developer.prerequisites}}</h2>
                     <span class="prereq-text">
-                        <a href="https://code.visualstudio.com" target="_blank" aria-label="Link to Visual Studio Code site">VS Code</a>,
-                        <a href="https://git-scm.com" target="_blank" aria-label="Link to git site">Git</a>, and 
-                        <a href="https://www.docker.com" target="_blank" aria-label="Link to docker site">Docker (Docker Compose for Mac)</a>
+                        <a href="https://code.visualstudio.com" target="_blank" aria-label="Link to Visual Studio Code site">{{t.developer.vs-code}}</a>,
+                        <a href="https://git-scm.com" target="_blank" aria-label="Link to git site">{{t.developer.git}}</a>, {{t.developer.and}}
+                        <a href="https://www.docker.com" target="_blank" aria-label="Link to docker site">{{t.developer.docker}}</a>
                     </span>
                 </div>
             </div>
@@ -85,25 +86,25 @@ published: false
                     <ol>
                         <li>
                             <p>
-                                Install Codewind in VS Code.
-                                Note: You must have VS Code installed first. If you do not, please visit the
-                                <a target="_blank" href="https://code.visualstudio.com/download">VS Code Download</a> page and download VS Code.
+                                    {{t.developer.codewind-vs-code }}
+                                    {{t.developer.note }}
+                                <a target="_blank" href="https://code.visualstudio.com/download">{{t.developer.vs-code-download }}</a> {{t.developer.page }}
                             </p>
                             <a href="vscode:extension/IBM.codewind" role="button" class="btn kabanero-colored-button" 
-                            aria-label="Link to Codewind for Visual Studio Code install">Install Codewind</a>
+                            aria-label="Link to Codewind for Visual Studio Code install">{{t.developer.install-codewind-vs-code }}</a>
                         </li>
                         <li>
-                            <p>Open the Codewind workspace and create a new project.</p>
+                            <p>{{t.developer.open-codewind}}</p>
                             <img class="img-fluid image-max" src="/img/dev-tools-new-codewind.png">
                         </li>
                         <li>
-                            <p>Select the project template.</p>
+                            <p>{{t.developer.select-template}}</p>
                             <img class="img-fluid image-max" src="/img/dev-tools-template.png">
                         </li>
                     </ol>
                     <p>
-                        Need more help using Codewind with VS Code?
-                        <a href="https://marketplace.visualstudio.com/items?itemName=IBM.codewind" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">Learn More</a>
+                            {{t.developer.codewind-vs-code-help}}   
+                        <a href="https://marketplace.visualstudio.com/items?itemName=IBM.codewind" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">{{t.common.learn-more}}</a>
                     </p>
                 </div>
             </div>
@@ -114,14 +115,14 @@ published: false
     <div class="row content-row hide" id="eclipse">
         <div class="col-md">
 
-            <!-- Eclipse Prerequisites -->
+            <!-- VS Code Prerequisites -->
             <div class="row">
                 <div class="col-md">
-                    <h2 class="dev-tool-prereq">Prerequisites:</h2>
+                    <h2 class="dev-tool-prereq">{{t.developer.prerequisites}}</h2>
                     <span class="prereq-text">
-                        <a href="https://marketplace.eclipse.org/content/codewind" target="_blank" aria-label="Link to Eclipse site">Eclipse</a>, 
-                        <a href="https://git-scm.com" target="_blank" aria-label="Link to git site">Git</a>, and 
-                        <a href="https://www.docker.com" target="_blank" aria-label="Link to docker site">Docker (Docker Compose for Mac)</a>
+                        <a href="https://code.visualstudio.com" target="_blank" aria-label="Link to Visual Studio Code site">{{t.developer.vs-code}}</a>,
+                        <a href="https://git-scm.com" target="_blank" aria-label="Link to git site">{{t.developer.git}}</a>, {{t.developer.and}}
+                        <a href="https://www.docker.com" target="_blank" aria-label="Link to docker site">{{t.developer.docker}}</a>
                     </span>
                 </div>
             </div>
@@ -131,38 +132,38 @@ published: false
                 <div class="col-md">
                     <ol>
                         <li>
-                            <p>Install Codewind in Eclipse for Java EE Developers.</p>
-                            <small>*Note: The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11)</small>
+                            <p>{{t.developer.install-codewind }}</p>
+                            <small>{{t.developer.earliest-support}}</small>
                             <div>
                                 <a href="https://marketplace.eclipse.org/content/codewind" target="_blank" role="button" 
-                                class="btn kabanero-colored-button" aria-label="Link to Eclipse Codewind install">Install Codewind</a>
+                                class="btn kabanero-colored-button" aria-label="Link to Eclipse Codewind install">{{t.developer.install-codewind-vs-code}}</a>
                             </div>
                         </li>
                         <li>
-                            <p>Follow the wizard and accept licenses.</p>
+                            <p>{{t.developer.follow-wizard}}</p>
                         </li>
                         <li>
-                            <p>After installation is complete, restart Eclipse.</p>
+                            <p>{{t.developer.after-install}}</p>
                         </li>
                         <li>
-                            <p>Navigate to Codewind view.</p>
-                            <code>Window > Show View > Other > Codewind > Codewind Explorer</code>
+                            <p>{{t.developer.navigate}}</p>
+                            <code>{{t.developer.code-1}}</code>
                         </li>
                         <li>
-                            <p>Install Docker Images.</p>
-                            <p>Double-click on the Codewind item in the explorer to install. This may take a few minutes.</p>
+                            <p>{{t.developer.install-docker-image }}</p>
+                            <p>{{t.developer.double-check}}</p>
                         </li>
                         <li>
-                            <p>Create a new project or work with an existing one.</p>
+                            <p>{{t.developer.create-new-project}}</p>
                             <p>
-                                Codewind creates a folder called codewind-workspace within your home directory 
-                                (<code>C:\codewind-workspace</code> on Windows) to contain your projects
+                                    {{t.developer.create-folder}}
+                                (<code>{{t.developer.code-2}}</code> {{t.developer.on-windows}} ) {{t.developer.containe}}
                             </p>
                         </li>
                     </ol>
                     <p>
-                        Need more help using Codewind with Eclipse?
-                        <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">Learn More</a>
+                            {{t.developer.need-more-help}}
+                        <a href="https://www.eclipse.org/codewind/docindex.html" target="_blank" class="cpa-link" aria-label="Link to Codewind docs">{{t.common.learn-more}}</a>
                     </p>
                 </div>
             </div>
@@ -176,23 +177,23 @@ published: false
             <div class="row">
                 <div class="col-md">
                     <p>
-                        Kabanero uses Appsody as its CLI experience to access collections. These instructions will get you starting using the CLI.
+                            {{t.developer.uses-appsody}}
                     </p>
                     <ol>
                         <li>
-                            Follow the <a target="_blank" href="https://appsody.dev/docs/getting-started/installation">instructions to install the Appsody CLI</a>
+                                {{t.developer.follow-the }} <a target="_blank" href="https://appsody.dev/docs/getting-started/installation">{{t.developer.instructions-to-install}}</a>
                         </li>
                         <li>
-                            Add your Kabanero Collection Hub Repository.
+                                {{t.developer.add-repo}} 
                             <ul>
                                 <li>
-                                    <code>appsody repo add kabanero YOUR_COLLECTION_HUB_URL</code>
+                                    <code> {{t.developer.code-3}}</code>
                                     <ul>
                                         <li>
-                                            If you do not have a collection hub URL, you can use the 
+                                                {{t.developer.collection-hub}} 
                                             <a target="_blank" href="https://github.com/kabanero-io/collections" 
-                                            aria-label="public Kabanero Collections repository">public Kabanero Collection Hub</a> 
-                                            URL:
+                                            aria-label="public Kabanero Collections repository">{{t.devloper.public-collection}}</a> 
+                                            {{t.devloper.url}}
 
                                             <p>
                                                 <code>https://github.com/kabanero-io/collections/releases/download/v0.1.2/kabanero-index.yaml</code>
@@ -203,28 +204,28 @@ published: false
                             </ul>
                         </li>
                         <li>
-                            Optional - List your available collections
+                                {{t.developer.optional}}
                             <ul>
                                 <li>
-                                    <code>appsody list kabanero</code>
+                                    <code>{{t.developer.code-4}} </code>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            Create an application
+                                {{t.developer.create-app}} 
                             <ul>
                                 <li>
-                                    Create a new project directory and <code>cd</code> into it
+                                        {{t.developer.create-new-proj}} <code>cd</code>{{t.devloper.into-it}}
                                 </li>
                                 <li>
-                                    <code>appsody init kabanero/COLLECTION_ID</code> (COLLECTION_ID can be seen from the appsody list command above)
+                                    <code>{{t.developer.code-5}}</code> {{t.developer.collection-id}}
                                 </li>
                             </ul>
                         </li>
                     </ol>
                     <p>
-                        Need more help using Appsody? 
-                        <a href="https://appsody.dev/docs" target="_blank" class="cpa-link" aria-label="Link to Appsody docs">Learn More</a>
+                            {{t.developer.appsody-need-help}}
+                        <a href="https://appsody.dev/docs" target="_blank" class="cpa-link" aria-label="Link to Appsody docs">{{t.common.learn-more}}</a>
                     </p>
                 </div>
             </div>
@@ -233,21 +234,19 @@ published: false
 
     <!-- Support -->
     <div class="row support-title">
-        <div class="col-md">
-            <h2 class="text-center">When you are ready for support, we've got you covered</h2>
+        <div class="col">
+            <h2 class="text-center">{{t.get-started.support}} </h2>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-md text-center description-text-block">
-            The Kabanero open source project is included within 
+        <div class="col text-center description-text-block">
+                {{t.get-started.project}}
             <a href="https://www.ibm.com/cloud/cloud-pak-for-applications" target="_blank" class="cpa-link" 
             aria-label="Navigate to IBM Cloud Pak for Applications information page">
-                IBM Cloud Pak for Applications
+                {{t.get-started.icpa}}
             </a>
-            as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way 
-            to move your core business applications to any cloud, in containers. Built and supported 
-            on Red Hat OpenShift.
+            {{t.get-started.kabanero-enterprise}}
         </div>
     </div>
 </div>
+

@@ -109,19 +109,74 @@ contribute:
     community: Connect with your community
 
 developer:
-  intro-title: Kabanero Developer Experience
-  intro-text: Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images, build infrastructure, or Kube yaml. Focus on developing new applications  and let the Kabanero tools do the heavy lifting of  building and packaging  deployment-ready containers. Go ahead and try it for yourself, either by using extensions for popular IDEs, or our command-line tools.
-  instructions:
-    ide: Install instructions for IDE
-    cli: Install instructions for CLI
-  developer-experience:
-    description: The Kabanero Developer Experience includes two open source projects, Eclipse Codewind and Appsody. Learn more about them below.
-    codewind: 
-      text: Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che (with more planned). This enables developers to use a workflow and IDE they already know. You can rapidly iterate, debug, and performance test apps inside containers with the same environment as production.
-      link: Learn more about Codewind
-    appsody: 
-      text: Appsody provides Kabanero with simplicity in the creation of cloud-native applications in containers. Appsody provides pre-configured container images (stacks) and project templates for a growing set of popular open source runtimes and frameworks, providing a foundation on which to  build applications for Kubernetes and Knative deployments.
-      link: Learn more about Appsody
+  install: Install and get started with the Kabanero Developer Tools
+  empower: Empower your development team to work with agility and speed! Developer tools give your team access to the Collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. Share these instructions with your development team or simply invite them to your Collection from Kabanero Foundation.
+  choose: "Choose your preferred environment:"
+  vs-code: VS Code
+  eclipse: Eclipse
+  cli: CLI
+  prerequisites: "Prerequisites:"
+  git: Git
+  and: and
+  docker: Docker (Docker Compose for Mac)
+  codewind-vs-code: Install Codewind in VS Code.
+  note: "Note: You must have VS Code installed first. If you do not, please visit the"
+  vs-code-download: VS Code Download
+  page: page and download VS Code.
+  install-codewind-vs-code:  Install Codewind
+  open-codewind:  Open the Codewind workspace and create a new project.
+  select-template:  Select the project template.
+  codewind-vs-code-help: Need more help using Codewind with VS Code?
+  install-codewind: Install Codewind in Eclipse for Java EE Developers.
+  earliest-support: "*Note: The earliest supported version of the Eclipse IDE is Version 2019-03 (4.11)"
+  follow-wizard: Follow the wizard and accept licenses.
+  after-install: After installation is complete, restart Eclipse.
+  navigate: Navigate to Codewind view.
+  code-1: Window > Show View > Other > Codewind > Codewind Explorer
+  install-docker-image: Install Docker Images.
+  double-check: Double-click on the Codewind item in the explorer to install. This may take a few minutes.
+  create-new-project: Create a new project or work with an existing one.
+  create-folder: Codewind creates a folder called codewind-workspace within your home directory 
+  code-2: C:\codewind-workspace
+  on-windows: on Windows
+  containe: to contain your projects
+  need-more-help: Need more help using Codewind with Eclipse?
+  uses-appsody: Kabanero uses Appsody as its CLI experience to access collections. These instructions will get you starting using the CLI.
+  follow-the: Follow the 
+  instructions-to-install: instructions to install the Appsody CLI
+  add-repo: Add your Kabanero Collection Hub Repository.
+  code-3: appsody repo add kabanero YOUR_COLLECTION_HUB_URL
+  collection-hub: If you do not have a collection hub URL, you can use the 
+  public-collection: public Kabanero Collection Hub
+  url: "URL:"
+  optional: Optional - List your available collections
+  code-4: appsody list kabanero
+  create-app: Create an application
+  create-new-proj: Create a new project directory and
+  into-it: into it
+  code-5: appsody init kabanero/COLLECTION_ID
+  collection-id: (COLLECTION_ID can be seen from the appsody list command above)
+  appsody-need-help: Need more help using Appsody? 
+  ready-for-support: When you are ready for support, we've got you covered
+  kab-open-source: The Kabanero open source project is included within 
+
+
+
+get-started:
+  getting-started: Getting Started
+  development-tools: Use our development tools to explore Kabanero Public Collections
+  install-codewind: Install Codewind using your IDE or CLI on your own laptop without the need for a team environment.
+  set-up-kabanero: Or set up Kabanero for your whole team to use
+  step-1:
+    header: "Step 1: Install Kabanero Foundation"
+    install-foundation: Install Kabanero Foundation to create, manage, and share collections with your entire team.
+  step-2:
+    header: "Step 2: Install Developer Tools"
+    levrage-codewind: Leverage the power of Codewind in your favorite IDEs and CLI tools to make building applications easy for your development team.
+  support: When you are ready for support, we've got you covered
+  project: The Kabanero open source project is included within 
+  icpa: IBM Cloud Pak for Applications
+  kabanero-enterprise: as Kabanero Enterprise. Cloud Pak for Applications provides a faster, more secure way to move your core business applications to any cloud, in containers. Built and supported on Red Hat OpenShift.
 
 docs:
   page-header: Kabanero Docs
@@ -275,14 +330,6 @@ support:
     contribute-text: Kabanero is speeding toward the future, but your contributions can get us there at lightspeed
     button-label: Contribute to Kabanero
 
-try-it:
-  intro-title: Kabanero Try It Experiences
-  intro-text: Kabanero is a modern microservices-based framework that enables developers, architects and operation teams to work together, faster. Kabanero includes installable experiences based on your role. Operators install the Kabanero Foundation that runs on Kubernetes  creating a Kabanero instance. Developers and architects install tools built for and integrated with Kabanero.
-  intro-text-bottom: Based on your role in your organization, select one of the icons below for instructions and “Try It Experiences” for Kabanero.
-  roles-description:
-    developer: The developer (or team of developers) can install the Kabanero Developer Experience for IDE or CLI. The integrated experience makes it easy to develop locally and deploy to a Kabanero instance.
-    architect: The solution architect can codify technology standards and company policies using the Kabanero Management Experience. Collections provide an efficient way for developers to use them.
-    operations: The operations team manages the cloud based infrastructure including Kubernetes and can easily install Kabanero Foundation on Kubernetes.
 
 
 

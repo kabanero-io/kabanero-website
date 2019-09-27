@@ -9,7 +9,7 @@ Please raise any bug reports on the Kabanero project repository's GitHub issue t
 
 A good bug report is one that make it easy for everyone to understand what you were trying to do and what went wrong. Provide as much context as possible so we can try to recreate the issue.
 
-Please open issues in their appropriate repository: 
+Please open issues in their appropriate repository:
 
 | Repository | Description |
 | --- | --- |
@@ -46,33 +46,63 @@ Please ensure you follow the coding standards used throughout the existing code 
 - All PRs must have a passing build.
 - For images, ids, and classes use hypens for spacing (ex. `this-is-a-class`)
 
-# Local Development Setup
+# Local Development setup
 
-This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io site. This runs jekyll serve which runs a small server that only shows front end changes. If you need to make backend changes see below
+This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io website. 
 
-## Prereqs
+The website's front end can be run in isolation using jekyll's own simple web server for convenience. The back end won't be run in this case, but most changes to the website pages, docs, or guides only require only the front end set up anyways. If you would like to run the full front end and back end together you can follow the [back end set up](#back-end-setup) below.
+
+## Front end setup
+
+There are two options for setting up a local development environment on your system:
+
+- Install the development environment locally on your system
+- Running the development environment in a Docker container
+
+### Installing the development environment locally on your system
+
+Prereqs:
+
+- [Git](https://git-scm.com/downloads)
 - ruby
 - gem
-- Docker (for optional step)
-- mvn (for optional step)
 
-## Set Up
+Follow these steps:
 
 1. `git clone https://github.com/kabanero-io/kabanero-website.git`
 1. `cd kabanero-website`
 1. Run `bundle install`
 1. Run `./scripts/jekyll_serve_dev.sh` to have Jekyll serve the static site.
-  * This script calls `jekyll serve` which builds the site and starts a small server to serve the static files. It will do a live reload anytime a file is changed.
-  * This does not run the code we have for the Liberty server in `src/main/java`. To run that code you will need to do the optional Docker step below
+   * This script calls `jekyll serve` which builds the site and starts a small server to serve the static files. It will do a live reload anytime a file is changed.
+   * This does not run the code we have for the Liberty server in `src/main/java`. To run that code you will need to follow the back end setup instructions.
+5. Go to http://localhost:4000/ in your browser
+
+### Running the development environment in a Docker container
+
+Prereqs:
+
+- [Git](https://git-scm.com/downloads)
+- [Docker](https://docs.docker.com/install/)
+
+Follow these steps:
+
+1. `git clone https://github.com/kabanero-io/kabanero-website.git`
+1. `cd kabanero-website`
+1. `docker build -t kabanero-dev .`
+1. `docker run -it -d -p 4000:4000 -v <Path-to-Kabanero-website-directory>/:/home/jekyll kabanero-dev`
 1. Go to http://localhost:4000/ in your browser
 
-# (Optional) Use Docker to Build and run the full site
+## Back end setup
 
-The above [Local development setup](#local-development-setup) runs the front end jekyll build using a small server that is not related to our backend. The actual site does have a backend we run on Open Liberty. This backend code can be run by following these steps.
+This process describes how to set up the back end Open Liberty server, which requires Docker. Follow these steps:
 
-## Prereqs
-  * [Git](https://git-scm.com/downloads)
-  * [Docker](https://docs.docker.com/install/)
+Prereqs:
+
+- [Git](https://git-scm.com/downloads)
+- [Docker](https://docs.docker.com/install/)
+- maven
+
+Follow these steps:
 
 1. Clone this repo: `git clone git@github.com:kabanero-io/kabanero-website.git`
 1. `cd` into the root of the repository
@@ -85,7 +115,8 @@ Please see [Contributing to the guides](https://github.com/kabanero-io/draft-gui
 
 # Deploying your own instance of the Kabanero website to IBM Cloud Foundry
 
-## Prereqs
+Prereqs:
+
 1. A fork of Kabanero.io
    * Go to [Kabanero.io website repo](https://github.com/kabanero-io/kabanero-website) and click Fork in the upper right.
 1. An [IBM Cloud](https://cloud.ibm.com) account
@@ -105,7 +136,7 @@ Please see [Contributing to the guides](https://github.com/kabanero-io/draft-gui
       1. Go to [IBM Cloud Access](https://cloud.ibm.com/iam/apikeys) and create an API key for your account.
    * `IBM_CLOUD_API` - IBM Cloud API endpoint to deploy to
       1. For example `https://cloud.ibm.com`
- 
+
    * **Optional**: you can set these environment variables to specify the repositories and branches of blogs and docs to be cloned from
       * `DOCS_GIT_URL` - Git url to clone for the docs repository (https://github.com/kabanero-io/docs.git by default)
       * `DOCS_GIT_REVISION` - (master by default)

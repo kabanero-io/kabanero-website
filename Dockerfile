@@ -67,8 +67,7 @@ WORKDIR /home/jekyll
 
 # kabanero.io gem dependencies
 COPY ./scripts /home/jekyll/scripts
-COPY Gemfile /home/jekyll
-COPY Gemfile.lock /home/jekyll
+COPY Gemfile Gemfile.lock /home/jekyll/
 COPY ./gems /home/jekyll/gems
 RUN scripts/build_gem_dependencies.sh
 

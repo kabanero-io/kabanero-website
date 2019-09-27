@@ -48,7 +48,9 @@ Please ensure you follow the coding standards used throughout the existing code 
 
 # Local Development setup
 
-This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io website. The website consists of a small front end, which uses Jekyll to serve the site, and a back end, which runs the full Liberty server. Most changes to the website pages, docs, or guides require only the front end set up.
+This section describes the steps needed to set up your local development environment to contribute changes to the Kabanero.io website. 
+
+The website's front end can be run in isolation using jekyll's own simple web server for convenience. The back end won't be run in this case, but most changes to the website pages, docs, or guides only require only the front end set up anyways. If you would like to run the full front end and back end together you can follow the [back end set up](#back-end-setup) below.
 
 ## Front end setup
 
@@ -68,11 +70,11 @@ Prereqs:
 Follow these steps:
 
 1. `git clone https://github.com/kabanero-io/kabanero-website.git`
-2. `cd kabanero-website`
-3. Run `bundle install`
-4. Run `./scripts/jekyll_serve_dev.sh` to have Jekyll serve the static site.
-  * This script calls `jekyll serve` which builds the site and starts a small server to serve the static files. It will do a live reload anytime a file is changed.
-  * This does not run the code we have for the Liberty server in `src/main/java`. To run that code you will need to follow the back end setup instructions.
+1. `cd kabanero-website`
+1. Run `bundle install`
+1. Run `./scripts/jekyll_serve_dev.sh` to have Jekyll serve the static site.
+   * This script calls `jekyll serve` which builds the site and starts a small server to serve the static files. It will do a live reload anytime a file is changed.
+   * This does not run the code we have for the Liberty server in `src/main/java`. To run that code you will need to follow the back end setup instructions.
 5. Go to http://localhost:4000/ in your browser
 
 ### Running the development environment in a Docker container
@@ -85,14 +87,14 @@ Prereqs:
 Follow these steps:
 
 1. `git clone https://github.com/kabanero-io/kabanero-website.git`
-2. `cd kabanero-website`
-3. `docker build -t kabanero-dev .`
-4. `docker run -it -d -p 4000:4000 -v <Path-to-Kabanero-website-directory>/:/home/jekyll kabanero-dev`
-5. Go to http://localhost:4000/ in your browser
+1. `cd kabanero-website`
+1. `docker build -t kabanero-dev .`
+1. `docker run -it -d -p 4000:4000 -v <Path-to-Kabanero-website-directory>/:/home/jekyll kabanero-dev`
+1. Go to http://localhost:4000/ in your browser
 
-## Back end set up
+## Back end setup
 
-This process describes how to set up the back end Liberty server, which requires Docker. Follow these steps:
+This process describes how to set up the back end Open Liberty server, which requires Docker. Follow these steps:
 
 Prereqs:
 
@@ -103,10 +105,10 @@ Prereqs:
 Follow these steps:
 
 1. Clone this repo: `git clone git@github.com:kabanero-io/kabanero-website.git`
-2. `cd` into the root of the repository
-3. Run the docker build commmand: `docker build -t kabanero-site -f kube/Dockerfile .`
-4. Run the docker site in a docker container: `docker run --rm -p 9443:9443 kabanero-site`
-5. Wait a few seconds for the container to start and then go to `https://localhost:9443` in your browser to view the website.
+1. `cd` into the root of the repository
+1. Run the docker build commmand: `docker build -t kabanero-site -f kube/Dockerfile .`
+1. Run the docker site in a docker container: `docker run --rm -p 9443:9443 kabanero-site`
+1. Wait a few seconds for the container to start and then go to `https://localhost:9443` in your browser to view the website.
 
 # Contributing to the guides
 Please see [Contributing to the guides](https://github.com/kabanero-io/draft-guides-template#contributing-to-the-guides) in our Guides Template repository.
@@ -117,7 +119,7 @@ Prereqs:
 
 1. A fork of Kabanero.io
    * Go to [Kabanero.io website repo](https://github.com/kabanero-io/kabanero-website) and click Fork in the upper right.
-2. An [IBM Cloud](https://cloud.ibm.com) account
+1. An [IBM Cloud](https://cloud.ibm.com) account
 
 ## Deploy a test instance using travis and your fork
 1. If you haven't already done so, go to [Travis-ci](https://travis-ci.com) and [Sign up with GitHub](https://travis-ci.com/signin).

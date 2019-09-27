@@ -1,8 +1,4 @@
 language: minimal
-
-script:
-  - echo $GITHUB_PAT
-  - Rscript -e 'devtools::install_github("stephlocke/tfsR",dependencies=TRUE)'
   
 before_install:
   - docker pull  kabanerobuild/website-travis:latest 
@@ -21,10 +17,12 @@ jobs:
     - stage: "Running tests"
       name: "Running lint testing and building website with Jekyll"
       script:
-        - ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
+       #- ./travis/docker_run.sh "./node_modules/.bin/eslint src/main/content/_assets/js/*.js"
         - ./travis/docker_run.sh ./scripts/build_jekyll_maven.sh
 
     - stage: "Deploy"
       name: "Deploy website"
       script: 
+        - echo $GITHUB_PAT
+        - Rscript -e 'devtools::install_github("stephlocke/tfsR",dependencies=TRUE)'
         -  ./travis/docker_run.sh ./travis/travis_ibmcloud_cf_push.sh

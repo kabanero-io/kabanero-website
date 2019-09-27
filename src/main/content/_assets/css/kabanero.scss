@@ -399,6 +399,12 @@ footer {
         padding-left: 0.3em;;
     }
 
+    @media (min-width: 767px) {
+        #footer_project_container {
+            margin-left: 3em;
+        }
+    }
+
     #footer_project {
         font-weight: 500;
         font-size: 11px;
@@ -414,7 +420,7 @@ footer {
 
     #footer_round_links_container {
         margin: 23px 0;
-        padding-right: 10%;
+        padding-right: 3em;
         float: right;
         padding-left: 4em;
     }
@@ -478,7 +484,7 @@ footer {
 
     @media (min-width: 767px) {
         #footer_bottom_left_section {
-            padding-left: 10%;
+            padding-left: 4.5em;
         }
     
         #footer_bottom_right_section {

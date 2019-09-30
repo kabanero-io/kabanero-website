@@ -1,0 +1,28 @@
+---
+layout: default
+title: Docs
+js:
+- docs
+permalink: /docs/
+--- 
+
+{% assign docs-version = '' | split: ','  | sort %}
+{% assign docs = site.pages | where: 'layout', 'doc' %}
+
+{% for doc in docs %}
+    {% assign dir = doc.dir | split: '/' %}
+    {% if dir[2] %}
+        {% assign docs-version = docs-version | push: dir[2] | uniq | sort | reverse %}
+    {% endif%}
+{% endfor %}
+
+<script id="docs-version-json" type="application/json">
+    {% assign count = 0 %}
+    {% raw %}{{% endraw %}
+    {% for version in docs-version %}
+      "{{ count }}": "{{ version }}"
+      {% assign count = count | plus:1 %}
+      {% if forloop.last != true %},{% endif %}
+    {% endfor %}
+    {% raw %}}{% endraw %}
+    </script>

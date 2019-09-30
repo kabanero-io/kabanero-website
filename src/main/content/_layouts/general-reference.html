@@ -37,27 +37,18 @@ js:
     {% include header.html %}
 
     {% assign t = site.data[site.active_lang].general-reference %}
-
     {% assign url = page.url | split: '/' %}
     {% assign selected-doc-version = url[2] %}
-
     {% assign docs-versions = '' | split: ','  | sort %}
     {% assign docs-layout = site.pages | where: 'layout', 'doc' %}
     {% assign general-ref = site.pages | where: 'layout', 'general-reference' %}
     {% assign docs = docs-layout | concat: general-ref %}
-    {% assign catsMetaFiles = site.pages | where: 'title', 'doc categories meta' %}
     {% assign introDocFiles = site.pages | where: 'title', t.welcome-to-docs %}
 
     {% for doc in docs %}
         {% assign dir = doc.dir | split: '/' %}
         {% if dir[2] %}
             {% assign docs-versions = docs-versions | push: dir[2] | uniq | sort | reverse %}
-        {% endif%}
-    {% endfor %}
-
-    {% for catsMeta in catsMetaFiles %}
-        {% if catsMeta.dir contains selected-doc-version %}
-            {% assign categories = catsMeta.categories %}
         {% endif%}
     {% endfor %}
 
@@ -86,7 +77,7 @@ js:
                         {% for introDoc in introDocFiles %}
                             {% if introDoc.dir contains selected-doc-version %}
                             <div id="welcome-doc" class="doc-title doc-category row" href="{{ introDoc.url }}">
-                                <a href="{{ introDoc.dir }}">
+                                <a href="{{ introDoc.url }}">
                                     {{introDoc.title}} v{{selected-doc-version}}
                                 </a>
                             </div>
@@ -96,26 +87,14 @@ js:
                         <h2 id="noSearchResults" class="no-display">
                             No Search Results
                         </h2>
-                        {% for cat in categories %}
-                        {% assign catNoSpaces = cat | strip %}
-                        {% assign dataTarget = "#" | append: catNoSpaces %}
-                        {% assign buttonId = catNoSpaces | append: '-button' %}
-                        {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
-                        <div class="toc-item">
-                            <img class="plus-minus-icon" src="/img/icon_plus.png">
-                            <a class="toc-category">{{cat}}</a>
-                            {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
-                            <ul class="nav">
-                                {% for doc in currCatDocs %}
-                                    {% if doc.dir contains selected-doc-version%}
-                                    <li>
-                                        <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
-                                    </li>
-                                    {% endif%}
-                                {% endfor %}
-                            </ul>
-
-                        </div>
+                        {% for doc in docs %}
+                            {% if doc.dir contains selected-doc-version%}
+                                {% unless doc.title contains "What's New In Kabanero" or doc.title contains "Welcome to Docs"%}
+                                <div class="toc-item">
+                                    <a class="doc-title general-reference-toc-element" href="{{ doc.url }}">{{doc.title}}</a>
+                                </div>
+                                {% endunless %}
+                            {% endif%}
                         {% endfor %}
                     </nav>
                 </div>

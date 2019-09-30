@@ -53,6 +53,15 @@ function selectDocInToc(){
     }
 }
 
+function selectedDocsVersion() {
+    let docVersions = JSON.parse($("#docs-version-json").html() || "{}");
+    let currentPath = window.location.pathname;
+    if (currentPath === '/docs/' && docVersions){
+        window.location.pathname = `/docs/${docVersions[0]}`;
+    }
+}
+
 $(document).ready(function(){
     selectDocInToc();
+    selectedDocsVersion();
 });

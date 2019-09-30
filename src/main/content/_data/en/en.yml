@@ -199,6 +199,8 @@ guides:
     title: Kabanero Basics
     title-two: '- Let’s get started'
     catigory-title: guides
+  collections-guides:
+    title: Kabanero Collections
 
 ide:
   intro-title: Kabanero Developer Experience for IDEs

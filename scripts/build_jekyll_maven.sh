@@ -26,7 +26,6 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
         echo "Clone draft guides for test environments..."
         ruby ./scripts/build_clone_guides.rb "draft-guide"    
-        #./scripts/build_clone_docs.sh "draft" # Argument is a revision of kabanero-io/docs repo
     else
         echo "not cloning draft guides"
     fi
@@ -34,7 +33,7 @@ fi
 
 # Only clone docs if they're not already there. Some builds clone the docs prior to this.
 if [ ! -d "${CONTENT_DIR}/docs" ]; then
-    ./scripts/build_clone_docs.sh ${DOCS_GIT_REVISION} # Argument is a revision of kabanero-io/docs repo
+    ./scripts/build_clone_docs.sh "${DOCS_GIT_URL}" "${DOCS_GIT_REVISION}" # Argument is the repo and a revision of the docs repo
 fi
 
 # Development environments that enable the draft blogs in the _draft directory.

@@ -23,16 +23,19 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     cp robots.txt "$CONTENT_DIR"/robots.txt
 
     # Development environments with draft docs/guides
-    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request"]; then
+    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
         echo "Clone draft guides for test environments..."
         ruby ./scripts/build_clone_guides.rb "draft-guide"    
-        #./scripts/build_clone_docs.sh "draft" # Argument is branch name of kabanero-io/docs
+        #./scripts/build_clone_docs.sh "draft" # Argument is a revision of kabanero-io/docs repo
     else
         echo "not cloning draft guides"
     fi
 fi
 
-./scripts/build_clone_docs.sh "master" # Argument is branch name of kabanero-io/docs
+# Only clone docs if they're not already there. Some builds clone the docs prior to this.
+if [ ! -d "${CONTENT_DIR}/docs" ]; then
+    ./scripts/build_clone_docs.sh ${DOCS_GIT_REVISION} # Argument is a revision of kabanero-io/docs repo
+fi
 
 # Development environments that enable the draft blogs in the _draft directory.
 if [ "$JEKYLL_DRAFT_BLOGS" == "true" ]; then
@@ -40,7 +43,7 @@ if [ "$JEKYLL_DRAFT_BLOGS" == "true" ]; then
     JEKYLL_BUILD_FLAGS="--drafts"
 fi
 
-if [ "$TRAVIS_EVENT_TYPE" != "pull_request"]; then 
+if [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then 
 
     echo "Copying guide images to /img/guide"
     mkdir -p "$CONTENT_DIR"/img/guide

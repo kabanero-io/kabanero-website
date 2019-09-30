@@ -50,9 +50,15 @@
                     </li> -->
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
-                    <a class="float_right_section ml-3" target="_blank" href="{{site.slack_url}}">
-                    <img id="footer_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
-                    </a>
+                    <div class="dropdown">
+                        <a class="float_right_section ml-3" href="#" id="header-slack-icon" data-toggle="dropdown">
+                        <img id="footer_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
+                        </a>
+                        <div class="dropdown-menu" id="slack-dropdown">
+                            <a class="dropdown-item" href={{site.slack_invite_url}} target="_blank">Request an Invite</a>
+                            <a class="dropdown-item" href={{site.slack_url}} target="_blank">Go to the Channel</a>
+                        </div>
+                    </div>
                     <a class="float_right_section" target="_blank" href="{{site.stackoverflow_url}}">
                     <img id="header_stackoverflow_img" src="/img/Header_StackO.svg" class="img-fluid" alt="stackoverflow logo">
                     </a>

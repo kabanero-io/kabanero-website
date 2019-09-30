@@ -61,8 +61,15 @@ js:
                             Select Docs
                         </button>
                         <div class="dropdown-menu version-list">
+                                                        
                             {% for version in docs-versions %}
+                            {% if version == docs-versions[0] %}
+                            <script>console.log(`{{docs-versions[0]}}`)</script>
+                            
+                            <a class="dropdown-item" href="/docs/{{version}}/">Latest</a>
+                            {% else %}
                             <a class="dropdown-item" href="/docs/{{version}}/">{{version}}</a>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>

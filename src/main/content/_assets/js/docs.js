@@ -46,8 +46,9 @@ function areLinksVisible(links){
 
 function selectDocInToc(){
     let currentHref = window.location.href;
-    let selectedFile = '/docs/ref/general' + currentHref.substring(currentHref.lastIndexOf('/'));
-    if(selectedFile !== '/docs/ref/general/docs-welcome.html'){
+    let pathName = location.pathname.substring(0, 11);
+    let selectedFile = `${pathName}/ref/general` + currentHref.substring(currentHref.lastIndexOf('/'));
+    if(selectedFile !== `${pathName}/ref/general/docs-welcome.html`){
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
         $( `a[href$="${selectedFile}"]` ).parent().parent().parent().find('.toc-category').click();
     }

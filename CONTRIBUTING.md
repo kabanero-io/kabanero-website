@@ -24,7 +24,7 @@ Please open issues in their appropriate repository:
 | [Kabanero Website](https://github.com/kabanero-io/kabanero-website) | The source code of the website [Kabanero.io](https://kabanero.io/), `YOU ARE HERE` |
 
 ## Contributor License Agreement
-If you are contributing code changes via a pull request for anything except trivial changes, you must signoff on the [Individual Contributor License Agreement](https://github.com/kabanero-io/kabanero-website/blob/master/cla/kabanero-cla-individual.pdf) If you are doing this as part of your job you may also wish to get your employer to sign a [CCLA Corporate Contributor License Agreement](https://github.com/kabanero-io/kabanero-website/blob/master/cla/kabanero-cla-corporate.pdf). Instructions how to sign and submit these agreements are located at the top of each document. Trivial changes such as Typos, redundant spaces, minor formatting and spelling errors will be labeled as "CLA trivial", and don't require a signed CLA for consideration.
+If you are contributing code changes via a pull request for anything except trivial changes, you must signoff on the [Individual Contributor License Agreement](https://github.com/kabanero-io/kabanero-website/blob/master/cla/kabanero-cla-individual.pdf)If you are doing this as part of your job you may also wish to get your employer to sign a [CCLA Corporate Contributor License Agreement](https://github.com/kabanero-io/kabanero-website/blob/master/cla/kabanero-cla-corporate.pdf). Instructions how to sign and submit these agreements are located at the top of each document. Trivial changes such as Typos, redundant spaces, minor formatting and spelling errors will be labeled as "CLA trivial", and don't require a signed CLA for consideration.
 
 After we obtain the signed CLA, you are welcome to open a pull request, and the team will be notified for review. We ask you follow these steps through the submission process.
 
@@ -123,7 +123,7 @@ Prereqs:
 
 ## Deploy a test instance using travis and your fork
 1. If you haven't already done so, go to [Travis-ci](https://travis-ci.com) and [Sign up with GitHub](https://travis-ci.com/signin).
-   1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
+1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
 1. Click on your accont in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
 1. Click on the Dashboard tab at the top of the page and under **Active repositories** click on **kabanero-website**.
 1. [Follow these steps](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings) to set the list of environment variables needed for Travis to successfully build and push your fork. You need to set the following variables
@@ -144,3 +144,9 @@ Prereqs:
       * `BLOGS_GIT_REVISION` - (master by default)
 
 1. Finally from [Travis-ci](https://travis-ci.com) click on your forked repository for the kabanero-website then click on the dropdown button labled 'More options' on the right hand side of the window above the 'Restart build' button. From the dropdown click on 'Trigger build', select a branch you want deployed to Cloud Foundry and click on 'Trigger custom build'. The job will start immediately and takes about 10 minutes to deploy.
+
+## Troubleshooting
+In the event your build failes due to a 403 error - `API rate limit exceeded ` [Create a personal access token for your github account](https://github.com/settings/tokens) and set the following environment variables for Travis
+   * `PAT` - Your github personal access tokens
+      * **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
+      * Go to the [Github help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) if you need assistance creating a personal access

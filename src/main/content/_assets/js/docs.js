@@ -54,8 +54,8 @@ function selectDocInToc(){
     }
 }
 
-function selectedDocsVersion() {
-    let docVersions = JSON.parse($("#docs-version-json").html() || "{}");
+function initialDocsRedirect() {
+    let docVersions = JSON.parse($('#docs-version-json').html() || '{}');
     let currentPath = window.location.pathname;
     if (currentPath === '/docs/' && docVersions){
         window.location.pathname = `/docs/${docVersions[0]}`;
@@ -64,5 +64,5 @@ function selectedDocsVersion() {
 
 $(document).ready(function(){
     selectDocInToc();
-    selectedDocsVersion();
+    initialDocsRedirect();
 });

@@ -4,6 +4,16 @@ title: Install Kabanero Foundation
 css: operations
 permalink: /operations/kabanero-foundation-install/
 ---
+{% assign docs-version = '' | split: ','  | sort %}
+{% assign docs = site.pages | where: 'layout', 'doc' %}
+
+{% for doc in docs %}
+    {% assign dir = doc.dir | split: '/' %}
+    {% if dir[2] %}
+        {% assign docs-version = docs-version | push: dir[2] | uniq | sort | reverse %}
+    {% endif%}
+{% endfor %}
+
 <div id="intro-content" class="container">
     <div class="row">
         <div class="col">
@@ -37,7 +47,7 @@ permalink: /operations/kabanero-foundation-install/
             <hr>
             <h3>Try the operator-based Kabanero Foundation Install</h3>
             <p>
-                Follow the <a href="/docs/ref/general/installing-kabanero-foundation.html">instructions to install Kabanero Foundation.</a>
+                Follow the <a href="/docs/{{docs-version[0]}}/ref/general/installing-kabanero-foundation.html">instructions to install Kabanero Foundation.</a>
             </p>
             <p>
                 This will guide you through:

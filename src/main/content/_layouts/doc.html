@@ -37,14 +37,11 @@ js:
     {% include header.html %}
 
     {% assign t = site.data[site.active_lang].general-reference %}
-
     {% assign url = page.url | split: '/' %}
     {% assign selected-doc-version = url[2] %}
 
     {% assign docs-versions = '' | split: ','  | sort %}
-    {% assign docs-layout = site.pages | where: 'layout', 'doc' %}
-    {% assign general-ref = site.pages | where: 'layout', 'general-reference' %}
-    {% assign docs = docs-layout | concat: general-ref %}
+    {% assign docs = site.pages | where: 'layout', 'doc' %}
     {% assign catsMetaFiles = site.pages | where: 'title', 'doc categories meta' %}
     {% assign introDocFiles = site.pages | where: 'title', t.welcome-to-docs %}
 
@@ -71,11 +68,11 @@ js:
                         </button>
                         <div class="dropdown-menu version-list">
                             {% for version in docs-versions %}
-                            {% if version == docs-versions[0] %}    
-                            <a class="dropdown-item" href="/docs/{{version}}/">Latest - {{version}}</a>
-                            {% else %}
-                            <a class="dropdown-item" href="/docs/{{version}}/">{{version}}</a>
-                            {% endif %}
+                                {% if version == docs-versions[0] %}    
+                                    <a class="dropdown-item" href="/docs/{{version}}/">Latest - {{version}}</a>
+                                {% else %}
+                                    <a class="dropdown-item" href="/docs/{{version}}/">{{version}}</a>
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -86,7 +83,6 @@ js:
                 <hr>
                 <div class="row">
                     <nav class="sidenav col">
-
                         {% for introDoc in introDocFiles %}
                             {% if introDoc.dir contains selected-doc-version %}
                             <div id="welcome-doc" class="doc-title doc-category row" href="{{ introDoc.url }}">
@@ -96,7 +92,6 @@ js:
                             </div>
                             {% endif%}
                         {% endfor %}
-
                         <h2 id="noSearchResults" class="no-display">
                             No Search Results
                         </h2>
@@ -111,14 +106,13 @@ js:
                             {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
                             <ul class="nav">
                                 {% for doc in currCatDocs %}
-                                    {% if doc.dir contains selected-doc-version%}
+                                    {% if doc.dir contains selected-doc-version %}
                                     <li>
                                         <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
                                     </li>
-                                    {% endif%}
+                                    {% endif %}
                                 {% endfor %}
                             </ul>
-
                         </div>
                         {% endfor %}
                     </nav>

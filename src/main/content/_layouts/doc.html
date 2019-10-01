@@ -43,7 +43,7 @@ js:
     {% assign docs-versions = '' | split: ','  | sort %}
     {% assign docs = site.pages | where: 'layout', 'doc' %}
     {% assign catsMetaFiles = site.pages | where: 'title', 'doc categories meta' %}
-    {% assign introDocFiles = site.pages | where: 'title', t.welcome-to-docs %}
+    {% assign introDocFiles = site.pages | where: 'title', t.welcome-to-docs %} 
 
     {% for doc in docs %}
         {% assign dir = doc.dir | split: '/' %}

@@ -36,7 +36,7 @@ js:
     {% include analytics.html %}
     {% include header.html %}
 
-    {% assign t = site.data[site.active_lang].general-reference %}
+    {% assign t = site.data[site.active_lang].doc %}
     {% assign url = page.url | split: '/' %}
     {% assign selected-doc-version = url[2] %}
 
@@ -69,7 +69,7 @@ js:
                         <div class="dropdown-menu version-list">
                             {% for version in docs-versions %}
                                 {% if version == docs-versions[0] %}    
-                                    <a class="dropdown-item" href="/docs/{{version}}/">Latest - {{version}}</a>
+                                    <a class="dropdown-item" href="/docs/{{version}}/">{{t.latest}} - {{version}}</a>
                                 {% else %}
                                     <a class="dropdown-item" href="/docs/{{version}}/">{{version}}</a>
                                 {% endif %}

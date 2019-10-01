@@ -184,10 +184,11 @@ docs:
   general-reference: General Reference
   contribute: Contribute
 
-general-reference:
+doc:
   page-header: Kabanero Docs
   welcome-to-docs: Welcome to Docs
   no-doc-found: No doc found
+  latest: Latest
 
 guides:
   page-title: Guides

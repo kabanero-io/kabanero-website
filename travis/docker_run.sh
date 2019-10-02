@@ -11,6 +11,6 @@ docker run -it \
           -e BLOGS_GIT_URL=${BLOGS_GIT_URL} \
           -e JEKYLL_ENV=${JEKYLL_ENV} \
           -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*} \
-          -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE} 
+          -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE} \
           -e PAT=${PAT} \
           website-travis bash -c "$1"  

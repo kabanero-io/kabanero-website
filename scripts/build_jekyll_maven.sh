@@ -11,7 +11,7 @@ ruby -v
 ./scripts/build_gem_dependencies.sh
 
 if [ -z "$PAT" ]; then
-    unsetenv "$PAT"
+    unset "$PAT"
 fi
 
 # Guides that are ready to be published to the Code Conjuring site

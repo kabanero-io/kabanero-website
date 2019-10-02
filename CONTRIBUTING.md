@@ -123,7 +123,7 @@ Prereqs:
 
 ## Deploy a test instance using travis and your fork
 1. If you haven't already done so, go to [Travis-ci](https://travis-ci.com) and [Sign up with GitHub](https://travis-ci.com/signin).
-   1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
+1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
 1. Click on your accont in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
 1. Click on the Dashboard tab at the top of the page and under **Active repositories** click on **kabanero-website**.
 1. [Follow these steps](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings) to set the list of environment variables needed for Travis to successfully build and push your fork. You need to set the following variables
@@ -144,3 +144,9 @@ Prereqs:
       * `BLOGS_GIT_REVISION` - (master by default)
 
 1. Finally from [Travis-ci](https://travis-ci.com) click on your forked repository for the kabanero-website then click on the dropdown button labled 'More options' on the right hand side of the window above the 'Restart build' button. From the dropdown click on 'Trigger build', select a branch you want deployed to Cloud Foundry and click on 'Trigger custom build'. The job will start immediately and takes about 10 minutes to deploy.
+
+## Troubleshooting
+   - In the event of a 403 error `API rate limit exceeded` head over to [Github](https://github.com/settings/tokens) and generat a personal access token **Make sure to leave all the boxes under "Select scopes" unchecked** then copy the generated token and add it to the following environment variable. Instructions on generating a github access token can be found on the [Github help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
+      * `PAT` - Github personal access token **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
+      
+      

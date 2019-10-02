@@ -11,7 +11,7 @@ ruby -v
 ./scripts/build_gem_dependencies.sh
 
 # Guides that are ready to be published to the Code Conjuring site
-if [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then 
+if  [[ ! -z "$PAT" ]]; then 
     echo "Cloning repositories with name starting with guide or iguide..."
     ruby ./scripts/build_clone_guides.rb;
 fi
@@ -23,7 +23,7 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     cp robots.txt "$CONTENT_DIR"/robots.txt
 
     # Development environments with draft docs/guides
-    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
+    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [[ ! -z "$PAT" ]]; then
         echo "Clone draft guides for test environments..."
         ruby ./scripts/build_clone_guides.rb "draft-guide"    
     else

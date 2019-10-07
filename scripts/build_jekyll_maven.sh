@@ -10,10 +10,6 @@ ruby -v
 
 ./scripts/build_gem_dependencies.sh
 
-if [ -z "$PAT" ]; then
-    unset PAT
-fi
-
 # Guides that are ready to be published to the Code Conjuring site
 if [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then 
     echo "Cloning repositories with name starting with guide or iguide..."

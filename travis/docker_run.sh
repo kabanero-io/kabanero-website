@@ -1,5 +1,10 @@
 #!/bin/bash
 
+PAT_ENV=""
+if [ -n "$PAT" ]; then
+   PAT_ENV="-e $PAT"
+fi
+
 docker run -it \
         -e IBM_CLOUD_ORGANIZATION=${IBM_CLOUD_ORGANIZATION} \
           -e IBM_CLOUD_SPACE=${IBM_CLOUD_SPACE} \
@@ -12,4 +17,5 @@ docker run -it \
           -e JEKYLL_ENV=${JEKYLL_ENV} \
           -e TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG%/*} \
           -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE} \
+          ${PAT_ENV} \
           website-travis bash -c "$1"  

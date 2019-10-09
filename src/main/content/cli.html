@@ -31,9 +31,12 @@ permalink: /developer/cli/
                 <img class="img-fluid workflow-image" src="/img/jane-appsody-pic.png">
 
                 <p>
-                    Appsody by itself points to a growing community of stacks (Container images pre-built with runtimes
-                    and frameworks). Kabanero provides integrated collections for a subset of these stacks. 
-                    These are known as featured collections. When using Appsody with Kabanero, you point Appsody at your Collections.
+                    Appsody points to a growing community of Stacks (Container images prebuilt with runtimes
+                    and frameworks). Kabanero takes a subset of these stacks and augments them with build and deploy
+                    technology to create a Collection. Collections enable Kabanero to build an application in a controlled
+                    manner. This controlled flow ensures that the application meets security requirements and deploys into a
+                    RHOCP (Red Hat OpenShift Container Platform) project. When using Appsody with Kabanero, you point Appsody at your Collection
+                    Hub.
                 </p>
 
                 <div class="appsody-link">
@@ -63,9 +66,9 @@ permalink: /developer/cli/
                             <code>appsody repo add kabanero YOUR_COLLECTION_HUB_URL</code>
                             <ul>
                                 <li>
-                                    If you do not have a collection hub URL, you can use the 
-                                    <a target="_blank" href="https://github.com/kabanero-io/collections" 
-                                    aria-label="public Kabanero Collections repository">public Kabanero Collection Hub</a> 
+                                    If you do not have a collection hub URL, you can use the
+                                    <a target="_blank" href="https://github.com/kabanero-io/collections"
+                                    aria-label="public Kabanero Collections repository">public Kabanero Collection Hub</a>
                                     URL:
 
                                     <p>
@@ -97,7 +100,7 @@ permalink: /developer/cli/
                 </li>
             </ol>
             <p>
-                Need more help using Appsody? 
+                Need more help using Appsody?
                 <a href="https://appsody.dev/docs" target="_blank" class="cpa-link" aria-label="Link to Appsody docs">Learn More</a>
             </p>
         </div>

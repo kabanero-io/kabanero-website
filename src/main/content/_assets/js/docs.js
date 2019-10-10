@@ -46,7 +46,13 @@ function areLinksVisible(links){
 
 function selectDocInToc(){
     let currentHref = window.location.href;
-    let pathName = location.pathname.substring(0, 11);
+    let pathName = '';
+    if(location.pathname.split('/')[2] == 'ref'){
+        pathName = '/docs'
+    }
+    else{
+        pathName = `/docs/${location.pathname.split('/')[2]}`
+    }
     let selectedFile = `${pathName}/ref/general` + currentHref.substring(currentHref.lastIndexOf('/'));
     if(selectedFile !== `${pathName}/ref/general/docs-welcome.html`){
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
@@ -54,15 +60,6 @@ function selectDocInToc(){
     }
 }
 
-function initialDocsRedirect() {
-    let docVersions = JSON.parse($('#docs-version-json').html() || '{}');
-    let currentPath = window.location.pathname;
-    if (currentPath === '/docs/' && docVersions){
-        window.location.pathname = `/docs/${docVersions[0]}`;
-    }
-}
-
 $(document).ready(function(){
     selectDocInToc();
-    initialDocsRedirect();
 });

@@ -29,7 +29,7 @@ js:
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-    {% include head.html %}
+{% include head.html %}
 
 <body>
 
@@ -37,39 +37,41 @@ js:
     {% include header.html %}
 
     {% assign t = site.data[site.active_lang].doc %}
-    {% assign url = page.url | split: '/' %}
-    {% assign selected-doc-version = url[2] %}
 
-    {% assign docs-versions = '' | split: ','  | sort %}
-    {% assign docs = site.pages | where: 'layout', 'doc' %}
+
+    {% assign selected-docs = page.url | truncate: 12, "" %}
+
+    {% if selected-docs contains '/docs/ref/' %}
+        {% assign selected-docs = '/docs/' %}
+    {% endif%}
+
+
     {% assign catsMetaFiles = site.pages | where: 'title', 'doc categories meta' %}
-    {% assign introDocFiles = site.pages | where: 'title', t.welcome-to-docs %} 
+    {% assign introDocFiles = site.pages | where: 'title', t.welcome-to-docs %}
 
-    {% for doc in docs %}
-        {% assign dir = doc.dir | split: '/' %}
-        {% if dir[2] %}
-            {% assign docs-versions = docs-versions | push: dir[2] | uniq | sort | reverse %}
-        {% endif%}
-    {% endfor %}
 
     {% for catsMeta in catsMetaFiles %}
-        {% if catsMeta.dir contains selected-doc-version %}
+        {% if catsMeta.dir == selected-docs %}
             {% assign categories = catsMeta.categories %}
         {% endif%}
     {% endfor %}
+
+
 
     <div class="container-fluid" id="doc-container">
         <div class="row">
             <div class="col-xl-3" id="toc-col">
                 <div class="row">
                     <div class="dropdown docs-version-dropdown">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle docs-version-dropdown-button" type="button" data-toggle="dropdown">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle docs-version-dropdown-button"
+                            type="button" data-toggle="dropdown">
                             Select Docs
                         </button>
                         <div class="dropdown-menu version-list">
-                            {% for version in docs-versions %}
-                                {% if version == docs-versions[0] %}    
-                                    <a class="dropdown-item" href="/docs/{{version}}/">{{t.latest}} - {{version}}</a>
+                            {% assign docs-version-list = site.pages | where: 'title', 'docs version list' %}
+                            {% for version in docs-version-list[0].versions %}
+                                {% if version == docs-version-list[0].versions[0] %}
+                                    <a class="dropdown-item" href="/docs/">{{t.latest}} - {{version}}</a>
                                 {% else %}
                                     <a class="dropdown-item" href="/docs/{{version}}/">{{version}}</a>
                                 {% endif %}
@@ -84,9 +86,16 @@ js:
                 <div class="row">
                     <nav class="sidenav col">
                         {% for introDoc in introDocFiles %}
-                            {% if introDoc.dir contains selected-doc-version %}
+                            {% if introDoc.dir == selected-docs %}
                             <div id="welcome-doc" class="doc-title doc-category row" href="{{ introDoc.url }}">
                                 <a href="{{ introDoc.dir }}">
+                                    {% if selected-docs == '/docs/' %}
+                                        {% assign selected-doc-version = docs-version-list[0].versions[0] %}
+                                    {% else %}
+                                        {% assign doc-url = selected-docs | split: '/' %}
+                                        {% assign selected-doc-version = doc-url[2] %}
+                                    {% endif %}
+
                                     {{introDoc.title}} v{{selected-doc-version}}
                                 </a>
                             </div>
@@ -96,24 +105,30 @@ js:
                             No Search Results
                         </h2>
                         {% for cat in categories %}
-                        {% assign catNoSpaces = cat | strip %}
-                        {% assign dataTarget = "#" | append: catNoSpaces %}
-                        {% assign buttonId = catNoSpaces | append: '-button' %}
-                        {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
-                        <div class="toc-item">
-                            <img class="plus-minus-icon" src="/img/icon_plus.png">
-                            <a class="toc-category">{{cat}}</a>
-                            {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
-                            <ul class="nav">
-                                {% for doc in currCatDocs %}
-                                    {% if doc.dir contains selected-doc-version %}
-                                    <li>
-                                        <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
-                                    </li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
+                            {% assign catNoSpaces = cat | strip %}
+                            {% assign dataTarget = "#" | append: catNoSpaces %}
+                            {% assign buttonId = catNoSpaces | append: '-button' %}
+                            {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
+                            <div class="toc-item">
+                                <img class="plus-minus-icon" src="/img/icon_plus.png">
+                                <a class="toc-category">{{cat}}</a>
+                                {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                                <ul class="nav">
+                                    {% for doc in currCatDocs %}
+                                        {% if selected-docs == '/docs/' %}
+                                            {% assign docs-dir = '/docs/ref/' %}
+                                        {% else %}
+                                            {% assign docs-dir = selected-docs %}
+                                        {% endif %}
+
+                                        {% if doc.dir contains docs-dir %}
+                                        <li>
+                                            <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         {% endfor %}
                     </nav>
                 </div>

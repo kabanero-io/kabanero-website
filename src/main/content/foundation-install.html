@@ -8,15 +8,6 @@ seo-title: foundation-install
 permalink: /foundation-install/
 ---
 {% assign t = site.data[site.active_lang] %}
-{% assign docs-version = '' | split: ','  | sort %}
-{% assign docs = site.pages | where: 'layout', 'doc' %}
-
-{% for doc in docs %}
-    {% assign dir = doc.dir | split: '/' %}
-    {% if dir[2] %}
-        {% assign docs-version = docs-version | push: dir[2] | uniq | sort | reverse %}
-    {% endif%}
-{% endfor %}
 
 <div class="container">
     <div class="row text-center">
@@ -62,7 +53,7 @@ permalink: /foundation-install/
 
     <div class="row">
         <div class="col-md-2 button-div">
-            <a href="/docs/{{docs-version[0]}}/ref/general/installing-kabanero-foundation.html" 
+            <a href="/docs/ref/general/installing-kabanero-foundation.html" 
                 role="button" class="btn kabanero-colored-button col" 
                 aria-label="Link to Kabanero Foundation install instructions">{{t.common.instructions}}</a>
         </div>

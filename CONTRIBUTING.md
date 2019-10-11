@@ -136,6 +136,9 @@ Prereqs:
       1. Go to [IBM Cloud Access](https://cloud.ibm.com/iam/apikeys) and create an API key for your account.
    * `IBM_CLOUD_API` - IBM Cloud API endpoint to deploy to
       1. For example `https://cloud.ibm.com`
+   * `PAT` - Github Personal Access Token, which is required to avoid build failures due to [Github rate limiting](https://developer.github.com/v3/#rate-limiting). 
+      1. **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
+      1. Head over to [Github](https://github.com/settings/tokens) and generate a personal access token (**Make sure to leave all the boxes under "Select scopes" unchecked**) then copy the generated token value and use it as the value for the environment variable. Instructions on generating a github access token can be found on the [Github help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
 
    * **Optional**: you can set these environment variables to specify the repositories and branches of blogs and docs to be cloned from
       * `DOCS_GIT_URL` - Git url to clone for the docs repository (https://github.com/kabanero-io/docs.git by default)
@@ -144,9 +147,3 @@ Prereqs:
       * `BLOGS_GIT_REVISION` - (master by default)
 
 1. Finally from [Travis-ci](https://travis-ci.com) click on your forked repository for the kabanero-website then click on the dropdown button labled 'More options' on the right hand side of the window above the 'Restart build' button. From the dropdown click on 'Trigger build', select a branch you want deployed to Cloud Foundry and click on 'Trigger custom build'. The job will start immediately and takes about 10 minutes to deploy.
-
-## Troubleshooting
-   - In the event of a 403 error `API rate limit exceeded` head over to [Github](https://github.com/settings/tokens) and generat a personal access token **Make sure to leave all the boxes under "Select scopes" unchecked** then copy the generated token and add it to the following environment variable. Instructions on generating a github access token can be found on the [Github help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
-      * `PAT` - Github personal access token **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
-      
-      

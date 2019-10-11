@@ -45,7 +45,7 @@ mkdir docs && cd docs
 
 # This is how you clone a repo without autocreating a parent folder with the name of the repo
 # The clone is picky about cloning into a folder that is not empty (src/main/content)
-if [ "$JEKYLL_ENV" != "production" ]; then
+if [ "$JEKYLL_ENV" == "production" ]; then
     git clone "${DOCS_GIT_URL}" --branch "${DOCS_GIT_REVISION}" .
 
     echo ":page-title: docs version list" >> docs-version-list.adoc 

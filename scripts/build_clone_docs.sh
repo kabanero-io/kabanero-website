@@ -19,13 +19,16 @@ git_clone_doc_tags() {
     echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":["  >> docversions.json
 
     for TAG in $TAGS; do
-    echo -e -n \"$TAG\" >> docversions.json
+    echo -e -n \"$TAG\", >> temp.json
 
         # for all tags other than the latest we clone them into a folder of thier own with the folder name being the version of doc under the /docs dir
         if [ "$TAG" != "$LATEST_TAG" ]; then
             mkdir $TAG && git --work-tree=$TAG checkout $TAG -- .
         fi
     done
+
+    sed '$ s/,$//g' temp.json >> docversions.json 
+    rm -f temp.json
 
     echo -e -n "]}" >> docversions.json
 }

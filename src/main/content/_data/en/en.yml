@@ -104,6 +104,10 @@ contribute:
     intro-title: Raising Issues
     intro-text: Please raise any bug reports on the Kabanero project repository's GitHub issue tracker. Be sure to search the list to see if your issue has already been raised. A good bug report is one that make it easy for everyone to understand what you were trying to do and what went wrong. Provide as much context as possible so we can try to recreate the issue.
     open-issues:  Open issues for new features
+  badge:
+    title: Earning the Badge
+    text: Contribute to Kabanero Open Source communities and earn a badge! With this badge, you earn a right to brag in front of your colleagues and friends! You can also show such badge to your current/future employees that you have been recognized by your contribution to Kabanero, the open-source GitHub communities.
+    acclaim: View Badge in Acclaim
   connect:
     intro-text: Have your own flavors to add to Kabanero?  Come see what the community is cooking up!
     community: Connect with your community

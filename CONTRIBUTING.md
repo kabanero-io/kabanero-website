@@ -2,6 +2,14 @@
 
 Anyone can contribute to the Kabanero project and we welcome your contributions!
 
+## Earn the Kabanero Contribution badge
+
+Contribute to the Kabanero Open Source communities and earn a badge! With this badge, you earn a right to brag in front of your colleagues and friends! You can also show this badge to anyone and prove that you have been recognized by your contribution to the open source Kabanero project.
+
+https://www.youracclaim.com/org/ibm/badge/kabanero-contributor
+
+![Kabanero Badge](src/main/content/img/kabanero-badge.jpg)
+
 There are multiple ways to contribute: report bugs, fix bugs, contribute code, improve upon documentation, etc. You must follow these guidelines:
 
 ## Raising issues

@@ -39,10 +39,13 @@ js:
     {% assign t = site.data[site.active_lang].doc %}
 
 
-    {% assign selected-docs = page.url | truncate: 12, "" %}
-
-    {% if selected-docs contains '/docs/ref/' %}
-        {% assign selected-docs = '/docs/' %}
+    {% assign selected-docs = page.url | split: '/' %}
+    {% if selected-docs[2] and selected-docs[2] != 'ref' %}
+    {% assign doc-path = 'docs/' | append: selected-docs[2] %}
+    {% else %}
+    {% assign doc-path = '/docs/ref/' %}
+    {% assign latest-intro-doc-path = 'docs/index.adoc' %}
+    {% assign latest-catigories-doc-path = 'docs/doc-categories.adoc' %}
     {% endif%}
 
 
@@ -51,9 +54,9 @@ js:
 
 
     {% for catsMeta in catsMetaFiles %}
-        {% if catsMeta.dir == selected-docs %}
-            {% assign categories = catsMeta.categories %}
-        {% endif%}
+    {% if catsMeta.dir contains doc-path or catsMeta.path == latest-catigories-doc-path %}
+    {% assign categories = catsMeta.categories %}
+    {% endif%}
     {% endfor %}
 
 
@@ -65,17 +68,9 @@ js:
                     <div class="dropdown docs-version-dropdown">
                         <button class="btn btn-secondary btn-lg dropdown-toggle docs-version-dropdown-button"
                             type="button" data-toggle="dropdown">
-                            Select Docs
+                            <span id="docs-version-button-display"></span>
                         </button>
-                        <div class="dropdown-menu version-list">
-                            {% assign docs-version-list = site.pages | where: 'title', 'docs version list' %}
-                            {% for version in docs-version-list[0].versions %}
-                                {% if version == docs-version-list[0].versions[0] %}
-                                    <a class="dropdown-item" href="/docs/">{{t.latest}} - {{version}}</a>
-                                {% else %}
-                                    <a class="dropdown-item" href="/docs/{{version}}/">{{version}}</a>
-                                {% endif %}
-                            {% endfor %}
+                        <div id="doc-version-dropdown" class="dropdown-menu version-list">
                         </div>
                     </div>
                 </div>
@@ -86,49 +81,36 @@ js:
                 <div class="row">
                     <nav class="sidenav col">
                         {% for introDoc in introDocFiles %}
-                            {% if introDoc.dir == selected-docs %}
-                            <div id="welcome-doc" class="doc-title doc-category row" href="{{ introDoc.url }}">
-                                <a href="{{ introDoc.dir }}">
-                                    {% if selected-docs == '/docs/' %}
-                                        {% assign selected-doc-version = docs-version-list[0].versions[0] %}
-                                    {% else %}
-                                        {% assign doc-url = selected-docs | split: '/' %}
-                                        {% assign selected-doc-version = doc-url[2] %}
-                                    {% endif %}
-
-                                    {{introDoc.title}} v{{selected-doc-version}}
-                                </a>
-                            </div>
-                            {% endif%}
+                        {% if introDoc.dir contains doc-path or introDoc.path == latest-intro-doc-path %}
+                        <div id="welcome-doc" class="doc-title doc-category row" href="{{ introDoc.url }}">
+                            <a href="{{ introDoc.dir }}">
+                                {{introDoc.title}}
+                            </a>
+                        </div>
+                        {% endif%}
                         {% endfor %}
                         <h2 id="noSearchResults" class="no-display">
                             No Search Results
                         </h2>
                         {% for cat in categories %}
-                            {% assign catNoSpaces = cat | strip %}
-                            {% assign dataTarget = "#" | append: catNoSpaces %}
-                            {% assign buttonId = catNoSpaces | append: '-button' %}
-                            {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
-                            <div class="toc-item">
-                                <img class="plus-minus-icon" src="/img/icon_plus.png">
-                                <a class="toc-category">{{cat}}</a>
-                                {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
-                                <ul class="nav">
-                                    {% for doc in currCatDocs %}
-                                        {% if selected-docs == '/docs/' %}
-                                            {% assign docs-dir = '/docs/ref/' %}
-                                        {% else %}
-                                            {% assign docs-dir = selected-docs %}
-                                        {% endif %}
-
-                                        {% if doc.dir contains docs-dir %}
-                                        <li>
-                                            <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
-                                        </li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                        {% assign catNoSpaces = cat | strip %}
+                        {% assign dataTarget = "#" | append: catNoSpaces %}
+                        {% assign buttonId = catNoSpaces | append: '-button' %}
+                        {% assign iconId = catNoSpaces | append: '-plus-minus-icon' %}
+                        <div class="toc-item">
+                            <img class="plus-minus-icon" src="/img/icon_plus.png">
+                            <a class="toc-category">{{cat}}</a>
+                            {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                            <ul class="nav">
+                                {% for doc in currCatDocs %}
+                                {% if doc.dir contains doc-path%}
+                                <li>
+                                    <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
                         {% endfor %}
                     </nav>
                 </div>

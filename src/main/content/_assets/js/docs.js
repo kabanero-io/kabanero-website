@@ -1,17 +1,17 @@
-$(".toc-item").click(function(){
+$(".toc-item").click(function () {
     $(this).toggleClass('open');
     $(this).find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
 })
 
-$('#doc-search').keyup(function(){
+$('#doc-search').keyup(function () {
     searchDocs();
 });
 
-function searchDocs(){
+function searchDocs() {
     let searchTerm = document.getElementById('doc-search').value.toLowerCase();
     let docTitles = $('.doc-title');
-    $.each(docTitles, function(index, value){
-        if($(value).attr('id') !== 'welcome-doc'){
+    $.each(docTitles, function (index, value) {
+        if ($(value).attr('id') !== 'welcome-doc') {
             let docTitle = $(value).text().toLowerCase();
             console.log(docTitle);
             console.log(!$(value).hasClass('active-doc'));
@@ -23,10 +23,10 @@ function searchDocs(){
     $('.toc-item:visible').length === 0 ? $('#noSearchResults').removeClass('no-display') : $('#noSearchResults').addClass('no-display');
 }
 
-function hideCategoriesIfEmpty(){
+function hideCategoriesIfEmpty() {
     let categories = $('.toc-item');
-    $.each(categories, function(index, category){
-        if($(category).attr('id') !== 'welcome-doc'){
+    $.each(categories, function (index, category) {
+        if ($(category).attr('id') !== 'welcome-doc') {
             let childLinks = $(category).find('.doc-title');
             let isVisible = areLinksVisible(childLinks);
             isVisible ? $(category).show() : $(category).hide();
@@ -34,32 +34,54 @@ function hideCategoriesIfEmpty(){
     });
 }
 
-function areLinksVisible(links){
+function areLinksVisible(links) {
     let areVisible = false;
-    $.each(links, function(index, link){
-        if($(link).css('display') !== 'none'){
+    $.each(links, function (index, link) {
+        if ($(link).css('display') !== 'none') {
             areVisible = true;
         }
     });
     return areVisible;
 }
 
-function selectDocInToc(){
+function selectDocInToc() {
     let currentHref = window.location.href;
     let pathName = '';
-    if(location.pathname.split('/')[2] == 'ref'){
+    if (location.pathname.split('/')[2] == 'ref') {
         pathName = '/docs'
     }
-    else{
+    else {
         pathName = `/docs/${location.pathname.split('/')[2]}`
     }
     let selectedFile = `${pathName}/ref/general` + currentHref.substring(currentHref.lastIndexOf('/'));
-    if(selectedFile !== `${pathName}/ref/general/docs-welcome.html`){
+    if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
-        $( `a[href$="${selectedFile}"]` ).parent().parent().parent().find('.toc-category').click();
+        $(`a[href$="${selectedFile}"]`).parent().parent().parent().find('.toc-category').click();
     }
 }
 
-$(document).ready(function(){
+function getDocVersions() {
+    $.getJSON('/docs/docversions.json', function (docversions) {
+        let latest = docversions['latest'];
+        let pathName = location.pathname.split('/')[2];
+        $.each(docversions['versions'], function (i, version) {
+            if (latest === version) {
+                $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/">Latest - ${version}</a>`);
+            }
+            else {
+                $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version}">${version}</a>`);
+            }
+        });
+        if (pathName && (pathName != 'ref')) {
+            $('#docs-version-button-display').append(`Docs v${pathName}`)
+        }
+        else {
+            $('#docs-version-button-display').append(`Docs v${latest}`)
+        }
+    });
+}
+
+$(document).ready(function () {
     selectDocInToc();
+    getDocVersions();
 });

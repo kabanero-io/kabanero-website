@@ -1,4 +1,4 @@
-
+$color-kabanero:#C43804;
 
 body{
     font-family: 'Source Sans Pro', sans-serif !important;
@@ -120,8 +120,31 @@ body{
 }
 
 .anchor{
-    color:#c43804;
+    color:#c43804; 
     &:hover{
         color:#fbae61;
     }
+}
+
+.docs-version-dropdown{
+    margin-left: 40px;
+    margin-bottom: 25px;
+}
+
+.docs-version-dropdown-button{
+    width: 280px;
+    background-color: $color-kabanero;
+    border-color: $color-kabanero;
+    &:hover{
+        background-color: #bf4f26;
+        border-color: #bf4f26;
+    }
+    .show > &.dropdown-toggle {
+        background-color: #bf4f26;
+    }
+}
+
+.version-list{
+    width: 280px;
+    text-align: center;
 }

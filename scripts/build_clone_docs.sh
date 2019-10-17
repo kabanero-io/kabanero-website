@@ -12,7 +12,7 @@ CUR_DIR="$(cd $(dirname $0) && pwd)"
 git_clone_doc_tags() {
 
     #get all tags from the repo
-    TAGS=$(git tag -l)
+    TAGS=$(git tag -l --sort=-v:refname)
     #get the latest tag from repo
     LATEST_TAG=$(git ls-remote --tags $DOCS_GIT_URL | awk -F'/' '/[0-9].[0-9].[0-9].*/ { print $3}' | sort -nr | head -n1)    
         

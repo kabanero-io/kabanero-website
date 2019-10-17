@@ -133,22 +133,7 @@ a {
     padding-bottom: 183px;
 }
 
-#header_twitter_img {
-    height: 25px;
-    margin: 6px 25px 0 0;
-}
-
-#header_slack_img {
-    height: 25px;
-    margin: 6px 25px 0 0;
-}
-
 #footer_slack_img{
-    height: 25px;
-    margin: 6px 25px 0 0;
-}
-
-#header_stackoverflow_img {
     height: 25px;
     margin: 6px 25px 0 0;
 }
@@ -208,16 +193,11 @@ a {
 
 .whats-new-modal{
     max-width: 850px;
-    margin-top: 15%;
 }
+
 #share_blog_twitter_img{
     height: 30px;
     margin: 0 15px 0 0;
-}
-
-#header_github_img{
-    height: 25px;
-    margin: 6px 25px 0 0;
 }
 
 #header_stackoverflow_link {
@@ -319,4 +299,9 @@ a {
 .dropdown-item:active, .dropdown-item:hover{
     color: #ffffff;
     background-color: #C43804;
+}
+
+.header-icon {
+    height: 25px;
+    margin: 6px 25px 0 0;
 }

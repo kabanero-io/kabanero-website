@@ -14,7 +14,7 @@ git_clone_doc_tags() {
     #get all tags from the repo
     TAGS=$(git tag -l --sort=-v:refname)
     #get the latest tag from repo
-    LATEST_TAG=$(git tag | tail -1)    
+    LATEST_TAG=$(git tag -l --sort=v:refname | tail -1)    
 
     git checkout $LATEST_TAG
     echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":["  >> docversions.json

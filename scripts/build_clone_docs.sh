@@ -47,7 +47,7 @@ mkdir docs && cd docs
 #If we are not in production we only cloned the specified github url and branch and give it the version number 0.0.0
 git clone "${DOCS_GIT_URL}" --branch "${DOCS_GIT_REVISION}" .
 
-if [ "$JEKYLL_ENV" != "production" ]; then
+if [ "$JEKYLL_ENV" == "production" ]; then
     git_clone_doc_tags
 fi
 

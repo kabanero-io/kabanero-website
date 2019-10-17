@@ -14,7 +14,8 @@ git_clone_doc_tags() {
     #get all tags from the repo
     TAGS=$(git tag -l)
     #get the latest tag from repo
-    LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+    LATEST_TAG=$(git ls-remote --tags $DOCS_GIT_URL | awk -F'/' '/[0-9].[0-9].[0-9].*/ { print $3}' | sort -nr | head -n1)    
+        
     git checkout $LATEST_TAG
     echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":["  >> docversions.json
 
@@ -46,7 +47,7 @@ mkdir docs && cd docs
 #If we are not in production we only cloned the specified github url and branch and give it the version number 0.0.0
 git clone "${DOCS_GIT_URL}" --branch "${DOCS_GIT_REVISION}" .
 
-if [ "$JEKYLL_ENV" == "production" ]; then
+if [ "$JEKYLL_ENV" != "production" ]; then
     git_clone_doc_tags
 fi
 

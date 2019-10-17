@@ -28,7 +28,7 @@ function hideAllOpenSourcePlatformsCollapses(){
     $(`#open-source-platform-${id}-collapse`).show();
 
     $('.open-source-platform-box-selected').removeClass('open-source-platform-box-selected');
-    console.log(`#open-source-platform-${id}-box`)
+
     $(`#open-source-platform-${id}-box`).addClass('open-source-platform-box-selected');
 
     $('.open-source-platform-vertical-separator-visible').removeClass('open-source-platform-vertical-separator-visible');
@@ -46,6 +46,7 @@ $( document ).ready(function() {
     $(document.body).on('mousedown', function() {
         document.body.classList.add('using-mouse');
     });
+    
     $(document.body).on('keydown', function() {
         document.body.classList.remove('using-mouse');
     });

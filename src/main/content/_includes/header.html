@@ -52,7 +52,7 @@
                 <div class="form-inline my-2 my-lg-0">
                     <div class="dropdown">
                         <a class="float_right_section ml-3" href="#" id="header-slack-icon" data-toggle="dropdown">
-                        <img id="footer_slack_img" src="/img/slack_Icon.svg" class="img-fluid" alt="slack logo">
+                            <img src="/img/slack_Icon.svg" class="img-fluid header-icon" alt="slack logo">
                         </a>
                         <div class="dropdown-menu" id="slack-dropdown">
                             <a class="dropdown-item" href={{site.slack_invite_url}} target="_blank">Request an Invite</a>
@@ -60,36 +60,15 @@
                         </div>
                     </div>
                     <a class="float_right_section" target="_blank" href="{{site.stackoverflow_url}}">
-                    <img id="header_stackoverflow_img" src="/img/Header_StackO.svg" class="img-fluid" alt="stackoverflow logo">
+                        <img id="header_stackoverflow_img" src="/img/Header_StackO.svg" class="img-fluid header-icon" alt="stackoverflow logo">
                     </a>
                     <a class="float_right_section" target="_blank" href="{{site.github_url}}">
-                    <img id="header_github_img" src="/img/header_github_icon.svg" class="img-fluid" alt="github logo">
+                        <img id="header_github_img" src="/img/header_github_icon.svg" class="img-fluid header-icon" alt="github logo">
                     </a>
                     <a class="float_right_section" target="_blank" href="{{site.twitter_url}}">
-                    <img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid" alt="twitter logo">
+                        <img id="header_twitter_img" src="/img/header_twitter_icon.svg" class="img-fluid header-icon" alt="twitter logo">
                     </a>
                 </div>
             </div>
         </nav>
-        <!-- What's new Modal -->
-        {% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.md' %}
-        <div class="modal fade" tabindex="-1" id="whats-new-modal" role="dialog"
-            aria-labelledby="{{whatsNewDoc[0].title}}" aria-hidden="true">
-            <div class="modal-dialog whats-new-modal" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 data-version="{{whatsNewDoc[0].version}}" id="modal-title" class="modal-title">{{whatsNewDoc[0].title}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        {{whatsNewDoc[0].content | markdownify}}
-                    </div>
-                    <div class="modal-footer">
-                        <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>

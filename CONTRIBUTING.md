@@ -2,6 +2,14 @@
 
 Anyone can contribute to the Kabanero project and we welcome your contributions!
 
+## Earn the Kabanero Contribution badge
+
+Contribute to the Kabanero Open Source communities and earn a badge! With this badge, you earn a right to brag in front of your colleagues and friends! You can also show this badge to anyone and prove that you have been recognized by your contribution to the open source Kabanero project.
+
+https://www.youracclaim.com/org/ibm/badge/kabanero-contributor
+
+![Kabanero Badge](src/main/content/img/kabanero-badge.jpg)
+
 There are multiple ways to contribute: report bugs, fix bugs, contribute code, improve upon documentation, etc. You must follow these guidelines:
 
 ## Raising issues
@@ -123,7 +131,7 @@ Prereqs:
 
 ## Deploy a test instance using travis and your fork
 1. If you haven't already done so, go to [Travis-ci](https://travis-ci.com) and [Sign up with GitHub](https://travis-ci.com/signin).
-   1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
+1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
 1. Click on your accont in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
 1. Click on the Dashboard tab at the top of the page and under **Active repositories** click on **kabanero-website**.
 1. [Follow these steps](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings) to set the list of environment variables needed for Travis to successfully build and push your fork. You need to set the following variables
@@ -136,6 +144,9 @@ Prereqs:
       1. Go to [IBM Cloud Access](https://cloud.ibm.com/iam/apikeys) and create an API key for your account.
    * `IBM_CLOUD_API` - IBM Cloud API endpoint to deploy to
       1. For example `https://cloud.ibm.com`
+   * `PAT` - Github Personal Access Token, which is required to avoid build failures due to [Github rate limiting](https://developer.github.com/v3/#rate-limiting). 
+      1. **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
+      1. Head over to [Github](https://github.com/settings/tokens) and generate a personal access token (**Make sure to leave all the boxes under "Select scopes" unchecked**) then copy the generated token value and use it as the value for the environment variable. Instructions on generating a github access token can be found on the [Github help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
 
    * **Optional**: you can set these environment variables to specify the repositories and branches of blogs and docs to be cloned from
       * `DOCS_GIT_URL` - Git url to clone for the docs repository (https://github.com/kabanero-io/docs.git by default)

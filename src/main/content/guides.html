@@ -27,7 +27,7 @@ permalink: /guides/
 {% endfor %}
 
 <!-- Basic guides -->
-{% assign basic-guides = all-guides | where: 'guide-category', 'basic' | where: 'essential', false | sort: 'releasedate' | reverse %}
+{% assign basic-guides = all-guides | where: 'guide-category', 'basic' | sort: 'releasedate' | reverse %}
 {% assign basic-essential-guides = all-guides | where: 'guide-category', 'basic' | where: 'essential', true | sort: 'essential-order' %}
 
 <!-- Collections Guides -->

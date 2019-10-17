@@ -41,11 +41,11 @@ js:
 
     {% assign selected-docs = page.url | split: '/' %}
     {% if selected-docs[2] and selected-docs[2] != 'ref' %}
-    {% assign doc-path = 'docs/' | append: selected-docs[2] %}
+        {% assign doc-path = 'docs/' | append: selected-docs[2] %}
     {% else %}
-    {% assign doc-path = '/docs/ref/' %}
-    {% assign latest-intro-doc-path = 'docs/index.adoc' %}
-    {% assign latest-catigories-doc-path = 'docs/doc-categories.adoc' %}
+        {% assign doc-path = '/docs/ref/' %}
+        {% assign latest-intro-doc-path = 'docs/index.adoc' %}
+        {% assign latest-catigories-doc-path = 'docs/doc-categories.adoc' %}
     {% endif%}
 
 
@@ -54,9 +54,9 @@ js:
 
 
     {% for catsMeta in catsMetaFiles %}
-    {% if catsMeta.dir contains doc-path or catsMeta.path == latest-catigories-doc-path %}
-    {% assign categories = catsMeta.categories %}
-    {% endif%}
+        {% if catsMeta.dir contains doc-path or catsMeta.path == latest-catigories-doc-path %}
+            {% assign categories = catsMeta.categories %}
+        {% endif%}
     {% endfor %}
 
 

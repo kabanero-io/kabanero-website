@@ -73,10 +73,10 @@ function getDocVersions() {
             }
         });
         if (pathName && (pathName != 'ref')) {
-            $('#docs-version-button-display').append(`Docs v${pathName}`)
+            $('#docs-version-button-display').append(`Docs v${pathName}`);
         }
         else {
-            $('#docs-version-button-display').append(`Docs v${latest}`)
+            $('#docs-version-button-display').append(`Docs v${latest}`);
         }
     });
 }

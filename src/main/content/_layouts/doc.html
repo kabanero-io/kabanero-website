@@ -35,6 +35,9 @@ js:
     {% include analytics.html %}
 
     {% include header.html %}
+
+    {% include whats-new.html %}
+    
     {% assign t = site.data[site.active_lang].general-reference %}
     {% assign catsMeta = site.pages | where: 'title', 'doc categories meta' %}
     {% assign categories = catsMeta[0].categories %}

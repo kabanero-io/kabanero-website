@@ -83,7 +83,7 @@ function getDocVersions() {
             }
         },
         error: function() {
-            $(".docs-version-dropdown").hide();
+            $(".docs-version-dropdown").css('display', 'none');
         }
        });
 }

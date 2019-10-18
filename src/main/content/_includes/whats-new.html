@@ -1,16 +1,20 @@
 <!-- What's new Modal -->
-{% assign whatsNewDoc = site.pages | where: 'name', 'whats-new.md' %}
-<div class="modal fade" tabindex="-1" id="whats-new-modal" role="dialog" aria-labelledby="{{whatsNewDoc[0].title}}" aria-hidden="true">
+{% for page in site.pages %}
+    {% if page.path == "docs/ref/general/whats-new.md" %}
+        {% assign latestWhatsNew = page %}
+    {% endif%}
+{% endfor %}
+<div class="modal fade" tabindex="-1" id="whats-new-modal" role="dialog" aria-labelledby="{{latestWhatsNew.title}}" aria-hidden="true">
     <div class="modal-dialog whats-new-modal" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 data-version="{{whatsNewDoc[0].version}}" id="modal-title" class="modal-title">{{whatsNewDoc[0].title}}</h1>
+                <h1 data-version="{{latestWhatsNew.version}}" id="modal-title" class="modal-title">{{latestWhatsNew.title}}</h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                {{whatsNewDoc[0].content | markdownify}}
+                {{latestWhatsNew.content | markdownify}}
             </div>
             <div class="modal-footer">
                 <a class="col-md-5" id="modal-close-button" data-dismiss="modal">Close</a>

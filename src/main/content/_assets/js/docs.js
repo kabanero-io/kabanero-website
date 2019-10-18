@@ -61,24 +61,31 @@ function selectDocInToc() {
 }
 
 function getDocVersions() {
-    $.getJSON('/docs/docversions.json', function (docversions) {
-        let latest = docversions['latest'];
-        let pathName = location.pathname.split('/')[2];
-        $.each(docversions['versions'], function (i, version) {
-            if (latest === version) {
-                $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/">Latest - ${version}</a>`);
+    $.ajax({
+        url: '/docs/docversions.json',
+        dataType: 'json',
+        success: function( docversions ) {
+            let latest = docversions['latest'];
+            let pathName = location.pathname.split('/')[2];
+            $.each(docversions['versions'], function (i, version) {
+                if (latest === version) {
+                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/">Latest - ${version}</a>`);
+                }
+                else {
+                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version}">${version}</a>`);
+                }
+            });
+            if (pathName && (pathName != 'ref')) {
+                $('#docs-version-button-display').append(`Docs v${pathName}`);
             }
             else {
-                $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version}">${version}</a>`);
+                $('#docs-version-button-display').append(`Docs v${latest}`);
             }
-        });
-        if (pathName && (pathName != 'ref')) {
-            $('#docs-version-button-display').append(`Docs v${pathName}`);
+        },
+        error: function() {
+            $(".docs-version-dropdown").hide();
         }
-        else {
-            $('#docs-version-button-display').append(`Docs v${latest}`);
-        }
-    });
+       });
 }
 
 $(document).ready(function () {

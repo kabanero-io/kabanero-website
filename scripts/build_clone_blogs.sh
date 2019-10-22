@@ -2,23 +2,23 @@ CUR_DIR="$(cd $(dirname $0) && pwd)"
 pushd "$CUR_DIR/../src/main/content"
 
 # Allow user to pass in git url and branch, for example ./build_clone_blogs git@github.ibm.com:ICP4APPs/blogs.git master
-# Also allow the option to not pass in git url and branch, this is useful if the content already exists (Jenkins will have cloned the blogs before this step)
-if [ -n "$1" ] && [ -n "$2" ]; then
-	# For development purposes, lets always delete previously created folders
-	# so that you can run this script to refresh your blog files
-	rm -rf _posts _drafts
-	rm -rf img/blog
-	
-	echo "Start cloning blogs repository..."
-	git clone "$1" --branch "$2" blogs_temp
-fi
+BLOGS_GIT_URL=${1:-"https://github.com/kabanero-io/blogs"}
+BLOGS_GIT_REVISION=${2:-"master"}
 
-mv blogs_temp/drafts/ .
-mv drafts/ _drafts
-mv blogs_temp/publish/ .
-mv publish/ _posts
+# For development purposes, lets always delete previously created folders
+# so that you can run this script to refresh your blog files
+rm -rf _posts _drafts img/blog
 
-mv blogs_temp/img/blog img
+echo "Start cloning blogs repository..."
+# clones into a blog_temp folder to prevent file name collisions when cloned
+git clone "$BLOGS_GIT_URL" --branch "$BLOGS_GIT_REVISION" blogs_temp
+
+mkdir _drafts && mv blogs_temp/drafts/* _drafts
+
+mkdir _posts && mv blogs_temp/publish/* _posts
+
+# Add images from blog repo to the img folder
+mkdir img/blog && mv blogs_temp/img/* img/blog
 
 rm -rf blogs_temp
 popd

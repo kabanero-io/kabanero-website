@@ -42,7 +42,7 @@
 
 .guide_item:hover, .small_guide_item:hover {
     box-shadow:0 2px 4px 0 rgba(63,70,89,0.59);
-    border-left: solid 9px #C43804;
+    border-color: #C43804;
 }
 
 .guide_title_and_description_container {

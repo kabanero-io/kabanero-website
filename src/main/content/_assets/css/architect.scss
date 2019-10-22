@@ -38,7 +38,8 @@
   margin-bottom:20px;
 }
 
-#collection-management-link{
+#collection-management-link, 
+#install-kabanero-cli-link {
   width: 227px;
   font-size: 17px;
   font-weight: 500;
@@ -50,4 +51,8 @@
   margin-bottom: 8px;
   text-align: center;
   transition: background-color .2s;
+}
+
+.kabenero-cli-link-button{
+  margin-top: 40px;
 }

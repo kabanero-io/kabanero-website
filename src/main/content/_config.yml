@@ -49,8 +49,7 @@ exclude:
   - docs/templates
 
 languages: ["en"]
-
-# We currently dont have translation for all these languages so we comment them out in order for the site to be built in languages we do have translation for
+# We currently dont have translation for all these languages so we comment them out.
 # ["es", "de", "fr", "it", "ja", "ko","pt-BR", "zh-CN", "zh-TW"]
 
 default_lang: "en"

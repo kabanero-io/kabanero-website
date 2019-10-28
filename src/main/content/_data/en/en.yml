@@ -27,6 +27,7 @@ _includes:
     keep-exploring: Keep exploring
     with-these-guides: with these guides.
     interactive: Interactive
+    back-to-guides: Back to guides
   footer:
     open-source: an IBM open source project
     copyright: Copyright IBM Corp. 2019

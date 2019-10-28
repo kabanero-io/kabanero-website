@@ -81,9 +81,17 @@
                             </a>
                         </div>
                     {% endunless %}
+                    <!-- Link back to guides index if guide has related-guides listed but those related-guides don't match a projectid and page-permalink in any guide.
+                      If the below conditional is true, you should double-check the related-guides array against the projectid of the guide you are trying to link because hitting this code means there is a mismatch -->
+                    {% if list == empty %}
+                    <div class="col-sm-12">
+                        <a href="/guides/">Back to guides</a>
+                    </div>
+                    {% endif %}
                 {% endfor %}
                 </div>
             </div>
+            <!-- Link back to guides if no related guides are specified -->
             {% else %}
             <div id="related-guides">
                 <div id="related-guides-cards" class="row">

@@ -582,7 +582,11 @@ seo-title: Kabanero
                         <div class="row container">
                             <div class="blog-header">
                                 <img src="{{ post.author_picture }}" class="blog-post-author-image" alt="Blog author picture">
-                                <a class="blog-post-author-name" href="{{ post.author_github }}">{{ post.author }}</a>
+                                <a class="blog-post-author-name" href="{{ post.author_github }}" target="_blank">{{ post.author }}</a>
+                                {% for author in post.additional_authors %}
+                                        <span>and </span>
+                                        <a class="blog-post-author-name" href="{{ author.github }}" target="_blank" rel="noopener">{{ author.name }}</a>
+                                {% endfor %}
                                 <span class="blog-post-date">on {{ post.date | date: "%B %d, %Y" }}</span>
                             </div>
                         </div>

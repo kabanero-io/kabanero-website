@@ -797,7 +797,6 @@ $(document).ready(function() {
 
         target_copy.find('.line-numbers').remove();
         var target = target_copy[0];
-        console.log(target);
         copy_element_to_clipboard(target, function(){
             var current_target_object = $(event.currentTarget);
             var position = current_target_object.position();	

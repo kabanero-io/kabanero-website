@@ -371,8 +371,9 @@ header {
     color: #5e6b8d;
 }
 
-.copy-to-clipboard {	
-    position: absolute;	
+#copy-to-clipboard {	
+    position: absolute;
+    display: none;	
     background-color: #f3f5f7;	
     width: 38px;	
     height: 38px;	

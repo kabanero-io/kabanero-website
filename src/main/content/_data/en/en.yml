@@ -207,6 +207,8 @@ guides:
     catigory-title: guides
   collections-guides:
     title: Kabanero Collections
+  uncatagorized-guides:
+    title: More Guides
 
 ide:
   intro-title: Kabanero Developer Experience for IDEs

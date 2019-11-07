@@ -45,21 +45,6 @@ $(document).ready(function() {
         }
     });
 
-    adjustGuideColumn($( window ).width());
-
-    $(window).on('resize', function() {
-        adjustGuideColumn($( window ).width());
-      });
-
-    function adjustGuideColumn(width){
-        if (1000 > width) {
-          $('#normal-guide-guide-section').addClass('guide-column-section');
-      
-        } else {
-          $('#normal-guide-guide-section').removeClass('guide-column-section');
-        }
-    }
-      
     function handleSectionChanging(event){
         // Get the id of the section most in view
         var id = getScrolledVisibleSectionID();

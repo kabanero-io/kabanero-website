@@ -101,11 +101,8 @@
         width: 280px;
     }
 
-    @media (max-width: 1169.98px) {
-        top: 0;
-    }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 1300px) {
         float: left;
         left: -400px;
         position: relative;
@@ -372,7 +369,7 @@
     color: #f4914d;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
 
     #toc-inner {
         padding-top: 41px; /* This should be the same height as #mobile-toc-accordion-container */
@@ -418,7 +415,7 @@
 
 /* Breakpoint for when the hamburger navbar appears and the navbar links go into the hamburger
    The breadcrumb still exists at this point */
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
 
     #doc_logo {
         display: inline-block;
@@ -515,7 +512,7 @@
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1300px) {
 
     #breadcrumb-hamburger {
         display: none;
@@ -554,7 +551,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
     #toc-hotspot, 
     #toc-indicator,
     #toc-line {

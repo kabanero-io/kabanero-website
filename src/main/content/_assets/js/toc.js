@@ -17,7 +17,7 @@
  *******************************************************************************/
 // Keep the table of contents (TOC) in view while scrolling (Desktop only)
 function handleFloatingTableOfContent() {
-    if (window.innerWidth >= threeColumnBreakpoint) {
+    if (window.innerWidth >= threeColumnBreakpoint || window.innerWidth >=  twoColumnBreakpoint) {
         // CURRENTLY IN 3 COLUMN VIEW
         // The top of the TOC is scrolling off the screen, enable floating TOC.
         if(isBackgroundBottomVisible()) {
@@ -205,6 +205,8 @@ function open_TOC(){
 
         $('#toc-indicator').addClass('open hidden');
         $('#code-column').width('40vw');
+        $('#normal-guide-guide-section').removeClass('guide-column-section');
+
         
         restoreCurrentStep();
     }
@@ -225,6 +227,7 @@ function close_TOC(){
     $('#guide-column').removeClass('open');
 
     $('#toc-indicator').removeClass('open hidden');
+    $('#normal-guide-guide-section').addClass('guide-column-section');
 
     // let code column resize with its containing col class
     // need this because fixed position doesn't care about the parent col

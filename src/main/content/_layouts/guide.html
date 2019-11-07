@@ -35,7 +35,7 @@ js:
 <div id="background-container" class="container-fluid">
     <div class="row">
         <!-- Guide's table of contents section -->            
-        <div id="toc-column" class="col-md-2 collapse block open">
+        <div id="toc-column" class="col-md collapse block open">
             <div id="toc-inner">
                 {% assign toc = page.document | tocify_asciidoc %}
                 {% if toc %}
@@ -61,7 +61,7 @@ js:
                 {% endif %}                    
             </div>                                
         </div>
-        <div id="normal-guide-guide-section" class="col-md">
+        <div id="normal-guide-guide-section" class="col-md-10">
             <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
                 <img src="/img/arrow-white.svg" alt="arrow">
             </div>

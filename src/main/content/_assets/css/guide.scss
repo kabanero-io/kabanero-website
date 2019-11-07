@@ -399,6 +399,17 @@ header {
     }
 }
 
+@media (max-width: 1000px)  {
+    #normal-guide-guide-section{
+        max-width: 100% !important;
+    }
+}
+
+.guide-column-section {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 @media (min-width: 1170px) {
     #guide-content code.hotspot {
         background-color: #F1F4FE;

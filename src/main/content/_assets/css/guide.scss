@@ -383,7 +383,6 @@ header {
     }
 }	
 
-
 @media (max-width: 1199.98px) {
     .guide_item {
         width: 100%;
@@ -397,6 +396,17 @@ header {
     #multipane-guide-guide-section{
         width: 35%;
     }
+}
+
+@media (max-width: 1000px)  {
+    #normal-guide-guide-section{
+        max-width: 100% !important;
+    }
+}
+
+.guide-column-section {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 @media (min-width: 1170px) {

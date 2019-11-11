@@ -469,9 +469,12 @@ footer {
     #footer_slack_link {
         background-image: url("/img/slack_Icon.svg");
         background-repeat: no-repeat;
-        background-size: 25px;
+        background-size: 50px;
+        position:relative;
+        bottom:13px;
+        right:13px;
         &:hover {
-            background-image: url("/img/slack_Icon_hover.svg")
+            background-image: url("/img/slack_Icon_Hover.svg")
         }
     }
 }

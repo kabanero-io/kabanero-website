@@ -53,7 +53,7 @@ function selectDocInToc() {
     else {
         pathName = `/docs/${location.pathname.split('/')[2]}`
     }
-    let selectedFile = `${pathName}/ref/general` + currentHref.substring(currentHref.lastIndexOf('/'));
+    let selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[4]}` + currentHref.substring(currentHref.lastIndexOf('/'));
     if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
         $(`a[href$="${selectedFile}"]`).parent().parent().parent().find('.toc-category').click();

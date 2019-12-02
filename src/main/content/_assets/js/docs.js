@@ -47,14 +47,33 @@ function areLinksVisible(links) {
 function selectDocInToc() {
     let currentHref = window.location.href;
     let pathName = '';
+    let categoryLocation = 0;
+    /* we take the current url location and place each value after a / in an array 
+     we then check to see if the second value in the array is = to 'ref' which means the user is  
+     viewing the latest docs
+     */
     if (location.pathname.split('/')[2] == 'ref') {
         pathName = '/docs'
+        categoryLocation = 4;
     }
+    /* if the second value in the array does not equla 'ref' this means the user has selected to view 
+        a differnt version of the docs
+     */
     else {
         pathName = `/docs/${location.pathname.split('/')[2]}`
+        categoryLocation = 5;
     }
-    let selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[4]}` + currentHref.substring(currentHref.lastIndexOf('/'));
-    if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
+    
+    /* In order to keep track of the selected doc on the TOC we have to parse out differnt parts of the url path for the 
+       the selected doc...if a user is vewing the latest docs, paths are structured /doc/ref/general/category/docName.adoc
+       otherwise paths are structured /doc/versonNumber/ref/general/category/docName.adoc therfore the selectedFile variable 
+       is set to the current pathName/ref/general/location.pathname.split('/')[categoryLocation] + currentHref.substring(currentHref.lastIndexOf('/')
+       location.pathname.split('/')[categoryLocation] being the category folder the doc is under and currentHref.substring(currentHref.lastIndexOf('/') being 
+       everything after the last occurring / which is the neame of the doc file i.e docName.adoc
+     */
+    
+    let selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}` + currentHref.substring(currentHref.lastIndexOf('/'));
+        if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
         $(`a[href$="${selectedFile}"]`).parent().parent().parent().find('.toc-category').click();
     }

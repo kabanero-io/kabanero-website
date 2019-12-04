@@ -17,7 +17,7 @@ git_clone_doc_tags() {
     #get rid of characters we dont need
     TAGS=${TAGS_TO_CLONE//[[\',\]]/}
     
-    #get the latest tag from the array of tags that were cloned
+    #sort the array and set the tag with the greatest value as the latest tag
     LATEST_TAG=($(for each in ${TAGS[@]}; do echo $each; done | sort | tail -1))
 
     #parse out only the major.minor values for the latest tag

@@ -101,10 +101,10 @@ js:
                         <div class="toc-item">
                             <img class="plus-minus-icon" src="/img/icon_plus.png">
                             <a class="toc-category">{{cat}}</a>
-                            {% assign currCatDocs = site.pages | where: 'doc-category', cat %}
+                            {% assign currCatDocs = site.pages | where: 'doc-category', cat | sort: "doc-number"%}
                             <ul class="nav">
                                 {% for doc in currCatDocs %}
-                                {% if doc.dir contains doc-path%}
+                                {% if doc.dir contains doc-path %}
                                 <li>
                                     <a class="doc-title" href="{{ doc.url }}">{{doc.title}}</a>
                                 </li>
@@ -120,6 +120,7 @@ js:
                 <h1 class="content-title">{{ page.title }}</h1>
                 <main aria-label="Content">
                     {{ content }}
+                    <a href="https://github.com/Kabanero-io/docs/edit/master{{page.path | remove: 'docs'}}" target="_blank" aria-label="{{t.edit-page}}">{{t.edit-page}}</a>
                 </main>
             </div>
         </div>

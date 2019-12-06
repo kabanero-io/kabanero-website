@@ -11,21 +11,27 @@ CUR_DIR="$(cd $(dirname $0) && pwd)"
 
 git_clone_doc_tags() {
 
-    #get all tags we want to clone from the repo
-    TAGS_TO_CLONE=($($CUR_DIR/tagScript.js $(git tag -l) $(git tag -l --sort=v:refname | tail -1)))
+    #get all the latest Major/Minor pair tags we want to clone from the docs repo
+    TAGS_TO_CLONE=$($CUR_DIR/tagScript.js $(git tag -l))
 
-    LATEST_TAG=${TAGS_TO_CLONE[0]}
-    TAGS=${TAGS_TO_CLONE[1]//,/ }
+    LATEST_TAG=$(git tag -l --sort=v:refname | tail -1)
 
     git checkout $LATEST_TAG
+    
+    echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":["  >> docversions.json
 
-    for TAG in $TAGS; do
-         # for all tags other than the latest we clone them into a folder of thier own with the folder name being the version of doc under the /docs dir
+    # Loop through comma separated tags outputed from tagScript.js
+    for TAG in $(echo $TAGS_TO_CLONE | sed "s/,/ /g"); do
+        echo -e -n \"$TAG\", >> docversions.json
+        
         if [ "$TAG" != "$LATEST_TAG" ]; then
             mkdir $TAG && git --work-tree=$TAG checkout $TAG -- .
         fi
     done
+
+    echo -e -n "]}" >> docversions.json
 }
+
 pushd "$CUR_DIR/../src/main/content"
 
 # Remove the folder to allow this repeating execution of this script

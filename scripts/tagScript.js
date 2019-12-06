@@ -4,21 +4,14 @@
 	For the docs, we want to only clone the latest patch for each major.minor pair. 
 	The patch has bug fixes / typo fixes so we want only the latest patch for each major minor pair (and not every patch listed on the website)
 */
-const fs = require('fs');
-
-const tags = process.argv.slice(2);
-const latestTag = process.argv.slice(5);
+const tags = process.argv.slice(2)
 
 const tagMap = createTagMap(tags);
 const tagsToClone = getTagsToClone(tagMap);
 
 
-const tagsArray = getAllTagValues(latestTag, tagsToClone)
-const jsonData = `{"latest": "${latestTag}", "versions": ${JSON.stringify(tagsToClone)}}`; 
-
-
-// send output back to the terminal
-console.log(tagsArray);
+// send output back to the terminal as a comma separated string
+console.log(tagsToClone.join(","));
 
 /* 
 	create an Object where the keys are the major.minor pairs and the 
@@ -72,15 +65,3 @@ function getTagsToClone(tagMap){
 
 	return finalTagArrayToClone;
 }
-
-function getAllTagValues(latestTag, tags){
-	return `${latestTag} ${tags}`;
-}
-
-
-fs.writeFile("docversions.json", jsonData, 'utf8', function (err) {
-    if (err) {
-        console.log("An error occured while writing JSON Object to File.");
-        return console.log(err);
-    }
-});

@@ -22,7 +22,7 @@ git_clone_doc_tags() {
     echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":[ $TAGS_TO_CLONE ]}"  >> docversions.json
 
     # Remove quotes from tags now (only needed for the JSON in docversions.json)
-    TAGS_TO_CLONE=$($TAGS_TO_CLONE | tr -d '"')
+    TAGS_TO_CLONE=$(echo $TAGS_TO_CLONE | tr -d '"')
     
     # Loop through comma separated tags outputed from tagScript.js
     for TAG in $(echo $TAGS_TO_CLONE | sed "s/,/ /g"); do

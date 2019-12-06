@@ -18,18 +18,17 @@ git_clone_doc_tags() {
 
     git checkout $LATEST_TAG
     
-    echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":["  >> docversions.json
+    # Create docversions.json file that is read by the front end to generate doc version dropdown on /docs
+    echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":[ $TAGS_TO_CLONE ]}"  >> docversions.json
 
     # Loop through comma separated tags outputed from tagScript.js
     for TAG in $(echo $TAGS_TO_CLONE | sed "s/,/ /g"); do
-        echo -e -n \"$TAG\", >> docversions.json
-        
+    
         if [ "$TAG" != "$LATEST_TAG" ]; then
             mkdir $TAG && git --work-tree=$TAG checkout $TAG -- .
         fi
+        
     done
-
-    echo -e -n "]}" >> docversions.json
 }
 
 pushd "$CUR_DIR/../src/main/content"

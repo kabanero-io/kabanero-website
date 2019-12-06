@@ -60,7 +60,7 @@ function getTagsToClone(tagMap){
 			return parseInt(b) - parseInt(a);
 		});
 
-		finalTagArrayToClone.push(`${majorMinor}.${sortedPatches[0]}`)
+		finalTagArrayToClone.push(`"${majorMinor}.${sortedPatches[0]}"`)
 	});
 
 	return finalTagArrayToClone;

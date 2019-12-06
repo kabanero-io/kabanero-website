@@ -12,37 +12,19 @@ CUR_DIR="$(cd $(dirname $0) && pwd)"
 git_clone_doc_tags() {
 
     #get all tags we want to clone from the repo
-    TAGS_TO_CLONE=$($CUR_DIR/tagScript.js $(git tag -l)) 
+    TAGS_TO_CLONE=($($CUR_DIR/tagScript.js $(git tag -l) $(git tag -l --sort=v:refname | tail -1)))
 
-    #get rid of characters we dont need
-    TAGS=${TAGS_TO_CLONE//[[\',\]]/}
-    
-    #get the latest tag from the array of tags that were cloned
-    LATEST_TAG=($(for each in ${TAGS[@]}; do echo $each; done | sort | tail -1))
-
-    #parse out only the major.minor values for the latest tag
-    LATEST_MAJOR_MINOR=${LATEST_TAG%.*}
+    LATEST_TAG=${TAGS_TO_CLONE[0]}
+    TAGS=${TAGS_TO_CLONE[1]//,/ }
 
     git checkout $LATEST_TAG
-    echo -e -n "{\"latest\":\""$LATEST_MAJOR_MINOR"\", \"versions\":["  >> docversions.json
 
     for TAG in $TAGS; do
-
-    #parse out only the major and minor values of each tag
-    TAG_MAJOR_MINOR=${TAG%.*}
-    
-    echo -e -n \"$TAG_MAJOR_MINOR\", >> temp.json
-
-        # for all tags other than the latest we clone them into a folder of thier own with the folder name being the version of doc under the /docs dir
+         # for all tags other than the latest we clone them into a folder of thier own with the folder name being the version of doc under the /docs dir
         if [ "$TAG" != "$LATEST_TAG" ]; then
-            mkdir $TAG_MAJOR_MINOR && git --work-tree=$TAG_MAJOR_MINOR checkout $TAG -- .
+            mkdir $TAG && git --work-tree=$TAG checkout $TAG -- .
         fi
     done
-
-    sed '$ s/,$//g' temp.json >> docversions.json 
-    rm -f temp.json
-
-    echo -e -n "]}" >> docversions.json
 }
 pushd "$CUR_DIR/../src/main/content"
 

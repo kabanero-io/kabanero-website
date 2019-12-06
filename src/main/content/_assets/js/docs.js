@@ -84,17 +84,17 @@ function getDocVersions() {
             let pathName = location.pathname.split('/')[2];
             $.each(docversions['versions'], function (i, version) {
                 if (latest === version) {
-                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/">Latest - ${version}</a>`);
+                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/">Latest - ${version.substring(0, 3)}</a>`);
                 }
                 else {
-                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version}">${version}</a>`);
+                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version}">${version.substring(0, 3)}</a>`);
                 }
             });
             if (pathName && (pathName != 'ref')) {
-                $('#docs-version-button-display').append(`Docs v${pathName}`);
+                $('#docs-version-button-display').append(`Docs v${pathName.substring(0, 3)}`);
             }
             else {
-                $('#docs-version-button-display').append(`Docs v${latest}`);
+                $('#docs-version-button-display').append(`Docs v${latest.substring(0, 3)}`);
             }
         },
         error: function() {

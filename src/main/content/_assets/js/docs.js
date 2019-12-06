@@ -66,8 +66,7 @@ function selectDocInToc() {
         
         If a user is vewing the latest docs, paths are structured /doc/ref/general/<CATEGORY_NAME>/<DOC_NAME>.adoc
         Otherwise, paths are structured /doc/<VERSION_NUM>/ref/general/<CATEGORY_NAEM>/<DOC_NAME>.adoc
-    */
-    
+    */ 
     let selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}` + currentHref.substring(currentHref.lastIndexOf('/'));
         if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')

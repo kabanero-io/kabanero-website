@@ -21,6 +21,9 @@ git_clone_doc_tags() {
     # Create docversions.json file that is read by the front end to generate doc version dropdown on /docs
     echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":[ $TAGS_TO_CLONE ]}"  >> docversions.json
 
+    # Remove quotes from tags now (only needed for the JSON in docversions.json)
+    TAGS_TO_CLONE=$($TAGS_TO_CLONE | tr -d '"')
+    
     # Loop through comma separated tags outputed from tagScript.js
     for TAG in $(echo $TAGS_TO_CLONE | sed "s/,/ /g"); do
     

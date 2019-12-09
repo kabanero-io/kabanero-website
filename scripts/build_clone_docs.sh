@@ -11,28 +11,29 @@ CUR_DIR="$(cd $(dirname $0) && pwd)"
 
 git_clone_doc_tags() {
 
-    #get all tags from the repo
-    TAGS=$(git tag -l --sort=-v:refname)
-    #get the latest tag from repo
-    LATEST_TAG=$(git tag -l --sort=v:refname | tail -1)    
+    #get all the latest Major/Minor pair tags we want to clone from the docs repo
+    TAGS_TO_CLONE=$($CUR_DIR/tagScript.js $(git tag -l))
+
+    LATEST_TAG=$(git tag -l --sort=v:refname | tail -1)
 
     git checkout $LATEST_TAG
-    echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":["  >> docversions.json
+    
+    # Create docversions.json file that is read by the front end to generate doc version dropdown on /docs
+    echo -e -n "{\"latest\":\""$LATEST_TAG"\", \"versions\":[ $TAGS_TO_CLONE ]}"  >> docversions.json
 
-    for TAG in $TAGS; do
-    echo -e -n \"$TAG\", >> temp.json
-
-        # for all tags other than the latest we clone them into a folder of thier own with the folder name being the version of doc under the /docs dir
+    # Remove quotes from tags now (only needed for the JSON in docversions.json)
+    TAGS_TO_CLONE=$(echo $TAGS_TO_CLONE | tr -d '"')
+    
+    # Loop through comma separated tags outputed from tagScript.js
+    for TAG in $(echo $TAGS_TO_CLONE | sed "s/,/ /g"); do
+    
         if [ "$TAG" != "$LATEST_TAG" ]; then
             mkdir $TAG && git --work-tree=$TAG checkout $TAG -- .
         fi
+        
     done
-
-    sed '$ s/,$//g' temp.json >> docversions.json 
-    rm -f temp.json
-
-    echo -e -n "]}" >> docversions.json
 }
+
 pushd "$CUR_DIR/../src/main/content"
 
 # Remove the folder to allow this repeating execution of this script

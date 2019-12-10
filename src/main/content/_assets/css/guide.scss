@@ -137,8 +137,8 @@ header {
     border-radius: 0;
     padding: 30px;
     word-wrap: normal;
-
-    & code {
+    display: flex;
+        & code {
         white-space: pre;
     }
 }

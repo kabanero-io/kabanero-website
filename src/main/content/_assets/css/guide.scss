@@ -138,7 +138,8 @@ header {
     padding: 30px;
     word-wrap: normal;
     display: flex;
-        & code {
+
+    & code {
         white-space: pre;
     }
 }

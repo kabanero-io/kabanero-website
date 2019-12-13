@@ -203,11 +203,11 @@ guides:
   appsody: appsody
   nodejs: nodejs
   basic-guides:
-    title: Kabanero Basics
+    title: Basics
     title-two: '- Let’s get started'
     catigory-title: guides
   collections-guides:
-    title: Kabanero Collections
+    title: Collections
   uncatagorized-guides:
     title: More Guides
 

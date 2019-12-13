@@ -81,6 +81,13 @@ $color-kabanero:#C43804;
     max-height: 25em;
 }
 
+.videoblock iframe {
+    max-width: 100%;
+    width: 100%;
+    height: 500px;
+    max-height: 25em;
+}
+
 #article_body p {
     margin-top: 20px;
     margin-bottom: 20px;

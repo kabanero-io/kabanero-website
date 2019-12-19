@@ -277,7 +277,7 @@ index:
   featured-collections:
     title: Featured Collections
     eclips-microprofile-paragraph: Eclipse MicroProfile is a set of APIs used to optimize Java applications for a microservices architecture. With this stack, you can deliver microservices based upon the Eclipse MicroProfile specifications. Build and run high-quality applications with Open Liberty runtime, which includes OpenJDK with container-optimizations in OpenJ9.
-    spring-paragraph: is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Open Liberty runtime provides support for Spring applications with OpenJDK and container-optimizations in OpenJ9.
+    spring-paragraph: is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Spring Boot applications run on OpenJDK.
     nodejs-paragraph: Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser. Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers. It fits well in web-based frontends and backend API services for microservices-based applications.
   support:
     header: When you are ready for support, we've got you covered
@@ -299,6 +299,7 @@ index:
   join-community: Join the Community
   common:
     open-liberty: Open Liberty
+    openjdk: OpenJDK
     operators: Operators
     prometheus: Prometheus
     tekton: Tekton'

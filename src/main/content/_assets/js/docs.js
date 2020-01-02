@@ -48,16 +48,19 @@ function selectDocInToc() {
     let currentHref = window.location.href;
     let pathName = '';
     let categoryLocation = 0;
+    let selectedFile ="";
     
     // If the second value in the array is = to 'ref' this means the user is viewing the latest docs (no version # in the path)
     if (location.pathname.split('/')[2] == 'ref') {
         pathName = '/docs'
         categoryLocation = 4;
+        selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}` + currentHref.substring(currentHref.lastIndexOf('/'));
     }
     // if the second value in the array does not equal 'ref' this means the user has selected to view a different version of the docs
     else {
         pathName = `/docs/${location.pathname.split('/')[2]}`
         categoryLocation = 5;
+        selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}`;
     }
     
     /* 
@@ -67,7 +70,6 @@ function selectDocInToc() {
         If a user is vewing the latest docs, paths are structured /doc/ref/general/<CATEGORY_NAME>/<DOC_NAME>.adoc
         Otherwise, paths are structured /doc/<VERSION_NUM>/ref/general/<CATEGORY_NAEM>/<DOC_NAME>.adoc
     */ 
-    let selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}` + currentHref.substring(currentHref.lastIndexOf('/'));
         if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
         $(`a[href$="${selectedFile}"]`).parent().parent().parent().find('.toc-category').click();

@@ -120,7 +120,10 @@ js:
                 <h1 class="content-title">{{ page.title }}</h1>
                 <main aria-label="Content">
                     {{ content }}
+                    
+                    {% if page.path contains 'docs/ref/general/' or latest-intro-doc-path %}
                     <a href="https://github.com/Kabanero-io/docs/edit/master{{page.path | remove: 'docs'}}" target="_blank" aria-label="{{t.edit-page}}">{{t.edit-page}}</a>
+                    {% endif %}
                 </main>
             </div>
         </div>

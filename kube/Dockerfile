@@ -14,7 +14,7 @@ RUN curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE
 
 # Install Apache Maven
 ENV MAVEN_VERSION 3.6.2
-RUN curl -o /tmp/maven.tar.gz https://ftp.wayne.edu/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz \
+RUN curl -o /tmp/maven.tar.gz https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
     && tar -xzf /tmp/maven.tar.gz \
     && mv apache-maven-${MAVEN_VERSION} /opt/ \
     && rm /tmp/maven.tar.gz

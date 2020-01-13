@@ -1,5 +1,5 @@
 modifyStylesheet () {
-    # Append extra javadoc styling located in the css direcctory to the stylesheet.css located in the javadoc subdirectories
+    # Append extra javadoc styling located in the css directory to the stylesheet.css located in the javadoc subdirectories
     cat src/main/content/_assets/css/javadoc-extended-stylesheet.css >> "$1"
 
     # insert extra import to the beginning of the file

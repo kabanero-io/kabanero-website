@@ -283,7 +283,7 @@ function selectFirstDoc() {
     }
 }
 
-/// Modify the flat hierachary of the content to include nested levels with expand/collapse button
+/// Modify the flat hierarchy of the content to include nested levels with expand/collapse button
 function handleSubHeadingsInContent() {
     var contentTitle = getContentBreadcrumbTitle();
     var iframeContents = $('iframe[name=contentFrame]').contents();
@@ -1118,7 +1118,7 @@ function replaceHistoryState(hashToReplace) {
     return fullHref;
 }
 
-// Take care of displaying the table of content, comand content, and hamburger correctly when
+// Take care of displaying the table of content, command content, and hamburger correctly when
 // browser window resizes from mobile to non-mobile width and vice versa.
 function addWindowResizeListener() {
     $(window).resize(function() {

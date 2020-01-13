@@ -221,7 +221,7 @@ ide:
   zero-to-application: You can go from zero to application running in Knative/Kubernetes in under 5 minutes, working only with the app code - no tinkering with Dockerfiles, no learning Kube and Kube Yaml, no non-sense.
   vs-code: Try it with VS Code
   vs-codewind-link: Install Codewind from the VS Code Marketplace
-  apposdy-extention-link: Install Appsody Extension for Codewind
+  appsody-extention-link: Install Appsody Extension for Codewind
   appsody-cli-link: Install Appsody CLI
   optional-message: (optional for direct CLI access)
   try-it-yourself: Try it for yourself.
@@ -265,7 +265,7 @@ index:
       description: Use the right language for the job. Java is at the core of most modern application environments and can support Eclipse MicroProfile or Spring-based microservices. No matter your workload, we have runtimes and application stacks to simplify application development and delivery on Kubernetes.
     develop:
       tab-name: Develop
-      description: Develop applications for Kuberentes faster using extensions to industry leading IDEs. Perform inner loop development of applications directly in containers from day one. Eclipse Codewind provides extensions to VS Code, Eclipse, as well as Eclipse Che for teams preferring a cloud hosted IDE. Hosted or local, it’s the same experience.
+      description: Develop applications for Kubernetes faster using extensions to industry leading IDEs. Perform inner loop development of applications directly in containers from day one. Eclipse Codewind provides extensions to VS Code, Eclipse, as well as Eclipse Che for teams preferring a cloud hosted IDE. Hosted or local, it’s the same experience.
     build:
       tab-name: Build
       description: DevOps is critical for a successful microservices-based deployment. Kabanero supplies an integrated open source CI/CD (continuous integration / continuous delivery) infrastructure based on the open source project Tekton. Kabanero provides for a rich set of stages that pipelines can use to integrate features like patching, vulnerability scanning, and more.
@@ -319,12 +319,12 @@ index:
 
 install:
   title: Install Kabanero Foundation
-  intro-text: Installing Kabanero Foundation will allow you to acitvate, manage, and share collections with your team all while maintaining governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
+  intro-text: Installing Kabanero Foundation will allow you to activate, manage, and share collections with your team all while maintaining governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
   intro-text-bottom: "The full suite of Kabanero Foundation components that will be installed include: Istio, Knative, Eventing, Serving, and Tekton pipelines. Follow the instructions to set up Kubernetes, install the Kabanero Operator, and set up your Tekton pipeline."
   prereq:
     header: Prerequisites
     and: and
-    min-res: Minimun resource requirements
+    min-res: Minimum resource requirements
     okd-version: OKD Version
     okd-alt: Link to OKD install
 

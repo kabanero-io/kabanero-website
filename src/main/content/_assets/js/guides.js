@@ -90,7 +90,7 @@ $(document).ready(function() {
             numAdditionalResults == 0
         );
 
-        // Change the total search results in each categorys' banner    
+        // Change the total search results in each categories' banner
         $('#guides-basic-banner .total-guide-count b').text(numBasicResults + count_label);
         $('#guides_microprofile_banner .total-guide-count b').text(numMPResults + count_label);
         $('#guides_additional_banner .total-guide-count b').text(numAdditionalResults + count_label);

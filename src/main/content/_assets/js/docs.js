@@ -64,7 +64,7 @@ function selectDocInToc() {
     }
     
     /* 
-        In order to keep track of the selected doc on the TOC we have to parse out differnt parts of the url path for the 
+        In order to keep track of the selected doc on the TOC we have to parse out different parts of the url path for the
         the selected doc.
         
         If a user is vewing the latest docs, paths are structured /doc/ref/general/<CATEGORY_NAME>/<DOC_NAME>.adoc

@@ -270,7 +270,7 @@ function getScrolledVisibleSectionID() {
                     // the bottom (if the element starts above the viewport and
                     // ends before the bottom of the viewport) or the windowHeight
                     // (the element extends beyond the top and bottom of viewport
-                    // in both diretions).
+                    // in both directions).
                     visibleElemHeight = Math.min(bottom, windowHeight);
                 }
                 if(visibleElemHeight > maxVisibleSectionHeight){

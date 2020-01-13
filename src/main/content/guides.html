@@ -33,6 +33,9 @@ permalink: /guides/
 <!-- Collections Guides -->
 {% assign collections-guides = all-guides | where: 'guide-category', 'collections' | sort: 'releasedate' | reverse %}
 
+<!-- Pipelines Guides -->
+{% assign pipelines-guides = all-guides | where: 'guide-category', 'pipelines' | sort: 'releasedate' | reverse %}
+
 <!-- More guides -->
 {% assign uncatagorized-guides = '' | split: '' %}
 {% for guide in all-guides %}
@@ -42,7 +45,7 @@ permalink: /guides/
 {% endfor %}
 
 
-<!-- INTRODUCTION AND SEARCH BAR -->
+<!-- Intro and search bar -->
 <div id="guides-information-container" class="container-fluid">
     <div class="row">
         <div id="guide-search-information" class="col-xs-12 col-sm-7 col-md-6">
@@ -63,7 +66,7 @@ permalink: /guides/
 </div>
 
 
-<!-- BASIC GUIDES -->
+<!-- Basic Guides -->
 {% if basic-guides.size > 0 %}
     <div id="guides-basic-banner" class="basic-section container-fluid">
         <div class="row">
@@ -96,7 +99,7 @@ permalink: /guides/
     </div>
 {% endif %}
 
-<!-- COLLECTIONS GUIDES -->
+<!-- Collections Guides -->
 {% if collections-guides.size > 0 %}
     <div id="guides-basic-banner" class="basic-section container-fluid">
         <div class="row">
@@ -111,6 +114,39 @@ permalink: /guides/
     <div id="guides-basic-container" class="basic-section container-fluid">
         <div class="essential row">
             {% for guide in collections-guides %}
+            <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <a href="{{guide.url}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
+                data-description="{{ guide.description | downcase }}" 
+                data-tags="{{ guide.tags | join: ' ' | downcase }}" 
+                data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
+                    <div class="guide-title-and-description-container">
+                        <h3 class="guide-title">{{guide.title}}</h3>
+                        <p class="guide-description" title="{{guide.description}}">{{guide.description}}</p>
+                    </div>
+                    <img class="duration-clock-icon" src="/img/guide-duration-clock-icon-small.svg" alt="Duration">
+                    <span class="guide-duration">{{guide.duration}}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+<!-- Pipelines Guides -->
+{% if pipelines-guides.size > 0 %}
+    <div id="guides-basic-banner" class="basic-section container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2 class="guide-category-title"><b>{{t.pipelines-guides.title}}</b></h2>
+            </div>
+            <div class="col-sm-3">
+                <h2 class="total-guide-count guide-category-title"><b>{{pipelines-guides.size}} {{t.basic-guides.catigory-title}}</b></h2>
+            </div>
+        </div>
+    </div>
+    <div id="guides-basic-container" class="basic-section container-fluid">
+        <div class="essential row">
+            {% for guide in pipelines-guides %}
             <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <a href="{{guide.url}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
                 data-description="{{ guide.description | downcase }}" 

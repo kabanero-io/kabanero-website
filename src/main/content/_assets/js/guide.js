@@ -75,10 +75,9 @@ $(document).ready(function() {
     }
 
 
-    $('#guide-content pre:not(.no_copy pre):not(.code_command pre):not(.hotspot pre)').each(function(i) {
-
+    $('#guide-content pre:not(.no_copy pre):not(.code_command pre):not(.hotspot pre)').each(function(index) {
         let copy_element_to_clipboard_img = `<div class="guide-section-copied-confirmation">Copied to clipboard</div> <img class="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>`
-        $('#guide-content pre')[i].innerHTML = $('#guide-content pre')[i].innerHTML + copy_element_to_clipboard_img; 
+        $('#guide-content p:not(.CodeRay)')[index].innerHTML = $('#guide-content pre')[index].innerHTML + copy_element_to_clipboard_img; 
     });
     
     $('#guide-content pre .copy-to-clipboard').click(function(event) {

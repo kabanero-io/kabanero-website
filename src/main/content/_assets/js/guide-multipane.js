@@ -477,7 +477,7 @@ $(document).ready(function() {
         var target = $('#github-clone-popup-repo').get(0);
         copy_element_to_clipboard(target, function(){
             var position = $('#github-clone-popup-container').position();
-            $('#code-section-copied-confirmation').css({	
+            $('.code-section-copied-confirmation').css({	
                 top: position.top - 20,
                 right: 20	
             }).stop().fadeIn().delay(1000).fadeOut();
@@ -800,7 +800,7 @@ $(document).ready(function() {
         copy_element_to_clipboard(target, function(){
             var current_target_object = $(event.currentTarget);
             var position = current_target_object.position();	
-            $('#code-section-copied-confirmation').css({	
+            $('.code-section-copied-confirmation').css({	
                 top: position.top + 42,	
                 right: 25	
             }).stop().fadeIn().delay(1000).fadeOut();

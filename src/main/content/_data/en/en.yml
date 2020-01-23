@@ -208,6 +208,8 @@ guides:
     catigory-title: guides
   collections-guides:
     title: Collections
+  pipelines-guides:
+    title: Pipelines
   uncatagorized-guides:
     title: More Guides
 

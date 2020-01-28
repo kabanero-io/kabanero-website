@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Kabanero Collection Management Experience
+title: Application Stacks Management Experience
 css: architect
-permalink: /architect/collection-management/
+permalink: /architect/stack-management/
 ---
 <div id="intro-content" class="container">
     <!-- Intro title -->
     <div class="row">
         <div class="col text-center">
-            <p class="header">Kabanero Collection Management Experience</p>
+            <p class="header">Application Stacks Management Experience</p>
             <hr/>
         </div>
     </div>
@@ -18,7 +18,7 @@ permalink: /architect/collection-management/
         <div class="col text-center">
             <div>
                 <p>
-                    The solution architect (or someone serving that role) provides governance over the set of collections available for developers to seamlessly use, 
+                    The solution architect (or someone serving that role) provides governance over the set of stacks available for developers to seamlessly use, 
                     empowering developers with agility and speed while complying with company policies. This management CLI and access to the correct GitHub repositories 
                     enable this governance. 
                 </p>         
@@ -27,12 +27,12 @@ permalink: /architect/collection-management/
         </div>
     </div>
 
-    <!-- Collections Documentation -->
+    <!-- Stacks Documentation -->
     <div class="row">
         <div class="col-md">
-            {% assign collectionsDoc = site.pages | where: 'title', 'Kabanero Collections Overview' %}
-            <h3>{{collectionsDoc[0].title}}</h3>
-            {{ collectionsDoc[0].content }}
+            {% assign stacksDoc = site.pages | where: 'title', 'Kabanero Collections Overview' %}
+            <h3>{{stacksDoc[0].title}}</h3>
+            {{ stacksDoc[0].content }}
         </div>
     </div>
     <!-- kabanero CLI Documentation button -->

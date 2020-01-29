@@ -149,10 +149,10 @@ developer:
   uses-appsody: Kabanero uses Appsody as its CLI experience to access stacks. These instructions will get you starting using the CLI.
   follow-the: Follow the 
   instructions-to-install: instructions to install the Appsody CLI
-  add-repo: Add your Application Stacks Hub Repository.
+  add-repo: Add your Application Stack Hub Repository.
   code-3: appsody repo add kabanero YOUR_STACK_HUB_URL
   stack-hub: If you do not have a stack hub URL, you can use the 
-  public-stack: public Application Stacks Hub
+  public-stack: public Application Stack Hub
   url: "URL:"
   optional: Optional - List your available stacks
   code-4: appsody list kabanero
@@ -169,7 +169,7 @@ developer:
 
 get-started:
   getting-started: Getting Started
-  development-tools: Use our development tools to explore Kabanero Public Stacks
+  development-tools: Use our development tools to explore Kabanero Public Application Stacks
   install-codewind: Install Codewind using your IDE or CLI on your own laptop without the need for a team environment.
   set-up-kabanero: Or set up Kabanero for your whole team to use
   step-1:

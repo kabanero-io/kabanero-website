@@ -197,7 +197,8 @@ doc:
   edit-page: Edit This Page
 
 guides:
-  page-title: Guides
+  guides: Guides
+  guide: Guide
   page-description: The quickest way to learn all things Kabanero, and more!
   suggested-tags: Suggested tags
   appsody: appsody
@@ -208,6 +209,8 @@ guides:
     catigory-title: guides
   stacks-guides:
     title: Stacks
+  collections-guides:
+    title: Collections
   pipelines-guides:
     title: Pipelines
   uncatagorized-guides:

@@ -67,9 +67,14 @@
     <!-- Open Graph tags -->
     <meta property="og:title" content="{% if page.seo-title %}{{ page.seo-title }}{% else %}{{site.title}}{% endif %}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:image" content="https://kabanero.io/img/Kabanero_Logo_Colored.png">
+    <meta property="og:image" content="https://kabanero.io/img/Kabanero_Logo_Orange.png">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="website" />
+    {% if page.author %}
+        <meta property="og:type" content="article" />
+        <meta name="author" content="{{ page.author }}">
+    {% else %}
+        <meta property="og:type" content="website" />
+    {% endif %}
     
     <meta name="google-site-verification" content="yI8NT1dwfSQj6BTL4sPakqn0rI8aBu1GCdxMZFh1aic" />
 

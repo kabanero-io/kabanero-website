@@ -27,3 +27,4 @@ Please see [Contributing to the guides](https://github.com/kabanero-io/draft-gui
 - [kabanero tag on stackoverflow](https://stackoverflow.com/questions/tagged/kabanero)
 - [Kabanero on Slack](https://ibm-cloud-tech.slack.com/messages/kabanero)
    - [Slack channel request](https://slack-invite-ibm-cloud-tech.mybluemix.net)
+test change

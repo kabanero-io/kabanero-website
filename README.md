@@ -30,3 +30,4 @@ To get started open an issue to get a repository in the kabanero-io github org c
 - [kabanero tag on stackoverflow](https://stackoverflow.com/questions/tagged/kabanero)
 - [Kabanero on Slack](https://ibm-cloud-tech.slack.com/messages/kabanero)
    - [Slack channel request](https://slack-invite-ibm-cloud-tech.mybluemix.net)
+ test change

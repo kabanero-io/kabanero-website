@@ -1,0 +1,127 @@
+/******************************************************************************
+ *
+ * Copyright 2019 IBM Corporation and others.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ ******************************************************************************/
+
+$color-kabanero:#C43804;
+$color-kabanero-hover: #a12b00;
+$user-groups: developer, architect, operations;
+
+#survey-popup,
+#survey-modal {
+  .btn {
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 7px;
+    text-align: center;
+    margin-left: 8px;
+
+    &.btn-kabanero {
+      color: #fff;
+      background-color: $color-kabanero;
+      border-color: $color-kabanero;
+
+      &:hover {
+        background-color: $color-kabanero-hover;
+        border-color: $color-kabanero-hover;
+      }
+    }
+  }
+}
+
+#survey-popup {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: block;
+  opacity: 0;
+  z-index: 9999;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+  transform: translateY(calc(24px + 100%));
+  transition: transform 0.3s, opacity 0.2s;
+
+  &[aria-hidden="false"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #survey-popup-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+#survey-modal {
+  #survey-modal-body {
+    .survey-modal-user-options,
+    .survey-modal-question-form {
+      margin-top: 1rem;
+    }
+
+    #survey-modal-user-selection {
+      .survey-modal-user-option {
+        text-align: center;
+
+        img {
+          cursor: pointer;
+          transition: transform 0.1s;
+          
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        p {
+          padding: 8px;
+        }
+      }
+    }
+
+    .survey-modal-user-group {
+      display: none;
+
+      .survey-modal-question {
+        display: none;
+
+        &[data-active="true"] {
+          display: block;
+        }
+      }
+    }
+
+    &[data-selection] {
+      #survey-modal-user-selection {
+        display: none;
+      }
+    }
+
+    @each $user in $user-groups {
+      &[data-selection="#{$user}"] .survey-modal-user-group[data-user="#{$user}"] {
+        display: block;
+      }
+    }
+  }
+
+  #survey-modal-footer {
+    button {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

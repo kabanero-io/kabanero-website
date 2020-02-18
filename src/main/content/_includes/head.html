@@ -62,13 +62,20 @@
     <meta name="twitter:site" content="{{site.twitter_username}}" />
     <meta name="twitter:title" content="{% if page.seo-title %}{{ page.seo-title }}{% else %}{{site.title}}{% endif %}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:image" content="/img/Kabanero_Logo_Colored.png" />
+    <meta name="twitter:image" content="https://kabanero.io/img/Kabanero_Logo_Colored.png" />
 
     <!-- Open Graph tags -->
     <meta property="og:title" content="{% if page.seo-title %}{{ page.seo-title }}{% else %}{{site.title}}{% endif %}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:image" content="/img/Kabanero_Logo_Colored.png">
+    <meta property="og:image" content="https://kabanero.io/img/Kabanero_Logo_Orange_1200x640.png">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
+    {% if page.author %}
+        <meta property="og:type" content="article" />
+        <meta name="author" content="{{ page.author }}">
+    {% else %}
+        <meta property="og:type" content="website" />
+    {% endif %}
+    
     <meta name="google-site-verification" content="yI8NT1dwfSQj6BTL4sPakqn0rI8aBu1GCdxMZFh1aic" />
 
 </head>

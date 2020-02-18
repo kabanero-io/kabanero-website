@@ -189,7 +189,7 @@ docs:
   general-reference: General Reference
   contribute: Contribute
 
-doc:
+doc: 
   page-header: Kabanero Docs
   welcome-to-docs: Welcome to Docs
   no-doc-found: No doc found

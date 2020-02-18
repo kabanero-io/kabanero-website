@@ -28,7 +28,11 @@ git_clone_doc_tags() {
     for TAG in $(echo $TAGS_TO_CLONE | sed "s/,/ /g"); do
     
         if [ "$TAG" != "$LATEST_TAG" ]; then
-            mkdir $TAG && git --work-tree=$TAG checkout $TAG -- .
+            # name dir with Major & Minor only, for example "0.6", so when we update docs it has the latest 0.6.x content, 
+            # but the link doesn't change, it will stay /docs/0.6/.....
+            WORK_TREE=${TAG:0:3}
+            mkdir "${WORK_TREE}" && git --work-tree="${WORK_TREE}" checkout $TAG -- .
+            echo "Cloned latest documentation tag: ${TAG} into folder: ${WORK_TREE}"
         fi
         
     done

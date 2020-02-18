@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Collection Management Experience
+title: Application Stack Management Experience
 css: architect
 permalink: /new-architect/
 published: false
 ---
-{% assign t = site.data[site.active_lang].collection-management %}
+{% assign t = site.data[site.active_lang].stack-management %}
 
 <div id="intro-content" class="container">
     <!-- Intro title -->
@@ -34,12 +34,12 @@ published: false
         </div>
     </div>
 
-    <!-- Collections Documentation -->
+    <!-- Stacks Documentation -->
     <div class="row">
         <div class="col-md">
-            {% assign collectionsDoc = site.pages | where: 'title', 'Kabanero Collections' %}
+            {% assign stacksDoc = site.pages | where: 'title', 'Kabanero Collections' %}
 
-            {% for doc in collectionsDoc limit:1 %}
+            {% for doc in stacksDoc limit:1 %}
                 <h3>{{doc.title}}</h3>
                 {{ doc.content }}
             {% endfor %}

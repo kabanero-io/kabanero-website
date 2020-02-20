@@ -53,13 +53,13 @@ $( document ).ready(function() {
 });
 
 $('.featured-model-box').click(function() {
-    $('.featured-collections-collapse:visible').collapse('hide');
+    $('.featured-stacks-collapse:visible').collapse('hide');
 });
  
-function hoverFeaturedCollection(element){
+function hoverFeaturedStack(element){
     element.setAttribute('src', '/img/collections-icon-rollover.png');
 }
  
-function unhoverFeaturedCollection(element){
+function unhoverFeaturedStack(element){
     element.setAttribute('src', '/img/collections-icon.png')
 }

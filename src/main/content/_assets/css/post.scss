@@ -12,6 +12,10 @@
 //declare variables
 $color-kabanero:#C43804;
 
+body {
+    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+}
+
  #background-container {
     padding-top: 20px;
     background-size: 100% calc(100% - 280px);
@@ -95,14 +99,12 @@ $color-kabanero:#C43804;
 }
 
 #article_body h2 {
-    font-size: 20px;
     color: #24253a;
     margin-top: 24px;
     margin-bottom: 8px;
 }
 
 #article_body h3 {
-    font-size: 16px;
     color: #24253a;
     font-weight: 500;
     margin-top: 20px;
@@ -110,7 +112,6 @@ $color-kabanero:#C43804;
 }
 
 #article_body h4 {
-    font-size: 16px;
     color: #6f7878;
     font-weight: 500;
     margin-top: 20px;

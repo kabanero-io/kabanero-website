@@ -37,10 +37,10 @@ Please open issues in their appropriate repository:
 | [Appsody Extension](https://github.com/kabanero-io/appsodyExtension) | This repository is an extension to Codewind that adds support for Appsody projects. |
 | [Blogs](https://github.com/kabanero-io/blogs) | [Blogs](https://kabanero.io/blog) for the Kabanero.io site |
 | [Codewind Templates](https://github.com/kabanero-io/codewind-templates) | Central repository for storing the list of supported code templates for use in Codewind |
-| [Collections](https://github.com/kabanero-io/collections) | Repo contains source of usable Kabanero Collections |
+| [Stacks](https://github.com/kabanero-io/collections) | Repo contains source of usable Application Stacks |
 | [Docs](https://github.com/kabanero-io/docs) | Kabanero documentation and example scripts |
-| [Kabanero CLI](https://github.com/kabanero-io/kabanero-command-line) | A command line interface that is used to manage the collections the Kabanero environment presents |
-| [Kabanero Foundation](https://github.com/kabanero-io/kabanero-foundation) | The Kabanero Foundation Instance is a deployment of a Kabanero collection in a specific Kubernetes cluster. |
+| [Kabanero CLI](https://github.com/kabanero-io/kabanero-command-line) | A command line interface that is used to manage the stacks the Kabanero environment presents |
+| [Kabanero Foundation](https://github.com/kabanero-io/kabanero-foundation) | The Kabanero Foundation Instance is a deployment of a Application Stacks in a specific Kubernetes cluster. |
 | [Kabanero Operator](https://github.com/kabanero-io/kabanero-operator) | The Kabanero Platform Operator installs Kabanero onto a Kubernetes environment. |
 | [Kabanero Website](https://github.com/kabanero-io/kabanero-website) | The source code of the website [Kabanero.io](https://kabanero.io/), `YOU ARE HERE` |
 
@@ -121,21 +121,21 @@ Prereqs:
 ## Deploy a test instance using travis and your fork
 1. If you haven't already done so, go to [Travis-ci](https://travis-ci.com) and [Sign up with GitHub](https://travis-ci.com/signin).
 1. Accept the Authorization of Travis CI. You’ll be redirected to GitHub.
-1. Click on your accont in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
+1. Click on your account in travis-ci and under the "Repositories" section click the button next to the kabanero-website repository to activate it.
 1. Click on the Dashboard tab at the top of the page and under **Active repositories** click on **kabanero-website**.
 1. [Follow these steps](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings) to set the list of environment variables needed for Travis to successfully build and push your fork. You need to set the following variables
    * `IBM_CLOUD_ORGANIZATION` - IBM Cloud Foundry Organization to deploy to
       1. You can go to your [IBM Cloud Foundry Account](https://cloud.ibm.com/account/cloud-foundry) to see your org
-   * `IBM_CLOUD_SPACE` - IBM Cloud Foundry space (within the declared organziation) to deploy to
+   * `IBM_CLOUD_SPACE` - IBM Cloud Foundry space (within the declared organization) to deploy to
       1. You can go to your [IBM Cloud Foundry Account](https://cloud.ibm.com/account/cloud-foundry) which lists your organizations. Click on one to view spaces within the org. You may need to create one.
    * `IBM_CLOUD_API_KEY` - IBM Cloud credentials to login to cloud foundry via ibmcloud cli for the specified API endpoint
       1. **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
       1. Go to [IBM Cloud Access](https://cloud.ibm.com/iam/apikeys) and create an API key for your account.
    * `IBM_CLOUD_API` - IBM Cloud API endpoint to deploy to
       1. For example `https://cloud.ibm.com`
-   * `PAT` - Github Personal Access Token, which is required to avoid build failures due to [Github rate limiting](https://developer.github.com/v3/#rate-limiting). 
+   * `PAT` - GitHub Personal Access Token, which is required to avoid build failures due to [GitHub rate limiting](https://developer.github.com/v3/#rate-limiting).
       1. **Note: For security reasons **do not** activate the "DISPLAY VALUE IN BUILD LOG" button** this is turned off by default.
-      1. Head over to [Github](https://github.com/settings/tokens) and generate a personal access token (**Make sure to leave all the boxes under "Select scopes" unchecked**) then copy the generated token value and use it as the value for the environment variable. Instructions on generating a github access token can be found on the [Github help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
+      1. Head over to [GitHub](https://github.com/settings/tokens) and generate a personal access token (**Make sure to leave all the boxes under "Select scopes" unchecked**) then copy the generated token value and use it as the value for the environment variable. Instructions on generating a github access token can be found on the [GitHub help page](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
     * `JEKYLL_DRAFT_GUIDES` - This is Optional. Set this to `"true"` if you want the site to render the draft-guides
 
    * **Optional**: you can set these environment variables to specify the repositories and branches of blogs and docs to be cloned from

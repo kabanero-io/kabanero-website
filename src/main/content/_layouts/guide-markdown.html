@@ -36,7 +36,7 @@ js:
 <div id="background-container" class="container-fluid">
     <div class="row">
         <!-- Guide's table of contents section -->            
-        <div id="toc-column" class="col-md-2 collapse block open">
+        <div id="toc-column" class="col-md collapse block open">
             <div id="toc-inner">
                 <div id="close-container">
                     <img id="toc-close-white" src="{{ " /img/toc-close-white.svg " | relative }}" alt="Close the table of contents" tabindex="0"/>
@@ -58,7 +58,7 @@ js:
                 {% endif %}                    
             </div>                                
         </div>
-        <div class="col-md">
+        <div class="col-md-10">
             <div id="toc-indicator" tabindex="0" aria-label="Open the table of contents" class="hidden">
                 <img src="/img/arrow-white.svg" alt="arrow">
             </div>
@@ -93,8 +93,6 @@ js:
                             {{ content }}
                         </div>
                 </div>
-                <div id="guide-section-copied-confirmation">Copied to clipboard</div>
-                <img id="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>
             </div>
             <div class="row">
                 <div class="col-md text-center">

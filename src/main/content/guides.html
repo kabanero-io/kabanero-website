@@ -30,8 +30,12 @@ permalink: /guides/
 {% assign basic-guides = all-guides | where: 'guide-category', 'basic' | sort: 'releasedate' | reverse %}
 {% assign basic-essential-guides = all-guides | where: 'guide-category', 'basic' | where: 'essential', true | sort: 'essential-order' %}
 
-<!-- Collections Guides -->
-{% assign collections-guides = all-guides | where: 'guide-category', 'collections' | sort: 'releasedate' | reverse %}
+<!-- Stacks Guides -->
+{% assign collection-guides = all-guides | where: 'guide-category', 'collections' %}
+{% assign stacks-guides = all-guides | where: 'guide-category', 'stacks' | concat: collection-guides | sort: 'releasedate' | reverse %}
+
+<!-- Pipelines Guides -->
+{% assign pipelines-guides = all-guides | where: 'guide-category', 'pipelines' | sort: 'releasedate' | reverse %}
 
 <!-- More guides -->
 {% assign uncatagorized-guides = '' | split: '' %}
@@ -42,11 +46,11 @@ permalink: /guides/
 {% endfor %}
 
 
-<!-- INTRODUCTION AND SEARCH BAR -->
+<!-- Intro and search bar -->
 <div id="guides-information-container" class="container-fluid">
     <div class="row">
         <div id="guide-search-information" class="col-xs-12 col-sm-7 col-md-6">
-            <h2 id="guides-title">{{t.page-title}}</h2>
+            <h2 id="guides-title">{{t.guides}}</h2>
             <p id="guides-description">{{t.page-description}}</p>
         </div>
         <div id="guides-search-container" class="col-xs-12 col-sm-5 col-md-6">
@@ -63,15 +67,19 @@ permalink: /guides/
 </div>
 
 
-<!-- BASIC GUIDES -->
+<!-- Basic Guides -->
 {% if basic-guides.size > 0 %}
     <div id="guides-basic-banner" class="basic-section container-fluid">
         <div class="row">
             <div class="col-sm-9">
-                <h2 class="guide-category-title"><b>{{t.basic-guides.title}}</b>  {{t.basic-guides.title-two}}</h2>
+                <h2 class="guide-category-title">
+                    {{t.basic-guides.title}} {{t.basic-guides.title-two}}
+                </h2>
             </div>
             <div class="col-sm-3">
-                <h2 class="total-guide-count guide-category-title"><b>{{basic-guides.size}} {{t.basic-guides.catigory-title}}</b></h2>
+                <h2 class="total-guide-count guide-category-title">
+                    {{basic-guides.size}} {% if basic-guides.size > 1 %}{{t.guides}}{% else %}{{t.guide}}{% endif %}
+                </h2>
             </div>
         </div>
     </div>
@@ -96,21 +104,62 @@ permalink: /guides/
     </div>
 {% endif %}
 
-<!-- COLLECTIONS GUIDES -->
-{% if collections-guides.size > 0 %}
+<!-- Stacks Guides -->
+{% if stacks-guides.size > 0 %}
     <div id="guides-basic-banner" class="basic-section container-fluid">
         <div class="row">
             <div class="col-sm-9">
-                <h2 class="guide-category-title"><b>{{t.collections-guides.title}}</b></h2>
+                <h2 class="guide-category-title">
+                    {{t.collections-guides.title}}
+                </h2>
             </div>
             <div class="col-sm-3">
-                <h2 class="total-guide-count guide-category-title"><b>{{collections-guides.size}} {{t.basic-guides.catigory-title}}</b></h2>
+                <h2 class="total-guide-count guide-category-title">
+                    {{stacks-guides.size}} {% if stacks-guides.size.size > 1 %}{{t.guides}}{% else %}{{t.guide}}{% endif %}
+                </h2>
             </div>
         </div>
     </div>
     <div id="guides-basic-container" class="basic-section container-fluid">
         <div class="essential row">
-            {% for guide in collections-guides %}
+            {% for guide in stacks-guides %}
+            <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <a href="{{guide.url}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
+                data-description="{{ guide.description | downcase }}" 
+                data-tags="{{ guide.tags | join: ' ' | downcase }}" 
+                data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
+                    <div class="guide-title-and-description-container">
+                        <h3 class="guide-title">{{guide.title}}</h3>
+                        <p class="guide-description" title="{{guide.description}}">{{guide.description}}</p>
+                    </div>
+                    <img class="duration-clock-icon" src="/img/guide-duration-clock-icon-small.svg" alt="Duration">
+                    <span class="guide-duration">{{guide.duration}}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+<!-- Pipelines Guides -->
+{% if pipelines-guides.size > 0 %}
+    <div id="guides-basic-banner" class="basic-section container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2 class="guide-category-title">
+                    {{t.pipelines-guides.title}}
+                </h2>
+            </div>
+            <div class="col-sm-3">
+                <h2 class="total-guide-count guide-category-title">
+                    {{pipelines-guides.size}} {% if pipelines-guides.size > 1 %}{{t.guides}}{% else %}{{t.guide}}{% endif %}
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div id="guides-basic-container" class="basic-section container-fluid">
+        <div class="essential row">
+            {% for guide in pipelines-guides %}
             <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <a href="{{guide.url}}" class="guide_item" data-title="{{ guide.title | downcase }}" 
                 data-description="{{ guide.description | downcase }}" 
@@ -134,10 +183,14 @@ permalink: /guides/
     <div id="guides-basic-banner" class="basic-section container-fluid">
         <div class="row">
             <div class="col-sm-9">
-                <h2 class="guide-category-title"><b>{{t.uncatagorized-guides.title}}</b></h2>
+                <h2 class="guide-category-title">
+                    {{t.uncatagorized-guides.title}}
+                </h2>
             </div>
             <div class="col-sm-3">
-                <h2 class="total-guide-count guide-category-title"><b>{{uncatagorized-guides.size}} {{t.basic-guides.catigory-title}}</b></h2>
+                <h2 class="total-guide-count guide-category-title">
+                    {{uncatagorized-guides.size}} {% if uncatagorized-guides.size > 1 %}{{t.guides}}{% else %}{{t.guide}}{% endif %}
+                </h2>
             </div>
         </div>
     </div>
@@ -149,6 +202,7 @@ permalink: /guides/
                 data-description="{{ guide.description | downcase }}" 
                 data-tags="{{ guide.tags | join: ' ' | downcase }}" 
                 data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
+                
                     <div class="guide-title-and-description-container">
                         <h3 class="guide-title">{{guide.title}}</h3>
                         <p class="guide-description" title="{{guide.description}}">{{guide.description}}</p>

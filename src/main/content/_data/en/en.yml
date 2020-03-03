@@ -37,9 +37,9 @@ page-not-found:
   err-message: The requested page does not exist.
 
 architect:
-  intro-title: Kabanero Collection Management Experience
-  intro-text: The solution architect (or someone serving in that role) provides governance over the set of collections available for developers  to seamlessly use, empowering developers with agility and speed while complying with company policies. This management CLI and access to the correct GitHub repositories enable this governance.
-  collection-cli-button: Kabanero Collection Management CLI
+  intro-title: Application Stacks Management Experience
+  intro-text: The solution architect (or someone serving in that role) provides governance over the set of stacks available for developers  to seamlessly use, empowering developers with agility and speed while complying with company policies. This management CLI and access to the correct GitHub repositories enable this governance.
+  stack-cli-button: Application Stacks Management CLI
 
 blog:
   header: Blog
@@ -52,18 +52,18 @@ cli:
   intro-title: Kabanero Developer Experience for CLI
   intro-text: The Kabanero Development Experience for CLI is simply the Appsody CLI. Appsody provides Kabanero with simplicity in the creation of cloud-native applications in containers. Appsody provides pre-configured container images (stacks) and project templates for a growing set of popular open source runtimes and frameworks, providing a foundation on which to build applications for Kubernetes and Knative deployments.
   video-link: Check out this video that shows the developer experience for a Node.js app.
-  about-appsody: Appsody by itself points to a growing community of stacks (Container images pre-built with runtimes and frameworks). Kabanero provides integrated collections for a subset of these stacks. These are known as featured collections. When using Appsody with Kabanero, you point Appsody at your Collections.
+  about-appsody: Appsody by itself points to a growing community of stacks (Container images pre-built with runtimes and frameworks). Kabanero provides integrated stacks for a subset of these stacks. These are known as featured stacks. When using Appsody with Kabanero, you point Appsody at your Stacks.
   learn-more-appsody: Learn more about Appsody
   try-cli: Try Kabanero using the CLI
   install-appsody: Install Appsody
-  point-appsody: Point Appsody at your collections
+  point-appsody: Point Appsody at your stacks
   create-project: 'Create a project: cli cmd example'
   write-code: Write some code
   deploy: 'Deploy: cli cmd example'
 
-collection-management:
-   intro-title: Kabanero Collection Management Experience
-   intro-text: The solution architect (or someone serving that role) provides governance over the set of collections available for developers to seamlessly use,  empowering developers with agility and speed while complying with company policies. This management CLI and access to the correct GitHub repositories enable this governance. 
+stack-management:
+   intro-title: Application Stacks Management Experience
+   intro-text: The solution architect (or someone serving that role) provides governance over the set of stacks available for developers to seamlessly use,  empowering developers with agility and speed while complying with company policies. This management CLI and access to the correct GitHub repositories enable this governance. 
 
 community:
   intro-paragraph: Kabanero is heating up...
@@ -115,7 +115,7 @@ contribute:
 
 developer:
   install: Install and get started with the Kabanero Developer Tools
-  empower: Empower your development team to work with agility and speed! Developer tools give your team access to the Collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. Share these instructions with your development team or simply invite them to your Collection from Kabanero Foundation.
+  empower: Empower your development team to work with agility and speed! Developer tools give your team access to the Stack(s) that have been activated in Kabanero Foundation. Other public Application Stacks are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. Share these instructions with your development team or simply invite them to your Stack from Kabanero Foundation.
   choose: "Choose your preferred environment:"
   vs-code: VS Code
   eclipse: Eclipse
@@ -146,21 +146,21 @@ developer:
   on-windows: on Windows
   containe: to contain your projects
   need-more-help: Need more help using Codewind with Eclipse?
-  uses-appsody: Kabanero uses Appsody as its CLI experience to access collections. These instructions will get you starting using the CLI.
+  uses-appsody: Kabanero uses Appsody as its CLI experience to access stacks. These instructions will get you starting using the CLI.
   follow-the: Follow the 
   instructions-to-install: instructions to install the Appsody CLI
-  add-repo: Add your Kabanero Collection Hub Repository.
-  code-3: appsody repo add kabanero YOUR_COLLECTION_HUB_URL
-  collection-hub: If you do not have a collection hub URL, you can use the 
-  public-collection: public Kabanero Collection Hub
+  add-repo: Add your Application Stack Hub Repository.
+  code-3: appsody repo add kabanero YOUR_STACK_HUB_URL
+  stack-hub: If you do not have a stack hub URL, you can use the 
+  public-stack: public Application Stack Hub
   url: "URL:"
-  optional: Optional - List your available collections
+  optional: Optional - List your available stacks
   code-4: appsody list kabanero
   create-app: Create an application
   create-new-proj: Create a new project directory and
   into-it: into it
-  code-5: appsody init kabanero/COLLECTION_ID
-  collection-id: (COLLECTION_ID can be seen from the appsody list command above)
+  code-5: appsody init kabanero/STACK_ID
+  stack-id: (STACK_ID can be seen from the appsody list command above)
   appsody-need-help: Need more help using Appsody? 
   ready-for-support: When you are ready for support, we've got you covered
   kab-open-source: The Kabanero open source project is included within 
@@ -169,12 +169,12 @@ developer:
 
 get-started:
   getting-started: Getting Started
-  development-tools: Use our development tools to explore Kabanero Public Collections
+  development-tools: Use our development tools to explore Kabanero Public Application Stacks
   install-codewind: Install Codewind using your IDE or CLI on your own laptop without the need for a team environment.
   set-up-kabanero: Or set up Kabanero for your whole team to use
   step-1:
     header: "Step 1: Install Kabanero Foundation"
-    install-foundation: Install Kabanero Foundation to create, manage, and share collections with your entire team.
+    install-foundation: Install Kabanero Foundation to create, manage, and share stacks with your entire team.
   step-2:
     header: "Step 2: Install Developer Tools"
     levrage-codewind: Leverage the power of Codewind in your favorite IDEs and CLI tools to make building applications easy for your development team.
@@ -189,7 +189,7 @@ docs:
   general-reference: General Reference
   contribute: Contribute
 
-doc:
+doc: 
   page-header: Kabanero Docs
   welcome-to-docs: Welcome to Docs
   no-doc-found: No doc found
@@ -197,17 +197,22 @@ doc:
   edit-page: Edit This Page
 
 guides:
-  page-title: Guides
+  guides: Guides
+  guide: Guide
   page-description: The quickest way to learn all things Kabanero, and more!
   suggested-tags: Suggested tags
   appsody: appsody
   nodejs: nodejs
   basic-guides:
-    title: Kabanero Basics
+    title: Basics
     title-two: '- Let’s get started'
     catigory-title: guides
+  stacks-guides:
+    title: Stacks
   collections-guides:
-    title: Kabanero Collections
+    title: Stacks
+  pipelines-guides:
+    title: Pipelines
   uncatagorized-guides:
     title: More Guides
 
@@ -221,7 +226,7 @@ ide:
   zero-to-application: You can go from zero to application running in Knative/Kubernetes in under 5 minutes, working only with the app code - no tinkering with Dockerfiles, no learning Kube and Kube Yaml, no non-sense.
   vs-code: Try it with VS Code
   vs-codewind-link: Install Codewind from the VS Code Marketplace
-  apposdy-extention-link: Install Appsody Extension for Codewind
+  appsody-extention-link: Install Appsody Extension for Codewind
   appsody-cli-link: Install Appsody CLI
   optional-message: (optional for direct CLI access)
   try-it-yourself: Try it for yourself.
@@ -240,7 +245,7 @@ index:
   architecture:
     tab: Architecture
     section-title: Design more, faster
-    description: Use our curated collections and tailor them to your company. Manage your collections for your teams knowing they are automatically compliant with company policies.
+    description: Use our curated stacks and tailor them to your company. Manage your stacks for your teams knowing they are automatically compliant with company policies.
   operations:
     tab: Operations
     section-title: Manage with confidence
@@ -265,7 +270,7 @@ index:
       description: Use the right language for the job. Java is at the core of most modern application environments and can support Eclipse MicroProfile or Spring-based microservices. No matter your workload, we have runtimes and application stacks to simplify application development and delivery on Kubernetes.
     develop:
       tab-name: Develop
-      description: Develop applications for Kuberentes faster using extensions to industry leading IDEs. Perform inner loop development of applications directly in containers from day one. Eclipse Codewind provides extensions to VS Code, Eclipse, as well as Eclipse Che for teams preferring a cloud hosted IDE. Hosted or local, it’s the same experience.
+      description: Develop applications for Kubernetes faster using extensions to industry leading IDEs. Perform inner loop development of applications directly in containers from day one. Eclipse Codewind provides extensions to VS Code, Eclipse, as well as Eclipse Che for teams preferring a cloud hosted IDE. Hosted or local, it’s the same experience.
     build:
       tab-name: Build
       description: DevOps is critical for a successful microservices-based deployment. Kabanero supplies an integrated open source CI/CD (continuous integration / continuous delivery) infrastructure based on the open source project Tekton. Kabanero provides for a rich set of stages that pipelines can use to integrate features like patching, vulnerability scanning, and more.
@@ -274,10 +279,10 @@ index:
       description: Applications are deployed with best practices for Kubernetes deployments including scale, security, health and liveness probes. Kabanero also provides the ability to augment the base images with additional management capabilities as defined in the application stack. See everything from a single pane of glass with insights and correlation spanning traditional and Kubernetes applications for proactive problem determination.
   foundational-tools: 
     title: 'Built on a foundation of:'
-  featured-collections:
-    title: Featured Collections
+  featured-stacks:
+    title: Featured Stacks
     eclips-microprofile-paragraph: Eclipse MicroProfile is a set of APIs used to optimize Java applications for a microservices architecture. With this stack, you can deliver microservices based upon the Eclipse MicroProfile specifications. Build and run high-quality applications with Open Liberty runtime, which includes OpenJDK with container-optimizations in OpenJ9.
-    spring-paragraph: is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Open Liberty runtime provides support for Spring applications with OpenJDK and container-optimizations in OpenJ9.
+    spring-paragraph: is a framework used in Java application development. With this application stack, you can deliver microservices based upon the Spring framework provided by Pivotal. Spring Boot applications run on OpenJDK.
     nodejs-paragraph: Node.js is a JavaScript runtime environment that can execute JavaScript code anywhere, not limited to a browser. Due to its single-threaded nature, Node.js enables the creation of non-blocking and event-driven servers. It fits well in web-based frontends and backend API services for microservices-based applications.
   support:
     header: When you are ready for support, we've got you covered
@@ -299,6 +304,7 @@ index:
   join-community: Join the Community
   common:
     open-liberty: Open Liberty
+    openjdk: OpenJDK
     operators: Operators
     prometheus: Prometheus
     tekton: Tekton'
@@ -318,18 +324,18 @@ index:
 
 install:
   title: Install Kabanero Foundation
-  intro-text: Installing Kabanero Foundation will allow you to acitvate, manage, and share collections with your team all while maintaining governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
+  intro-text: Installing Kabanero Foundation will allow you to activate, manage, and share stacks with your team all while maintaining governance over each piece of the stack. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. Today Kabanero uses Origin Community Distribution of Kubernetes (OKD) version 3.11, but in the future we plan on expanding to use upstream Kubernetes and Red Hat OpenShift.
   intro-text-bottom: "The full suite of Kabanero Foundation components that will be installed include: Istio, Knative, Eventing, Serving, and Tekton pipelines. Follow the instructions to set up Kubernetes, install the Kabanero Operator, and set up your Tekton pipeline."
   prereq:
     header: Prerequisites
     and: and
-    min-res: Minimun resource requirements
+    min-res: Minimum resource requirements
     okd-version: OKD Version
     okd-alt: Link to OKD install
 
 operations:
   intro-title: Kabanero Foundation Installation
-  intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a set of curated collections, which this install will activate a default set of featured collections. The optional 
+  intro-text: Kabanero is built on foundational open technologies that install onto a Kubernetes cluster. Applications are deployed using an integrated Kubernetes-native toolchain using enterprise-grade deployments infused with Kubernetes expertise. The applications being deployed will be based upon a set of curated stacks, which this install will activate a default set of featured stacks. The optional 
   intro-text-kappnav-link: Kubernetes Application Navigator 
   intro-text-cont: technology provides application visibility and enables day 2 operations.
   install-button: Install Kabanero Foundation

@@ -1,7 +1,7 @@
 $(".toc-item").click(function () {
     $(this).toggleClass('open');
     $(this).find(".plus-minus-icon").attr('src') === '/img/icon_plus.png' ? $(this).find(".plus-minus-icon").attr('src', '/img/icon_minus.png') : $(this).find(".plus-minus-icon").attr('src', '/img/icon_plus.png');
-})
+});
 
 $('#doc-search').keyup(function () {
     searchDocs();
@@ -48,27 +48,29 @@ function selectDocInToc() {
     let currentHref = window.location.href;
     let pathName = '';
     let categoryLocation = 0;
-    
+    let selectedFile = "";
+
     // If the second value in the array is = to 'ref' this means the user is viewing the latest docs (no version # in the path)
     if (location.pathname.split('/')[2] == 'ref') {
         pathName = '/docs'
         categoryLocation = 4;
+        selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}` + currentHref.substring(currentHref.lastIndexOf('/'));
     }
     // if the second value in the array does not equal 'ref' this means the user has selected to view a different version of the docs
     else {
         pathName = `/docs/${location.pathname.split('/')[2]}`
         categoryLocation = 5;
+        selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}`;
     }
-    
+
     /* 
-        In order to keep track of the selected doc on the TOC we have to parse out differnt parts of the url path for the 
+        In order to keep track of the selected doc on the TOC we have to parse out different parts of the url path for the
         the selected doc.
         
         If a user is vewing the latest docs, paths are structured /doc/ref/general/<CATEGORY_NAME>/<DOC_NAME>.adoc
         Otherwise, paths are structured /doc/<VERSION_NUM>/ref/general/<CATEGORY_NAEM>/<DOC_NAME>.adoc
-    */ 
-    let selectedFile = `${pathName}/ref/general/${location.pathname.split('/')[categoryLocation]}` + currentHref.substring(currentHref.lastIndexOf('/'));
-        if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
+    */
+    if (selectedFile !== `${pathName}/ref/general/docs-welcome.html`) {
         $(`a[href$="${selectedFile}"]`).addClass('active-doc')
         $(`a[href$="${selectedFile}"]`).parent().parent().parent().find('.toc-category').click();
     }
@@ -78,7 +80,7 @@ function getDocVersions() {
     $.ajax({
         url: '/docs/docversions.json',
         dataType: 'json',
-        success: function( docversions ) {
+        success: function (docversions) {
             let latest = docversions['latest'];
             let pathName = location.pathname.split('/')[2];
             $.each(docversions['versions'], function (i, version) {
@@ -86,7 +88,7 @@ function getDocVersions() {
                     $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/">Latest - ${version.substring(0, 3)}</a>`);
                 }
                 else {
-                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version}">${version.substring(0, 3)}</a>`);
+                    $('#doc-version-dropdown').append(`<a class="dropdown-item" href="/docs/${version.substring(0, 3)}">${version.substring(0, 3)}</a>`);
                 }
             });
             if (pathName && (pathName != 'ref')) {
@@ -96,10 +98,10 @@ function getDocVersions() {
                 $('#docs-version-button-display').append(`Docs v${latest.substring(0, 3)}`);
             }
         },
-        error: function() {
+        error: function () {
             $(".docs-version-dropdown").css('display', 'none');
         }
-       });
+    });
 }
 
 $(document).ready(function () {

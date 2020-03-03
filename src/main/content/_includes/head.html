@@ -1,66 +1,81 @@
-
 {% assign description = '' %}
+
 {% if page.seo-description %}
-  {% assign description = page.seo-description | escape %}
+    {% assign description = page.seo-description | escape %}
 {% elsif page.description %}
-  {% assign description = page.description | escape %}
+    {% assign description = page.description | escape %}
 {% else %}
-  {% assign description = site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
+    {% assign description = site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
 {% endif %}
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.seo-title %}{{ page.seo-title | escape }}{% else %}{% if page.title %}{{ page.title | append: ' - ' | append: site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}{% endif %}</title>
-  <meta name="description" content="{{ description }}">
+    <title>
+        {% if page.seo-title %}{{ page.seo-title | escape }}{% else %}{% if page.title %}{{ page.title | append: ' - ' | append: site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}{% endif %}
+    </title>
+    <meta name="description" content="{{ description }}">
 
-  {% if page.layout == "default" or page.layout == "post" or page.layout == "doc" %}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  {% else %}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  {% endif %}
+    {% if page.layout == "default" or page.layout == "post" or page.layout == "doc" %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% else %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {% endif %}
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/img/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
-  {% asset kabanero.css %}
-  {% asset coderay-custom.css %}
+    {% asset kabanero.css %}
+    {% asset coderay-custom.css %}
 
-  {% for css_name in layout.css %}
+    {% for css_name in layout.css %}
     {% asset {{css_name}}.css %}
-  {% endfor %}
+    {% endfor %}
 
-  {% for css_name in page.css %}
+    {% for css_name in page.css %}
     {% asset {{css_name}}.css %}
-  {% endfor %}
+    {% endfor %}
 
-  {% if jekyll.environment == 'production' and site.google_tag_manager %}
+    {% if jekyll.environment == 'production' and site.google_tag_manager %}
     {% include google_tag_manager_head.html %}
-  {% endif %}
+    {% endif %}
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-  <link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet">
-  
-  <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet">
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="{{site.twitter_username}}" />
-  <meta name="twitter:title" content="{% if page.seo-title %}{{ page.seo-title }}{% else %}{{site.title}}{% endif %}" />
-  <meta name="twitter:description" content="{{ description }}" />
-  <meta name="twitter:image" content="https://kabanero.io/img/Kabanero_Logo_Colored.png" />
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700&display=swap" rel="stylesheet">
 
-  <meta name="google-site-verification" content="yI8NT1dwfSQj6BTL4sPakqn0rI8aBu1GCdxMZFh1aic" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{site.twitter_username}}" />
+    <meta name="twitter:title" content="{% if page.seo-title %}{{ page.seo-title }}{% else %}{{site.title}}{% endif %}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:image" content="https://kabanero.io/img/Kabanero_Logo_Colored.png" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="{% if page.seo-title %}{{ page.seo-title }}{% else %}{{site.title}}{% endif %}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="https://kabanero.io/img/Kabanero_Logo_Orange_1200x640.png">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    {% if page.author %}
+        <meta property="og:type" content="article" />
+        <meta name="author" content="{{ page.author }}">
+    {% else %}
+        <meta property="og:type" content="website" />
+    {% endif %}
+    
+    <meta name="google-site-verification" content="yI8NT1dwfSQj6BTL4sPakqn0rI8aBu1GCdxMZFh1aic" />
 
 </head>

@@ -9,8 +9,12 @@
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 
-//decalre variables
+//declare variables
 $color-kabanero:#C43804;
+
+body {
+    font-family: 'IBM Plex Sans', Arial Narrow, Helvetica, Arial;
+}
 
  #background-container {
     padding-top: 20px;
@@ -81,6 +85,13 @@ $color-kabanero:#C43804;
     max-height: 25em;
 }
 
+.videoblock iframe {
+    max-width: 100%;
+    width: 100%;
+    height: 500px;
+    max-height: 25em;
+}
+
 #article_body p {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -88,14 +99,12 @@ $color-kabanero:#C43804;
 }
 
 #article_body h2 {
-    font-size: 20px;
     color: #24253a;
     margin-top: 24px;
     margin-bottom: 8px;
 }
 
 #article_body h3 {
-    font-size: 16px;
     color: #24253a;
     font-weight: 500;
     margin-top: 20px;
@@ -103,7 +112,6 @@ $color-kabanero:#C43804;
 }
 
 #article_body h4 {
-    font-size: 16px;
     color: #6f7878;
     font-weight: 500;
     margin-top: 20px;

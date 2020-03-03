@@ -477,7 +477,7 @@ $(document).ready(function() {
         var target = $('#github-clone-popup-repo').get(0);
         copy_element_to_clipboard(target, function(){
             var position = $('#github-clone-popup-container').position();
-            $('#code-section-copied-confirmation').css({	
+            $('.code-section-copied-confirmation').css({	
                 top: position.top - 20,
                 right: 20	
             }).stop().fadeIn().delay(1000).fadeOut();
@@ -762,7 +762,6 @@ $(document).ready(function() {
         var dir = (event0.deltaY) < 0 ? 'up' : 'down';
         var codeColumn = $('#code-column')[0];
         var codeColumnContent = $('#code-column-content').get(0);
-        console.log("bye")
 
         if(!(this.scrollTop > 0 || this.offsetHeight > codeColumnContent.offsetHeight)){
             // Element is not scrollable. If the code file has no scrollbar, the page will still scroll if the event is propagated to the window scroll listener so we need to prevent propagation.
@@ -800,7 +799,7 @@ $(document).ready(function() {
         copy_element_to_clipboard(target, function(){
             var current_target_object = $(event.currentTarget);
             var position = current_target_object.position();	
-            $('#code-section-copied-confirmation').css({	
+            $('.code-section-copied-confirmation').css({	
                 top: position.top + 42,	
                 right: 25	
             }).stop().fadeIn().delay(1000).fadeOut();

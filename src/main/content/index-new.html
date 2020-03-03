@@ -60,7 +60,7 @@ published: false
                     <div class="role-box">
                         <img class="role-box-img img-fluid"" src="/img/logos/architecture.png">
                         <p>{{t.architecture.description}}</p>
-                        <a role="button" class="btn btn-outline-dark col-md-8" href="/architect" aria-label="Learn more about the Kabanero collections management">{{t.common.learn-more}}</a>
+                        <a role="button" class="btn btn-outline-dark col-md-8" href="/architect" aria-label="Learn more about the Application Stacks management">{{t.common.learn-more}}</a>
                     </div>
                 </div>
                 <div class="col-xl-4">
@@ -242,11 +242,11 @@ published: false
         </div>
     </div>
 
-    <!-- Featured Collections Buttons-->
+    <!-- Featured Stacks Buttons-->
     <div class="row featured-models justify-content-md-center">
         <div class="col-md-8">
             <div class="row">
-                <h2 class="col-md-12 text-center" id="featured-collections-title">{{t.featured-collections.title}}</h2>
+                <h2 class="col-md-12 text-center" id="featured-stacks-title">{{t.featured-stacks.title}}</h2>
             </div>
             <div class="row">
                 <div class="col model-logo text-center">
@@ -257,8 +257,8 @@ published: false
                         class="featured-model-box"
                         alt="microprofile logo">
                             <img class="img img-fluid" src="/img/collections-icon.png" 
-                                onmouseover="hoverFeaturedCollection(this)" 
-                                onmouseout="unhoverFeaturedCollection(this)">
+                                onmouseover="hoverFeaturedStack(this)" 
+                                onmouseout="unhoverFeaturedStack(this)">
                             <br><label class="featured-model-label">{{t.common.eclipse-microProfile}}</label>
                     </button>
                 </div>
@@ -270,8 +270,8 @@ published: false
                         class="featured-model-box"
                         alt="java spring logo">
                             <img class="img img-fluid" src="/img/collections-icon.png" 
-                                onmouseover="hoverFeaturedCollection(this)" 
-                                onmouseout="unhoverFeaturedCollection(this)">
+                                onmouseover="hoverFeaturedStack(this)" 
+                                onmouseout="unhoverFeaturedStack(this)">
                             <br><label class="featured-model-label">{{t.common.spring}}</label>
                     </button>
                 </div>
@@ -283,8 +283,8 @@ published: false
                         class="featured-model-box"
                         alt="nodejs logo">
                             <img class="img img-fluid" src="/img/collections-icon.png" 
-                                onmouseover="hoverFeaturedCollection(this)" 
-                                onmouseout="unhoverFeaturedCollection(this)">
+                                onmouseover="hoverFeaturedStack(this)" 
+                                onmouseout="unhoverFeaturedStack(this)">
                             <br><label class="featured-model-label">{{t.common.nodeJS}}</label>
                     </button>
                 </div>
@@ -292,12 +292,12 @@ published: false
         </div>
     </div>
 
-    <!-- Featured Collections Detail boxs -->
+    <!-- Featured Stacks Detail boxs -->
 
     <!-- Eclipse Microprofile -->
-    <div class="row featured-collections-detail justify-content-md-center">
+    <div class="row featured-stacks-detail justify-content-md-center">
         <div class="col-md-8">
-            <div class="collapse featured-collections-collapse" id="microprofile-collapse">
+            <div class="collapse featured-stacks-collapse" id="microprofile-collapse">
                 <div class="row card-row">
                     <div class="col-md card card-body">
                         <div class="row collapseRow">
@@ -329,7 +329,7 @@ published: false
                         <hr>
                         <div class="row">
                             <div class="col dopdown-text">
-                                <p>{{t.featured-collections.eclips-microprofile-paragraph}}</p>
+                                <p>{{t.featured-stacks.eclips-microprofile-paragraph}}</p>
                             </div>
                         </div>
                     </div>
@@ -339,16 +339,16 @@ published: false
     </div>
 
     <!-- Spring -->
-    <div class="row featured-collections-detail justify-content-md-center">
+    <div class="row featured-stacks-detail justify-content-md-center">
         <div class="col-md-8">
-            <div class="collapse featured-collections-collapse" id="spring-collapse">
+            <div class="collapse featured-stacks-collapse" id="spring-collapse">
                 <div class="row card-row">
                     <div class="col-md card card-body">
                         <div class="row collapseRow">
-                            <div class="col text-center">
-                                <a class="image-link" target="_blank" href="https://openliberty.io/">
-                                    <img src="/img/logos/85x85/open-liberty.png" class="img-fluid stackImg">
-                                    <p>{{t.common.open-liberty}}</p>
+                            <div class="col text-center wide-logo">
+                                <a class="image-link" target="_blank" href="https://openjdk.java.net/">
+                                    <img src="/img/logos/85x85/openJDK.png" class="img-fluid">
+                                    <p>{{t.common.openjdk}}&trade;</p>
                                 </a>
                             </div>
                             <div class="col text-center">
@@ -371,7 +371,7 @@ published: false
                         <hr>
                         <div class="row">
                             <div class="col dopdown-text">
-                                <p>{{t.common.spring}}&reg; {{t.featured-collections.spring-paragraph}}</p>
+                                <p>{{t.common.spring}}&reg; {{t.featured-stacks.spring-paragraph}}</p>
                             </div>
                         </div>
                     </div>
@@ -381,9 +381,9 @@ published: false
     </div>
 
     <!-- Node.js -->
-    <div class="row featured-collections-detail justify-content-md-center">
+    <div class="row featured-stacks-detail justify-content-md-center">
         <div class="col-md-8">
-            <div class="collapse featured-collections-collapse" id="nodejs-collapse">
+            <div class="collapse featured-stacks-collapse" id="nodejs-collapse">
                 <div class="row card-row">
                     <div class="col-md card card-body">
                         <div class="row collapseRow">
@@ -413,7 +413,7 @@ published: false
                         <hr>
                         <div class="row">
                             <div class="col dopdown-text">
-                                <p>{{t.featured-collections.nodejs-paragraph}}</p>
+                                <p>{{t.featured-stacks.nodejs-paragraph}}</p>
                             </div>
                         </div>
                     </div>

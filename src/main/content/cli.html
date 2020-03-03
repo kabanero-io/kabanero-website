@@ -33,9 +33,9 @@ permalink: /developer/cli/
                 <p>
                     Appsody points to a growing community of Stacks (Container images prebuilt with runtimes
                     and frameworks). Kabanero takes a subset of these stacks and augments them with build and deploy
-                    technology to create a Collection. Collections enable Kabanero to build an application in a controlled
+                    technology to create a Stack. Stacks enable Kabanero to build an application in a controlled
                     manner. This controlled flow ensures that the application meets security requirements and deploys into a
-                    RHOCP (Red Hat OpenShift Container Platform) project. When using Appsody with Kabanero, you point Appsody at your Collection
+                    RHOCP (Red Hat OpenShift Container Platform) project. When using Appsody with Kabanero, you point Appsody at your Stack
                     Hub.
                 </p>
 
@@ -53,26 +53,26 @@ permalink: /developer/cli/
         <div id="components-text" class="col-md">
             <h2> Try it using the Appsody CLI</h2>
             <p>
-                Kabanero uses Appsody as its CLI experience to access collections. These instructions will get you starting using the CLI.
+                Kabanero uses Appsody as its CLI experience to access stacks. These instructions will get you starting using the CLI.
             </p>
             <ol>
                 <li>
                     Follow the <a target="_blank" href="https://appsody.dev/docs/getting-started/installation">instructions to install the Appsody CLI</a>
                 </li>
                 <li>
-                    Add your Kabanero Collection Hub Repository.
+                    Add your Application Stacks Hub Repository. It helps to add the version to the repo name. For example, in the command below you can use <code>kabanero&lt;VERSION&gt;</code> as the name
                     <ul>
                         <li>
-                            <code>appsody repo add kabanero YOUR_COLLECTION_HUB_URL</code>
+                            <code>appsody repo add kabanero &lt;YOUR_STACK_HUB_URL&gt;</code>
                             <ul>
                                 <li>
-                                    If you do not have a collection hub URL, you can use the
+                                    If you do not have a stack hub URL, you can use the latest 
                                     <a target="_blank" href="https://github.com/kabanero-io/collections"
-                                    aria-label="public Kabanero Collections repository">public Kabanero Collection Hub</a>
+                                    aria-label="public Application Stack repository">public Application Stack Hub</a>
                                     URL:
 
                                     <p>
-                                        <code>https://github.com/kabanero-io/collections/releases/download/v0.1.2/kabanero-index.yaml</code>
+                                        <code>https://github.com/kabanero-io/collections/releases/latest/download/kabanero-index.yaml</code>
                                     </p>
                                 </li>
                             </ul>
@@ -80,7 +80,7 @@ permalink: /developer/cli/
                     </ul>
                 </li>
                 <li>
-                    Optional - List your available collections
+                    Optional - List your available stacks
                     <ul>
                         <li>
                             <code>appsody list kabanero</code>
@@ -94,7 +94,7 @@ permalink: /developer/cli/
                             Create a new project directory and <code>cd</code> into it
                         </li>
                         <li>
-                            <code>appsody init kabanero/COLLECTION_ID</code> (COLLECTION_ID can be seen from the appsody list command above)
+                            <code>appsody init kabanero/STACK_ID</code> (STACK_ID can be seen from the appsody list command above)
                         </li>
                     </ul>
                 </li>

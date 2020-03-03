@@ -32,7 +32,7 @@ $(document).ready(function() {
         copy_element_to_clipboard(target, function(){
             var current_target_object = $(event.currentTarget);
             var position = current_target_object.position();	
-            $('#guide-section-copied-confirmation').css({	
+            $('.guide-section-copied-confirmation').css({	
                 top: position.top - 20,	
                 right: 25	
             }).stop().fadeIn().delay(1000).fadeOut();
@@ -74,29 +74,29 @@ $(document).ready(function() {
         }
     }
 
-    $('#guide-content pre:not(.no_copy pre):not(.code_command pre):not(.hotspot pre)').hover(function(event) {
-        offset = $('#guide-column').position();
-        target = event.currentTarget;
-        var current_target_object = $(event.currentTarget);
-        target_position = current_target_object.position();
-        target_width = current_target_object.outerWidth();
-        target_height = current_target_object.outerHeight();
-        var right_position = inSingleColumnView() ? 1 : 46;
-        $('#copy-to-clipboard').css({
-            top: target_position.top + 1,
-            right: parseInt($('#guide-column').css('padding-right')) + right_position
-        });
-        $('#copy-to-clipboard').stop().fadeIn();
-    });
 
-    $('#copy-to-clipboard').click(function(event) {
+    $('#guide-content pre:not(.no_copy pre):not(.code_command pre):not(.hotspot pre)').each(function(index) {
+        if(!$('#guide-content pre')[index].className){
+        let copy_element_to_clipboard_img = `<div class="guide-section-copied-confirmation">Copied to clipboard</div> <img class="copy-to-clipboard" src='/img/guides-copy-button.svg' alt='Copy code block' title='Copy code block'>`
+        $('#guide-content pre')[index].innerHTML = $('#guide-content pre')[index].innerHTML + copy_element_to_clipboard_img; 
+    }
+    });
+    
+    $('#guide-content pre .copy-to-clipboard').click(function(event) {
         event.preventDefault();
+        let text = $(this).parent().get(0).innerText;
+        let textToCopy = document.createElement('textarea');
+        textToCopy.value = text;
+        document.body.appendChild(textToCopy);
+        textToCopy.select();
+        document.execCommand('copy');
+        document.body.removeChild(textToCopy);
         // Target was assigned while hovering over the element to copy.
         copy_element_to_clipboard(target, function(){
             var current_target_object = $(event.currentTarget);
             var position = current_target_object.position();	
-            $('#guide-section-copied-confirmation').css({	
-                top: position.top - 18,
+            $('.guide-section-copied-confirmation').css({	
+                top: position.top - 45,
                 right: inSingleColumnView() ? 20 : 50	
             }).stop().fadeIn().delay(3500).fadeOut();
         });	

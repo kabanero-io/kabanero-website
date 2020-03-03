@@ -1,12 +1,12 @@
 
-{% assign prefixId = "survey-modal-question-" | append: include.user | append: "-" | append: include.index %}
+{% assign questionId = "survey-modal-question-" | append: include.index %}
 <div class="survey-modal-question" id="{{prefixId}}" data-type="{{include.content.type}}" data-question="{{include.content.question}}" data-required="{{include.content.required}}" data-options="{{include.content.options | join: ","}}">
     <h5 class="survey-modal-question-title">{{include.content.question}}</h5>
     <div class="survey-modal-question-form">
         <div class="form-group">
             {% if include.content.type == "choice" or include.content.type == "multi" %}
                 {% for option in include.content.options %}
-                    {% assign questionId = prefixId | append: "-" | append: forloop.index %}
+                    {% assign optionId = "survey-modal-option-" | append: include.index | append: "-" | append: forloop.index %}
 
                     {% if include.content.inline %}
                       {% assign questionClass = "form-check form-check-inline" %}
@@ -20,13 +20,14 @@
                       {% assign questionType = "checkbox" %}
                     {% endif %}
                     <div class="{{questionClass}}">
-                      <input type="{{questionType}}" class="form-check-input" id="{{questionId}}" name="{{prefixId}}" value="{{option}}" autocomplete="off">
-                      <label class="form-check-label" for="{{questionId}}">{{option}}</label>
+                      <input type="{{questionType}}" class="form-check-input" id="{{optionId}}" name="{{questionId}}" value="{{option}}" autocomplete="off">
+                      <label class="form-check-label" for="{{optionId}}">{{option}}</label>
                     </div>
                 {% endfor %}
             {% elsif include.content.type == "text" %}
+                {% assign textId = "survey-modal-text-" | append: include.index %}
                 {% assign rows = include.content.rows | default: 4 %}
-                <textarea class="form-control" id="{{prefixId}}" rows="{{rows}}" placeholder="{{include.content.placeholder}}" autocomplete="off"></textarea>
+                <textarea class="form-control" id="{{textId}}" rows="{{rows}}" placeholder="{{include.content.placeholder}}" autocomplete="off"></textarea>
             {% endif %}
         </div>
     </div>

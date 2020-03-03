@@ -345,56 +345,45 @@ support:
 
 
 survey:
-  popup:
-    content: Want to help improve Kabanero? Give us your feedback!
-    no-show: Do not show this message again
-    open: Sure!
-    close: No, thanks
-  modal:
-    prev: Previous
-    next: Next
-    submit: Submit
-    title: Kabanero Feedback
-    content:
-    - user: developer
-      questions:
-      - type: choice
-        question: How would you best describe your experience with Kabanero?
-        options:
-        - Expert
-        - Intermediate
-        - Novice
-        required: true
-      - type: choice
-        question: How likely are you to recommend Kabanero to a peer?
-        options:
-        - Very likely
-        - Likely
-        - Neutral
-        - Unlikely
-        - Very unlikely
-        required: false
-      - type: multi
-        question: Which tools do you most often with the Kabanero Developer Experience?
-        options:
-        - Eclipse Codewind
-        - Appsody
-        - Kubernetes
-        - Knative
-        required: true
-      - type: text
-        question: How can the Kabanero Developer Experience be improved?
-        placeholder: Enter feedback here...
-        required: true
-    - user: architect
-      questions:
-      - type: text
-        question: How can the Kabanero Collection Management Experience be improved?
-        placeholder: Enter feedback here...
-        required: false
-    - user: operations
-      questions:
-      - type: text
-        question: How can the Kabanero Foundation Installation process be improved?
-        placeholder: Enter feedback here...
-        required: false
+  prev: Previous
+  next: Next
+  submit: Submit
+  title: Kabanero Feedback
+  pagination: false
+  questions:
+  - type: choice
+    question: How would you best describe your experience with Kabanero?
+    inline: true
+    options:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    required: true
+  - type: choice
+    question: How likely are you to recommend Kabanero to a peer?
+    options:
+    - Very likely
+    - Likely
+    - Neutral
+    - Unlikely
+    - Very unlikely
+    required: false
+  - type: multi
+    question: Which tools do you most often with the Kabanero Developer Experience?
+    options:
+    - Eclipse Codewind
+    - Appsody
+    - Kubernetes
+    - Knative
+    required: true
+  - type: text
+    question: How can the Kabanero Developer Experience be improved?
+    placeholder: Enter feedback here...
+    required: true

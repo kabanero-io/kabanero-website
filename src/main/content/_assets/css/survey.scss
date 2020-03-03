@@ -18,9 +18,7 @@
 
 $color-kabanero:#C43804;
 $color-kabanero-hover: #a12b00;
-$user-groups: developer, architect, operations;
 
-#survey-popup,
 #survey-modal {
   .btn {
     font-size: 17px;
@@ -40,76 +38,22 @@ $user-groups: developer, architect, operations;
       }
     }
   }
-}
 
-#survey-popup {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  display: block;
-  opacity: 0;
-  z-index: 9999;
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-  transform: translateY(calc(24px + 100%));
-  transition: transform 0.3s, opacity 0.2s;
-
-  &[aria-hidden="false"] {
-    opacity: 1;
-    transform: translateY(0);
+  .modal-content {
+    width: 50vw;
+    min-width: 320px;
   }
 
-  #survey-popup-footer {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-#survey-modal {
   #survey-modal-body {
     .survey-modal-user-options,
     .survey-modal-question-form {
       margin-top: 1rem;
     }
 
-    #survey-modal-user-selection {
-      .survey-modal-user-option {
-        text-align: center;
-
-        img {
-          cursor: pointer;
-          transition: transform 0.1s;
-          
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-
-        p {
-          padding: 8px;
-        }
-      }
-    }
-
-    .survey-modal-user-group {
+    .survey-modal-question {
       display: none;
 
-      .survey-modal-question {
-        display: none;
-
-        &[data-active="true"] {
-          display: block;
-        }
-      }
-    }
-
-    &[data-selection] {
-      #survey-modal-user-selection {
-        display: none;
-      }
-    }
-
-    @each $user in $user-groups {
-      &[data-selection="#{$user}"] .survey-modal-user-group[data-user="#{$user}"] {
+      &[data-active="true"] {
         display: block;
       }
     }
@@ -121,6 +65,25 @@ $user-groups: developer, architect, operations;
 
       &.show {
         display: block;
+      }
+    }
+  }
+
+  &[data-pagination="false"] {
+    #survey-modal-body {
+      .survey-modal-question {
+        display: block;
+      }
+    }
+
+    #survey-modal-footer {
+      #survey-modal-submit {
+        display: block;
+      }
+
+      #survey-modal-prev,
+      #survey-modal-next {
+        display: none;
       }
     }
   }

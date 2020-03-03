@@ -1,58 +1,23 @@
 {% assign data = site.data[site.active_lang].survey %}
-<div class="card" id="survey-popup" tabindex="-1" role="dialog" aria-hidden="true" aria-label="Developer survey popup">
-    <div class="card-body" id="survey-popup-content" role="document">
-      <p class="font-weight-bold">{{data.popup.content}}</p>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="survey-popup-noshow">
-        <label class="form-check-label" for="survey-popup-noshow">{{data.popup.no-show}}</label>
+<div class="modal" id="survey-modal" data-backdrop="static" data-pagination="{{ data.pagination | default: false }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="survey-modal-title">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" id="survey-modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="survey-modal-header">
+        <h5 class="modal-title" id="survey-modal-title">{{data.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close survey modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div id="survey-popup-footer">
-        <button type="button" class="btn btn-kabanero" id="survey-popup-open" data-toggle="modal" data-target="#survey-modal">{{data.popup.open}}</button>
-        <button type="button" class="btn btn-secondary" id="survey-popup-close">{{data.popup.close}}</button>
+      <div class="modal-body" id="survey-modal-body">
+        {% for question in data.questions %}
+          {% include survey-question.html content=question index=forloop.index %}
+        {% endfor %}
+      </div>
+      <div class="modal-footer" id="survey-modal-footer">
+        <button type="button" class="btn btn-secondary" id="survey-modal-prev">{{data.prev}}</button>
+        <button type="button" class="btn btn-kabanero" id="survey-modal-next">{{data.next}}</button>
+        <button type="button" class="btn btn-kabanero" id="survey-modal-submit" data-toggle="modal" data-target="#survey-modal">{{data.submit}}</button>
       </div>
     </div>
-</div>
-
-<div class="modal" id="survey-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="survey-modal-title">
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" id="survey-modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header" id="survey-modal-header">
-              <h5 class="modal-title" id="survey-modal-title">{{data.modal.title}}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close survey modal">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-body" id="survey-modal-body">
-            <div id="survey-modal-user-selection">
-              <h5>Based on your role in your organization, select one of the icons below.</h5>
-              <div class="d-flex mt-3" id="survey-modal-user-options">
-                <div class="survey-modal-user-option col-4" role="button" aria-label="Developer role" data-user="developer">
-                  <img class="img-fluid role-image" src="/img/userStoryLogos/jane.png">
-                  <p>Developer</p>
-                </div>
-                <div class="survey-modal-user-option col-4" role="button" aria-label="Architect role" data-user="architect">
-                  <img class="img-fluid role-image" src="/img/userStoryLogos/champ.png">
-                  <p>Architect</p>
-                </div>
-                <div class="survey-modal-user-option col-4" role="button" aria-label="Operations role" data-user="operations">
-                  <img class="img-fluid role-image" src="/img/userStoryLogos/todd.png">
-                  <p>Operations</p>
-                </div>
-              </div>
-            </div>
-            {% for survey in data.modal.content %}
-              <div class="survey-modal-user-group" data-user="{{survey.user}}">
-                {% for question in survey.questions %}
-                  {% include survey-question.html content=question user=survey.user index=forloop.index %}
-                {% endfor %}
-              </div>
-            {% endfor %}
-          </div>
-          <div class="modal-footer" id="survey-modal-footer">
-            <button type="button" class="btn btn-secondary" id="survey-modal-prev">{{data.modal.prev}}</button>
-            <button type="button" class="btn btn-kabanero" id="survey-modal-next">{{data.modal.next}}</button>
-            <button type="button" class="btn btn-kabanero" id="survey-modal-submit" data-toggle="modal" data-target="#survey-modal">{{data.modal.submit}}</button>
-          </div>
-      </div>
   </div>
 </div>

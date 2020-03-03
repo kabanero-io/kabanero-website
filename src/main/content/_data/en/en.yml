@@ -358,7 +358,7 @@ survey:
   pagination: false
   questions:
   - type: choice
-    question: How would you best describe your experience with Kabanero?
+    question: How likely are you to recommend Kabanero to a coworker?
     inline: true
     options:
     - 1
@@ -371,25 +371,20 @@ survey:
     - 8
     - 9
     - 10
-    required: true
+    required: false
   - type: choice
-    question: How likely are you to recommend Kabanero to a peer?
+    question: Are you able to complete your job more easily by using Kabanero?
     options:
-    - Very likely
-    - Likely
-    - Neutral
-    - Unlikely
-    - Very unlikely
+    - "Yes"
+    - "No" 
     required: false
   - type: multi
-    question: Which tools do you most often with the Kabanero Developer Experience?
+    question: Do you think Kabanero is easy to learn and use?
     options:
-    - Eclipse Codewind
-    - Appsody
-    - Kubernetes
-    - Knative
-    required: true
+    - "Yes" 
+    - "No" 
+    required: false
   - type: text
-    question: How can the Kabanero Developer Experience be improved?
+    question: Additonal comments on Kabanero?
     placeholder: Enter feedback here...
-    required: true
+    required: false 

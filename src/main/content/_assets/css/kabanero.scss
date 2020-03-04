@@ -432,6 +432,14 @@ footer {
         float: left;
     }
 
+    .footer_round_feedback{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        float: center;
+
+    }
+
     #footer_groupsio_link {
         background-image: url("/img/Footer_GroupsIO.svg");
         &:hover {

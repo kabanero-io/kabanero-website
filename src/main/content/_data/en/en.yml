@@ -354,7 +354,7 @@ survey:
   prev: Previous
   next: Next
   submit: Submit
-  title: Kabanero Feedback
+  title: Kabanero Product Feedback
   pagination: false
   questions:
   - type: choice
@@ -373,13 +373,15 @@ survey:
     - 10
     required: false
   - type: choice
-    question: 2. Are you able to complete your job more easily by using Kabanero?
+    question: 2. Does Kabanero make your job easier?
+    inline: true
     options:
     - "Yes"
     - "No" 
     required: false
   - type: choice
-    question: 3. Do you think Kabanero is easy to learn and use?
+    question: 3. Do you think Kabanero is easy to use?
+    inline: true
     options:
     - "Yes" 
     - "No" 

@@ -15,6 +15,9 @@
  * limitations under the License.
  *
  ******************************************************************************/
+function myFunction() {
+  console.log("testing")
+}
 
 class Survey {
     constructor() {
@@ -149,9 +152,8 @@ class Survey {
     }
 }
 
-$(document).ready(function() {
+function getFeedback()
+{
     const survey = new Survey();
-
-    // $('BUTTON').click(() => survey.$survey.modal('toggle'));
     survey.$survey.modal('toggle');
-});
+}

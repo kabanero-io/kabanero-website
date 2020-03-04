@@ -358,7 +358,7 @@ survey:
   pagination: false
   questions:
   - type: choice
-    question: How likely are you to recommend Kabanero to a coworker?
+    question: 1. How likely are you to recommend Kabanero to a coworker?
     inline: true
     options:
     - 1
@@ -373,18 +373,18 @@ survey:
     - 10
     required: false
   - type: choice
-    question: Are you able to complete your job more easily by using Kabanero?
+    question: 2. Are you able to complete your job more easily by using Kabanero?
     options:
     - "Yes"
     - "No" 
     required: false
-  - type: multi
-    question: Do you think Kabanero is easy to learn and use?
+  - type: choice
+    question: 3. Do you think Kabanero is easy to learn and use?
     options:
     - "Yes" 
     - "No" 
     required: false
   - type: text
-    question: Additonal comments on Kabanero?
+    question: 4. Additonal comments on Kabanero?
     placeholder: Enter feedback here...
     required: false 

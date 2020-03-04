@@ -354,7 +354,7 @@ survey:
   prev: Previous
   next: Next
   submit: Submit
-  title: Kabanero Feedback
+  title: Kabanero product feedback
   pagination: false
   questions:
   - type: choice

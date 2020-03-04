@@ -379,7 +379,7 @@ survey:
     - "No" 
     required: false
   - type: choice
-    question: 3. Do you think Kabanero is easy to learn and use?
+    question: 3. Do you think Kabanero is easy to use?
     options:
     - "Yes" 
     - "No" 

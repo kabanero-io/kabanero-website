@@ -373,7 +373,7 @@ survey:
     - 10
     required: false
   - type: choice
-    question: 2. Are you able to complete your job more easily by using Kabanero?
+    question: 2. Does Kabanero make your job easier?
     options:
     - "Yes"
     - "No" 

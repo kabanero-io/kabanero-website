@@ -1,6 +1,8 @@
 # Clone the guides (draft or published)
 GUIDES_GIT_URL=${1:-"https://github.com/kabanero-io/guides.git"}
 GUIDES_GIT_REVISION=${2:-"master"}
+# ADD guides we want skipped here, todo to make this a parameter
+SKIP_GUIDES=()
 
 CUR_DIR="$(cd $(dirname $0) && pwd)"
 
@@ -23,7 +25,12 @@ fi
 
 rm -rf ../guides-tmp
 
+# Remove guides we want skipped from guides dir
+for guide in ${SKIP_GUIDES[@]}; do
+  rm -rf ../guides/"${guide}";
+done
+
 popd
-echo "Done cloning guides repositorys"
+echo "Done cloning guides repository"
 
 

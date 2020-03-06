@@ -4,7 +4,7 @@
 # this sequence of commands to workaround that limitation.
 # Could _not_ use:
 #   git clone git@github.com:kabanero-io/docs.git --branch develop src/main/content
-DOCS_GIT_URL=${1:-"https://github.com/kabanero-io/docs"}
+DOCS_GIT_URL=${1:-"https://github.com/kabanero-io/docs.git"}
 DOCS_GIT_REVISION=${2:-"master"}
 
 CUR_DIR="$(cd $(dirname $0) && pwd)"

@@ -10,10 +10,10 @@ ruby -v
 
 ./scripts/build_gem_dependencies.sh
 
-# Guides that are ready to be published to the Code Conjuring site
+# Guides that are ready to be published to Kabanero
 if [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then 
-    echo "Cloning repositories with name starting with guide or iguide..."
-    ruby ./scripts/build_clone_guides.rb;
+    echo "Cloning guides..."
+    ./scripts/build_clone_guides.sh "${GUIDES_GIT_URL}" "${GUIDES_GIT_REVISION}"
 fi
 
 # Development environment only actions
@@ -21,14 +21,6 @@ if [ "$JEKYLL_ENV" != "production" ]; then
     echo "Not in production environment..."
     echo "Adding robots.txt"
     cp robots.txt "$CONTENT_DIR"/robots.txt
-
-    # Development environments with draft docs/guides
-    if [ "$JEKYLL_DRAFT_GUIDES" == "true" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
-        echo "Clone draft guides for test environments..."
-        ruby ./scripts/build_clone_guides.rb "draft-guide"    
-    else
-        echo "not cloning draft guides"
-    fi
 fi
 
 # Only clone docs if they're not already there. Some builds clone the docs prior to this.

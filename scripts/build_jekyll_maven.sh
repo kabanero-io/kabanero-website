@@ -13,7 +13,7 @@ ruby -v
 # Guides that are ready to be published to Kabanero
 if [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then 
     echo "Cloning guides..."
-    ./scripts/build_clone_guides.sh "${GUIDES_GIT_URL}" "${GUIDES_GIT_REVISION}"
+    ./scripts/build_clone_guides.sh "${GUIDES_GIT_URL}" "${GUIDES_GIT_REVISION}" "./skip_guides"
 fi
 
 # Development environment only actions

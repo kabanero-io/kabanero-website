@@ -1,8 +1,13 @@
 # Clone the guides (draft or published)
 GUIDES_GIT_URL=${1:-"https://github.com/kabanero-io/guides.git"}
 GUIDES_GIT_REVISION=${2:-"master"}
-# ADD guides we want skipped here, todo to make this a parameter
-SKIP_GUIDES=()
+# A file with a guide name on every newline that is expected to not be a part of this build
+SKIP_GUIDES_FILE=$3
+
+SKIP_GUIDES=""
+if [ -f "$SKIP_GUIDES_FILE" ]; then
+    SKIP_GUIDES=$(< $3)
+fi
 
 CUR_DIR="$(cd $(dirname $0) && pwd)"
 

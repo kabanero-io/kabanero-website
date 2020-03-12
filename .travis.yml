@@ -8,7 +8,7 @@ install:
 
 stages:
   - name: Running tests
-    if: (type IN (pull_request))
+    if: (type IN (pull_request, cron))
   - name: Deploy
     if: type IN (api)
 

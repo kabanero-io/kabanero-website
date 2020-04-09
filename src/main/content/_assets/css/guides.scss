@@ -226,7 +226,11 @@ $blue-grey-color: #5d6a8e;
 }
 
 #guides_microprofile_banner,
-#guides-basic-banner {
+#guides-basic-banner,
+#guides-stacks-banner,
+#guides-pipelines-banner,
+#guides-more-guides-banner,
+#guides-manage-banner{
     @extend %full-width-and-padding;
     background-color: #DEE1E8;
 }
@@ -242,6 +246,10 @@ $blue-grey-color: #5d6a8e;
 }
 
 #guides-basic-container,
+#guides-stacks-container,
+#guides-manage-container,
+#guides-pipelines-container,
+#guides-more-guides-container,
 #guides_microprofile_container,
 #guides_additional_container,
 #no_search_results_container {

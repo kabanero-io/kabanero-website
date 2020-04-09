@@ -37,6 +37,9 @@ permalink: /guides/
 <!-- Pipelines Guides -->
 {% assign pipelines-guides = all-guides | where: 'guide-category', 'pipelines' | sort: 'releasedate' | reverse %}
 
+<!-- Manage Guides -->
+{% assign manage-guides = all-guides | where: 'guide-category', 'manage' | sort: 'releasedate' | reverse %}
+
 <!-- More guides -->
 {% assign uncatagorized-guides = '' | split: '' %}
 {% for guide in all-guides %}
@@ -106,7 +109,7 @@ permalink: /guides/
 
 <!-- Stacks Guides -->
 {% if stacks-guides.size > 0 %}
-    <div id="guides-basic-banner" class="basic-section container-fluid">
+    <div id="guides-stacks-banner" class="basic-section container-fluid">
         <div class="row">
             <div class="col-sm-9">
                 <h2 class="guide-category-title">
@@ -120,7 +123,7 @@ permalink: /guides/
             </div>
         </div>
     </div>
-    <div id="guides-basic-container" class="basic-section container-fluid">
+    <div id="guides-stacks-container" class="basic-section container-fluid">
         <div class="essential row">
             {% for guide in stacks-guides %}
             <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -143,7 +146,7 @@ permalink: /guides/
 
 <!-- Pipelines Guides -->
 {% if pipelines-guides.size > 0 %}
-    <div id="guides-basic-banner" class="basic-section container-fluid">
+    <div id="guides-pipelines-banner" class="basic-section container-fluid">
         <div class="row">
             <div class="col-sm-9">
                 <h2 class="guide-category-title">
@@ -157,7 +160,7 @@ permalink: /guides/
             </div>
         </div>
     </div>
-    <div id="guides-basic-container" class="basic-section container-fluid">
+    <div id="guides-pipelines-container" class="basic-section container-fluid">
         <div class="essential row">
             {% for guide in pipelines-guides %}
             <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -178,9 +181,46 @@ permalink: /guides/
     </div>
 {% endif %}
 
+<!-- Management Guides -->
+{% if manage-guides.size > 0 %}
+<div id="guides-manage-banner" class="basic-section container-fluid">
+    <div class="row">
+        <div class="col-sm-9">
+            <h2 class="guide-category-title">
+                {{t.manage-guides.title}}
+            </h2>
+        </div>
+        <div class="col-sm-3">
+            <h2 class="total-guide-count guide-category-title">
+                {{manage-guides.size}} {% if manage-guides.size > 1 %}{{t.guides}}{% else %}{{t.guide}}{% endif %}
+            </h2>
+        </div>
+    </div>
+</div>
+<div id="guides-manage-container" class="basic-section container-fluid">
+    <div class="essential row">
+        {% for guide in manage-guides %}
+        <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <a href="{{guide.url}}" class="guide_item" data-title="{{ guide.title | downcase }}"
+                data-description="{{ guide.description | downcase }}"
+                data-tags="{{ guide.tags | join: ' ' | downcase }}"
+                data-search-keywords="{{ guide.search-keywords | join: ' ' | downcase }}">
+                <div class="guide-title-and-description-container">
+                    <h3 class="guide-title">{{guide.title}}</h3>
+                    <p class="guide-description" title="{{guide.description}}">{{guide.description}}</p>
+                </div>
+                <img class="duration-clock-icon" src="/img/guide-duration-clock-icon-small.svg" alt="Duration">
+                <span class="guide-duration">{{guide.duration}}</span>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
 <!-- MORE GUIDES -->
 {% if uncatagorized-guides.size > 0 %}
-    <div id="guides-basic-banner" class="basic-section container-fluid">
+    <div id="guides-more-guides-banner" class="basic-section container-fluid">
         <div class="row">
             <div class="col-sm-9">
                 <h2 class="guide-category-title">
@@ -194,7 +234,7 @@ permalink: /guides/
             </div>
         </div>
     </div>
-    <div id="guides-basic-container" class="basic-section container-fluid">
+    <div id="guides-more-guides-container" class="basic-section container-fluid">
         <div class="essential row">
             {% for guide in uncatagorized-guides %}
             <div class="guide-column col-xs-12 col-sm-6 col-md-4 col-lg-3">

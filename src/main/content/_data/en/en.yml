@@ -215,6 +215,8 @@ guides:
     title: Pipelines
   uncatagorized-guides:
     title: More Guides
+  manage-guides:
+    title: Manage Guides
 
 ide:
   intro-title: Kabanero Developer Experience for IDEs

@@ -216,7 +216,7 @@ guides:
   uncatagorized-guides:
     title: More Guides
   manage-guides:
-    title: Manage Guides
+    title: Manage
 
 ide:
   intro-title: Kabanero Developer Experience for IDEs

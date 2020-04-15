@@ -1,5 +1,7 @@
 ![](src/main/content/img/Kabanero_Logo_Hero.png)
 
+[![Build Status](https://travis-ci.org/kabanero-io/kabanero-website.svg?branch=master)](https://travis-ci.org/kabanero-io/kabanero-website)
+
 # Introduction
 Kabanero.io is a portable, mobile enabled web application hosted on [IBM Cloud](https://cloud.ibm.com). It features [Jekyll](https://jekyllrb.com/) based templates with [Asciidoctor](http://asciidoctor.org/) support. New content, such as blog posts and guides, can be easily added in HTML, markdown or AsciiDoc format.
 

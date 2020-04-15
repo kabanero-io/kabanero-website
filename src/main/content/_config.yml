@@ -5,7 +5,7 @@ description: >
 baseurl: ""
 url: "https://kabanero.io"
 twitter_url: https://twitter.com/Kabaneroio
-github_url:  https://github.com/kabanero-io
+github_url: https://github.com/kabanero-io
 stackoverflow_url: https://stackoverflow.com/questions/tagged/kabanero
 slack_url: https://ibm-cloud-tech.slack.com/messages/CJZCYTD0Q
 slack_invite_url: https://slack-invite-ibm-cloud-tech.mybluemix.net/

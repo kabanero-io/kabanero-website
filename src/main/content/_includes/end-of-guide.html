@@ -23,11 +23,8 @@
             <p id="guide_attribution"></p>
             <h3 id="improve_guide_feedback">{{t.improve-guide-feedback}}</h3>
             {% if page.layout == 'guide' or page.layout == 'guide-multipane' or page.layout == 'guide-markdown'  %}
-                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}/issues">Raise an issue</a> to share feedback</p>
-                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/guide-{{page.url | replace: '/guides/', ''}}/pulls">Create a pull request</a> to contribute to this guide</p>
-            {% elsif page.layout == 'iguide-multipane' %}
-                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/iguide-{{page.url | replace: '/guides/', ''}}/issues">Raise an issue</a> to share feedback</p>
-                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/iguide-{{page.url | replace: '/guides/', ''}}/pulls">Create a pull request</a> to contribute to this guide</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/guides/issues">Raise an issue</a> to share feedback</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="{{site.github_url}}/guides/tree/master/publish/">Edit or create new guides</a> to help contribute</p>
             {% endif %}
 
             <h3 id="need_help">{{t.need-help}}</h3>

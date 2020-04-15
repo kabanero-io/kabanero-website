@@ -11,3 +11,6 @@ src/main/content/javadocs/*/stylesheet.css
 .jekyll-cache
 /bin/
 /build/
+.bundle/
+.gitignore.swp
+vendor/

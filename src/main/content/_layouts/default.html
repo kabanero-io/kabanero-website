@@ -1,8 +1,10 @@
 ---
 css: 
 - header
+- survey
 js:
 - header
+- survey
 ---
 <!-----------------------------------------------------------------------------
  -
@@ -39,6 +41,8 @@ js:
       {{ content }}
 
     </main>
+
+    {% include survey.html %}
 
     {% include footer.html %}
 

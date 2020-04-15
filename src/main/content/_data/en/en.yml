@@ -352,12 +352,43 @@ support:
     button-label: Contribute to Kabanero
 
 
-
-
-
-
-
-
-
-
-
+survey:
+  prev: Previous
+  next: Next
+  submit: Submit
+  title: Kabanero Product Feedback
+  pagination: false
+  questions:
+  - type: choice
+    question: 1. How likely are you to recommend Kabanero to a coworker?
+    inline: true
+    options:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    required: false
+  - type: choice
+    question: 2. Does Kabanero make your job easier?
+    inline: true
+    options:
+    - "Yes"
+    - "No" 
+    required: false
+  - type: choice
+    question: 3. Do you think Kabanero is easy to use?
+    inline: true
+    options:
+    - "Yes" 
+    - "No" 
+    required: false
+  - type: text
+    question: 4. Additonal comments on Kabanero?
+    placeholder: Enter feedback here...
+    required: false 

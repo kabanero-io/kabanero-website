@@ -19,15 +19,16 @@
 function loadWhatsNewModal(){
     let currentVersion = String($('#modal-title').data('version'));
 
-    if (localStorage.didOpenWhatsNew === 'false') {
-        // shows the header with "Learn More" button to show the modal about the latest release
-        $('#whats-new-toast').toast('show');
-    }
-    else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
-        localStorage.setItem('whatsNewVersion', currentVersion);
-        localStorage.setItem('didOpenWhatsNew', false);
-        $('#whats-new-toast').toast('show');
-    }
+    $('#whats-new-toast').toast('show');
+    // if (localStorage.didOpenWhatsNew === 'false') {
+    //     // shows the header with "Learn More" button to show the modal about the latest release
+    //     $('#whats-new-toast').toast('show');
+    // }
+    // else if (currentVersion !== localStorage.getItem('whatsNewVersion')){
+    //     localStorage.setItem('whatsNewVersion', currentVersion);
+    //     localStorage.setItem('didOpenWhatsNew', false);
+    //     $('#whats-new-toast').toast('show');
+    // }
 
     $('#whats-new-modal').on('show.bs.modal', function () {
         // nav bar would be on top of modal on scroll so take it away and put it back on hide

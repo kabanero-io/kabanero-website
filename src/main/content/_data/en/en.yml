@@ -2,7 +2,7 @@ common:
   instructions: View Instructions
 _includes:
   header:
-    whats-new-toast-text: Check out what's in the latest release of Kabanero
+    whats-new-toast-text: Development of Kabanero as a standalone project has ended. See linked blog post for details.
     learn-more: Learn More
     getting-started: Getting Started
     resources: Resources

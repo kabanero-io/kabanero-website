@@ -1,0 +1,4 @@
+force_https: false
+http_strict_transport_security: false
+http_strict_transport_security_include_subdomains: false
+http_strict_transport_security_preload: false

@@ -1,0 +1,10 @@
+---
+applications:
+- name: kabanero-prod
+  path: public
+  buildpacks:
+    - staticfile_buildpack
+  routes:
+    - route: kabanero.io
+    - route: www.kabanero.io
+    - route: kabanero-prod.us-south.cf.appdomain.cloud
